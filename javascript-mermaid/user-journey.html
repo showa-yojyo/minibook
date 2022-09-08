@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>User Journey Diagram &#8212; 読書ノート 1.5dev documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/mermaid.js"></script>
+    <script async="async" src="../_static/mathjax-v3.js"></script>
+    <link rel="next" title="Gantt diagrams" href="gantt.html" />
+    <link rel="prev" title="Entity Relationship Diagrams" href="entity-relationship-diagram.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="entity-relationship-diagram.html" title="Previous document">Entity Relationship Diagrams</a>
+        </li>
+        <li>
+          <a href="gantt.html" title="Next document">Gantt diagrams</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="user-journey-diagram">
+<h1><a class="toc-backref" href="#id1">User Journey Diagram</a><a class="headerlink" href="#user-journey-diagram" title="Permalink to this headline">¶</a></h1>
+<p>《User journeys describe at a high level of detail exactly what steps different
+users take to complete a specific task within a system, application or website.
+This technique shows the current (as-is) user workflow, and reveals areas of
+improvement for the to-be workflow.》
+(<a class="reference external" href="https://en.wikipedia.org/wiki/User_journey">Wikipedia</a>)</p>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#user-journey-diagram" id="id1">User Journey Diagram</a></p></li>
+</ul>
+</div>
+<p>Mermaid can render user journey diagrams:</p>
+<div class="mermaid">
+            journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
+        </div><p>Each user journey is split into sections, these describe the part of the task
+the user is trying to complete.</p>
+<p>Tasks syntax is</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Task name: &lt;score&gt;: &lt;comma separated list of actors&gt;
+</pre></div>
+</div>
+<div class="admonition- admonition">
+<p class="admonition-title">学習者ノート</p>
+<p>実際に描画される図式とコードを比較すれば、構文はおのずと理解できる。ただし <code class="docutils literal notranslate"><span class="pre">&lt;score&gt;</span></code> の項目については詳細を述べて欲しい。</p>
+</div>
+</div>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="entity-relationship-diagram.html" title="Previous document">Entity Relationship Diagrams</a>
+        </li>
+        <li>
+          <a href="gantt.html" title="Next document">Gantt diagrams</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">読書ノート</a></h1>
+
+
+
+<p class="blurb">個人的な読書、学習、研究ノート。</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../alexandrescu01/index.html">Modern C++ Design 読書ノート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tsuboi05/index.html">幾何学 I 多様体入門 読書ノート</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Mermaid 利用ノート</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Mermaid 利用ノート</a><ul>
+      <li>Previous: <a href="entity-relationship-diagram.html" title="previous chapter">Entity Relationship Diagrams</a></li>
+      <li>Next: <a href="gantt.html" title="next chapter">Gantt diagrams</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<div class="footer">
+  <ul>
+    <li id="footer_logo">
+      <a class="image-reference" href="https://showa-yojyo.github.io/" title="プレハブ小屋 Since 1999"><img src="../_static/logos.png"/></a>
+    </li>
+    <li id="footer_copyright">
+      Copyright &copy; 1999-2022, プレハブ小屋 All rights reserved.
+    </li>
+  </ul>
+</div>
+  </body>
+</html>
