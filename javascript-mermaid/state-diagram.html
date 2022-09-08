@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>State diagrams &#8212; 読書ノート 1.5dev documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/mermaid.js"></script>
-    <script async="async" src="../_static/mathjax-v3.js"></script>
     <link rel="next" title="Entity Relationship Diagrams" href="entity-relationship-diagram.html" />
     <link rel="prev" title="Class diagrams" href="class-diagram.html" />
    
@@ -48,7 +48,7 @@
           <div class="body" role="main">
             
   <div class="section" id="state-diagrams">
-<h1><a class="toc-backref" href="#id1">State diagrams</a><a class="headerlink" href="#state-diagrams" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">State diagrams</a><a class="headerlink" href="#state-diagrams" title="Permalink to this heading">¶</a></h1>
 <p>《A state diagram is a type of diagram used in computer science and related
 fields to describe the behavior of systems. State diagrams require that the
 system described is composed of a finite number of states; sometimes, this is
@@ -108,7 +108,7 @@ Still to Crash.</p>
 <code class="docutils literal notranslate"><span class="pre">stateDiagram-v2</span></code> の二つ用意されている。上のグラフに関しては描画結果に差は認められない。</p>
 </div>
 <div class="section" id="states">
-<h2><a class="toc-backref" href="#id2">States</a><a class="headerlink" href="#states" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">States</a><a class="headerlink" href="#states" title="Permalink to this heading">¶</a></h2>
 <p>A state can be declared in multiple ways. The simplest way is to define a state
 id as a description.</p>
 <div class="mermaid">
@@ -129,7 +129,7 @@ followed by a colon and the description:</p>
 </div>
 </div>
 <div class="section" id="transitions">
-<h2><a class="toc-backref" href="#id3">Transitions</a><a class="headerlink" href="#transitions" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Transitions</a><a class="headerlink" href="#transitions" title="Permalink to this heading">¶</a></h2>
 <p>Transitions are path/edges when one state passes into another. This is
 represented using text arrow, <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code>.</p>
 <p>When you define a transition between two states and the states are not already
@@ -148,7 +148,7 @@ can later add descriptions to states defined this way.</p>
     s1 --&gt; s2: A transition
         </div></div>
 <div class="section" id="start-and-end">
-<h2><a class="toc-backref" href="#id4">Start and End</a><a class="headerlink" href="#start-and-end" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Start and End</a><a class="headerlink" href="#start-and-end" title="Permalink to this heading">¶</a></h2>
 <p>There are two special states indicating the start and stop of the diagram. These
 are written with the <code class="docutils literal notranslate"><span class="pre">[*]</span></code> syntax and the direction of the transition to it
 defines it either as a start or a stop state.</p>
@@ -162,7 +162,7 @@ defines it either as a start or a stop state.</p>
 </div>
 </div>
 <div class="section" id="composite-states">
-<h2><a class="toc-backref" href="#id5">Composite states</a><a class="headerlink" href="#composite-states" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Composite states</a><a class="headerlink" href="#composite-states" title="Permalink to this heading">¶</a></h2>
 <p>In a real world use of state diagrams you often end up with diagrams that are
 multi-dimensional as one state can have several internal states. These are
 called composite states in this terminology.</p>
@@ -225,7 +225,7 @@ composite states</em></p>
 </div>
 </div>
 <div class="section" id="choice">
-<h2><a class="toc-backref" href="#id6">Choice</a><a class="headerlink" href="#choice" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Choice</a><a class="headerlink" href="#choice" title="Permalink to this heading">¶</a></h2>
 <p>Sometimes you need to model a choice between two or more paths, you can do so
 using <code class="docutils literal notranslate"><span class="pre">&lt;&lt;choice&gt;&gt;</span></code>.</p>
 <div class="mermaid">
@@ -241,7 +241,7 @@ using <code class="docutils literal notranslate"><span class="pre">&lt;&lt;choic
 </div>
 </div>
 <div class="section" id="forks">
-<h2><a class="toc-backref" href="#id7">Forks</a><a class="headerlink" href="#forks" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Forks</a><a class="headerlink" href="#forks" title="Permalink to this heading">¶</a></h2>
 <p>It is possible to specify a fork in the diagram using <code class="docutils literal notranslate"><span class="pre">&lt;&lt;fork&gt;&gt;</span></code>.</p>
 <div class="mermaid">
             stateDiagram-v2
@@ -261,7 +261,7 @@ using <code class="docutils literal notranslate"><span class="pre">&lt;&lt;choic
 </div>
 </div>
 <div class="section" id="notes">
-<h2><a class="toc-backref" href="#id8">Notes</a><a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading">¶</a></h2>
 <p>Sometimes nothing says it better then a Post-it note. That is also the case in
 state diagrams.</p>
 <p>Here you can choose to put the note to the <em>right of</em> or to the <em>left of</em> a
@@ -282,7 +282,7 @@ node.</p>
 </div>
 </div>
 <div class="section" id="concurrency">
-<h2><a class="toc-backref" href="#id9">Concurrency</a><a class="headerlink" href="#concurrency" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Concurrency</a><a class="headerlink" href="#concurrency" title="Permalink to this heading">¶</a></h2>
 <p>As in PlantUml you can specify concurrency using the <code class="docutils literal notranslate"><span class="pre">--</span></code> symbol.</p>
 <div class="mermaid">
             stateDiagram-v2
@@ -307,7 +307,7 @@ node.</p>
 </div>
 </div>
 <div class="section" id="setting-the-direction-of-the-diagram">
-<h2><a class="toc-backref" href="#id10">Setting the direction of the diagram</a><a class="headerlink" href="#setting-the-direction-of-the-diagram" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Setting the direction of the diagram</a><a class="headerlink" href="#setting-the-direction-of-the-diagram" title="Permalink to this heading">¶</a></h2>
 <p>With state diagrams you can use the direction statement to set the direction
 which the diagram will render like in this example.</p>
 <div class="mermaid">
@@ -327,7 +327,7 @@ which the diagram will render like in this example.</p>
 </div>
 </div>
 <div class="section" id="comments">
-<h2><a class="toc-backref" href="#id11">Comments</a><a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Comments</a><a class="headerlink" href="#comments" title="Permalink to this heading">¶</a></h2>
 <p>Comments can be entered within a state diagram chart, which will be ignored by
 the parser. Comments need to be on their own line, and must be prefaced with
 <code class="docutils literal notranslate"><span class="pre">%%</span></code> (double percent signs). Any text after the start of the comment to the
@@ -347,7 +347,7 @@ next newline will be treated as a comment, including any diagram syntax</p>
 </div>
 </div>
 <div class="section" id="styling">
-<h2><a class="toc-backref" href="#id12">Styling</a><a class="headerlink" href="#styling" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Styling</a><a class="headerlink" href="#styling" title="Permalink to this heading">¶</a></h2>
 <p>Styling of the a state diagram is done by defining a number of css classes.
 During rendering these classes are extracted from the file located at
 src/themes/state.scss</p>
