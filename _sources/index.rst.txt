@@ -12,3 +12,4 @@ Contents:
    alexandrescu01/index
    tsuboi05/index
    javascript-mermaid/index
+   tools
