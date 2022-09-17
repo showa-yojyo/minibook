@@ -38,6 +38,10 @@ kbd {
     content: "〉";
 }
 
+dl.field-list > dt {
+    text-align: right;
+}
+
 /* Document structure */
 
 div.document {
