@@ -6,8 +6,6 @@
 
 Sphinx でテキストを入力する便宜上、本書の記号とは一部異なるものを利用する。
 
-.. include:: /_include/book-details/tsuboi05.txt
-
 .. toctree::
    :maxdepth: 3
    :glob:

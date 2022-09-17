@@ -2,8 +2,6 @@
 Modern C++ Design 読書ノート 1/3
 ======================================================================
 
-.. include:: /_include/book-details/alexandrescu01.txt
-
 .. contents:: ノート目次
 
 ローマ数字ページ各種
@@ -529,7 +527,7 @@ Modern C++ Design 読書ノート 1/3
 .. code:: c++
 
    // p. 100 より引用。
-   template 
+   template
    <
        template <class T>
            class ThreadingModel = DEFAULT_THREADING,
