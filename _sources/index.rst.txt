@@ -14,3 +14,4 @@ Contents:
    javascript-mermaid/index
    tools
    power-toys
+   windows-terminal
