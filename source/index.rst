@@ -13,5 +13,6 @@ Contents:
    tsuboi05/index
    javascript-mermaid/index
    tools
+   winget
    power-toys
    windows-terminal
