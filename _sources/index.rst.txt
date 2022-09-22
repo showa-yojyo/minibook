@@ -16,3 +16,4 @@ Contents:
    winget
    power-toys
    windows-terminal
+   wsl

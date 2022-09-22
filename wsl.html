@@ -14,6 +14,7 @@
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/mermaid.js"></script>
+    <link rel="prev" title="Windows Terminal 利用ノート" href="windows-terminal.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -30,6 +31,10 @@
                 &nbsp;
   <nav id="rellinks">
     <ul>
+        <li>
+          &larr;
+          <a href="windows-terminal.html" title="Previous document">Windows Terminal 利用ノート</a>
+        </li>
     </ul>
   </nav>
               </div>
@@ -38,7 +43,7 @@
           <div class="body" role="main">
             
   <div class="section" id="windows-subsystem-for-linux">
-<h1><a class="toc-backref" href="#id8">Windows Subsystem for Linux 利用ノート</a><a class="headerlink" href="#windows-subsystem-for-linux" title="Permalink to this heading">¶</a></h1>
+<h1><a class="toc-backref" href="#id6">Windows Subsystem for Linux 利用ノート</a><a class="headerlink" href="#windows-subsystem-for-linux" title="Permalink to this heading">¶</a></h1>
 <p>Linux 用 Windows Subsytem for Linux (WSL) を使用すると、従来の仮想マシンなどのオーバーヘッドなしで、コマンドラインツール、ユーティリティー、アプリケーションなどを含む GNU/Linux 環境のほとんどを、変更せずに Windows 上で直接実行できる。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -58,25 +63,25 @@
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#windows-subsystem-for-linux" id="id8">Windows Subsystem for Linux 利用ノート</a></p>
+<li><p><a class="reference internal" href="#windows-subsystem-for-linux" id="id6">Windows Subsystem for Linux 利用ノート</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id1" id="id9">インストール</a></p></li>
-<li><p><a class="reference internal" href="#id2" id="id10">アップグレードする</a></p></li>
-<li><p><a class="reference internal" href="#use-cases" id="id11">Use Cases</a></p>
+<li><p><a class="reference internal" href="#id1" id="id7">インストール</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id8">アップグレードする</a></p></li>
+<li><p><a class="reference internal" href="#use-cases" id="id9">Use Cases</a></p>
 <ul>
-<li><p><a class="reference internal" href="#linux" id="id12">Linux プログラムを実行する</a></p></li>
-<li><p><a class="reference internal" href="#wsl" id="id13">WSL を管理する</a></p></li>
+<li><p><a class="reference internal" href="#linux" id="id10">Linux プログラムを実行する</a></p></li>
+<li><p><a class="reference internal" href="#wsl" id="id11">WSL を管理する</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#id3" id="id14">構成</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id15">コマンド <strong class="program">wsl</strong> 自体の使い方</a></p></li>
-<li><p><a class="reference internal" href="#id7" id="id16">関連文書</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id12">構成</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id13">コマンド <strong class="program">wsl</strong> 自体の使い方</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id14">関連文書</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="id1">
-<h2><a class="toc-backref" href="#id9">インストール</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">インストール</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>公式文書によると最初から <strong class="program">wsl</strong> が利用可能であるようだ。次のコマンドを実行しろとある：</p>
 <div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> wsl --install
 </pre></div>
@@ -85,7 +90,7 @@
 <p>既定の Linux ディストリビューションが Ubuntu であることと、私がそれしか利用しないことから、本稿ではこれ以降、この二つの単語を区別なしに記述するかもしれない。</p>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id10">アップグレードする</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">アップグレードする</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>WSL 自体のアップグレード方法は次のコマンド実行による。これで WSL Linux カーネルが（存在すれば）最新版に更新される。</p>
 <div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> wsl --update
 <span class="go">更新をチェック中...</span>
@@ -100,14 +105,14 @@
 </ol>
 </div>
 <div class="section" id="use-cases">
-<h2><a class="toc-backref" href="#id11">Use Cases</a><a class="headerlink" href="#use-cases" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Use Cases</a><a class="headerlink" href="#use-cases" title="Permalink to this heading">¶</a></h2>
 <p>プログラム <strong class="program">wsl</strong> が利用者に用意している機能は次の二つに分類される：</p>
 <ul class="simple">
 <li><p>Linux プログラムを実行する</p></li>
 <li><p>WSL を管理する</p></li>
 </ul>
 <div class="section" id="linux">
-<h3><a class="toc-backref" href="#id12">Linux プログラムを実行する</a><a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Linux プログラムを実行する</a><a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h3>
 <p>Linux コマンドを指定しないで実行すると、Linux シェルを起動する。</p>
 <div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> wsl
 <span class="gp">&gt;</span> wsl --distribution Ubuntu
@@ -128,11 +133,11 @@
 <p>Bash のような引数リストマーカー <code class="docutils literal notranslate"><span class="pre">--</span></code> も使える。</p>
 </div>
 <div class="section" id="wsl">
-<h3><a class="toc-backref" href="#id13">WSL を管理する</a><a class="headerlink" href="#wsl" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">WSL を管理する</a><a class="headerlink" href="#wsl" title="Permalink to this heading">¶</a></h3>
 </div>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id14">構成</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">構成</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>.wslconfig</p>
 <div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> wsl --list --verbose
 <span class="go">  NAME      STATE           VERSION</span>
@@ -141,7 +146,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2><a class="toc-backref" href="#id15">コマンド <strong class="program">wsl</strong> 自体の使い方</a><a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">コマンド <strong class="program">wsl</strong> 自体の使い方</a><a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <p>（実行頻度ではなく）実行可能性が比較的高いコマンドをまとめておく。</p>
 <table class="docutils align-default">
 <colgroup>
@@ -175,14 +180,14 @@
 <tr class="row-even"><td><p><strong class="command">wsl --status</strong></p></td>
 <td><p>Linux 現時点でのディストリビューションと WSL の双方の一般的な情報を出力する。</p></td>
 </tr>
-<tr class="row-odd"><td><p>:command:<a href="#id5"><span class="problematic" id="id6">`</span></a>wsl –export Ubuntu `</p></td>
+<tr class="row-odd"><td><p><strong class="command">wsl --export Ubuntu</strong></p></td>
 <td><p>Linux ディストリビューションを TAR ファイルにアーカイブする。</p></td>
 </tr>
 <tr class="row-even"><td><p><strong class="command">wsl --import</strong></p></td>
 <td><p>TAR ファイルから新しいディストリビューションに展開する。</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong class="command">wsl --terminate</strong> Linux ディストリビューションを停止する。</p></td>
-<td></td>
+<tr class="row-odd"><td><p><strong class="command">wsl --terminate</strong></p></td>
+<td><p>Linux ディストリビューションを停止する。</p></td>
 </tr>
 <tr class="row-even"><td><p><strong class="command">wsl ~ -d Ubuntu</strong></p></td>
 <td><p>HOME ディレクトリーから Ubuntu を開始する。</p></td>
@@ -190,8 +195,8 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="id7">
-<h2><a class="toc-backref" href="#id16">関連文書</a><a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id14">関連文書</a><a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://learn.microsoft.com/ja-jp/windows/wsl/">Windows Subsystem for Linux に関するドキュメント | Microsoft Learn</a></p>
 </div>
 </div>
@@ -202,6 +207,10 @@
                 &nbsp;
   <nav id="rellinks">
     <ul>
+        <li>
+          &larr;
+          <a href="windows-terminal.html" title="Previous document">Windows Terminal 利用ノート</a>
+        </li>
     </ul>
   </nav>
               </div>
@@ -224,7 +233,7 @@
 
 
 <h3>Navigation</h3>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="alexandrescu01/index.html">Modern C++ Design 読書ノート</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tsuboi05/index.html">幾何学 I 多様体入門 読書ノート</a></li>
 <li class="toctree-l1"><a class="reference internal" href="javascript-mermaid/index.html">Mermaid 利用ノート</a></li>
@@ -232,12 +241,14 @@
 <li class="toctree-l1"><a class="reference internal" href="winget.html">Windows Package Manager CLI 利用ノート</a></li>
 <li class="toctree-l1"><a class="reference internal" href="power-toys.html">Microsoft PowerToys 利用ノート</a></li>
 <li class="toctree-l1"><a class="reference internal" href="windows-terminal.html">Windows Terminal 利用ノート</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Windows Subsystem for Linux 利用ノート</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="windows-terminal.html" title="previous chapter">Windows Terminal 利用ノート</a></li>
   </ul></li>
 </ul>
 </div>
