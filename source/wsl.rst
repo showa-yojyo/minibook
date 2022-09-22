@@ -124,9 +124,9 @@ WSL を管理する
    :command:`wsl --shutdown` @ 仮想マシンのシャットダウンコマンド。メモリー解放に援用できることに注意。
    :command:`wsl --update` @ WSL カーネルを更新しようとする。
    :command:`wsl --status` @ Linux 現時点でのディストリビューションと WSL の双方の一般的な情報を出力する。
-   :command:`wsl --export Ubuntu ` @ Linux ディストリビューションを TAR ファイルにアーカイブする。
+   :command:`wsl --export Ubuntu` @ Linux ディストリビューションを TAR ファイルにアーカイブする。
    :command:`wsl --import` @ TAR ファイルから新しいディストリビューションに展開する。
-   :command:`wsl --terminate` Linux ディストリビューションを停止する。
+   :command:`wsl --terminate` @ Linux ディストリビューションを停止する。
    :command:`wsl ~ -d Ubuntu` @ HOME ディレクトリーから Ubuntu を開始する。
 
 関連文書
