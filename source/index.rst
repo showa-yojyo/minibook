@@ -17,3 +17,4 @@ Contents:
    power-toys
    windows-terminal
    wsl
+   deepl-translator
