@@ -1,0 +1,9 @@
+{
+    "esbonio.server.enabled": false,
+    "esbonio.server.hideSphinxOutput": false,
+    "esbonio.sphinx.buildDir": "${workspaceFolder}/build/",
+    "esbonio.sphinx.confDir": "${workspaceFolder}/source/",
+    "esbonio.sphinx.doctreeDir": "${workspaceFolder}/build/doctrees/",
+    "esbonio.sphinx.srcDir": "${workspaceFolder}/source/",
+    "python.envFile": ""
+}
