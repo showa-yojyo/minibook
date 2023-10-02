@@ -11,16 +11,14 @@ jobs:
       uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "./"
-        build-command: "make html"
-    - name: List output directory
-      run: |
-        ls -laR build/html
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' }}
       with:
         name: html-docs
-        path: build/html/
+        path: |
+          build/html/
+          !build/html/_sources
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' }}
