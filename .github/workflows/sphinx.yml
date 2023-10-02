@@ -11,8 +11,12 @@ jobs:
       uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "./"
+    - name: Commit documentation changes
+      run: |
+        ls -R build/html
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
+      if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' }}
       with:
         name: html-docs
         path: build/html/
