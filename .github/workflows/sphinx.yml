@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Change permission
-    - run: sudo chown -R $(whoami) .
+      run: sudo chown -R $(whoami) .
 
     - uses: actions/checkout@v4
 
