@@ -17,4 +17,5 @@ Contents:
    power-toys
    windows-terminal
    wsl
+   vscode/index
    deepl-translator
