@@ -13,7 +13,7 @@ jobs:
         docs-folder: "./"
     - name: Commit documentation changes
       run: |
-        ls -R build/html
+        rm -rf build/html/_sources
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' }}
