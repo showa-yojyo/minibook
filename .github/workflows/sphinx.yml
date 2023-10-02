@@ -6,9 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Change permission
-      run: sudo chown -R $(whoami) .
-
     - uses: actions/checkout@v4
 
     - name: Build HTML
@@ -17,7 +14,7 @@ jobs:
         docs-folder: "./"
 
     - run: ls -la build/html/_sources
-    - run: rm -rf build/html/_sources
+    - run: sudo rm -rf build/html/_sources
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
