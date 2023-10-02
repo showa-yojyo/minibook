@@ -13,7 +13,6 @@ jobs:
       with:
         docs-folder: "./"
 
-    - run: ls -la build/html/_sources
     - run: sudo rm -rf build/html/_sources
 
     - name: Upload artifacts
