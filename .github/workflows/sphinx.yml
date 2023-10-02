@@ -5,9 +5,10 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
+    - name: Change permission
+    - run: sudo chown -R $(whoami) .
+
     - uses: actions/checkout@v4
 
     - name: Build HTML
