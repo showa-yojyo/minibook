@@ -13,8 +13,6 @@ jobs:
       with:
         docs-folder: "./"
 
-    - run: sudo rm -rf build/html/_sources
-
     - name: Deploy HTML
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' }}
