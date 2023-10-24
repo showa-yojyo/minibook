@@ -1,9 +1,35 @@
 /* custum.css: CSS file to override rules that the Alabaster provide */
 /* General rules. */
 
+:root {
+    --quote-border-left: thick solid hotpink;
+    --quote-padding: 0 0 0 12px;
+}
+
 body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin: 0 auto;
     max-width: 1500px;
+}
+
+pre,
+tt,
+code {
+    background-color: inherit;
+    border: 1px solid lightpink;
+    border-radius: 0.25em;
+    color: inherit;
+    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+blockquote {
+    border-left: var(--quote-border-left);
+    padding: var(--quote-padding);
+}
+
+div.line-block {
+    border-left: var(--quote-border-left);
+    padding: var(--quote-padding);
 }
 
 img {
@@ -28,17 +54,17 @@ kbd {
     vertical-align: middle;
 }
 
-.guilabel::before,
-.menuselection::before {
-    content: "〈";
+.guilabel,
+.menuselection {
+    background-color: canvas;
+    border: 1px solid buttonBorder;
+    border-radius: 0.125rem;
+    color: buttonBorder;
+    font-size: 0.75rem;
+    padding: 0rem 0.25rem;
 }
 
-.guilabel::after,
-.menuselection::after {
-    content: "〉";
-}
-
-dl.field-list > dt {
+dl.field-list>dt {
     text-align: right;
 }
 
@@ -59,7 +85,7 @@ div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
-    font-family: initial;
+    font-family: inherit;
 }
 
 div.body p,
@@ -69,8 +95,8 @@ div.body li {
 }
 
 div.admonition p.admonition-title {
-    font-family: initial;
-    font-size: initial;
+    font-family: inherit;
+    font-size: inherit;
     font-weight: bold;
 }
 
@@ -85,6 +111,22 @@ dt {
 em {
     font-family: monospace;
     font-style: italic;
+}
+
+em.dfn {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: bold;
+}
+
+strong.command {
+    border: 1px solid lightpink;
+    border-radius: 0.25em;
+    color: inherit;
+    font-family: monospace;
+    font-size: inherit;
+    font-style: normal;
+    font-weight: inherit;
 }
 
 /**

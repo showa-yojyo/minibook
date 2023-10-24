@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sphinx 利用ノート &#8212; 読書ノート 1.5dev documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=1a9a5cd9" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=20d9222b"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/mermaid.js?v=578dbed1"></script>
+    <link rel="prev" title="DeepL Translator 利用ノート" href="deepl-translator.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="deepl-translator.html" title="Previous document">DeepL Translator 利用ノート</a>
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+  <section id="sphinx">
+<h1><a class="toc-backref" href="#id15" role="doc-backlink">Sphinx 利用ノート</a><a class="headerlink" href="#sphinx" title="Permalink to this heading">¶</a></h1>
+<p>本稿は当読書ノートの基盤となる Python パッケージである <a class="reference external" href="https://www.sphinx-doc.org/en/master/index.html">Sphinx</a> の利用に関するノートだ。</p>
+<blockquote>
+<div><p>Sphinx is a <em>documentation generator</em> or a tool that translates a set of
+plain text source files into various output formats, automatically producing
+cross-references, indices, etc. That is, if you have a directory containing a
+bunch of reStructuredText or Markdown documents, Sphinx can generate a series
+of HTML files, a PDF file (via LaTeX), man pages and much more.</p>
+</div></blockquote>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#sphinx" id="id15">Sphinx 利用ノート</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id16">インストール</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id17">原稿ディレクトリーを初期化する</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id18">初期設定</a></p></li>
+<li><p><a class="reference internal" href="#github-pages" id="id19">GitHub Pages</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id20">執筆慣行</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id21">ビルド構成</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id22">拡張</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id23">テーマ</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id24">カスタマイズ</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id25">関連ノート</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="id1">
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">インストール</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<p>グローバルにインストールする場合と、プロジェクトの仮想環境にインストールする場合がある。両方説明する。更新手段は採用するパッケージマネジャーに従う。</p>
+<p>グローバルの Python 環境はまともにあるものとする。</p>
+<section id="id2">
+<h3>グローバルにインストールする<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<p>Miniconda も使えるが、以下 <strong class="program">pip</strong> を利用する方法を記す。</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bash$ pip install sphinx</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>プロジェクト個別にインストールする<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p>グローバルにインストールしてから実施することを勧める。プロジェクトディレクトリーに移動して仮想環境を作成したら直ちにインストールするという想定で：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bash$ cd $PROJECT_DIR</span>
+<span class="go">bash$ python -m env .venv</span>
+<span class="go">bash$ pip install --upgrade pip</span>
+<span class="go">bash$ pip install sphinx</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>インストール成功を確認する<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>Sphinx のバージョンを確認する：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bash$ sphinx-build --version</span>
+<span class="go">sphinx-build 7.2.6</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">原稿ディレクトリーを初期化する</a><a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>将来的に生成した HTML ファイル群を GitHub に配備するので、プロジェクトディレクトリーのルートにサブディレクトリー <code class="file docutils literal notranslate"><span class="pre">docs</span></code> を作成し、そこを Sphinx 用作業場とする：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bash$ cd $PROJECT_DIR</span>
+<span class="go">bash$ mkdir docs</span>
+<span class="go">bash$ sphinx-quickstart</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+<p><strong class="program">sphinx-quickstart</strong> 成功後、生成されたファイルを確認すること。</p>
+<div class="admonition- admonition">
+<p class="admonition-title">読者ノート</p>
+<p><strong class="program">sphinx-quickstart</strong> は引数なしで実行すると対話的操作によりファイルを生成する。ヘルプにあるオプションを十分に指定すれば、ファイルを一気に生成する。</p>
+</div>
+<p>次にやる作業が何になるかは場合による：</p>
+<ul class="simple">
+<li><p>ビルド構成を変える</p></li>
+<li><p>原稿を執筆する</p></li>
+<li><p>テーマをいじる</p></li>
+<li><p>拡張を導入する</p></li>
+</ul>
+</section>
+<section id="id6">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">初期設定</a><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><cite>sphinx-quickstart</cite></p></li>
+<li><p><cite>conf.py</cite>: 既定コードと比較して検討</p></li>
+</ul>
+<p>reST/</p>
+</section>
+<section id="github-pages">
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">GitHub Pages</a><a class="headerlink" href="#github-pages" title="Permalink to this heading">¶</a></h2>
+<p>GitHub のリポジトリーに Sphinx 用原稿を格納する場合、GitHub Actions の力で push
+イベントで次のことを実現したいと考えるのが自然だ：</p>
+<ul class="simple">
+<li><p>最新の原稿をビルドして HTML ファイルを生成し、</p></li>
+<li><p>それを GitHub Pages に公開する。</p></li>
+</ul>
+<p>そのためのワークフロー YAML の記述方法は <a class="reference external" href="https://www.sphinx-doc.org/en/master/tutorial/deploying.html">Appendix: Deploying a Sphinx project
+online</a> にある。まとめておくと：</p>
+<ul>
+<li><p>リポジトリーの <span class="menuselection">Settings ‣ Pages</span> ページで各種項目を設定する：</p>
+<ul class="simple">
+<li><p>Publish を有効にする</p></li>
+<li><p><span class="guilabel">Source</span> を <span class="guilabel">Deploy from a branch</span> に設定にする</p></li>
+<li><p><span class="guilabel">Branch</span> を設定する：</p>
+<ul>
+<li><p>左ドロップダウンリストを <span class="guilabel">gh-pages</span> に設定</p></li>
+<li><p>右ドロップダウンリストを <code class="file docutils literal notranslate"><span class="pre">Makefile</span></code> のあるほうのディレクトリーに設定</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">Makefile</span></code> のあるディレクトリーに <strong class="program">pip</strong> 用のファイル
+<code class="file docutils literal notranslate"><span class="pre">requirements.txt</span></code> を置く。当読書ノートの場合は：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sphinx</span> <span class="o">&gt;=</span> <span class="mf">7.0</span>
+<span class="n">ipython</span> <span class="o">&gt;=</span> <span class="mf">8.0</span>
+<span class="n">sphinxcontrib</span><span class="o">-</span><span class="n">mermaid</span>
+</pre></div>
+</div>
+</li>
+<li><p>リポジトリーにワークフローファイルを置く。例えば
+<code class="file docutils literal notranslate"><span class="pre">.github/workflows/sphinx.yml</span></code> とし、本文の内容にする。</p>
+<div class="admonition- admonition">
+<p class="admonition-title">読者ノート</p>
+<p>ステップ Upload artifacts では大容量サイズのファイルを生成することになる。開発ブランチのビルドアクションでは行わず、リリースブランチだけで行うように書き換えるのが望ましい。</p>
+</div>
+</li>
+</ul>
+<p>GitHub Actions がわからない場合や、ビルド時間が上限を超えるまでに文書が肥大化した場合は、ローカルで Sphinx ビルドをし、得られる生成ファイルを <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> ブランチに対して <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> することになるだろう。</p>
+</section>
+<section id="id7">
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">執筆慣行</a><a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p>[reStructuredText — Sphinx documentation](<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/">https://www.sphinx-doc.org/en/master/usage/restructuredtext/</a>) に栞
+* Table はこの書式では使わない。
+* Images (<cite>image</cite> or <cite>figure</cite>)
+* Directives</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>使っていないものを試す。</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Additional body elements も試す。
+* <cite>rubric</cite> は使える。</p></li>
+<li><p>Tables
+* <cite>csv-table</cite> 推奨
+* <cite>list-table</cite> は使いどころがあるかもしれない</p></li>
+</ul>
+</li>
+<li><p>Roles
+* <cite>:doc:</cite>, <cite>:ref:</cite> は使う。
+* <cite>:code:</cite> は使わない。<code class="docutils literal notranslate"><span class="pre">xxxx</span></code> を使う。
+* <cite>:abbr:</cite> は使いどころが多すぎて忘れる。
+* <cite>:command:</cite> は多用しがち。
+* <cite>:dfn:</cite> も忘れる。
+* <cite>:file:</cite> はパス名にも使う。
+* <cite>:guilabel:</cite> よく使う。アンドマークに注意。
+* <cite>:kbd:</cite> よく使う
+* <cite>:menuselection:</cite> よく使う
+* <cite>:program:</cite> と <cite>:command:</cite> を間違いたくない。
+* <cite>:regexp</cite> は使いたい</p></li>
+<li><p>Directives
+* <cite>seealso</cite> 使う
+* <cite>code-block</cite>, etc.
+* <cite>math</cite></p></li>
+<li><p>reST で記述するが、この文法についてはここではやらない。</p></li>
+<li><p>頻出 directives
+* <cite>doc</cite>
+* <cite>ref</cite>
+* <cite>toctree</cite></p></li>
+<li><p><cite>sphinx-build</cite>, <cite>make html</cite></p></li>
+</ul>
+</section>
+<section id="id8">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">ビルド構成</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p>Configuration
+* <cite>conf.py</cite> の他に <cite>docutils.conf</cite> も使える。
+* <cite>conf.py</cite> で見るべきところ：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>extensions</cite> 採用しているものを列挙</p></li>
+<li><p><cite>master_doc</cite> は <cite>root_doc</cite> に改名した</p></li>
+<li><p><cite>rst_epilog</cite>, <cite>rst_prolog</cite> は何かいい用途がありそうだ</p></li>
+<li><p><cite>html_</cite> で始まる項目を念入りに確認しろ
+* <cite>html_theme</cite> は HTML5 対応しているものを選べ。
+* <cite>html_copy_source = False</cite></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>読者ノート専用構成
+* テーマ
+* 拡張
+* 既定機能無効化</p></li>
+</ul>
+</section>
+<section id="id9">
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">拡張</a><a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>標準から：<cite>sphinx.ext.githubpages</cite>, <cite>sphinx.ext.mathjax</cite>, <cite>sphinx.ext.todo</cite></p></li>
+<li><p><cite>IPython.sphinext</cite></p></li>
+<li><p><cite>sphinxcontrib.mermaid</cite></p></li>
+<li><p>入手経路を忘れた <cite>japanesesupport</cite></p></li>
+<li><p>これも原典不明の <cite>disablesearchindex</cite></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id10">
+<h2><a class="toc-backref" href="#id23" role="doc-backlink">テーマ</a><a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Theming
+* [Alabaster](<a class="reference external" href="https://alabaster.readthedocs.io/en/latest/">https://alabaster.readthedocs.io/en/latest/</a>) を採用
+* テーマによってカスタマイズ方法をよく確認する</p></li>
+</ul>
+</section>
+<section id="id11">
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">カスタマイズ</a><a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>自作箇所がわずかにあったはず</p></li>
+</ul>
+</section>
+<section id="id12">
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">関連ノート</a><a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h2>
+<div class="admonition-todo admonition" id="id13">
+<p class="admonition-title">Todo</p>
+<p>本番用では書く。</p>
+<ul class="simple">
+<li><p>Jinja2 利用ノート</p></li>
+<li><p>Pygments 利用ノート</p></li>
+<li><p>pip 利用ノート</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="deepl-translator.html" title="Previous document">DeepL Translator 利用ノート</a>
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+<div class="footer">
+  <ul>
+    <li id="footer_logo">
+      <a class="image-reference" href="https://showa-yojyo.github.io/" title="プレハブ小屋 Since 1999"><img src="_static/logos.png"/></a>
+    </li>
+    <li id="footer_copyright">
+      Copyright &copy; 1999-2023, プレハブ小屋 All rights reserved.
+    </li>
+  </ul>
+</div>
+  </body>
+</html>
