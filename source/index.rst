@@ -25,3 +25,4 @@ Contents:
    wsl
    vscode/index
    deepl-translator
+   python-sphinx
