@@ -162,28 +162,64 @@ GitHub Actions がわからない場合や、ビルド時間が上限を超え�
 た場合は、ローカルで Sphinx ビルドをし、得られる生成ファイルを ``gh-pages`` ブラ
 ンチに対して ``git push`` することになるだろう。
 
-執筆慣行
+reStructuredText
 ======================================================================
 
-.. todo::
+ブラウザーに URL <https://www.sphinx-doc.org/en/master/usage/restructuredtext/>
+をブックマークしておく。Markdown に較べるとマークアップが複雑なので覚え切れな
+い。
 
-   * [reStructuredText — Sphinx documentation](https://www.sphinx-doc.org/en/master/usage/restructuredtext/) に栞
+reStructuredText の基本
+----------------------------------------------------------------------
 
-     * Table はこの書式では使わない。
-     * Images (`image` or `figure`)
-     * Directives
+ここはさすがに丸暗記するほうが効率的だ。
 
-       * 使っていないものを試す。
-     * Additional body elements も試す。
+* パラグラフは空行と空行の間のテキストの塊が相当する。
+* インラインマークアップ三種類
 
-       * `rubric` は使える。
-     * Tables
+  * 斜体は米印で囲む。
+  * 太字はダブル米印で囲む。
+  * コード片はダブルバッククオートで囲む。この三種の中でもっともよく使う。
 
-       * `csv-table` 推奨
-       * `list-table` は使いどころがあるかもしれない
-   * Roles
+* リストは行の先頭に米印を付け、空白を挿れ、テキストを配置したものを縦に並べる。
 
-     * `:doc:`, `:ref:` は使う。
+  * 米印の代わりに ``#.`` を使うと番号リストになる。
+  * リストを入れ子にするときには、空行を挟む。ここは Markdown と異なる。
+
+* HTML で言う ``dl``, ``dt``, ``dd`` を reST で実現可能。Markdown に優る。
+* 引用パラグラフは二種類ある。
+
+  * 周囲のパラグラフに対してインデントしたパラグラフは引用パラグラフとなる。
+    当ノートではボックス枠左をピンクで塗る。なるべくこちらを使いたい。
+  * 行頭に ``|`` を付けた引用は改行文字を維持する。
+
+* 当ノートでは ``::`` によるリテラルブロックを書かない。
+* 表はなるべく ``csv-table`` を用いたい。
+* ハイパーリンクのマークアップはよく忘れる。
+* 節（セクション）で使う飾り文字は既存の原稿に準拠する。
+
+* 画像は ``image`` 指令を使う。
+
+  * オプションが重要。
+  * SVG ファイルを表示する場合にはこれではなく、HTML の ``object`` タグを使いた
+    い。方法は Inkscape 利用ノートの原稿を参照。
+
+* 置換はほとんど使わない。
+* コメントアウトは覚えておくと便利。
+
+Roles
+----------------------------------------------------------------------
+
+相互参照モノ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``:doc:``
+   頻出。ページパスを指定してリンクする。
+``:ref:``
+   たまに用いる。アンカーを手動で定義する必要がある。これが面倒で多用しない。
+
+
+
      * `:code:` は使わない。``xxxx`` を使う。
      * `:abbr:` は使いどころが多すぎて忘れる。
      * `:command:` は多用しがち。
@@ -194,11 +230,13 @@ GitHub Actions がわからない場合や、ビルド時間が上限を超え�
      * `:menuselection:` よく使う
      * `:program:` と `:command:` を間違いたくない。
      * `:regexp` は使いたい
-   * Directives
+
+----------------------------------------------------------------------
 
      * `seealso` 使う
      * `code-block`, etc.
      * `math`
+
    * reST で記述するが、この文法についてはここではやらない。
    * 頻出 directives
 
@@ -212,10 +250,10 @@ GitHub Actions がわからない場合や、ビルド時間が上限を超え�
 
 構成ファイル :file:`conf.py` で指定したい項目と目的を述べる。
 
-.. todo::
+.. note::
 
-   * `conf.py` の他に `docutils.conf` も使える。
-   * `rst_epilog`, `rst_prolog` は何かいい用途がありそうだ
+   * :file:`conf.py` の他に :file:`docutils.conf` も使える。
+   * ``rst_epilog``, ``rst_prolog`` は何かいい用途がありそうだ。
 
 プロジェクト情報
 ----------------------------------------------------------------------
@@ -262,6 +300,11 @@ GitHub Actions がわからない場合や、ビルド時間が上限を超え�
 
 拡張それぞれについての構成方法は後述する。
 
+その他の項目は次のとおり：
+
+``templates_path``
+   リストに ``'_templates'`` を含ませる。
+
 HTML 出力
 ----------------------------------------------------------------------
 
@@ -273,7 +316,7 @@ HTML 出力
    HTML5 に対応しているテーマを指定するべきだ。既定値の ``alabaster`` はそれを満
    足する。
 ``html_theme_options``
-   この辞書の値を Alabaster の文書を見ながら決めろ。
+   この辞書の値を Alabaster の文書を見ながら決めろ。設定値は後述する。
 ``html_js_files``
    自作 JavaScript ファイルをリストに列挙する。
 ``html_sidebars``
@@ -377,7 +420,7 @@ Sphinx 原稿内に ``todo`` および ``todolist`` 囲み記事を書けるよ�
 ``IPython.sphinxext.ipython_*``
 ----------------------------------------------------------------------
 
-原稿に ``ipython`` directive を記述すると、HTML 変換時によく描画してくれる。
+原稿に ``ipython`` 指令を記述すると、HTML 変換時によく描画してくれる。
 
 .. ipython::
 
@@ -397,8 +440,7 @@ Sphinx 原稿内に ``todo`` および ``todolist`` 囲み記事を書けるよ�
 ``sphinxcontrib.mermaid``
 ----------------------------------------------------------------------
 
-原稿に ``mermaid`` directive を記述すると HTML 変換時に Mermaid が図式を描画す
-る。
+原稿に ``mermaid`` 指令を記述すると HTML 変換時に Mermaid が図式を描画する。
 
 .. mermaid::
    :caption: Mermaid 動作確認
@@ -433,9 +475,11 @@ Sphinx 原稿内に ``todo`` および ``todolist`` 囲み記事を書けるよ�
 
 .. todo::
 
-   この拡張は：
+   執筆中に次の拡張が存在することに気づく：
 
    `sphinxcontrib-trimblank · PyPI <https://pypi.org/project/sphinxcontrib-trimblank/>`__
+
+   こちらを使用するほうが良いか？
 
 ``disablesearchindex``
 ----------------------------------------------------------------------
@@ -451,13 +495,82 @@ Sphinx 原稿内に ``todo`` および ``todolist`` 囲み記事を書けるよ�
 テーマ
 ======================================================================
 
-* [Alabaster](https://alabaster.readthedocs.io/en/latest/) を採用
-* テーマによってカスタマイズ方法をよく確認する
+先述の理由で `Alabaster <https://alabaster.readthedocs.io/en/latest/>`__ を採用
+する。
 
-その他のカスタマイズ
-======================================================================
+   Alabaster is a visually (c)lean, responsive, configurable theme for the
+   Sphinx documentation system.
 
-* 自作箇所がわずかにあったはず
+レスポンシブとあるので、出力 HTML ファイルは PC でも携帯電話でもブラウザーでいい
+感じに表示される。
+
+オプション
+----------------------------------------------------------------------
+
+構成ファイルで ``html_theme_options`` の値を辞書で指定する：
+
+.. code:: python
+
+   html_theme = 'alabaster'
+   html_theme_options = {
+       # ...
+   }
+
+特に重要な項目は次のものだと思う：
+
+``github_button``
+   ``False`` とする。``True`` にしておくと、ページを修正したくなるだろう。
+``github_repo``
+   リポジトリーの名前にする。本ノートならば文字列 ``'notebook'`` だ。
+``github_user``
+   リポジトリーの所有者名にする。本ノートならば文字列 ``'showa-yojyo'`` とする。
+``nosidebar``
+   サイドバーを使わないことにするので ``False`` とする。
+``show_powered_by``
+   ``False`` とする。
+``show_relbars``
+   サイドバーを使わない代わりにここを ``True`` とする。ページの天井か柱またはそ
+   の両方に *next* と *previous* リンクが示される。
+
+スタイルシート
+----------------------------------------------------------------------
+
+構成ファイルで指定されるオプションでは対応できない CSS 項目をカスタマイズしたい
+場合には、ファイル :file:`source/_static/custom.css` を自分で用意してスタイルを
+定義する手法を採る。
+
+オリジナルの CSS は Python ディレクトリーのファイル
+:file:`lib/site-packages/alabaster/static/alabaster.css_t` に定義されている。
+
+テンプレート
+----------------------------------------------------------------------
+
+サブディレクトリー :file:`source/_templates` に Alabaster を構成する HTML テンプ
+レートファイルと同名のファイルを置くことで、対応する内容を上書きすることが可能
+だ。
+
+当ノートではフッターを描画するための :file:`layout.html` を次のように改造してあ
+る（一部略）：
+
+.. code:: jinja2
+
+   {% extends "alabaster/layout.html" %}
+
+   {%- block footer %}
+   <div class="footer">
+     <ul>
+       <li id="footer_logo">
+         ...
+       </li>
+       <li id="footer_copyright">
+         Copyright &copy; {{ copyright }}.
+       </li>
+     </ul>
+   </div>
+   {%- endblock %}
+
+オリジナルの Jinja2 テンプレートファイルは Python ディレクトリーのサブディレクト
+リー :file:`lib/site-packages/alabaster` に配置されている。
 
 関連ノート
 ======================================================================
@@ -469,5 +582,6 @@ Sphinx 原稿内に ``todo`` および ``todolist`` 囲み記事を書けるよ�
    * Jinja2 利用ノート
    * Pygments 利用ノート
    * pip 利用ノート
+   * GitHub Docs 読書ノート
 
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
