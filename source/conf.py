@@ -40,11 +40,13 @@ extensions = [
     'disablesearchindex',
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive',
-    'japanesesupport',
+    # 'japanesesupport',
     'sphinx.ext.githubpages',
     'sphinx.ext.mathjax',
     'sphinx.ext.todo',
-    'sphinxcontrib.mermaid',]
+    'sphinxcontrib.mermaid',
+    'sphinxcontrib.trimblank',
+    ]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -171,3 +173,8 @@ todo_include_todos = True
 # See html_js_files
 mermaid_version = ""
 mermaid_init_js = ""
+
+# TEST
+
+#trimblank_keep_alnum_blank = ['html', 'singlehtml']
+trimblank_keep_alnum_blank = True
