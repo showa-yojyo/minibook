@@ -6,12 +6,12 @@
 
 Contents:
 
-.. toctree::
-   :caption: 図書・教科書・仕様書ノート
-   :maxdepth: 1
-
-   alexandrescu01/index
-   tsuboi05/index
+.. .. toctree::
+..    :caption: 図書・教科書・仕様書ノート
+..    :maxdepth: 1
+..
+..    alexandrescu01/index
+..    tsuboi05/index
 
 .. toctree::
    :caption: ソフトウェア・ツール・パッケージ・ライブラリーノート
@@ -25,4 +25,4 @@ Contents:
    wsl
    vscode/index
    deepl-translator
-   python-sphinx
+   powershell
