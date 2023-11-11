@@ -432,12 +432,38 @@ Type
 * ``help about_Automatic_Variables``
 * ``help about_Preference_Variables``
 
+現在利用可能な変数を一覧するには ``Get-Variable *`` が良い。
+
 環境変数
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 環境変数は :samp:`$Env:{name}` で参照する。E.g. ``$Env:USERPROFILE``. コロンをタ
-イプした直後にタブ補完をするのはよくある慣習だろう。同じように、``PS`` から始ま
-る変数を一覧するには ``$PS`` とタイプしてタブ補完をするといい。
+イプした直後にタブ補完をすると、存在する変数一覧が示される。
+
+Windows では、環境変数の照準域が三種類ある：
+
+システム照準域
+   システム定義の環境変数に関する照準域。
+利用者照準域
+   利用者定義の環境変数に関する照準域。ここまでのものは環境変数エディターなどで
+   確認可能。
+プロセス照準域
+   現在プロセス、つまり PowerShell コンソールセッションで利用可能なものを含む。
+   親プロセスから引き継いだ変数、System, User 両照準域の変数からなる。
+
+上二つの環境変数を変更するには、次のようにする：
+
+* :samp:`[Environment]::SetEnvironmentVariable({name}, {value}, 'Machine')`
+* :samp:`[Environment]::SetEnvironmentVariable({name}, {value})`
+* :samp:`[Environment]::SetEnvironmentVariable({name}, '')`: 変数削除
+
+システム照準域に対しては管理者権限も必要だ。
+
+PowerShell が考慮する ``POWERSHELL_`` で始まる固有の環境変数がいくつかあり、上述
+のヘルプで確認可能。使いそうなものは：
+
+* :env:`POWERSHELL_TELEMETRY_OPTOUT`: 余計な情報を提供したくない人向け
+* :env:`POWERSHELL_UPDATECHECK`: Preview 版か否かで値を使い分けたい？
 
 自動変数
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -557,9 +583,25 @@ Providers: よくわからない概念
 モジュール
 ----------------------------------------------------------------------
 
-* ``Import-Module``
-* ``$env:PSModulePath``
-* ``$env:PSModulePath -split ';'`` が読みやすい
+まずは ``help about_Modules`` を読め。
+
+PowerShell はインストール済みモジュール内の命令を初めて実行した時点で、当該モ
+ジュールを自動的にインポートする。
+
+``$env:PSModulePath`` で指定された場所にあるモジュールしか自動インポートされない。
+一般の場所にあるモジュールについては ``Import-Module`` 命令が必要。
+
+``$env:PSModulePath -split ';'`` が読みやすい。
+
+自動インポート機能の有効性を切り替える優先変数があり、それは
+``$PSModuleAutoloadingPreference`` だ。
+
+モジュールをインストールする手順は、フォルダーごと ``$env:PSModulePath`` のいず
+れかの場所に単にコピーすればいい。
+
+* ``Get-Module``: 現在ロード済みのモジュール一覧を示す
+* ``Get-Module -ListAvailable``: その裏を示す
+* :samp:`Import-Module {path}`: 一般の場所にあるモジュールをインポートする
 
 項目 (``Get-Command -Noun Item``)
 ----------------------------------------------------------------------
@@ -815,21 +857,25 @@ XML
 * :samp:`${Clixml} = Import-Clixml -Path {output-path}`
 * :samp:`${Credential} = Import-Clixml {input-path}`
 
+便利な命令
+----------------------------------------------------------------------
+
+.. todo::
+
+   * ``Get-Date``
+   * ``Get-Random``
+   * Markdown
+   * HTML ``ConvertTo-Html``
+   * ``Invoke-RestMethod``, ``Invoke-WebRequest``
+
 TBW
 ----------------------------------------------------------------------
 
-* ``Find-Module`` と ``Install-Module`` にはまともなヘルプがない
-* ``Invoke-Command``
-* ``Get-Verb``
-* PowerShell にはコマンド名を構成する動詞を限定したいという思想がある。
-* ``Get-Verb | Sort-Object -Property Verb``
-* 正規表現
-* ``Get-Date``
-* Session
-* ``Get-Random``
-* ``Invoke-RestMethod``
-* Markdown
-* HTML
+* ``Invoke-Command``: この命令はリモートマシンがないと価値が半減する
+* ``Get-Verb``: PowerShell にはコマンド名を構成する動詞を限定したいという思想が
+  ある。
+* 正規表現 ``help about_Regular_Expressions``
+* Session ``help about_PSSession``
 
 情報源
 ======================================================================
