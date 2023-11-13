@@ -231,9 +231,9 @@ PowerShell コンソールを起動する
 
 * ``shcm``: :guilabel:`Commands` ウィンドウを表示
 * :samp:`shcm -Name {command-name}`: 命令 *command-name* の引数指定ウィンドウを表示
-* :samp:`shcm -Name {command-name}` -Height {win-height} -Width {win-width} -ErrorPopup`
-* `${command} = shcm -PassThru`: 戻り値を ``Invoke-Expression`` に与えられる
-* `${command} = shcm {command-name} -ErrorPopup`
+* :samp:`shcm -Name {command-name} -Height {win-height} -Width {win-width} -ErrorPopup`
+* :samp:`${command} = shcm -PassThru`: 戻り値を ``Invoke-Expression`` に与えられる
+* :samp:`${command} = shcm {command-name} -ErrorPopup`
 
 ``Get-Member``: オブジェクトの特徴を得る
 ----------------------------------------------------------------------
@@ -272,6 +272,7 @@ about_Pipelines`` を読め。
 * :samp:`{object} | select -Property {property-name ...}`
 * :samp:`{object} | select -Property *`
 * :samp:`{object} | select -Property Name, {hash-table}`
+* :samp:`{object} | select -ExpandProperty Name`: 文字列配列として得る
 * :samp:`{array} | select -First {number}`
 * :samp:`{array} | select -Unique` これはソート不要
 * :samp:`{array} | select -Index 0, (${array}.count - 1)`
@@ -423,6 +424,21 @@ Type
 演算子 ``-as`` で型を変換する。``'05/13/20' -as [datetime]`` のように使う。詳し
 くは ``help about_Type_Operators`` を読め。
 
+正規表現
+----------------------------------------------------------------------
+
+まず ``help about_Regular_Expressions`` に目を通せ。
+
+PowerShell で正規表現が現れる場合、よそ者には非常識に感じられることに大文字小文
+字を区別しない。次のようにする：
+
+* ``Select-String`` では ``-CaseSensitive`` スイッチを指定する
+* 正規表現を扱う演算子では ``-c`` が付くほうを採用する
+* ``switch`` 文では ``-casesensitive`` を指定する
+
+正規表現を含む文字列をエスケープするには次のようにする：
+:samp:`[regex]::escape({regex-pattern})`
+
 変数
 ----------------------------------------------------------------------
 
@@ -462,8 +478,10 @@ Windows では、環境変数の照準域が三種類ある：
 PowerShell が考慮する ``POWERSHELL_`` で始まる固有の環境変数がいくつかあり、上述
 のヘルプで確認可能。使いそうなものは：
 
-* :env:`POWERSHELL_TELEMETRY_OPTOUT`: 余計な情報を提供したくない人向け
-* :env:`POWERSHELL_UPDATECHECK`: Preview 版か否かで値を使い分けたい？
+:envvar:`POWERSHELL_TELEMETRY_OPTOUT`
+   余計な情報を提供したくない人向け
+:envvar:`POWERSHELL_UPDATECHECK`
+   Preview 版か否かで値を使い分けたい？
 
 自動変数
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -510,7 +528,7 @@ PowerShell の挙動をカスタマイズする変数のうち、有用なもの
 ``help about_Foreach`` と ``help ForEach-Object`` を読め。
 
 * :samp:`{collection} | ForEach-Object {statement-list}`
-* :samp:`foreach(${item} in ${collection})\{{statement-list}\}``
+* :samp:`foreach(${item} in ${collection})\\{{statement-list}\\}``
 
 なお、C 言語のような ``for`` ループもある。
 
@@ -519,15 +537,15 @@ PowerShell の挙動をカスタマイズする変数のうち、有用なもの
 
 他の言語にあるものと同様の構造だ。``help about_Do`` を読め。
 
-* :samp:`do\{ {statement-list} \}until({condition})``
-* :samp:`do\{ {statement-list} \}while({condition})``
+* :samp:`do\\{ {statement-list} \\}until({condition})``
+* :samp:`do\\{ {statement-list} \\}while({condition})``
 
 ``while`` 文
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 他の言語にあるものと同様の構造だ。``help about_While`` を読め。
 
-* :samp:`while({condition})\{statement-list\}`
+* :samp:`while({condition})\\{statement-list\\}`
 
 反復制御文
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -571,10 +589,25 @@ Providers: よくわからない概念
 
    Get-CimClass -Namespace root/CIMV2 | Sort-Object CimClassName
 
+動詞
+----------------------------------------------------------------------
+
+PowerShell には命令や関数名を動詞で始めるということ、さらにその動詞の集合が内規
+で定められている。規則ではないので、不認可動詞を使っても動作しないということはな
+い。
+
+認可動詞は ``Group`` という区分で分類されている。
+
+* ``Get-Verb``: 認可されている動詞すべてを示す
+* :samp:`Get-Verb {pattern}`: パターンに合致する動詞すべてを示す
+* ``Get-Verb | Select-Object Group -Unique``: 有効な ``Group`` を示す
+* :samp:`Get-Verb -Group {group}`: *group* に分類される動詞を示す
+* :samp:`{commands} | where Verb -notin (Get-Verb).Verb`: 不認可動詞を探す
+
 関数
 ----------------------------------------------------------------------
 
-* いちばん単純な定義形式は :samp:`function {function-name}\{{statements}\}`
+* いちばん単純な定義形式は :samp:`function {function-name}\\{ {statements} \\}`
 * 引数リストの定義形式は一つではない
 * 引数自体を細かく指定することがある
 * ``help about_Functions*`` を全部読む
@@ -619,6 +652,7 @@ UNIX では everything is a file だが、PowerShell では everything is an ite
 * :samp:`Remove-Item {path}`
 * :samp:`Remove-Item {path} -Recurse`
 * ``Invoke-Item`` は Win32 API で言う ``ShellExecute`` と同等
+* ``ii .``: 現在フォルダーを Explorer で開く
 
 * ``Get-ChildItem`` は UNIX の :program:`ls` に相当
 
@@ -645,11 +679,7 @@ Item Properties (``Get-Command -Noun ItemProperty``)
 
 * :samp:`Get-Process` で全項目表示
 * :samp:`Get-Process -Name {process}` では :samp:`-Id {pid}` もあり得る（以下同様）
-
-.. code:: pwsh
-
-   Get-Process | Group-Object -Property Name -NoElement | Where-Object {$_.Count -gt 1}
-
+* ``Get-Process | Group-Object -Property Name -NoElement | Where-Object {$_.Count -gt 1}``
 * :samp:`Stop-Process -Name {process} -Confirm`
 * ``Get-Process | Where-Object -FilterScript {-not $_.Responding} | Stop-Process``
 * :samp:`Start-Process -FilePath {executable}` は PATH が通っていれば OK
@@ -714,8 +744,8 @@ Bash :command:`dirs` 相当が不明。
 * :samp:`Clear-History -Id {id} -Count {num}`
 * ``Invoke-History`` 過去の命令を再実行する
 * :samp:`Invoke-History -Id {id-or-part}`
-* :samp:`{first-id}..{last-id} | ForEach \{Invoke-History -Id $_ \}`
-* :samp:`Get-History -Id {id} -Count {num} | ForEach {Invoke-History -Id $_.Id}`
+* :samp:`{first-id}..{last-id} | ForEach \\{Invoke-History -Id $_ \\}`
+* :samp:`Get-History -Id {id} -Count {num} | ForEach \\{Invoke-History -Id $_.Id\\}`
 * 余裕があれば ``Add-History`` の活用を考える
 
 ファイル入出力
@@ -780,6 +810,35 @@ Bash :command:`dirs` 相当が不明。
     * E.g. ``2>&1`` でエラー出力を成功出力にリダイレクト
 
   * ``*>`` でストリームすべてをファイルにリダイレクト
+
+クリップボード
+----------------------------------------------------------------------
+
+``Get-Clipboard`` でクリップボードからデータを受け取る。WSL のシェル環境で利用す
+ることになる：
+
+.. code:: bash
+
+   alias getclip='/path/to/pwsh.exe -noprofile -command Get-Clipboard'
+
+``Set-Clipboard`` も存在するが、WSL では :program:`iconv` をインストールしている
+ので敢えて使わなくていい：
+
+.. code:: bash
+
+   alias putclip='iconv -f utf-8 -t utf-16le | clip.exe'
+
+``Select-String``: 文字列検索
+----------------------------------------------------------------------
+
+UNIX の :program:`grep` のようなことをするには ``Select-String`` を用いる。
+
+* :samp:`{text} | Select-String -Pattern {literal} -CaseSensitive -SimpleMatch`: :program:`fgrep` 相当
+* :samp:`Select-String -Path {path ...} -Pattern {regex}`: 典型的 :program:`grep`
+* :samp:`Get-WinEvent {args} | Select-String -InputObject {$_.message} -Pattern {regex}`
+* :samp:`Get-ChildItem -Path {path ...} -Recurse | Select-String -Pattern {regex} -CaseSensitive`: ``grep -R`` 相当
+* :samp:`{text} | Select-String -Pattern {regex ...} -NotMatch`: ``grep -v`` 相当
+* :samp:`{text} | Select-String -Pattern {regex ...} -Context 2, 3`: ``grep -B 2 -A 3`` 相当
 
 テキストベースデータ変換
 ----------------------------------------------------------------------
@@ -860,22 +919,28 @@ XML
 便利な命令
 ----------------------------------------------------------------------
 
-.. todo::
+* ``Get-Date``: 日付を得る
 
-   * ``Get-Date``
-   * ``Get-Random``
-   * Markdown
-   * HTML ``ConvertTo-Html``
-   * ``Invoke-RestMethod``, ``Invoke-WebRequest``
+  * ``Get-Date -UFormat "%Y-%m-%d (%A) %T"``: 時計
+  * ``Get-Date -Format o | foreach { $_ -replace ":", "." }``: タイムスタンプ
+* ``Get-Random``: 乱数を得たり選んだりする
 
-TBW
-----------------------------------------------------------------------
+  * ``Get-Random -Minimum 1 -Maximum 7``: サイコロ
+  * ``1..6 | Get-Random``: サイコロ
+  * ``Get-Random -Minimum 10.7 -Maximum 20.93``: 浮動小数点数も OK
+  * ``1, 2, 3, 5, 8, 13 | Get-Random -Count 3``
+  * ``1, 2, 3, 5, 8, 13 | Get-Random -Shuffle``
+* ``Show-Markdown``: Markdown ファイルをコンソール内に描画するかも
+* ``Invoke-RestMethod``: RSS, ATOM を含む XML や JSON を処理するのに使える
 
-* ``Invoke-Command``: この命令はリモートマシンがないと価値が半減する
-* ``Get-Verb``: PowerShell にはコマンド名を構成する動詞を限定したいという思想が
-  ある。
-* 正規表現 ``help about_Regular_Expressions``
-* Session ``help about_PSSession``
+  * :samp:`Invoke-RestMethod https://www.youtube.com/feeds/videos.xml?channel_id={id} | Out-GridView`
+  * :samp:`Invoke-RestMethod https://blogs.msdn.microsoft.com/powershell/feed/ | Format-Table -Property {prop ...}``
+  * :samp:`Invoke-RestMethod -Method 'Post' -Uri {url} -Credential {cred} -Body {body} -OutFile {output-path}`
+  * :samp:`${resonse} = Invoke-RestMethod -Uri {url} -Method Post -Form {form}`
+
+* ``Invoke-WebRequest``
+
+  * :samp:`${response} = Invoke-WebRequest -uri {url}``: 得られるオブジェクトの属性が重要
 
 情報源
 ======================================================================
@@ -902,3 +967,8 @@ Microsoft Learn
    なるものが複数あり、それぞれ原因がバラバラで解決するのに手間だった。
 
    * `Sample scripts for system administration - PowerShell <https://learn.microsoft.com/en-us/powershell/scripting/samples/sample-scripts-for-administration?view=powershell-7.3>`__
+
+`Highest scored 'powershell' questions - Stack Overflow <https://stackoverflow.com/questions/tagged/powershell?tab=Votes>`__
+   評価の高い質問を順に読んでいくといいことがありそうだ。
+`command line - Copy to clipboard using Bash for Windows - Stack Overflow <https://stackoverflow.com/questions/43144008/copy-to-clipboard-using-bash-for-windows/>`__
+   PowerShell 調査のついでに発見。
