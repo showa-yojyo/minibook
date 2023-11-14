@@ -151,7 +151,9 @@ PowerShell コンソールを起動する
        ;
    }
 
-   Set-PSReadLineOption -EditMode Emacs
+   Set-PSReadLineOption -EditMode Emacs -HistoryNoDuplicates
+   Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+
    Set-Location $env:HOME\Documents\PowerShell
 
    # aliases
@@ -311,6 +313,8 @@ about_Pipelines`` を読め。
 
 * :samp:`{array} | group -Property {prop}`
 * :samp:`{array} | group -Property {prop} -NoElement`: ``Group`` 列を省く
+* :samp:`{array} | group -Property {prop} -AsHashtable`: ``Name`` と ``Value``
+  からなるハッシュ表でデータを得る。
 
 書式整形
 ----------------------------------------------------------------------
@@ -326,7 +330,7 @@ about_Pipelines`` を読め。
 * :samp:`{array} | ft -Property {prop-name ...}`
 * :samp:`{array} | ft -Wrap`: レコード途中改行を許す
 
-``Format-List`` は出力が縦に長い。
+``Format-List`` a.k.a. ``fl`` は出力が縦に長い。
 
 * :samp:`{array} | fl -Property {prop-name ...}`
 * :samp:`{array} | fl -Property *`
@@ -554,34 +558,44 @@ PowerShell の挙動をカスタマイズする変数のうち、有用なもの
 指定機能がある。また、構造自体がコマンドなので ``return`` 文が使える。詳しくはそ
 れぞれのヘルプ記事を読め。
 
-Providers: よくわからない概念
+Providers: 疑似（本物も含む）ファイルシステムドライブ集合
 ----------------------------------------------------------------------
 
 まずは ``help about_Provides`` を読め。
 
 * ``Get-PSProvider``: その一覧を出力
-* ``Get-PSDrive``: ドライブ一覧だが、ファイルシステムとしてのドライブよりも抽象
-  度が一段高い。
-* :samp:`Get-PSDrive {drive-letter}`
-* ``Get-PSDrive -PSProvider FileSystem``
-* ``Get-PSDrive -PSProvider Registry``
+
+  * ``Get-PSProvider | ft`` で provider すべてについてそれらの特徴と値の一覧を示す。
+* ``Get-PSDrive`` a.k.a.``gdr``: ドライブ一覧だが、ファイルシステムとしてのドラ
+  イブよりも抽象度が一段高い。
+  * :samp:`Get-PSDrive {drive-letter}`
+  * ``gdr -PSProvider FileSystem``: ファイルシステムドライブすべて
+  * ``gdr -PSProvider FileSystem | select Name, @{Name="Used"; Expression={$_.Used/1GB}}``
+  * ``gdr -PSProvider Registry``
 * :samp:`Remove-PSDrive -Name {usb}`
 
-``Get-CimInstance``
+CIM
 ----------------------------------------------------------------------
 
-* ``Get-CimInstance Win32_BIOS``
-* ``Get-CimInstance Win32_Environment`` 環境変数と値
-* ``Get-CimInstance Win32_LogicalDisk``
-* ``Get-CimInstance Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true``
-* ``Get-CimInstance Win32_OperatingSystem``
-* ``Get-CimInstance Win32_Printer``
-* ``Get-CimInstance Win32_Process`` は ``Get-Process`` と同様か
-* ``Get-CimInstance Win32_Service`` は ``Get-Service`` と同様か
-* ``Get-CimInstance Win32_SystemDriver``
-* ``Get-CimInstance Win32_UserAccount``
-* ``Get-CimInstance Win32_VideoController``
-* ``Get-CimInstance Win32_OperatingSystem | Format-List *``
+   The Common Information Model (CIM) is an extensible, object-oriented data
+   model that contains information about different parts of an enterprise.
+
+計算機の情報を得るのに用いる命令として ``Get-CimInstance`` a.k.a. ``gcim`` があ
+る。基本的に :samp:`gcim {cim-class} | {filter}` の形で実行する。
+
+* ``gcim CIM_BIOSElement``
+* ``gcim CIM_LogicalDisk``
+* ``gcim CIM_OperatingSystem | fl``
+* ``gcim CIM_Printer``: ``Get-Printer`` と同様か
+* ``gcim CIM_Process``: ``Get-Process`` と同様か
+* ``gcim CIM_Product | sort -Property Name | ft IdentifyingNumber, Name, LocalPackage -AutoSize``
+* ``gcim CIM_PhysicalMemory | fl``
+* ``gcim CIM_Service``: ``Get-Service`` と同様か
+* ``gcim CIM_VideoController``
+* ``gcim Win32_Environment``: 環境変数と値
+* ``gcim Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true``
+* ``gcim Win32_SystemDriver``
+* ``gcim Win32_UserAccount``
 
 ``-Class`` の適切な実引数を ``Get-CimClass`` で知ることができる：
 
@@ -635,6 +649,7 @@ PowerShell はインストール済みモジュール内の命令を初めて実
 * ``Get-Module``: 現在ロード済みのモジュール一覧を示す
 * ``Get-Module -ListAvailable``: その裏を示す
 * :samp:`Import-Module {path}`: 一般の場所にあるモジュールをインポートする
+* ``Import-Module -DisableNameChecking``: 不認可動詞から始まる命令や関数を見逃す
 
 項目 (``Get-Command -Noun Item``)
 ----------------------------------------------------------------------
@@ -690,6 +705,8 @@ Item Properties (``Get-Command -Noun ItemProperty``)
 サービス
 ----------------------------------------------------------------------
 
+サービスを開発するときにあると便利な再起動スクリプトを作成するときの道具になる。
+
 * :samp:`Get-Service -Name {service}`
 * :samp:`Get-Service -DisplayName {service}`
 * :samp:`Get-Service -Name {service} -RequiredServices`
@@ -703,16 +720,17 @@ Item Properties (``Get-Command -Noun ItemProperty``)
 出力先 (``Get-Command -Verb Out``)
 ----------------------------------------------------------------------
 
-* :samp:`{object} | Out-Null` 出力を捨てる
-* :samp:`{object} | Out-Default` パイプラインの最後に来る暗黙の出力コマンドと考えられる
+* :samp:`{object} | Out-Null`: 出力を捨てる
+* :samp:`{object} | Out-Default`: パイプラインの最後に来る暗黙の出力コマンドと考
+  えられる
 * :samp:`{object} | Out-Host | -Paging`
 * :samp:`{object} | Out-Printer -Name {printer-name}`
 * :samp:`{object} | Out-File -Path {output-path}`
 * :samp:`{object} | Out-File -Path {output-path} -Width {columns}`
 * :samp:`{object} | Out-GridView`: 数ソート不能
-* :samp:`{object} | Out-String`` 今のところ用途不明
+* :samp:`{object} | Out-String``: 今のところ用途不明
 
-位置 (``Get-Command -Noun Location``)
+作業場所 (``Get-Command -Noun Location``)
 ----------------------------------------------------------------------
 
 * ``Get-Location`` は Bash で言う :command:`pwd` に相当
@@ -727,9 +745,10 @@ Bash :command:`dirs` 相当が不明。
 ----------------------------------------------------------------------
 
 * ``Get-PSReadLineKeyHandler`` または :kbd:`Ctrl` + :kbd:`Alt` + :kbd:`?` で確認
+* ``Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete`` で補完を少し楽に
 * ``Get-PSReadLineOption`` でオプション設定値を確認
-* ``Set-PSReadLineOption -EditMode Emacs`` で Bash に近いキーバインドに変更
-  （プロファイルに書いておく）
+* ``Set-PSReadLineOption -EditMode Emacs`` で Bash に近いキーバインドに変更（プ
+  ロファイルに書いておく）
 
 命令履歴
 ----------------------------------------------------------------------
@@ -793,6 +812,8 @@ Bash :command:`dirs` 相当が不明。
    5   | DEBUG       | ``Write-Debug``
    6   | INFORMATION | ``Write-Information``
    n/a | PROGRESS    | ``Write-Progress``
+
+``Write-Output`` は必ずしも画面に表示するわけではない。
 
 リダイレクト
 ----------------------------------------------------------------------
