@@ -2,7 +2,7 @@
 PowerShell 利用ノート
 ======================================================================
 
-PowerShell を試す。意外な自動化用途を発見したい。
+PowerShell を試す。基本を固めたら意外な自動化用途を発見したい。
 
 .. contents::
    :depth: 3
@@ -541,8 +541,8 @@ PowerShell の挙動をカスタマイズする変数のうち、有用なもの
 
 他の言語にあるものと同様の構造だ。``help about_Do`` を読め。
 
-* :samp:`do\\{ {statement-list} \\}until({condition})``
-* :samp:`do\\{ {statement-list} \\}while({condition})``
+* :samp:`do\\{ {statement-list} \\}until({condition})`
+* :samp:`do\\{ {statement-list} \\}while({condition})`
 
 ``while`` 文
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -558,6 +558,33 @@ PowerShell の挙動をカスタマイズする変数のうち、有用なもの
 指定機能がある。また、構造自体がコマンドなので ``return`` 文が使える。詳しくはそ
 れぞれのヘルプ記事を読め。
 
+関数
+----------------------------------------------------------------------
+
+* いちばん単純な定義形式は :samp:`function {function-name}\\{ {statements} \\}`
+* 引数リストの定義形式は一つではない
+* 引数自体を細かく指定することがある
+* ``help about_Functions*`` を全部読む
+* ``help about_*Parameters`` を全部読む
+
+例外処理
+----------------------------------------------------------------------
+
+``help about_Try_Catch_Finally``, ``help_Throw`` を読め。
+
+* ``catch`` 節に対象である例外型を指定するには、角括弧に囲んだ型名を用いる。
+* ``catch`` 節に対象である例外型を書かないと、それは catch all を意味する。
+* ``catch`` 節では捕捉した例外を参照するのにも ``$_`` を用いる。
+* ``catch`` 節では自動変数 ``$Error`` を調べることもある。
+* ``throw`` は任意のオブジェクトを取れる。
+* ``throw`` 文ではオブジェクトを送出するか、何も明示しないで記す。後者の場合、
+  ``ScriptHalted`` というものが送出される。
+* PowerShellプロセスを表すオブジェクトを ``throw`` することもある。
+
+.. admonition:: 読者ノート
+
+   PowerShell にはもう一つ、``trap`` というエラー処理の仕組みがある。これは
+
 Providers: 疑似（本物も含む）ファイルシステムドライブ集合
 ----------------------------------------------------------------------
 
@@ -565,9 +592,11 @@ Providers: 疑似（本物も含む）ファイルシステムドライブ集合
 
 * ``Get-PSProvider``: その一覧を出力
 
-  * ``Get-PSProvider | ft`` で provider すべてについてそれらの特徴と値の一覧を示す。
-* ``Get-PSDrive`` a.k.a.``gdr``: ドライブ一覧だが、ファイルシステムとしてのドラ
+  * ``Get-PSProvider | ft`` で provider すべてについてそれらの特徴と値の一覧を示
+    す。
+* ``Get-PSDrive`` a.k.a. ``gdr``: ドライブ一覧だが、ファイルシステムとしてのドラ
   イブよりも抽象度が一段高い。
+
   * :samp:`Get-PSDrive {drive-letter}`
   * ``gdr -PSProvider FileSystem``: ファイルシステムドライブすべて
   * ``gdr -PSProvider FileSystem | select Name, @{Name="Used"; Expression={$_.Used/1GB}}``
@@ -603,6 +632,11 @@ CIM
 
    Get-CimClass -Namespace root/CIMV2 | Sort-Object CimClassName
 
+.. admonition:: 読者ノート
+
+   これを使いこなせるようになれば、PC ショップ店頭の Windows 機でスペックを
+   PowerShell で確認できて効率が良い。
+
 動詞
 ----------------------------------------------------------------------
 
@@ -618,14 +652,10 @@ PowerShell には命令や関数名を動詞で始めるということ、さら
 * :samp:`Get-Verb -Group {group}`: *group* に分類される動詞を示す
 * :samp:`{commands} | where Verb -notin (Get-Verb).Verb`: 不認可動詞を探す
 
-関数
-----------------------------------------------------------------------
+.. admonition:: 読者ノート
 
-* いちばん単純な定義形式は :samp:`function {function-name}\\{ {statements} \\}`
-* 引数リストの定義形式は一つではない
-* 引数自体を細かく指定することがある
-* ``help about_Functions*`` を全部読む
-* ``help about_*Parameters`` を全部読む
+   ``Get-Verb`` の出力表を眺めていると、設計者がプログラミングという概念をどのよ
+   うに捉えているのかが垣間見えて面白い。
 
 モジュール
 ----------------------------------------------------------------------
@@ -677,7 +707,7 @@ UNIX では everything is a file だが、PowerShell では everything is an ite
   * :samp:`Get-ChildItem -Path * -Include {glob}` マッチのみ出力
   * :samp:`Get-ChildItem -Path * -Exclude {glob}` マッチを除外
 
-Item Properties (``Get-Command -Noun ItemProperty``)
+項目性質 (``Get-Command -Noun ItemProperty``)
 ----------------------------------------------------------------------
 
 レジストリー操作で用いることが多い。
@@ -739,7 +769,9 @@ Item Properties (``Get-Command -Noun ItemProperty``)
 * ``Push-Location``, ``Pop-Location`` はそれぞれ :command:`pushd`,
   :command:`popd` に相当
 
-Bash :command:`dirs` 相当が不明。
+.. admonition:: 読者ノート
+
+   Bash :command:`dirs` 相当が不明。
 
 キーバインド
 ----------------------------------------------------------------------
@@ -955,13 +987,64 @@ XML
 * ``Invoke-RestMethod``: RSS, ATOM を含む XML や JSON を処理するのに使える
 
   * :samp:`Invoke-RestMethod https://www.youtube.com/feeds/videos.xml?channel_id={id} | Out-GridView`
-  * :samp:`Invoke-RestMethod https://blogs.msdn.microsoft.com/powershell/feed/ | Format-Table -Property {prop ...}``
+  * :samp:`Invoke-RestMethod https://blogs.msdn.microsoft.com/powershell/feed/ | Format-Table -Property {prop ...}`
   * :samp:`Invoke-RestMethod -Method 'Post' -Uri {url} -Credential {cred} -Body {body} -OutFile {output-path}`
   * :samp:`${resonse} = Invoke-RestMethod -Uri {url} -Method Post -Form {form}`
 
 * ``Invoke-WebRequest``
 
-  * :samp:`${response} = Invoke-WebRequest -uri {url}``: 得られるオブジェクトの属性が重要
+  * :samp:`${response} = Invoke-WebRequest -uri {url}`: 得られるオブジェクトの
+    属性が重要
+
+GUI
+----------------------------------------------------------------------
+
+:samp:`Add-Type -AssemblyName {assembly}` で .NET Framework クラスを利用可能にな
+る。これを利用して GUI を実現することが可能だ。
+
+.. code:: pwsh
+
+   Add-Type -AssemblyName System.Windows.Forms
+   Add-Type -AssemblyName System.Drawing
+
+   $form = New-Object Windows.Forms.Form -Property @{
+       StartPosition = [Windows.Forms.FormStartPosition]::CenterScreen
+       Size          = New-Object Drawing.Size 243, 260
+       Text          = 'Hello world'
+       Topmost       = $true
+   }
+
+   # ...
+
+   $result = $form.ShowDialog()
+
+配列とハッシュ表
+----------------------------------------------------------------------
+
+``help about_Arrays`` と ``help about_Hash_Tables`` を読め。Python や JavaScript
+の文法と似ている気がするから急所だけ覚えればいい。生成方法だけ覚えておき、要素参
+照やメソッドは補完機能を使えばやっているうちに覚える。たぶん .NET Framework のイ
+ンターフェイスと同一だろう。
+
+.. rubric:: 配列の生成方法
+
+* ``$A = 22,5,10,8,12,9,80``: 要素すべてを指定して生成する例
+* ``$B = ,7``: 単一要素を指定して生成する例
+* ``$C = 5..8``: Bash 風
+* ``[int32[]]$ia = 1500,2230,3350,4000``: 明示的に型を指定する例
+* ``$a = @("Hello World")``: 単一要素を指定して生成する例
+* ``$b = @()``: 空配列を生成する例
+
+.. rubric:: ハッシュ表の生成方法
+
+* ``$hash = @{}``: 空ハッシュ表を生成する
+* ``$hash = @{ Number = 1; Shape = "Square"; Color = "Blue"}``: 中身を指定して生
+  成する例
+
+PowerShell Gallery
+======================================================================
+
+.. todo:: 便利なモジュール、スクリプトを発見できたら記す。
 
 情報源
 ======================================================================
@@ -993,3 +1076,5 @@ Microsoft Learn
    評価の高い質問を順に読んでいくといいことがありそうだ。
 `command line - Copy to clipboard using Bash for Windows - Stack Overflow <https://stackoverflow.com/questions/43144008/copy-to-clipboard-using-bash-for-windows/>`__
    PowerShell 調査のついでに発見。
+`GitHub - dlwyatt/WinFormsExampleUpdates: Updates to make TechNet PowerShell Windows Forms examples compatible with PowerShell 3.0 and later <https://github.com/dlwyatt/WinFormsExampleUpdates>`__
+   GUI デモスクリプト四つ。
