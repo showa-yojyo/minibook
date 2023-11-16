@@ -6,7 +6,14 @@
 
 .. contents::
 
-TBW
+.. note::
+
+   .. code:: text
+
+      DISTRIB_ID=Ubuntu
+      DISTRIB_RELEASE=22.04
+      DISTRIB_CODENAME=jammy
+      DISTRIB_DESCRIPTION="Ubuntu 22.04.3 LTS"
 
 Microsoft SQL Server
 ======================================================================
@@ -26,7 +33,20 @@ PostgreSQL
 MongoDB
 ======================================================================
 
-.. todo:: https://www.mongodb.com/
+:Official site: `MongoDB <https://www.mongodb.com/>`__
+
+
+.. code:: console
+
+   $ sudo service mongodb start
+    * Starting database mongod                           [ OK ]
+   $ sudo service mongodb status
+    * Checking status of database mongod
+   /etc/init.d/mongodb: 251: log_successs_msg: not found
+   $ sudo service mongodb stop
+    * Stopping database mongod                           [ OK ]
+
+[Install MongoDB Community Edition on Ubuntu — MongoDB Manual](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
 
 OrientDB
 ======================================================================
@@ -41,7 +61,7 @@ MariaDB
 SQLite
 ======================================================================
 
-:Official: `SQLite Home Page <https://www.sqlite.org/index.html>`__
+:Official site: `SQLite Home Page <https://www.sqlite.org/index.html>`__
 :CLI: :program:`sqlite3`
 
 教材としては `SQLite Tutorial <https://www.sqlitetutorial.net/>`__ がいいと思わ
