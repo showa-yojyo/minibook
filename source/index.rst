@@ -26,3 +26,4 @@ Contents:
    vscode/index
    deepl-translator
    python-sphinx
+   database
