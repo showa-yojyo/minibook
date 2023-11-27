@@ -15,20 +15,37 @@
       DISTRIB_CODENAME=jammy
       DISTRIB_DESCRIPTION="Ubuntu 22.04.3 LTS"
 
+Oracle Database
+======================================================================
+
+:Since: 1979
+:Official site: <https://www.oracle.com/in/database/>
+
+.. todo:: 学習する。
+
 Microsoft SQL Server
 ======================================================================
 
-.. todo:: https://www.microsoft.com/ja-jp/sql-server
+:Since: 1989
+:Official site: <https://www.microsoft.com/ja-jp/sql-server>
+
+.. todo:: 学習する。
 
 MySQL
 ======================================================================
 
-.. todo:: https://www.mysql.com/
+:Since: 1995
+:Official site: <https://www.mysql.com/>
+
+.. todo:: 学習する。
 
 PostgreSQL
 ======================================================================
 
-.. todo:: https://www.postgresql.org/
+:Since: 1996
+:Official site: <https://www.postgresql.org/>
+
+.. todo:: 学習する。
 
 Firebird
 ======================================================================
@@ -121,6 +138,21 @@ Firebird サーバーを停止するには：
 * データベースをバックアップする
 * インストールディレクトリーを削除する
 
+以上を行うスクリプトがインストールされているので、それを実行する：
+
+.. code:: console
+
+   $ sudo bash /opt/firebird/bin/FirebirdUninstall.sh
+
+   Firebird 5.0.0.1227-ReleaseCandidate1.x64 Uninstall program
+
+   Are you sure you want to proceed?
+
+   Press Enter to start uninstall or ^C to abort^C
+   Uninstalling...
+   Stopping Guardian server: Stopping Firebird server: Saved a copy of SecurityDatabase (security5.fdb) in /tmp
+   Uninstall completed
+
 SQLite
 ======================================================================
 
@@ -150,6 +182,14 @@ SQLite をアンインストールする場合はこうするだろう：
 * 本体をファイルシステムから削除する - ``conda uninstall sqlite``
 * 構成ファイルを削除する
 * データベースファイルを削除する
+
+Apache CouchDB
+======================================================================
+
+:Since: 2005
+:Official site: <https://couchdb.apache.org/>
+
+.. todo:: 学習する。
 
 MongoDB
 ======================================================================
@@ -207,7 +247,7 @@ used in mongodb atlas cluster for local testing purpose
 OrientDB
 ======================================================================
 
-:Since: 2010:
+:Since: 2010
 :Official site: `Home | OrientDB Community Edition <https://www.orientdb.org/>`__
 :CLI: OrientDB console 3.2.24
 
@@ -261,27 +301,26 @@ SQL 文 ``SELECT * FROM OUser`` を実行して成功すれば OK とする。�
    * Neo4j を済ませたら 4.11.9.2 に戻る。
    * アンインストール手順を記す。
 
-MariaDB
+Neo4j
 ======================================================================
 
-.. todo:: https://mariadb.org/
+:Since: 2010
+:Official site: <https://neo4j.com/>
 
-Apache CouchDB
-======================================================================
-
-.. todo:: https://couchdb.apache.org/
-
-Oracle Database
-======================================================================
-
-.. todo:: https://www.oracle.com/in/database/
+.. todo:: 学習する。
 
 Amazon DynamoDB
 ======================================================================
 
-.. todo:: https://aws.amazon.com/dynamodb/
+:Since: 2012
+:Official site: <https://aws.amazon.com/dynamodb/>
 
-Neo4j
+.. todo:: 学習する。
+
+MariaDB
 ======================================================================
 
-.. todo:: https://neo4j.com/
+:Since: 2013
+:Official site: <https://mariadb.org/>
+
+.. todo:: 学習する。
