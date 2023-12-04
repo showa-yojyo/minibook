@@ -26,4 +26,15 @@ Contents:
    vscode/index
    deepl-translator
    python-sphinx
+   database/firebird
+   database/sqlite
+   database/couchdb
+   database/mongodb
+   database/orientdb
+   database/neo4j
+
+.. toctree::
+   :caption: テーマ別
+   :maxdepth: 1
+
    database
