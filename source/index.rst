@@ -32,6 +32,7 @@ Contents:
    database/mongodb
    database/orientdb
    database/neo4j
+   database/dynamodb
 
 .. toctree::
    :caption: テーマ別

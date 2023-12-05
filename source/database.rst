@@ -22,6 +22,7 @@
 * :doc:`/database/mongodb`
 * :doc:`/database/orientdb`
 * :doc:`/database/neo4j`
+* :doc:`/database/dynamodb`
 
 図書・書籍・教科書・仕様書
 ======================================================================
@@ -57,14 +58,6 @@ PostgreSQL
 
 :Since: 1996
 :Official site: <https://www.postgresql.org/>
-
-.. todo:: 学習する。
-
-Amazon DynamoDB
-======================================================================
-
-:Since: 2012
-:Official site: <https://aws.amazon.com/dynamodb/>
 
 .. todo:: 学習する。
 
