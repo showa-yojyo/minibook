@@ -12,6 +12,7 @@ Contents:
 
    alexandrescu01/index
    tsuboi05/index
+   pilgrim10
 
 .. toctree::
    :caption: ソフトウェア・ツール・パッケージ・ライブラリーノート
