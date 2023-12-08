@@ -16,6 +16,8 @@
 :発行年: 2011 年
 :ISBN: 978-4-87311-482-8
 
+.. contents::
+
 監訳者まえがき
 ======================================================================
 
@@ -55,8 +57,6 @@ Developer Advocate なる役職の一覧が確認できる。役割の詳細も�
 
 個人的に興味があるのは第 3, 4, 9 章だ。ビデオ編集する習慣があることから第 5 章も
 参考になる。
-
-.. contents::
 
 1 章 ここまでの道のり
 ======================================================================
@@ -468,7 +468,7 @@ VLC はいいソフトなのでインストールしておきたい。
 
 FFmpeg 操作時には世話になっている H.264 だが、
 
-   **H.264 標準は、特許に縛られている。**
+   :strong:`H.264 標準は、特許に縛られている。`
 
 ----
 
@@ -489,12 +489,12 @@ FFmpeg 操作時には世話になっている H.264 だが、
 
 映像でも同じことが言えるはずだ。
 
-   **MP3 フォーマット（1991 年に標準化）は特許に縛られている。**
+   :strong:`MP3 フォーマット（1991 年に標準化）は特許に縛られている。`
 
 これまた FFmpeg 操作時に世話になっている :abbr:`AAC (Advanced Audio Coding)` だ
 が、
 
-   **AAC フォーマットは特許に縛られている。**
+   :strong:`AAC フォーマットは特許に縛られている。`
 
 値段を調べたければ `License Fees
 <https://www.via-la.com/licensing-2/aac/license-fees/>`__ を当たる。
@@ -508,9 +508,9 @@ FFmpeg 操作時には世話になっている H.264 だが、
 説明を読者に理解させるための準備だとわかる。
 
    ひとつの ``<video>`` 要素は複数のビデオファイルにリンクすることができ、ブラウ
-   ザは自分が再生可能な最初のビデオファイルを選択する。 **どのブラウザがどのコン
-   テナやコーデックをサポートしているかどうかを理解するのは、あなたの責任なの
-   だ。**
+   ザは自分が再生可能な最初のビデオファイルを選択する。:strong:`どのブラウザがど
+   のコンテナやコーデックをサポートしているかどうかを理解するのは、あなたの責任
+   なのだ。`
 
 ブラウザーは ``<video>`` タグ自体には対応しているが、どんな形式（側面が上記の二
 つあることに注意）のビデオファイルでも再生可能であるという意味ではない。
@@ -550,8 +550,8 @@ FFmpeg 操作時には世話になっている H.264 だが、
 
 子要素 ``<source>`` の記載順序は重要だ：
 
-   ブラウザがそのビデオを再生できないと判断したら、**そのファイルはダウンロード
-   しない。**
+   ブラウザがそのビデオを再生できないと判断したら、:strong:`そのファイルはダウン
+   ロードしない。`
 
 ----
 
@@ -709,7 +709,7 @@ Cookie は HTTP 要求すべてに含まれてしまい、送受信が重複し�
       </html>
 
    キャッシュマニフェストファイルは Web サーバーのどこに置いてもよいが、MIME タ
-   イプ :mime:`text/cache-manifest` を使って送信されなくてはならない。
+   イプ :mimetype:`text/cache-manifest` を使って送信されなくてはならない。
 
 動作確認にはまたぞろローカルサーバーを稼動させる必要がある。
 
@@ -797,10 +797,349 @@ NETWORK 区画の米印は
 9 章 Web フォーム
 ======================================================================
 
+   HTML5 では、フォーム中に使える入力形式が多数定義されている
+
+主旨は :samp:`<input type="{xxxxxx}">` の :samp:`{xxxxxx}` に指定可能な値が多数
+追加されたということだ。
+
+   HTML5 で Web フォームに行われた最初の改良は、入力フィールドにプレースホルダを
+   設定する機能だ。
+
+MFC の ``CEdit::SetCueBanner`` のような働きをする。やりかたは例えば
+:samp:`<input placeholder="{prompt-text}">` のようにする。
+
+----
+
+自動フォーカスに関する記述。この機能がつねに便利であるとは限らないと述べる。
+特に、JavaScript でこの機能を実装してしまうと次のようなことがあり得る：
+
+   例えばページをスクロールしようとしてスペースバーを押しても、フォーカスがすで
+   にフォームの入力フィールドにあるため、ページはスクロールせず、代わりにその
+   フィールドにスペースが入力されてしまう。
+
+HTML5 の ``autofocus`` 属性を採用すると改善される：
+
+   この ``autofocus`` 属性は、ページのロードが完了した時点でフォーカスを特定の入
+   力フィールドへ移動する
+
+やり方は ``<input>`` 要素に属性 ``autofocus`` を追加すればいい。値は不要。
+
+古いブラウザーは無視して、自動フォーカスを与えるならば ``autofocus`` しか使わな
+いようにするのが良さそうだ。
+
+----
+
+HTML5 では、メールアドレス入力欄に対する ``<input>`` 要素にて属性
+``type="email"`` を指定する。ブラウザーによっては、専用の処理を行うことがあると
+言う：
+
+   Apple は、非情に賢い機能を iPhone の Web ブラウザに実装した。いくつかの新しい
+   HTML5 入力形式を認識し、そして入力の種類に応じて :strong:`動的にオンスクリー
+   ンキーボードを変更する` という機能だ。
+
+メールアドレス入力に特化したキーボード GUI を表示するようだ。
+
+URL 入力欄に対する ``<input>`` 要素には属性 ``type="url"`` を与える。例えば
+iPhone4 では：
+
+   電子メールアドレスフィールドと同じ用に、iPhone では Web アドレスの入力に適し
+   た特別な仮想キーボードが表示される。スペースバーは消え、代わりにピリオド、ス
+   ラッシュ、そして :guilabel:`.com` ボタンが表示される。:guilabel:`.com` ボタン
+   を長押しすると、:guilabel:`.co.jp` や :guilabel:`.jp` などのよく使われるサ
+   フィックスを選ぶことができる。
+
+----
+
+数値入力用のコントロールにはスピンボックスとスライダーを用意できる。前者は MFC
+の ``CSpinEdit`` と同じ機能を期待してよい。
+
+   .. code:: html
+
+      <input type="number"
+             min="0"
+             max="10"
+             step="2"
+             value="6">
+
+ガワに加えて JavaScript による値操作も可能だ。例えば :samp:`.stepUp({n})` メソッ
+ドで入力欄の値が :samp:`{n}` 増加する。数値を得るには ``.valueAsNumber`` プロパ
+ティーを参照するといい。
+
+後者は MFC でいう ``CSpinCtrl`` に相当する機能を設けたものだ。``<input>`` 要素の
+属性では ``type="range"`` とする。
+
+----
+
+カレンダーや時計のような GUI から日付と時刻の一方または両方を選ぶためのフォーム
+要素が HTML5 で新しく追加された。タイミングの水準に対応して ``<input>`` 要素の
+``type`` 属性に取る値が用意されている：
+
+* ``type="date"``
+* ``type="month"``
+* ``type="week"``
+* ``type="time"``
+* ``type="datetime-local"``
+
+本書で記載のある ``type="datetime"`` は現在廃止済みのようだ。また、本書執筆時点
+では Opera しかまともに対応していなかったらしく、そのせいか入力値を得る方法に関
+する記述がない。``.value`` か ``.valueAsNumber`` が使える。後者はタイムスタンプ
+を表現する数値だ。
+
+----
+
+検索欄は ``type="search"`` だ。
+
+   ``type="search"`` ボックスに実際に入力をし始めると、Safari はそのボックスの右
+   側に小さな :guilabel:`x` ボタンを表示する。この :guilabel:`x` ボタンをクリッ
+   クすると、フィールドの内容が消去される。
+
+昔は検索内容を変更するたびにテキストを選択して :kbd:`Del` を押していたのを思い出
+す。
+
+----
+
+色指定は ``type="color"`` だ。
+
+   すべてのプラットフォームにおいて、このコントロールは 6 桁の 16 進数による RGB
+   値を返す。
+
+JavaScript でプロパティー ``.value`` を見ると例えば ``'#0cdeed'`` のような文字列
+が得られる。
+
+----
+
+《フォームに入力された内容の自動検証機能》について。
+
+   フォーム検証機能を有効にするために特別なマークアップは必要ない。なぜなら、デ
+   フォルトで有効だからだ。逆に検証を無効にしたい場合は、``novalidate`` 属性を使
+   う。
+
+   .. code:: html
+
+      <form novalidate>
+        <input type="email" id="addr">
+        <input type="submit" value="Subscribe">
+      </form>
+
+入力欄単位では入力必須属性というものがある。属性 ``required`` を ``<input>`` に
+付加する。ブラウザーによっては
+
+   入力必須フィールドの見た目を変更することがある。
+
+さらに、
+
+   入力必須フィールドに何も入力しないままフォームを送信しようとすると、その
+   フィールドが入力必須であり空にできないというポップアップを表示する
+
+ようなこともする。
+
 10 章 マイクロデータによるマークアップの拡張
 ======================================================================
 
+   独自の要素を作り上げることが無理なら、Web に意味を持たせたい Web 制作者はどう
+   すればよいだろうか。
+
+選択肢は次の三つあるが、第三の項目が本章の主題だ：
+
+* `マイクロフォーマット <http://microformats.org/>`__
+* `RDFa <https://www.w3.org/TR/html-rdfa/>`__
+* マイクロデータ
+
+マイクロデータとはデータの一種ではなく、
+
+   独自の語彙から構成される名前と値のペアによって、あるスコープ（範囲）内の DOM
+   を意味付けする仕組みだ。
+
+例えば HTML5 要素すべての集合を考えると、これは語彙の一つと言える。《マイクロデー
+タは独自の語彙を中心として機能する》と述べている。
+
+名前と値のペア、スコープに関しては後述の節で実例に即して説明される。
+
+   マイクロデータは、:strong:`Web ページにすでに表示されているデータ` に意味を追
+   加するものだ。
+
+----
+
+§10.3-10.4 は次の資料を見ながら読み進めるといい：
+
+* <http://data-vocabulary.org/Person>: 廃止済み
+* <https://schema.org/Person>: 上記語彙の移行先候補
+* <http://diveintohtml5.info/examples/person.html>: マイクロデータ対応前
+* <http://diveintohtml5.info/examples/person-plus-microdata.html>: マイクロデータ対応後
+
+特に、HTML ファイル同士の :command:`diff` を確認すると実際になされた作業が明瞭に
+なる。
+
+   まず必要となるのは名前空間で、これは単純な URL だ。
+
+本書の例では上の廃止済み URL を参照する。今のところは一意な識別子でさえあればい
+い。この語彙を次の集合で定義したと考える：
+
+* ``name``
+* ``photo``
+* ``url``
+
+この条件でマイクロデータを対応前 HTML に対して追加するとする。
+
+   最初にしなければならないのは、``itemtype`` 属性を追加し、使用するマイクロデー
+   タ語彙を宣言することだ。次にしなければならないのは、``itemscope`` 属性を使っ
+   て、語彙のスコープを宣言することだ。
+
+というわけで、いちばん外側の要素である ``<section>`` に次の属性を追加する：
+
+* ``itemtype="http://data-vocabulary.org/Person"``
+* ``itemscope``
+
+ここからキーと値のペアを HTML 上で行う。表 10-1 のように、要素ごとに値の在り処が
+異なる。
+
+   .. code:: html
+
+      <h1 itemprop="name">Mark Pilgrim</h1>
+
+   日本語で言うと、「これは ``http://data-vocabulary.org/Person`` 語彙の中の
+   ``name`` プロパティで、その値は ``Mark Pilgrim`` だ」という意味になる。
+
+この調子で ``photo`` と ``url`` も意味付けしていく（表 10-1 に注意する）。
+
+   実は、http://data-vocabulary.org/Person へ行けば、プロパティの一覧を見ること
+   ができる。マイクロデータの仕様はそこまで要求していないが、確かにこれは「ベス
+   トプラクティス」だと言えるだろう。
+
+現在では当該 URL は廃止されている。著者の主張を理解するには先述の移行先候補 URL
+を見ればいい。
+
+場合によっては DOM 構造にも手を入れていく。実際に書かれている内容が二つのプロパ
+ティーにまたがっているような場合だ。またがっているということは、
+
+   それぞれの箇所をダミーの ``<span>`` 要素で囲えば、それぞれの ``<span>`` に別
+   個のプロパティを宣言できる。
+
+   .. code:: html
+
+      <dt>Position</dt>
+      <dd><span itemprop="title">Developer advocate</span> for
+          <span itemprop="affiliation">Google, Inc.</span></dd>
+
+Person 語彙の ``address`` は、これ自身が独自の語彙を持っている。したがって
+Mailing Address の項目部分を
+
+.. code:: html
+
+   <dd itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+
+のように書き換えることになる。マイクロデータ関連の属性三つがあることになる。
+
+日本の住所表記と各プロパティーの対照表 (p. 199) がありがたい。
+
+----
+
+マイクロデータは検索エンジンが参考にする可能性がある。検索結果ページに構造化され
+た情報を統合して表示することがある。
+
+   Google は、リッチスニペットの一環としてマイクロデータをサポートしている。
+
+<https://search.google.com/test/rich-results> と思われる。本書のコードを試すこと
+は可能だ。しかし、語彙が廃止されているためだと思われるが、芳しい結果にはならな
+い。
+
+   誰かが「Mark Pilgrim」を検索し、 **かつ** Google がこの「about me」ページを検
+   索結果に含めようと判断し、 **かつ** Google がそのページにもともとあったマイク
+   ロデータが表示する価値のあるものだと判断した場合には、検索結果の表示は図 10-1
+   のようなもの（引用註：マイクロデータで拡張された人物の検索結果の見本画像）に
+   なるだろう。
+
+検索結果ページで特殊な表示を目にすることがあるが、これだったのか。
+
+   検索エンジンの会社と特別契約を結べるような大企業でなくても、検索エンジンの結
+   果表示をカスタマイズできるのだ。
+
+----
+
+   HTML5 では不可視データを注釈としてマイクロデータに加える方法が提供されてい
+   る。このテクニックは、あくまでも最後の手段として使用してほしい。（略）
+   機械のみが可読な不可視データは、すぐに陳腐化してしまう。
+
+   ``<meta>`` 要素は特別に取り扱われる。プロパティの値は、その ``content`` 属性
+   となるのだ。
+
 付録 A （ほぼ）アルファベット順の HTML5 機能機能方法
 ======================================================================
+
+``<command>`` 要素は存在しない。
+
+``<datelist>`` 要素は ``<option>`` 要素を含み、他の入力欄の中で選択可能である選
+択肢や推奨選択肢を表す。次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist>
+
+``<details>`` 要素は折りたたみブロックを構成するのに用いるものだ。次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details>
+
+``<device>`` 要素は存在しない。
+
+``<iframe sandbox>`` および ``<iframe srcdoc>`` については次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe>
+
+先述したように ``<input type="datetime">`` は存在しない。
+
+``<meter>`` 要素については次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter>
+
+``<output>`` 要素については次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output>
+
+``<progress>`` 要素については次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress>
+
+``<track>`` 要素は ``<audio>`` や ``<video>`` 要素の子にするものだ。次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track>
+
+``<video>`` 要素の ``poster`` 属性はビデオのダウンロード中に表示する画像の URL
+を値に取る。YouTube で言うとサムネイルに相当する。
+
+``contentEditable`` 大域的属性については次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable>
+
+History はブラウザーの戻る・進むの履歴のための API だ。次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/API/History>
+
+``document.getItems`` は ``undefined`` だからマイクロデータは使えないということ
+か。
+
+``EventSource`` については次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/API/EventSource>
+
+セッションストレージについては次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage>
+
+``UndoManager`` は存在しない。
+
+WebSocket については次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/API/WebSocket>
+
+Web SQL データベース。``window.openDatabase`` は存在するが、インターネット上にま
+ともな情報がない。
+
+Web Workers について次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/API/Worker>
+
+W3C Widgets は存在しない。
+
+``XMLHttpRequest`` については次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest>
+
+``window.applicationCache`` が存在しない。
+
+クロスドキュメントメッセージングについては次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage>
+
+ドラッグアンドドロップは取り扱いが難しいと記憶している。
+``draggable`` 大域的属性については次を参照：
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable>
+
+----
+
+* <http://dev.w3.org/> にある文書は確認方法が不明。
+* <https://www.w3.org/TR/widgets/> は «obsoleted 11 October 2018» とある。
 
 .. 以上
