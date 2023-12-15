@@ -18,11 +18,14 @@ Jekyll 利用ノート
 
 .. contents::
 
-文献
+資料
 ======================================================================
 
+公式文書
+----------------------------------------------------------------------
+
 `Jekyll <https://jekyllrb.com/>`__
-   Jekyll 公式サイト。
+   Jekyll 公式サイト。特に重要なのが次の章だろう：
 
    `Using Jekyll with Bundler <https://jekyllrb.com/tutorials/using-jekyll-with-bundler/>`__
       Ruby プロジェクトの作法の初歩と思われる :program:`gem` および
@@ -31,18 +34,28 @@ Jekyll 利用ノート
    `Step by Step Tutorial <https://jekyllrb.com/docs/step-by-step/01-setup/>`__
       :file:`Gemfile` の導入をなるべく後回しにしての Jekyll サイト構築チュートリ
       アルだ。Deploy の章を先頭近くに移した版を読んでみたい。
+
+`Daring Fireball: Markdown <https://daringfireball.net/projects/markdown/>`__
+   Markdown 公式サイトと思われる。
 `kramdown <https://kramdown.gettalong.org/>`__
-   Jekyll が使用している Markdown 解析器パッケージの公式サイト。
+   Jekyll が使用している Markdown 解析器パッケージの公式サイト。特に
+   Documentation/Configuration Options は :file:`_config.yml` を書く時に参照す
+   る。
+`Liquid <https://jekyllrb.com/docs/liquid/>`__
+   Jekyll が使用しているテンプレートエンジンパッケージ Liquid の公式サイト。
+   Sphinx における Jinja2 に相当する機能を担当する。
+`List of supported languages and lexers · rouge-ruby/rouge Wiki <https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers>`__
+   コードテキストに対する構文強調機能を担当する Rouge の対応言語一覧を掲載してい
+   る。
+`GitHub - jekyll/minima <https://github.com/jekyll/minima>`__
+   既定テーマ minima の GitHub リポジトリー。バージョン 3 開発中？
+
+教材
+----------------------------------------------------------------------
 
 `Mastering Jekyll - Made Mistakes <https://mademistakes.com/mastering-jekyll/>`__
    特にリンク周りの説明が詳しい。時系列に整理する必要のない記事の配置のコツな
    ど、有用な知識が他にも述べられている。スタイリング理論はやや難しい。
-
-ツール
-======================================================================
-
-`jekyll <https://github.com/jekyll>`__
-   GitHub にある Jekyll 組織アカウント。プラグイン各種のリポジトリーを含む。
 
 Jekyll サイト用意手順
 ======================================================================
@@ -120,6 +133,25 @@ Ubuntu の節に従う。
 * コンソールに出力される URL をブラウザーで開けば Web サイトの表示を確認できる。
 * コマンドラインオプション ``--livereload --baseurl=''`` を付与するのが良い。
 
+----
+
+Markdown 関係の設定項目を Web サイトの目的に合わせて決める：
+
+.. code:: yaml
+
+   markdown: kramdown
+
+   # See <https://kramdown.gettalong.org/options.html>
+   kramdown:
+     math_engine: mathjax
+     remove_line_breaks_for_cjk: true
+
+MathJax については :doc:`/mathjax` を記した時にけっこう調べた。
+
+オプション ``kramdown.remove_line_breaks_for_cjk`` については当ノートをまとめて
+いる過程で知った。エディターで編集するときに一行あたりのカラム数を固定しているの
+で有効にする。
+
 保守手順
 ======================================================================
 
@@ -156,15 +188,15 @@ Ruby 101 より中核概念の説明を引用しておく：
 メモ
 ======================================================================
 
-Liquid 知識集のような
+* Markdown が先か
+* Liquid 知識集のような
 
-* objects
-* tags
-* filters
+  * objects
+  * tags
+  * filters
+  * raw-endraw
 
-----
-
-SCSS もわからない。
+* SCSS もわからない。
 
 ----
 
@@ -174,3 +206,26 @@ SCSS もわからない。
 .. code:: console
 
    $ JEKYLL_ENV=production bundle exec jekyll build
+
+----
+
+* Webrick とは？
+* Permalink 調整（日記用）
+
+  .. code:: yaml
+
+     permalink: /:categories/:year/:month/:day/:title:output_ext
+
+* 画像一覧
+* Minima
+
+   ``minima`` is the current default theme, and ``bundle info minima`` will show
+   you where minima theme's files are stored on your computer.
+
+* Rouge
+* 変数テスト
+
+----
+
+   Note that you should avoid using too many includes, as this will slow down
+   the build time of your site.
