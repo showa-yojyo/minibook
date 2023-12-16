@@ -15,6 +15,7 @@ Jekyll 利用ノート
    :RubyGems: 3.3.5
    :Bundler: 2.4.22
    :Jekyll: 4.3.2
+   :Minima: 2.5.1
 
 .. contents::
 
@@ -135,6 +136,16 @@ GitHub Pages での厳密な運用を想定している場合、1. の行を削�
 ここで ``228`` と示した数は、実際には次のページで適切な値を確認して決定しろ：
 `Dependency versions | GitHub Pages <https://pages.github.com/versions/>`__
 
+.. admonition:: 読者ノート
+
+   ``github-pages`` を使うことにした場合、ローカル環境ではさらに ``webrick`` と
+   いう gem が必要になる可能性が高い。手作業で :file:`Gemfile` を編集してもよい
+   が、この場合はコマンド実行のほうが早い：
+
+   .. code:: console
+
+      $ bundle add webrick
+
 Jekyll テーマを既定の ``minima`` から別のものに変更したい場合、2. を削ってテーマ
 配布者の指示に従って新しい行を記入しろ。
 
@@ -181,26 +192,57 @@ Jekyll プラグインを追加または削除する場合、3. の ``do`` ... `
 
    repository: https://github.com/showa-yojyo/repository-name
 
-ビルド可能な状態にするために :file:`_config.yaml` を編集する。検証コマンドは
-``jekyll doctor`` のようだ。
+明示的に設定するべき項目：
 
-コマンド ``jekyll serve`` で Jekell サーバーが稼動開始する。
+.. csv-table::
+   :delim: |
+   :header: Option, Descrition or Value
+   :widths: auto
 
-* コンソールに出力される URL をブラウザーで開けば Web サイトの表示を確認できる。
-* コマンドラインオプション ``--livereload --baseurl=''`` を付与するのが良い。
+   ``baseurl`` | 上記参照
+   ``timezone`` | ``Asia/Tokyo``
+   ``url`` | 上記参照
 
-----
+テーマ Minima (``thema: minima``) の参照する項目のうち、明示的に設定するべき項
+目は次のとおり。
 
-Markdown 関係の設定項目を Web サイトの目的に合わせて決める：
+.. csv-table::
+   :delim: |
+   :header: Option, Descrition or Value
+   :widths: auto
 
-.. code:: yaml
+   ``author`` | サイト著者名
+   ``minima.date_format`` | 好みだが ``"%Y-%m-%d (%a)"``
+   ``description`` | サイトの内容などを説明した文章
+   ``email`` | サイト責任者のメールアドレス
+   ``github_username`` | 関連 GitHub アカウントの screen name
+   ``header_pages`` | ページ天井のリンク列に対応する原稿ファイルパスの配列
+   ``lang`` | ``ja``
+   ``repository`` | 上記参照
+   ``rss`` | 空でない任意の文字列で良いが ``RSS`` が無難
+   ``show_excerpts`` | ``true``
+   ``title`` | サイトの題名
+   ``twitter_username`` | 関連 Twitter アカウントの screen name
 
-   markdown: kramdown
+配列 ``header_pages`` は Jekyll サイトの固定ページ構成を更新するときに変更する値
+だ。
 
-   # See <https://kramdown.gettalong.org/options.html>
-   kramdown:
-     math_engine: mathjax
-     remove_line_breaks_for_cjk: true
+.. admonition:: 読者ノート
+
+   * Minima のバージョンは 2.x であるとする。バージョン 3.x では項目が異なる。
+   * SNS 関連の項目は他にもある。
+
+Markdown 関係の設定項目を固定する。``markdown: kramdown`` であるとき、
+``kramdown:`` 以下の設定項目で明示的に設定するべきもの：
+
+.. csv-table::
+   :delim: |
+   :header: Option, Descrition or Value
+   :widths: auto
+
+   ``line_width`` | テキストエディターの設定値に合わせる
+   ``math_engine`` | 既定値だが ``mathjax`` を明示する
+   ``remove_line_breaks_for_cjk`` | ``true```
 
 MathJax については :doc:`/mathjax` を記した時にけっこう調べた。
 
@@ -220,6 +262,11 @@ Jekyll サイトの内容が整ったら HTTP サーバーを稼動する。次�
 VS Code で作業する場合、何かの拡張のトーストが持つ URL そのままで Jekyll サイト
 のトップページがブラウザーで開く。このコマンドを :file:`tasks.json` に入れておく
 といい。
+
+ページを追加する
+======================================================================
+
+TBW
 
 保守手順
 ======================================================================
@@ -268,7 +315,6 @@ Ruby 101 より中核概念の説明を引用しておく：
 
 ----
 
-* Webrick とは？
 * Permalink 調整（日記用）
 
   .. code:: yaml
