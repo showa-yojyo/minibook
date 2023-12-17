@@ -171,6 +171,26 @@ Jekyll プラグインを追加または削除する場合、3. の ``do`` ... `
 
 定期的に、できれば自動で ``bundle update`` を実行して gem を更新したい。
 
+.. admonition:: 読者ノート
+
+   Ruby 101 より RubyGems の核となる概念の説明を引用しておく：
+
+      Gems are code you can include in Ruby projects.
+
+      A :file:`Gemfile` is a list of gems used by your site.
+
+      Bundler is a gem that installs all gems in your :file:`Gemfile`.
+
+   Bundler コマンド集をまとめておく：
+
+   * ``bundle init``: :file:`Gemfile` を生じる
+   * ``bundle config set --local path 'vendor/bundle'``
+   * ``bundle add jekyll [--skip-install]``
+   * ``bundle exec jekyll new --force --skip-bundle .``: :file:`.gitignore` も生
+     じる
+   * ``bundle install``
+   * ``bundle exec jekyll serve [--livereload] [--baseurl '']``
+
 構成ファイル :file:`_config.yaml` を編集する
 ----------------------------------------------------------------------
 
@@ -181,34 +201,22 @@ Jekyll プラグインを追加または削除する場合、3. の ``do`` ... `
 公式サイトの Configuration の章を確認しながら編集する。GitHub Pages に発行するこ
 とを念頭に値を設定する：
 
-.. code:: yaml
-
-   # baseurl is only necessary when hosting your site in a sub-directory. Project
-   # sites hosted on GitHub Pages are the common use-case of this variable.
-   baseurl: /repository-name
-
-   # Leave off trailing forward slashes when setting url
-   url: https://showa-yojyo.github.io
-
-   repository: https://github.com/showa-yojyo/repository-name
-
-明示的に設定するべき項目：
-
 .. csv-table::
    :delim: |
-   :header: Option, Descrition or Value
+   :header: Option, Description or value
    :widths: auto
 
-   ``baseurl`` | 上記参照
+   ``baseurl`` | :samp:`/{repository-name}`
+   ``markdown_ext`` | ``md`` のみにする
    ``timezone`` | ``Asia/Tokyo``
-   ``url`` | 上記参照
+   ``url`` | :samp:`https://{github-account-name}.github.io`
 
 テーマ Minima (``thema: minima``) の参照する項目のうち、明示的に設定するべき項
 目は次のとおり。
 
 .. csv-table::
    :delim: |
-   :header: Option, Descrition or Value
+   :header: Option, Description or value
    :widths: auto
 
    ``author`` | サイト著者名
@@ -218,7 +226,7 @@ Jekyll プラグインを追加または削除する場合、3. の ``do`` ... `
    ``github_username`` | 関連 GitHub アカウントの screen name
    ``header_pages`` | ページ天井のリンク列に対応する原稿ファイルパスの配列
    ``lang`` | ``ja``
-   ``repository`` | 上記参照
+   ``repository`` | :samp:`https://github.com/{github-account-name}/{repository-name}`
    ``rss`` | 空でない任意の文字列で良いが ``RSS`` が無難
    ``show_excerpts`` | ``true``
    ``title`` | サイトの題名
@@ -237,12 +245,12 @@ Markdown 関係の設定項目を固定する。``markdown: kramdown`` である
 
 .. csv-table::
    :delim: |
-   :header: Option, Descrition or Value
+   :header: Option, Description or value
    :widths: auto
 
    ``line_width`` | テキストエディターの設定値に合わせる
    ``math_engine`` | 既定値だが ``mathjax`` を明示する
-   ``remove_line_breaks_for_cjk`` | ``true```
+   ``remove_line_breaks_for_cjk`` | ``true``
 
 MathJax については :doc:`/mathjax` を記した時にけっこう調べた。
 
@@ -266,45 +274,156 @@ VS Code で作業する場合、何かの拡張のトーストが持つ URL そ�
 ページを追加する
 ======================================================================
 
-TBW
+まず ``jekyll new`` が生成したファイル名を微調整しておく：
 
-保守手順
-======================================================================
+.. code:: console
 
-Ruby パッケージ関連
+   $ find myblog -name '*.markdown' | xargs rename 's/.markdown$/.md/'
+
+これ以降 Jekll サイト内に置く Markdown ファイルの拡張子は ``.md`` で統一する。
+
+個人日記サイトの例
 ----------------------------------------------------------------------
 
-Ruby 101 より中核概念の説明を引用しておく：
+:file:`_posts` ディレクトリーに日記エントリーを毎日一本追加していくシナリオを考
+える。ここには日記以外のファイルを含めないとする。目標はこうなる：
 
-   Gems are code you can include in Ruby projects.
+* 日記ページの著者は同一人物で統一する
+* 日記ページの区分は日記とわかるもので統一する
+* 日記ページの HTML テンプレートは日記用のもので統一する
+* 日記ページの front matter はせいぜい見出しだけ書けば済むようにする
 
-   A :file:`Gemfile` is a list of gems used by your site.
+やることはこうなる：
 
-   Bundler is a gem that installs all gems in your :file:`Gemfile`.
+* 構成ファイル :file:`_config.yml` で著者名、区分、テンプレートの既定値を規定す
+  る
+* 日記用テンプレートを :file:`_layouts` ディレクトリーに置く
 
-----
+:file:`_config.yml` に追加する設定はこういうものだ：
 
-* ``bundle init``: :file:`Gemfile` を生じる
-* ``bundle config set --local path 'vendor/bundle'``
-* ``bundle add jekyll [--skip-install]``
-* ``bundle exec jekyll new --force --skip-bundle .``: :file:`.gitignore`
-* ``bundle install``
-* ``bundle exec jekyll serve [--livereload] [--baseurl '']``
+.. code:: yaml
 
-メモ
+   defaults:
+     - scope:
+         path: _posts
+         type: posts
+       values:
+         # YAML のノード参照を使って外側に定義した author を参照する手もある
+         author: "AUTHOR-NAME"
+         categories:
+           - diary
+         layout: diary
+
+この記述により、次の効果が得られる。日記 Markdown ファイルを :file:`_posts` に追
+加すると、それらの front matter で次が指定されたとみなされる（明示的に指定しない
+限り）：
+
+.. code:: yaml
+
+   ---
+   author: "AUTHOR-NAME"
+   categories:
+     - diary
+   layout: diary
+   ---
+
+ディレクトリー :file:`_layouts` にテンプレートファイル :file:`diary.html` を適当
+な内容で追加しておく。Liquid 技術の腕の発揮しどころだ。
+
+変数と値の一覧を確認するためのページを用意する
+----------------------------------------------------------------------
+
+TBW
+
+画像一覧ページを作成する
+----------------------------------------------------------------------
+
+TBW
+
+Markdown に関するノート
 ======================================================================
 
-* Markdown が先か
-* Liquid 知識集のような
+次の URL のテキストを見るといい：
+<https://daringfireball.net/projects/markdown/syntax.text>
 
-  * objects
-  * tags
-  * filters
-  * raw-endraw
+Markdown でどう実現するのかわからなくなっても、次の原理に立ち返れば安心だ：
 
-* SCSS もわからない。
+   For any markup that is not covered by Markdown’s syntax, you simply use HTML
+   itself. (Daring Fireball, Markdown: Syntax)
 
-----
+Liquid に関するノート
+======================================================================
+
+Liquid は Jekyll が採用しているテンプレート言語だ。Sphinx で言う Jinja2 に相当す
+る。
+
+   Liquid uses a combination of objects, tags, and filters inside template files
+   to display dynamic content. (Liquid, Introduction)
+
+この節では覚えておくべき Liquid 構成要素を記す。
+
+.. admonition:: 読者ノート
+
+   Liquid 標準要素と Jekyll 固有の要素を区別しておくといい？
+
+オブジェクト
+----------------------------------------------------------------------
+
+テンプレート内に ``{{ varname }}`` と書いておくと、Liquid はその箇所を変数
+``varname`` の値で置き換える。Jekyll サイトの場合、次のようなものがよく用いられ
+る：
+
+* ``{{ page.tags }}``, ``{{ page.title }}``, ``{{ page.url }}``, etc.
+* ``{{ post.author }}``, ``{{ post.date }}``, ``{{ post.excerpt }}``, ``{{
+  post.title }}``, ``{{ post.url }}``, etc.
+* ``{{ site.baseurl }}``, ``{{ site.posts }}``, ``{{ site.theme }}``, ``{{
+  site.title }}``, etc.
+
+フィルター
+----------------------------------------------------------------------
+
+フィルターは Liquid オブジェクトや変数の出力を変更するものだ。``{{`` ... ``}}``
+と変数代入の中で使われ、縦棒文字 ``|`` で区切られた形を取る。UNIX のパイプのよう
+に複数のフィルターを連結することがある。
+
+.. csv-table::
+   :delim: @
+   :header: Filter, Description, Example
+   :widths: auto
+
+   ``date`` @ 日付の書式を ``strftime`` 様式で指定して変換 @ ``{{ page.date | date: "%Y-%m-%d" }}``
+   ``date_to_xmlschema`` @ 日付を ISO 8601 様式に変換 @ ``{{ post.date | date_to_xmlschema }}``
+   ``default`` @ 値が空や偽の変数ならば指定値を出力 @ ``{{ page.lang | default: site.lang | default: "en" }}``
+   ``escape`` @ 文字列を URL などで使えるようにエスケープ処理 @ ``{{ page.title | escape }}``
+   ``prepend`` @ 文字列の先頭に指定文字列を追加 @ ``{{ post.url | prepend: site.baseurl }}``
+   ``relative_url`` @ 文字列の先頭に ``site.baseurl`` を追加 @ ``{{ "/assets/images/20210213-mattari.png" | relative_url }}``
+
+タグ
+----------------------------------------------------------------------
+
+TBW
+
+SCSS に関するノート
+======================================================================
+
+SCSS もわからない。
+
+Rouge に関するノート
+======================================================================
+
+TBW
+
+Minima に関するノート
+======================================================================
+
+* Minima
+
+   ``minima`` is the current default theme, and ``bundle info minima`` will show
+   you where minima theme's files are stored on your computer.
+
+
+その他ノート整理中
+======================================================================
 
 ``jekyll build`` コマンドの実行手順は次が普通だ。これで :file:`_site` に生じる成
 果物が配備可能なものになる：
@@ -321,27 +440,7 @@ Ruby 101 より中核概念の説明を引用しておく：
 
      permalink: /:categories/:year/:month/:day/:title:output_ext
 
-* 画像一覧
-* Minima
-
-   ``minima`` is the current default theme, and ``bundle info minima`` will show
-   you where minima theme's files are stored on your computer.
-
-* Rouge
-* 変数テスト
-
 ----
 
    Note that you should avoid using too many includes, as this will slow down
    the build time of your site.
-
-----
-
-
-コンソールにローカルホスト URL が出力されているので、ブラウザーでそれを開く。
-
-生成ファイル名を微調整する：
-
-.. code:: console
-
-   $ find myblog -name '*.markdown' | xargs rename 's/.markdown$/.md/'
