@@ -333,12 +333,35 @@ VS Code で作業する場合、何かの拡張のトーストが持つ URL そ�
 変数と値の一覧を確認するためのページを用意する
 ----------------------------------------------------------------------
 
-TBW
+例えば次のような HTML をサイトに組み込んでおく。開発モードでだけ出現するように仕
+掛ける：
+
+.. code:: html
+
+   <h2>Configuration</h2>
+   <h3>Global Configuration</h3>
+   <ul>
+     <li>source = {{ site.source }}</li>
+     <li>destination = {{ site.destination }}</li>
+     <li>safe = {{ site.safe }}</li>
+     <li>disable_disk_cache = {{ site.disable_disk_cache }}</li>
+     <li>ignore_theme_config = {{ site.ignore_theme_config }}</li>
+     <li>exclude = [{{ site.exclude | join: ", " }}]</li>
+     <li>include = [{{ site.include | join: ", " }}]</li>
+     <li>keep_files = [{{ site.keep_files | join: ", " }}]</li>
+     <li>timezone = {{ site.timezone }}</li>
+     <li>encoding = {{ site.encoding }}</li>
+   </ul>
+
+   <h3>Build Command Options</h3>
+   ...
 
 画像一覧ページを作成する
 ----------------------------------------------------------------------
 
-TBW
+.. todo::
+
+   上述の教材のいずれかのギャラリー作成記事を簡略化してみる。
 
 Markdown に関するノート
 ======================================================================
@@ -358,7 +381,7 @@ Liquid は Jekyll が採用しているテンプレート言語だ。Sphinx で�
 る。
 
    Liquid uses a combination of objects, tags, and filters inside template files
-   to display dynamic content. (Liquid, Introduction)
+   to display dynamic content. (*Liquid*, Introduction)
 
 この節では覚えておくべき Liquid 構成要素を記す。
 
@@ -368,6 +391,10 @@ Liquid は Jekyll が採用しているテンプレート言語だ。Sphinx で�
 
 オブジェクト
 ----------------------------------------------------------------------
+
+   :dfn:`Objects` contain the content that Liquid displays on a page. Objects
+   and variables are displayed when enclosed in double curly braces: ``{{`` and
+   ``}}``. (*Liquid*, Introduction)
 
 テンプレート内に ``{{ varname }}`` と書いておくと、Liquid はその箇所を変数
 ``varname`` の値で置き換える。Jekyll サイトの場合、次のようなものがよく用いられ
@@ -395,13 +422,67 @@ Liquid は Jekyll が採用しているテンプレート言語だ。Sphinx で�
    ``date_to_xmlschema`` @ 日付を ISO 8601 様式に変換 @ ``{{ post.date | date_to_xmlschema }}``
    ``default`` @ 値が空や偽の変数ならば指定値を出力 @ ``{{ page.lang | default: site.lang | default: "en" }}``
    ``escape`` @ 文字列を URL などで使えるようにエスケープ処理 @ ``{{ page.title | escape }}``
+   ``join`` @ 配列要素を指定区切りパターンで連結して文字列にする @ 上記参照
    ``prepend`` @ 文字列の先頭に指定文字列を追加 @ ``{{ post.url | prepend: site.baseurl }}``
-   ``relative_url`` @ 文字列の先頭に ``site.baseurl`` を追加 @ ``{{ "/assets/images/20210213-mattari.png" | relative_url }}``
+   ``relative_url`` @ 文字列の先頭に ``site.baseurl`` を追加 @ ``{{ "/assets/images/screenshot.png" | relative_url }}``
+
+高度なフィルターとしては次のようなものがある。ページまたはポストのコレクションを
+捌くのに有用だろう：
+
+* ``where``, ``where_exp``
+* ``group_by``, ``group_by_exp``
+* ``sort``
 
 タグ
 ----------------------------------------------------------------------
 
-TBW
+Liquid の文脈におけるタグとは：
+
+   :dfn:`Tags` create the logic and control flow for templates. The curly brace
+   percentage delimiters ``{%`` and ``%}`` and the text that they surround do
+   not produce any visible output when the template is rendered. This lets you
+   assign variables and create conditions or loops without showing any of the
+   Liquid logic on the page. (*Liquid*, Introduction)
+
+タグを分類して理解する：
+
+制御
+   条件分岐構文は次のようにまとめられる。
+
+   * :samp:`\\{% if {condition} %\\}` ... ``{% endif %}``
+
+     * 裏バージョンの ``{% unless %}`` もある
+     * ``{% else %}`` や :samp:`\\{% elsif {condition} %\\}` もある
+   * ``{% case %}`` ... ``{% endcase %}`` は switch 文に相当する
+
+     * 選択肢は :samp:`{\% when {value} %\}` らしい
+     * ``{% else %}`` 節を default とする
+ループ
+   ループ中でしか使えない変数や引数も存在する。割愛。
+
+   * :samp:`\\{% for {i} in {collection} %\\}` ... ``{% endfor %}`` ループの中では
+     次のタグが有効だ。働きは Python のと同じだろう：
+
+     * ``{{ break }}``
+     * ``{{ continue }}``
+     * ``{{ else }}``
+   * :samp:`\\{% tablerow {i} in {collection} %\\}` ... ``{% endtablerow %}``
+テンプレート
+   Liquid コードとそれ以外を区別させるタグだ。
+
+   * ``{% comment %}`` ... ``{% endcomment %}`` 部分はコメント
+   * ``{% raw %}`` ... ``{% endraw %}`` 部分は Liquid 処理が無効
+   * :samp:`\\{% include "{template-name}" %\\}`
+
+   最近では ``include`` が公式に deprecated とされている。Jekyll の採用する
+   Liquid のバージョンが上がるのを待って ``render`` を用いるようにする。
+変数代入
+   変数代入またはそれに関する操作を指定するタグだ。主に使うのは次の二つ：
+
+   * :samp:`\\{% assign {variable} = {value} %\\}`
+   * :samp:`\\{% capture {variable} = {value} %\\}` ... ``{% endcapture %}``
+
+   両者の差異は指定変数の有効域にある。なるべく後者を使うのが実践的か。
 
 SCSS に関するノート
 ======================================================================
