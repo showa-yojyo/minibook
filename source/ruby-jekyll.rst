@@ -48,6 +48,14 @@ Jekyll 利用ノート
 `List of supported languages and lexers · rouge-ruby/rouge Wiki <https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers>`__
    コードテキストに対する構文強調機能を担当する Rouge の対応言語一覧を掲載してい
    る。
+`Sass: Syntactically Awesome Style Sheets <https://sass-lang.com/>`__
+   Sass 公式サイト。Sass は CSS の拡張言語であるという。
+
+   `Playground <https://sass-lang.com/playground/>`__
+      Sass/SCSS コードを CSS コードに変換するページ。
+   `Sass Basics <https://sass-lang.com/guide/>`__
+      Sass/SCSS 基礎の急所をまとめた記事。先に目を通しておけば混乱せずに済んだこ
+      とだろう。
 `GitHub - jekyll/minima <https://github.com/jekyll/minima>`__
    既定テーマ minima の GitHub リポジトリー。バージョン 3 開発中？
 
@@ -423,7 +431,7 @@ Liquid は Jekyll が採用しているテンプレート言語だ。Sphinx で�
    ``default`` @ 値が空や偽の変数ならば指定値を出力 @ ``{{ page.lang | default: site.lang | default: "en" }}``
    ``escape`` @ 文字列を URL などで使えるようにエスケープ処理 @ ``{{ page.title | escape }}``
    ``join`` @ 配列要素を指定区切りパターンで連結して文字列にする @ 上記参照
-   ``prepend`` @ 文字列の先頭に指定文字列を追加 @ ``{{ post.url | prepend: site.baseurl }}``
+   ``prepend`` @ 文字列の先頭に指定文字列を追加 @ ``{{ post.url | relative_url }}``
    ``relative_url`` @ 文字列の先頭に ``site.baseurl`` を追加 @ ``{{ "/assets/images/screenshot.png" | relative_url }}``
 
 高度なフィルターとしては次のようなものがある。ページまたはポストのコレクションを
@@ -452,7 +460,7 @@ Liquid の文脈におけるタグとは：
    * :samp:`\\{% if {condition} %\\}` ... ``{% endif %}``
 
      * 裏バージョンの ``{% unless %}`` もある
-     * ``{% else %}`` や :samp:`\\{% elsif {condition} %\\}` もある
+     * ``{% else %}`` や :samp:`\\{% elsif {condition} %\\}` も当然ある
    * ``{% case %}`` ... ``{% endcase %}`` は switch 文に相当する
 
      * 選択肢は :samp:`{\% when {value} %\}` らしい
@@ -463,9 +471,9 @@ Liquid の文脈におけるタグとは：
    * :samp:`\\{% for {i} in {collection} %\\}` ... ``{% endfor %}`` ループの中では
      次のタグが有効だ。働きは Python のと同じだろう：
 
-     * ``{{ break }}``
-     * ``{{ continue }}``
-     * ``{{ else }}``
+     * ``{% break %}``
+     * ``{% continue %}``
+     * ``{% else %}``
    * :samp:`\\{% tablerow {i} in {collection} %\\}` ... ``{% endtablerow %}``
 テンプレート
    Liquid コードとそれ以外を区別させるタグだ。
@@ -476,6 +484,14 @@ Liquid の文脈におけるタグとは：
 
    最近では ``include`` が公式に deprecated とされている。Jekyll の採用する
    Liquid のバージョンが上がるのを待って ``render`` を用いるようにする。
+
+   Jekyll 固有のものもある：
+
+   * :samp:`\\{% highlight {lang} %\\}` ... ``{% endhighlight %}``: 後述
+   * :samp:`\\{% link {path} %\\}`
+   * :samp:`\\{% post_url {post} %\\}`
+
+   下二つのタグは使うのが難しい。教材のリンクに関する論考を参照しろ。
 変数代入
    変数代入またはそれに関する操作を指定するタグだ。主に使うのは次の二つ：
 
@@ -484,24 +500,181 @@ Liquid の文脈におけるタグとは：
 
    両者の差異は指定変数の有効域にある。なるべく後者を使うのが実践的か。
 
-SCSS に関するノート
-======================================================================
-
-SCSS もわからない。
-
 Rouge に関するノート
 ======================================================================
 
-TBW
+Rouge の使いどころは構文強調コードブロックの言語指定しかない。
+
+.. code:: markdown
+
+   ```lang
+   code
+   ```
+
+とか、
+
+.. code:: liquid
+
+   {% highlight lang %}
+   code
+   {% endhighlight %}
+
+の :samp:`{lang}` に指定可能な文字列は、上述のリンク先にあるものが利用可能だ。
+
+Sass/SCSS に関するノート
+======================================================================
+
+   Sass is a stylesheet language that’s compiled to CSS. It allows you to use
+   variables, nested rules, mixins, functions, and more, all with a fully
+   CSS-compatible syntax. Sass helps keep large stylesheets well-organized and
+   makes it easy to share design within and across projects. (*Sass*,
+   Documentation)
+
+例えば、ファイル :file:`assets/css/style.scss` は ``jekyll serve`` によって CSS
+に変換されてファイル :file:`assets/css/style.css` となる。
+
+文法理解に関しては、CSS の理解があれば上述資料の Sass Basics を一読するだけでも
+だいたいはしのげる。
 
 Minima に関するノート
 ======================================================================
 
-* Minima
+標準的な方法で Jekyll サイトを初期化すると、テーマは Minima が設定されている。
 
    ``minima`` is the current default theme, and ``bundle info minima`` will show
    you where minima theme's files are stored on your computer.
 
+コマンド ``bundle info minima --path`` が Minima のパスだけを出力する。ファイル
+を覗きたいときに有用だ：
+
+.. code:: console
+
+   $ MINIMA_DIR=$(bundle info minima --path)
+   $ find $MINIMA_DIR -type f
+   $ code $MINIMA_DIR
+
+Minima テーマをカスタマイズしたい場合は、対象ファイルを自分の Jekyll サイトディ
+レクトリーの対応ディレクトリーにコピーしてそれを上書きすれば十分だ。カスタマイズ
+する気がなくても :file:`README.md` の出来が良いので読むべし。
+
+Layouts
+----------------------------------------------------------------------
+
+レイアウトというよりテンプレートという理解で通していいと思う。
+
+:file:`default.html`
+   Mermaid を使うのにカスタマイズすることがある。``</body>`` の直後に Mermaid を
+   有効化する ``<script>`` を埋め込むためだ。
+:file:`home.html`
+   :file:`_posts` にある記事全てを一覧するコードを含む。全てなので日記サイトでは
+   使ってはならない。描画前に ``site.posts`` を間引ければよいのだが。
+:file:`page.html`
+   Front matter を含むが :file:`_posts` 以下には置かれていないページに適用するレ
+   イアウト。そのようなファイルを複数持つ考えならば、これをカスタマイズする。
+:file:`post.html`
+   :file:`_posts` 以下に置かれているページに適用するレイアウト。
+
+以上のテンプレ自身をカスタマイズする必要があれば、ディレクトリー ``_layouts`` に
+元ファイルからコピーしたものを編集して Jekyll に処理させる。あるいは、自作の（新
+しいファイル名の）テンプレをこのディレクトリーに作成して、front matter でオリジ
+ナルのレイアウト名を明記することで、テンプレを継承するという手法もある。各ページ
+やポストの front matter で自作レイアウト名を宣言する方式だ。
+
+Includes
+----------------------------------------------------------------------
+
+Minima 組み込みのファイルのうち、重要なものを次に挙げる：
+
+:file:`head.html`
+   ここはカスタマイズする箇所が多いので、元ファイルを自分のサイトにコピーして編
+   集する。
+
+   Google などの検索エンジンクローラーに負荷をかけさせないため、次を追加：
+
+   .. code:: html
+
+      <meta name="robots" content="noarchive,noindex,follow">
+
+   ページの前後関係を明確に示したいので、次を追加：
+
+   .. code:: liquid
+
+      {% if page.previous.url %}<link rel="prev" href="{{ page.previous.url | relative_url }}">{% endif %}
+      {% if page.next.url %}<link rel="next" href="{{ page.next.url | relative_url }}">{% endif %}
+
+   用意してある Favicon パスを追加：
+
+   .. code:: html
+
+      <link rel="icon" href="{{ '/assets/images/favicon/favicon.ico' | relative_url }}" />
+
+   その他、サイト独自に利用する JavaScript のための ``<script>`` タグを適宜追加
+   する。
+:file:`header.html`
+   全ページ共通天井。このテンプレートを上書きするのではなく、:file:`_config.yml`
+   でリンク対象となるファイルを列挙すれば十分だ：
+
+   .. code:: yaml
+
+      header_pages:
+        - biblography.md
+        - resume.md
+        - background.md
+        - help.md
+
+   こうすると各ページ天井にこれらのページへのリンクが並ぶ。
+
+自作 HTML コード片を配置してもよい。ページやポストのファイルからタグ
+:samp:`\\{% include {filename} %\\}` で内容が置き換えられる。
+
+Sass
+----------------------------------------------------------------------
+
+ディレクトリー :file:`$MINIMA_DIR/_sass` にオリジナルファイルが配置されている。
+上述のテンプレートと同様の方法でもカスタマイズ可能だが、定数定義を変える程度の軽
+い内容なら SCSS の仕様に則った方法で実現可能だ。自作 Jekyll サイト側
+:file:`assets/main.scss` で定数を定義してからオリジナルを ``import`` する：
+
+.. code:: scss
+
+   $text-color: #f0e7d5;
+   $background-color: #252525;
+   $brand-color: #ff2493;
+
+   $grey-color: #828282;
+   $grey-color-light: darken($grey-color, 40%);
+   $grey-color-dark: lighten($grey-color, 25%);
+
+   @import "minima";
+
+プラグイン
+======================================================================
+
+1. 所望のプラグインを :file:`Gemfile` に記載する
+2. コマンド ``bundle install`` を実行する
+3. 構成ファイル :file:`_config.yml` で ``plugins:`` 配列に使用するプラグインを追
+   加する
+4. プラグイン固有の設定を行う
+
+個人的に利用したいプラグインを以下に記す。
+
+jekyll-feed
+   Jekyll の投稿の Atom を生成するプラグイン。RSS ビューワーで投稿を確認したい読
+   者がいれば設置すべきプラグインだ。
+
+   設定は Jekyll 構成ファイルに ``feed:`` オブジェクトを指定することによる。詳し
+   くは次を参照：<https://github.com/jekyll/jekyll-feed/blob/master/README.md>
+jekyll-include-cache
+   ``include`` の代わりに ``include_cached`` を使える。
+jekyll-seo-tag
+   検索エンジンと SNS 各種のための ``<meta>`` タグを追加するプラグイン。設定方法
+   は次を参照：
+   <https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md>
+jekyll-sitemap
+   Jekyll サイトを大々的に公開するならば導入したい。検索エンジンの検索結果表示が
+   それらしくなる。
+
+   参照：<https://github.com/jekyll/jekyll-sitemap/blob/master/README.md>
 
 その他ノート整理中
 ======================================================================
