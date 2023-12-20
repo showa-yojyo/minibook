@@ -647,6 +647,28 @@ Sass
 
    @import "minima";
 
+:file:`assets/main.css` をロードしようとする。オリジナルの SCSS ファイルでは
+
+.. code:: scss
+
+   @import "minima";
+
+するだけ。インポートするのは :file:`$MINIMA_DIR/_sass/minima.scss` であり、そこ
+では最後に
+
+.. code:: scss
+
+   @import
+     "minima/base",
+     "minima/layout",
+     "minima/syntax-highlighting"
+   ;
+
+している。これら（公式では partials と呼称）を自分の Jekyll サイトにコピー、編集
+することでスタイルシートを変更可能ではあるのだが、その際には
+:file:`$MINIMA_DIR/_sass/minima.scss` をも持ってくる必要がある。これ自体は編集す
+ることはなくてもだ。
+
 プラグイン
 ======================================================================
 
@@ -665,7 +687,7 @@ jekyll-feed
    設定は Jekyll 構成ファイルに ``feed:`` オブジェクトを指定することによる。詳し
    くは次を参照：<https://github.com/jekyll/jekyll-feed/blob/master/README.md>
 jekyll-include-cache
-   ``include`` の代わりに ``include_cached`` を使える。
+   Liquid タグ ``include`` の代わりに ``include_cached`` を使える。
 jekyll-seo-tag
    検索エンジンと SNS 各種のための ``<meta>`` タグを追加するプラグイン。設定方法
    は次を参照：
