@@ -35,6 +35,10 @@ Jekyll 利用ノート
    `Step by Step Tutorial <https://jekyllrb.com/docs/step-by-step/01-setup/>`__
       :file:`Gemfile` の導入をなるべく後回しにしての Jekyll サイト構築チュートリ
       アルだ。Deploy の章を先頭近くに移した版を読んでみたい。
+   `GitHub Actions <https://jekyllrb.com/docs/continuous-integration/github-actions/>`__
+      GitHub で Jekyll サイトの構築源を :guilabel:`Deploy from a branch` ではな
+      く :guilabel:`GitHub Actions` から実施する手順について述べている。標準対応
+      されていないテーマやプラグインを利用するならば必読の記事だ。
 
 `Daring Fireball: Markdown <https://daringfireball.net/projects/markdown/>`__
    Markdown 公式サイトと思われる。
@@ -688,6 +692,10 @@ jekyll-feed
    くは次を参照：<https://github.com/jekyll/jekyll-feed/blob/master/README.md>
 jekyll-include-cache
    Liquid タグ ``include`` の代わりに ``include_cached`` を使える。
+
+   ただし、インクルード内容がページに依存する場合にはキャッシュを適用してはなら
+   ない。例えば、次の SEO プラグインを用いる :file:`head.html` をキャッシュして
+   しまうと、``<head>`` の内容が最初に処理されたページの情報で固定される。
 jekyll-seo-tag
    検索エンジンと SNS 各種のための ``<meta>`` タグを追加するプラグイン。設定方法
    は次を参照：
@@ -698,8 +706,19 @@ jekyll-sitemap
 
    参照：<https://github.com/jekyll/jekyll-sitemap/blob/master/README.md>
 
-その他ノート整理中
+jekyll-archives
+   GitHub Pages 標準対応ではないが、有力なプラグインなので日記サイトなど、原稿が
+   大量にある Jekyll サイトを構築するのならば必須だ。ビルド手順の手間をかけるだ
+   けの価値はある。
+
+   参照：<https://github.com/jekyll/jekyll-archives>
+
+その他
 ======================================================================
+
+まだ追究し切れていない話題を以下に羅列しておく。
+
+.. rubric:: ビルド
 
 ``jekyll build`` コマンドの実行手順は次が普通だ。これで :file:`_site` に生じる成
 果物が配備可能なものになる：
@@ -708,15 +727,19 @@ jekyll-sitemap
 
    $ JEKYLL_ENV=production bundle exec jekyll build
 
-----
+.. rubric:: 永続リンクパス調整
 
-* Permalink 調整（日記用）
+単一 issue のサイトであれば既定の永続リンクパスは冗長に感じられる。部分パスを適
+当に省くと利便性が増す：
 
   .. code:: yaml
 
-     permalink: /:categories/:year/:month/:day/:title:output_ext
+     #permalink: /:categories/:year/:month/:day/:title:output_ext
+     permalink: /diary/:year/:month/:day:output_ext
 
-----
+.. rubric:: インクルード
+
+そもそも ``include`` は重い処理であることに気をつけろ：
 
    Note that you should avoid using too many includes, as this will slow down
    the build time of your site.
