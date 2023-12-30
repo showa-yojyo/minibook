@@ -12,6 +12,7 @@ Contents:
 
    alexandrescu01/index
    tsuboi05/index
+   regex
 
 .. toctree::
    :caption: ソフトウェア・ツール・パッケージ・ライブラリーノート
