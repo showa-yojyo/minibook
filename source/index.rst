@@ -7,6 +7,12 @@
 Contents:
 
 .. toctree::
+   :caption: 読書ノート草稿
+   :maxdepth: 1
+
+   backup-restore
+
+.. toctree::
    :caption: 図書・教科書・仕様書ノート
    :maxdepth: 1
 
