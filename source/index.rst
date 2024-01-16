@@ -7,6 +7,12 @@
 Contents:
 
 .. toctree::
+   :caption: 草稿
+   :maxdepth: 1
+
+   android
+
+.. toctree::
    :caption: 図書・教科書・仕様書ノート
    :maxdepth: 1
 
