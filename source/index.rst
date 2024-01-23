@@ -10,7 +10,7 @@ Contents:
    :caption: 草稿
    :maxdepth: 1
 
-   libreoffice
+   libreoffice/index
 
 .. toctree::
    :caption: 図書・教科書・仕様書ノート
