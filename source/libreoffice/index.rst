@@ -11,6 +11,6 @@ LibreOffice 利用ノート
    :caption: LibreOffice
    :maxdepth: 1
 
-   libreoffice
+   main
    calc
    writer
