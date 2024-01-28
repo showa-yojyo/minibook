@@ -15,7 +15,21 @@ LibreOffice 関連資料
 LibreOffice_
    本拠地ホームページ。プログラム本体だけでなく利用者手引も入手するべし。
 `libreofficehelp.com <https://www.libreofficehelp.com/>`__
-   ブログ構造のチュートリアルを少しずつ習得していくのがよい。
+   ブログ構造のチュートリアル。公式ガイドを読む前に習得していくのもアリだ。
+
+インストール方法
+======================================================================
+
+公式サイトからインストーラーをダウンロードして実行するのもよいが、本ノートでは
+パッケージ管理ツール :program:`winget` の使用を推奨する。
+
+.. code:: pwsh
+
+   winget install -e --id TheDocumentFoundation.LibreOffice
+
+.. seealso::
+
+   :doc:`/winget`
 
 個人的必修技法
 ======================================================================
@@ -42,9 +56,13 @@ LibreOffice_
 
     * Help
 
-      * :guilabel:`&Extended tis` をオン
+      * :guilabel:`&Extended tips` をオン
       * :guilabel:`Warn if local help is not installed` はオフ
       * :guilabel:`Show "Tip of the Day" dialog on start-up` をオン
+    * Open/Save Dialogs
+
+      * :guilabel:`&Use LibreOffice dialogs` をオフ
+
     * Help Improve LibreOffice
 
       * :guilabel:`Sen&d crash reports to The Document Foundation` をオン
@@ -80,6 +98,18 @@ LibreOffice_
 
       * :guilabel:`Date acceptance &patterns` から自分が使わないものを除外する
   * Asian Layout については既定値よりも良い設定がある可能性がある
+
+設定バックアップ方法
+----------------------------------------------------------------------
+
+:guilabel:`Options` ダイアログで :menuselection:`LibreOffice --> Path` をクリッ
+クすると :guilabel:`Paths used by LibreOffice` 一覧が示される。このうち、パスが
+
+   :file:`%APPDATA%\\LibreOffice\\4\\user`
+
+のフォルダー以下が LibreOffice カスタマイズ設定置場と考えられる。したがって、こ
+こはバックアップをするべきだろう。Git によるバージョン管理をするなり、オンライン
+ストレージへの同期を定期的に実施するなり、対応しろ。
 
 個人的必修キーバインド共通編
 ======================================================================
