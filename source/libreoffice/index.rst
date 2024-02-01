@@ -13,5 +13,4 @@ LibreOffice 利用ノート
 
    main
    calc
-   calc10
    writer
