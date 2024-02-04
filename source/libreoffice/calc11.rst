@@ -216,9 +216,9 @@ Opening hyperlinks
 * 右クリックメニューから :menuselection:`&Open Hyperlink` を実行する
 
 ことでジャンプする。左クリック絡みは設定ダイアログ :guilabel:`LibreOffice -->
-Security` における:guilabel:`Security Options and Warnings` ダイアログボックスで
-の項目:guilabel:`Ctrl-click required &to open hyperlinks` の状態によってどちらの
-操作が有効であるかが決まる。
+Security` における :guilabel:`Security Options and Warnings` ダイアログボックス
+での項目 :guilabel:`Ctrl-click required &to open hyperlinks` の状態によってどち
+らの操作が有効であるかが決まる。
 
 ボタンの場合は、Design Mode に入っていない場合には左クリックでジャンプ。Design
 Mode へするには、次のいずれかのツールバーの :guilabel:`Design Mode` をオンにす
@@ -335,45 +335,163 @@ How to find the required data range or table
 
 そういう属性値がないインポート元については強調表示機能頼みになる。
 
+.. admonition:: 読者ノート
+
+   本書の例を真似ても掲載されている画像のようには現在、ならない。
+
 Linking to registered data sources
 ======================================================================
+
+さまざまなデータベースと Calc 文書をリンク可能だ。それにはまず LibreOffice に
+データソースを登録する必要がある。
+
+ODB ファイルを登録する手順は設定ダイアログを用いる。:menuselection:`LibreOffice
+Base --> Databases` 内の :guilabel:`Registered databases` 一覧を管理する。
+:guilabel:`&New...` ボタンを押してパスと名前の対応を登録する。
+
+ODB ファイル以外のデータ元の登録手順：
+
+#. :menuselection:`&File --> &New --> &Data&base...` を実行
+#. :guilabel:`Connect to an &existing database` を選択
+#. ドロップダウンリストから所望の項目を選択、:guilabel:`&Next >` を押す。
+
+この後はデータベースの種別により異なるが、最後に :guilabel:`&Finish` を押す。
+
+.. todo::
+
+   データベース利用ノートと関連するので、試す価値はある。
 
 Viewing data sources
 ----------------------------------------------------------------------
 
+現在スプレッドシートで利用可能なデータ元を閲覧する方法：
+
+:menuselection:`&View --> &Data Sources...` (:kbd:`Ctrl` + :kbd:`Shift` +
+:kbd:`F4`) を実行する
+
+これにより Data Sources ウィンドウがスプレッドシート上部に現れる。UI の説明は本文
+参照。
+
+* Table Data ツールバー
+* Data Source Explorer ウィンドウ
+* レコード（表の各行）
+* 表示切り替えハンドル（最下部の細い矩形）
+
 Editing data sources
 ----------------------------------------------------------------------
+
+* Data Sources ウィンドウで編集できるのは、登録済みのデータソースのみ。
+* 編集とはレコードの編集、追加、削除操作だ。
+* 編集内容を保存できない場合は LibreOffice Base でデータベースを開き、そこで編集
+  するしかない。
+* 列を非表示にしたり、表示に変更を加えたりすることも可能。
 
 Launching Base to work on data sources
 ----------------------------------------------------------------------
 
+データベースの右クリックメニューから :menuselection:`Edit &Database File...` を
+実行すると LibreOffice Base が起動する。ここで編集しろ。
+
 Using data sources in Calc spreadsheets
 ----------------------------------------------------------------------
+
+Data Sources ウィンドウの右側に表示されている表のデータは Calc 文書に配置可能
+だ。
+
+* レコード全体を選択してシートにドラッグ＆ドロップ（行を行に）
+* レコード全体を選択してツールバーの :guilabel:`Data to Text` を実行（任意のセル
+  に）
+
+あとはフォームを利用する方法があるがノート割愛。
 
 Embedding spreadsheets
 ======================================================================
 
+* スプレッドシートを他の LibreOffice ファイルに埋め込むことが可能だ。
+* スプレッドシートは :abbr:`OLE (Object Linking and Embedding)` オブジェクトまた
+  は :abbr:`DDE (Dynamic Data Exchange)` オブジェクトとして埋め込み可能。
+
+例えば、Calc スプレッドシートが DDE オブジェクトとして Writer 文書に貼り付けられ
+ている場合、Writer 文書からスプレッドシートを編集することは不可能だ。ただし、元
+スプレッドシートが更新されると Writer 文書で自動的に更新される。
+
+例：スプレッドシートがリンクされた OLE オブジェクトとして Writer 文書に埋め込ま
+れた場合、Writer でもスプレッドシートを編集でき、両者が互いに同期する。
+
 Object Linking and Embedding (OLE)
 ----------------------------------------------------------------------
+
+OLE オブジェクトの主な利点は：
+
+* ダブルクリックするだけでその内容を素早く編集できる。
+* オブジェクトへのリンクを挿入することもでき、その場合は図像として表示される。
+
+リンクと埋め込みの差異は、元ファイルのその後の変更に追従するか否かだと思ってよ
+い。後者はデータの静的コピーでしかない。
+
+:menuselection:`&Insert --> &OLE Object --> &OLE Object...` を実行すると、スプ
+レッドシートを OLE オブジェクトとして埋め込める（これは Calc 以外のアプリケー
+ションのメニューから Calc 文書を埋め込むことを想定した説明になっている）。
+
+:guilabel:`Insert OLE Object` ダイアログボックスの動作は UI を見れば自然に理解で
+きる。
 
 Other OLE objects
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Windows では :guilabel:`Insert OLE Object` ダイアログで :guilabel:`Create &new`
+オプションを選択すると :guilabel:`Object &Type` 一覧に :guilabel:`Further
+objects` という項目が追加される。
+
 Non-linked OLE object
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+OLE オブジェクトがリンクされていない場合、新規文書で編集することが可能だ。例え
+ば、スプレッドシートを Writer 文書に挿入した場合、基本的に Writer のテーブルと同
+じように扱うことが可能だ。ダブルクリックで編集開始。
 
 Linked OLE object
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+同期性を活用するといい。スプレッドシート OLE オブジェクトがリンクされていて、
+Writer で変更すると Calc でも変更され、Calc で変更すると Writer でも変更される。
+Writer ウィンドウだけを開いていればいいということになる。
+
+ただし、一度に編集できるスプレッドシートのコピーは一つに限られる。複数の文書から
+リンクされている場合、残りの文書からは参照先が読み取り専用扱いとなる。
+
 Dynamic Data Exchange (DDE)
 ----------------------------------------------------------------------
+
+文書 A で選択したデータを、リンクされたオリジナルの生コピーとして文書 B に貼り付
+けることができる仕組みが DDE だ。DDE リンクにより、参照先が更新されると参照元も
+更新されるため、エラーの可能性が低くなり、参照元文書を最新の状態に保つ作業が軽減
+される。
+
+* DDE は OLE の前身に当たる。
+* DDE ではオブジェクトはファイル参照を通じてリンクされるが、埋め込まれない。
 
 DDE link in Calc
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+:guilabel:`Paste Special` ダイアログボックスの :guilabel:`As &Link` をオンにする
+のが本質的だ。参照先セルを含むファイルを開いていないとこの操作ができない。
+
 DDE link in Writer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Writer で :guilabel:`Paste Special` ダイアログボックスを開き、一覧から
+:guilabel:`Dynamic Data Exchange (DDE link)` を選択して :guilabel:`&OK` を押す。
 
 XML Source
 ======================================================================
 
+:menuselection:`&Data --> &XML Sources...` を実行するとダイアログボックスが開く。
+ここで：
+
+#. :guilabel:`Source File` にインポートする XML ファイルのパスを設定する。
+#. :guilabel:`Map to Document` 欄にツリーコントロールが現れる。ここからレコード
+   単位となるノードを選択する。
+#. :guilabel:`&Mapped cell` 欄にスプレッドシートでデータを表示する領域の左上のセ
+   ルを指定する。
+#. :guilabel:`&Import` を押す。
