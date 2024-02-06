@@ -138,10 +138,10 @@ Using the Image toolbar
   開く。
 * :guilabel:`Image Mode` ドロップダウンリスト。次から選ぶ：
 
-  * Default
-  * Grayscale
-  * White/Black
-  * Watermark
+  * :guilabel:`Default`
+  * :guilabel:`Grayscale`
+  * :guilabel:`White/Black`
+  * :guilabel:`Watermark`
 * :guilabel:`Crop Image` ボタン。切り抜きハンドルを操作する。
 * 反転
 
@@ -160,7 +160,7 @@ Using the Properties deck in the Sidebar
 Adding text
 ----------------------------------------------------------------------
 
-画像や描画オブジェクトにテキストを追加可能。そのようなテキストは画像が再配置され
+画像や図面オブジェクトにテキストを追加可能。そのようなテキストは画像が再配置され
 るときに画像と一緒に移動する。
 
 #. 画像をダブルクリックする。:guilabel:`Text Formatting` ツールバーが開く。
@@ -243,42 +243,94 @@ Grouping and ungrouping images
 Using LibreOffice's drawing tools
 ======================================================================
 
-いわゆる図形ツールだ。:menuselection:`&View --> &Toolbars --> Dra&wing` で図形
-ツールバーを表示する。これを使って簡単な図形をシートに挿入することが可能だ。
+いわゆる図形ツールだ。
+
+複雑な図面を作成する必要がある場合は、LibreOffice Draw を使用し、それをスプレッ
+ドシートに挿入することが推奨される。
 
 Drawing toolbar
 ----------------------------------------------------------------------
 
+:menuselection:`&View --> &Toolbars --> Dra&wing` で図形ツールバーを表示する。こ
+れを使って簡単な図形をシートに挿入することが可能だ。
+
+#. :guilabel:`Drawing` ツールバーのボタンを押す
+#. 図面オブジェクトを示したい場所にポインターを移動し、クリック、ドラッグして作
+   図する。
+
+押した描画コマンドを取り消すには、次のいずれかの操作をしろ：
+
+* 同じツールバーボタンをもう一度クリックする
+* :kbd:`Esc` を押す
+* :guilabel:`Drawing` ツールバーの :guilabel:`Select` ボタンを押す
+
+図面オブジェクトの性質を編集するには、次が使える：
+
+* :guilabel:`Drawing Object Properties` ツールバー
+* Sidebar 内 :guilabel:`Properties` デッキ
+* 右クリックメニューの関連コマンド各種
+
 Setting the properties of drawing objects
 ----------------------------------------------------------------------
+
+描画前に図面オブジェクトの既定特性を設定することが可能。これらの既定特性は現在の
+スプレッドシートにのみ適用され、閉じても保持されない。
+
+#. :guilabel:`Drawing` ツールバーの :guilabel:`Select` ボタンを押す
+#. :guilabel:`Drawing Object Properties` ツールバーではボタン等がいくつか active
+   になっている。各特性に用いる既定値を設定することが可能だ。
+
+オブジェクトを描画したり、他のオブジェクトとグループ化したりすると、より多くの特
+性が active になる。これらはツールバー等の関連 UI に反映される。
 
 Resizing drawing objects
 ----------------------------------------------------------------------
 
+画像の場合と同様のハンドルによる操作が図面オブジェクトに適用される。
+
 Grouping and ungrouping drawing objects
 ----------------------------------------------------------------------
+
+画像の場合と同様に図面オブジェクトもグループになり得る。
 
 Additional tools
 ======================================================================
 
-画像の右クリックメニューにはその他雑多なコマンドがある。個人的に注意したいものは
-:menuselection:`Co&mpress...` だ。埋め込んだ画像データを圧縮すればファイルサイズ
-が小さくなる。
+画像の右クリックメニューにはその他雑多なコマンドがある。
+
+* :menuselection:`A&ssign Macro...` でマクロを図面オブジェクトに仕込める。マクロ
+  を学んでからここに戻れ。
+* 個人的に注意したいものは :menuselection:`Co&mpress...` だ。埋め込んだ画像デー
+  タを圧縮すればファイルサイズが小さくなる。
 
 Using Fontwork
 ======================================================================
 
-文字列だけからロゴタイプを生成する機能だ。:menuselection:`&View --> &Toolbars
---> Fontwor&k` コマンドを実行してツールバーを表示する。使い方は見ればわかる。
+文字列だけからロゴタイプを生成する機能だ。
 
 Creating a Fontwork object
 ----------------------------------------------------------------------
 
+#. :menuselection:`&View --> &Toolbars --> Fontwor&k` 実行
+#. :guilabel:`Insert Fontwork Text` を押す
+#. :guilabel:`Fontwork Gallery` から一つ選択し :guilabel:`&OK` を押す
+
+Fontwork テキストを編集するにはオブジェクトをダブルクリックしろ。
+
 Editing a Fontwork object
 ----------------------------------------------------------------------
+
+Fontwork オブジェクトを選択して次を使え：
+
+* :guilabel:`Fontwork` ツールバー
+* :guilabel:`Formatting` ツールバー
+* 右クリックメニュー
 
 Generating a QR or Barcode
 ======================================================================
 
 :menuselection:`&Insert --> &OLE Object --> QR and &Barcode...` コマンドで開くダ
 イアログは、入力文字列からコード画像を生成して現在のシートに出力する。
+
+生成された後、その画像上で右クリックメニューから :menuselection:`&Edit
+Barcode...` を実行すれば編集可能。
