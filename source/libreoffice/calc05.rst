@@ -460,7 +460,7 @@ Using a template to create a spreadsheet
 Creating a spreadsheet from the Templates dialog
 ----------------------------------------------------------------------
 
-テンプレートを使ってスプレッドシートを作成する手順：
+雛形を使ってスプレッドシートを作成する手順：
 
 #. :menuselection:`&File --> &New > Te&mplates...` (:kbd:`Ctrl` + :kbd:`Shift` +
    :kbd:`N`) を選択
@@ -502,44 +502,179 @@ Creating a template
 Editing a template
 ======================================================================
 
+雛形のスタイルと中身を編集可能なのはもちろん、旧雛形から作成された文書に新スタイ
+ルを適用することも可能だ。
+
+編集手順：
+
+#. :menuselection:`&File --> Te&mplates --> &Manage Templates...` (:kbd:`Ctrl` +
+   :kbd:`Shift` + :kbd:`N`) を実行してダイアログボックスを開く。
+#. 編集対象スプレッドシート雛形に移動し、右クリックメニューから
+   :menuselection:`&Edit` を実行する。雛形が開く。
+#. 雛形を編集する。
+
+   * 雛形を上書き保存するならば :menuselection:`&File --> Save &As...`
+   * 雛形を新規雛形として保存するならば :menuselection:`&File --> Te&mplates -->
+     &Save As Template...`
+
 Updating styles from a changed template
 ----------------------------------------------------------------------
+
+雛形とそのスタイルを変更した場合、旧雛形から作成されたスプレッドシートを次に開く
+と、確認メッセージが表示される。
+
+* :guilabel:`&Update Styles` を押すと変更後のスタイルがスプレッドシートに適用さ
+  れる。
+* :guilabel:`&Keep Old Styles` を押すと適用されない。こうすると、以降の雛形更新
+  があっても確認メッセージは現れない。
 
 Changing the template assigned to a document
 ======================================================================
 
+目的の雛形から新規文書を作成し、対象文書の内容をそれにコピーすればよい。
+
+Template Changer 拡張というものがあり、それを利用する方法もある。インストールし
+た後に、メニューに :menuselection:`&File --> Te&mplates --> Change template
+(current document)` というコマンドが出現するらしい。
+
+.. todo::
+
+   拡張学習時に試す。
+
 Adding templates obtained from other sources
 ======================================================================
+
+LibreOffice `Extensions <https://extensions.libreoffice.org/en>`__ リポジトリー
+から雛形に絞って検索すると、インストール可能な雛形一覧が示される。項目をクリック
+すると詳細ページに移動する。
+
+他のウェブサイトでは拡張子 .oxt または .zip ファイルにパックされた雛形集を見つけ
+ることがある。
 
 Installing templates
 ----------------------------------------------------------------------
 
+インストールしたい雛形が手許にあるとして：
+
+#. :guilabel:`Templates` ダイアログボックスを開く
+#. :menuselection:`&Manage --> &Import...` を実行
+#. :guilabel:`Select Category` ダイアログボックスで雛形を保存する区分を決定する
+#. ファイルダイアログで雛形を選択して :guilabel:`&Open` を押す
+
 Installing collections of templates
 ----------------------------------------------------------------------
+
+Extension Manager を使うのが簡単だ。
+
+#. 上記ウェブサイトなどから .oxt ファイルをダウンロードしておく。
+#. :menuselection:`&Tools --> &Extensions...` (:kbd:`Ctrl` + :kbd:`Alt` +
+   :kbd:`E`) を実行
+#. ダイアログボックスで :guilabel:`&Add` を押す
+#. 対象雛形を選択して :guilabel:`&Open` を押す
+#. :guilabel:`&Restart now` などを押す
+
+雛形は :guilabel:`Templates` ダイアログボックスから使用可能に、拡張は
+:guilabel:`Extension Manager` に表示されるようになる。
+
+Chapter 15 に続く？
+
+.. admonition:: 利用者ノート
+
+   Windows Explorer から .oxt ファイルを実行するのもアリだ。
 
 Setting the default template
 ======================================================================
 
+:menuselection:`&File --> &New --> &Spreadsheet` コマンドで新規文書を作成する場
+合、スプレッドシート用の既定雛形から文書を作成する。任意の雛形を既定雛形として設
+定可能だ。
+
+また、既定雛形を Calc 既定雛形にリセットすることも可能だ。
+
 Setting a template as the default
 ----------------------------------------------------------------------
+
+既定 Calc 雛形を新しいものに置き換える方法がある。
+
+:guilabel:`Templates` ダイアログボックスに表示されている雛形を、その文書タイプの
+既定のものに設定する手順：
+
+#. :menuselection:`&File --> Te&mplates --> &Manage Templates...` (:kbd:`Ctrl` +
+   :kbd:`Shift` + :kbd:`N`) を実行。
+#. :guilabel:`Templates` ダイアログボックスで、既定としたい雛形を含む区分を開く。
+#. 雛形の右クリックメニューから :menuselection:`Set as De&fault` を実行。
+
+次回新規文書からこの雛形を基に生成される。
 
 Resetting the default template
 ----------------------------------------------------------------------
 
+既定雛形を Calc 固有の既定雛形に直す方法：
+
+#. :guilabel:`Templates` ダイアログボックスで :menuselection:`&Manage --> Reset
+   De&fault Spreadsheet` を押す。
+
+このメニュー項目はカスタム雛形が既定して設定されている場合に限り現れる。
+
 Organizing templates
 ======================================================================
+
+LibreOffice が管理できる雛形は特定のフォルダー（複数形）にあるものに限られる。新
+しい雛形フォルダーを作成し、それを使って雛形を整理したり、これらのフォルダーにイ
+ンポートしたりすることが可能だ。
+
+LibreOffice の雛形フォルダーのパスは設定ダイアログの :menuselection:`LibreOffice
+--> Paths` ページで確認しろ。
+
+本節の以降では :guilabel:`Templates` ダイアログボックスでの操作を述べている。
 
 Creating a template category
 ----------------------------------------------------------------------
 
+#. :menuselection:`&Manage --> &New Category...` を押す。
+#. 開いたダイアログボックスの入力欄に名前を入力する。
+#. :guilabel:`&OK` を押す。
+
 Deleting a template category
 ----------------------------------------------------------------------
+
+以下の区分は削除不可：
+
+* LibreOffice 付属のもの。
+* Extension Manager によって追加されたもの。
+
+それ以外の雛形区分の削除手順は：
+
+#. 削除対象の区分を選択。
+#. :menuselection:`&Manage --> &Delete Category...` を押す。
+#. 確認ダイアログボックスで :guilabel:`&Yes` を押す。
 
 Moving a template
 ----------------------------------------------------------------------
 
+雛形の区分を引っ越す手順：
+
+#. 移動対象となる雛形を一覧から選択。
+#. 右クリックメニュー :menuselection:`&Move...` を選択。
+#. 開いたダイアログボックスで移動先区分を選択。
+#. :guilabel:`&OK` を押す。
+
 Deleting a template
 ----------------------------------------------------------------------
 
+削除できるのは、自分で作成またはインポートした雛形に限る。
+
+#. 削除対象の雛形が属する区分を :guilabel:`Filter` から選択
+#. 移動対象となる雛形を一覧から選択。
+#. 右クリックメニュー :menuselection:`&Delete...` を選択。
+#. :guilabel:`&Yes` を押す。
+
 Exporting a template
 ----------------------------------------------------------------------
+
+この操作は他人に渡したり、バックアップ目的で行われるようだ。
+
+#. 移動対象となる雛形を一覧から選択。
+#. 右クリックメニュー :menuselection:`&Export...` を選択。
+#. フォルダーダイアログでエクスポート場所に移動。
+#. :guilabel:`フォルダーを選択` を押す。
