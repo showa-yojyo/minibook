@@ -755,17 +755,75 @@ Adding functionality with extensions
    An extension is a package that can be installed into LibreOffice to add new
    functionality.
 
+公式 LibreOffice 拡張置場は <https://extensions.libreoffice.org/> だ。ここにある
+ものは無料で入手かつ利用可能。
+
 Installing extensions
 ----------------------------------------------------------------------
+
+上記の置場から拡張をインストールする手順：
+
+#. :menuselection:`&Tools --> &Extensions...` or :kbd:`Ctrl` + :kbd:`Alt` +
+   :kbd:`E`
+#. :guilabel:`Extensions` ウィンドウで :guilabel:`Get more extensions online` を
+   クリック
+#. 拡張機能を見つけてダウンロード
+#. :guilabel:`Extensions` ウィンドウに戻り、:guilabel:`&Add`
+#. インストールしたい拡張を見つけて選択し、:guilabel:`開く (&O)` をクリック
+
+拡張は Calc の他の場所からもインストール可能だ：
+
+* Sidebar の :guilabel:`Gallery` にある拡張ボタン
+* :guilabel:`Templates` ダイアログボックスの :menuselection:`&Manage -->
+  E&xtensions`
+* :guilabel:`Options` ダイアログボックスの :menuselection:`LibreOffice --> View`
+  ページ :guilabel:`Icon Theme` 枠内拡張ボタン
 
 Updating extensions
 ----------------------------------------------------------------------
 
+:guilabel:`Extensions` ウィンドウにある :guilabel:`Check for &Updates` を押せ。
+
 Removing and disabling extensions
 ----------------------------------------------------------------------
+
+インストール済み拡張を削除するには :guilabel:`Extensions` ウィンドウで拡張を選択
+し、:guilabel:`&Remove` を押す。
+
+アンインストールではなく無効にするだけならば :guilabel:`&Disable` を押す。
 
 Adding custom colors
 ======================================================================
 
+#. 図面オブジェクトを文書内に追加する。
+#. オブジェクトを右クリックし、:menuselection:`A&rea...` を実行。
+#. :guilabel:`Area` タブを押す。
+#. :guilabel:`Co&lor` ボタンを押す。
+#. :guilabel:`Pal&ette` ドロップダウンリストで追加先パレットを選択。
+#. :guilabel:`New` 下でどの方法でもいいから色を指示する。
+#. :guilabel:`&Add`
+#. 色の名前を入力
+#. :guilabel:`&OK`
+#. 不要な図面オブジェクトを削除。
+
 Setting up document themes
 ======================================================================
+
+* 文書テーマでは、さまざまな書式選択をワンセットにまとめ、すばやく適用したり変更
+  したりできる。
+* テーマカラーセットがいくつか用意されている。
+
+独自セットを定義する手順：
+
+#. :menuselection:`F&ormat --> Theme...` を実行して :guilabel:`Theme` ダイアログ
+   ボックスを開く
+#. ベーステーマを選択
+#. :guilabel:`&Add` を押して :guilabel:`Theme Color Edit` ダイアログボックスを開
+   く
+#. 新規テーマに名前を与え、利用可能なパレットから色を選択
+#. :guilabel:`&OK` を押して新規テーマを保存
+
+文書テーマの利用に関する指示については Chapter 5 を参照しろ。
+
+ユーザー定義テーマカラーセットは文書内にしか保存されない。他の文書で用いるにはテ
+ンプレートを作成する。
