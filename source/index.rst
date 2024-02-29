@@ -18,6 +18,7 @@ Contents:
 
    alexandrescu01/index
    tsuboi05/index
+   libreoffice/calc-guide/index
 
 .. toctree::
    :caption: ソフトウェア・ツール・パッケージ・ライブラリーノート
