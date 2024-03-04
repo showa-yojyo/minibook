@@ -435,35 +435,242 @@ Language Tool は <https://languagetool.org/> が備えている多言語文法�
 Using synonyms and the thesaurus
 ======================================================================
 
+#. 単語を右クリック
+#. コンテキストメニューの :menuselection:`Synony&ms -->` から代替語句のサブメ
+   ニューが表示される
+#. サブメニューの単語または語句を選択
+
+文書内の強調表示された単語または語句が置き換わる。サブメニューの最下部にある
+:menuselection:`&Thesaurus...` を選択すると、類語ダイアログボックスが開く。
+
+.. note::
+
+   この機能は現在の言語に類語辞書がインストールされていない場合に無効だ。
+
+.. admonition:: 読者ノート
+
+   英語の文書でこの機能を駆使して己の語彙を豊富にする用途が考えられる。
+
 Hyphenating words
 ======================================================================
+
+行末をまたぐ単語の分綴は Writer が自動的に行う（スタイルと辞書を使用する）方法
+と、必要に応じて手動で条件付き (soft) hyphen を挿入する方法がある。あるいは分綴
+をまったく使わないことも可能だ。
 
 Automatic hyphenation
 ----------------------------------------------------------------------
 
+このやり方はスタイルを使用し、後述する :guilabel:`Options` ダイアログボックスの
+指定を上書きする。
+
+単語の自動分綴オンオフを切り替える手順：
+
+#. Siedbar の :guilabel:`Styles` タブをクリック
+#. :guilabel:`&Edit Styles...` 図像をクリック
+#. 木から :guilabel:`Default Paragraph Style` を右クリック
+#. :menuselection:`Modify` を選択
+#. :guilabel:`Paragraph Style` ダイアログで :guilabel:`Text Flow` タブをクリック
+#. :guilabel:`Hyphenation` で :guilabel:`Automatically` を切り替える
+
+   * オンの場合、行う時点の基準を設定することも可能。
+#. :guilabel:`&OK`
+
+Default Paragraph Style で分綴をオンにすると、このスタイルに基づくすべての段落ス
+タイルに影響する。分綴が有効にならないように、他のスタイルを個別に変更することが
+可能だ（例えば、見出しに対してはしないようにする）。この話題は :doc:`Chapter 8
+<writer08>` と :doc:`Chapter 9 <writer09>` で述べられる。
+
 Hyphenation options
 ----------------------------------------------------------------------
+
+自動分綴が有効である場合、次の項目を設定可能だ：
+
+:guilabel:`Don't hyphenate words in &CAPS`
+   すべて大文字で書かれた単語は分綴しない。
+:guilabel:`Don't hyphenate the &last word`
+   段落の最後の単語に分綴しない。
+:guilabel:`C&haracters at line end`
+   行末に残す最小文字数。
+:guilabel:`Cha&racters at line begin`
+   分綴適用後、行頭に来る部分の最小文字数。
+:guilabel:`&Maximum consecutive hyphenated lines`
+   分綴が可能である連続する行の最大数。
+:guilabel:`&Minimum word length in characters`
+   分綴可能最小単語長を文字数で指定。
+:guilabel:`Hyphenation &zone`
+   単語を分綴できない水平空白の長さを指定する。この値を指定すると、両端揃えテキ
+   ストでは単語間の間隔が大きくなり、そうでないテキストでは段落余白からの距離が
+   大きくなる。
+
+:guilabel:`Options` ダイアログボックスの :menuselection:`Language Settings -->
+Writing Aids` ページ内 :guilabel:`Options` にも分綴設定項目がある。
+
+* 段落スタイルに特定の設定がない場合に適用される。
+* 段落スタイルで分綴がオンになっている場合に限り有効。
+
+:guilabel:`Hyphenate without inquiry`
+   辞書が認識しない単語を手動で分綴する要求をさせない。オフにすると hyphen を手
+   動で入力できるダイアログボックスが開く。
+:guilabel:`Hyphenate special regions`
+   脚注、ヘッダー、フッターでも分綴が機能する。
 
 Manual hyphenation
 ----------------------------------------------------------------------
 
+手動で単語を分綴する際、通常の hyphen を使用してはいけない。通常のそれはテキスト
+を加除修正したり、余白やフォントサイズを変更したときに、その単語が行末でなくなっ
+ても表示されたままになる。必ず *soft hyphen* を使え。
+
+単語内に soft hyphen を挿入するには、それを表示したい位置をクリックして次のいず
+れかを実行する：
+
+* キーバインド :kbd:`Ctrl` + :kbd:`-`
+* メニューから :menuselection:`&Insert --> Formattin&g Mark --> Insert S&oft
+  Hyphen` 選択
+
+この段落の自動分綴がオフになっていても、行末にある単語はこの位置で分綴される。
+
 Using AutoCorrect
 ======================================================================
+
+AutoCorrect 機能には、よくある誤植の長い目録を搭載しており、自動修正に使われる。
+また、特殊文字、絵文字、その他の記号を挿入するためのコードも搭載している。独自の
+特殊文字を追加することも可能だ。
+
+AutoCorrect の機能をいくつか無効にしたり、他の機能を変更したり、完全にオフにした
+りすることも可能だ。オフにするにはメニューから
+:menuselection:`&Tools --> AutoCorr&ect --> &While Typing` をオフにする。
+
+独自の訂正や特殊文字を追加したり、LibreOffice に付属の訂正や特殊文字を変更したり
+する方法：
+
+#. :menuselection:`&Tools --> AutoCorr&ect --> &AutoCorrect Options...` を選択
+#. :guilabel:`AutoCorrect` ダイアログボックスが開く
+#. :guilabel:`Replace` タブで、どの文字列をどのように修正するかを定義
+
+特定の綴りを置き換えるのをやめさせる手順：
+
+#. :guilabel:`Replace` タブで置換対応を選択
+#. :guilabel:`&Delete` を押す
+
+新しい綴りを目録に追加する手順：
+
+#. :guilabel:`Replace` タブでの :guilabel:`Repla&ce` 欄と :guilabel:`&Width` 欄
+   に綴りを入力
+#. :guilabel:`&New` を押す
+
+:guilabel:`AutoCorrect` ダイアログボックスについては :doc:`Chapter 4 <writer04>`
+でも述べられる。
 
 Using Word Completion
 ======================================================================
 
+Word Completion が有効になっている場合、Writer は著者が入力しようとしている単語
+を推測し、単語を補完しようとする。著者が :kbd:`Enter` を押せばこの提案を受け入れ
+る。
+
+Word Completion をオフにするには：
+
+#. :menuselection:`&Tools --> AutoCorr&ect --> &AutoCorrect Options...` を選択
+#. :guilabel:`Word Completion` タブを選択
+#. :guilabel:`Enable word &completion` をオフにする
+
+このタブのページで単語補完をカスタマイズ可能だ：
+
+* 受け付けた単語の後に空白を自動的に追加する。
+* 入力中にテキストを補完するのではなく、提案された単語をツールチップ表示する。
+* 文書の作業中に単語を収集し、後で他の文書で使用するために保存するか、文書を閉じ
+  るときに目録から削除するかを選択する。
+* 入力候補を受け付けるキーを変更する。
+* 単語補完のために記憶される最大単語数と最小単語の長さを変更する。
+* 単語補完目録から特定の補完対応を削除する。
+
+.. note::
+
+   自動単語補完は文書内でニ回目に単語を入力したときにしか行われない。
+
+.. admonition:: 利用者ノート
+
+   Google 日本語入力を愛用しているならばこの機能は使わない。
+
 Using AutoText
 ======================================================================
+
+AutoText を使用すると、テキスト、図表、フィールド、画像、その他の項目を再利用で
+きるように保存し、キーバインドを定義して簡単に呼び出すことが可能になる。例え
+ば、"Senior Management "と毎回入力するのではなく、"sm" と入力し、:kbd:`F3` を押
+すと、その単語が挿入されるように AutoText を設定することが可能だ。
+
+AutoText はフィールドに割り当てると特に強力だ。:doc:`Chapter 17 <writer17>` を読
+め。
 
 Creating AutoText
 ----------------------------------------------------------------------
 
+テキストを AutoText として保存する方法：
+
+#. テキストを文書に入力
+#. それを選択
+#. メニューから :menuselection:`Tools --> AutoTe&xt...` を選択するかキーバインド
+   :kbd:`Ctrl` + :kbd:`F3`
+#. :guilabel:`AutoText` ダイアログボックスが開く
+#. :guilabel:`Na&me` 欄に AutoText の名前を入力する
+#. AutoText の品目（例えば :guilabel:`My AutoText` など）を選択
+#. :guilabel:`AutoTe&xt` ドロップダウンをクリック
+#. 次のいずれかを選択する：
+
+   * :menuselection:`New`: どこに挿入されても特定の書式を保持
+   * :menuselection:`New (text onlly)`: 挿入位置周辺の書式を適用
+#. :guilabel:`&Close`
+
+.. tip::
+
+   ドロップダウンメニューが :menuselection:`Import...` しかない場合、名前か選択
+   に不備がある。
+
+図表を AutoText として保存する手順：
+
+#. 図表を作成し、必要な書式を設定する。
+#. 図表を選択し、メニューから :menuselection:`Tools --> AutoTe&xt...` を選択する
+   かキーバインド :kbd:`Ctrl` + :kbd:`F3`
+#. AutoText の名前を入力する。または推奨されるショートカットを修正し、AutoText
+   項目の品目を選択する。
+#. :menuselection:`AutoText --> New` を選択（図表の書式を保持したい）
+#. :guilabel:`&Close`
+
 Inserting AutoText
 ----------------------------------------------------------------------
+
+AutoText を挿入するには、登録されているショートカットを入力して :kbd:`F3` を押
+せ。
 
 Printing a list of AutoText entries
 ----------------------------------------------------------------------
 
+.. admonition:: 読者ノート
+
+   印刷しないので割愛。
+
 Changing the case of selected text
 ======================================================================
+
+テキストの大文字と小文字をすばやく変更するには、テキストを選択し、メニューから
+:menuselection:`&Format --> Te&xt -->` から関連項目のいずれかを選択する。
+
+.. admonition:: 読者ノート
+
+   サブメニューの第五区画以降の項目。
+
+Writer には Title Case を自動的に行う方法はない。
+
+:menuselection:`&Format --> Te&xt -->` メニューには、太字、斜体、上付き文字など
+の手動書式設定オプションもある。アジア言語対応が有効になっている場合は、半角、全
+角、ひらがな、カタカナなどのオプションもある。
+
+:guilabel:`Character` ダイアログボックスや文字スタイルを使用して、テキストの大文
+字と小文字を変更することも可能だ。
+
+#. メニューから :menuselection:`F&ormat --> C&haracter...` を選択
+#. :guilabel:`Font Effects` タブをクリック
+#. :guilabel:`&Case` ドロップダウンリストから大文字小文字の種類を選択
