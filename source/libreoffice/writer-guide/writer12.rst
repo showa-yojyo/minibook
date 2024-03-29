@@ -126,7 +126,6 @@ Writer には、アウトライン一覧にいくつかのオプションがあ�
 Combining list and paragraph styles
 ======================================================================
 
-.. |ParagraphStyleDlg| replace:: :guilabel:`Paragraph Style` ダイアログボックス
 .. |Outline&ListTab| replace:: :guilabel:`Outline & List` タブ
 .. |OrganizerTab| replace:: :guilabel:`Organizer` タブ
 .. |Indents&SpacingTab| replace:: :guilabel:`Indents & Spacing` タブ
