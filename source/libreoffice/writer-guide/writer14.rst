@@ -48,8 +48,8 @@ Creating and registering an address data source
 LibreOffice が直接アクセスできない形式になっている場合は |CSV| ファイルなどにエ
 クスポート変換する必要がある。
 
-Writer 文書内からデータ給源に直接アクセスするには、そのデータ給源を登録する必要があ
-る。これを行う必要は一度しかない：
+Writer 文書内からデータ給源に直接アクセスするには、そのデータ給源を登録する必要
+がある。これを行う必要は一度しかない：
 
 #. Writer 文書内または LibreOffice Start Center から
    :menuselection:`&File-->&Wizards->Address &Data Source...` を選択する。
@@ -220,7 +220,6 @@ Preparing for printing
 
 .. |LabelTextArea| replace:: :guilabel:`&Label text` 領域
 .. |LabelsTab| replace:: :guilabel:`Labels` タブ
-.. |OptionsTab| replace:: :guilabel:`Options` タブ
 .. |NewDocButton| replace:: :guilabel:`&New Document` ボタン
 .. |SyncLabelButton| replace:: :guilabel:`Synchronize Labels` ボタン
 
