@@ -11,307 +11,384 @@ Writer Guide Chapter 16, Master Documents ノート
 What is a master document?
 ======================================================================
 
-A master document (.odm) is a container that joins separate text documents (.odt) into one larger document and unifies the formatting, table of contents (TOC), bibliography, index, and other material. Master documents are typically used for producing long documents such as a book, a thesis, or a long report. Figure 1 shows a typical scheme for master documents.
+マスター文書（.odm）は、別々のテキスト文書（.odt）を一つの大きな文書に結合し、書式、目次（TOC）、書誌、索引、その他の資料を統一するコンテナだ。マスター文書は通常、書籍や論文、長いレポートなど、長い文書を作成する際に使用される。図1は、マスター・文書の典型的なスキームを示している。
 
-    • Note
-A master document is actually a Writer document with some extra features for handling linked subdocuments. All features of a text document are available to a master document including printing, export to PDF, and export to a conventional Writer text document.
+.. note::
+
+   マスター文書は、実際には、リンクされたサブ文書を処理するためのいくつかの特別な機能を備えたWriter文書だ。マスター文書では、印刷、PDFへのエクスポート、従来のWriterテキスト文書へのエクスポートなど、テキスト文書のすべての機能が利用できる。
 
 Why use a master document?
 ======================================================================
 
- A master document is especially useful in these situations:
-    • When the file size or number of pages is quite large; writing, reviewing, and editing may be easier when done on subsets of the full document.
-    • When for security and reliability reasons you choose to store chapters in different places to minimize risks of losing the complete document (single point of failure).
-    • When a long report needs periodic updates of a single set of subdocuments, not affecting the structure of the report.
-    • When different people are writing different chapters or other parts of the full document.
-    • When files will be published as stand-alone documents as well as becoming part of a larger document. The chapters of this Writer Guide are an example of this usage.
-    • When subdocuments are used in more than one final document.
-You can use several methods to create master documents. Each method has its advantages and disadvantages. Which method you choose depends on what you are trying to accomplish. The different methods are described in this chapter, along with suggestions on when to use each one.
+このような状況では、マスター文書が特に有用である：
+
+* ファイルサイズやページ数が非常に大きい場合。文書全体の部分集合で書くと、執筆、レビュー、編集が容易になる場合がある。
+* セキュリティーや信頼性の理由から、章を別々の場所に保存し、文書全体を紛失するリスク（単一障害点）を最小限に抑える場合。
+* 長い報告書で、報告書の構造に影響を与えない範囲で、サブ文書の単一セットを定期的に更新する必要がある場合。
+* 異なる人が異なる章や文書の他の部分を執筆する場合。
+* ファイルが独立した文書として発行されるだけでなく、より大きな文書の一部となる場合。このライターガイドの各章は、この使い方の一例だ。
+* サブ文書が複数の最終文書で使用される場合。
+
+マスター・文書の作成にはいくつかの方法がある。それぞれの方法には長所と短所がある。どの方法を選ぶかは、あなたが何を達成しようとしているかによります。この章では、さまざまな方法について、それぞれをどのようなときに使うべきかという提案とともに説明する。
 
 Master document Navigator
 ======================================================================
 
-In Writer, the Navigator has two forms: one is used in ordinary text documents and the other in master documents.
-In an ordinary text document, the Navigator displays lists of the graphics, tables, index entries, hyperlinks, references, and other items in the document, as shown on the left in Figure 2. The master document Navigator on the right displays the document structure shown in Figure 1.
+Writerでは、ナビゲータには二つの形式がある。一つは通常のテキスト文書で使用され、もう一つはマスター文書で使用される。
 
-In a master document, you can toggle between the regular and master views by clicking on the Toggle Master View icon at the upper left. In the master view, the Navigator lists the subdocuments and text sections, as shown on the right in Figure 2. The use of the Navigator in a master document is covered in more detail later in this chapter (see “Step 6. Insert the subdocuments into the master document” on page 11 and “Combining several documents into a master document” on page 13).
-    • Note
-You cannot edit the contents of a subdocument shown in a master document. The subdocuments are linked in read-only mode. You will be warned if you try.
-However, a double-click on a subdocument entry in the master document Navigator opens the subdocument for editing. This can be a convenient way to quickly open a subdocument file when doing the finishing touches of the master document.
+通常のテキスト文書では、図2の左側に示すように、ナビゲータは文書内の図形、表、索引項目、ハイパーリンク、参照、その他の項目の一覧を表示する。右側のマスター文書ナビゲータは、図1の文書構造を表示する。
+
+マスター文書では、左上の Toggle Master View 図像をクリックすることで、通常ビューとマスタービューを切り替えることができる。マスタービューでは、図2の右側に示すように、ナビゲータがサブ文書とテキストセクションを一覧表示する。マスター文書でのナビゲータの使い方については、この章の後半で詳しく説明する（「ステップ6.サブ文書をマスター文書に挿入する」（11 ページ）および「複数の文書をマスター文書に結合する」（13 ページ）を参照）。
+
+.. note::
+
+   マスター文書に表示されているサブ文書の内容を編集することはできない。サブ文書は読み取り専用モードでリンクされている。編集しようとすると警告が表示される。
+
+   しかし、マスター・文書・ナビゲータでサブ文書のエントリをダブルクリックすると、編集用にサブ文書が開く。これは、マスター文書の仕上げをするときに、サブ文書ファイルをすばやく開く便利な方法だ。
 
 Styles in master documents and subdocuments
 ======================================================================
 
-A stand-alone document becomes a subdocument when it is linked into a master document.
-A document can be used as a subdocument in several master documents. Each master document may have different style definitions (font, type size, color, page size, margins, and so on), which affect the appearance of the final document, but the individual documents retain their original characteristics.
-The relationships between styles in a master document and its subdocuments are as follows:
-    • Custom styles used in subdocuments, such as paragraph styles, are automatically available to the master document. This preserves the custom formatting of subdocuments in the master document final result.
-    • The styles in the subdocuments are only changed in the master document, so when a subdocument is opened for editing the original subdocument styles are not affected. This preserves subdocuments’ style specifics.
-    • If a style with the same name exists in the master document and in the subdocuments (for example, Default Paragraph Style), then the master document style overrides the style of the subdocument. This provides formatting consistency for all subdocuments contents in the master document final result.
-    • If more than one subdocument uses a custom style with the same name (for example, myBodyText), then only the one in the first subdocument to be linked is imported into the master document. The custom style of the first subdocument over-rides the custom style of the same name used in the other subdocuments.
-    • Direct formatting used in subdocuments is preserved in the master document.
-    • Tip
-Master document best practices recommend to use the same document template for the master document and its subdocuments. Then the subdocuments will look the same when they are loaded into the master document as they do when viewed as individual files.
-When you modify or create a style, be sure to make the change in the template. Then when you reopen a subdocument or a master document, the styles can be updated from the template.
-If the master document and the subdocuments do not share the same original template, it may be necessary to update the set of styles available to all subdocuments and master document.
+単体の文書は、マスター文書にリンクされるとサブ文書になる。
+
+文書は、複数のマスター文書でサブ文書として使用することができる。各マスター文書は、最終文書の外観に影響を与える異なるスタイル定義（フォント、活字サイズ、色、ページサイズ、余白など）を持つことができるが、個々の文書は元の特性を保持する。
+
+マスター文書とそのサブ文書のスタイル間の関係は以下の通りです：
+
+* 段落スタイルなど、サブ文書で使用されているカスタムスタイルは、自動的にマスター文書で使用できるようになる。これにより、マスター文書のサブ文書のカスタム書式が保持される。
+* サブ文書のスタイルはマスター文書でのみ変更されるので、サブ文書が編集のために開かれたとき、元のサブ文書のスタイルは影響を受けません。これにより、サブ文書のスタイル仕様が保持される。
+* マスター文書とサブ文書に同じ名前のスタイルが存在する場合 (例えば既定の段落スタイル)、マスター文書のスタイルがサブ文書のスタイルを上書きする。これにより、マスター文書の最終結果において、すべてのサブ文書の内容に書式の一貫性が与えられる。
+* 複数のサブ文書が同じ名前のカスタムスタイル (例えば myBodyText) を使用している場合、リンクされる最初のサブ文書のものだけがマスター文書にインポートされる。最初のサブ文書のカスタムスタイルは、他のサブ文書で使用されている同名のカスタムスタイルを上書きする。
+* サブ文書で使用されている直接書式はマスター文書で保持される。
+
+.. tip::
+
+   マスター文書のベストプラクティスでは、マスター文書とそのサブ文書に同じ文書雛形を使用することを推奨している。そうすれば、サブ文書をマスター文書に読み込んだときにも、個々のファイルとして見たときと同じように見えます。
+
+   スタイルを変更または作成するときは、必ず雛形で変更を行ってください。そうすれば、サブ文書やマスター文書を再度開いたときに、雛形からスタイルを更新することができる。
+
+   マスター・文書とサブ・文書が同じオリジナル・雛形を共有していない場合、すべてのサブ・文書とマスター・文書で利用可能なスタイルのセットを更新する必要があるかもしれない。
 
 Updating a master document
 ======================================================================
 
-Since master documents are containers for linking individual subdocuments, it is important to update the master periodically to refresh indexes, table of contents, page numbering, references, and more, especially after editing subdocuments.
-    • Note
-When opening a master document, Writer prompts to update the links to the subdocuments. Click Yes to refresh the master document immediately.
-To update the master document at any time, choose Tools > Update > Update all (or any of the specific elements listed in the submenu), or use the icons in the master document Navigator (Figure 3).
+マスター・文書は個々のサブ・文書をリンクするためのコンテナであるため、特にサブ・文書を編集した後は、定期的にマスターを更新し、索引、目次、ページ番号、参考文献などを更新することが重要だ。
 
-Depending on the document complexity, this operation may take some time, as Writer will go through all the linked files to rebuild the master document with all the references adjusted.
-    • Note
-When saving a master document, all the subdocuments are embedded in the master. This allows the master document to be opened in full when the linked subdocuments are not available. In this case, when you are asked if you want to update all links, choose No.
+.. note::
+
+   マスター文書を開くと、Writerがサブ文書へのリンクを更新するよう促する。はい]をクリックすると、マスター文書がすぐに更新される。
+
+マスター文書をいつでも更新するには、「ツール」→「更新」→「すべて更新」（またはサブメニューに一覧された特定の要素のいずれか）を選択するか、マスター文書ナビゲータの図像を使用する（図3）。
+
+文書の複雑さによっては、この操作に時間がかかることがある。Writerがすべてのリンクファイルを調べて、すべての参照を調整したマスター文書を再構築するからだ。
+
+.. note::
+
+   マスター文書を保存すると、すべてのサブ文書がマスターに埋め込まれる。これにより、リンクされたサブ文書が利用できない場合でも、マスター文書を完全に開くことができる。この場合、すべてのリンクを更新するかどうか尋ねられたら、[いいえ]を選択しろ。
 
 Creating a master document: scenarios
 ======================================================================
 
-Which method you choose from the three most common methods for creating a master document depends on the current state of your document:
-    • You already have a master document template available. See “Creating a master document template” on page 18,
-    • You have no existing documents but intend to write a long book containing several chapters, possibly by multiple authors.
-    • You have several existing documents (chapters) by one or more authors that you want to combine into one book, controlled by the master document.
-    • You have one existing document (a book) that you want to split into several subdocuments (chapters) that will be controlled by the master document.
-We will look at each of these scenarios in turn.
+マスター・文書を作成する最も一般的な三つの方法からどの方法を選ぶかは、文書の現在の状態によって異なる：
+
+* すでにマスター文書の雛形がある。18ページの「マスター文書雛形の作成」を参照しろ、
+* 既存の文書はないが、複数の章を含む長い本を、おそらく複数の著者によって執筆するつもりである。
+* 1人または複数の著者による複数の既存の文書（章）があり、マスター文書によって管理される1冊の本にまとめたい。
+* つの既存の文書（本）を、マスター文書によって管理される複数のサブ文書（章）に分割したい。
+
+これらのシナリオを順番に見ていきましょう。
 
 Starting with a master document template
 ======================================================================
 
-As described in Chapter 10, Working with Templates, you can start a blank master document using a master document template created previously. Ideally, the template should contain the formatting styles, the document’s front and back covers, the table of contents, and other parts of the final document.
-    1) If any text or page breaks came into this document from the template, delete the text. (The TOC, index, and any fields in headers and footers can stay.)
-    2) Add the subdocuments as explained in “Step 6. Insert the subdocuments into the master document” on page 11.
-    3) Update the master document so the references, table of contents, page numbering, and other automatic operations are refreshed.
+第10章「雛形の操作」で説明したように、以前に作成したマスター文書雛形を使って、白紙のマスター文書を開始することができる。この雛形には、書式スタイル、文書の表紙と裏表紙、目次、その他最終的な文書の一部を含めるのが理想的だ。
+
+#. テキストや改ページが雛形からこの文書に入っている場合は、そのテキストを削除する。(TOC、索引、ヘッダーとフッターのフィールドは残せます)。
+#. 「ステップ6.1一ページの「ステップ6.マスター文書にサブ文書を挿入する」の説明に従って、サブ文書を追加する。
+#. 参照、目次、ページ番号、その他の自動操作が更新されるように、マスター文書を更新する。
 
 Starting with no existing documents
 ======================================================================
 
-When you start with no existing documents, you can set up everything the way you want from the beginning. Follow these steps, in the order given. Each step is explained in detail in the following topics.
+既存の文書がない状態から始める場合、最初からすべてを思い通りに設定することができる。以下の順番に従ってください。各ステップは、以下のトピックで詳しく説明されている。
 
-Step 1. Plan the project
-Step 2. Create a template
-Step 3. Create the master document
-Step 4. Create subdocuments
-Step 5. Add some pages to the master document
-Step 6. Insert the subdocuments into the master document
-Step 7. Add table of contents, bibliography, index
+.. todo:: ここに見出し一覧をはめ込めないか？
 
 Step 1. Plan the project
 ----------------------------------------------------------------------
 
-Although you can make changes at most steps in this process, the more you can plan before you start, the less work you will have to correct any problems later. Here are some things you need to plan. Figure 1 shows the structure to plan for the task.
-Parts of book or report required. What pages will be in the master document and what will be in the subdocuments? Consider as an example a book with the parts given in the table below.
-Part
-Location
-Title (cover) page
-In master document
-Copyright page
-In master document
-Table of contents (TOC)
-In master document
-Preface (Foreword)
-Subdocument
-Chapters 1 to 7
-Subdocuments
-‍Bibliography
-In master document
-Index
-In master document
-Page, paragraph, character, frame, and numbering styles. Determine the styles you wish to use. See Chapter 8, Introduction to Styles, and Chapter 9, Working with Styles, for instructions on how to create or modify styles and examples of the use of styles in book design. Pay particular attention to setting up headings using styles, as described in Chapter 8.
-Fields and AutoText entries, as required. See Chapter 2, Working with Text: Basics, and Chapter 17, Fields, for ideas.
-One or more templates for master and subdocuments. If you are starting a new project, create the master document and all the subdocuments from the same template. Not using the same template can create style inconsistencies that could cause your document not to look as you expect. For example, if two subdocuments have a style with the same name that is formatted differently in each document, the master document will use the formatting from the first subdocument that was added.
-Page numbering. In our example, the pages are numbered sequentially from the title page. (The title page style can be defined not to show the page number, but it will still count as page 1.) Therefore the first chapter begins on a higher number page, for example page 5. To create a book in which the page numbering restarts at 1 for the first chapter, you need to do some additional work. See “Restarting page numbering” on page 15.
+このプロセスのほとんどの段階で変更は可能だが、始める前に計画を立てておけば、後で問題を修正する手間が省ける。以下は、計画する必要があるいくつかの事柄である。図1は、タスクを計画するための構造を示している。
+
+本や報告書に必要な部分マスター文書にはどのページを、サブ文書には何を入れるか。下表に示す部分を持つ本を例にとって考えてみましょう。
+
+.. Part
+.. Location
+.. Title (cover) page
+.. In master document
+.. Copyright page
+.. In master document
+.. Table of contents (TOC)
+.. In master document
+.. Preface (Foreword)
+.. Subdocument
+.. Chapters 1 to 7
+.. Subdocuments
+.. ‍Bibliography
+.. In master document
+.. Index
+.. In master document
+
+ページ、段落、文字、枠、番号のスタイル。使用するスタイルを決めます。スタイルを作成または変更する方法や、ブックデザインにおけるスタイルの使用例については、第8章「スタイル入門」および第9章「スタイルの使用」を参照しろ。第8章で説明されているように、スタイルを使った見出しの設定には特に注意しろ。
+
+必要に応じて、フィールドとオートテキストエントリ。第2章テキストを扱う：アイデアについては、第2章テキストの操作：基本、および第17章フィールドを参照しろ。
+
+マスター・文書とサブ・文書用の一つ以上の雛形。新しいプロジェクトを始める場合は、マスター文書とすべてのサブ文書を同じ雛形から作成しろ。同じ雛形を使用しないと、スタイルの不一致が生じ、文書が期待どおりに表示されないことがある。例えば、二つのサブ文書に同じ名前のスタイルがあり、それぞれの文書で書式が異なる場合、マスター文書は最初に追加されたサブ文書の書式を使用する。
+
+ページ番号。この例では、表題ページから順にページ番号を振っている。(表題ページのスタイルはページ番号を表示しないように定義できるが、それでも一ページ目としてカウントされる)。したがって、最初の章は、例えば5ページのような、より大きな番号のページから始まります。最初の章のページ番号が1から始まるブックを作成するには、いくつかの追加作業が必要だ。15ページの「ページ番号の付け直し」を参照。
 
 Step 2. Create a template
 ----------------------------------------------------------------------
 
-You can create a template from an existing document or template that contains some or all of the page, paragraph, character, and other styles you want for this document, or you can create the template from a blank document. For more about templates, see Chapter 10, Working with Templates. Be sure to use File > Save As Template when creating the template.
-    • Tip
-You can also create master document templates; see page 18.
+この文書に必要なページ、段落、文字、その他のスタイルの一部またはすべてを含む既存の文書や雛形から雛形を作成することも、白紙の文書から雛形を作成することもできる。雛形の詳細については、第10章「雛形の操作」を参照しろ。雛形を作成する際は、必ず「ファイル」→「雛形として保存」を使用しろ。
+
+.. tip::
+
+   マスター・文書・雛形を作成することもできる。
 
 Step 3. Create the master document
 ----------------------------------------------------------------------
 
-It does not matter in what order you create the master and subdocuments, and you do not have to create all the subdocuments at the same time, when you are starting the project. You can add new subdocuments at any time, as you need them.
-Follow this process to create the master document:
-    1) Open a new document from the template you created in Step 2. Create a template, by choosing File > New > Templates, then selecting the template you created. Be sure the first page of this new document is set to the page style you want for the first page of the final document. In our example, the style for the first page is Title page.
-    2) If any text or page breaks came into this document from the template, delete the text. (The TOC, index, and any fields in headers and footers can stay.)
-    3) Click File > Send > Create Master Document. Save the master document in the folder for this project. We will return to this master document later. For now, you can either leave it open or close it.
-    • Note
-Using File > New > Master Document will create a master document file (.odm) associated with the default template. If your document is, or will be, based on a custom template, use the method described above.
+マスターとサブ文書をどのような順番で作成してもかまいないし、プロジェクトを開始するときにすべてのサブ文書を同時に作成する必要もない。新しいサブ文書は、必要なときにいつでも追加することができる。
+
+以下の手順でマスター・文書を作成しろ：
+
+#. ステップ2で作成した雛形から新しい文書を開く。ファイル＞新規＞雛形の順に選択し、作成した雛形を選択して雛形を作成する。この新しい文書の最初のページが、最終文書の最初のページに設定したいページスタイルに設定されていることを確認する。この例では、最初のページのスタイルは表題ページだ。
+#. テキストや改ページが雛形からこの文書に入っている場合は、そのテキストを削除する。(TOC、索引、ヘッダーとフッターのフィールドは残せます）。
+#. [ファイル] > [送信] > [マスター文書を作成]をクリックする。マスター文書をこのプロジェクトのフォルダに保存する。このマスター文書については後ほど説明する。今のところ、開いたままにしておくか、閉じておくことができる。
+
+.. note::
+
+   ファイル＞新規＞マスター文書を使用すると、既定の雛形に関連付けられたマスター文書ファイル（.odm）が作成される。文書がカスタム雛形に基づく場合、またはそうなる場合は、上記の方法を使用しろ。
 
 Step 4. Create subdocuments
 ----------------------------------------------------------------------
 
-A subdocument is no different from any other text document. It becomes a subdocument only when it is linked into a master document and opened from within the master document. It can still be used as a stand-alone document. Some settings in the master document will override the settings in a subdocument, but only when the document is being viewed, manipulated, or printed through the master document.
-Create a subdocument in the same way as you create any ordinary document:
-    1) Open a blank document based on the project template (very important) by choosing File > New > Templates, then selecting the required template.
-    2) Delete any unwanted text or other material that was brought in from the template, and set the first page to the page style you specified for the first page of a chapter.
-    3) Click File > Save As. Give the document a suitable name and save it in the folder for this project.
-If you already have some of the chapters written, the files may not be based on the template you just created for this project. Although you can use the existing files as subdocuments as they are, you may want to change the template attached to those files; if so, use the technique described in Chapter 10, Working with Templates.
+サブ文書は他のテキスト文書と変わりません。マスター文書にリンクされ、マスター文書の中から開かれたときのみ、サブ文書となる。サブ文書は独立した文書として使用することもできる。マスター文書のいくつかの設定はサブ文書の設定を上書きするが、それはマスター文書を通して文書を表示、操作、印刷する場合に限られる。
+
+通常の文書を作成するのと同じ方法でサブ文書を作成する：
+
+#. ファイル > 新規 > 雛形を選択し、必要な雛形を選択して、プロジェ クト雛形に基づいた白紙の文書を開く（非常に重要）。
+#. 雛形から持ってきた不要なテキストやその他の素材を削除し、最初のページを章の最初のページに指定したページスタイルに設定する。
+#. ファイル＞名前を付けて保存をクリックする。文書に適当な名前を付けて、このプロジェクト用のフォルダに保存する。
+
+すでにいくつかの章が書かれている場合、そのファイルはこのプロジェクトのために作成した雛形に基づいていないかもしれない。既存のファイルをそのままサブ文書として使用することはできるが、それらのファイルに添付されている雛形を変更したいかもしれない。その場合は、第10章雛形の操作で説明されているテクニックを使用しろ。
 
 Step 5. Add some pages to the master document
 ----------------------------------------------------------------------
 
-To assist you, do the following:
-    • Make sure paragraph marks are showing. You can set them in Tools > Options > LibreOffice Writer > Formatting Aids, or click the Toggle Formatting Marks icon on the Standard toolbar, or press Ctrl+F10.
-    • Show text boundaries, table boundaries, and section boundaries (Tools > Options > LibreOffice > Application Colors).
-If the master document does not contain any required “front matter” such as a title page, copyright page, or TOC page, add them now. The example in this section uses the sequence of page styles given in “Step 1. Plan the project” on page 8.
-    1) Open the master document (.odm file) you created and type the contents of the title page (or leave placeholders and fill in later). With the insertion point in the last blank paragraph on the page, click Insert > More Breaks > Manual Break. On the Insert Break dialog, select Page break and the page style for the second page (Copyright Page in our example), and leave the Change page number option deselected. Click OK.
+以下のようにしろ：
 
-    2) Type the contents of the copyright page (or leave placeholders). With the insertion point in the last blank paragraph on the page, use the same method to insert another manual page break, this time setting the page style to Table of Contents page.
-    3) On the Table of Contents page, leave a blank paragraph or two or insert a TOC (Insert > Table of Contents and Index > Table of Contents, Index or Bibliography). The TOC will not have any contents until you add the subdocuments, but a gray mark or box indicates its location. For more about inserting and formatting TOCs, see Chapter 15, Tables of Contents, Indexes, Bibliographies.
-    • Note
-Depending on the style definitions for the first paragraph (usually a heading) on the Copyright and TOC pages, you may not need to insert manual page breaks.
+* 段落マークが表示されていることを確認する。ツール] > [オプション] > [LibreOffice Writer] > [書式設定補助] で設定するか、[標準] ツールバーの [書式マークを切り替える] 図像をクリックするか、Ctrl+F10 キーを押する。
+* テキストの境界、表の境界、セクションの境界を表示する (ツール > オプション > LibreOffice > アプリケーションの色)。
+
+マスター文書に、表題ページ、コピーライトページ、TOCページなど、必要な「フロントマター」が含まれていない場合は、今すぐ追加しろ。このセクションの例では、「ステップ1.8ページの「プロジェクトを計画する」で示したページスタイルの順序を使用する。
+
+#. 作成したマスター文書（.odmファイル）を開き、表題ページの内容を入力する（またはプレースホルダーを残して後で記入する）。ページの最後の空白段落に挿入ポイントを置き、「挿入」→「その他の改行」→「手動改行」をクリックする。改行の挿入］ダイアログボックスで、［改ページ］と二ページ目のページスタイル（この例では［著作権ページ］）を選択し、［ページ番号の変更］オプションは選択しないままにする。OKをクリックする。
+#. コピーライトページの内容を入力する（またはプレースホルダーを残す）。ページの最後の空白の段落に挿入ポイントを置き、同じ方法でもう一つ手動改ページを挿入し、今度はページスタイルを目次ページに設定する。
+#. 目次ページで、空白の段落を一つか二つ残すか、TOCを挿入する（挿入 > 目次と索引 > 目次、索引、または書誌）。TOCは、サブ文書を追加するまで内容を持ちませんが、灰色のマークまたはボックスがその位置を示する。TOCの挿入とフォーマットについては、第15章目次、索引、書誌を参照しろ。
+
+.. note::
+
+   CopyrightとTOCページの最初の段落（通常は見出し）のスタイル定義によっては、手動で改ページを挿入する必要がない場合もある。
 
 Step 6. Insert the subdocuments into the master document
 ----------------------------------------------------------------------
 
-Now we are ready to add the subdocuments.
-    • Tip
-Subdocuments are inserted into a master document before the item highlighted in the Navigator. If you insert the last subdocument first, and then insert the other subdocuments before the last one, they will end up in the correct sequence without the necessity of moving them up or down in the list.
-    1) Display the Navigator (click the Navigator icon on the Sidebar).
-    2) Be sure the Navigator is showing the Master View (see “Master document Navigator” on page 5). If necessary, click the Toggle Master View icon at the upper left to switch between regular and master views.
-    3) On the Navigator, select Text, then click Insert > File on the Navigator toolbar, or right-click on Text and select Insert > File in the context menu.
+これでサブ・文書を追加する準備ができた。
 
-A standard file browser dialog opens. Select the required file (which you created in Step 4) and click Insert. This example uses seven chapters; we will load Chapter 7 first, as suggested in the Tip above.
-The inserted file is listed in the Navigator before the Text item, as shown in Figure 6.
+.. tip::
 
-    4) Because the Text section contains the title page and other material, highlight it and click the Move Up icon to move it to the top of the list. (Or, highlight the subdocument you just inserted (Chapter 7) and click the Move Down icon to move it below the Text section.)
-    5) Highlight the subdocument you just inserted (Chapter 7), then click Insert > File to insert the first subdocument; in this example, Chapter 1. Chapter 7 remains highlighted. Repeat with Chapter 2, Chapter 3, and so on until all the subdocuments have been added to the list. You can insert several several files at the same time. The Navigator will now look something like Figure 7.
-    6) Save the master document again.
-    • Tip
-You can reorder the subdocuments in the master document by dragging and dropping the subdocument entry in the Navigator.
+   サブ文書は、ナビゲーターでハイライトされた項目の前にマスター文書に挿入される。最後のサブ文書を最初に挿入し、他のサブ文書を最後のサブ文書の前に挿入すると、一覧の上下に移動することなく、正しい順序で挿入される。
+
+#. ナビゲータを表示する（Sidebarのナビゲータ図像をクリック）。
+#. ナビゲータにマスタービューが表示されていることを確認する（5 ページの「マスター 文書 ナビゲータ」を参照）。必要に応じて、左上の［マスタービューの切り替え］図像をクリックして、通常ビューとマスタービューを切り替えます。
+#. ナビゲータ上でテキストを選択し、ナビゲータツールバーの［挿入］→［ファイル］をクリックするか、テキスト上で右クリックし、コンテキストメニューの［挿入］→［ファイル］を選択する。
+
+   標準的なファイルブラウザのダイアログボックスが開く。ステップ4で作成した）必要なファイルを選択し、Insertをクリックする。この例では7つの章を使用する。上のヒントで提案したように、第7章を最初に読み込みます。
+
+   挿入されたファイルは、図6に示すように、ナビゲータでテキスト・アイテムの前に一覧される。
+#. テキストセクションには表題ページやその他の資料が含まれているので、それをハイライトし、上へ移動図像をクリックして一覧の一番上に移動する。(または、挿入したサブ文書(第7章)をハイライトし、下に移動図像をクリックして、テキストセクションの下に移動する)。
+#. 挿入したサブ文書 (第 7 章) をハイライトし、[挿入] > [ファイル] をクリックして最初のサブ文書を挿入する。この例では第1章だ。第 2 章、第 3 章と、すべてのサブ文書が一覧に追加されるまで繰り返す。複数のファイルを同時に挿入することもできる。ナビゲータは図7のようになる。
+#. マスター文書を再度保存する。
+
+.. tip::
+
+   ナビゲータでサブ文書のエントリをドラッグ＆ドロップすることで、マスター文書内のサブ文書の順序を変更することができる。
 
 Step 7. Add table of contents, bibliography, index
 ----------------------------------------------------------------------
 
-You can generate a table of contents, bibliography, or index for the book, using the master document. You must insert these items into a text section in the master document. For more about these document elements, see Chapter 15, Tables of Contents, Indexes, Bibliographies.
-In case you did not insert a table of contents in step 5, position the cursor on the page in the first text section where the table of contents is to go and choose Insert > Table of Contents and Index > Table of Contents, Index or Bibliography to create it.
-If you do not have a Text section at the end of the master document, insert one before the last subdocument, then move it down so it is after the last subdocument. Now, if you have included bibliographic entries in your subdocuments, you can put the insertion point on the page in this last text section where the bibliography is to go and create the bibliography.
-If you have included index entries in your subdocuments, put the insertion point on the page in the last text section where the index is to go and create the index.
+マスター文書を使って、本の目次、書誌、索引を作成することができる。これらの項目をマスター文書のテキストセクションに挿入する必要がある。これらの文書要素については、第15章目次、索引、書誌を参照しろ。
+
+ステップ5で目次を挿入しなかった場合は、目次を挿入する最初のテキストセクションのページにキャレットを置き、「挿入」＞「目次と索引」＞「目次、索引、または書誌」を選択して目次を作成する。
+
+マスター文書の最後にテキストセクションがない場合は、最後のサブ文書の前にテキストセクションを挿入し、最後のサブ文書の後になるように下に移動する。これで、サブ文書に書誌項目が含まれている場合、この最後のテキストセクションの書誌が入るページに挿入ポイントを置き、書誌を作成することができる。
+
+サブ文書に索引項目を含めている場合は、索引が入る最後のテキストセクションのページに挿入ポイントを置き、索引を作成する。
+
 Figure 8 shows the Navigator after addition of a TOC and index.
 
 Combining several documents into a master document
 ======================================================================
 
-When you have several existing documents, you can combine them into one document controlled by a master document.
-This method works best when all of the documents were created from the same template, but you can also use it when the documents have been created from different templates. This method is especially useful when the subdocuments are created or maintained by multiple writers. For example, you might be creating an anthology of short stories, a book of symposium papers, or a set of engineering test results with a standard company title page.
-We will use a book of engineering test results as an example.
-    • Tip
-You could create a master document template (see page 18) and use it as the starting point for this method. In that case, skip steps 1 and 2 and start with step 3.
-    1) Open the title page document that you plan to use as the master document. To avoid creating too many subdocuments when this document is converted to a master document, have only one level 1 heading present. If there are more, temporarily change them to lower level headings and note which they are (add, for example, an asterisk at the end of each heading to remind you which have to revert to level 1 headings later).
-    2) Select File > Send > Create Master Document, name and save this master document (see “How to do it” on page 14).
-Let us assume the original document was named FrontPage with a single Level 1 heading, and that when we created the master document (.odm file) we named it TestFile.
-In this case, the master document is a blank file containing only one section. Also created at the same time was a subdocument named TestFile1, which is a .odt file containing the text from the FrontPage file. When you open the .odm file and click Yes to update all links, this file is linked in to the master document to provide the original content.
-The original FrontPage file is left intact in its folder.
-    3) Open the master document and click Yes to update links. The master document opens with the Navigator showing by default (see “Master document Navigator“ on page 5 and “Step 6. Insert the subdocuments into the master document“ on page 11 for more detailed information).
-    4) Click the Insert icon and select File.
+既存の文書が複数ある場合、マスター文書によって管理される一つの文書にまとめることができる。
 
-    5) Navigate to the location of the test results files (Results1.odt, Results2.odt, and so on). Select the first file to insert, Results1.odt for example, and click Insert. The file is inserted above the existing entry.
-    6) Click the Move Up icon to have the TestFile1 text above the Results1 text (file contents are inserted above the selected file in the master document).
-    7) Repeat from step 4 as often as required. It does not matter which file is highlighted in the master document when you insert the next one, just select the inserted file and use the Move Up or Move Down icons to position it as required.
+この方法は、すべての文書が同じ雛形から作成された場合に最も効果的だが、文書が異なる雛形から作成された場合にも使用できる。この方法は、サブ文書が複数のライターによって作成または管理されている場合に特に便利だ。例えば、短編小説のアンソロジー、シンポジウムの論文集、標準的な会社の表題ページを持つエンジニアリングのテスト結果一式などを作成する場合だ。
 
-    8) To edit the master document, to perhaps add a serial number and a client's name, in the master document right-click TestFile1.odt and select Edit in the context menu. Add the required content to the file that opens, save and close the file (see “Editing a master document” on page 17 for more detailed information).
-    9) Select Tools > Update > Links on the Menu bar, or click Update > Links in the Navigator and click Yes to confirm. All the edits in the master document will now show.
+ここでは、工学的な試験結果をまとめた本を例に挙げて説明する。
+
+.. tip::
+
+   マスター・文書・雛形を作成し（18ページ参照）、それをこの方法の出発点として使用することもできる。その場合は、ステップ1と2を飛ばしてステップ3から始めてください。
+
+#. マスター文書として使用する予定の表題ページ文書を開く。この文書をマスター文書に変換する際、サブ文書が増えすぎないように、レベル1の見出しは一つだけにしろ。それ以上ある場合は、一時的に低レベルの見出しに変更し、それがどれであるかをメモしておく（例えば、各見出しの末尾にアスタリスクを付け、後でレベル1の見出しに戻す必要があることを忘れないようにする）。
+#. ファイル」→「送信」→「マスター文書の作成」を選択し、このマスター文書に名前を付けて保存する（14ページの「やり方」を参照）。
+
+   元の文書はFrontPageという名前で、レベル1の見出しが一つあり、マスター文書（.odmファイル）を作成するときにTestFileという名前を付けたとする。
+
+   この場合、マスター・文書は一つのセクションだけを含む空白のファイルだ。TestFile1という名前のサブ文書も同時に作成され、これはFrontPageファイルのテキストを含む.odtファイルだ。.odmファイルを開き、「はい」をクリックしてすべてのリンクを更新すると、このファイルがマスター文書にリンクされ、オリジナルの中身が提供される。
+
+   元のFrontPageファイルはフォルダにそのまま残される。
+#. マスター文書を開き、「はい」をクリックしてリンクを更新する。マスター文書は既定でナビゲータが表示された状態で開く(5ページの「マスター文書のナビゲータ」と1一ページの「ステップ6.詳しくは1一ページの「マスター文書にサブ文書を挿入する」をご覧ください）。
+#. Insert 図像をクリックし、File を選択する。
+#. 検査結果ファイル（Results1.odt、Results2.odt など）の場所に移動する。挿入する最初のファイル（例えば Results1.odt）を選択し、Insertをクリックする。ファイルが既存の項目の上に挿入される。
+#. [上へ移動] 図像をクリックして、TestFile1 テキストを Results1 テキストの上に配置する (ファイルの内容は、マスター 文書で選択されたファイルの上に挿入される)。
+#. ステップ 4 を必要なだけ繰り返する。次のファイルを挿入するときに、マスター文書でどのファイルがハイライトされているかは問題ではない。挿入されたファイルを選択し、上へ移動または下へ移動図像を使用して、必要に応じて配置するだけだ。
+#. マスター文書を編集し、シリアル番号と顧客名を追加するには、マスター文書で TestFile1.odt を右クリックし、コンテキストメニューから Edit を選択する。開いたファイルに必要な内容を追加し、ファイルを保存して閉じる（詳細については17ページの「マスター文書の編集」をご覧ください）。
+#. メニューで[ツール] > [更新] > [リンク]を選択するか、ナビゲータで[更新] > [リンク]をクリックし、[はい]をクリックして確定する。マスター文書の編集内容がすべて表示される。
 
 Splitting a document into master and subdocuments
 ======================================================================
 
-When you have one existing document that you want to split into a master document and several subdocuments, you can have Writer split the document automatically at headings with an outline level of your choice.
-Although this method is quick and easy, some cleanup work may be necessary.
-The automatically generated file names for the subdocuments are maindocnameX.odt, where X is 1, 2, 3, and so on. If you have a Preface or other “chapter” starting with a Heading 1 before Chapter 1, the file names will not directly correspond to the chapter numbers. You may wish to rename the subdocuments; see “Adding, deleting, or renaming subdocuments” on page 17.
-How to do it
-    1) Open the document and choose File > Send > Create Master Document.
-    2) On the Name and Path of Master Document dialog (Figure 11):
-    a) Navigate to the folder where you want to save the master document and its subdocuments (or create a new folder).
-    b) Type a name for the master document in the File name box.
-    c) In the separated by: list, choose the outline level where the file should be split into subdocuments. Usually this is Outline: Level 1 for a chapter heading, but your document may be structured differently. For more information about outline levels, see Chapter 8, Introduction to Styles.
-    d) Leave the Automatic file name extension option selected, and click Save to split the document into subdocuments and create the master document.
-If you selected Outline: Level 1 and the paragraph style at that level is Heading 1, each of the subdocuments begins with a Heading 1 paragraph.
+マスター文書と複数のサブ文書に分割したい既存の文書がある場合、Writerで文書を見出しで自動的に分割し、アウトラインレベルを選択することができる。
+
+この方法は素早く簡単だが、いくつかのクリーンアップ作業が必要になる場合がある。
+
+自動的に生成されるサブ文書のファイル名はmaindocnameX.odtで、Xは1、2、3...となる。第1章の前に見出し1で始まる序章やその他の「章」がある場合、ファイル名は章番号に直接対応しない。17 ページの「サブ文書の追加、削除、名前の変更」を参照しろ。
+
+方法
+
+#. Open the document and choose File > Send > Create Master Document.
+#. On the Name and Path of Master Document dialog (Figure 11):
+
+   #. マスター文書とそのサブ文書を保存するフォルダに移動する (または新しいフォルダを作成する)。
+   #. ファイル名ボックスにマスター文書の名前を入力する。
+   #. separated by: 一覧で、ファイルをサブ文書に分割するアウトラインレベルを選択する。通常、これはアウトラインです：レベル1だが、あなたの文書は異なる構造になっているかもしれない。アウトラインレベルの詳細については、第8章 スタイル入門を参照しろ。
+   #. 自動ファイル名拡張子]オプションを選択したまま[保存]をクリックすると、文書がサブ文書に分割され、マスター文書が作成される。
+
+アウトラインを選択した場合レベル 1 を選択し、そのレベルの段落スタイルが見出し 1 の場合、各サブ文書は見出し 1 の段落で始まります。
 
 Restarting page numbering
 ======================================================================
 
-The examples in the previous sections showed a very basic collection of files with sequential page numbering. This is useful for many documents, including e-books, but a typical printed book has the following sequence of page numbers:
-    • No page numbers on cover page or copyright page.
-    • Lower-case roman numerals in the front matter, starting with i.
-    • Arabic numerals in the body of the document, starting with 1.
-    • Page numbering sequential through the rest of the book.
-To set up a master document to produce such a book, you need to define a different paragraph style for the heading of the first chapter and assign two special characteristics to it.
-Example
-Each chapter may start with a Heading 1 paragraph, set up in the Breaks section of the Text Flow tab of the Paragraph Style dialog to start on a new page (Figure 12). The Page number checkbox is not selected, so numbering continues from the number of the previous page.
+前のセクションの例では、連続したページ番号を持つファイルの非常に基本的なコレクションを示した。これは、電子書籍を含む多くの文書に便利だが、典型的な印刷された書籍は、ページ番号の順序は次のとおりです：
 
-Look on the Outline & List tab (Figure 13) of this dialog to see what outline level Heading 1 is assigned to. Usually this will be Outline level: Level 1. The level cannot be changed here because it has been set in Tools > Heading Numbering.
+* 表紙や著作権ページにはページ番号を付けない。
+* 本文ではiから始まる小文字のローマ数字。
+* 本文では1から始まるアラビア数字。
+* ページ番号は本の残りの部分を通して連続。
 
-Only one paragraph style can be assigned to Outline Level 1 through Tools > Heading Numbering. However, you can assign additional paragraph styles to any outline level by using the Outline & List tab on the Paragraph Style dialog.
-Therefore, you want to define a style called Heading 1 Chapter 1 that is identical in appearance to Heading 1 but has one essential difference:
-    1) Right-click Heading 1 in the Paragraph Styles section of the Styles tab in the Sidebar, and select New. On the Organizer tab of the Paragraph Style dialog, name the new style, select the next style, and be sure Inherit from shows Heading 1.
+このような本を作るためにマスター文書を設定するには、最初の章の見出しに別の段落スタイルを定義し、それに二つの特別な特性を割り当てる必要がある。
 
-    2) On the Text Flow tab, in the Breaks section (Figure 12), select Insert, Type: Page, Position: Before, With Page Style: First Page, and Page number: 1.
-    3) On the Outline & List tab, set the Outline level to Level 1 (Figure 15). This ensures that the heading will appear in the Table of Contents along with the other chapter headings. The List Style for this heading is No List, as it was not assigned an outline level through the Heading Numbering dialog.
+.. rubric:: Example
 
-    4) Now, assign the new style to the first paragraph of Chapter 1, and you’re done.
+各章は、段落スタイルダイアログボックスのテキストフロータブの区切りセクションで設定した、新しいページから始まる見出し1の段落で始めることができる（図12）。ページ番号チェックボックスは選択されていないので、番号は前のページの番号から続く。
+
+このダイアログボックスの「アウトラインと一覧」タブ（図13）を見て、見出し1がどのアウトラインレベルに割り当てられているかを確認する。通常はアウトラインレベルです：レベル1だ。このレベルは「ツール > 見出し番号」で設定されているので、ここで変更することはできない。
+
+ツール] > [見出し番号付け] でアウトラインレベル 1 に割り当てられる段落スタイルは 1 つだけだ。しかし、［段落スタイル］ダイアログボックスの［アウトラインと一覧］タブを使えば、どのアウトラインレベルにも追加の段落スタイルを割り当てることができる。
+
+そこで、「見出し1」と外観は同じだが、本質的な違いが一つある「見出し1章1」というスタイルを定義したいとする：
+
+#. Sidebarの［スタイル］タブの［段落スタイル］セクションで［見出し 1］を右クリックし、［新規作成］を選択する。段落スタイル］ダイアログボックスの［オーガナイザ］タブで、新しいスタイルに名前を付け、次のスタイルを選択し、［継承元］に［見出し1］が表示されていることを確認する。
+#. ［テキストフロー］タブの［区切り］セクションで（図12）、［挿入］、［タイプ］、［位置］、［ページ］を選択する：挿入」、「タイプ：ページ」、「位置挿入］、［タイプ：ページ］、［位置：前］、［ページスタイル］、［ページ番号：1］を選択する：挿入」、「タイプ：ページ」、「位置：前」、「ページスタイル：先頭ページ」、「ページ番号：1」を選択する。
+#. Outline & Listタブで、Outline levelをLevel 1に設定する（図15）。これにより、この見出しは他の章見出しと一緒に目次に表示される。見出し番号設定ダイアログボックスでアウトラインレベルが割り当てられていないので、この見出しの一覧スタイルは「一覧なし」だ。
+#. さて、新しいスタイルを第1章の最初の段落に割り当てて完了だ。
 
 Editing a master document
 ======================================================================
 
-After creating a master document, you may want to change its appearance or contents.
+マスター文書を作成した後、その外観や内容を変更したい場合がある。
 
 Changing the appearance of the master document
 ----------------------------------------------------------------------
 
-You can change the styles in the template as your project develops. Do not make changes to styles in the master document or in any of the subdocuments; make those changes in the template.
-To update the master document (and all of the subdocuments) with changes to the template, open the master document. You will get two messages: first, to ask if you want to update all links; and second, if you want to apply the changed styles. Answer Yes to both of these messages.
+プロジェクトが発展するにつれて、雛形のスタイルを変更することができる。マスター・文書やサブ文書のスタイルを変更するな。
+
+雛形の変更でマスター・文書（およびすべてのサブ・文書）を更新するには、マスター・文書を開いてください。二つのメッセージが表示される：一つ目は、すべてのリンクを更新するかどうかを尋ねるメッセージ、二つ目は、変更したスタイルを適用するかどうかを尋ねるメッセージだ。これらのメッセージの両方に「はい」と答えてください。
 
 Editing subdocuments
 ----------------------------------------------------------------------
 
-You cannot edit a subdocument from within the master document. Instead, you must open the subdocument, either by double-clicking on it in the master document’s Navigator, or by opening it from outside the master document. Then you can edit it just as you would edit any other document.
-If, while editing a subdocument, you want to make changes to the styles that apply to the master document, see “Changing the appearance of the master document” above.
-If you change the contents of any subdocument, you need to manually update the table of contents, bibliography, and index from within the master document.
+マスター文書の中からサブ文書を編集することはできない。代わりに、マスター文書のナビゲーターでサブ文書をダブルクリックするか、マスター文書の外からサブ文書を開く必要がある。そうすれば、他の文書と同じように編集することができる。
+
+サブ文書の編集中に、マスター文書に適用されるスタイルに変更を加えたい場合は、上記の「マスター文書の外観を変更する」を参照しろ。
+
+サブ文書の内容を変更する場合は、マスター文書の中から目次、書誌情報、索引を手動で更新する必要がある。
 
 Adding, deleting, or renaming subdocuments
 ----------------------------------------------------------------------
 
-To add a subdocument, follow the method described in “Step 6. Insert the subdocuments into the master document“ on page 11.
-To delete a subdocument, right-click its file name in the Navigator and choose Delete.
-If you rename a subdocument by changing its file name, the next time you update links in the master document, that subdocument will show up in the Navigator as a broken link (shown in red). To fix this, you can either change back the name of the file (the link will be restored in the next update) or follow these steps:
-    1) Right-click the broken link in the Navigator and choose Edit link.
-    2) In the Edit Sections dialog (Figure 16), select the renamed file, and edit the name of the section (which is the name shown in the Navigator).
-    3) Click OK to save the changes.
+サブ文書を追加するには、11 ページの「ステップ 6.サブ文書をマスター文書に挿入する」（11 ページ） に記載されている方法に従ってください。
+
+サブ文書を削除するには、ナビゲータでファイル名を右クリックし、削除を選択する。
+
+ファイル名を変更してサブ文書の名前を変更した場合、次にマスター文書のリンクを更新すると、そのサブ文書は壊れたリンク（赤で表示）としてナビゲータに表示される。これを修正するには、ファイル名を元に戻すか（リンクは次回の更新で復元される）、以下の手順に従ってください：
+
+#. ナビゲータで壊れたリンクを右クリックし、リンクの編集を選択する。
+#. セクションの編集ダイアログボックス（図16）で、名前を変更したファイルを選択し、セクション名（ナビゲータに表示されている名前）を編集する。
+#. OKをクリックして変更を保存する。
 
 Creating a master document template
 ======================================================================
 
-A master document template is created in much the same way as any other template, described in Chapter 10, Working with Templates:
-    1) First, create the master document using File > Send > Create Master Document, as described in earlier sections of this chapter.
-    2) Then, use File > Templates > Save as Template to create the template (.otm), which will then be listed in the Templates dialog along with other templates.
-    • Tip
-Include in the name you give a master document template some indication that it is not an ordinary template.
+マスター文書の雛形は、第 10 章「雛形の操作」で説明する他の雛形とほぼ同じ方法で作成する：
+
+#. まず、この章の前のセクションで説明したように、ファイル > 送信 > マスター文書の作成 を使ってマスター文書を作成する。
+#. 次に、［ファイル］→［雛形］→［雛形として保存］ を使って雛形 (.otm) を作成し、他の雛形と一緒に［雛形］ ダイアログボックスに表示される。
+
+.. tip::
+
+   マスター・文書・雛形に付ける名前には、それが普通の雛形ではないことを示す何らかの表示を含めてください。
 
 Creating one file from a master document and its subdocuments
 ======================================================================
 
-Master documents are .odm files containing linked subdocuments, which are in .odt format. Although linked files are very useful when writing and editing a large document such as a book, sometimes you might need to have a copy of the entire book in one file, for example when sending it to a publisher.
-To export a master document to a .odt file (without affecting the original .odm file):
-    1) Open the master document and update all links. Choose File > Export on the Menu bar.
-    2) On the Export dialog (Figure 17), type a name for the exported .odt file and choose ODF Text Document (.odt) in the File format list (it should be the default choice). Click Export. This step creates an .odt file, with each subdocument in a separate write-protected section.
-    3) Close the master document and open the new .odt file, updating all links.
-    4) To break the links and remove the write protection, go to Format > Sections, select the first item in the Section list, then Shift+click on the last item in the list in order to select all the items. Deselect both Link in the Link section and Protect in the Write Protection section.
-    5) Click OK.
-If you wish to eliminate some or all of the sections to have a plain text document, select the sections you wish to remove, and click Remove. The contents of those sections remain in the document; only the section markers are removed. Click OK.
+マスター文書は、リンクされたサブ文書を含む.odmファイルで、.odtフォーマットだ。リンクされたファイルは、本のような大きな文書を書いたり編集したりするときにとても便利だが、出版社に送るときなど、本全体のコピーを一つのファイルにまとめる必要がある場合もある。
+
+マスター文書を .odt ファイルにエクスポートするには (元の .odm ファイルには影響を与えません)：
+
+#. マスター文書を開き、すべてのリンクを更新する。メニューのファイル > エクスポートを選択する。
+#. ［書き出し］ダイアログボックス (図 17) で、書き出す .odt ファイルの名前を入力し、［ファイル形式］ 一覧で ODF テキスト文書 (.odt) を選択する (既定の選択になっているはずです)。エクスポートをクリックする。このステップでは、各サブ文書が個別の書き込み禁止セクションにある .odt ファイルが作成される。
+#. マスター文書を閉じ、新しい.odtファイルを開き、すべてのリンクを更新する。
+#. リンクを解除し、書き込み保護を解除するには、「書式」>「セクション」と進み、セクション一覧の最初の項目を選択し、一覧の最後の項目をShift+クリックしてすべての項目を選択する。LinkセクションのLinkとWrite ProtectionセクションのProtectの両方の選択を解除する。
+#. OKをクリックする。
+
+セクションの一部または全部を削除してプレーンテキスト文書にしたい場合は、削除したいセクションを選択し、［削除］をクリックする。セクションマーカーだけが削除される。OKをクリックする。
 
 Anchoring images
 ======================================================================
 
-An image (graphic) anchored To page in a subdocument is not displayed in a master document. Because the master document reorganizes the page flow, page numbers, and cross-references when it collates the subdocuments, the image loses its anchor reference and disappears.
-In contrast, an image anchored To page in a text section of a master document stays with that page and does not move if the length of subdocuments changes. The image may end up on a page somewhere in the middle of a subdocument, not where you want it to be.
-    • Note
-The anchor “to page” is deprecated. Avoid using it.
-To keep an image positioned precisely on a particular page, anchor the image as follows:
-    1) Right-click the image and choose Properties in the context menu.
-    2) On the Type tab of the Image dialog (Figure 18), set the anchor to To character, As character, or To paragraph.
-    3) Under Position, choose suitable horizontal and vertical references to the page. Click OK to save the changes.
+サブ文書のページにアンカーされている画像（画像）がマスター文書に表示されない。マスター・文書は、サブ文書を照合する際に、ページの流れ、ページ番号、相互参照を再編成するため、画像はアンカー参照を失い、消えてしまいる。
+
+対照的に、マスター文書のテキストセクションのページにアンカーされた画像は、そのページに留まり、サブ文書の長さが変わっても移動しない。画像はサブ文書の途中のページになってしまうかもしれない。
+
+.. note::
+
+   アンカー "to page "は非推奨。使用を避けてください。
+
+画像を特定のページに正確に配置するには、次のように画像を固定する：
+
+#. 画像を右クリックし、コンテキストメニューから「プロパティ」を選ぶ。
+#. 画像ダイアログボックス（図18）の「種類」タブで、アンカーを「文字へ」、「文字として」、「段落へ」のいずれかに設定する。
+#. 「位置」で、ページに対する適切な水平方向と垂直方向の参照を選択する。OK をクリックして変更を保存する。
