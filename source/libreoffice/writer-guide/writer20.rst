@@ -11,290 +11,346 @@ Writer Guide Chapter 20, Customizing Writer ノート
 Introduction
 ======================================================================
 
-This chapter briefly describes some of the setup options found under Tools > Options (LibreOffice > Preferences on macOS) on the Menu bar in Writer. Additional options, and more details about the ones given here, are covered in the Help and in the Getting Started Guide. Several of the most relevant options are discussed in other chapters of this book, in the context of tasks where they are most applicable.
-This chapter also briefly describes some common customizations to menus, toolbars, and keyboard shortcuts, including adding new menus and toolbars and assigning macros to events. Other customizations are made easy by extensions that can be installed from the LibreOffice website or from other providers. You can also activate and use some experimental features; see page 33.
-    • Tip
-Many options are intended for power users and programmers. If you don’t understand what an option does, it is usually best to leave it on the default setting unless instructions in this book recommend changing the setting.
-    • Note
-Customizations to menus and toolbars can be saved in a template. To do so, first save them in a document and then save the document as a template as described in Chapter 10, Working with Templates. If you work on more than one project, you may find that having different menus and toolbars can be useful.
+この章では、Writer のメニューの [ツール] > [オプション] (macOS では [LibreOffice] > [環境設定]) にある設定オプションのいくつかを簡単に説明する。その他のオプションや、ここで説明するオプションの詳細については、ヘルプや入門ガイドで説明している。最も関連性の高いオプションのいくつかは、本書の他の章で、最も適用可能なタスクのコンテキストで説明されている。
+
+この章では、新しいメニューやツールバーの追加、イベントへのマクロの割り当てなど、メニュー、ツールバー、キーボードショートカットの一般的なカスタマイズについても簡単に説明する。その他のカスタマイズは、LibreOffice の Web サイトや他のプロバイダからインストールできる拡張機能によって簡単に行えます。また、いくつかの実験的な機能を有効にして使用することもできる。33 ページを参照しろ。
+
+.. tip::
+
+   多くのオプションはパワー使用者やプログラマー向けだ。そのオプションが何をするものなのか理解できない場合は、本書の説明で設定を変更することが推奨されていない限り、通常は既定設定のままにしておくのがベストだ。
+
+.. note::
+
+   メニューとツールバーのカスタマイズは、雛形に保存することができる。これを行うには、まずそれらを文書に保存し、第 10 章「雛形の使用」で説明するように、文書を雛形として保存する。複数のプロジェクトで作業する場合、異なるメニューやツールバーがあると便利だ。
 
 Choosing options for all of LibreOffice
 ======================================================================
 
-This section covers some of the settings that apply to all the components of LibreOffice (Writer, Calc, Impress, Draw, Math, and Base) and that are particularly important when using Writer.
-Go to Tools > Options (LibreOffice > Preferences on macOS) and then click the marker (+ or triangle) by LibreOffice on the left-hand side. A list of pages drops down. Select an item in the list to display the relevant page on the right-hand side of the dialog.
-    • Tip
-The Reset button (located in the lower part of any page of the Options dialog) resets the values on that page to the values that were in place when you opened the dialog. It may be called Revert on some installations.
-If you are using a version of LibreOffice other than US English, some field labels may be different from those shown in the illustrations.
+このセクションでは、LibreOffice のすべてのコンポーネント (Writer、Calc、Impress、Draw、Math、Base) に適用される設定のうち、Writer を使用する際に特に重要な設定について説明する。
+
+ツール > オプション (macOS では LibreOffice > 環境設定) を開き、左側の LibreOffice の横にあるマーカー (+ または三角) をクリックする。ページの一覧がドロップダウンする。一覧の項目を選択すると、ダイアログボックスの右側に該当するページが表示される。
+
+.. tip::
+
+   リセットボタン（オプションダイアログボックスのどのページでも下部にある）は、そのページの値をダイアログボックスを開いたときの値にリセットする。このボタンは、インストールによっては「元に戻す」と呼ばれることもある。
+
+米国英語以外のバージョンの LibreOffice を使用している場合、フィールドのラベルが図と異なることがある。
 
 User data
 ----------------------------------------------------------------------
 
-Because Writer can use the name or initials stored in the LibreOffice – User Data page for several things, including document properties (‘created by’ and ‘last edited by’ information), the name of the author of comments and changes, and the sender address in mailing lists, make sure that the correct information appears here.
-Fill in the form, or amend or delete any existing information. If you do not want user data to be part of the document’s properties, deselect Use data for document properties.
-    • Tip
-To have documents open at the page where the cursor is located when they were saved, select Use data for document properties on this dialog page, and go to File > Properties for each document and select Apply user data on the General tab. Unless both of these settings are selected, the document will open at the first page.
-Alternatively, select Load view position with the document even if it was saved by a different user on the Load/Save – General page (see page 9).
-In the Cryptography section, you can set the preferred public key for OpenPGP encryption and digital signature. These preferred keys will be pre-selected in the key selection dialog when you sign or encrypt a document (see Chapter 7, Printing and Publishing).
+Writer は、LibreOffice - 使用者データ ページに保存されている名前やイニシャルを、文書のプロパティ (「作成者」や「最終編集者」の情報)、コメントや変更の作成者の名前、メーリング一覧の送信者アドレスなど、さまざまなことに使用できる。
+
+フォームに入力するか、既存の情報を修正または削除しろ。使用者データを文書のプロパティの一部にしたくない場合は、「文書のプロパティにデータを使用する」の選択を外する。
+
+.. tip::
+
+   文書を保存時にキャレットがあるページで開くようにするには、このダイアログボックスページで「文書のプロパティにデータを使用する」を選択し、各文書の「ファイル」>「プロパティ」と進み、「全般」タブで「使用者データを適用する」を選択する。これらの設定が両方とも選択されていない限り、文書は最初のページで開かれる。
+
+   または、[読み込み/保存] - [全般] ページ (9 ページ参照) で、[別の使用者によって保存された場合でも、文書と一緒にビュー位置を読み込む] を選択する。
+
+暗号化] セクションでは、OpenPGP暗号化と電子署名に優先する公開鍵を設定できる。これらの優先鍵は、文書に署名したり暗号化したりするときに、鍵選択ダイアログボックスであらかじめ選択される (第7章 印刷と公開を参照)。
 
 View options
 ----------------------------------------------------------------------
 
-The options on the LibreOffice – View page affect how the document window looks and behaves. Set them to suit your personal preferences. For details, see the Help or the Getting Started Guide.
+LibreOffice - 表示] ページのオプションは、文書ウィンドウの表示や動作に影響する。お好みに合わせて設定しろ。詳細については、ヘルプまたは入門ガイドを参照しろ。
 
 Print options
 ----------------------------------------------------------------------
 
-On the LibreOffice – Print page, set the print options to suit your default printer and your most common printing method.
-In the Warnings section on the right side of the page, you can choose whether to be warned if the paper size or orientation specified in the document does not match the paper size or orientation available for your printer. Having these warnings turned on can be quite helpful, particularly if you work with documents produced by people in other countries where the standard paper size is different from yours.
+LibreOffice - 印刷] ページで、既定の印刷機と最も一般的な印刷方法に合わせて印刷オプションを設定する。
 
-    • Tip
-If your printouts are incorrectly placed on the page or chopped off at the top, bottom, or sides, or the printer is refusing to print, a likely cause is page size incompatibility.
+ページの右側にある [警告] セクションでは、文書で指定された用紙サイズまたは向きが、お使いの印刷機で使用可能な用紙サイズまたは向きと一致しない場合に警告を表示するかどうかを選択できる。この警告をオンにしておくと、特に標準的な用紙サイズが異なる他国の人が作成した文書を扱う場合に、非常に便利だ。
+
+.. tip::
+
+   印刷物がページ上に正しく配置されていなかったり、上下左右が切れていたり、印刷機が印刷を拒否する場合、考えられる原因はページサイズの不適合だ。
 
 Paths options
 ----------------------------------------------------------------------
 
-On the LibreOffice – Paths page, you can change the location of files associated with, or used by, LibreOffice to suit your needs. For example, you might want to store documents by default somewhere other than My Documents, or you might want to store project templates in folders not in the supplied template paths. Multiple paths are possible. For more information, see the Getting Started Guide.
+LibreOffice - パス] ページでは、LibreOffice に関連する、または LibreOffice で使用するファイルの場所を必要に応じて変更できる。たとえば、マイ文書以外の場所に文書を既定で保存したい場合や、提供されている雛形パス以外のフォルダにプロジェクト雛形を保存したい場合などだ。複数のパスを指定することも可能だ。詳細については、入門ガイドを参照しろ。
 
 Fonts options
 ----------------------------------------------------------------------
 
-If a document contains fonts that are not on your system, LibreOffice will substitute fonts for those it does not find. To specify different fonts from the ones that the program chooses, use the LibreOffice – Fonts page to specify replacement fonts.
-    • Tip
-Liberation fonts (Serif, Sans, and Mono) are often good choices to substitute for Times, Arial, and Courier.
-    • Note
-The choices made here do not affect the default fonts in documents. To do that, see “Basic Fonts options” on page 14. To change more than the basic fonts, create a new default template for Writer documents; see Chapter 10, Working with Templates.
+文書にシステム上にないフォントが含まれている場合、LibreOffice は見つからないフォントを置換する。プログラムが選択するフォントとは異なるフォントを指定するには、「LibreOffice - フォント」ページで代替フォントを指定する。
+
+.. tip::
+
+   解放フォント（Serif、Sans、Mono）は、Times、Arial、Courierの代わりによく使われる。
+
+.. note::
+
+   ここでの選択は、文書の既定・フォントには影響しない。これを行うには、14ページの「基本フォントのオプション」を参照しろ。基本フォント以外のフォントを変更するには、Writer文書の新しい既定雛形を作成する。
 
 Security options
 ----------------------------------------------------------------------
 
-Use the LibreOffice – Security page to choose security options for saving documents and for opening documents that contain macros. For information on the options not mentioned here, refer to the Help or the Getting Started Guide.
+LibreOffice - セキュリティー] ページでは、文書の保存やマクロを含む文書を開く際のセキュリティーオプションを選択できる。ここに記載されていないオプションについては、ヘルプまたは入門ガイドを参照しろ。
+
 Security Options and Warnings
-If you record changes, save multiple versions, or include hidden information or notes in your documents, and you do not want some recipients to see that information, you can set warnings to remind you to remove it, or you can have LibreOffice remove some of it automatically. Note that unless the information is removed, much of it is retained even when the file has been saved to other formats, including PDF.
-Click the Options button to open a separate dialog with several options, including:
+   変更を記録したり、複数のバージョンを保存したり、文書に隠し情報やメモを含めたりして、一部の受信者にその情報を見せたくない場合は、削除を促す警告を設定したり、LibreOffice でその一部を自動的に削除したりすることができる。情報が削除されない限り、その情報の多くは、PDF を含む他の形式で保存された場合でも保持される。
+
+オプション] ボタンをクリックすると、次のようなオプションがある別のダイアログボックスが開く：
+
 Remove personal information on saving
-Select this option to always remove user data from the file properties when saving the file. To save personal information with documents and still be able to manually remove personal information only from specific documents, do not select this option.
+   このオプションを選択すると、ファイルを保存する際、常にファイルのプロパティから使用者データが削除される。文書と一緒に個人情報を保存し、特定の文書からのみ手動で個人情報を削除できるようにするには、このオプションを選択するな。
 Ctrl-click required to open hyperlinks
-The default behavior in LibreOffice is that using Ctrl+click on a hyperlink opens the linked document or website. This is because many people find writing and editing documents is easier when accidental clicks on links do not activate the links. To set LibreOffice to activate hyperlinks using just an ordinary click, do not select this option.
+   LibreOfficeの既定の動作では、ハイパーリンクをCtrl+クリックすると、リンク先の文書またはWebサイトが開く。これは、誤ってリンクをクリックしてもリンクがアクティブにならない方が、文書の作成や編集が容易になると多くの人が感じるためだ。通常のクリック操作でハイパーリンクを有効にするには、このオプションを選択するな。
 
 Application colors
 ----------------------------------------------------------------------
 
-Writing, editing, and (especially) page layout are often easier when the page margins (text boundaries), the boundaries of tables and sections, grid lines, and other features are visible. In addition, you might prefer to use colors that are different from LibreOffice’s defaults.
-On the LibreOffice – Application colors page (Figure 3), you can specify which user interface elements are visible and the colors used to display them.
-    • To show or hide items such as text boundaries, select or deselect the boxes in the On column next to the names of the elements.
-    • To change the default colors for a specific element, click the down-arrow in the Color setting column by the name of the element and select a color from the drop-down list.
-    • To save your color changes as a color scheme, click Save, type a name in the Scheme box, and then click OK.
+ページの余白 (テキストの境界線)、表やセクションの境界線、グリッド線、その他の機能が表示されていると、執筆、編集、および (特に) ページレイアウトが容易になることがよくある。さらに、LibreOffice の既定とは異なる色を使いたい場合もあるだろう。
 
-    • Note
-To change the color settings used in Track Changes mode, go to Tools > Options > LibreOffice Writer > Changes.
+LibreOffice - アプリケーションの色] ページ (図 3) では、どの使用者インターフェイス要素を表示するか、またその表示色を指定できる。
+
+* テキスト境界などの項目を表示または非表示にするには、要素名の横にあるOn列のボックスを選択または選択解除する。
+* 特定の要素の既定カラーを変更するには、要素名の横にあるカラー設定欄の下矢印をクリックし、ドロップダウン一覧からカラーを選択する。
+* 色の変更を配色として保存するには、[保存]をクリックし、[配色]ボックスに名前を入力し、[OK]をクリックする。
+
+.. note::
+
+   変更履歴モードで使用する色の設定を変更するには、[ツール] > [オプション] > [LibreOffice Writer] > [変更履歴] を選択する。
 
 Choosing options for loading and saving documents
 ======================================================================
 
-You can set the options for loading and saving documents to suit the way you work.
-If the Options dialog is not already open, click Tools > Options. Click the expansion symbol (+ or triangle) to the left of Load/Save.
+文書の読み込みと保存のオプションは、作業方法に合わせて設定できる。
+
+オプション] ダイアログボックスがまだ開いていない場合は、[ツール] > [オプション] をクリックする。読み込み/保存] の左側にある拡張記号 (+ または三角形) をクリックする。
 
 General
 ----------------------------------------------------------------------
 
-Most of the choices on the Load/Save – General page (Figure 4) are familiar to users of other office suites. Some items of interest are described below.
+Load/Save - General」ページ（図4）の選択肢のほとんどは、他のオフィススイートの使用者にはおなじみのものだ。いくつかの興味深い項目を以下に説明する。
 
 Load user-specific settings with the document
-When a LibreOffice document is saved, certain settings from the user's system are saved with it. When the document is opened on another user’s system, it will use the settings saved from the previous user’s system. Deselecting this option causes the current user’s settings to override the settings previously saved with the document.
-Even if this option is not selected, some settings are always loaded with the document:
-    • Settings in File > Print > Options.
-    • Spacing options for paragraphs before text tables.
-    • Information about automatic updating for links, field functions, and charts.
-    • Information about working with Asian character formats.
-    • Settings for any data sources linked to a document.
+   LibreOffice 文書が保存されると、その使用者のシステムの特定の設定も一緒に保存される。その文書を別の使用者のシステムで開くと、前の使用者のシステムで保存された設定が使用される。このオプションの選択を解除すると、現在の使用者の設定が、以前に文書と共に保存された設定を上書きする。
+
+   このオプションが選択されていない場合でも、一部の設定は常に文書と一緒に読み込まれる：
+
+   * ファイル＞印刷＞オプションの設定。
+   * テキストテーブルの前の段落のスペーシングオプション。
+   * リンク、フィールド機能、チャートの自動更新に関する情報。
+   * アジアの文字フォーマットに関する情報。
+   * 文書にリンクされているデータソースの設定。
 Load printer settings with the document
-If this option is enabled, the printer settings of the previous user will be loaded with the document. In an office setting, this may cause a document to be printed on a distant network printer unless the printer is manually changed in the Print dialog. If disabled, the current user’s default printer will be used to print the document. The current printer settings will be stored with the document whether or not this option is selected.
+   このオプションを有効にすると、前の使用者の印刷機設定が文書に読み込まれる。オフィス環境では、印刷ダイアログボックスで印刷機を手動で変更しない限り、文書が離れたネットワーク印刷機で印刷される可能性がある。無効にした場合、現在の使用者の既定印刷機が文書の印刷に使用される。このオプションが選択されているかどうかにかかわらず、現在の印刷機設定は文書とともに保存される。
 Load view position with the document even if it was saved by a different user
-The “view position” is the location of the cursor in the document. This option causes the last-saved view position to be loaded regardless of who saved the document.
+   ビュー位置」とは、文書内のキャレットの位置のことだ。このオプションを指定すると、誰が文書を保存したかにかかわらず、最後に保存したビュー位置が読み込まれる。
 Save AutoRecovery information every __ minutes
-Choose whether to enable AutoRecovery and how often to save the information used by the AutoRecovery process. AutoRecovery in LibreOffice saves the information needed to restore all open documents in case of a crash. If you have this option set, recovering your document after a system crash will be easier. This option is on by default.
+   自動回復を有効にするかどうか、および自動回復プロセスで使用される情報を保存する頻度を選択する。LibreOfficeの自動回復では、クラッシュ時に開いているすべての文書を復元するために必要な情報が保存される。このオプションを設定すると、システムクラッシュ後の文書の復元が容易になる。このオプションは既定でオンになっている。
 Edit document properties before saving
-If this option is selected, the document’s Properties dialog prompts you to enter relevant information the first time you save a new document (or whenever you use Save As).
+   このオプションが選択されている場合、文書のプロパティダイアログボックスでは、新規文書を初めて保存するとき（または名前を付けて保存を使用するとき）に、関連情報を入力するよう求められる。
 Always create backup copy
-Saves the previously saved version of a document as a backup copy in a separate folder whenever you save a document. When LibreOffice creates a new backup copy, the previous backup copy is replaced. The backup copy gets the extension .bak. To see or change the backup folder, go to Tools > Options > LibreOffice > Paths. When opening a backup file, you will be prompted to specify the program to open it with; choose LibreOffice. This option is on by default.
-    • Tip
-Authors whose work may be very lengthy should always consider enabling LibreOffice to create an automatic backup copy.
+   文書を保存するたびに、以前に保存したバージョンの文書をバックアップコピーとして別のフォルダに保存する。LibreOffice が新しいバックアップコピーを作成すると、以前のバックアップコピーが置き換えられる。バックアップコピーの拡張子は .bak だ。バックアップフォルダを確認または変更するには、[ツール] > [オプション] > [LibreOffice] > [パス] を選択する。バックアップファイルを開く際に、開くプログラムを指定するプロンプトが表示される。このオプションは既定でオンになっている。
+
+   .. tip::
+
+      仕事が非常に長くなる可能性のある著者は、LibreOfficeで自動バックアップコピーを作成できるようにすることを常に考慮すべきだ。
+
 Save URLs relative to file system / to internet
-Use these options to select the default for relative addressing of URLs in the file system and on the Internet. For details, see the Getting Started Guide.
+   これらのオプションを使用して、ファイルシステムとインターネット上のURLの相対アドレスの既定を選択する。詳細については、入門ガイドを参照しろ。
 Default File Format and ODF Settings
-ODF format version: LibreOffice by default saves documents in OpenDocument Format (ODF) version 1.3 Extended. While this allows for improved functionality, there may be backwards compatibility issues. When a file saved in ODF 1.3 Extended is opened in an editor that uses an earlier version of ODF, some of the advanced features may be lost. If you plan to share documents with people who use editors that use older versions of ODF, you may wish to save the document using ODF 1.2 Extended (compatibility mode).
-Document type: If you routinely share documents with users of Microsoft Word, you might want to change the Always save as option to one of the Word formats. However, you can choose a Word format when you save any individual file.
+   ODFフォーマットのバージョン：LibreOfficeは既定でOpenDocument Format (ODF) バージョン1.3 Extendedで文書を保存する。これにより機能が向上する一方で、後方互換性の問題が発生する可能性がある。ODF 1.3 Extendedで保存されたファイルを以前のバージョンのODFを使用するエディタで開くと、高度な機能の一部が失われることがある。旧バージョンのODFを使用するエディタを使用している人と文書を共有する予定がある場合は、ODF 1.2 Extended（互換モード）を使用して文書を保存することをお勧めする。
+
+   文書の種類文書の種類：Microsoft Wordの使用者と日常的に文書を共有する場合は、「常に名前を付けて保存」オプションをWord形式のいずれかに変更するとよいだろう。ただし、個々のファイルを保存するときにWord形式を選択することもできる。
 
 VBA Properties
 ----------------------------------------------------------------------
 
-On the VBA Properties page, choose whether to keep any macros in Microsoft Office documents that are opened in LibreOffice. For details, see the Getting Started Guide.
+VBA プロパティ] ページで、LibreOffice で開いた Microsoft Office 文書にマクロを保持するかどうかを選択する。詳細については、入門ガイドを参照しろ。
 
 Microsoft Office
 ----------------------------------------------------------------------
 
-On the Load/Save – Microsoft Office page, choose what to do when importing and exporting Microsoft Office OLE objects (linked or embedded objects or documents such as equations or spreadsheets): convert them into or from the corresponding LibreOffice OLE object or load and save them in their original format. For details, see the Getting Started Guide.
+読み込み/保存 - Microsoft Office] ページで、Microsoft Office OLE オブジェクト (リンクされた、または埋め込まれたオブジェクト、または方程式やスプレッドシートなどの文書) をインポートおよびエクスポートする際の処理を選択する: 対応する LibreOffice OLE オブジェクトに変換するか、または対応する LibreOffice OLE オブジェクトから変換するか、または元の形式で読み込んで保存する。詳細については、入門ガイドを参照しろ。
 
 HTML compatibility
 ----------------------------------------------------------------------
 
-Choices made on the Load/Save – HTML Compatibility page affect HTML pages imported into LibreOffice and those exported from LibreOffice. For more information, see the Help and the Getting Started Guide.
+読み込み/保存 - HTML 互換性] ページで選択した内容は、LibreOffice に読み込んだ HTML ページおよび LibreOffice から書き出した HTML ページに影響する。詳細については、ヘルプおよび入門ガイドを参照しろ。
 
 Choosing Writer-specific options
 ======================================================================
 
-Settings chosen in the LibreOffice Writer section of the Options dialog determine how Writer documents look and behave while you are working on them. If the Options dialog is not already open, choose Tools > Options. Click the marker (+ or triangle) by LibreOffice Writer on the left side of the dialog.
+オプション] ダイアログボックスの LibreOffice Writer セクションで選択した設定により、Writer 文書の外観や動作が決まります。オプション] ダイアログボックスが開いていない場合は、[ツール] > [オプション] を選択する。ダイアログボックスの左側にある LibreOffice Writer のマーカー (+ または三角) をクリックする。
 
 General options
 ----------------------------------------------------------------------
 
-The choices on the LibreOffice Writer – General page (Figure 5) affect the updating of links and fields, the units used for rulers and other measurements, and the default tab stop positions.
+LibreOffice Writer - 一般ページ (図 5) の選択肢は、リンクやフィールドの更新、定規やその他の測定に使用する単位、既定のタブストップの位置に影響する。
 
 Automatically Update [Fields and Charts]
-You may not want fields or charts to update automatically while you are working, because that slows down performance. Alternatively, you may want automatic updates if you are referring to information in the fields or charts.
+   作業中にフィールドやチャートが自動的に更新されるのは、パフォーマンスが低下するので避けたいかもしれない。あるいは、フィールドやチャートの情報を参照する場合は、自動更新を望むかもしれない。
 Update Links when Loading
-Depending on your work patterns, you may not want links to be updated when you load a document. For example, if your file links to other files on a network, you won’t want those links to try to update when you are not connected to the network.
+   作業パターンによっては、文書を読み込んだときにリンクが更新されることを望まない場合がある。たとえば、ファイルがネットワーク上の他のファイルにリンクしている場合、ネットワークに接続していないときにリンクが更新されるのは避けたいだろう。
 Settings
 Measurement unit
-Document designers recommend using points as the default measurement because you can easily relate things like font size to things like indents and tabs.
+   文書デザイナーは、フォントサイズと字下げやタブなどを簡単に関連付けることができるため、既定の測定値としてポイントを使用することを推奨している。
 Tab stops
-The Tab stops setting specifies the distance the cursor travels for each press of the Tab key. This setting is also used for the indent distance applied by the Increase Indent and Decrease Indent buttons on the Formatting Toolbar, which affect the indentation of entire paragraphs.
-    • Tip
-To avoid unwanted changes, do not rely on default tab settings. Rather, define tabs in paragraph styles or individual paragraphs (see Chapter 4, Formatting Text).
+   Tab stops設定は、Tabキーを押すたびにキャレットが移動する距離を指定する。この設定は、書式設定ツールバーの「字下げを増やす」と「字下げを減らす」ボタンで適用される字下げ距離にも使用され、段落全体の字下げに影響する。
+
+.. tip::
+
+   不要な変更を避けるには、既定のタブ設定に頼らないことだ。むしろ、段落スタイルまたは個々の段落でタブを定義しろ（第4章テキストの書式設定参照）。
+
 Word Count
 Additional separators
-For counting words, specifies the characters that are considered to separate words, in addition to spaces, tabs, line breaks, and paragraph breaks.
+   単語をカウントする場合は、スペース、タブ、改行、段落区切りに加えて、単語を区切る文字も指定する。
 Show standardized page count
-Editors and publishers often define a “standard” page as containing a specified number of characters or words; this field allows quick calculation of the number of these pages.
+   編集者や出版社は、指定された文字数や単語数を含むページを「標準」ページと定義することが多い。
 
 View options
 ----------------------------------------------------------------------
 
-Two pages of options set the defaults for viewing Writer documents: View (described here) and Formatting Aids (described on page 13). View is a good page to check if, for example, you cannot see graphics on the screen.
+二ページのオプションで、Writer文書の表示に関する既定を設定する：表示] (ここで説明) と [書式設定補助] (13ページで説明) だ。表示] は、たとえば画面に画像が表示されない場合に確認するとよいページだ。
+
 Guides – Helplines While Moving
-Helplines assist with precisely position a frame or drawing object on a page. When enabled, horizontal and vertical lines appear that are the height and width of a selected object. These lines extend across the complete working area as the object is moved.
+   ヘルプラインは、枠や描画オブジェクトをページ上に正確に配置するのに役立つ。有効にすると、選択したオブジェクトの高さと幅を示す水平線と垂直線が表示される。これらの線は、オブジェクトが移動すると、作業領域全体に広がります。
 Display Fields
 Hidden text
-Display text that is hidden by Conditional Text or Hidden Text fields.
+   条件付きテキストまたは隠しテキストフィールドによって隠されたテキストを表示する。
 Hidden paragraphs
-Display paragraphs that contain a Hidden Paragraph field. This option has the same function as the menu command View > Field Hidden Paragraphs.
+   非表示段落フィールドを含む段落を表示する。このオプションは、メニュー・コマンド「表示」→「フィールドの非表示段落」と同じ機能を持つ。
 Display tracked changes
 Tracked deletions in margin
-By default, deletions are shown in the text with a strikethrough font. To show deletions in the margin, not in the text, select this option.
+   既定では、削除箇所はテキスト内に取り消し線付きフォントで表示される。削除箇所を本文ではなく余白に表示するには、このオプションを選択する。
 Tooltips on tracked changes
-When this option is selected, hold the mouse pointer over a tracked change to show the type of change, the author, date, and time of day for the change. To hide these tooltips, deselect this option.
+   このオプションが選択されている場合、追跡された変更の上にマウスポインタをかざすと、変更の種類、作成者、日付、時刻が表示される。これらのツールチップを非表示にするには、このオプションの選択を解除する。
 Outline Folding
 Show outline-folding buttons
-When this option is selected, a button with an arrow is visible near any selected heading in your document. Click on it to “fold” (hide) all text from the current heading to the next heading.
+   このオプションを選択すると、文書内で選択されている見出しの近くに矢印の付いたボタンが表示される。これをクリックすると、現在の見出しから次の見出しへすべてのテキストを「折りたたむ」（隠す）ことができる。
 Include sub levels
-If this option is also selected, clicking on a heading folds all text from that heading to the next same-level heading with all its subheadings.
-The other options should be self-explanatory. If not, please refer to the Help.
+   このオプションも選択されている場合、見出しをクリックすると、その見出しのすべてのテキストが次の同じレベルの見出しとそのすべての小見出しに折りたたまれる。
+
+他のオプションは自明なはずだ。そうでない場合は、ヘルプを参照しろ。
 
 Formatting Aids options
 ----------------------------------------------------------------------
 
-On the LibreOffice Writer – Formatting Aids page (Figure 7), select the desired options.
+LibreOffice Writer - 書式設定補助] ページ (図 7) で、必要なオプションを選択する。
 
 Layout Assistance – Math baseline alignment
-To set the default vertical alignment for formula (Math) objects to use the text base line as a reference, select this option. To enable changing the vertical positioning of objects, deselect this option; you can then set the position for individual objects. See the Math Guide for more information.
+   数式（Math）オブジェクトの既定の垂直配置を設定し、テキストの基準線を参照として使用するには、このオプションを選択する。オブジェクトの垂直方向の配置を変更できるようにするには、このオプションの選択を解除する。詳細はMath Guideを参照。
 Display Formatting
-The Display Formatting options determine which symbols show when you select View > Formatting Marks on the Menu bar or the Formatting Marks icon on the Standard toolbar. Symbols such as paragraph ends and tabs can help in writing, editing, and page layout. For example, they can show if there are any blank paragraphs or if any tables or graphics are too wide and intrude into the margins of the page.
+   メニューの「表示」→「書式マーク」または標準ツールバーの「書式マーク」図像を選択したときに表示される記号は、「書式を表示」オプションによって決まります。段落末尾やタブなどの記号は、文章作成、編集、ページレイアウトに役立つ。たとえば、空白の段落がある場合や、表や図形の幅が広すぎてページの余白に入り込んでいる場合などに表示される。
 Protected Areas – Enable cursor
-When this option is selected, you can set the cursor in a protected area, but you cannot make any changes. To make changes, you first need to unprotect the area. The methods of protecting and unprotecting vary with the area.
+   このオプションが選択されている場合、保護された領域にキャレットを置くことはできるが、変更を加えることはできない。変更を加えるには、まず領域の保護を解除する必要がある。保護と保護の解除の方法は、領域によって異なる。
 Direct Cursor
-Direct Cursor lets you enter text, images, tables, frames, and other objects in any blank area in your document. Writer then inserts your choice of tabs, spaces, indents, and so on to position the text or objects. For details on these choices, please see the Help.
-    • Note
-The direct cursor feature can lead to many formatting oddities and is incompatible with rigorous use of styles.
+   ダイレクトキャレットを使えば、文書内の任意の空白領域にテキスト、画像、表、枠、その他のオブジェクトを入力できる。Writerは、テキストやオブジェクトを配置するために、タブ、スペース、字下げなどの選択肢を挿入する。これらの選択肢の詳細については、ヘルプをご覧ください。
+
+   .. note::
+
+      ダイレクトキャレット機能は、多くの奇妙な書式を引き起こす可能性があり、スタイルの厳密な使用とは相容れない。
 Image – Anchor
-Choose the default anchor for newly added images: To Paragraph, To Character, or As Character. For more about anchoring images, see Chapter 11, Images and Graphics.
+   新しく追加した画像の既定アンカーを選択する：段落へ」、「文字へ」、または「文字として」を選択する。画像のアンカーについては、第11章 画像と画像を参照しろ。
 
 Grid options
 ----------------------------------------------------------------------
 
-Snap to grid automatically moves an object to the nearest gridlines. This can be very helpful when you are trying to align several objects such as graphics or tables.
-On the LibreOffice Writer – Grid page (Figure 8), you can choose whether to enable this feature and what grid intervals to use. If the grid intervals (subdivisions) are too large, you may find that you do not have enough control in placing the objects.
+Snap to grid は自動的にオブジェクトを最も近いグリッドラインに移動する。これは、画像や表などの複数のオブジェクトを整列させる場合に非常に便利だ。
+
+LibreOffice Writer - グリッドのページ (図 8) では、この機能を有効にするかどうかと、使用するグリッド間隔を選択できる。グリッド間隔 (細分化) が大きすぎると、オブジェクトの配置を十分に制御できない場合がある。
 
 Basic Fonts options
-On the LibreOffice Writer – Basic Fonts (Western) page (Figure 9), you can choose the fonts and font sizes for the Default Paragraph Style, headings, lists, captions, and indexes. These values are applied to new documents unless different settings are selected in the document itself or defined in the document’s template.
-To reset the values to the defaults when LibreOffice was installed, click the Default button.
-If Asian and/or CTL have been activated in Languages, extra pages are provided for their font options.
+----------------------------------------------------------------------
+
+LibreOffice Writer - 基本フォント (欧文) ページ (図 9) では、既定の段落スタイル、見出し、一覧、キャプション、索引のフォントとフォントサイズを選択できる。これらの値は、文書自体で異なる設定が選択されているか、文書の雛形で定義されていない限り、新しい文書に適用される。
+
+これらの値をLibreOfficeのインストール時の既定値に戻すには、[既定値] ボタンをクリックする。
+
+言語]でAsianおよび/またはCTLが有効になっている場合、それらのフォントオプションの追加ページが提供される。
 
 Print options
 ----------------------------------------------------------------------
 
-On the LibreOffice Writer – Print page, you can choose which items are printed with a Writer document by default. These options are in addition to the general options for all LibreOffice components on the LibreOffice – Print page (see page 6).
+LibreOffice Writer - 印刷] ページでは、Writer 文書と一緒に印刷する項目を既定で選択できる。これらのオプションは、[LibreOffice - 印刷] ページ (6 ページ参照) にある、すべての LibreOffice コンポーネントの一般的なオプションに追加される。
 
-Some considerations:
-    • To save printer ink or toner when working on drafts, you might want to deselect some of the items in the Contents section.
-    • The Print text in black option causes color text (but not graphics) to print as black on a color printer; on a black-and-white printer, this option causes color text to print as solid black instead of shades of gray (dithered).
-    • By comparison, the Convert colors to grayscale option on the Options – LibreOffice – Print page (Figure 2), prints all text and graphics as grayscale on color printers. (On black-and-white printers, color in graphics normally prints as grayscale.)
-    • If you are printing double-sided on a non-duplexing printer, you might choose to print only left or right pages, then turn the stack over and print the other pages.
-    • Tip
-You can override any of these defaults when printing a specific document. Click File > Print, then use the options on the various pages of the Print dialog.
+いくつか考慮すべきことがある：
+
+* 下書きをするときに印刷機のインクやトナーを節約するために、「内容」セクションのいくつかの項目の選択を外すとよいだろう。
+* 白黒印刷機では、このオプションはカラーテキストを灰色の濃淡 (ディザ) ではなく黒ベタで印刷する。
+* 白黒印刷機では、このオプションはカラーテキストを灰色の濃淡 (ディザ) ではなく黒ベタで印刷する。これに比べて、[オプション] - [LibreOffice] - [印刷] ページの [色を灰色スケールに変換] オプション (図 2) は、カラー印刷機ではすべてのテキストと画像を灰色スケールとして印刷する。(モノクロ印刷機では、画像スの色は通常灰色スケールとして印刷される)。
+* 両面印刷でない印刷機で両面印刷する場合、左右のページだけを印刷し、他のページを裏返して印刷することができる。
+
+.. tip::
+
+   特定の文書を印刷する際に、これらの既定のいずれかを上書きすることができる。ファイル] > [印刷]をクリックし、[印刷]ダイアログボックスのさまざまなページにあるオプションを使用する。
 
 Table options
 ----------------------------------------------------------------------
 
-On the LibreOffice Writer – Table page (Figure 11), you can specify the default behavior of tables. See the Help or Chapter 13, Tables, for more information.
+LibreOffice Writer - 表] ページ (図 11) では、表の既定の動作を指定できる。詳細については、ヘルプまたは第 13 章「表」を参照しろ。
 
-Some considerations:
-    • If most of your tables will require borders or headings, you may wish to select those options. If most of your tables are used for page layout, deselect Border and Heading.
-    • Select Do not split to prevent tables from being split across pages.
-    • Number recognition can be very useful if most of your tables contain numerical data. Writer will recognize dates or currency, for example, and format the numbers appropriately. However, if you want the numbers to remain as ordinary text, this feature can be quite irritating, so you may want to deselect it.
-    • The Keyboard Handling section specifies the distances that cells move when you use keyboard shortcuts to move them and the size of rows and columns inserted using keyboard shortcuts. If you don’t use keyboard shortcuts for this purpose, you can ignore these settings. See the Help for more information.
-    • The Behavior of rows/columns section specifies the effects that changes to rows or columns have on adjacent rows or columns and the entire table. You might need to test these selections to fully understand the effects.
+いくつか考慮すべきことがある：
+
+* ほとんどの表が境界線や見出しを必要とする場合は、これらのオプションを選択するとよいだろう。ほとんどの表がページレイアウトに使用される場合は、BorderとHeadingの選択を解除しろ。
+* テーブルがページ間で分割されないようにするには、Do not split を選択する。
+* 表中に数値データが含まれている場合、数値認識は非常に便利だ。例えば、日付や通貨を認識し、適切に書式を設定する。しかし、数字を普通のテキストのままにしておきたい場合、この機能はかなりイライラさせるので、非選択にするとよいだろう。
+* キーボード操作」セクションは、キーボード・ショートカットを使ってセルを移動するときの移動距離と、キーボード・ショートカットを使って挿入する行や列のサイズを指定する。この目的のためにキーボード・ショートカットを使用しない場合は、これらの設定を無視することができる。詳しくはヘルプをご覧ください。
+* 行/列の動作セクションは、行や列の変更が隣接する行や列、そしてテーブル全体に及ぼす影響を指定する。効果を完全に理解するためには、これらの選択をテストする必要があるかもしれない。
 
 Changes options
 ----------------------------------------------------------------------
 
-If you plan to use the change-tracking feature of Writer (described in Chapter 3, Working with Text: Advanced), use the LibreOffice Writer – Changes page (Figure 12) to choose the way changes to text and formatting are marked. Change bars can show where a change has been made to a line of text and are formatted under Lines Changed.
+Writer の変更履歴機能 (第 3 章「テキストの作業: 高度な操作」で説明) を使用する場合は、LibreOffice Writer - 変更ページ (図 12) を使用して、テキストと書式に対する変更のマーク方法を選択する。変更バーは、テキストの行に変更が加えられた箇所を示すことができ、「変更された行」の下に表示される。
 
 Comparison options
 ----------------------------------------------------------------------
 
-The options on the LibreOffice Writer – Comparison page determine the level of detail used by the Compare Document feature (Edit > Track Changes > Compare Document), described in Chapter 3, Working with Text: Advanced.
-Choose whether to compare word-by-word, character-by-character, or using an algorithm (Auto, which is the default). When By word or By character is selected, the random number choices are activated; optionally specify the minimum number of characters to be compared (Ignore pieces of length __).
+LibreOffice Writer - 比較] ページのオプションは、第 3 章「テキストの操作」で説明する [文書の比較] 機能 (「編集」 > 「変更履歴」 > 「文書の比較」) で使用する詳細レベルを決定する：詳細設定] で説明する。
+
+単語単位で比較するか、文字単位で比較するか、またはアルゴリズム (既定の [自動]) を使用して比較するかを選択する。単語単位] または [文字単位] を選択すると、乱数の選択肢が有効になる。オプションで、比較する最小文字数を指定する （長さ __ の部分は無視する）。
 
 Compatibility options
 ----------------------------------------------------------------------
 
-The settings on the LibreOffice Writer – Compatibility page (Figure 14) are used mainly when importing documents from Microsoft Word. If you are not sure about the effects of these settings, leave them as the defaults provided by LibreOffice. For information about settings that are not described below, see the Help. All settings selected will apply only to the current document, unless you select the Use as Default button at the bottom (not shown in the figure).
+LibreOffice Writer - 互換性」ページ (図 14) の設定は、主に Microsoft Word から文書をインポートするときに使用される。これらの設定の効果がよくわからない場合は、LibreOffice が提供する既定設定のままにしておいてください。以下に説明されていない設定については、ヘルプを参照しろ。選択したすべての設定は、下部にある [既定値として使用] ボタンを選択しない限り、現在の文書にのみ適用される (図には表示されていない)。
 
 Add spacing between paragraphs and tables
-Paragraph spacing is treated differently in LibreOffice Writer than it is in Microsoft Word. If you have defined spacing between paragraphs or tables in LibreOffice, this spacing is added to the spacing defined in Microsoft Word. This only affects the current document.
-If this option is selected, Microsoft Word-compatible spacing is added between paragraphs and tables in LibreOffice Writer documents.
+   LibreOffice Writer では、段落間隔の扱いが Microsoft Word とは異なる。LibreOffice で段落または表の間隔を定義した場合、この間隔は Microsoft Word で定義した間隔に追加される。これは、現在の文書にのみ影響する。
+
+   このオプションを選択すると、LibreOffice Writer 文書の段落や表の間に Microsoft Word 互換のスペーシングが追加される。
 Add paragraph and table spacing at tops of pages
-You can define paragraphs and tables to have space appear before (above) them. If this option is selected, any space above a paragraph will also appear if the paragraph is at the beginning of a page or column, or if the paragraph is positioned on the first page of the document, or after a manual page break. This only affects the current document.
-If you import a Microsoft Word document, the spaces are automatically added during the conversion.
+   段落や表の前（上）にスペースが表示されるように定義できる。このオプションを選択すると、段落がページや列の先頭にある場合、または段落が文書の最初のページに配置されている場合、または手動で改ページした後にも、段落の上にスペースが表示される。これは現在の文書にのみ影響する。
+
+   Microsoft Word文書をインポートすると、変換時にスペースが自動的に追加される。
 Add paragraph and table spacing at bottom of table cells
-Specifies that the bottom spacing is added to a paragraph, even when it is the last paragraph in a table cell.
+   段落が表セルの最後の段落である場合でも、その段落に最下段のスペーシングが追加されるように指定する。
 
 AutoCaption options
 ----------------------------------------------------------------------
 
-LibreOffice can automatically insert captions for tables, pictures, frames, and OLE objects in a Writer document. To set this up, use the options on the LibreOffice Writer > AutoCaption page. Select the object you want to be automatically captioned (LibreOffice Writer Table in Figure 15). With the item highlighted, specify the characteristics of the caption.
-The categories supplied for captions are Illustration, Table, Text, Drawing, and Figure. To use another name (for example, Photo) for the caption label, type it in the Category box.
+LibreOffice では、Writer 文書の表、画像、枠、および OLE オブジェクトにキャプションを自動的に挿入できる。これを設定するには、「LibreOffice Writer > 自動キャプション」ページのオプションを使用する。自動的にキャプションを付けたいオブジェクト (図 15 の LibreOffice Writer の表) を選択する。アイテムをハイライトした状態で、キャプションの特性を指定する。
 
-    • Note
-You may not want captions for every table, for example if you use tables for layout as well as for tables of data. You can always add captions to individual tables, graphics, or other objects (right-click > Insert Caption).
-Information about numbering captions by chapter, character styles, frame styles, and other items on the AutoCaption page is given in other chapters in this book.
+キャプションのカテゴリは、「イラスト」、「表」、「テキスト」、「図」、および「図」だ。キャプションラベルに別の名前 (たとえば、「写真」) を使用するには、「カテゴリ」ボックスにその名前を入力する。
+
+.. note::
+
+   例えば、データ表だけでなくレイアウトにも表を使用する場合など、すべての表にキャプションが必要とは限りません。個々の表、画像ス、その他のオブジェクトには、いつでもキャプションを追加できる（右クリック > キャプションの挿入）。
+
+章ごとのキャプション番号の付け方、文字スタイル、枠スタイル、オートキャプションページのその他の項目については、本書の他の章に記載されている。
 
 Mail Merge Email options
 ----------------------------------------------------------------------
 
-Using a data source such as an address book, Writer can insert personal, address, and other information into form letters. These documents can be printed for mailing or they can be emailed through Writer. See Chapter 14, Mail Merge, for details.
+住所録などのデータソースを使用して、Writerは個人情報、住所、その他の情報をフォームレターに挿入することができる。これらの文書は、郵送用に印刷することも、Writerを通じて電子メールで送信することもできる。詳細については、第 14 章「メールマージ」を参照しろ。
 
-Use the LibreOffice Writer – Mail Merge Email page (Figure 19) to set up the user and server information for sending form letters by email. If you are not sure what information to put in any of the fields, consult your email program or your internet service provider.
+LibreOffice Writer - メールマージ電子メール」ページ (図 19) を使用して、フォームレターを電子メールで送信するための使用者情報とサーバー情報を設定する。フィールドに入力する情報がわからない場合は、電子メールプログラムまたはインターネットサービスプロバイダに問い合わせてください。
 
 Choosing language settings
 ======================================================================
 
-You may need to do several things to get the language settings you want:
-    • Install the required dictionaries.
-    • Change some locale and language settings.
-    • Choose spelling and grammar options.
-    • Enable Language Tool.
+ご希望の言語設定を得るためには、いくつかの作業が必要です：
+
+* 必要な辞書をインストールする。
+* ロケールと言語設定の一部を変更する。
+* スペルと文法のオプションを選択する。
+* 言語ツールを有効にする。
 
 Install the required dictionaries
 ----------------------------------------------------------------------
@@ -305,217 +361,265 @@ To add other dictionaries, be sure you are connected to the Internet, and then c
 Change some locale and language settings
 ----------------------------------------------------------------------
 
-You can change some details of the locale and language settings that LibreOffice uses for all documents or for specific documents. See the Help for details on all these options.
-In the Options dialog, click the expansion symbol (+ sign or triangle) by Language Settings and choose Languages. On the right-hand side of the Language Settings – Languages page (Figure 17), change the settings as required.
+LibreOffice がすべての文書または特定の文書で使用するロケールおよび言語設定の詳細を変更できる。これらのオプションの詳細については、ヘルプを参照しろ。
 
-In the example, English (USA) has been chosen for all the appropriate settings, but you could choose a mixture of languages. For example, if you were working in Germany, you might prefer the user interface to be in English (USA), but German (Germany) for the Locale setting, which influences settings for numbering, currency, and units of measure.
-If you want the language setting to apply to the current document only, instead of being the default for all new documents, select For the current document only.
-Changes to the system input language normally affect text typed into a document after the change. If you do not want this to happen, select Ignore system input language; new text will then continue to follow the language of the document or the paragraph, not the system language.
-If necessary, select the options to enable support for Asian languages (Chinese, Japanese, Korean) and support for CTL (complex text layout) languages such as Hindi, Thai, Hebrew, and Arabic. If you choose either of these options, the next time you open the Options dialog, you will see some extra pages under Language Settings. These pages are not discussed here.
+オプション] ダイアログボックスで、[言語設定] の横にある展開記号 (+ 記号または三角記号) をクリックし、[言語] を選択する。言語設定 - 言語」ページ (図 17) の右側で、必要に応じて設定を変更する。
+
+この例では、すべての適切な設定に英語（USA）が選択されているが、複数の言語を混在させることもできる。例えば、あなたがドイツで仕事をしているのであれば、使用者インターフェイスは英語（USA）にし、数値、通貨、単位などの設定に影響するLocaleの設定はドイツ語（Germany）にすることを好むかもしれない。
+
+言語設定を、すべての新規文書の既定ではなく、現在の文書のみに適用したい場合は、「現在の文書のみ」を選択する。
+
+システム入力言語の変更は、通常、変更後に文書に入力されたテキストに影響する。新しいテキストは、システム言語ではなく、文書または段落の言語に従いる。
+
+必要に応じて、アジア言語（中国語、日本語、韓国語）のサポートと、ヒンディー語、タイ語、ヘブライ語、アラビア語などのCTL（複雑なテキストレイアウト）言語のサポートを有効にするオプションを選択する。これらのオプションのいずれかを選択すると、次にオプションダイアログボックスを開いたときに、言語設定の下にいくつかの余分なページが表示される。これらのページについては、ここでは説明しない。
+
 Choose spelling and grammar options
-To change the options for checking spelling and grammar, use the Language Settings > Writing Aids page (Figure 18).
+----------------------------------------------------------------------
 
-Some considerations:
-    • You can over-ride the Check spelling as you type setting in a document using Tools > Automatic Spell Checking on the Menu bar or the Toggle Automatic Spell Checking icon on the Standard toolbar.
-    • To have grammar checked as you type, also enable Check spelling as you type.
-    • If you use a custom dictionary that includes words in all uppercase and words with numbers (for example, AS/400), select Check uppercase words and Check words with numbers.
-    • Check special regions means that text in headers, footers, frames, and tables are also checked when checking spelling.
-Here you can also select which of the user-defined (custom) dictionaries are active, add a new custom dictionary, edit dictionaries, and delete custom dictionaries. Dictionaries installed by the system cannot be deleted. For details on using the Available Language Modules and User-defined Dictionaries sections, please see the Help.
-    • Tip
-When checking spelling, words marked “Add to Dictionary” are added by default to the standard dictionary. Words marked “Ignore All” are added to the List of Ignored Words dictionary. See Chapter 2, Working with Text: Basics.
+スペルチェックと文法チェックのオプションを変更するには、「Language Settings（言語設定）」>「Writing Aids（ライティング補助）」ページを使用する（図18）。
+
+いくつか考慮すべきことがある：
+
+* メニューの「ツール」>「自動スペルチェック」または標準ツールバーの「自動スペルチェックの切り替え」図像を使用して、文書内の「入力中にスペルチェックを行う」設定を上書きできる。
+* 入力時に文法チェックを行うには、「入力時にスペルチェックを行う」も有効にしろ。
+* すべての大文字の単語と数字を含む単語を含むカスタム辞書を使用している場合(たとえば、AS/400)、大文字の単語をチェックと数字を含む単語をチェックを選択する。
+* 特殊領域のチェックとは、ヘッダー、フッター、枠、およびテーブル内のテキストもスペルチェックの際にチェックされることを意味する。
+
+ここではまた、どの使用者定義（カスタム）辞書がアクティブであるかを選択し、新しいカスタ ム辞書を追加し、辞書を編集し、カスタム辞書を削除することができる。システムによってインストールされた辞書は削除できない。利用可能な言語モジュールおよび使用者定義辞書セクションの使用方法については、ヘルプを参照し てください。
+
+.. tip::
+
+   スペルチェックの際、「辞書に追加」とマークされた単語は、既定で標準辞書に追加される。すべて無視」とマークされた単語は、無視単語一覧辞書に追加される。第2章「テキストを扱う」を参照しろ：基本」を参照しろ。
 
 Defining and using custom dictionaries
 ----------------------------------------------------------------------
 
-You can add a variety of custom (user-defined) dictionaries, including a dictionary of exceptions (words to be avoided, which will be marked as incorrect) or dictionaries of project-specific terms (words that will not be marked as incorrect). You can then select which, if any, of these custom dictionaries to use (in addition to a standard dictionary) when setting up a document.
-For more information, see Writing Aids in the Help.
+さまざまなカスタム（使用者定義）辞書を追加することができる。これには、例外辞書（避けるべき単語、不正確とマークされる単語）や、プロジェクト固有の用語辞書（不正確とマークされない単語）が含まれる。文書のセットアップ時に、（標準辞書に加えて）これらのカスタム辞書を使用する場合は、そのいずれかを選択できる。
+
+詳細については、ヘルプの「ライティングエイド」を参照しろ。
 
 Sentence checking
 ----------------------------------------------------------------------
 
-LibreOffice can check sentences in many languages. These checkers are enabled by default if the language is the computer’s default language, and others can be added using the Extensions dialog (see page 30). The set of rules for the sentence checkers depends on the language.
-On the Language Settings > English Sentence Checking page, you can choose which items are checked for, reported to you, or converted automatically. This menu is also found in the English dictionaries extension installed by default by LibreOffice (select Tools > Extensions, select English spelling dictionaries and click the Options button to reveal the menu). Select which of the optional features you wish to check (see Chapter 2, Working with Text: Basics).
-After selecting the additional grammar checks, you must restart LibreOffice, or reload the document, for them to take effect.
+LibreOffice では、多くの言語で文章をチェックできる。これらのチェッカーは、その言語がコンピュータの既定言語である場合、既定で有効になる。文チェッカーのルールセットは言語によって異なる。
+
+Language Settings > English Sentence Checking（言語設定 > 英語文チェック）」ページで、チェックする項目、報告する項目、自動変換する項目を選択できる。このメニューは、LibreOfficeに既定でインストールされている英語辞書拡張機能にもある（[ツール] > [拡張機能] を選択し、[英語スペル辞書] を選択して [オプション] ボタンをクリックしてメニューを表示する）。チェックしたいオプション機能を選択する (第 2 章「テキストの操作: 基本」を参照)。
+
+追加の文法チェックを選択した後、有効にするには LibreOffice を再起動するか、文書を再読み込みする必要がある。
 
 Activating Language Tool
 ----------------------------------------------------------------------
 
-Language Tool is a multilingual grammar, style, and spelling checker provided by https://languagetool.org/. Its use is not described in this guide; please see the website for details.
-If you have an API key for LanguageTool, you can activate the tool by selecting Enable LanguageTool in Language Settings > LanguageTool Server Settings, then supply the requested information (Base URL, Username, and API Key).
+Language Tool は、https://languagetool.org/ が提供する多言語の文法、スタイル、スペルチェッカーだ。その使用方法については、このガイドでは説明しない。詳細については、ウェブサイトを参照しろ。
+
+LanguageToolのAPIキーをお持ちの場合、言語設定＞LanguageToolサーバー設定でLanguageToolを有効にするを選択し、要求された情報（ベースURL、使用者名、APIキー）を入力することで、ツールを有効にすることができる。
 
 Customizing menus
 ======================================================================
 
-You can add to and rearrange menus on the Menu bar, add commands to menus, and make other changes. You can also modify context (right-click) menus in a similar way.
-To customize a menu, choose Tools > Customize. On the Customize dialog, go to the Menus tab (Figure 19) or the Context Menus tab.
+メニュー上のメニューの追加や並べ替え、メニューへのコマンドの追加、その他の変更を行うことができる。コンテキスト（右クリック）メニューも同様に変更できる。
+
+メニューをカスタマイズするには、[ツール] > [カスタマイズ] を選択する。カスタマイズ] ダイアログボックスで、[メニュー] タブ（図 19）または [コンテキストメニュー] タブを開く。
 
 Modifying an existing menu
 ----------------------------------------------------------------------
 
-    1) In the Scope drop-down list in the upper right of the Customize dialog, choose whether to apply the customized menu to all of LibreOffice Writer or only to a specific document.
-    2) In the Target drop-down list, select the menu that you want to customize. The list includes the main menus and submenus. The commands on the selected menu are shown in the Assigned Commands list.
-    3) To add a command to the selected menu, click on a command in the Available Commands list and then click the large right arrow. You can narrow the search by using the Search box on the top left or selecting the Category in the drop-down list. Use the up and down arrows on the right-hand side to move the command into the position where you want it in the list.
-    4) To remove a command from the selected menu, click on it in the Assigned Commands list and then click the large left arrow.
-    5) To insert a separator or submenu, select the item directly before where you want the inserted item to appear, and use the commands in the Insert drop-down.
-
-    6) To rename a menu item, select it in the Assigned Commands list and choose Rename in the Modify drop-down.
-
-    7) When you have finished making all your changes, click OK to save them.
+#. [カスタマイズ] ダイアログボックスの右上にある [適用範囲] ドロップダウン 一覧で、カスタマイズしたメニューを LibreOffice Writer のすべてに適用するか、特定の文書だけに適用するかを選択する。
+#. [対象] ドロップダウン 一覧で、カスタマイズするメニューを選択する。一覧には、メインメニューとサブメニューが含まれる。選択したメニューのコマンドは、[割り当てられたコマンド] 一覧に表示される。
+#. 選択したメニューにコマンドを追加するには、[使用可能なコマンド]一覧でコマンドをクリックし、大きな右矢印をクリックする。左上の検索ボックスを使用するか、ドロップダウン一覧で区分を選択することで、検索を絞り込むことができる。右側の上下の矢印を使用して、一覧内の必要な位置にコマンドを移動する。
+#. 選択したメニューからコマンドを削除するには、Assigned Commands 一覧でそのコマンドをクリックし、大きな左矢印をクリックする。
+#. セパレーターやサブメニューを挿入するには、挿入したい項目の直前の項目を選択し、［挿入］ドロップダウンのコマンドを使用する。
+#. メニュー項目の名前を変更するには、割り当てられたコマンド一覧でその項目を選択し、修正ドロップダウンで名前の変更を選択する。
+#. すべての変更が終わったら、OK をクリックして保存する。
 
 Creating a new menu
 ----------------------------------------------------------------------
 
-You might find a “Favorites” menu useful, or a menu collecting tools for a specific project. To create a new menu:
-    1) On the Menus tab of the Customize dialog, click the symbol next to Target and select Add in the drop-down list (Figure 22) to display the New Menu dialog (Figure 23).
+お気に入り」メニューや、特定のプロジェクト用のツールを集めたメニューが便利だろう。新しいメニューを作成するには
 
-    2) Type a name for the new menu in the Menu name box.
-    3) Use the up and down arrow buttons to move the new menu into the required position on the Menu bar.
-    4) Click OK to save and return to the Customize dialog.
-The new menu now appears on the list of menus in the Customize dialog. It will appear on the Menu bar itself after you save your customizations.
-After creating a new menu, you need to add some commands to it, as described above for modifying a menu.
+#. CustomizeダイアログボックスのMenusタブで、Targetの横のシンボルをクリックし、ドロップダウン一覧からAddを選択し（図22）、New Menuダイアログボックスを表示する（図23）。
+#. Menu name ボックスに新しいメニューの名前を入力する。
+#. 上下の矢印ボタンを使って、新しいメニューをメニューの必要な位置に移動する。
+#. OK をクリックして保存し、Customize ダイアログボックスに戻る。
+
+新しいメニューはカスタマイズダイアログボックスのメニュー一覧に表示される。カスタマイズを保存した後、メニューに表示される。
+
+新しいメニューを作成したら、上で説明したメニューの変更と同様に、いくつかのコマンドを追加する必要がある。
 
 Customizing toolbars
 ======================================================================
 
-You can customize toolbars in several ways, including choosing which icons are visible and locking the position of a docked toolbar (as described in Chapter 1, Introducing Writer), and adding or deleting icons (commands) in the list of those available on a toolbar. You can also create new toolbars.
+ツールバーのカスタマイズには、表示する図像の選択やドッキングしたツールバーの位置の固定（第1章「Writerの紹介」で説明）、ツールバーで使用できる図像（コマンド）一覧の追加や削除など、いくつかの方法がある。また、新しいツールバーを作成することもできる。
 
 Modifying existing toolbars
 ----------------------------------------------------------------------
 
-The procedures for creating and modifying a toolbar are similar to those for menus.
-    1) Choose Tools > Customize on the Menu bar.
-    2) On the Toolbars tab of the Customize dialog (Figure 24), in the Scope drop-down list on the upper right, choose whether to save this changed toolbar for Writer or for a selected document.
-    3) In the Target drop-down list, select the toolbar that you want to customize. The current toolbar content is displayed in the Assigned Commands list.
-    4) Select a command in the Available Commands list on the left. You can narrow your search by using the Search box on the top left or choosing a category in the drop-down list just below.
-    5) Click on the large right arrow to add the selected command to the Assigned Commands list for the toolbar (on the right). Use the up and down arrows in the far right to position the command in the toolbar.
-    6) To remove a command from a toolbar, select it in the Assigned Commands list on the right and click the large left arrow.
-    7) To show or hide a command assigned to a toolbar, select or clear the checkbox by its icon in the Assigned Commands list on the right.
-    8) To insert a separator, select the item directly before where you want the separator to appear, and use the command in the Insert drop-down.
-    9) To rename a toolbar item, select it in the Assigned Commands list and choose Rename in the Modify drop-down.
-When you have finished making all your changes, click OK to save them.
+ツールバーの作成と修正の手順は、メニューの場合と似ている。
+
+#. メニューの［ツール］>［カスタマイズ］を選択する。
+#. [カスタマイズ] ダイアログボックス (図 24) の [ツールバー] タブで、右上の [範囲] ドロップダウン 一覧で、この変更したツールバーを Writer 用に保存するか、選択した文書用に保存するかを選択する。
+#. [ 対象 ] ドロップダウン 一覧で、カスタマイズするツールバーを選択する。現在のツールバーの内容は、[割り当てられたコマンド] 一覧に表示される。
+#. 左側の［使用可能なコマンド］一覧でコマンドを選択する。左上の検索ボックスを使用するか、すぐ下のドロップダウン一覧でカテゴリを選択することで、検索を絞り込むことができる。
+#. 大きな右矢印をクリックして、選択したコマンドをツールバーの割り当てコマンド一覧（右側）に追加する。右端の上下の矢印を使用して、コマンドをツールバーに配置する。
+#. ツールバーからコマンドを削除するには、右側のAssigned Commands一覧でコマンドを選択し、大きな左矢印をクリックする。
+#. ツールバーに割り当てられているコマンドを表示または非表示にするには、右側のAssigned Commands一覧にある図像のチェックボックスを選択またはオフにする。
+#. セパレーターを挿入するには、セパレーターを表示させたい場所の直前の項目を選択し、挿入ドロップダウンのコマンドを使用する。
+#. ツールバー項目の名前を変更するには、[Assigned Commands] 一覧で項目を選択し、[Modify] ドロップダウンで [Rename] を選択する。
+
+すべての変更が終わったら、OK をクリックして保存する。
 
 Creating a new toolbar
 ----------------------------------------------------------------------
 
-To create a new toolbar:
-    1) Choose Tools > Customize on the Menu bar.
-    2) On the Toolbars tab of the Customize dialog, click the symbol next to Target and select Add in the list, to display the Name dialog.
-    3) On the Name dialog, type the new toolbar's name and choose in the Save In drop-down list where to save this new toolbar: for Writer or for a selected document.
-The new toolbar now appears on the list of toolbars in the Customize dialog. After creating a new toolbar, you need to add some commands to it, as described above.
+新しいツールバーを作成するには
+
+#. メニューのツール > カスタマイズを選択する。
+#. [ カスタマイズ ] ダイアログボックスの [ ツールバー ] タブで、[ 対象 ] の横にある記号をクリックし、 一覧から [ 追加 ] を選択して、[ 名前 ] ダイアログボックスを表示する。
+#. ［名前］ダイアログボックスで、新しいツールバーの名前を入力し、［保存先］ドロップダウン 一覧でこの新しいツールバーの保存先を選択する。
+
+新しいツールバーが［カスタマイズ］ダイアログボックスのツールバー一覧に表示される。新しいツールバーを作成したら、上記のようにいくつかのコマンドを追加する必要がある。
 
 Choosing icons for toolbar commands
 ----------------------------------------------------------------------
 
-Toolbar buttons usually have icons, not words, on them, but not all of the commands have associated icons. If the command does not have an icon, you can choose an icon for it. To choose an icon, select the command in the list on the right, and click Modify > Change Icon. On the Change Icon dialog (Figure 25), scroll through the available icons, select one, and click OK to assign it to the command.
-To use a custom icon, create it in a graphics program and import it into LibreOffice by clicking the Import button on the Change Icon dialog. Custom icons should be 16×16 pixels in size to achieve the best quality and should not contain more than 256 colors.
+ツールバーのボタンには通常、文字ではなく図像が付いているが、すべてのコマンドに図像が付いているわけではない。コマンドに図像がない場合は、図像を選択できる。図像を選択するには、右側の一覧でコマンドを選択し、[Modify] > [Change Icon] をクリックする。Change Icon ダイアログボックス（図25）で、利用可能な図像をスクロールして選択し、OK をクリックしてコマンドに割り当てます。
+
+カスタム図像を使用するには、画像プログラムで図像を作成し、[図像の変更] ダイアログボックスの [インポート] ボタンをクリックして LibreOffice にインポートする。カスタム図像は、最高の品質を得るために 16×16 ピクセルのサイズにし、256 色を超えないようにする。
 
 Customizing the user interface
 ======================================================================
 
-By default, LibreOffice Writer’s commands are grouped in cascading menus and in toolbars filled with icons—the standard user interface described in Chapter 1. In addition, Writer provides other user interface variations, displaying contextual groups of commands and contents. These are described in Chapter 21, User Interface Variants.
-When you set up Writer, you can choose one of these user interfaces, and you can switch between them and the standard interface at any time.
-In three variants (Tabbed, Tabbed Compact, and Groupedbar Compact), the area at the top of the workspace is divided into tabs, where each tab displays a set of icons grouped by context. The context can change depending on the object selected in the document, for example a table or an image.
-After one of these variants has been selected (using View > User Interface), you can use the checkboxes on the Notebookbar tab of the Customize dialog (Figure 26) to show and hide the individual options on the various tabs that are provided in the Tabbed mode user interface.
-Use the Reset button to reset the selected configuration to the default settings.
+既定では、LibreOffice Writer のコマンドは、カスケードメニューと図像でいっぱいのツールバーにまとめられている。さらに、Writer には、コマンドや中身のコンテキストグループを表示する、その他の使用者インターフェイスのバリエーションも用意されている。これらについては、第21章使用者インターフェイスのバリエーションで説明する。
+
+Writerのセットアップ時に、これらの使用者インターフェースのいずれかを選択し、いつでも標準インターフェースと切り替えることができる。
+
+三つのバリエーション(Tabbed, Tabbed Compact, Groupedbar Compact)では、ワークスペース上部の領域がタブに分割され、各タブにはコンテキストごとにグループ化された図像のセットが表示される。コンテキストは、例えば表や画像など、文書で選択されているオブジェクトによって変化する。
+
+表示] > [使用者インターフェイス] を使用して）これらの種類のいずれかを選択した後、[カスタマイズ] ダイアログボックスの [ノートブックバー] タブにあるチェックボックスを使用して（図 26）、タブモードの使用者インターフェイスで提供されるさまざまなタブの各オプションを表示または非表示にできる。
+
+選択したコンフィ灰色ションを既定設定にリセットするには、Resetボタンを使用する。
 
 Assigning shortcut keys
 ======================================================================
 
-In addition to using the built-in keyboard shortcuts, you can define others. You can assign shortcuts to standard LibreOffice functions or your own macros and save them for use with Writer or with the entire LibreOffice suite.
-To adapt shortcut keys to your needs, use the Keyboard tab of the Customize dialog (Figure 27).
-    1) Choose whether to have the shortcut key assignment available in all components of LibreOffice or only in Writer.
-    2) Select the desired shortcut key in the Shortcut Keys list at the top of the page.
-    3) Select the required function in the Category and Function lists.
-    4) Click the Modify button. The selection now appears in the Keys list on the lower right.
-    5) Click OK to accept the change.
-Repeat as required.
+組み込みのキーボードショートカットを使用するだけでなく、他のショートカットを定義することもできる。ショートカットは、LibreOffice の標準機能または独自のマクロに割り当てることができ、Writer または LibreOffice スイート全体で使用するために保存できる。
 
-    • Note
-Shortcut keys that are grayed-out in the listing on the Customize dialog, such as F1 and F10, are not available for reassignment.
+ショートカットキーを自分のニーズに合わせるには、[カスタマイズ] ダイアログボックスの [キーボード] タブを使用する (図 27)。
+
+#. ショートカットキーの割り当てを LibreOffice のすべてのコンポーネントで使用するか、Writer でのみ使用するかを選択する。
+#. ページ上部の [ショートカットキー] 一覧で必要なショートカットキーを選択する。
+#. カテゴリと機能の一覧で、必要な機能を選択する。
+#. [ 変更 ] ボタンをクリックする。選択したキーが右下のキー一覧に表示される。
+#. OK をクリックして変更を受け入れる。
+
+必要に応じて繰り返する。
+
+.. note::
+
+   F1やF10など、カスタマイズダイアログボックスの一覧で灰色表示されているショートカットキーは、再割り当てできない。
 
 Saving changes to a file
 ----------------------------------------------------------------------
 
-Changes to the shortcut key assignments can be saved in a keyboard configuration file for use at a later time, so you can create and apply different configurations as needed. To save keyboard shortcuts to a file:
-    1) After making keyboard shortcut assignments, click the Save button at the right of the Customize dialog (Figure 27).
-    2) On the Save Keyboard Configuration dialog, type a name for the keyboard configuration file in the File name box, or select an existing file from the list. Browse to the location where you want to save the file. (The file extension is .cfg for Configuration.)
-    3) Click Save. A confirmation dialog appears if you are about to overwrite an existing file, otherwise there will be no feedback and the file will be saved.
+ショートカットキーの割り当ての変更は、後で使用するためにキーボード設定ファイルに保存することができるので、必要に応じて異なる設定を作成し、適用することができる。キーボードショートカットをファイルに保存するには
+
+#. キーボードショートカットの割り当てを行った後、Customize ダイアログボックスの右側にある Save ボタンをクリックする（図 27）。
+#. Save Keyboard Configuration ダイアログボックスで、File name ボックスにキーボード設定ファイルの名前を入力するか、一覧から既存のファイルを選択する。ファイルを保存する場所を参照する。(ファイルの拡張子は.cfgです）。
+#. 保存をクリックする。既存のファイルを上書きしようとしている場合は確認ダイアログボックスが表示されるが、そうでない場合は何も表示されず、ファイルが保存される。
 
 Loading a saved keyboard configuration
 ----------------------------------------------------------------------
 
-To load a saved keyboard configuration file and replace your existing configuration, click the Load button on the Customize dialog, and then select the configuration file on the Load Keyboard Configuration dialog.
+保存したキーボード設定ファイルをロードして既存の設定を置き換えるには、CustomizeダイアログボックスのLoadボタンをクリックし、Load Keyboard Configurationダイアログボックスで設定ファイルを選択する。
 
 Resetting the shortcut keys
 ----------------------------------------------------------------------
 
-To reset all of the keyboard shortcuts to their default values, click the Reset button on the Customize dialog. Use this feature with care; no confirmation dialog will be displayed.
+すべてのキーボードショートカットを既定値にリセットするには、CustomizeダイアログボックスのResetボタンをクリックする。確認ダイアログボックスは表示されない。
 
 Assigning macros to events
 ======================================================================
 
-In LibreOffice, when something happens, we say that an event occurred. For example, a document is opened, a key is pressed, or the mouse moved. You can associate a macro with an event, so the macro is run when the event occurs. For example, a common use is to assign the “open document” event to run a macro that performs certain setup tasks for the document.
-To associate a macro with an event, use the Events tab of the Customize dialog. For more information, see the Getting Started Guide.
+LibreOffice では、何かが起こったとき、イベントが発生したと言いる。たとえば、文書が開かれた、キーが押された、マウスが動いたなどだ。マクロをイベントに関連付けると、イベントが発生したときにマクロが実行される。たとえば、「文書を開く」イベントを割り当てて、文書の特定のセットアップタスクを実行するマクロを実行するのが一般的な使い方だ。
+
+マクロをイベントに関連付けるには、［カスタマイズ］ダイアログボックスの［イベント］タブを使用する。詳細については、『入門ガイド』を参照しろ。
+
 Adding functionality with extensions
-An extension is a package that can be installed into LibreOffice to add new functionality. Template sets, spelling dictionaries, clipart galleries, macros, and dialog libraries can be packaged as LibreOffice extensions. They can add new top-level menus, submenus or toolbar icons. Extensions may also have their own settings.
-Several extensions are shipped bundled with LibreOffice and are installed with the program. These can only be removed by changing the installation options. Others can be downloaded from various websites. The official extension repository is located at https://extensions.libreoffice.org/. These extensions are free of charge.
-Some extensions from other sources are free of charge; others are available for a fee. Check the descriptions to see what licenses and fees apply to the ones that interest you.
-Download the extension to your computer in any folder that you want (usually Downloads).
+----------------------------------------------------------------------
+
+拡張機能とは、LibreOffice にインストールして新しい機能を追加できるパッケージだ。雛形セット、スペル辞書、クリップアートギャラリー、マクロ、ダイアログボックスライブラリは、LibreOffice 拡張機能としてパッケージ化できる。拡張機能は、新しいトップレベルメニュー、サブメニュー、またはツールバー図像を追加できる。また、拡張機能には独自の設定がある。
+
+いくつかの拡張機能はLibreOfficeに同梱され、プログラムと一緒にインストールされる。これらはインストールオプションを変更することでのみ削除できる。その他の拡張機能は、さまざまなウェブサイトからダウンロードできる。公式の拡張機能リポジトリは https://extensions.libreoffice.org/ にある。これらの拡張機能は無料だ。
+
+他のソースからのエクステンションには、無料で利用できるものもあれば、有料で利用できるものもある。どのようなライセンスと料金が適用されるか、説明を確認しろ。
+
+好きなフォルダ（通常はダウンロード）に拡張機能をダウンロードしろ。
 
 Installing extensions
 ----------------------------------------------------------------------
 
-To install an extension that is listed in the repository, follow these steps:
-    1) In LibreOffice, select Tools > Extensions on the Menu bar.
-    2) In the Extensions dialog (Figure 28), click Get more extensions online.
-    3) An internet browser window opens. Find and select the extension you want to install and download it to your computer.
-    4) After the extension is downloaded and saved, return to the Extensions dialog and click Add. Find and select the extension you want to install and click Open. The extension begins installing. You may be asked to accept a license agreement.
-    5) When the installation is complete, the extension is listed in the Extensionsr dialog.
-To install an extension that is not listed in the repository, download the extension, then continue with step 3 above.
+リポジトリに一覧されている拡張機能をインストールするには、以下の手順に従ってください：
+
+#. LibreOffice で、メニューの [ツール] > [拡張機能] を選択する。
+#. [拡張機能] ダイアログボックス (図 28) で、[オンラインで他の拡張機能を取得] をクリックする。
+#. インターネットブラウザウィンドウが開く。インストールしたい拡張機能を見つけて選択し、コンピュータにダウンロードする。
+#. 拡張機能のダウンロードと保存が完了したら、拡張機能ダイアログボックスに戻り、追加をクリックする。インストールしたい拡張機能を見つけて選択し、「開く」をクリックする。拡張機能のインストールが始まります。ライセンス契約に同意するよう求められる場合がある。
+#. インストールが完了すると、拡張機能がExtensionsrダイアログボックスに表示される。
+
+レポジトリに一覧されていない拡張機能をインストールするには、拡張機能をダウンロードし、上記のステップ3に進みます。
 
 Updating extensions
 ----------------------------------------------------------------------
 
-Click the Check for Updates button on the Extensions dialog to check for updates to installed extensions.
+ExtensionsダイアログボックスのCheck for Updatesボタンをクリックして、インストールされている拡張機能のアップデートをチェックする。
 
 Removing and disabling extensions
 ----------------------------------------------------------------------
 
-To remove (uninstall) an extension that you installed, select the extension in the main window of the Extensions dialog and click the Remove button.
-To disable an extension without removing (uninstalling) it, select the extension in the main window of the Extensions dialog and click the Disable button, which then changes to Enable.
+インストールした拡張機能を削除（アンインストール）するには、拡張機能ダイアログボックスのメインウィンドウで拡張機能を選択し、削除ボタンをクリックする。
+
+拡張機能を削除（アンインストール）せずに無効にするには、拡張機能ダイアログボックスのメインウィンドウで拡張機能を選択し、[無効]ボタンをクリックする。
 
 Adding fonts
 ======================================================================
 
-LibreOffice supports PostScript (.pfb), TrueType (.ttf), and OpenType (.otf) font file formats. Other font formats exist, and may be supported by your operating system, but these formats may be limited in selection and quality.
-If you have administration privileges, you can install additional fonts through your operating system; they will then be available for use by LibreOffice and will appear in Writer’s font lists.
+LibreOfficeは、PostScript(.pfb)、TrueType(.ttf)、OpenType(.otf)のフォントファイル形式をサポートしている。その他のフォント形式も存在し、お使いのOSでサポートされている場合もあるが、これらの形式は選択と品質に制限がある場合がある。
+
+管理者権限があれば、OSから追加のフォントをインストールすることができ、LibreOfficeで使用できるようになり、Writerのフォント一覧に表示される。
 
 Finding free-licensed fonts
 ----------------------------------------------------------------------
 
-In addition to proprietary fonts from sources like Adobe, hundreds of free-licensed fonts are available. You can use, share, and edit free-licensed fonts as you please. Most are available at no cost. Many are clones or near-variations of classic fonts, but some are original fonts.
-Many Linux distributions include a few free-licensed fonts in their package repositories. Other places where you can find free-licensed fonts include The League of Moveable Type (https://www.theleagueofmoveabletype.com/) and the Font Library (https://fontlibrary.org/).
+Adobeなどのプロプライエタリなフォントに加え、何百ものフリーライセンスフォントが利用可能だ。フリーライセンスフォントは、自由に使用、共有、編集することができる。ほとんどは無償で利用可能だ。多くは古典的なフォントのクローンやそれに近いものだが、中にはオリジナルのフォントもある。
+
+多くのLinuxディストリビューションは、パッケージリポジトリにいくつかのフリーライセンスフォントを含んでいる。フリーライセンスのフォントを見つけることができる他の場所には、The League of Moveable Type (https://www.theleagueofmoveabletype.com/)やFont Library (https://fontlibrary.org/)がある。
 
 Adding custom colors
 ======================================================================
 
-To add custom colors to a color palette, for example to exactly match a corporate color scheme, follow this procedure:
-    1) Insert any drawing object, such as a square, into any document.
-    2) Right-click on the object and choose Area in the context menu.
-    3) Go to the Color tab (Figure 29). Under Colors > Palette, choose which palette you wish to add the new color to. Under New, define the new color using RGB or Hex notation, or click the Pick button to select the color on the Pick a Color dialog (Figure 30).
+カスタムカラーをカラーパレットに追加するには、例えば企業のカラースキームと正確に一致させるには、次の手順に従いる：
 
-    4) Click Add in the lower left corner, enter a name for the new color in the pop-up dialog, and click OK to save.
-    5) Delete the drawing object from the document, if it is not needed.
+#. 正方形などの描画オブジェクトを文書に挿入する。
+#. オブジェクトを右クリックし、コンテキストメニューから「領域」を選択する。
+#. カラータブを開く（図 29）。カラー > パレットで、新しいカラーを追加したいパレットを選択する。Newの下で、RGBまたはHex表記を使って新しい色を定義するか、PickボタンをクリックしてPick a Colorダイアログボックスで色を選択する（図30）。
+#. 左下の Add をクリックし、ポップアップダイアログボックスに新しい色の名前を入力し、OK をクリックして保存する。
+#. 必要なければ、文書から図面オブジェクトを削除する。
 
 Setting up document themes
 ======================================================================
 
-Document themes collect various format selections into a set that can be applied and changed with two clicks. Theme colors have been implemented in LibreOffice Writer 7.6; font and format settings are planned for a later release.
-LibreOffice supplies several sets of theme colors. To define your own set:
-    1) Choose Format > Theme on the Menu bar. In the Theme dialog (Figure 31), select a theme to use as a starting point and click Add.
-    2) In the Theme Color Edit dialog (FIgure 32), name the new theme and select colors from any available palette.
-    3) Click OK to save the new theme, which will now appear in the Theme dialog.
-See Chapter 6, Formatting Page: Advanced, for instructions on using document themes.
-    • Note
-User-defined theme color sets are saved only in the document; to use them in other documents, you need to make a template.
-Themes enhance compatibility with Microsoft Word. However, they are not yet part of ODF (OpenDocument Format), so you need to save to ODF 1.3 Extended to use them.
+文書テーマは、さまざまな書式選択を一つのセットにまとめ、2回のクリックで適用したり変更したりできる。テーマカラーは、LibreOffice Writer 7.6で実装された。フォントと書式の設定は、後のリリースで予定されている。
+
+LibreOfficeにはテーマカラーのセットがいくつか用意されている。独自のセットを定義するには
+
+#. メニューの「書式」>「テーマ」を選択する。テーマダイアログボックス（図31）で、開始点として使用するテーマを選択し、追加をクリックする。
+#. テーマカラー編集ダイアログボックス（図32）で、新しいテーマに名前を付け、利用可能なパレットから色を選択する。
+#. OKをクリックして新しいテーマを保存し、テーマダイアログボックスに表示する。
+
+第6章「ページの書式設定」を参照しろ：文書テーマの使い方については、第6章「ページの書式設定：詳細」を参照しろ。
+
+.. note::
+
+   使用者定義のテーマカラーセットは文書内にのみ保存され、他の文書で使用するには雛形を作成する必要がある。
+
+   テーマはMicrosoft Wordとの互換性を高めます。ただし、これらはまだODF（OpenDocument Format）の一部ではないため、使用するにはODF 1.3 Extendedに保存する必要がある。
