@@ -11,88 +11,107 @@ Writer Guide Chapter 18, Forms ノート
 Introduction
 ======================================================================
 
-This chapter covers the use of interactive forms within Writer documents. A form has sections that are not to be edited, and other sections that are designed for the reader to make changes. For example, a questionnaire has an introduction and questions (which do not change) and spaces for the reader to type answers or select from supplied choices.
-Writer provides several ways to enter information into a form, including check boxes, option buttons, text boxes, pull-down lists, and other items, collectively known as form controls.
-LibreOffice forms include a lot of features. Not everything is described in this chapter. Notable omissions are using forms in HTML documents and writing macros to link to form controls.
-LibreOffice Calc, Impress, and Draw also support forms in much the same way that Writer does.
+この章では、Writer文書内での対話型フォームの使用について説明する。フォームには、編集されないセクションと、読者が変更できるように設計されたセクションがある。たとえば、アンケートには導入部と質問 (変更はできない) があり、読者が回答を入力したり、与えられた選択肢から選択したりするためのスペースがある。
+
+Writer には、チェックボックス、オプションボタン、テキストボックス、プルダウン一覧など、フォームに情報を入力するためのいくつかの方法が用意されている。
+
+LibreOffice のフォームには多くの機能がある。この章では、そのすべてを説明するわけではない。特筆すべきは、HTML 文書でのフォームの使用と、フォームコントロールにリンクするマクロの記述だ。
+
+LibreOffice Calc、Impress、および Draw も、Writer とほぼ同様にフォームをサポートしている。
 
 When to use forms
 ======================================================================
 
-Forms are used in three ways:
-    • To create a simple document for the recipient to complete, such as a questionnaire sent out to a group of people who fill it in and return it.
-    • To link into a database or data source and allow the user to enter information. Someone in a sales department might enter purchasers’ information into a database using a form.
-    • To view information held in a database or data source. A librarian might call up information about books.
-Using forms to access a database offers a fast and easy way to build complex graphical front ends. Your form can include not only the fields that link to the data source, but also text, graphics, tables, drawings and other elements.
-A typical way to use a simple form is:
-    1) You design the form, then save it.
-    2) You send the form to others (for example, by email).
-    3) They fill in the form, save it, and send it back to you.
-    4) You open the form and see what their answers are.
-    • Tip
-By using a data source, or setting a form to update over the web, you can gather data automatically. However, those methods are more complex and are not covered in this chapter.
+フォームには三つの使い方がある：
+
+* 受信者が記入するための簡単な文書を作成する。例えば、アンケートを記入して返送するグループに送信する。
+* データベースやデータソースにリンクし、使用者が情報を入力できるようにする。営業部門の誰かが、購入者の情報をフォームを使ってデータベースに入力する。
+* データベースやデータソースにある情報を見ること。図書館員が本に関する情報を呼び出す。
+
+データベースにアクセスするためにフォームを使用すると、複雑なグラフィカルフロントエンドを迅速かつ簡単に構築することができる。フォームには、データソースにリンクするフィールドだけでなく、テキスト、画像、テーブル、図面、その他の要素を含めることができる。
+
+シンプルなフォームの典型的な使い方は以下の通りです：
+
+#. フォームをデザインし、保存する。
+#. そのフォームを他の人に送る（例えばEメールで）。
+#. 他の人がフォームに記入し、保存してあなたに送り返す。
+#. あなたがフォームを開き、その回答を見る。
+
+.. tip::
+
+   データソースを使ったり、ウェブ上で更新するフォームを設定したりすることで、データを自動的に収集することができる。しかし、これらの方法はより複雑なので、この章では扱いない。
 
 Alternatives to using forms in Writer
 ----------------------------------------------------------------------
 
-LibreOffice Base provides an alternative way to access a data source. Forms in Base and Writer share a lot of similarities, but one may be better for a particular task than the other. Base is appropriate only if the form accesses a data source; you would not use it for simple forms.
+LibreOffice Base は、データソースにアクセスする別の方法を提供する。Base と Writer のフォームには多くの共通点があるが、特定のタスクにはどちらを使用したほうがよい場合もある。Base は、フォームがデータソースにアクセスする場合にのみ適している。
 
 Creating a simple form
 ======================================================================
 
-This topic explains how to create a simple form without any links to a data source or database and without advanced customization.
+このトピックでは、データソースやデータベースへのリンクを持たず、高度なカスタマイズも行わないシンプルなフォームの作成方法を説明する。
 
 Create a document
 ----------------------------------------------------------------------
 
-You do not need to do anything special when creating a document to use as a form, though you may wish to enable the grid so that controls can be positioned accurately. Go to View > Grid and Helplines on the Menu bar and select Display Grid. You may also wish to select Snap to Grid.
+フォームとして使用する文書を作成する際に特別なことをする必要はないが、コントロールを正確に配置できるようにグリッドを有効にするとよいだろう。メニューの「表示」＞「グリッドとヘルプライン」と進み、「グリッドを表示」を選択する。また、「グリッドにスナップ」を選択することもできる。
+
 Create a new Writer document with File > New > Text document.
 
 Open the form toolbars
 ----------------------------------------------------------------------
 
-Two toolbars control form creation: Form Controls (Figure 2) and Form Design (Figure 3). Select View > Toolbars > Form Controls and View > Toolbars > Form Design on the Menu bar to show them both. You can also open the Form Design toolbar on the Form Controls toolbar.
-The Form Controls toolbar has an icon for each of the most commonly used types of control. Some of these controls are also located on the Form menu (Figure 1).
-You can dock these toolbars in different places on the Writer window, or leave them floating. When they are floating, you can also change them from vertical to horizontal and change the number of tools on a row; to make these changes, drag a corner of the toolbar.
-See “Form controls reference” on page 6 for descriptions of the tools on these toolbars.
+つのツールバーがフォームの作成をコントロールする：フォームコントロール（図2）とフォームデザイン（図3）だ。メニューの「表示」→「ツールバー」→「フォームコントロール」と「表示」→「ツールバー」→「フォームデザイン」を選択すると、両方が表示される。また、フォームコントロールツールバー上でフォームデザインツールバーを開くこともできる。
+
+フォームコントロールツールバーには、よく使われるコントロールの種類ごとに図像がある。これらのコントロールのいくつかはフォームメニューにもある (図 1)。
+
+これらのツールバーは、Writerウィンドウのさまざまな場所にドッキングすることも、フローティングのままにすることもできる。フローティングの場合、ツールバーを垂直から水平に変更したり、1列に並ぶツールの数を変更したりすることもできる。これらの変更を行うには、ツールバーの角をドラッグする。
+
+これらのツールバーのツールの説明については、6 ページの「フォームコントロールのリファレンス」を参照しろ。
 
 Activate design mode
 ----------------------------------------------------------------------
 
-Click the Design Mode icon on the Form Controls toolbar to turn design mode on. (Click it again to turn it off.) This activates or deactivates the icons for inserting form controls and selects controls for editing.
-When design mode is off, the form behaves as it would for the end user. Buttons can be pressed, check boxes selected, list items selected, and so on.
+デザインモードをオンにするには、フォームコントロールツールバーのデザインモード図像をクリックする。(もう一度クリックするとオフになる。) これにより、フォーム・コントロールを挿入するための図像がアクティブになったり、非アクティブになったりし、編集用のコントロールが選択される。
+
+デザインモードがオフの場合、フォームはエンド使用者と同じように動作する。ボタンを押したり、チェックボックスを選択したり、一覧項目を選択したりすることができる。
 
 Insert form controls
 ----------------------------------------------------------------------
 
-    1) To insert a form control into the document, click the control’s icon to select it. The mouse pointer changes shape.
-    2) Click in the document where you want the control to appear. (You can move it later.)
-    3) Hold the left mouse button down and drag the control to size it. Some controls have a fixed size symbol followed by the name of the control (for example, Check Box or Option Button).
-    4) The control icon remains active, so you can insert several controls of the same type without needing to go back to the toolbar.
-    5) To change to another tool, click its icon on the toolbar.
-    6) To stop inserting controls, click the Select icon on the Form Controls toolbar, or click any of the controls you have just inserted. The mouse pointer changes back to its normal appearance.
-    • Tip
-To make a form control square, hold down the Shift key when creating it. To keep the proportions of an existing control the same, hold down Shift when resizing it.
+#. フォームコントロールを文書に挿入するには、コントロールの図像をクリックして選択する。マウスポインタの形が変わる。
+#. コントロールを表示したい文書内の場所をクリックする。(後で移動できる）。
+#. マウスの左ボタンを押したまま、コントロールをドラッグしてサイズを調整する。コントロールによっては、固定サイズのシンボルの後にコントロール名（チェックボックスやオプションボタンなど）が付いているものもある。
+#. コントロールの図像はアクティブのままなので、ツールバーに戻ることなく、同じタイプのコントロールを複数挿入することができる。
+#. 他のツールに変更するには、ツールバーの図像をクリックする。
+#. コントロールの挿入を止めるには、フォームコントロールツールバーの選択図像 をクリックするか、挿入したコントロールのどれかをクリックする。マウスポインタは通常の表示に戻る。
+
+.. tip::
+
+   フォームコントロールを正方形にするには、Shiftキーを押しながら作成する。既存のコントロールの比率を同じにするには、Shiftキーを押しながらサイズを変更する。
 
 Configure controls
 ----------------------------------------------------------------------
 
-After inserting the controls, you need to configure them to look and behave as you want. Right-click a form control within the document and select Control in the context menu, or double-click on a form control, to open the Properties dialog for the selected control.
-The Properties dialog has three tabs: General, Data, and Events. For simple forms, only the General tab is needed. See “Configure form controls” on page 11, “Form control formatting options” on page 21, and the descriptions in the Help for more information. Configuration for use with a database is discussed in “Creating a form for data entry” on page 17.
-The fields on this dialog vary with the type of control. To see additional fields, use the scroll bar or enlarge the dialog vertically.
+コントロールを挿入した後は、コントロールの外観や動作を設定する必要がある。文書内でフォームコントロールを右クリックし、コンテキストメニューからコントロールを選択するか、フォームコントロールをダブルクリックすると、選択したコントロールのプロパティダイアログボックスが開く。
+
+プロパティダイアログボックスには三つのタブがある：一般」、「データ」、「イベント」だ。単純なフォームでは、「全般」タブだけが必要だ。詳細については、11 ページの「フォーム・コントロールの設定」、21 ページの「フォーム・コントロールの書式設定オプション」、およびヘルプの説明を参照しろ。データベースで使用するための設定については、17 ページの「データ入力用のフォームを作成する」で説明する。
+
+このダイアログボックスのフィールドはコントロールのタイプによって異なる。追加フィールドを見るには、スクロールバーを使うか、ダイアログボックスを縦に拡大する。
 
 Use the form
 ----------------------------------------------------------------------
 
-To use the form, leave design mode by clicking the Design Mode icon to deactivate it. Save the form document.
+フォームを使用するには、デザインモード図像をクリックしてデザインモードを解除する。フォーム文書を保存する。
 
 Form controls reference
 ======================================================================
 
-Form menu on Menu bar
+.. rubric:: Form menu on Menu bar
 
-Form Controls toolbar
-The icons you see in Writer may differ from the ones shown here or they may be in a different order on the toolbar.
+.. rubric:: Form Controls toolbar
+
+Writerで表示される図像は、ここに表示されているものと異なる場合や、ツールバーの順序が異なる場合がある。
 
 Table 1: Tools on Form Controls toolbar
 Form Controls toolbar
@@ -250,29 +269,33 @@ When a control is being moved, lines extend from the control horizontally and ve
 Example: a simple form
 ======================================================================
 
-In this example, we will create the form shown in Figure 4. If you follow the given steps, your form will look similar to this one.
+この例では、図4のようなフォームを作成する。指定されたステップに従えば、このようなフォームになる。
 
 Create the document
 ----------------------------------------------------------------------
 
-Open a new document (File > New > Text Document) and type any text to be included (see Figure 5 for an example). It is a good idea to sketch the final result to use as a guide when designing the form, although it can easily be changed later.
+新規文書を開き（ファイル＞新規＞テキスト・文書）、含めるテキストを入力する（例は図5参照）。後で簡単に変更できるが、フォームをデザインするときのガイドとして、最終的な結果をスケッチしておくとよいだろう。
 
 Add form controls
 ----------------------------------------------------------------------
 
-The next step is to add the form controls to the document. We will have four controls:
-    • Name is a text box.
-    • Gender is three option buttons: male, female, or other; user can select one.
-    • Favorite shape is a list of options; user can select one.
-    • All shapes you like is a series of check boxes; user can select one or more.
-To add these controls:
-    1) Select View > Toolbars > Form Controls to open the Form Control toolbar.
-    2) If the tools are not active, click the Design Mode icon to activate them.
-    3) Click the Text Box icon, then click in the document and drag the shape of the Name text box to approximately the size you want. Drag it to line up with the Name: label.
-    4) Make sure Toggle Form Control Wizards is OFF. Click the Option Button icon. Click and drag to create three option buttons near the Gender: label in the document. We will configure these in the next section.
-    5) Click the List Box icon and draw a list box by Favourite shape: in the document. This will just be an empty pane for now.
-    6) Click the Check Box icon and create four check boxes by All shapes you like, side by side across the page.
-Your document should now look something like Figure 6. Do not worry if the controls are not lined up well; we will fix this later.
+次のステップは、文書にフォーム・コントロールを追加することだ。つのコントロールを用意する：
+
+* 名前はテキストボックスだ。
+* 性別は、男性、女性、その他の三つのオプションボタンだ。
+* 好きな形は、選択肢の一覧だ。
+* あなたが好きなすべての形は、一連のチェックボックスだ。
+
+これらのコントロールを追加するには
+
+#. [ 表示 ] > [ ツールバー ] > [ フォームコントロール ] を選択して、 フォームコントロールツールバーを開く。
+#. ツールがアクティブでない場合は、デザインモード図像をクリックしてアクティブにする。
+#. [テキストボックス] 図像をクリックし、文書内をクリックして、[名前] テキストボックスの形をドラッグして希望のサイズに合わせます。Name: ラベルと一直線になるようにドラッグする。
+#. Toggle Form Control Wizards がオフになっていることを確認する。オプションボタンの図像をクリックする。クリックしてドラッグし、文書のGender: ラベルの近くに三つのオプションボタンを作成する。これらは次のセクションで設定する。
+#. 一覧ボックスの図像をクリックし、文書内のFavourite shape:のそばに一覧ボックスを描きます。これは今のところ単なる空のペインになる。
+#. チェックボックスの図像をクリックし、「好きな図形すべて」によるチェックボックスを、ページをまたいで四つ並べて作成する。
+
+これであなたの文書は図6のようになるはずだ。コントロールがうまく並んでいなくても心配するな。
 
 Configure form controls
 ----------------------------------------------------------------------
@@ -280,113 +303,134 @@ Configure form controls
 Text box
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No further configuration is required for the Name field, but you may wish to change the height or width of the field, its background color, or other formatting. If so:
-    1) Be sure Design Mode is on and Wizards are off.
-    2) Double-click on the Name field to open the Properties: Text Box dialog (Figure 7).
-    3) On the General tab, scroll down (or expand the dialog by dragging the bottom edge down) to find the Width and Height properties. Change these as needed.
-    4) You can then close the dialog or leave it open while you configure the other controls.
+Nameフィールドにはこれ以上の設定は必要ないが、フィールドの高さや幅、背景色、その他の書式を変更したいかもしれない。その場合は
+
+#. デザインモードがオンで、ウィザードがオフであることを確認する。
+#. Name フィールドをダブルクリックして、Properties：テキストボックス］ダイアログボックスを開く（図7）。
+#. [全般]タブで下にスクロールし（または下端を下にドラッグしてダイアログボックスを展開し）、[幅]と[高さ]のプロパティを見つけます。必要に応じてこれらを変更する。
+#. ダイアログボックスを閉じるか、開いたままにして他のコントロールを設定する。
 
 Option buttons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Gender option buttons need to be configured to allow only one of the three to be selected. You can do this in two ways: using individual option buttons as described here, or using a Group Box (see page 14).
-    1) Be sure Design Mode is ON and Wizards are OFF.
-    2) If the Properties dialog is open, click once on the first option button to change the dialog to Properties: Option Button. If the dialog is not open, double-click the first option button. In the Properties dialog (Figure 8), on the General tab, type Male in the Label field and Gender in the Group name field.
-    3) Repeat for the other two options, using Female and Other, respectively, for the Label and Gender for the Group name. (Grouping allows only one option to be selected at a time.)
+Gender オプションボタンは、三つのうち一つだけを選択できるように設定する必要がある。これには、ここで説明するような個別のオプションボタンを使用する方法と、Group Box（14ページ参照）を使用する方法がある。
 
-If the option buttons are too far apart, click on each in turn and drag it to the left or right.
-If the option buttons are not lined up neatly, do this:
-    1) Click the Select button on the Form Controls toolbar and draw a box around the three option button controls with the mouse to select all of them (Figure 9).
-    2) Right-click and choose Align > Top in the context menu. Figure 10 shows the result.
+#. Design Mode がオンで、Wizards がオフであることを確認する。
+#. Properties ダイアログボックスが開いている場合は、最初のオプションボタンを 1 回クリックして、ダイアログボックスを Properties に変更する：オプションボタンに変更する。ダイアログボックスが開いていない場合は、最初のオプションボタンをダブルクリックする。プロパティ」ダイアログボックス（図8）の「全般」タブで、「ラベル」フィールドに「男性」、「グループ名」フィールドに「性別」と入力する。
+#. 他の二つのオプションも同様に、ラベルに「Female」、グループ名に「Gender」を使用する。(グループ化により、一度に選択できるオプションは一つだけです)。
+
+オプションボタンが離れすぎている場合は、それぞれを順番にクリックし、左右にドラッグする。
+
+オプションボタンがきれいに並んでいない場合は、このようにしろ：
+
+#. フォームコントロールツールバーの［選択］ボタンをクリックし、マウスで三つのオプシ ョンボタンコントロールの周囲にボックスを描いて、すべてを選択する（図9）。
+#. 右クリックして、コンテキスト・メニューから「整列 > 上部」を選択する。図10にその結果を示す。
 
 List box
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To add the list of choices to the list box, do this:
-    1) Be sure Design Mode is ON and Wizards are OFF. Double-click the List Box control to open the control’s Properties dialog (Figure 11). Select the General tab.
-    2) Scroll down to find the List Entries text input box. Type the names of the shapes (Circle, Triangle, Square, Pentagon) one at a time. After each, press Shift+Enter, as shown in Figure 11.
+一覧ボックスに選択肢の一覧を追加するには、次のようにする：
 
-       When you click away from the List entries box in the dialog, you should see a line saying "Circle";"Triangle";"Square";"Pentagon" (Figure 12).
+#. デザインモードがオンで、ウィザードがオフであることを確認する。一覧ボックスコントロールをダブルクリックして、コントロールのプロパティダイアログボックスを開く（図11）。Generalタブを選択する。
+#. スクロールダウンして List Entries テキスト入力ボックスを見つける。図形の名前（円、三角形、四角形、五角形）を一つずつ入力する。それぞれの後に、図11に示すように、Shift+Enterを押す。
+
+   ダイアログボックスのList entriesボックスから離れてクリックすると、"Circle"; "Triangle"; "Square"; "Pentagon "という行が表示されるはずである（図12）。
 
 Check boxes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To give the check boxes names:
-    1) Be sure Design Mode is ON and Wizards are OFF. Double-click the first Check Box control.
-    2) In the Properties: Check Box dialog (Figure 13), change the text in the Label field to Circle and press Enter. The cursor moves to the next line, and the label on the check box in the document changes immediately.
+チェックボックスに名前を付けるには
 
-    3) Click each of the other three check boxes in turn. Change the text in the Label text input box in the Properties dialog to Triangle, Square, and Pentagon in turn.
-    4) Close the Properties dialog.
-    5) Turn Design Mode off.
-You have now completed the form, which should look something like Figure 4 on page 10.
+#. デザインモードがオンで、ウィザードがオフであることを確認する。最初のチェックボックスコントロールをダブルクリックする。
+#. プロパティダイアログボックスでProperties: Check Box ダイアログボックス（図 13）で、Label フィールドのテキストを Circle に変更し、Enter を押す。キャレットが次の行に移動し、文書のチェックボックスのラベルが直ちに変更される。
+#. 他の三つのチェックボックスを順番にクリックする。プロパティダイアログボックスのラベルテキスト入力ボックスのテキストを、三角形、四角形、五角形に順番に変更する。
+#. プロパティダイアログボックスを閉じる。
+#. デザインモードをオフにする。
+
+これで、10ページの図4のようなフォームが完成した。
 
 Group box
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As an alternative to creating individual option buttons for Gender (described on page 12), you can use a Group Box to insert a group of option buttons. Group boxes stack the selections one under the other (as shown in Figure 17 on page 16); individual buttons can be moved into any arrangement you prefer (we arranged them horizontally on page 12).
-To use a Group Box instead of individual Option Buttons:
-    1) Be sure both Design Mode and Wizards are ON. Click the Group Box icon and draw a box next to the Gender: label. The Group Element Wizard (Figure 14) opens automatically.
-    2) Type Male in the box on the left. Click the >> button to move it to the Option fields box on the right.
-    3) Repeat for Female and Other. The Wizard should now look like Figure 15. Click Next >.
-    4) On the next page of the Wizard (Figure 16), choose No, one particular field is not going to be selected as a default. Click Next >.
-    5) On the next page, make no changes. Click Next >.
-    6) On the next page, delete the words “Group Box” from the caption area. If we did not have a Gender: label already in the form, you might want to type Gender as the caption.
-    7) Click Finish. The survey form should look like Figure 17.
+Gender 用に個別のオプションボタンを作成するのではなく（12 ページで解説）、Group Box を使ってオプションボタンのグループを挿入することもできる。グループボックスは、（16 ページの図 17 に示すように）選択項目を 1 つずつ積み重ねますが、個々のボタンは好きな配置に移動させることができる（12 ページでは水平に配置した）。
+
+個々のオプション・ボタンの代わりにグループ・ボックスを使うには：
+
+#. デザインモードとウィザードの両方がオンになっていることを確認する。Group Box 図像をクリックし、Gender: ラベルの横にボックスを描きます。グループ要素ウィザード（図14）が自動的に開く。
+#. 左のボックスに「Male」と入力する。ボタンをクリックして、右側の Option fields ボックスに移動する。
+#. FemaleとOtherも同様に入力する。ウィザードは図15のようになる。Next > をクリックする。
+#. ウィザードの次のページ（図16）で、「No, one particular field is not going to be selected as default」を選択する。Next＞をクリックする。
+#. 次のページでは、何も変更しない。次へ」をクリックする。
+#. 次のページで、キャプション領域から「Group Box」の文字を削除する。フォームに「Gender:」ラベルがすでにない場合は、キャプションに「Gender」と入力するとよいだろう。
+#. 完了をクリックする。アンケートフォームは図 17 のようになる。
 
 Finishing touches
 ----------------------------------------------------------------------
 
-The form is complete, but you may wish to make further changes to the document. If you plan to send this out to other people to complete, you probably want to make the document read-only so that users would be able to fill in the form but not make any other changes to the document.
-To make the document read-only, select File > Properties, select the Security tab and enable Open file read-only.
-    • Note
-If the document is read-only, anyone filling in the form will need to use File > Save as to save the document.
+フォームは完成しているが、文書にさらに変更を加えたいと思うかもしれない。これを他の人に送信して記入してもらうつもりなら、おそらく文書を読み取り専用にして、使用者がフォームに記入することはできても、文書に他の変更を加えることができないようにしたいだろう。
+
+文書を読み取り専用にするには、[ファイル] > [プロパティ] を選択し、[セキュリティー] タブを選択して [ファイルを読み取り専用で開く] を有効にする。
+
+.. note::
+
+   文書が読み取り専用の場合、フォームに記入する人は、「ファイル」＞「名前を付けて保存」で文書を保存する必要がある。
 
 Accessing data sources
 ======================================================================
 
-The most common use for a form is to input information into a database. For example, you can design a form that others can use to enter information into a contacts database. Because it is part of a Writer document, the form can contain graphics, formatting, tables, and other elements to make it look just the way you want. Modifying the form is as simple as editing a document.
-LibreOffice can access numerous data sources. These include ODBC, MySQL, Oracle JDBC, spreadsheets and text files. As a general rule, databases can be accessed for reading and writing; other data sources (such as spreadsheets) are read-only.
-    • Tip
-To see the list of supported data source types for your operating system, choose File > New > Database. On the first page of the Database Wizard, select Connect to an existing database and then open the drop-down list.
-For the purpose of this chapter, we assume you have previously created a database or other data source and registered it for use with Writer. Chapter 14, Mail Merge, describes how to create and register a database.
+フォームの最も一般的な用途は、データベースに情報を入力することだ。例えば、他の人が連絡先データベースに情報を入力するためのフォームをデザインすることができる。フォームはWriter文書の一部なので、画像、書式、表、その他の要素を含めることができ、思い通りの外観にすることができる。フォームの変更は、文書の編集と同じくらい簡単だ。
+
+LibreOffice は多数のデータソースにアクセスできる。ODBC、MySQL、Oracle JDBC、スプレッドシート、テキストファイルなどだ。原則として、データベースは読み書きのためにアクセスできるが、その他のデータソース (スプレッドシートなど) は読み取り専用だ。
+
+.. tip::
+
+   ご使用のOSでサポートされているデータ・ソース・タイプの一覧を表示するには、[ファイル] > [新規作成] > [データベース]を選択する。データベース・ウィザードの最初のページで、「既存のデータベースに接続する」を選択し、ドロップダウン一覧を開く。
+
+この章では、データベースまたはその他のデータソースを作成し、Writer で使用するために登録したものとする。第14章メールマージでは、データベースの作成と登録方法について説明する。
 
 Creating a form for data entry
 ----------------------------------------------------------------------
 
-Once a database is registered with LibreOffice, follow these steps to link a form to the data source:
-    1) Create a new document in Writer (File > New > Text Document).
-    2) Design your form, without putting in the actual fields (you can always change it later).
-    3) Show the Form Controls and Form Design toolbars.
-    4) Click the Design Mode icon to put the document into design mode.
-    5) Click the Text Box icon. Click in the document and drag to create a text box for the first form field.
-    6) Additional fields, of any type, can be added in the same way (click and drag).
-So far you have followed the same steps used before when creating your first form. To link the form with the data source you registered:
-    1) Click the Form Properties icon on the Form Design toolbar, or right-click any of the fields you inserted and select Form Properties, to open the Form Properties dialog (Figure 18).
+データベースが LibreOffice に登録されたら、次の手順に従ってフォームをデータソースにリンクする：
 
-    2) In the Form Properties dialog, choose the Data tab.
-    • Set Data Source to be the data source you registered.
-    • Set Content Type to be Table.
-    • Set Content to be the name of the table you want to access.
-    • Close the dialog.
-    3) For each form control in turn, click the control to select it (small green boxes appear around it), then launch the Properties dialog: either right-click and select Control Properties or click the Control Properties icon on the Form Controls toolbar.
-    4) In the Properties dialog, click the Data tab (Figure 19). If you set up the form correctly, the Data Field option will contain a list of the different fields in the data source (for example, Name, Address and Telephone). Select the field you want.
+#. Writer で新規文書を作成する (ファイル > 新規 > テキスト文書)。
+#. 実際のフィールドを入れずにフォームをデザインする (後でいつでも変更できる)。
+#. フォームコントロールとフォームデザインツールバーを表示する。
+#. デザインモード図像をクリックして、文書をデザインモードにする。
+#. テキストボックスの図像をクリックする。文書内をクリックしてドラッグし、最初のフォームフィールド用のテキストボックスを作成する。
+#. 任意のタイプのフィールドを、同じ方法（クリックしてドラッグ）で追加できる。
 
-    5) Repeat for each control in turn until every control that should be assigned to a field has been assigned.
-    • Caution
-If you created a database in LibreOffice Base and your Primary Key field had AutoValue set to Yes, that field does not need to be part of the form. If AutoValue was set to No, you will have to include it and users will need to enter a unique value into that field whenever they make a new entry—not something that is recommended.
+ここまでは、最初のフォームを作成したときと同じ手順を踏んでいる。登録したデータソースとフォームをリンクするには、次のようにする：
+
+#. フォームデザインツールバーの［フォームプロパティ］図像をクリックするか、 挿入したフィールドのいずれかを右クリックして［フォームプロパティ］を選択 し、［フォームプロパティ］ダイアログボックスを開く (図 18)。
+#. ［フォーム・プロパティ］ダイアログボックスで、［データ］タブを選択する。
+
+   * データ・ソースを登録したデータ・ソースに設定する。
+   * 中身・タイプをテーブルに設定する。
+   * アクセスしたいテーブル名を中身に設定する。
+   * ダイアログボックスを閉じる。
+#. 各フォームコントロールを順番にクリックして選択し（周囲に小さな緑色のボックスが表示される）、プロパティダイアログボックスを起動する：右クリックしてコントロールプロパティを選択するか、フォームコントロールツールバーのコントロールプロパティ図像をクリックする。
+#. プロパティダイアログボックスで、データタブをクリックする（図 19）。フォームを正しくセットアップしていれば、データ・フィールド・オプションにデータ・ソース の異なるフィールド（例えば、名前、住所、電話番号）の一覧が表示される。必要なフィールドを選択する。
+#. フィールドに割り当てるべきコントロールがすべて割り当てられるまで、各コントロールを 順番に繰り返する。
+
+.. caution::
+
+   LibreOffice Base でデータベースを作成し、主キーフィールドの AutoValue を Yes に設定した場合、そのフィールドはフォームの一部である必要はない。AutoValue が No に設定されている場合、そのフィールドを含める必要があり、使用者は新規入力のたびにそのフィールドに一意の値を入力する必要がある。
 
 Entering data into a form
 ----------------------------------------------------------------------
 
-Once you have created a form and tied it to a database, use it to enter data into the database or modify data already there:
-    1) Make sure that the form is not in design mode. (On the Form Controls toolbar, click the Design Mode icon. When design mode is off, most of the buttons on the toolbar will be grayed out.)
-    2) Make sure that the Form Navigation toolbar is on (View > Toolbars > Form Navigation). This toolbar normally appears at the bottom of the workspace.
+フォームを作成し、データベースと結びつけたら、そのフォームを使ってデータベースにデータを入力したり、すでにあるデータを修正したりする：
 
-    3) If there is existing data in the data source, use the control buttons on the Form Navigation toolbar to look at different records. To amend data in a record, edit the values in the form. To submit the changes, press Enter with the cursor in the last field. The record is saved and the next record is displayed.
-    4) If there is no data in the form, enter information by typing into the fields of the form. To submit the new record, press Enter with the cursor in the last field.
-    5) Other functions can be performed from the Form Navigation toolbar, including deleting a record and adding a new record.
-    • Note
-If a user tries to fill in the form and receives the error “Attempt to insert null into a non-nullable column”, then the form designer should go back to the database and confirm that the Primary Key field has the Auto Value set to Yes. This error will prevent the form user from saving the records.
+#. フォームがデザインモードでないことを確認する。(フォームコントロールツールバーのデザインモード図像をクリックする。デザインモードがオフの場合、ツールバーのほとんどのボタンは灰色で表示される)。
+#. フォームナビゲーションツールバーがオンになっていることを確認する (表示 > ツールバー > フォームナビゲーション)。このツールバーは通常、ワークスペースの一番下に表示される。
+#. データソースに既存のデータがある場合は、フォームナビゲーションツールバー のコントロールボタンを使用して、さまざまなレコードを参照する。レコードのデータを修正するには、フォームの値を編集する。変更を送信するには、最後のフィールドにキャレットがある状態で Enter キーを押する。レコードが保存され、次のレコードが表示される。
+#. フォームにデータがない場合は、フォームのフィールドに入力して情報を入力する。新しいレコードを送信するには、最後のフィールドにキャレットがある状態で Enter キーを押す。
+#. フォームナビゲーションツールバーから、レコードの削除や新規レコードの追加など、その他の機能を実行できる。
+
+.. note::
+
+   ユーザがフォームに入力しようとして、"Attempt to insert null into a non-nullable column" というエラーが表示された場合、フォーム設計者はデータベースに戻り、主キー・フィールドに Auto Value が Yes に設定されていることを確認する必要がある。このエラーにより、フォーム・ユーザはレコードを保存できなくなる。
 
 Advanced form customization
 ======================================================================
@@ -394,56 +438,66 @@ Advanced form customization
 Linking a macro to a form control
 ----------------------------------------------------------------------
 
-You can set any form control (for example, text box or button) to perform an action when triggered by some event.
-To assign a macro to an event:
-    1) Create the macro. See Chapter 13, Getting Started with Macros, in the Getting Started Guide.
-    2) Be sure the form is in design mode. Right-click the form control, select Control Properties in the context menu, and click the Events tab (Figure 21).
+任意のフォーム・コントロール（例えば、テキスト・ボックスやボタン）に、何らかのイベントがトリガーされたときにアクションを実行するように設定することができる。
 
-    3) Click the browse icon by any event to open the Assign Action dialog (Figure 22).
-    4) Click the Macro button and select the macro from the list in the Macro Selector dialog (not shown). You return to the Assign action dialog. Repeat as needed, then click OK to close the dialog.
-Macros can also be assigned to events relating to the form as a whole. To do this, right-click a form control in the document, select Form Properties, and click the Events tab.
+マクロをイベントに割り当てるには
+
+#. マクロを作成する。入門ガイド』の第 13 章「マクロを始める」を参照しろ。
+#. フォームがデザインモードであることを確認する。フォームコントロールを右クリックし、コンテキストメニューから「コントロールプロパティ」 を選択し、「イベント」タブをクリックする（図 21）。
+#. イベントの横のブラウズ図像をクリックして、アクションの割り当て ダイアログボックスを開く（図 22）。
+#. マクロボタンをクリックし、マクロ選択ダイアログボックス（図示せず）の一覧からマクロ を選択する。Assign action ダイアログボックスに戻る。必要に応じてこれを繰り返し、OK をクリックしてダイアログボックスを閉じる。
+
+マクロは、フォーム全体に関するイベントに割り当てることもできる。これを行うには、文書内のフォームコントロールを右クリックし、「フォームのプロパティ」を選択し、「イベント」タブをクリックする。
 
 Fine-tuning database access permissions
 ----------------------------------------------------------------------
 
-By default, when a database is accessed from a form, any changes can be made to it: records can be added, deleted, and amended. You may not want that behavior. For example, you may want users to be able only to add new records or to be prohibited from deleting existing records.
-In design mode, right-click a form control and select Form Properties in the context menu. On the Data tab of the Form Properties dialog (Figure 23), set each of these options to Yes or No to control the access users have to the data source: Allow additions, Allow deletions, Allow modifications, and Add data only.
-Individual fields can also be protected. This might be useful if you wanted a user to be able to modify some parts of a record but only view others, such as a stock list where item descriptions are fixed and quantities can be modified.
-To make an individual field read-only, in design mode, right-click the form control within the document and select Control from the context menu. Select the General tab and set Read-only to Yes.
+既定では、フォームからデータベースにアクセスすると、レコードの追加、削除、修正など、あらゆる変更が可能になる。レコードの追加、削除、修正が可能だ。例えば、使用者は新しいレコードを追加することしかできないようにしたり、既存のレコードを削除することを禁止したりすることができる。
+
+デザイン・モードでフォーム・コントロールを右クリックし、コンテキスト・メニューから Form Properties を選択する。フォーム・プロパティ・ダイアログボックス（図23）のデータ・タブで、以下の各オプションを「はい」または「いいえ」に設定し、使用者のデータ・ソースへのアクセスを制御する：追加を許可する」、「削除を許可する」、「変更を許可する」、「データの追加のみ許可する」。
+
+個々のフィールドを保護することもできる。これは、品目の説明が固定で数量が変更可能な在庫一覧のように、使用者がレコードの一部を変更でき、他の部分のみを表示できるようにしたい場合に便利だ。
+
+個々のフィールドを読み取り専用にするには、デザインモードで、文書内のフォームコントロールを右クリックし、コンテキストメニューからコントロールを選択する。Generalタブを選択し、Read-onlyをYesに設定する。
 
 Form control formatting options
 ----------------------------------------------------------------------
 
-You can customize the way form controls look and behave in a number of ways. These are all accessed in design mode. Right-click the form control, select Control Properties in the context menu and select the General tab in the Properties dialog.
-    • Set a label for the control in the Label box (not to be confused with the box called Label Field). Some form controls, such as push buttons and option buttons, have visible labels that can be set. Others, such as text boxes, do not.
-    • Set whether the form control will print out if the document is printed with the Print option.
-    • Use the Font setting to set the font, typeface, and size for a field’s label or for text typed into a field. This setting does not affect the size of check boxes or option buttons.
-    • For a text box, you can set the maximum text length. This is very useful when adding records into a database. Every database text field has a maximum length and, if the data entered is too long, LibreOffice displays an error message. By setting the maximum text length of the form control to be the same as that of the database field, this error can be avoided.
-    • You can set the default option for a form control. By default, a control is blank, or has every option unselected. You can set the control to start with a particular option or list item selected.
-    • For controls where a password is being entered, setting the Password character (for example to *) displays only that character, but saves what the user really types.
-    • You can add additional information and help text for a form control.
-    • You can use other formatting controls such as background color, 3-D look, text formatting, scroll bars, and borders to further define how the control appears.
+フォーム・コントロールの外観や動作は、さまざまな方法でカスタマイズできる。これらはすべてデザイン・モードで行いる。フォームコントロールを右クリックし、コンテキストメニューからコントロールのプロパティを選択し、プロパティダイアログボックスの全般タブを選択する。
+
+* ラベル・ボックス（ラベル・フィールドと呼ばれるボックスと混同しないように）にコントロールのラベルを設定する。プッシュ・ボタンやオプション・ボタンなどのいくつかのフォーム・コントロールには、設定可能な可視ラベルがある。また、テキストボックスのように、ラベルを設定できないものもある。
+* 印刷オプションで文書を印刷する場合、フォームコントロールが印刷されるかどうかを設定する。
+* Font設定を使用して、フィールドのラベルまたはフィールドに入力されたテキストのフォント、書体、サイズを設定する。この設定は、チェック・ボックスやオプション・ボタンのサイズには影響しない。
+* テキスト・ボックスでは、テキストの最大長を設定できる。これは、データベースにレコードを追加するときに非常に便利だ。すべてのデータベースのテキストフィールドには最大長が設定されており、入力されたデータが長すぎる場合、LibreOffice はエラーメッセージを表示する。フォームコントロールの最大テキスト長をデータベースフィールドの最大テキスト長と同じに設定することで、このエラーを回避できる。
+* フォーム・コントロールの既定・オプションを設定することができる。既定では、コントロールは空白、またはすべてのオプションが選択されていない状態だ。特定のオプションや一覧項目が選択された状態でコントロールを開始するように設定することができる。
+* パスワードが入力されるコントロールの場合、パスワード文字（たとえば*）を設定すると、その文字だけが表示され、使用者が実際に入力した内容は保存される。
+
+  * フォームコントロールに追加情報やヘルプテキストを追加することができる。
+  * コントロールの表示方法をさらに定義するために、背景色、立体的な外観、テキストフォーマット、スクロールバー、境界線などの他のフォーマットコントロールを使用することができる。
 
 Using content controls
 ======================================================================
 
-Content controls are placeholders. You can add and customize content controls for use in templates, forms, and documents. Content controls can provide instructions on their use. Some are similar to the controls described earlier in this chapter, but can be easier to work with and format. However, unlike some fields, content controls do not connect to any data in a database.
+中身・コントロールはプレースホルダーだ。雛形、フォーム、文書で使用するために、中身・コントロールを追加したりカスタマイズしたりすることができる。中身・コントロールには、その使用方法を示すことができる。この章で前述したコントロールと似ているものもあるが、作業や書式設定がより簡単になる。ただし、いくつかのフィールドとは異なり、中身・コントロールはデータベース内のデータには接続しない。
+
 Rich Text
-Contains custom formatted text or other items, such as tables, pictures, or other content controls.
+   カスタムフォーマットされたテキストや、表、画像、その他の中身コントロールなどのアイテムが含まれる。
 Plain Text
-Limited to plain text in a single or multiple paragraphs. Unlike rich text, it cannot contain other items, such as tables, pictures, or other content controls.
+   単一または複数の段落のプレーンテキストに限られる。リッチテキストとは異なり、表、画像、その他の中身コントロールなどの他のアイテムを含めることはできない。
 Picture
-Contains a single image anchored as-character. Clicking on the content control opens the file open dialog to select an image to replace the placeholder.
+   文字として固定された画像を一つ含む。中身・コントロールをクリックするとファイルを開くダイアログボックスが開き、プレースホルダーを置き換える画像を選択できる。
 Check Box
-Contains a single check box character to interact with. Clicking on the content control toggles the checked state of the check box.
+   対話するためのチェックボックス文字が一つ含まれている。中身コントロールをクリックすると、チェックボックスのチェック状態が切り替わります。
 Combo Box
-Contains a drop-down selection of list entries that you can select and text box that you can edit directly.
+   選択可能な一覧項目のドロップダウン選択と、直接編集可能なテキストボックスを含む。
 Drop-down List
-Contains a drop-down button control with a list of display-text and value pairs. Unlike a combo box, the drop-down list does not let users enter custom input.
+   表示テキストと値のペアの一覧を持つドロップダウンボタンコントロールが含まれている。コンボボックスとは異なり、ドロップダウン一覧は、使用者がカスタム入力を入力することはできない。
 Date
-Contains a calendar control. Limits text to a single paragraph.
-To insert a content control into a document, template, or form:
-    1) Place the cursor where you want the control to appear.
-    2) Choose Form > Content Controls > Insert [Required Control] on the Menu bar.
-    3) Choose Form > Content Controls > Content Control Properties on the Menu bar. This is not available for a Picture conrol.
-    4) On the Content Control Properties dialog (Figure 24), optionally select Content is placeholder text, type a title and a tag. The properties vary for each control. For details, please see the Help.
+   カレンダーコントロールを含む。テキストを1段落に制限する。
+
+文書、雛形、またはフォームに中身コントロールを挿入するには
+
+#. コントロールを表示したい場所にキャレットを置く。
+#. メニューの［フォーム］→［中身コントロール］→［必須コントロール］の順に選択する。
+#. メニューの [ フォーム ] > [ 中身コントロール ] > [ 中身コントロールのプロパティ ] を選択する。これはピクチャコントロールでは使用できない。
+#. 「中身コントロールのプロパティ」ダイアログボックス（図 24）で、オプションで 「中身はプレースホルダテキスト」を選択し、表題とタグを入力する。プロパティはコントロールごとに異なる。詳細はヘルプを参照しろ。
