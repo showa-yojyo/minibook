@@ -11,625 +11,773 @@ Writer Guide Chapter 15, Tables of Contents, Indexes, Bibliographies ノート
 Introduction
 ======================================================================
 
-This chapter describes how to create and maintain a table of contents, an index, and a bibliography for a text document using LibreOffice Writer. Other types of index are mentioned briefly. To understand the instructions, you need a basic familiarity with Writer and styles (see Chapter 8, Introduction to Styles, and Chapter 9, Working with Styles).
+この章では、LibreOffice Writerを使ってテキスト文書の目次、索引、書誌を作成し、管理する方法について説明する。他の種類の索引についても簡単に触れている。この説明を理解するためには、Writer とスタイルについて基本的な知識が必要です (第 8 章 スタイル入門および第 9 章 スタイルの操作 を参照しろ)。
 
 Tables of contents
 ======================================================================
 
-Writer’s table of contents (TOC) feature lets you build an automated TOC from the headings in a document. Whenever changes are made to the text of a heading in the body of the document or the page on which the heading appears, those changes automatically appear in the table of contents when it is updated.
-Before you start, make sure that the headings are styled consistently. For example, you can use the Heading 1 style for chapter titles and the Heading 2 and Heading 3 styles for chapter subheadings.
-This section shows you how to:
-    • Create a table of contents quickly, using the defaults.
-    • Customize a table of contents.
-    • Note
-You can use any style you want for the different levels to appear in the TOC; the examples in this chapter uses the default Heading styles. You can specify other paragraph styles to appear in the TOC, as described in “Create From” on page 7.
-    • Tips
-If some of your headings do not show up in the table of contents, check that the headings have been tagged with the correct paragraph style. If a whole level of headings does not show up, check the settings in Tools > Heading Numbering. See Chapter 8, Introduction to Styles.
-If you add or delete text (so that headings move to different pages) or you add, delete, or change headings, you need to update the table of contents. To do this: Right-click anywhere in the TOC and select Update Index in the context menu.
-If you cannot place the cursor in the TOC, choose Tools > Options > LibreOffice Writer > Formatting Aids, and then select Enable cursor in the Protected Areas section.
-The TOC appears with a gray background. This background is there to remind you that the TOC is a field; the text you see is generated automatically. The background is not printed and does not appear if the document is converted to a PDF. To turn off this gray background, go to Tools > Options > LibreOffice > Application Colors, then scroll down to the Text Document section and deselect Index and table shadings.
-This change may leave a gray background showing behind the dots between the headings and the page numbers, because the dots are part of a tab. To turn that shading off, go to Tools > Options > LibreOffice Writer > Formatting Aids and deselect the option for Tabs in the Display formatting section.
+Writerの目次（TOC）機能を使えば、文書内の見出しから自動でTOCを作成できる。文書の本文や見出しが表示されているページで見出しのテキストに変更が加えられると、目次が更新されたときにその変更が自動的に表示される。
+
+始める前に、見出しのスタイルが一貫していることを確認しろ。例えば、章の表題には見出し1のスタイルを使い、章の小見出しには見出し2と見出し3のスタイルを使うことができる。
+
+このセクションでは、次の方法を紹介する：
+
+- 既定を使用して、目次をすばやく作成する。
+- 目次をカスタマイズする。
+
+.. note::
+
+   TOCに表示されるさまざまなレベルには、どのようなスタイルでも使用できる。この章の例では、既定の見出しスタイルを使用している。この章の例では既定の見出しスタイルが使用されている。7ページの「作成元」で説明されているように、TOCに表示する段落スタイルを他にも指定することができる。
+
+.. tip::
+
+目次に見出しが表示されない場合は、正しい段落スタイルでタグ付けされているか確認しろ。見出しのレベル全体が表示されない場合は、ツール > 見出し番号の設定を確認しろ。第8章「スタイル入門」を参照しろ。
+
+テキストの追加や削除（見出しが別のページに移動するように）、見出しの追加、削除、変更を行った場合は、目次を更新する必要がある。これを行うには目次のどこかを右クリックし、コンテキストメニューから「索引の更新」を選択する。
+
+TOC 内にキャレットを配置できない場合は、[ツール] > [オプション] > [LibreOffice Writer] > [書式設定補助] の順に選択し、[保護領域] セクションで [キャレットを有効にする] を選択する。
+
+TOCは灰色の背景で表示される。この背景は、TOCがフィールドであることを思い出させるためのもので、表示されるテキストは自動的に生成される。背景は印刷されず、文書が PDF に変換された場合も表示されない。この灰色の背景をオフにするには、[ツール] > [オプション] > [LibreOffice] > [アプリケーションの色] を選択し、[テキスト文書] セクションまでスクロールダウンして、[インデックスと表の影] の選択を解除する。
+
+この変更により、見出しとページ番号の間のドットの背後に灰色の背景が表示されることがある。この網掛けをオフにするには、[ツール] > [オプション] > [LibreOffice Writer] > [書式設定補助] を開き、[書式の表示] セクションの [タブ] オプションの選択を解除する。
 
 Creating a table of contents quickly
 ----------------------------------------------------------------------
 
-Most of the time you will find the default table of contents to be all you need, although the formatting may be inelegant. To insert a default TOC:
-    1) Create a document, using the following paragraph styles for different heading levels (such as chapter and section headings): Heading 1, Heading 2, and Heading 3. These are what will appear in the TOC. Writer can evaluate up to ten levels of headings.
-    2) Click in the document where you want the TOC to appear.
-    3) Choose Insert > Table of Contents and Index > Table of Contents, Index or Bibliography.
-    4) Click OK. The result will be a typical table of contents with the entries generated as hyperlinks.
-    • Caution
-If you have Edit > Track Changes > Show enabled when editing a document and you update the TOC, then errors may occur, as the TOC will still include any deleted headings and deleted text may cause page numbering in the TOC to be wrong. To avoid this problem, be sure this option is deselected before updating a TOC.
+たいていの場合、既定の目次が必要なものすべてであることがわかるだろうが、書式は不便かもしれない。既定の目次を挿入するには
+
+#. 見出しレベル（章や節の見出しなど）別に以下の段落スタイルを使用して文書を作成する：見出し1、見出し2、見出し3。これらはTOCに表示されるものだ。ライターは最大10レベルの見出しを評価できる。
+#. TOCを表示したい文書をクリックする。
+#. Choose Insert > Table of Contents and Index > Table of Contents, Index or Bibliography.
+#. OK をクリックする。項目がハイパーリンクとして生成された典型的な目次ができあがります。
+
+.. caution::
+
+   文書を編集する際に、[編集] > [変更履歴] > [表示] を有効にしている場合、TOCを更新すると、削除された見出しがTOCに含まれ、削除されたテキストによってTOCのページ番号が正しく表示されないため、エラーが発生する可能性がある。この問題を避けるには、TOCを更新する前に、このオプションが選択解除されていることを確認しろ。
 
 Customizing a table of contents
 ----------------------------------------------------------------------
 
-The table of contents can be customized to suit the style and requirements of the document.
-To start, right-click anywhere in an existing table of contents and choose Edit Index in the context menu, or click in the document where the TOC should appear and choose Insert > Table of Contents and Index > Table of Contents, Index or Bibliography, to open the Table of Contents, Index or Bibliography dialog shown in Figure 1.
+目次は、文書のスタイルや要件に合わせてカスタマイズすることができる。
 
-The Table of Contents, Index or Bibliography dialog has five tabs. Each tab covers a different aspect of the TOC structure and appearance:
-    • Type tab: set the attributes of the TOC.
-    • Entries and Styles tabs: format the entries in the TOC.
-    • Columns tab: put the TOC into more than one column.
-    • Background tab: add color or an image to the background of the TOC.
-To display a preview box, located on the right-hand side of the dialog, select the Preview option in the lower left of the dialog. The illustrations in this chapter show the dialog as it appears with the preview box hidden.
-    • Note
-The preview box shows the result of settings made on the Type, Entries, and Styles tabs. It does not show changes made on the Columns and Background tabs.
-After making all the changes, click OK to apply them. To revert to the default settings for the Columns and Background tabs, select each tab in turn and click the Reset button. The settings on the Type, Entries, and Styles tabs must be reset manually; the Reset button has no effect.
+まず、既存の目次の任意の場所で右クリックし、コンテキストメニューから「索引の編集」を選択するか、TOCを表示する文書内でクリックし、「挿入」>「目次と索引」>「目次、索引、または書誌」を選択すると、図1に示す目次、索引、または書誌ダイアログボックスが開く。
+
+目次、索引、書誌ダイアログボックスには五つのタブがある。それぞれのタブはTOCの構造と外観の異なる側面をカバーする：
+
+* タイプタブ: TOCの属性を設定する。
+* 項目とスタイルタブ: TOCの項目の書式を設定する。
+* 列タブ：TOCを複数の列にする。
+* 背景タブ: TOCの背景に色や画像を追加する。
+
+ダイアログボックスの右側にあるプレビューボックスを表示するには、ダイアログボックスの左下にあるプレビューオプションを選択する。本章のイラストは、プレビューボックスを非表示にした状態でダイアログボックスを表示している。
+
+.. note::
+
+   プレビューボックスには、「タイプ」、「項目」、「スタイル」タブで設定した結果が表示される。列と背景タブでの変更は表示されない。
+
+   すべての変更を行ったら、OKをクリックして適用する。列］タブと［背景］タブの設定を既定に戻すには、各タブを順番に選択して［リセット］ボタンをクリックする。タイプ、エントリー、スタイルタブの設定は手動でリセットする必要がある。
 
 Type tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the Type tab (Figure 1) to set the attributes of the Table of Contens.
-Title
-To give the table of contents a different title, type it in the Title field. To delete the title, clear the Title field.
-Type
-Select a type in the drop-down list. For a TOC, be sure the Type is set to Table of Contents. See “Alphabetic indexes” on page 12 and “Other types of index” on page 20 for more about creating other types of indexes.
-    • Note
-You can change the type of index only when you first create it. Once you define an index type (for example, a table of contents) you cannot change it.
-Protected against manual changes
-By default, to prevent the TOC from being changed accidentally, this option is selected; the TOC can only be changed by using the context menu or the dialog. If the option is not selected, the TOC can be changed directly, just like other text. However, any manual changes will be lost when the TOC is updated, so they should be avoided.
-Create Index or Table of Contents
-In the For drop-down list in this area, you can select whether the TOC will cover all the headings of the document (Entire document) or just the headings of the chapter where it is inserted. In early versions of LibreOffice, the heading level designating a chapter was fixed; from version 7.4, it is the current heading level.
-Evaluate up to level
-Writer can use up to 10 levels of headings when it builds the table of contents. To specify the number of levels included, enter the required number in the Evaluate up to level box.
-Create From
-The third section of the Type tab determines what Writer should use to create the TOC. The choices (not mutually exclusive) are Headings, Additional styles, and Index marks.
-Headings
-By default, Writer uses the paragraphs formatted with the paragraph styles associated with heading levels in Tools > Heading Numbering.
-You can change the paragraph styles used for heading levels, and you can include other paragraph styles by assigning an outline level to those styles. Both of these methods are described in in Chapter 8, Introduction to Styles.
-Additional styles
-You can add more paragraph styles to the TOC. This can be useful, for example, when you want to include the heading of an annex (appendix) in the TOC. If the Headings option is also selected, the additional styles will be included in the table of contents together with the ones defined in the heading numbering. Select this option and click the Assign styles button to open the Assign Styles dialog (FIgure 2).
+タイプ」タブ（図1）を使って、目次の属性を設定する。
 
+Title
+   目次に別の表題を付けるには、「表題」フィールドに入力する。表題を削除するには、「表題」フィールドをクリアする。
+Type
+   ドロップダウン一覧でタイプを選択する。TOCの場合、TypeがTable of Contentsに設定されていることを確認しろ。他のタイプのインデックスの作成については、1二ページの「アルファベット・インデックス」と20ページの「他のタイプのインデックス」を参照しろ。
+
+    .. note::
+
+       インデックスのタイプを変更できるのは、最初に作成するときだけだ。いったんインデックス・タイプ（例えば目次）を定義すると、それを変更することはできない。
+
+Protected against manual changes
+   既定では、TOCが誤って変更されるのを防ぐため、このオプションが選択されている。TOCは、コンテキストメニューかダイアログボックスを使ってのみ変更できる。このオプションが選択されていない場合、TOCは他のテキストと同じように直接変更することができる。しかし、手動による変更はTOCが更新されたときに失われるので、避けるべきだ。
+Create Index or Table of Contents
+   この領域の [対象] ドロップダウン 一覧では、TOC が文書のすべての見出し (文書全体) をカバーするのか、または TOC が挿入されている章の見出しだけをカバーするのかを選択できる。LibreOffice の初期のバージョンでは、章を指定する見出しレベルは固定されていたが、バージョン 7.4 以降では現在の見出しレベルになる。
+Evaluate up to level
+   Writerでは、目次を作成する際に最大10レベルの見出しを使用できる。含まれるレベルの数を指定するには、「レベルまで評価する」ボックスに必要な数を入力する。
+Create From
+   タイプ」タブの3番目のセクションは、WriterがTOCの作成に何を使うかを決定する。選択肢（相互に排他的ではない）は、見出し、追加スタイル、索引マークだ。
+Headings
+   既定では、Writer は [ツール] > [見出し番号付け] で見出しレベルに関連付けられた段落スタイルでフォーマットされた段落を使用する。
+
+   見出しレベルに使用する段落スタイルを変更したり、スタイルにアウトラインレベルを割り当てることで他の段落スタイルを含めることができる。これらの方法については、第8章「スタイル入門」で説明している。
+Additional styles
+   TOCに段落スタイルを追加することができる。これは、例えば、付録（アペンディックス）の見出しをTOCに含めたい場合に便利だ。見出し」オプションも選択されている場合、追加されたスタイルは、見出し番号で定義されたものと一緒に目次に含まれる。このオプションを選択し、スタイルの割り当てボタンをクリックすると、スタイルの割り当てダイアログボックスが開く（図2）。
 Index marks
-This selection adds any index entries inserted into the document by using Insert > Table of Contents and Index > Index Entry. Normally you would not use this selection for a table of contents. However, if you select Table of Contents in the Index drop-down list at the top of the Insert Index Entry dialog (Figure 3), Writer will distinguish between them and any index entries intended for inclusion in an alphabetic or other index.
+   この選択項目は、「挿入」→「目次」および「索引」→「索引エントリ」を使用して文書に挿入された索引エントリを追加する。通常、目次にこの選択を使用することはない。しかし、［索引エントリの挿入］ダイアログボックス（図3）の上部にある［索引］ドロップダウン一覧で［目次］を選択すると、Writerは索引エントリと、アルファベットやその他の索引に含めることを意図した索引エントリを区別する。
 
 Entries tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the Entries tab (Figure 4) to define and format the entries in the TOC. Each level can be styled independently from the other levels by adding and deleting elements.
+TOCの項目を定義し、フォーマットするには、「項目」タブ（図4）を使用する。各レベルは、要素を追加したり削除したりすることで、他のレベルから独立してスタイルを設定できる。
 
-Click a number in the Level column. The Structure line contains the elements included in the entries for that level. Elements that can be added to the structure line are displayed just below the structure line, and are grayed out if they cannot be included (usually because they are already in use):
-    • The LS icon represents the start of a hyperlink.
-    • The N# icon represents the heading number assigned to a heading style in Tools > Heading Numbering. See Chapter 8, Introduction to Styles.
-    • The E icon represents the heading text; that is, the text formatted with the paragraph style used for each level.
-    • The T icon represents a tab stop.
-    • The # icon represents the page number.
-    • The LE icon represents the end of a hyperlink.
-    • Each white field on the Structure line represents a blank space where you can add custom text or another element.
-    • Note
-In the Heading Numbering dialog (see Chapter 8, Introduction to Styles), if you have included any text in the Before or After boxes in the Separator section for any given level, then that text will be part of the N# field for that level. Take care when building the structure line not to create any unwanted effects in the appearance of the TOC.
+レベル] 列の番号をクリックする。構造行には、そのレベルのエントリに含まれる要素が表示される。構造行に追加できる要素は、構造行のすぐ下に表示され、追加できない場合は灰色で表示される (たいていの場合、既に使用されているため)：
+
+* LS 図像はハイパーリンクの開始を表する。
+* N#図像は、ツール > 見出し番号設定 で見出しスタイルに割り当てられた見出し番号を表する。第8章 スタイル入門を参照しろ。
+* E図像は見出しテキスト、つまり各レベルで使用される段落スタイルでフォーマットされたテキストを表する。
+* T図像はタブストップを表する。
+* 図像はページ番号を表する。
+* LE図像はハイパーリンクの終わりを表する。
+* 構造行の各白色フィールドは空白を表し、カスタムテキストや別の要素を追加できる。
+
+.. note::
+
+   見出し番号設定ダイアログボックス (第 8 章「スタイル入門」を参照) で、任意のレベルの [区切り記号] セクションの [前] ボックスまたは [後] ボックスにテキストが含まれている場合、そのテキストはそのレベルの N# フィールドの一部になる。構造行を作成する際は、TOC の外観に不要な効果を与えないように注意しろ。
 
 Adding elements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add an element to the Structure line:
-    1) Click in the white field where you want to insert the element.
-    2) Click one of the active buttons just below the Structure line. For example, to add a tab, click the Tab Stop button. An icon representing the new element appears on the Structure line.
-    3) To add custom text, such as the word Chapter, type the text in the white field. Don't forget a trailing space.
+構造線に要素を追加するには
+
+#. エレメントを挿入したい白いフィールドをクリックする。
+#. 構造線のすぐ下にあるアクティブなボタンの一つをクリックする。例えば、タブを追加するには、Tab Stop ボタンをクリックする。新しい要素を表す図像が構造行に表示される。
+#. Chapterのようなカスタムテキストを追加するには、白いフィールドにテキストを入力する。末尾のスペースを忘れないでください。
 
 Changing elements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To change an element in the Structure line, click the icon representing that element and then click a non-grayed out element in the row of buttons just below the Structure line. For example, to change a chapter number to a tab stop, click the N# icon on the Structure line (it shows then as being pressed) and then click the Tab Stop button in the row of available elements. To cancel before changing an element, click in one of the white spaces.
+構造行の要素を変更するには、その要素を表す図像をクリックし、次に構造行のすぐ下にあるボタンの列で、灰色アウトされていない要素をクリックする。例えば、章番号をタブストップに変更するには、Structure行でN#図像をクリックし（押された状態で表示される）、使用可能な要素の列でTab Stopボタンをクリックする。要素を変更する前にキャンセルするには、空白のいずれかをクリックする。
+
 Applying changes to all levels
-If you wish to apply the same structure and formatting to all levels, click the All button on the right.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+すべてのレベルに同じ構造とフォーマットを適用したい場合は、右側の「すべて」ボタンをクリックする。
 
 Deleting elements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To delete an element from the Structure line, click the button representing that element and then press the Delete key on your keyboard. For example, to delete the default hyperlink setting, click the LS icon and then press the Delete key. Repeat this for the LE icon.
+構造行から要素を削除するには、その要素を表すボタンをクリックし、キーボードのDeleteキーを押する。例えば、既定のハイパーリンク設定を削除するには、LS図像をクリックし、Deleteキーを押する。これをLE図像についても繰り返する。
 
 Applying character styles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You might want an element to be a bit different from the rest of the line. For example, you might want the page number to be bold. To apply a character style to an element:
-    1) Be sure you have previously defined a suitable character style.
-    2) On the Structure line, click the button representing the element to which you want to apply a style.
-    3) In the Character Style drop-down list, select the desired style.
-To view or edit the attributes of a character style, select the style in the Character Style drop-down list and then click the Edit button.
-    • Tip
-The default character style for hyperlinks (such as those inserted by Insert > Hyperlink) is Internet Link, which by default is underlined and shown in blue.
-The default hyperlinks of TOC entries are set to the Index Link character style, which may be different in appearance from the Internet Link style. If you want them to appear the same as internet links, you can select the LS icon on the Structure line and change the character style selection for TOC entries to Internet Link.
-Alternatively, you can change the attributes for Index Link.
+ある要素を、他の行とは少し違ったものにしたい場合もあるだろう。例えば、ページ番号を太字にしたい場合などだ。要素に文字スタイルを適用するには
+
+#. 適切な文字スタイルが定義されていることを確認する。
+#. 構造行で、スタイルを適用したい要素を表すボタンをクリックする。
+#. 文字スタイル ドロップダウン一覧で、必要なスタイルを選択する。
+
+キャラクタ スタイルの属性を表示または編集するには、キャラクタ スタイル ドロップダウン 一覧でスタイルを選択し、［編集（Edit）］ボタンをクリックする。
+
+.. tip::
+
+   ハイパーリンク（「挿入」→「ハイパーリンク」で挿入したものなど）の既定の文字スタイルは「インターネットリンク」で、既定では下線が引かれ、青色で表示される。
+
+   TOCエントリーの既定のハイパーリンクはインデックスリンクの文字スタイルに設定されており、インターネットリンクのスタイルとは見た目が異なる場合がある。インターネットリンクと同じように表示させたい場合は、構造行のLS図像を選択し、TOCエントリーの文字スタイルの選択をインターネットリンクに変更することができる。
+
+   また、インデックス・リンクの属性を変更することもできる。
 
 Tab parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Click on the Tab stop icon on the Structure line to bring up these controls:
-    • Fill character: select the tab character you wish to use; the first choice is none (blank).
-    • Tab stop position: specify the distance to leave between the left page margin and the tab stop. Optionally, select Align right for the tab stop; this selection inactivates the distance.
+構造線のタブストップの図像をクリックすると、これらのコントロールが表示される：
+
+* 塗りつぶし文字：使用するタブ文字を選択する。
+* タブストップの位置：左ページ余白とタブストップの間の距離を指定する。オプションで、タブストップの位置を右に揃えるを選択する。
 
 Tab position relative to paragraph style indent
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When this option is selected, entries are indented according to the settings of their individual formats. Where a paragraph style specifies an indent on the left, tab stops are relative to this indent. If this option is not selected, tab stops are relative to the left margin position.
+このオプションを選択すると、個々の書式の設定に従って項目が字下げされる。段落スタイルで左字下げが指定されている場合、タブストップはこの字下げからの相対位置となる。このオプションが選択されていない場合、タブストップは左余白位置からの相対値となる。
 
 Styles tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the Styles tab (Figure 5) to change which paragraph style is assigned to display the text of each level in the table of contents. In most cases, the best strategy is to keep the assigned styles but change their settings as needed to make the TOC appear the way you want.
-To apply a custom paragraph style to an outline level:
-    1) In the Levels list, select the level.
-    2) In the Paragraph Styles list, click on the desired paragraph style.
-    3) Click the < button to apply the selected paragraph style to the selected outline level.
-The style assigned to each level appears in square brackets in the Levels list.
-To remove paragraph styling from an outline level, select the outline level in the Levels list, and then click the Default button.
-To view or edit the attributes of a paragraph style, click the style in the Paragraph Styles list, and then click the Edit button.
+スタイル］タブ（図5）を使用して、目次の各レベルのテキストを表示するために割り当てる段落スタイルを変更する。ほとんどの場合、割り当てられたスタイルはそのままに、必要に応じて設定を変更し、TOCを思い通りに表示するのが最善の方法だ。
+
+カスタム段落スタイルをアウトラインレベルに適用するには
+
+#. ［レベル］一覧で、レベルを選択する。
+#. ［段落スタイル］一覧で、必要な段落スタイルをクリックする。
+#. < ボタンをクリックして、選択した段落スタイルを選択したアウトライン レベルに適用する。
+
+各レベルに割り当てられたスタイルは、[レベル] 一覧の角括弧内に表示される。
+
+アウトライン・レベルから段落スタイルを削除するには、[レベル] 一覧でアウトライン・レベルを選択し、[既定] ボタンをクリックする。
+
+段落スタイルの属性を表示または編集するには、［段落スタイル］一覧でスタイルをクリックし、［編集］ボタンをクリックする。
 
 Columns tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the Columns tab to change the number of columns for the TOC. Multiple columns are more likely to be used in an index than in a TOC, so this tab is described in the section on indexes. See Figure 10.
+TOCの列数を変更するには「列」タブを使用する。複数の列はTOCよりもインデックスで使われる可能性が高いので、このタブはインデックスのセクションで説明する。図10を参照。
 
 Background tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the Background tab (Figure 6) to add color or an image to the background of the TOC. See Chapter 6, Formatting Pages: Advanced, for more about adding a background.
+TOCの背景に色や画像を追加するには、「背景」タブ（図6）を使用する。第6章「ページの書式設定」を参照しろ：背景の追加については、第6章「ページの書式設定：詳細」を参照しろ。
 
 Adding color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add color to the background of the table of contents, select the Color button near the top of the dialog, then select a color from those provided and click OK.
-See Chapter 20, Customizing Writer, for information about defining custom background colors.
+目次の背景に色を追加するには、ダイアログボックスの上部にある「色」ボタンを選択し、提供されている色から選択して「OK」をクリックする。
+
+カスタム背景色の定義については、第20章Writerのカスタマイズを参照しろ。
 
 Adding an image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add an image to the background of the table of contents, select the Image button. The Background tab now displays the image options.
+目次の背景に画像を追加するには、画像ボタンを選択する。背景タブに画像オプションが表示される。
 
 Deleting a color or an image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To delete a color or an image from the table background, select None at the top of the dialog.
+テーブルの背景から色や画像を削除するには、ダイアログボックスの上部で「なし」を選択する。
 
 Editing a table of contents
 ----------------------------------------------------------------------
 
-To edit an existing TOC, right-click anywhere in the TOC and choose Edit Index in the context menu. You can also open the Navigator in the Sidebar, click the expansion symbol (+ sign or triangle) next to Indexes, then double-click on Table of Contents.
-The Table of Contents, Index or Bibliography dialog (Figure 1 on page 6) opens. You can edit and save the TOC as described in the previous section.
+既存のTOCを編集するには、TOC内の任意の場所を右クリックし、コンテキストメニューから「索引の編集」を選択する。また、Sidebarのナビゲータを開き、「索引」の横にある拡張記号（＋印または三角印）をクリックし、「目次」をダブルクリックすることもできる。
+
+目次、索引、書誌ダイアログボックス（6ページの図1）が開く。前のセクションで説明したように、TOCを編集・保存することができる。
 
 Updating a table of contents
 ----------------------------------------------------------------------
 
-Writer does not update the TOC automatically, so after any changes to the headings in a document, you need to update the TOC manually. Right-click anywhere in the TOC; in the context menu, choose Update Index.
-You can also update the index from the Navigator: expand Indexes, right-click on the name of table of contents you want to update, and choose Index > Update.
+Writerは自動的にTOCを更新しないので、文書の見出しを変更した後は、手動でTOCを更新する必要がある。TOCの任意の箇所を右クリックし、コンテキストメニューから「索引の更新」を選択する。
+
+ナビゲータから索引を更新することもできる：「索引」を展開し、更新したい目次名を右クリックし、「索引」>「更新」を選択する。
 
 Deleting a table of contents
 ----------------------------------------------------------------------
 
-To delete the TOC from a document, right-click anywhere in the TOC and choose Delete Index in the context menu. You can also delete the index from the Navigator by choosing Index > Delete in the menu shown in Figure Error: Reference source not found. Writer will not prompt you to confirm the deletion.
+文書からTOCを削除するには、TOCの任意の場所を右クリックし、コンテキストメニューから「インデックスの削除」を選択する。また、ナビゲーターからインデックスを削除するには、図エラーに示すメニューから「インデックス」>「削除」を選択する：参照元が見つかりません。Writerは削除を確認するプロンプトを出しない。
 
 Alphabetic indexes
 ======================================================================
 
-An alphabetical index is a list of keywords or phrases used throughout a document that, if listed in order with page numbers, may help the reader find information quickly. Generally an index is found in the back of a book or document.
-This section describes how to:
-    • Add index entries manually.
-    • Use a concordance file.
-    • Create an alphabetic index quickly.
-    • Customize the display of index entries.
-    • Customize the appearance of the index.
-    • View and edit existing index entries.
+アルファベット順の索引は、文書中で使用されているキーワードやフレーズの一覧で、ページ番号順に記載されていれば、読者が情報をすばやく見つけるのに役立つ。一般的に、索引は本や文書の後ろにある。
+
+このセクションでは、以下の方法について説明する：
+
+* インデックス項目を手動で追加する。
+* コンコーダンスファイルを使用する。
+* アルファベット索引をすばやく作成する。
+* 索引項目の表示をカスタマイズする。
+* インデックスの外観をカスタマイズする。
+* 既存の索引項目を表示・編集する。
 
 Adding index entries
 ----------------------------------------------------------------------
 
-Before you can create an index, you must create some index entries, either manually or by using a concordance (see page 14). To create index entries manually:
-    1) To add a word to the index, place the cursor anywhere in that word. To add multiple consecutive words as one entry, select the entire phrase.
-    2) Choose Insert > Table of Contents and Index > Index Entry, or click the Insert Index Entry icon on the Insert toolbar, to display a dialog similar to the one in Figure 7. When the dialog opens, the selected text appears in the Entry box. You can accept the word or phrase shown, or change it to whatever you want.
-    3) Click Insert to create the entry.
+インデックスを作成する前に、手作業で、あるいはコンコーダンス (14 ページ参照) を使って、いくつかのインデックス項目を作成する必要がある。手動で索引項目を作成するには
 
-    • Tip
-A cursor placed immediately before the first character of a word, or immediately after the last character of a word if it is followed by a space, counts as being in that word.
-You can create multiple entries without closing the dialog. For each one:
-    1) Click at the location in the document that you want to index.
-    2) Click again on the dialog.
-    3) Change the entry if needed, and click Insert.
-    4) Repeat steps 1–3 until you have finished with the entries, then click Close.
-Below is a brief explanation of the fields in the Insert Index Entry dialog and how to use them.
+#. 単語をインデックスに追加するには、その単語のどこかにキャレットを置きます。複数の連続する単語を 1 つの項目として追加するには、フレーズ全体を選択する。
+#. ［挿入］→［目次と索引］→［索引エントリ］を選ぶか、または［挿入］ ツールバーの［索引エントリの挿入］図像をクリックして、図 7 のようなダイアログボックスを表示する。ダイアログボックスが開くと、選択したテキストが「入力」ボックスに表示される。表示された単語や語句をそのまま受け入れることもできるし、 好きなものに変更することもできる。
+#. 挿入をクリックして項目を作成する。
+
+.. tip::
+
+   単語の最初の文字の直前、または単語の最後の文字の直後にキャレットが置かれた場合、そのキャレットはその単語の中にあるとみなされる。
+
+ダイアログボックスを閉じることなく、複数のエントリーを作成することができる。それぞれについて
+
+#. インデックスを作成したい文書の場所をクリックする。
+#. ダイアログボックス上でもう一度クリックする。
+#. 必要に応じて項目を変更し、挿入をクリックする。
+#. エントリーが終了するまでステップ 1 ～ 3 を繰り返し、[閉じる] をクリックする。
+
+以下は、「Insert Index Entry」ダイアログボックスのフィールドとその使い方についての簡単な説明だ。
+
 Index
-The type of index this entry is for. The default is Alphabetical Index, but you can use this field to create extra entries for a table of contents or user-defined indexes or lists of almost anything. For example, you might want an index containing only the scientific names of species mentioned in the text, and a separate index containing only the common names of species. See “Other types of index” on page 20.
+   このエントリーのインデックスのタイプ。既定はAlphabetical Indexだが、このフィールドを使用して、目次や使用者定義の索引や一覧のための追加エントリを作成することができる。例えば、本文中で言及されている種の学名のみを含む索引と、種の通称名のみを含む別の索引が欲しいかもしれない。20ページの「その他の索引」を参照。
 Entry
-The word or phrase to be added to the selected index. This word or phrase does not need to be in the document itself; you can add synonyms and other terms that you want to appear in the index.
+   選択した索引に追加する語句。この語句は文書そのものに含まれている必要はなく、同義語や索引に表示させたい他の用語を追加することができる。
 1st key
-An index key is an entry that has no associated page number and has several subentries that do have page numbers. Using keys is a useful way of grouping related topics. (See “Example of using an index key” on page 14.)
+   インデックス・キーとは、関連するページ番号を持たず、ページ番号を持ついくつかのサブエントリーを持つエントリーのことだ。キーを使うと、関連するトピックをグループ化するのに便利だ。(14ページの「インデックスキーの使用例」を参照)。
 2nd key
-You can have up to a three-level index, where some of the first-level keys have level-2 entries that are also keys (without page numbers). This degree of index complexity is not often necessary.
+   最大で3レベルのインデックスを持つことができ、第1レベルのキーのいくつかは、（ページ番号を持たない）キーでもある第2レベルのエントリーを持つ。この程度のインデックスの複雑さは、あまり必要ではない。
 Main entry
-When the same term is indexed on several pages, often one of those pages has more important or detailed information on that topic, so you want it to be the main entry. To make the page number for the main, or most important, entry stand out, select this option and then define the character style for the page number of a main index entry to be bold, for example.
+   同じ用語が複数のページに索引付けされている場合、そのうちの一つのページにそのトピックに関するより重要な情報や詳細な情報があることが多いので、そのページをメイン・エントリーにしたいものだ。メイン・エントリ、つまり最も重要なエントリのページ番号を目立たせるには、このオプションを選択し、メイン・インデックス・エントリのページ番号の文字スタイルを太字などに定義する。
 Apply to all similar texts
-Select this option to have Writer automatically identify and mark any other word or phrase that matches the current selection. The Match case and Whole words only options become available if this option is selected. Use this option with care, as it may result in many unwanted page numbers (for minor uses of a word) being listed in the index.
+   このオプションを選択すると、Writerが現在の選択範囲に一致する他の単語や語句を自動的に識別してマークする。このオプションを選択すると、「大文字と小文字を一致させる」と「単語全体のみを一致させる」オプションが使用できるようになる。このオプションを使用すると、不要なページ番号（その単語のマイナーな用法）が索引に多数記載される可能性があるため、注意しろ。
 
 Example of using an index key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An index key is a primary entry under which subentries are grouped. For example, you might want to create a grouping similar to this:
-LibreOffice
-      Calc,  10
-      Impress,  15
-      Writer,  5
-In this example, LibreOffice is the 1st key. The subentries (with the page numbers showing) are the indexed entries. To insert an index entry for the topic Writer, on the Insert Index Entry dialog  (Figure 7 on page 13), type Writer in the Entry box and LibreOffice in the 1st key box.
-    • Note
-If field shading is active (Tools > Options > LibreOffice > Application Colors > Text Document > Field shadings), when a selected word or phrase has been added to the index, it is shown in the text with a gray background. If the text of an index entry has been changed from the text of the word selected, the index entry is marked by a small gray rectangle at the start or end of that word.
+インデックス・キーは、サブエントリーをグループ化するための主エントリーだ。例えば、次のようなグループ分けをしたいだろう：
+
+.. code:: text
+
+   LibreOffice
+         Calc,  10
+         Impress,  15
+         Writer,  5
+
+この例では、LibreOfficeが1番目のキーだ。サブエントリ (ページ番号が表示されている) が索引エントリだ。トピック Writer の索引項目を挿入するには、[索引項目の挿入] ダイアログボックス (13 ページの図 7) で、[項目] ボックスに Writer と入力し、[1 番目のキー] ボックスに LibreOffice と入力する。
+
+.. note::
+
+   フィールドシェーディングが有効な場合 (ツール > オプション > LibreOffice > アプリケーションの色 > テキスト文書 > フィールドシェーディング)、選択した語句が索引に追加されると、その語句の背景が灰色でテキストに表示される。索引項目のテキストが選択した単語のテキストから変更されている場合、索引項目はその単語の先頭または末尾に小さな灰色の四角形でマークされる。
 
 Creating a concordance
 ----------------------------------------------------------------------
 
-A concordance is a plain text file that lists words to add to the index. It has one word or phrase defined on each line. Each line has a strict structure, consisting of seven fields, separated by semicolons:
-Search_term;Alternative_entry;1st_key;2nd_key;Match_case;Word_only
-No space is entered between the semicolon and a field’s content. A key is a higher level heading that a search term is placed beneath.
-If you choose not to have an alternative entry, a first key or a second key, leave those fields blank, so that one semi-colon immediately follows another.
-The last two fields are structured somewhat differently. If you want only entries that have the same upper or lower case letters as your entries, enter 1 in the second to last field. Similarly, entering 1 in the last field sets the index to only include instances where the entry is a whole word, and not part of a larger one. You can also leave the last two fields blank, as you can with any of the others.
-For example, entering:
-Macaw;Ara;Parrots;;0;0
-Would produce an entry for macaw with
-    • A listing under macaw.
-    • An alternate listing under ara (the scientific name).
-    • A listing of Parrots, Macaw.
-    • No second key (notice the two semi-colons).
-    • Inclusion of instances that start with a lower or upper case letter (both “macaw” and “Macaw”).
-    • Inclusion of instances in which the term is a whole word or part of a longer word.
-Whether creating a concordance is faster than adding entries manually is debatable, but a concordance is certainly more systematic. The disadvantage of a concordance is that it can produce an index that includes instances of common words that are irrelevant for your purposes. In many cases, a useful index may require a combination of manual entries and a concordance.
+コンコーダンスは、索引に追加する単語を列挙したプレーン・テキスト・ファイルである。各行に一つの単語または語句が定義されている。各行はセミコロンで区切られた7つのフィールドからなる厳密な構造を持っている：
+
+.. code:: text
+
+   Search_term;Alternative_entry;1st_key;2nd_key;Match_case;Word_only
+
+セミコロンとフィールドの内容の間にはスペースを入れない。キーとは、検索語がその下に置かれる上位の見出しのことだ。
+
+代替項目、最初のキー、2番目のキーを設けない場合は、これらのフィールドを空白のままにして、セミコロンが別のフィールドの直後に来るようにする。
+
+最後の二つのフィールドは多少異なる構造になっている。エントリーと同じ大文字または小文字を持つエントリーだけが欲しい場合は、最後から2番目のフィールドに1を入力する。同様に、最後のフィールドに1を入力すると、エントリーが単語全体であり、大きな単語の一部でない場合のみをインデックスに含めるように設定する。最後の二つのフィールドを空白にすることもできる。
+
+例えば
+
+.. code:: text
+
+   Macaw;Ara;Parrots;;0;0
+
+でコンゴウインコのエントリが作成される:
+
+* コンゴウインコの下の一覧。
+* アラ（学名）の下の一覧。
+* オウム, コンゴウインコの一覧。
+* 2番目のキーなし（二つのセミコロンに注意）。
+* 小文字または大文字（"macaw "と "Macaw "の両方）で始まる例を含む。
+* 単語全体または長い単語の一部である場合。
+
+コンコーダンスが手作業で項目を追加するよりも速いかどうかは議論の余地があるが、コンコーダンスがより体系的であることは確かである。コンコーダンスの欠点は、目的とは無関係な一般的な単語の例を含む索引が作成される可能性があることである。多くの場合、有用な索引を作るには、手入力とコンコーダンスとの組み合わせが必要かもしれない。
 
 Creating an alphabetic index quickly
 ----------------------------------------------------------------------
 
-Now that you have some index entries, you can create the index.
-Although indexes can be customized extensively in Writer, most of the time you need to make only a few choices.
-To create an index quickly:
-    1) Click in the document where you want to add the index and click Insert > Table of Contents and Index > Table of Contents, Index or Bibliography to open the Table of Contents, Index or Bibliography dialog.
-    2) In the Type box on the Type tab (Figure 8), select Alphabetical Index.
-    3) In the Options section, consider deselecting Case sensitive (so capitalized and lower-case words are treated as the same word) and Combine identical entries with p or pp.
-    4) If using a concordance, select Concordance file in the Options section, then click the File button and select the concordance file you created.
-    5) Click OK. The result will be a typical index.
+インデックス・エントリがいくつかできたので、インデックスを作成することができる。
+
+インデックスはWriterで広範囲にカスタマイズすることができるが、ほとんどの場合、いくつかの選択をするだけだ。
+
+インデックスをすばやく作成するには
+
+#. 索引を追加したい文書内でクリックし、［挿入］→［目次と索引］→［目次、索引、 書誌］の順にクリックして、［目次、索引、書誌］ダイアログボックスを開く。
+#. ［タイプ］タブの［タイプ］ボックスで（図8）、［アルファベット順インデックス］を選択する。
+#. 「オプション」セクションで、「大文字と小文字を区別する」（大文字と小文字の単語を同じ単語として扱う）と「同じ項目をpまたはppで結合する」の選択を外すことを検討する。
+#. コンコーダンスを使用する場合は、オプション・セクションでコンコーダンス・ファイルを選択し、ファイル・ボタンをクリックして、作成したコンコーダンス・ファイルを選択する。
+#. OKをクリックする。典型的な索引ができあがります。
 
 Customizing an index
 ----------------------------------------------------------------------
 
-To customize an existing index, right-click anywhere in the index and choose Edit Index in the context menu.
-The Table of Contents, Index or Bibliography dialog (Figure 8) has five tabs. All of them can be used to customize the index.
-    • Type tab: set the attributes of the index.
-    • Entries and Styles tabs: to format the entries in the index.
-    • Columns tab: put the index into more than one column.
-    • Background tab: add color or an image to the background of the index.
-After making your changes, click OK to save the index so it appears in your document.
+既存のインデックスをカスタマイズするには、インデックス内の任意の場所を右クリックし、コンテキストメニューから「インデックスの編集」を選択する。
+
+目次・索引・書誌ダイアログボックス（図8）には五つのタブがある。これらのタブはすべて索引をカスタマイズするために使用することができる。
+
+* タイプタブ: インデックスの属性を設定する。
+* 項目とスタイルタブ: インデックスの項目をフォーマットする。
+* 列タブ: インデックスを複数の列に配置する。
+* 背景タブ: インデックスの背景に色や画像を追加する。
+
+変更後、OKをクリックしてインデックスを保存し、文書に表示されるようにする。
 
 Type tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the Type tab (Figure 8) to set the basic attributes of the index.
-To give the index a different title, edit the Title field. To delete the title, clear the Title field.
-Be sure the type of index is set to Alphabetical Index.
-By default, to prevent the index from being changed accidentally, the option Protected against manual changes is selected; the index can only be changed by using the context menu or the dialog. If the option is not selected, the index can be changed directly just like other text, but any manual changes to an index will be lost when it is updated, so they should be avoided.
+インデックスの基本属性を設定するには、「タイプ」タブ（図8）を使用する。
 
-In the drop-down list in the Create Index or Table of Contents section, select Entire document, or choose to create an index for just the current chapter.
-Other options determine how the index handles entries.
+インデックスに別の表題を付けるには、「表題」フィールドを編集する。表題を削除するには、「表題」フィールドをクリアする。
+
+インデックスのタイプがAlphabetical Indexに設定されていることを確認しろ。
+
+既定では、インデックスが誤って変更されるのを防ぐために、「手動変更から保護」オプションが選択されている。このオプションが選択されていない場合、インデックスは他のテキストと同じように直接変更することができるが、インデックスへの手動による変更はインデックスが更新されたときに失われるので、避けるべきだ。
+
+索引または目次の作成」セクションのドロップダウン一覧で、「文書全体」を選択するか、「現在の章だけの索引を作成する」を選択する。
+
+その他のオプションは、インデックスがどのようにエントリを処理するかを決定する。
+
 Combine identical entries
-Defines how identical entries are dealt with. Normally each page number of an indexed word or phrase will be shown in the index; however, these can be combined using the Combine identical entries with p or pp.
-If you want a page range displayed, select Combine with – (which will produce something similar to 23–31). To include different entries based on what letters are capitalized, select Case sensitive.
+   同一エントリーをどのように扱うかを定義する。通常、索引付けされた単語や語句の各ページ番号が索引に表示される。しかし、Combine identical entries with pまたはppを使って、これらを結合することができる。
+
+   ページ範囲を表示したい場合は、Combine with -を選択する（23-31のようなものが表示される）。どの文字が大文字かによって異なるエントリーを含めるには、Case sensitiveを選択する。
 AutoCapitalize entries
-Automatically capitalizes the first letter of each entry regardless of how the terms show within the document.
+   文書内の用語の表示に関係なく、各項目の最初の文字を自動的に大文字にする。
 Keys as separate entries
-For the index keys to have their own page numbers, select this option.
+   インデックス・キーに独自のページ番号を付けるには、このオプションを選択する。
 Concordance file
-Choose the concordance file to be used, if any. See page 14 for more information.
+   使用するコンコーダンス・ファイルがあれば、それを選択する。詳しくは14ページを参照。
 Sort
-Defines how the entries are sorted when displayed. The only option is alphanumeric, but you can define which language alphabet will be used.
+   エントリーを表示する際のソート方法を定義する。唯一のオプションは英数字だが、どの言語のアルファベットを使うかを定義できる。
 
 Entries tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the Entries tab to set exactly how and what will be displayed for each of the entries. The tab is similar to Figure 9.
-    • Note
-Hyperlinking from the index to the location of entries in the text is new in Writer 7.6.
+Entries]タブを使用して、各エントリーの表示方法と内容を正確に設定する。このタブは図9に似ている。
 
-To begin, in the Level column select the index level whose elements you want to format. Level “S” refers to the single letter headings that divide the index entries alphabetically when the Alphabetical delimiter option is selected in the Format section. (You will be able to apply your changes to all index levels later.) In the Structure and Formatting section, the Structure line displays the elements for entries in that level. Each button on the line represents one element:
-    • The E icon represents the entry text.
-    • The T icon represents a tab stop.
-    • The # icon represents the page number.
-    • The HI icon represents chapter information. This is not present by default, but can be added by selecting the Heading info button.
-Each white field on the Structure line represents a blank space. You can add, change, or delete elements as described on page 9 for a table of contents.
+.. note::
+
+   Writer 7.6では、索引から本文中のエントリーの場所へのハイパーリンクが新たに追加された。
+
+はじめに、「レベル」列で、要素をフォーマットしたいインデックス・レベルを選択する。レベル "S "は、[フォーマット]セクションで[アルファベット区切り]オプションが選択されている場合に、インデックス・エントリをアルファベット順に分割する1文字の見出しを指する。(後ですべてのインデックス・レベルに変更を適用できる。) [構造とフォーマット] セクションの [構造] 行には、そのレベルのエントリの要素が表示される。行の各ボタンは、1 つの要素を表する：
+
+* E図像は入力テキストを表す。
+* T図像はタブストップ。
+* 図像はページ番号を表す。
+* HI図像は章情報を表す。これは既定では存在しないが、見出し情報ボタンを選択することで追加できる。
+
+構造行の各白フィールドは空白を表す。目次については9ページで説明したように、要素を追加、変更、削除することができる。
 
 Heading Info
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Heading Info button inserts heading information, such as the heading number and contents, as selected from the Heading info list that appears when this option is selected. Heading information is specified in Tools > Heading Numbering.
+見出し情報ボタンは、このオプションが選択されたときに表示される見出し情報一覧から選択された見出し番号や内容などの見出し情報を挿入する。見出し情報は、ツール > 見出し番号で指定する。
 
 Applying character styles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Each element on the Structure line may be given additional formatting. For example, you may want the page number to be a different size from the rest of the index text. To do this, apply a character style to one of the elements in the Structure line, as for a table of contents (page 10).
+構造行の各要素には、追加の書式を指定することができる。例えば、ページ番号を他の索引テキストと異なるサイズにしたい場合がある。これを行うには、目次 (10ページ)のように、構造行の要素の一つに文字スタイルを適用する。
 
 Formatting entries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Apply additional formatting using the options in the Format section.
-Alphabetical delimiter
-This separates the index entries into blocks that start with the same first letter, using that letter as a header. For example, if the index begins:
-apple,  4
-author, 10
-break,  2
-bus, 4
-Then selecting this option will produce:
-A
-apple,  4
-author, 10
+書式」セクションのオプションを使用して、さらに書式を適用する。
 
-B
-break,  2
-bus, 4
+Alphabetical delimiter
+   これは、インデックス・エントリーを、同じ最初の文字で始まるブロックに分け、その文字をヘッダーとして使用するものである。例えば、インデックスが
+
+   .. code:: text
+
+      apple,  4
+      author, 10
+      break,  2
+      bus, 4
+
+   そして、このオプションを選択すると:
+
+   .. code:: text
+
+      A
+      apple,  4
+      author, 10
+
+      B
+      break,  2
+      bus, 4
+
 Key separated by commas
-Arranges the entries in the index on the same line but separated by commas.
+   インデックスのエントリーを同じ行に並べるが、カンマで区切る。
 Tab position relative to Paragraph Style indent
-When selected, entries are indented according to the settings of their individual formats. Where a paragraph style with an indent on the left is in use, tab stops will be relative to this indent. If this option is not selected, tab stops will be relative to the left margin position.
+   選択された場合、項目はそれぞれの書式の設定に従って字下げされる。左字下げのある段落スタイルが使用されている場合、タブストップはこの字下げに対して相対的になる。このオプションが選択されていない場合、タブストップは左余白位置に対して相対的になる。
 
 Styles and Background tabs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the Styles tab to change which paragraph style is assigned to display the text of each level in the index. In most cases, the best strategy is to keep the assigned styles but change their settings as needed to make the index appear the way you want.
-The Background tab is the same as for TOCs. Refer to “Styles tab” on page 11 and “Background tab” on page 11 for detailed information on these tabs.
+スタイル] タブを使用して、インデックスの各レベルのテキスト表示に割り当てる段落スタイルを変更する。ほとんどの場合、割り当てられたスタイルはそのままに、必要に応じて設定を変更することで、インデックスを思い通りに表示することができる。
+
+背景」タブはTOCと同じだ。これらのタブの詳細については、1一ページの「スタイルタブ」と1一ページの「背景タブ」を参照しろ。
 
 Columns tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the Columns tab (Figure 10) to change the number of columns for the index.
+列タブ（図10）を使用して、インデックスの列数を変更する。
 
 Adding multiple columns
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To display the index in more than one column:
-    1) Enter the number of columns desired in the box labeled Columns or select the icon representing the number of columns.
-    2) To evenly distribute the columns according to the page width, select the AutoWidth box. If it is unchecked, you can manually set each of the following:
-    • Width of each of the columns
-    • Spacing between the columns
-    3) To have a separator line between the columns:
-    • Style: The default is None, or select from three choices of line style.
-    • Width: The width (thickness) of the line. The default is 0.25pt.
-    • Color: Choose the color of the separator line. The default is Black.
-    • Height: The height of the line, as a percentage of the full column height. The default is 100%
-    • Position: Position of the line relative to the columns (top, centered, or bottom) if the height is less than 100%.
+複数の列にインデックスを表示するには
+
+#. 「Columns」と書かれたボックスに希望の列数を入力するか、列数を表す図像を選択する。
+#. ページ幅に応じて列を均等に配置するには、AutoWidth ボックスを選択する。チェックが入っていない場合は、以下の各項目を手動で設定することができる：
+
+   * 各列の幅
+   * 列間の間隔
+#. 列と列の間に区切り線を入れる：
+
+   * スタイル：既定は「なし」、または三つの線スタイルから選択。
+   * 幅：線の幅（太さ）。既定は0.25ptだ。
+   * 色：区切り線の色を選択する。既定は黒だ。
+   * 高さ：行の高さを列全体の高さに対するパーセンテージで指定する。既定は100%だ。
+   * 位置：高さが100%未満の場合、列に対する線の位置（上部、中央、下部）。
 
 Maintaining an index
 ----------------------------------------------------------------------
 
-To modify the appearance of an index, right-click anywhere in the index and choose Edit Index in the context menu. The Table of Contents, Index or Bibliography dialog opens and you can edit and save the index using the five tabs described in the previous section.
-To update or delete an index, right-click anywhere in the index and select Update Index or Delete Index.
+インデックスの外観を変更するには、インデックスの任意の場所を右クリックし、コンテキストメニューから「インデックスの編集」を選択する。目次、索引、書誌ダイアログボックスが開き、前のセクションで説明した五つのタブを使用して索引を編集・保存することができる。
+
+索引を更新または削除するには、索引内の任意の場所で右クリックし、「索引の更新」または「索引の削除」を選択する。
 
 Viewing and editing existing index entries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once you have added the initial entries, you can make some amendments. You can view and edit these using the following steps:
-    1) Ensure that field shading is active (View > Field Shadings or Ctrl+F8), so you can locate index entries more easily.
-    2) Place the cursor in the field shading of an existing index entry in the body of the document, right-click, and select Edit Index Entry in the content menu. In the case of a changed-text entry, the field shading is immediately before the word. Placing the cursor immediately before a word marked as a text entry will satisfy both selection criteria.
-    3) A dialog similar to Figure 11 appears. You can move through the various index entries using the forward and back arrow buttons. If there is more than one entry for a single word or phrase, a second row of buttons with a vertical bar at the point of the arrow head is displayed allowing you to scroll through each of these entries.
-    4) Make the necessary modifications or additions to the index entries, and then click OK.
+最初のエントリーを追加したら、いくつかの修正を加えることができる。以下の手順で、これらを表示および編集することができる：
+
+#. フィールドシェーディングがアクティブになっていることを確認する（View > Field ShadingsまたはCtrl+F8）。
+#. 文書本文の既存の索引項目のフィールド網掛けにキャレットを置き、右クリックして、内容メニューから索引項目の編集を選択する。変更されたテキストエントリーの場合、フィールドの網掛けは単語の直前になる。テキスト項目としてマークされた単語の直前にキャレットを置くと、両方の選択条件を満たすことになる。
+#. 図11のようなダイアログボックスが表示される。進む矢印ボタンと戻る矢印ボタンを使って、さまざまな索引項目を移動することができる。一つの単語や語句に複数のエントリーがある場合は、矢印の頭に垂直のバーが付いた二列目のボタンが表示され、それぞれのエントリーをスクロールすることができる。
+#. インデックス項目に必要な修正や追加を行い、OKをクリックする。
 
 Other types of index
 ======================================================================
 
-An alphabetical index is not the only type of index that Writer can produce. Other types include indexes of figures, tables, and objects, and you can even create a user-defined index. This chapter does not give examples of all the possibilities.
-To create other indexes:
-    1) Place the cursor where you want the index created.
-    2) Select Insert > Table of Contents and Index > Table of Contents, Index or Bibliography on the Menu bar.
-    3) On the Table of Contents, Index or Bibliography dialog, in the Type drop-down list, select the index wanted.
-    4) Modify the various tabs, which are similar to those discussed in previous sections.
-    5) Click OK when everything has been set.
+Writerが作成できる索引の種類は、アルファベット索引だけではない。他にも、図、表、オブジェクトの索引があり、使用者定義の索引を作成することもできる。この章では、すべての可能性について例を挙げているわけではない。
+
+他のインデックスを作成するには
+
+#. 索引を作成したい場所にキャレットを置く。
+#. メニューの「挿入」→「目次と索引」→「目次、索引または書誌」を選択。
+#. 「目次、索引、書誌」ダイアログボックスの「タイプ」ドロップダウン一覧で、希望する索引を選択する。
+#. 前のセクションで説明したのと同様の、さまざまなタブを修正する。
+#. すべて設定したら OK をクリックする。
 
 Example: Creating a table of figures
 ----------------------------------------------------------------------
 
-Creating a table of figures or tables is easy if the figure captions were created using Insert > Caption or manually using a number range variable as described in Chapter 17, Fields.
-    1) On the Table of Contents, Index or Bibliography dialog, in the Type drop-down list, choose  Table of Figures. Optionally, change the Title.
-    2) Be sure Captions is selected in the Create From section, and choose the category of caption. The default for Category is Figure; the example uses Figure for the captions.
-    3) Under Display, you can choose References (to include the category, number, and caption text), Category and Number, or Caption Text. We have chosen References.
-    4) Optionally select Create from additional paragraph style and select a style from the list.
-    5) The other tabs of this dialog are similar to those described for tables of contents.
+挿入＞キャプションを使用するか、第17章「フィールド」で説明するように数値範囲変数を使用して手動で図のキャプションを作成した場合、図や表の表を作成するのは簡単だ。
 
-    6) Click OK. The result is shown in Figure 13.
+#. 目次，索引または書誌ダイアログボックスの［タイプ］ドロップダウン一覧で，［図 表］を選択する．オプションで、表題を変更する。
+#. Create FromセクションでCaptionsが選択されていることを確認し、キャプションの区分を選択する。Categoryの既定はFigureで、この例ではキャプションにFigureを使用している。
+#. 表示のところで、参照（区分、番号、キャプションテキストを含む）、区分と番号、キャプションテキストを選択できる。ここではReferencesを選択した。
+#. オプションで「追加の段落スタイルから作成」を選択し、一覧からスタイルを選択する。
+#. このダイアログボックスの他のタブは、目次について説明したものと同様だ。
+#. OK をクリックする。結果を図 13 に示す。
 
 Bibliographies
 ======================================================================
 
-A bibliography is a list of references used in a document. The references can be stored in a bibliographic database or within the document itself.
-This topic shows you how to use Writer's facilities to:
-    • Create a bibliographic database; add and maintain entries.
-    • Add a reference (citation) into a document.
-    • Format the bibliography.
-    • Update and edit an existing bibliography.
+書誌とは、文書の中で使われている参考文献の一覧である。参考文献は、書誌データベースに保存することも、文書自体に保存することもできる。
+
+このトピックでは、Writerの機能を使用する方法を説明する：
+
+* 書誌データベースを作成し、エントリを追加および管理する。
+* 文書に参考文献（引用）を追加する。
+* 書誌の書式を設定する。
+* 既存の書誌を更新および編集する。
 
 Citation styles and the bibliographic database
 ----------------------------------------------------------------------
 
-Although you can create citations (references) within a document itself, creating a bibliographic database allows reuse in other documents and saves a lot of time.
-Citations within the text require entries in different fields in the bibliography database, and different presentations in the text. Before creating a list of references, determine which citation style you need for a document. The five main styles are:
-    • APA (American Psychological Association): Psychology, education, and other social sciences.
-    • MLA (Modern Languages Association): Literature, art, and humanities.
-    • Chicago: History and specific publications.
-    • Turabian: A variation of the Chicago style for general use by university students.
-    • AMA (American Medical Association): Medicine, Health, and Biology.
-The Bibliography Database (Figure 14) is the source for citations in the text, no matter what citation style you use.
-All citations use the Identifier field to set the format for a citation in the document. In this column, add the citation in the correct form for the citation style. All necessary information, including the Identifier field, should be entered before any citation is created in the document.
-    • Tip
-Writer has a single bibliography database for all documents. Since formatting entries can be tedious, consider creating a template with citations for each type of source material.
+引用（参考文献）は文書内でも作成できるが、書誌データベースを作成することで、他の文書での再利用が可能になり、多くの時間を節約することができる。
+
+本文中の引用は、書誌データベースの異なるフィールドへの入力と、本文中の異なる表示が必要だ。参考文献一覧を作成する前に、文書に必要な引用スタイルを決めましょう。主なスタイルは次の五つです：
+
+* APA（アメリカ心理学会）：心理学、教育学、その他の社会科学。
+* MLA（Modern Languages Association）：現代言語学会：文学、芸術、人文科学。
+* シカゴ：歴史と特定の出版物。
+* Turabian（トゥラビアン）：大学生が一般的に使用するChicagoスタイルのバリエーション。
+* AMA（米国医師会）：医学、健康、生物学。
+
+書誌データベース（図14）は、どのような引用スタイルを使用する場合でも、本文中の引用のソースとなる。
+
+すべての引用は、Identifier フィールドを使用して、文書内の引用の形式を設定する。この欄に、引用スタイルに適した形式で引用を追加する。Identifierフィールドを含むすべての必要な情報は、文書内で引用を作成する前に入力する必要がある。
+
+.. tip::
+
+   Writerには、すべての文書に単一の書誌データベースがある。書式を設定するのは面倒なので、資料の種類ごとに引用の雛形を作成することをお勧めする。
 
 Creating a bibliographic database
 ----------------------------------------------------------------------
 
-For most of this topic, the database table used is the sample one that comes with Writer. For information on creating a new table in the bibliographic database, see the Getting Started Guide.
-The bibliography database has to cover many different media and circumstances, which is why it contains so many fields. It also includes fields such as ISBN that no citation style uses, but might be useful to you during your research.
-    • Note
-Any single entry in the bibliography needs only about half a dozen fields filled in, no matter what citation format you use. What differs is the fields needed for each type of source material and the order of the fields in each citation style.
-To open the database select Tools > Bibliography Database. The Bibliography Database window, similar to that in Figure 14, opens. The upper part of the tab shows all of the records, in a table layout similar to that of a spreadsheet. The lower part of the tab shows all the fields of the selected record.
-    • Note
-The Identifier column in the database table and the Short Name field below the table are the same field. The sample entries in the sample database for these fields are meaningless. Replace them with the proper format for the citation style to be used.
+このトピックの大部分では、Writerに付属しているサンプルのデータベーステーブルを使用している。書誌データベースに新しいテーブルを作成する方法については、『入門ガイド』を参照しろ。
+
+書誌データベースは、さまざまなメディアや状況をカバーしなければならないため、非常に多くのフィールドを含んでいる。また、ISBNのような、引用スタイルでは使用されないが、研究中に役に立つかもしれないフィールドも含まれている。
+
+.. note::
+
+   どのような引用形式を使っても、書誌に記入する項目は約半ダースで済みます。異なるのは、資料の種類ごとに必要なフィールドと、各引用スタイルにおけるフィールドの順序だ。
+
+データベースを開くには、[Tools] > [Bibliography Database] を選択する。図14のような書誌データベースウィンドウが開く。タブの上部には、スプレッドシートに似た表レイアウトで、すべてのレコードが表示される。タブの下部には、選択したレコードのすべてのフィールドが表示される。
+
+.. note::
+
+   データベーステーブルのIdentifierカラムとテーブルの下のShort Nameフィールドは同じフィールドである。サンプルデータベースのこれらのフィールドのサンプルエントリは無意味だ。使用する引用スタイルに適した書式に置き換えてください。
 
 Changing the data source
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To change the data source in use (for example, if you have more than one bibliographic database for different purposes), select Data > Choose Data Source on the Menu bar, or click the Data Source button on the toolbar near the top of the Database window. The Choose Data Source dialog lists registered data sources. Select one of them and click OK.
-To add (register) a different data source, see instructions in the Getting Started Guide.
+使用中のデータソースを変更するには（たとえば、異なる目的のために複数の書誌データベースを使用している場合）、メニューで「データ」>「データソースを選択」を選択するか、データベースウィンドウの上部付近にあるツールバーの「データソース」ボタンをクリックする。データソースの選択」ダイアログボックスに、登録済みのデータソースが一覧表示される。その中から一つを選択し、OKをクリックする。
+
+別のデータ・ソースを追加（登録）するには、『入門ガイド』の説明を参照しろ。
 
 Filtering records
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To set up a filter for specific records within the bibliographic database, select Data > Filter on the Bibliographic Database Menu bar, or click the Standard Filter button on the toolbar near the top of the window. In the Standard Filter dialog (Figure 15), choose the fields, conditions, and values for the filter and click OK.
+書誌データベース内の特定のレコードにフィルタを設定するには、書誌データベースのメニ ューバーで［データ］＞［フィルタ］を選択するか、ウィンドウ上部付近のツールバーで［標準 フィルタ］ボタンをクリックする。標準フィルタ」ダイアログボックス（図15）で、フィルタのフィールド、条件、値を選択し、「OK」をクリックする。
 
 Adding entries to the database
 ----------------------------------------------------------------------
 
-Entries can be added to the bibliography database in two ways: using the Data Source view of the database, or the Bibliography Database window.
-To add entries using the Data Source view of the bibliography database:
-    1) Select View > Data Sources on the Menu bar, or press Shift+Ctrl+F4, to open the data source window, similar to Figure 16.
-    2) Make sure that the correct table is selected in the Bibliography database. You may have to expand some levels to be able to select the correct ones.
+エントリーを書誌データベースに追加するには、データベースのデータソースビューを使用する方法と、書誌データベースウィンドウを使用する方法の二つの方法がある。
 
-    3) Scroll to the bottom of the list and type into the relevant fields in a blank line. The Save current record icon (in the upper left) becomes active. Click on it to save the addition to the database.
-To add entries using the Bibliography Database window:
-    1) Select Tools > Bibliography Database on the Menu bar. The window shown in Figure 14 on page 23 opens.
-    2) Select Data > Record on the Menu bar of the window, or click the + icon to the left of the horizontal scroll bar.
-    3) Type a name for the entry in the Short Name box. Complete other fields as required.
-    4) To complete the entry and add it to the database, click on any other cell in the table.
+書誌データベースのデータソースビューを使用してエントリを追加するには、以下の手順に従いる：
+
+#. メニューの「表示」>「データソース」を選択するか、Shift+Ctrl+F4 キーを押して、図 16 のようなデータソースウィンドウを開く。
+#. 書誌データベースで正しいテーブルが選択されていることを確認する。正しいテーブルを選択するために、いくつかのレベルを展開する必要があるかもしれない。
+#. 一覧の一番下までスクロールし、該当するフィールドに空行で入力する。左上の「現在のレコードを保存」図像がアクティブになる。これをクリックして、データベースに追加を保存する。
+
+書誌データベース]ウィンドウを使用してエントリを追加するには：
+
+#. メニューの Tools > Bibliography Database を選択する。23 ページの図 14 に示すウィンドウが開く。
+#. ウィンドウのメニューで［データ］>［記録］を選択するか、横 スクロールバーの左にある＋図像をクリックする。
+#. ショートネームボックスにエントリーの名前を入力する。必要に応じて他のフィールドも入力する。
+#. エントリーを完成させてデータベースに追加するには、テーブルの他のセルをクリックする。
 
 Maintaining entries in the database
 ----------------------------------------------------------------------
 
-To maintain entries in the database, use either the Data Source view or the Bibliography Database window. Select the appropriate record and modify the fields as appropriate.
-Modified entries are saved automatically to the database when the cursor moves off the record.
+データベース内のエントリーを管理するには、データソース・ビューまたは書誌データベース・ウィンドウのいずれかを使用する。適切なレコードを選択し、必要に応じてフィールドを変更する。
+
+変更された項目は、キャレットがレコードから移動すると自動的にデータベースに保存される。
 
 Advanced: Modifying the bibliographic database
 ----------------------------------------------------------------------
 
-You can modify the bibliography database in several ways, as summarized below.
-    • Note
-For more information on how to use LibreOffice’s database features, see the Getting Started Guide.
+書誌データベースは、以下のようにいくつかの方法で変更することができる。
+
+.. note::
+
+   LibreOffice のデータベース機能の使い方の詳細については、入門ガイドを参照しろ。
 
 Column details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To change the details of columns in the bibliographic database, select Data > Column Arrangement on the Menu bar, or click the Column Arrangement button on the toolbar near the top of the window (Figure 14). On the Column Layout dialog (Figure 17), you can change which fields are allocated to columns. For example, you can select to have Author data go into the Identifier column, by changing the destination in the drop-down list. The Short name data column destination sets to <none> automatically, to prevent setting duplicate destinations for data.
+書誌データベースの列の詳細を変更するには、メニューの「データ」→「列の配置」を選択するか、ウィンドウ上部付近のツールバーの「列の配置」ボタンをクリックする（図14）。列のレイアウトダイアログボックス（図17）では、どのフィールドを列に割り当てるかを変更することができる。たとえば、ドロップダウン一覧の行き先を変更することで、AuthorデータをIdentifier列に入れるように選択できる。短い名前データの列の行き先は、データの行き先が重複しないように、自動的に<none>に設定される。
 
 Field details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To make changes to the bibliography database (for example, rename fields or change the length of fields), do the following:
-    1) In the main document (not the Bibliography Database window), press Shift+Ctrl+F4 or click View > Data Sources to open the Data Source window, similar to Figure 16.
-    2) Make sure that the Bibliography database is selected as well as the correct table.
-    3) Right-click the table entry (biblio in the example) and select Edit Database File in the context menu. This opens a window similar to Figure 18, which is the main menu for Base, the database component of LibreOffice.
-    4) If Tables (in the Database section on the left) is not selected, select it now.
-    5) Right-click the biblio table name in the Tables section and select Edit in the context menu to display a window similar to that shown in Figure 19.
-    6) You can now select each of the fields. Select the text in the Field Name cell and change the entry as required. Click in the Field Type cell to open a selection menu to change the data type in that cell. In the Field Properties section, you can modify the data properties. For each field selected, a description of that field appears to the right of the section.
-    7) When finished, you will be asked to confirm that you want the changes saved.
+書誌データベースに変更を加えるには（例えば、フィールド名の変更やフィールドの長さの変更など）、次のようにする：
+
+#. メイン文書（書誌データベースウィンドウではない）で、Shift+Ctrl+F4 を押すか、View > Data Sources をクリックして、図 16 のようなデータソースウィンドウを開く。
+#. 書誌データベースが選択されていることと、正しいテーブルが選択されていることを確認する。
+#. テーブルエントリ (例では biblio) を右クリックし、コンテキストメニューからデータベースファイルの編集 を選択する。図 18 のようなウィンドウが開くが、これは LibreOffice のデータベースコンポーネントである Base のメインメニューだ。
+#. テーブル (左側のデータベースセクション) が選択されていない場合は、選択する。
+#. Tablesセクションのbiblioテーブル名を右クリックし、コンテキストメニューからEditを選択すると、図19のようなウィンドウが表示される。
+#. これで各フィールドを選択できる。フィールド名」セルのテキストを選択し、必要に応じて入力を変更する。Field Typeセルをクリックして選択メニューを開き、そのセルのデータ型を変更する。Field Propertiesセクションでは、データ・プロパティを変更することができる。選択された各フィールドについて、そのフィールドの説明がセクションの右に表示される。
+#. 完了すると、変更を保存するかどうかの確認が求められる。
 
 Adding references (citations) into a document
 ----------------------------------------------------------------------
 
-Writer supports two methods of adding references to your document:
-    • From a bibliography database, such as the one built into Writer.
-    • Directly from the keyboard.
+Writerは、文書に参考文献を追加する二つの方法をサポートしている：
+
+* Writerに組み込まれているような書誌データベースから。
+* キーボードから直接。
 
 Entering references from a database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To add references from the bibliographic database into a document:
-    1) Place the cursor where you want the reference to appear.
-    2) On the Menu bar, choose Insert > Table of Contents and Index > Bibliography Entry.
-    3) In the Insert Bibliography Entry dialog (Figure 20), choose Bibliography database in the Bibliography Source section at the top of the dialog.
+書誌データベースから文献を文書に追加するには
 
-    4) Select the reference from the Short name drop-down list in the middle of the dialog. The Author and Title of the selected reference are shown below the Short name field, to help you verify that it is the reference you want.
-    5) To insert the reference into the document, click Insert. You can keep the dialog open and insert another reference into the document; you do not need to close and reopen it.
-    6) When you have finished inserting all the references, click Close.
+#. キャレットを参照したい場所に置く。
+#. On the Menu bar, choose Insert > Table of Contents and Index > Bibliography Entry.
+#. ［書誌エントリの挿入］ダイアログボックス（図 20）で，ダイアログボックス上部の［書誌 ソース］セクションで［書誌データベース］を選択する．
+#. ダイアログボックス中央の Short name ドロップダウン一覧から文献を選択する。選択した文献の著者名と表題は、それが必要な文献であることを確認するために、Short name フィールドの下に表示される。
+#. 文書に参考文献を挿入するには、Insert をクリックする。ダイアログボックスを閉じて開き直す必要はない。
+#. すべての参照を挿入し終わったら、閉じるをクリックする。
 
 Entering references from documents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You may choose to enter bibliographic entries directly into the document, instead of from an external database. Click in the document where you want to add the entry.
-    1) Select Insert > Table of Contents and Index > Bibliography Entry.
-    2) In the Insert Bibliography Entry dialog (Figure 20), select Document content in the Bibliography Source section at the top of the dialog.
-    3) Click New to open the Define Bibliography Entry dialog.
-    a) Complete all the fields that are relevant to your entry. Type a unique name in the Short name box; the Insert Bibliography Entry dialog uses this entry for the citation.
-    b) Select an option in the menu in the Type box to enable the OK button.
-    c) Click OK when all the fields wanted are completed.
-    d) Click Insert to add the Short name field to the document, and then click Close.
-To re-use an entry in your document, restart the sequence above, and then select the Short name required from the current list of entries, instead of selecting to add a new entry.
+外部データベースからではなく、文書に直接書誌項目を入力することもできる。エントリーを追加したい文書をクリックする。
+
+#. Select Insert > Table of Contents and Index > Bibliography Entry.
+#. In the Insert Bibliography Entry dialog (Figure 20), select Document content in the Bibliography Source section at the top of the dialog.
+#. Click New to open the Define Bibliography Entry dialog.
+
+   #. エントリーに関連するフィールドをすべて入力する。書誌エントリの挿入ダイアログボックスでは、このエントリが引用に使用される。
+   #. タイプボックスのメニューからオプションを選択し、OKボタンを有効にする。
+   #. すべての入力が完了したら、OKをクリックする。
+   #. 挿入]をクリックして[短い名前]フィールドを文書に追加し、[閉じる]をクリックする。
+
+文書内のエントリーを再利用するには、上記の手順を再開し、新しいエントリーを追加することを選択する代わりに、現在のエントリーの一覧から必要なショートネームを選択する。
 
 Editing a reference
 ----------------------------------------------------------------------
 
-To edit a reference:
-    1) Right-click the entry (the cursor then displays to the left of the entry).
-    2) In the context menu, select Bibliography Entry. The Edit Bibliography Entry dialog (similar to the Insert Bibliography Entry dialog) opens.
-    3) To quickly edit only the Short name, click the text box, edit the entry and then click Apply.
-    4) To edit more of the entry, click Edit to open the Define Bibliography Entry dialog.
-       Make any changes required and then click OK to return to the Edit Bibliography Entry dialog.
-    5) Click Apply to accept the changes and exit the dialog.
-    • Note
-Modified references are stored only in the document. If the source is a bibliography database, that database remains unmodified.
+参照を編集するには
+
+#. 項目を右クリックする（キャレットが項目の左に表示される）。
+#. コンテキストメニューで、書誌エントリを選択する。書誌エントリの編集ダイアログボックス（書誌エントリの挿入ダイアログボックスに類似）が開く。
+#. 短い名前だけを素早く編集するには、テキストボックスをクリックし、エントリーを編集し、適用をクリックする。
+#. エントリーの詳細を編集するには、EditをクリックしてDefine Bibliography Entryダイアログボックスを開く。
+
+   必要な変更を行い、OKをクリックして書誌エントリーの編集ダイアログボックスに戻る。
+#. ［Apply］をクリックして変更を承認し、ダイアログボックスを閉じる。
+
+.. note::
+
+   変更された参照は、文書にのみ保存される。ソースが書誌データベースの場合、そのデータベースは変更されずに残ります。
 
 Creating the bibliography
 ----------------------------------------------------------------------
 
-    1) Place the cursor at the point where you wish to insert the bibliography.
-    2) Select Insert > Table of Contents and Index > Table of Contents, Index or Bibliography and change the Type to Bibliography, to display a dialog similar to that shown in Figure 21.
+#. 書誌を挿入したい箇所にキャレットを置く。
+#. [挿入] > [目次と索引] > [目次、索引または書誌] を選択し、[タイプ] を [書誌] に変更すると、図 21 のようなダイアログボックスが表示される。
 
 Type tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Writer supports two ways of displaying references (citations) in the text of a document:
-    • Using the text recorded in the Short name field of each bibliographic entry, for example (Smith, 2001) depending on citation style.
-    • By numbering the referenced documents in the sequence they occur in the text, for example [1].
-    • Tip
-To specify which citation style is used in the document, use the Type tab on the Table of Contents, Index or Bibliography dialog (Figure 21).
-Formatting the bibliography involves choices made in two places:
-    • Table of Contents, Index or Bibliography dialog, covered in this section.
-    • Bibliography 1 paragraph style (see page 30).
-The basic settings are selected on the Type tab.
-    1) To give the bibliography a title, enter it in the Title field. (A title is not required.)
-    2) You can protect the bibliography from being changed accidentally, by selecting Protected against manual changes. If this option is selected, the bibliography can only be changed using the right-click menu or the Table of Contents, Index or Bibliography dialog. If the option is not selected, the bibliography can be changed directly on the document page, just like other text, but any manual changes will be lost when you update the bibliography.
-    3) To have the bibliographic entries (citations) numbered within the body of the document (for example, [1], [2]...), select Number entries. If, however, you wish to have the Short name field contents (from the database) appear in the document, deselect this option.
-    4) Select the type of brackets that you want for the referenced entries shown within the body of the document.
-    5) Define the sorting you require. Currently only alphanumeric sorting is supported. Sorting by the sequence that entries appear in the text is done on the Entries tab.
+Writerは、文書の本文中に参考文献（引用）を表示する二つの方法をサポートしている：
+
+* 各書誌エントリーのShort nameフィールドに記録されたテキストを使用する（例：Smith, 2001）。
+* 例えば、[1]。
+
+.. tip::
+
+   文書内で使用する引用スタイルを指定するには、目次、索引、書誌ダイアログボックスの「タイプ」タブを使用する（図21）。
+
+書誌の書式は二つの場所で選択する：
+
+* 目次、索引、書誌ダイアログボックス。
+* 書誌1段落スタイル（30ページ参照）。
+
+基本設定は「タイプ」タブで選択する。
+
+#. 書誌に表題を付けるには、表題フィールドに入力する。(表題は必須ではない）。
+#. 手動による変更から保護するを選択すると、書誌が誤って変更されるのを防ぐことができる。このオプションを選択すると、書誌は右クリックメニューまたは目次、索引、書誌ダイアログボックスでのみ変更できるようになる。このオプションが選択されていない場合、書誌は他のテキストと同様に文書ページで直接変更できるが、手動で変更した内容は書誌を更新したときに失われる。
+#. 書誌項目(引用)に文書本文内で番号(例えば、[1]、[2]...)を付けるには、Number entries を選択する。ただし、(データベースからの)Short nameフィールドの内容を文書内に表示したい場合は、このオプションを選択解除しろ。
+#. 文書の本文中に表示される参照される項目の括弧の種類を選択する。
+#. 必要な並べ替えを定義する。現在のところ、英数字によるソートのみがサポートされている。エントリが本文に表示される順序による並べ替えは、Entries タブで行いる。
 
 Entries tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The structure of the Entries tab (Figure 22) is similar to that for tables of contents and indexes.
+Entries」タブ（図 22）の構造は、目次や索引の構造と似ている。
 
-The Type section refers to the kind of source, such as a book, periodical, or web page. Each entry in the Type list has a default structure format. You can define how the entry will appear, based on its source, by selecting from the Type list of entries, or simply apply the same format to all entries by clicking the All button.
-The Structure of the entry is based on the fields available in the bibliographic database. Consult the citation style required for your document and modify the Structure line as needed.
-To remove elements from the Structure line, click the element, then click the Remove button.
-To add an element, click in the Structure line where it is to be inserted. Select either the Tab Stop, or an element in the drop-down list to the left of the Insert button, and then click Insert. The elements in the drop-down list are those fields found in the Bibliography Database.
-All the elements on the Structure line can be formatted using the Character Style selection list. For example, you can define a character style so that book and journal titles are in italics or bold.
-To determine how entries are sorted, modify the Sort by options. To sort by the sequence that entries appear in the text, choose Document position. In most modern citation styles, you will want Content (alphabetical descending order). Use Sort keys to group similar references.
+タイプ」セクションは、書籍、定期刊行物、ウェブページなど、ソースの種類を示す。タイプ] 一覧の各エントリには、既定の構造形式がある。エントリーのType一覧から選択することで、そのソースに基づいて、エントリーがどのように表示されるかを定義することもできるし、単にAllボタンをクリックしてすべてのエントリーに同じフォーマットを適用することもできる。
+
+エントリーの構造は、書誌データベースで利用可能なフィールドに基づいている。文書に必要な引用スタイルを参照し、必要に応じて構造行を修正しろ。
+
+構造行から要素を削除するには、要素をクリックし、削除ボタンをクリックする。
+
+要素を追加するには、挿入する構造行をクリックする。タブストップ」または「挿入」ボタンの左側にあるドロップダウン一覧の要素を選択し、「挿入」をクリックする。ドロップダウン一覧の要素は、書誌データベースにあるフィールドだ。
+
+構造行のすべての要素は、文字スタイル選択一覧を使って書式設定できる。たとえば、書籍やジャーナルの表題がイタリック体や太字になるように文字スタイルを定義できる。
+
+エントリの並べ替え方法を決定するには、Sort byオプションを変更する。項目がテキストに表示される順序で並べ替えるには、「文書の位置」を選択する。ほとんどの最新の引用スタイルでは、Content（アルファベット降順）を選択する。類似の文献をグループ化するには、並べ替えキーを使用する。
 
 Styles, Columns and Background tabs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Refer to “Styles tab” on page 11, “Columns tab” on page 18 and “Background tab” on page 11 for detailed information on these tabs.
+これらのタブの詳細については、1一ページの「スタイルタブ」、18ページの「カラムタブ」、1一ページの「背景タブ」を参照しろ。
 
 Modifying the paragraph style for the bibliography
 ----------------------------------------------------------------------
 
-You can modify the Bibliography 1 paragraph style to suit your requirements. For example, to number the entries in the bibliography list, you need to define a list style and link that list style to the Bibliography 1 paragraph style. To do this:
-    1) On the Styles deck in the sidebar, click on the List Styles icon. Right-click on Numbering 123 and choose New in the context menu.
-    2) In the List Style dialog, go to the Organizer tab and type a name for this style. In our example, we have named it Bibliography.
-    3) In our example we want to have the numbers enclosed in square brackets. To do this, go to the Customize tab and type [ in the Before box and ] in the After box, as shown in Figure 23. Remove any other punctuation, such as a period, that may be in the After box.
+要件に合わせて書誌1段落スタイルを変更することができる。例えば、書誌一覧の項目に番号を付けるには、一覧スタイルを定義し、その一覧スタイルを書誌1段落スタイルにリンクする必要がある。これを行うには
 
-    4) Now go to the Position tab of the List Style dialog (Figure 24). In the Indent at and Tab stop at boxes, specify how much indentation you want for the second and following lines of any item in the bibliography list of your document. Often you will need to experiment a bit to see what is the best setting. In our example, we have chosen 1 cm.
+1) Sidebarのスタイル甲板で、一覧スタイル図像をクリックする。Numbering 123］を右クリックし、コンテキストメニューから［New］を選択する。
+2) ［一覧 スタイル］ダイアログボックスの［オーガナイザー］タブで、このスタイルの名前を入力する。この例では「Bibliography」と名付けました。
+3) この例では、数字を角括弧で囲みます。これを行うには、図23に示すように、「カスタマイズ」タブを開き、「前」ボックスに[ を、「後」ボックスに]を入力する。ピリオドなど、他の句読点が「後」ボックスに入っている場合は削除しろ。
+4) 次に、［一覧・スタイル］ダイアログボックスの［位置］タブを開く（図24）。Indent atとTab stop atのボックスで、文書の書誌一覧の項目の2行目以降の字下げ量を指定する。多くの場合、最適な設定を確認するために少し試す必要がある。この例では1cmにした。
+5) OK をクリックしてこれらの設定を保存し、一覧スタイルダイアログボックスを閉じる。スタイル］甲板に戻り、［段落スタイル］図像をクリックし、ウィンドウ下部の一覧で［すべてのスタイル］を選択し、［書誌1］を右クリックして［修正］を選択する。
+6) ［段落スタイル］ダイアログボックスの［アウトラインと一覧］タブで、［一覧スタイル］ドロップダウン一覧で［書誌］を選択する（図25）。OK］をクリックして、書誌1の段落スタイルにこの変更を保存する。
 
-    5) Click OK to save these settings and close the List Style dialog. Return to the Styles deck, click the Paragraph Styles icon, choose All Styles in the list at the bottom of that window, then right-click on Bibliography 1 and choose Modify.
-    6) On the Paragraph Style dialog, go to the Outline & List tab and select Bibliography in the List Style drop-down list (Figure 25). Click OK to save this change to the Bibliography 1 paragraph style.
-
-Now when you generate the bibliography, the list will look something like the one shown in Figure 26. You may also need to modify the structure line on the Entries tab (Figure 22).
+これで、書誌を作成すると、図26のような一覧になる。また、Entriesタブの構造行を修正する必要があるかもしれない（図22）。
 
 Updating, editing, and deleting an existing bibliography
 ----------------------------------------------------------------------
 
-Right-click anywhere in the bibliography. From the context menu, select:
-    • Update Index to update the bibliography.
-    • Edit Index to open the Table of Contents, Index or Bibliography dialog so you can edit and save the bibliography.
-    • Delete Index to delete the bibliography without a confirmation request.
+書誌内の任意の場所で右クリックする。コンテキストメニューから
+
+* 目次を更新して書誌を更新する。
+* 目次、索引、書誌ダイアログボックスを開き、書誌を編集・保存できる。
+* 確認要求なしで書誌を削除するには、索引を削除 を選択する。
 
 External bibliography tool
 ----------------------------------------------------------------------
 
-If you find Writer’s bibliography feature too limited, you may wish to try Zotero, a free and open source tool, available for macOS, Windows, and Linux. It is reported to work well with Writer (https://www.zotero.org/).
+Writerの書誌機能が制限されすぎていると感じる場合は、macOS、Windows、Linuxで利用可能な無料のオープンソースツール、Zoteroを試してみるとよいだろう。Writer（https://www.zotero.org/）との相性も良いと報告されている。
