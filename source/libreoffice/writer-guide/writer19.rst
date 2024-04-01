@@ -11,413 +11,494 @@ Writer Guide Chapter 19, Spreadsheets, Charts, Other Objects ノート
 Introduction: OLE and DDE objects
 ======================================================================
 
-You can embed or link objects as either OLE (Object Linking and Embedding) or DDE (Dynamic Data Exchange). Both methods enable you to use information from one application (say, Calc) in another application (Writer, in this case). The difference between a DDE object and a linked OLE object is that a linked OLE object can be edited from the document in which it is added as a link, but a DDE object cannot.
-For example, if a Calc spreadsheet is pasted into a Writer document as a DDE object, then the spreadsheet cannot be edited in the Writer document. But if the original Calc spreadsheet is updated, the changes are automatically made in the Writer document. If the spreadsheet is inserted as a Linked OLE object into the Writer document, then the spreadsheet can be edited in Writer as well as in the Calc document and both documents are in sync with each other.
-Both linking and embedding insert information from one document into another document, but the methods store information differently. They are different from directly copying and pasting information because you can open and edit objects in the applications that created them.
-An embedded OLE object is a copy of information from another document. There is no link to the source document and any changes made to the source document are not reflected in the destination document. Embed objects if you want to be able to use the application that created them for editing, but you do not want the OLE object to be updated when you edit information in the source document.
-A linked object is a reference to information in another document. Link objects when you want to use the same information in more than one document. Then, if you change the original information, you need to update only the links in order to update the document containing the OLE objects. You can also set links to be updated automatically. When you link an object, you need to maintain access to the source application and the linked document. If you rename or move either of them, you may need to reestablish the link.
-The following types of files or documents can be inserted into a Writer document as an OLE object: spreadsheets, charts, drawings, formulas (equations), and presentations.
+オブジェクトの埋め込みやリンクには、OLE（Object Linking and Embedding）とDDE（Dynamic Data Exchange）がある。どちらの方法でも、あるアプリケーション（たとえば Calc）の情報を別のアプリケーション（この場合は Writer）で使用することができる。DDE オブジェクトとリンクされた OLE オブジェクトの違いは、リンクされた OLE オブジェクトは、リンクとして追加された文書から編集できるが、DDE オブジェクトは編集できないことだ。
+
+たとえば、Calc スプレッドシートが DDE オブジェクトとして Writer 文書に貼り付けられている場合、Writer 文書でスプレッドシートを編集することはできない。しかし、元の Calc スプレッドシートが更新されると、Writer 文書で自動的に変更が行われる。スプレッドシートがリンクされたOLEオブジェクトとしてWriter文書に挿入された場合、スプレッドシートはCalc文書と同様にWriterでも編集でき、両方の文書が互いに同期される。
+
+リンクも埋め込みも、ある文書から別の文書に情報を挿入するものだが、情報の保存方法が異なる。オブジェクトを作成したアプリケーションで開いて編集できるため、情報を直接コピー＆ペーストするのとは異なる。
+
+埋め込まれたOLEオブジェクトは、他の文書からの情報のコピーだ。ソース・文書へのリンクはなく、ソース・文書に加えられた変更は、デスティネーション・文書には反映されない。オブジェクトを作成したアプリケーションを編集に使用したいが、ソース・文書の情報を編集してもOLEオブジェクトが更新されないようにしたい場合は、オブジェクトを埋め込みます。
+
+リンクされたオブジェクトは、別の文書内の情報への参照だ。同じ情報を複数の文書で使用する場合は、オブジェクトをリンクする。そうすれば、元の情報を変更した場合、OLEオブジェクトを含む文書を更新するために、リンクだけを更新する必要がある。リンクを自動的に更新するように設定することもできる。オブジェクトをリンクする場合、リンク元のアプリケーションとリンク先の文書へのアクセスを維持する必要がある。どちらかの名前を変更したり移動したりした場合は、リンクを再構築する必要がある。
+
+次の種類のファイルや文書を、OLE オブジェクトとして Writer 文書に挿入できる：スプレッドシート、チャート、図面、数式（方程式）、プレゼンテーション。
 
 Inserting a new OLE object
 ----------------------------------------------------------------------
 
-When you insert a new OLE object into a document, it is embedded; that is, the object is available only in that document and can only be edited using Writer.
-To insert a new OLE object into a document:
-    1) Click where you want to insert the object.
-    2) Choose Insert > OLE Object > OLE Object on the Menu bar.
-    3) On the Insert OLE Object dialog (Figure 1), select Create new.
-    4) Select the type of object you want to create and click OK.
-    5) A new OLE object is inserted in the document in edit mode. The toolbars displayed in Writer will change, providing the necessary tools to create the new OLE object.
-    • Note
-Computers running Microsoft Windows show an additional option of Further objects in the Object Type list. This option opens a dialog where you can create an OLE object using other software that is compatible with OLE and LibreOffice. This option is available for new OLE objects and for OLE objects from another file.
-After a new OLE object is created, it can be formatted as described in “Formatting OLE objects” on page 19.
+新しい OLE オブジェクトを文書に挿入すると、そのオブジェクトは埋め込まれる。つまり、そのオブジェクトはその文書でのみ使用可能で、Writer を使用してのみ編集できる。
+
+新しい OLE オブジェクトを文書に挿入するには
+
+#. オブジェクトを挿入したい場所をクリックする。
+#. メニューの [挿入] > [OLE オブジェクト] > [OLE オブジェクト] を選択する。
+#. [OLE オブジェクトの挿入] ダイアログボックス (図 1) で、[新規作成] を選択する。
+#. 作成するオブジェクトのタイプを選択し、OK をクリックする。
+#. 新しい OLE オブジェクトが編集モードの文書に挿入される。Writer に表示されるツールバーが変わり、新しい OLE オブジェクトの作成に必要なツールが提供される。
+
+.. note::
+
+   Microsoft Windows を実行しているコンピュータでは、[オブジェクトの種類] 一覧に [さらにオブジェクトを追加] という追加のオプションが表示される。このオプションを選択すると、OLE および LibreOffice と互換性のある他のソフトウェアを使用して OLE オブジェクトを作成するためのダイアログボックスが開く。このオプションは、新しい OLE オブジェクトと別のファイルから作成した OLE オブジェクトで使用できる。
+
+新しい OLE オブジェクトが作成されると、19 ページの「OLE オブジェクトの書式設定」で説明するように書式設定できる。
 
 Inserting a file as an OLE object
 ----------------------------------------------------------------------
 
-When you insert an existing file (for example, a spreadsheet) into a Writer document as an OLE object, you can choose whether to embed or link the file.
-    1) Click where you want to insert the file and choose Insert > OLE Object > OLE Object on the Menu bar.
-    2) On the Insert OLE Object dialog, select Create from file. The dialog changes to show a File text box (Figure 2).
+既存のファイル (スプレッドシートなど) を OLE オブジェクトとして Writer 文書に挿入する場合、ファイルを埋め込むかリンクするかを選択できる。
 
-    3) Click Search to open a file browser.
-    4) Locate the file you want to insert and click Open.
-    • To insert the file as a live link so that any changes made are synchronized in both the original file and your document, select the Link to file option.
-    • To show a selectable icon for the application that created the file (in this case, Calc), instead of displaying the contents of the file, select the Display as icon option.
-    5) Click OK to insert the file as an OLE object.
-After a file is inserted as an OLE object, the object can be formatted as described in “Formatting OLE objects” on page 19.
+#. ファイルを挿入したい場所をクリックし、メニューから [挿入] > [OLE オブジェクト] > [OLE オブジェクト] を選択する。
+#. ［OLE オブジェクトの挿入］ダイアログボックスで、［ファイルから作成］ を選択する。ダイアログボックスの表示が変わり、［ファイル］テキストボックスが表示される（図 2）。
+#. 「検索」をクリックしてファイルブラウザを開く。
+#. 挿入したいファイルを探し、[開く] をクリックする。
+
+   * ファイルをライブリンクとして挿入し、変更が元のファイルと文書の両方で同期されるようにするには、[ファイルへのリンク] オプションを選択する。
+   * ファイルの内容を表示する代わりに、ファイルを作成したアプリケーション (この場合は Calc) の選択可能な図像を表示するには、[図像として表示] オプションを選択する。
+
+#. [OK] をクリックして、ファイルを OLE オブジェクトとして挿入する。
+
+ファイルを OLE オブジェクトとして挿入した後、19 ページの「OLE オブジェクトのフォーマット」で説明するように、オブジェクトをフォーマットすることができる。
 
 Editing OLE objects
 ----------------------------------------------------------------------
 
-To edit an OLE object after it has been created or inserted from a file:
-    1) Double-click the OLE object to open it in edit mode. The toolbars displayed in Writer will change to provide the tools necessary to edit the object.
-    2) When you finish editing the object, click anywhere outside the object to exit edit mode.
-    3) Save the Writer document. Any changes made to the OLE object are also saved.
-If the OLE object is linked, then if you change a spreadsheet in Writer it will change in Calc; if you change it in Calc, it will change in Writer. This can be a very powerful tool when creating reports in Writer using Calc data, to make a quick change without opening Calc.
+OLE オブジェクトを作成後、またはファイルから挿入後に編集するには、 次の手順に従いる：
+
+#. OLE オブジェクトをダブルクリックして編集モードで開く。Writer に表示されるツールバーがオブジェクトの編集に必要なツールに変わる。
+#. オブジェクトの編集が終了したら、オブジェクトの外側のどこかをクリッ クして編集モードを終了する。
+#. Writer 文書を保存する。OLE オブジェクトに加えられた変更も保存される。
+
+OLE オブジェクトがリンクされている場合、Writer でスプレッドシートを変更すると Calc でも変更され、Calc で変更すると Writer でも変更される。これは、Calcのデータを使ってWriterでレポートを作成するときに、Calcを開かずにすばやく変更できる非常に強力なツールになる。
 
 Creating a DDE link in Writer
 ----------------------------------------------------------------------
 
-To create a DDE link from Calc to Writer:
-    1) Open both the Writer document and the Calc spreadsheet.
-    2) In Calc, select the cells to make the DDE link to. Copy them.
-    3) Go to the place in the Writer document where you want the DDE link. Select Edit > Paste Special > Paste Special. Writer displays its Paste Special dialog (Figure 3).
-    4) Select Dynamic Data Exchange (DDE link) in the Selection list.
-    5) Click the OK button. Now the link has been created in Writer. When the Calc spreadsheet is updated, the table in Writer is automatically updated.
+Calc から Writer への DDE リンクを作成するには、次の手順に従いる：
+
+#. Writer 文書と Calc スプレッドシートの両方を開く。
+#. Calc で、DDE リンクを作成するセルを選択する。コピーする。
+#. Writer 文書で DDE リンクを作成する場所に移動する。編集] > [特殊貼り付け] > [特殊貼り付け] を選択する。Writer に特殊貼り付けダイアログボックスが表示される (図 3)。
+#. 選択一覧で［Dynamic Data Exchange (DDE link)］を選択する。
+#. OK ボタンをクリックする。これで Writer にリンクが作成された。Calc スプレッドシートが更新されると、Writer の表も自動的に更新される。
 
 Spreadsheets
 ======================================================================
 
-To include a spreadsheet in a Writer document, you can insert either an existing spreadsheet file or a new spreadsheet as an OLE object, as explained above, or create a DDE (Dynamic Data Interchange) object.
+Writer文書にスプレッドシートを含めるには、上で説明したように、既存のスプレッドシートファイルまたは新しいスプレッドシートをOLEオブジェクトとして挿入するか、DDE（Dynamic Data Interchange）オブジェクトを作成する。
 
 Embedding or linking a spreadsheet
 ----------------------------------------------------------------------
 
-Embedding a spreadsheet into Writer includes most of the functionality of a Calc spreadsheet. Writer is capable of performing complex calculations and data analysis. However, if you plan to use complex data or formulas, it is recommended to perform those operations in a separate Calc spreadsheet and use Writer only to display the embedded spreadsheet with the results.
-Some people use spreadsheets in Writer for creating complex tables or presenting data in a tabular format. However, the Table feature in Writer is often more suitable and faster to use, depending on the complexity of the data; see Chapter 13, Tables.
-To embed a spreadsheet into a Writer document, follow the instructions in “Inserting a file as an OLE object” on page 6.
-When an entire spreadsheet is inserted into a document, if it contains more than one sheet and the one you want is not visible, double-click the spreadsheet, and then select a different sheet from the row of sheet tabs at the bottom.
-After a spreadsheet is inserted as an OLE object, it can be formatted as described in “Formatting OLE objects” on page 19.
+Writerにスプレッドシートを埋め込むと、Calcスプレッドシートのほとんどの機能が利用できる。Writer は複雑な計算やデータ分析を実行できる。ただし、複雑なデータや数式を使用する予定がある場合は、別の Calc スプレッドシートでそれらの操作を実行し、結果を埋め込んだスプレッドシートを表示するためだけに Writer を使用することをお勧めする。
+
+複雑な表を作成したり、表形式でデータを表示したりするために、Writerでスプレッドシートを使用する人もいる。しかし、データの複雑さによっては、Writer の表機能の方がより適切で、より速く使えることがよくある。
+
+スプレッドシートを Writer 文書に埋め込むには、6 ページの「OLE オブジェクトとしてファイルを挿入する」の手順に従ってください。
+
+スプレッドシート全体を文書に挿入する際、複数のシートが 含まれ、必要なシートが表示されていない場合は、スプレッドシ ートをダブルクリックし、下部のシートタブの行から別のシートを選 択する。
+
+スプレッドシートを OLE オブジェクトとして挿入した後は、19 ページの「OLE オブジェクトの書式設定」で説明するように書式を設定することができる。
 
 Resizing and moving spreadsheet objects
 ----------------------------------------------------------------------
 
-When selected, a spreadsheet object is treated like any other object.
+選択されると、スプレッドシートオブジェクトは他のオブジェクトと同じように扱われる。
 
 Resizing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To resize the area occupied by the spreadsheet:
-    1) Click on the object to show the selection handles in the border.
-    2) Move the mouse pointer over one of the handles. The pointer changes shape to give a visual representation of the effects applied to the area.
-    3) Click and hold the left mouse button and drag the handle. The corner handles move the two adjacent sides simultaneously, while the handles at the midpoint of the sides modify one dimension at a time.
+スプレッドシートが占める領域のサイズを変更するには
+
+#. オブジェクトをクリックして、境界線に選択ハンドルを表示する。
+#. マウスポインタをハンドルの上に移動する。ポインタの形が変わり、その領域に適用された効果が視覚的に表示される。
+#. マウスの左ボタンをクリックしたまま、ハンドルをドラッグする。角のハンドルは隣接する二つの辺を同時に動かし、辺の中点にあるハンドルは一度に一つの寸法を変更する。
 
 Moving
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Moving a spreadsheet object to change its position within the document is the same as moving any other object in Writer:
-    1) Click on the object to show the selection handles in the border.
-    2) Move the mouse pointer over the object until the pointer changes shape (normally a hand, but this depends on your computer setup). Be careful not to double-click the spreadsheet object and activate object editing mode.
-    3) Click and drag the object to the desired position. Release the mouse button.
+スプレッドシートオブジェクトを移動して文書内の位置を変更する方法は、Writer の他のオブジェクトを移動する方法と同じです：
+
+#. オブジェクトをクリックして、境界線に選択ハンドルを表示する。
+#. マウスポインタをオブジェクトの上で動かし、ポインタの形が変わる (通常は手の形だが、これはコンピュータの設定によります)。スプレッドシートオブジェクトをダブルクリックして、オブジェクト編集モードを有効にしないように注意しろ。
+#. オブジェクトをクリックし、目的の位置までドラッグする。マウスボタンを離する。
 
 Editing a spreadsheet object
 ----------------------------------------------------------------------
 
-To edit a spreadsheet object, double-click it, or select it and choose Edit > Object > Edit on the Menu bar, or right-click and choose Edit in the context menu.
-The object is edited in its own frame within the Writer document, but some of the toolbars change in Writer. One of the most important changes is the presence of the Formula bar, which contains (from left to right):
-    • The Name Box, that shows the active cell reference or the name of a selected range of cells.
-    • The Function Wizard icon.
-    • The Select Function and Formula icons or the Cancel and Accept icons, depending on the editing actions taken in the spreadsheet.
-    • A long Input Line to enter or review the contents of the active cell.
-People familiar with Calc will immediately recognize the tools and the menu items. See the Getting Started Guide or the Calc Guide for more information.
+スプレッドシートオブジェクトを編集するには、オブジェクトをダブルクリックするか、オブジェクトを選択してメニューから「編集」→「オブジェクト」→「編集」を選択するか、右クリックしてコンテキストメニューから「編集」を選択する。
+
+オブジェクトは Writer 文書内の枠内で編集されるが、ツールバーの一部は Writer 内で変更される。最も重要な変更のひとつは、フォーミュラバーの存在です：
+
+* アクティブなセル参照または選択されたセル範囲の名前を表示する名前ボックス。
+* 関数ウィザード図像。
+* スプレッドシートでの編集操作に応じて、関数の選択と数式の 図像、またはキャンセルと承認の図像が表示される。
+* アクティブセルの内容を入力または確認するための長い入力行。
+
+Calcに慣れ親しんだ方であれば、ツールやメニュー項目はすぐにお分かりになるだろう。詳しくは『入門ガイド』または『Calcガイド』をご覧ください。
 
 Spreadsheet organization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A spreadsheet consists of pages called sheets. However, in Writer, only one sheet can be shown at a time when a spreadsheet with multiple sheets is embedded into a Writer document.
-Each sheet is organized into cells, which are the elementary units of the spreadsheet. They are identified by a row number (shown on the left-hand side) and a column letter (shown in the top row). For example, the top left cell is identified as A1, while the third cell in the second row is C2. All data elements, whether text, numbers, or formulas, are entered into a cell.
-    • Note
-If the embedded spreadsheet has multiple sheets, only the active sheet is shown on the page after exiting edit mode.
+スプレッドシートはシートと呼ばれるページで構成されている。しかしWriterでは、複数のシートを持つスプレッドシートをWriter文書に埋め込んだ場合、一度に表示できるのは一つのシートに限られる。
+
+各シートは、スプレッドシートの基本単位であるセルで構成されている。セルは行番号（左側に表示）と列文字（一番上の行に表示）で識別される。例えば、左上のセルは A1、2行目の3番目のセルはC2と識別される。テキスト、数値、数式を問わず、すべてのデータ要素はセルに入力される。
+
+.. note::
+
+   埋め込まれたスプレッドシートに複数のシートがある場合、編集モードを終了すると、アクティブなシートだけがページに表示される。
 
 Working with embedded sheets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can insert, rename, delete, and edit sheets in an embedded spreadsheet. To begin, double-click the embedded spreadsheet to open it in edit mode. When you finish editing the embedded spreadsheet, click anywhere outside the border to exit edit mode and save the changes. For more details on these procedures, refer to the Getting Started Guide.
-Inserting sheets
-    1) Right-click a sheet name and select Insert Sheet in the context menu, or go to Sheet > Insert Sheet on the Menu bar to open the Insert Sheet dialog.
-    2) Select the sheet position, number of sheets to be inserted, sheet name, or which spreadsheet file to use from the options available in the Insert Sheet dialog.
-    3) Click OK to close the dialog and insert the sheet.
-Renaming sheets
-Right-click the sheet tab and select Rename Sheet in the context menu, or go to Sheet > Rename Sheet on the Menu bar, to open the Rename Sheet dialog.
-Moving and copying sheets
-    1) Right-click the sheet name and select Move or Copy Sheet in the context menu, or go to Sheet > Move or Copy Sheet on the Menu bar to open the Move/Copy Sheet dialog.
-    2) Select whether to move or copy the sheet, the sheet location and position, and a new sheet name. Click OK to close the dialog and move or copy the sheet.
-    3) Alternatively, click the sheet tab and drag it to a new position in the embedded spreadsheet.
-Deleting sheets
-    1) Right-click the sheet tab and select Delete Sheet in the context menu, or go to Sheet > Delete Sheet on the Menu bar. If the spreadsheet has only one sheet remaining, you cannot delete that sheet.
-    2) Click Yes to confirm.
+
+.. rubric:: Inserting sheets
+
+#. シート名を右クリックして、コンテキストメニューからシートの挿入 を選択するか、メニューのシート＞シートの挿入でシートの挿入 ダイアログボックスを開く。
+#. シートの挿入ダイアログボックスのオプションから、シートの位置、挿入するシートの数、シート名、使用する表計算ファイルを選択する。
+#. OK をクリックしてダイアログボックスを閉じ、シートを挿入する。
+
+.. rubric:: Renaming sheets
+
+シート・タブを右クリックし、コンテキスト・メニューから「シート名の変更」を選択するか、メニュー・バーから「シート > シート名の変更」を選択すると、「シート名の変更」ダイアログボックスが開く。
+
+.. rubric:: Moving and copying sheets
+
+#. シート名を右クリックし、コンテキストメニューの Move or Copy Sheet を選択するか、メニューの Sheet > Move or Copy Sheet で Move/Copy Sheet ダイアログボックスを開く。
+#. シートを移動するかコピーするか、シートの場所と位置、新しいシート名を選択する。OK をクリックしてダイアログボックスを閉じ、シートを移動またはコピーする。
+#. あるいは、シートタブをクリックし、埋め込みスプレッドシートの新しい位置にドラッグする。
+
+.. rubric:: Deleting sheets
+
+#. シートタブを右クリックして、コンテキストメニューからシートの削除 を選択するか、メニューのシート > シートの削除を選択する。スプレッドシートにシートが 1 つしか残っていない場合は、そのシートを 削除できない。
+#. [はい] をクリックして確定する。
 
 Cell navigation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To move around the spreadsheet to select a cell to make it active, do any of the following:
-    • Use the keyboard arrow keys.
-    • Position the cursor in a cell and left-click the mouse.
-    • Press the Enter key to move one cell down and Shift+Enter to move one cell up.
-    • Press the Tab key to move one cell to the right and Shift+Tab to move one cell to the left.
+スプレッドシートを移動してセルを選択し、アクティブにするには、 以下のいずれかを実行する：
+
+* キーボードの矢印キーを使用する。
+* キャレットをセルに置き、マウスを左クリックする。
+* Enterキーを押してセルを一つ下に移動し、Shift+Enterでセルを 一つ上に移動する。
+* Tabキーを押すとセルが一つ右に移動し、Shift+Tabキーを押すとセルが一つ左に移動する。
 
 Entering data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Data input into a cell can only be done when a cell is active. An active cell is easily identified by a thickened and bolder border. The cell reference (or coordinates) for the active cell is displayed at the left-hand end of the Formula bar.
-    1) Select the cell to make it active and start typing. The data input is also displayed in the Input line on the Formula toolbar, making the data entry easier to read.
-    2) Use the Function Wizard, Select Function, and Formula icons to enter data, formulas, or functions into a cell. If the input is not a formula (for example, a text or date entry), the Select Function and Formula icons change into the Cancel and Accept icons.
-    3) To confirm data input into a cell, either select a different cell, or press the Enter key, or click the Accept icon on the Formula bar.
+セルへのデータ入力は、セルがアクティブでなければできない。アクティブなセルは、太くなった枠線で簡単に識別できる。アクティブ・セルのセル参照（または座標）は、数式バーの左端に表示される。
+
+#. セルを選択してアクティブにし、入力を開始する。データ入力は数式ツールバーの入力行にも表示され、データ入力を読みやすくする。
+#. データ、数式、関数をセルに入力するには、関数ウィザード、関数の選択、 数式の図像を使用する。入力が数式でない場合 (例えば、テキストや日付の入力)、「関数の選択」と「数式」図像は、「キャンセル」と「受諾」図像に変わる。
+#. セルへのデータ入力を確定するには、別のセルを選択するか、Enter キーを押すか、数式バーの Accept 図像をクリックする。
 
 Formatting cell data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Writer normally recognizes the type of contents (text, number, date, time, and so on) entered into a cell and applies default formatting to it. However, if Writer wrongly recognizes the type of data entered into a cell:
-    1) Select the cell, then right-click it and select Format Cells in the context menu, or go to Format > Cells on the Menu bar, or use the keyboard shortcut Ctrl+1.
-    2) In the Format Cells dialog, click the appropriate tab to open the correct page and use the options on that page to format the cell data.
-    3) Click OK to close the dialog and save the changes.
-    • Tip
-To force Writer to treat numbers as text (for example, telephone numbers) and to prevent Writer from removing the leading zeros or right-align them in a cell, type a single quotation mark (') before entering the number.
+Writerは通常、セルに入力された内容（テキスト、数値、日付、時刻など）の種類を認識し、既定の書式を適用する。ただし、Writer がセルに入力されたデータの種類を誤って認識した場合は、次のようになる：
+
+#. セルを選択し、右クリックしてコンテキストメニューから「セルの書式設定」を選択するか、メニューの「書式設定」→「セル」を選択するか、キーボードショートカットの Ctrl+1 を使う。
+#. 「セルの書式設定」ダイアログボックスで、適切なタブをクリックして適切なページを開き、そのページのオプションを使用してセルデータを書式設定する。
+#. OK をクリックしてダイアログボックスを閉じ、変更を保存する。
+
+.. tip::
+
+   Writerに数字をテキストとして扱わせ（例えば電話番号）、Writerが先頭のゼロを削除したりセル内で右揃えにしたりしないようにするには、数字を入力する前にシングルクォーテーション（'）を入力する。
 
 Formatting spreadsheets
 ----------------------------------------------------------------------
 
-It may be necessary to change the formatting of a spreadsheet to match the style used in the document.
-When working on an embedded spreadsheet, you can also access any cell styles created in Calc and use them. However, when using styles, it is recommended to create specific cell styles for embedded spreadsheets, as Calc cell styles may be unsuitable when working within Writer.
+文書で使用されているスタイルに合わせて、スプレッドシートの フォーマットを変更する必要があるかもしれない。
+
+埋め込みスプレッドシートで作業する際にも、Calcで作成したセルスタイルにアクセスして使用することができる。ただし、Calc のセルスタイルは Writer での作業には適さない場合があるため、スタイルを使用する場合は、埋め込みスプレッドシート専用のセルスタイルを作成することをお勧めする。
 
 Manual formatting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To manually format an embedded spreadsheet:
-    1) Select a cell or a range of cells. See the Getting Started Guide or the Calc Guide for more information on selecting ranges of cells.
-    2) Right-click the selection and go to Format Cells in the context menu, or go to Format > Cells on the Menu bar, or use the keyboard shortcut Ctrl+1 to open the Format Cells dialog.
-    3) Use the various dialog pages to format the embedded spreadsheet so that it matches the style of the document.
-    4) Click OK to close the dialog and save the changes.
-    5) If necessary, adjust the column width by hovering the mouse pointer over the line separating two columns in the header row until the pointer changes to a double-headed arrow; then click the left button and drag the separating line to the new position.
-    6) If necessary, adjust the row height by hovering the mouse pointer over the line separating two rows in the row header until the pointer changes to a double-headed arrow; then click the left button and drag the separating line to the new position.
-    7) When satisfied with the formatting changes, click outside the spreadsheet area to save the changes and exit edit mode.
+埋め込んだスプレッドシートを手動で書式設定するには
+
+#. セルまたはセル範囲を選択する。セル範囲の選択に関する詳細は、『入門ガイド』または『Calc ガイド』を参照しろ。
+#. 選択範囲を右クリックして、コンテキストメニューの [セルの書式設定] に進むか、メニューの [書式設定] > [セル] に進むか、キーボードショートカットの Ctrl+1 を使用して [セルの書式設定] ダイアログボックスを開く。
+#. さまざまなダイアログボックスページを使用して、埋め込まれたスプレッドシートを文書のスタイルに合うように書式設定する。
+#. OKをクリックしてダイアログボックスを閉じ、変更を保存する。
+#. 必要であれば、ヘッダー行の二つの列を区切る線の上にマウスポインタを置き、ポインタが両頭の矢印に変わるまで、左ボタンをクリックして区切り線を新しい位置までドラッグして、列の幅を調整する。
+#. 必要であれば、行の高さを調整する。行ヘッダーの二つの行を区切る線の上にマウスポインタを置き、ポインタが両頭の矢印に変わるまで動かす。
+#. 書式の変更に満足したら、スプレッドシートの領域外をクリックして変更を保 存し、編集モードを終了する。
 
 Using formatting styles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When an embedded spreadsheet is in edit mode, Writer displays the available styles for a spreadsheet in the Styles deck in the sidebar.
-If a required style is not available, you can create it (see Chapter 8, Introduction to Styles). Styles used in an embedded spreadsheet are similar to paragraph styles used in Writer.
-To use styles in an embedded spreadsheet, open the Styles deck in the Sidebar, then select data in a cell and double-click a style in the Styles deck to apply it.
+埋め込みスプレッドシートが編集モードの場合、Writer はSidebarのスタイルデ ッキにスプレッドシートで使用可能なスタイルを表示する。
+
+必要なスタイルがない場合は、作成することができる (第 8 章「スタイル入門」を参照)。埋め込みスプレッドシートで使用するスタイルは、Writer で使用する段落スタイルに似ている。
+
+埋め込みスプレッドシートでスタイルを使用するには、Sidebarのスタイルデ ッキを開き、セル内のデータを選択してスタイル甲板のスタイルをダブル クリックして適用する。
 
 Inserting and deleting rows or columns
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To insert rows or columns in an embedded spreadsheet:
-    1) Select the column or row where you want the new column or row inserted.
-    2) Go to Sheet on the Menu bar and select either Insert Columns > Columns Before, or Insert Columns > Columns After, or Insert Rows > Rows Above, or Insert Rows > Rows Below.
-       Or, right-click the column or row header and select Insert Columns Before, Insert Columns After, Insert Rows Above, or Insert Rows Below in the context menu.
-To delete rows or columns from an embedded spreadsheet:
-    1) Highlight the rows or columns to be deleted.
-    2) Go to Sheet on the Menu bar and select Delete Rows or Delete Columns, or right-click and select Delete Columns or Delete Rows in the context menu.
+埋め込みスプレッドシートに行または列を挿入するには、以下の手順に従う：
+
+#. 新しい列または行を挿入したい列または行を選択する。
+#. メニューの「シート」を開き、「列の挿入」→「列の前に挿入」、「列の挿入」→「列の後に挿入」、「行の挿入」→「行の上に挿入」、「行の挿入」→「行の下に挿入」のいずれかを選択する。 または、列または行のヘッダーを右クリックし、コンテキストメニューで「列の前に挿入」、「列の後に挿入」、「行の上に挿入」、「行の下に挿入」を選択する。
+
+埋め込まれたスプレッドシートから行または列を削除するには：
+
+#. 削除する行または列をハイライトする。
+#. メニューの「シート」から「行の削除」または「列の削除」を選択するか、右クリックしてコンテキストメニューから「列の削除」または「行の削除」を選択する。
 
 Deleting cells
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    1) Select the cells to be deleted.
-    2) Go to Sheet > Delete Cells, or press Ctrl+-. Or, right-click on a cell and select Delete in the context menu.
-    3) Select the required option on the Delete Cells dialog.
+#. 削除するセルを選択する。
+#. 「シート」→「セルの削除」を選択するか、Ctrl+-を押す。または、セルを右クリックし、コンテキスト・メニューから「削除」を選択する。
+#. セルの削除ダイアログボックスで必要なオプションを選択する。
 
 Merging and splitting cells
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To merge contiguous cells into a single cell:
-    1) Select the cells to be merged.
-    2) Right-click on the selected cells and select Merge Cells in the context menu, or go to Format > Merge Cells > Merge Cells or Merge and Center Cells on the Menu bar, or click on the Merge and Center Cells icon on the Formatting toolbar. Using Merge and Center Cells will center align any contents in the cells.
-    3) If the cells contain any data, a small dialog opens, showing choices for moving or hiding data in the hidden cells. Make a selection and click OK.
-To split a group of cells that have been merged into a single cell:
-    1) Select the cell that contains merged cells.
-    2) Go to Format > Merge Cells > Split Cells or right-click and select Split Cells in the context menu. If the split cells contained data that was merged before, this data will not be split again.
+連続するセルを一つのセルに統合するには
+
+#. 結合するセルを選択する。
+#. 選択したセルを右クリックし、コンテキストメニューから「セルの結合」を選択するか、メニューの「書式」→「セルの結合」→「セルの結合」または「セルの結合と中央揃え」を選択するか、書式設定ツールバーの「セルの結合と中央揃え」図像をクリックする。セルを結合して中央揃えにすると、セル内のすべての内容が中央揃えになる。
+#. セルにデータが含まれている場合、小さなダイアログボックスが開き、非表示のセルのデータを移動または非表示にする選択肢が表示される。選択してOKをクリックする。
+
+結合されたセル群を 1 つのセルに分割するには
+
+#. 結合されたセルを含むセルを選択する。
+#. 「書式」→「セルの結合」→「セルの分割」を選択するか、右クリックしてコンテキス ト・メニューから「セルの分割」を選択する。分割されたセルに以前マージされたデータが含まれていた場合、このデータは再度分割されない。
 
 Charts and graphs
 ======================================================================
 
-Charts and graphs are graphical interpretations of data, often from a spreadsheet. For more information, see the Calc Guide.
+チャートとグラフは、多くの場合、スプレッドシートからのデータのグラフィカルな解釈だ。詳細はCalc Guideを参照。
 
 Inserting a chart
 ----------------------------------------------------------------------
 
-You can add a chart to a document as an OLE object (see page 5) or using the tools in Writer.
-To add a chart using Writer’s tools, choose Insert > Chart on the Menu bar to insert a generic chart (Figure 4) at the cursor location. The chart is selected and the Menu bar and toolbars change to those appropriate for charts.
+図表は、OLE オブジェクト（5 ページ参照）として文書に追加することも、Writer のツールを使って追加することもできる。
+
+Writer のツールを使ってチャートを追加するには、メニューの「Insert > Chart」を選択し、キャレット位置に汎用チャート（図 4）を挿入する。チャートが選択され、メニューとツールバーがチャートに適したものに変わる。
 
 Selecting chart type
 ----------------------------------------------------------------------
 
-Data can be presented using a variety of different charts. Writer contains several chart types that will help convey a message to the audience. See “Chart types” on page 13.
+データはさまざまなチャートを使って提示することができる。Writerには、聴衆にメッセージを伝えるのに役立ついくつかのチャートタイプがある。13ページの「チャートの種類」を参照しろ。
 
-    1) Make sure that the chart is selected. The chart has a border and selection handles when selected.
-    2) Click the Chart Type icon on the Formatting toolbar or go to Format > Chart Type on the Menu bar, or right-click the chart and select Chart Type in the context menu to open Chart Type dialog (Figure 5).
-    3) As you change selections in the left-hand list, the chart examples on the right change. You can move the Chart Type dialog to one side to see the effect in the chart.
-    4) As you change chart types, other selections become available on the right-hand side. For example, some chart types have both 3D and 2D variants. When 3D Look is selected, more options become available for selection of shapes for the columns or bars.
-    5) Choose the chart characteristics you want and click OK to save the changes and return to the edit window.
-    6) Continue to format the chart, add data to it, or click outside the chart to return to normal view.
+#. チャートが選択されていることを確認する。チャートが選択されていると、枠線と選択ハンドルが表示される。
+#. 書式設定ツールバーの「グラフの種類」図像をクリックするか、メニューの「書式」→「グラフの種類」を選択するか、グラフを右クリックしてコンテキストメニューから「グラフの種類」を選択し、「グラフの種類」ダイアログボックスを開く（図5）。
+#. 左側の一覧で選択を変えると、右側のチャート例が変わる。チャートの効果を見るために、チャートの種類ダイアログボックスを片側に寄せることができる。
+#. チャートの種類を変えると、右側に他の選択項目が現れる。例えば、チャート・タイプには3Dと2Dの両方がある。3Dルック」を選択すると、列や棒の形状を選択できるオプションが増える。
+#. 必要なチャート特性を選択し、OKをクリックして変更を保存し、編集ウィンドウに戻る。
+#. チャートの書式設定を続け、データを追加するか、チャートの外側をクリックして通常の表示に戻る。
 
 Chart types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following summary of the chart types available will help you choose a type suitable for the data. Column, bar, pie, and area charts are available as 2D or 3D types. Examples of these types are given in detail in the Calc Guide.
+
 Column charts
-A column chart shows vertical bars, with the height of each bar proportional to its value. They usually display data that shows trends over time. It is recommended to use column charts where you have a relatively small number of data points. If you have a large time series as the data, it is recommended to use a line chart.
+   列グラフは縦棒を示し、各棒の高さはその値に比例する。通常、経時的な傾向を示すデータを表示する。データ・ポイントの数が比較的少ない場合は、カラム・チャートを使うことをお勧めする。データとして大きな時系列がある場合は、折れ線グラフを使うことをお勧めする。
 Bar charts
-A bar chart is like a column chart that has been shifted 90 degrees. It shows horizontal bars rather than vertical columns. Bar charts give an immediate visual impact for data comparison where time is not important, for example comparing the popularity of products in a marketplace.
+   棒グラフは、列グラフを90度ずらしたようなものである。縦列ではなく横棒を表示する。棒グラフは、例えば市場での商品の人気を比較するなど、時間が重要でないデータ比較に即座に視覚的なインパクトを与えます。
 Pie charts
-A pie chart shows values as sections of a circle. The area of each section is proportional to its value. Pie charts give a comparison of proportions, for example, when comparing what different departments spent on different items or what different departments actually spent overall. They work best with a small range of values, up to about. Using a larger range of values, the visual impact begins to fade.
+   円グラフは、値を円のセクションとして示す。各セクションの面積は、その値に比例する。円グラフは、例えば、異なる部門が異なる項目に費やした金額や、異なる部門が全体として実際に費やした金額を比較するときに、比率の比較を示する。円グラフは、小さな範囲の値で最もよく機能する。数値の範囲が大きくなると、視覚的なインパクトが弱くなる。
 Area charts
-Area charts are versions of line or column charts. They are useful to emphasize volume of change. Area charts have a greater visual impact than a line chart, but use them carefully, because the type of data makes a difference to the visual impact.
+   面積グラフは、折れ線グラフや列グラフのバージョンである。変化の量を強調するのに便利である。面積グラフは、折れ線グラフよりも視覚的なインパクトが大きいが、データの種類によって視覚的なインパクトが異なるので、注意深く使おう。
 Line charts
-Line charts give time series with progression. They are ideal for raw data and useful for charts with data showing trends or changes over time where you want to emphasize continuity. On line charts, the X-axis is ideal for representing time series data. 3D lines may confuse the viewer, so just using a thicker line gives a better visual impact.
+   折れ線グラフは、時系列に進行を与える。生データに最適で、トレンドや経時変化を示すデータで連続性を強調したいチャートに役立つ。折れ線グラフでは、X軸は時系列データを表すのに理想的である。立体的な線は見る人を混乱させるので、太い線を使う方が視覚的なインパクトがある。
 XY (Scatter) charts
-Scatter charts are great for visualizing data that you have not had time to analyze and may be best for data where you have a constant value for comparison: for example weather data, reactions under different acidity levels, conditions at altitude, or any data which matches two numeric series. The X-axis usually plots the independent variable or control parameter (often a time series).
+   散布図は、分析する時間がないデータを視覚化するのに適しており、比較のために一定の値を持っているデータに最適かもしれない：例えば、天候データ、異なる酸性度レベルでの反応、高度での条件、または二つの数値系列が一致するデータなど。X軸は通常、独立変数またはコントロール・パラメータ（多くの場合、時系列）をプロットする。
 Bubble charts
-A bubble chart is a variation of a scatter chart that can show three variables in two dimensions. Two variables identify the position of the center of a bubble on a Cartesian graph, while the third variable indicates the radius of the bubble. These charts are often used to present financial data or social/demographic data.
+   バブル・チャートは散布図のバリエーションで、三つの変数を2次元で表示することができる。二つの変数は直交グラフ上のバブルの中心の位置を示し、三つ目の変数はバブルの半径を示す。これらのグラフは、金融データや社会的／人口統計学的データを示すのによく使われる。
 Net charts
-Net charts are similar to polar or radar graphs and are useful for comparing data not in time series, but show different circumstances, such as variables in a scientific experiment. The poles of the net chart are the Y-axes of other charts. Generally, between three and eight axes are best; any more and this type of chart becomes confusing.
+   ネット・チャートは、極座標グラフやレーダー・グラフに似ており、時系列ではなく、科学実験の変数など、異なる状況を示すデータを比較するのに便利である。ネット・チャートの極は、他のチャートのY軸である。一般に、3軸から8軸の間がベストで、それ以上になるとこのタイプのチャートは混乱する。
 Stock charts
-Stock charts are specialized column graphs specifically used for stocks and shares. You can choose traditional lines, candlestick, and two-column charts. The data required for these charts is specialized with series for opening price, closing price, and high and low prices. The X-axis represents a time series.
+   株式チャートは、特に株式や株に使用される特殊な列グラフだ。伝統的な折れ線グラフ、ローソク足グラフ、2列グラフを選ぶことができる。これらのチャートに必要なデータは、始値、終値、高値、安値の系列に特化している。X軸は時系列を表す。
 Column and line charts
-A column and line chart is a combination of two other chart types. It is useful for combining two distinct, but related data series, for example sales over time (column) and the profit margin trends (line).
+   列と折れ線グラフは、他の二つのグラフ・タイプを組み合わせたものである。これは、二つの異なる、しかし関連するデータ系列を組み合わせるのに便利で、例えば、経時的な売上高（列）と利益率の推移（線）がある。
 
 Entering chart data
 ----------------------------------------------------------------------
 
-    1) Select the chart and then select the chart type.
-    2) Click the Data Table icon, or select View > Data Table on the Menu bar, or right-click and select Data Table in the context menu to open the Data Table dialog (Figure 6).
-    3) Type or paste information into the cells within the desired rows and columns in the Data Table dialog. You can also use the icons in the top left corner of the Data Table dialog to insert, delete or move data.
+#. チャートを選択し、チャート・タイプを選択する。
+#. データテーブル図像をクリックするか、メニューから「表示」→「データテーブル」を選択するか、右クリックしてコンテキストメニューから「データテーブル」を選択し、データテーブルダイアログボックスを開く（図6）。
+#. データテーブルダイアログボックスの必要な行と列のセルに情報をタイプするか、ペーストする。データテーブルダイアログボックスの左上にある図像を使って、データの挿入、削除、移動を行うこともできる。
 
 Adding or removing chart elements
 ----------------------------------------------------------------------
 
-The specimen chart inserted into a document includes two elements: a chart wall and a chart legend (also known as the key). You can add or remove elements to or from a chart.
-    1) Make sure the chart is selected and in edit mode.
-    2) To add an element to the chart, go to Insert on the Menu bar and select an element in the submenu, or right-click the chart wall or a chart element and select an element in the context menu. Selecting an element opens a dialog where you can specify options for the element.
-    • Note
-Right-clicking on a chart element will give more options to choose from when adding elements to a chart. The number of available insert options in the context menu depends on the type of element selected.
-    3) To remove an element from a chart, right-click the chart element to remove and select Delete in the context menu. The type of element selected for removal will change the delete options in the context menu. Or, select an element in the chart and press the Del (Delete) key or the Backspace key to remove it from the chart.
+文書に挿入される標本チャートには、チャート・ウォールとチャート凡例（キーとも呼ばれる）の二つの要素が含まれる。チャートへの要素の追加や削除ができる。
+
+#. 図表が選択され、編集モードになっていることを確認する。
+#. チャートに要素を追加するには、メニューのInsertからサブメニューから要素を選択するか、チャートウォールまたはチャート要素を右クリックしてコンテキストメニューから要素を選択する。要素を選択するとダイアログボックスが開き、要素のオプションを指定できる。
+
+   .. note::
+
+      チャート要素を右クリックすると、チャートに要素を追加する際に選択できるオプションが増えます。コンテキスト・メニューで利用可能な挿入オプションの数は、選択した要素の種類によって異なる。
+
+#. チャートから要素を削除するには、削除するチャート要素を右クリックし、コンテキスト・メニューから削除を選択する。削除する要素の種類によって、コンテキスト・メニューの削除オプションが変わる。または、チャート内の要素を選択し、Del (Delete)キーまたはBackspaceキーを押して、チャートからその要素を削除する。
 
 Chart formatting
 ----------------------------------------------------------------------
 
-To change the format of a selected chart:
-    1) Make sure the chart is selected and in edit mode.
-    2) Go to Format on the Menu bar and select on the submenu an element to format, or right-click a chart element and select a format option from the context menu. Selecting an element opens a dialog where you can specify format options for the element.
-The formatting options available depend on whether the whole chart is selected or which chart element has been selected.
+選択したチャートのフォーマットを変更するには
+
+#. チャートが選択され、編集モードになっていることを確認する。
+#. メニューの[書式]から書式を設定する要素をサブメニューから選択するか、チャート要素を右クリックしてコンテキストメニューから書式オプションを選択する。要素を選択すると、その要素の書式オプションを指定できるダイアログボックスが開く。
+
+利用できる書式オプションは、チャート全体が選択されているか、どのチャート要素が選択されているかによって異なる。
 
 Resizing and moving charts
 ----------------------------------------------------------------------
 
-You can resize or move a chart interactively or by using the Position and Size dialog. You can also use a combination of both methods.
+チャートのサイズ変更や移動は、インタラクティブに行うことも、「位置とサイズ」ダイアログボックスを使って行うこともできる。両方の方法を組み合わせて使うこともできる。
 
 Resizing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To resize a chart interactively:
-    1) Click a chart to select it. Selection handles appear around the chart.
-    2) To increase or decrease the height of a chart, click and drag on a selection handle at the top or bottom of the chart.
-    3) To increase or decrease the width of a chart, click and drag on a selection handle at the left or right of the chart.
-    4) To increase or decrease both the height and width of a chart at the same time, click and drag on a selection handle in one of the corners. To maintain the correct aspect ratio between height and width, hold the Shift key down while you click and drag.
+チャートのサイズをインタラクティブに変更するには
+
+#. チャートをクリックして選択する。チャートの周囲に選択ハンドルが表示される。
+#. チャートの高さを増減するには、チャートの上部または下部にある選択ハンドルをクリックしてドラッグする。
+#. チャートの幅を拡大または縮小するには、チャートの左または右にある選択ハンドルをクリックしてドラッグする。
+#. チャートの高さと幅の両方を同時に増減するには、いずれかのコーナーにある選択ハンドルをクリックしてドラッグする。高さと幅のアスペクト比を正しく保つには、Shiftキーを押しながらクリック＆ドラッグする。
 
 Moving
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To move a chart interactively:
-    1) Click the chart to select it. Selection handles appear around the chart.
-    2) Move the mouse pointer anywhere on the chart other than on a selection handle.
-    3) When it changes shape, click and drag the chart to its new location.
-    4) Release the mouse button when the chart is in the desired position.
+インタラクティブにチャートを移動するには
+
+#. チャートをクリックして選択する。チャートの周囲に選択ハンドルが表示される。
+#. 選択ハンドル以外のチャート上の任意の場所にマウスポインタを移動する。
+#. チャートの形が変わったら、クリックして新しい位置までドラッグする。
+#. チャートが希望の位置に来たら、マウスボタンを離す。
 
 Position and Size dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To resize or move a chart using the Position and Size dialog:
-    1) Double-click the chart so that it is in edit mode.
-    2) Go to Format > Position and Size on the Menu bar, or right-click the chart and select Position and Size in the context menu. For more information on using the Position and Size dialog, see Chapter 11, Images and Graphics.
-       Outside of the edit mode, it is possible to change the position and size of the chart in the Type page on the Properties dialog. Right-click on the chart and select Properties in the context menu.
+位置とサイズ」ダイアログボックスを使って、チャートのサイズを変更したり移動したりするには
+
+#. 図表をダブルクリックして、編集モードにする。
+#. メニューの「書式」→「位置とサイズ」を選択するか、チャートを右クリックしてコンテキストメニューから「位置とサイズ」を選択する。位置とサイズ」ダイアログボックスの使い方については、第11章「画像と画像」を参照しろ。 編集モード以外では、「プロパティ」ダイアログボックスの「タイプ」ページで、チャートの位置とサイズを変更することができる。チャート上で右クリックし、コンテキスト・メニューからプロパティを選択する。
 
 Chart elements
 ----------------------------------------------------------------------
 
-You can move or resize individual elements of a chart element independently of other chart elements. For example, you can move the chart legend to a different position. Pie charts allow individual wedges of the pie to be moved as well as “exploding” the entire pie.
-    1) Double-click the chart so that it is in edit mode.
-    2) Click any chart element to select it. Selection handles appear.
-    3) Move the mouse pointer over the selected element and when the pointer changes shape, click and drag to move the element.
-    4) Release the mouse button when the element is in the desired position.
-    • Note
-If the chart is 3D, round selection handles appear; these handles control the three-dimensional angle of the chart. You cannot resize or reposition the chart while the round selection handles are showing. Shift+click to get back to the square resizing handles. You can now resize and reposition the 3D chart.
+チャート要素の個々の要素は、他のチャート要素とは独立して移動またはサイズ変更できる。例えば、チャートの凡例を別の位置に移動させることができる。円グラフでは、円全体を "爆発 "させるだけでなく、円の個々のくさびを移動させることができる。
+
+#. 編集モードになるようにチャートをダブルクリックする。
+#. 任意のチャート要素をクリックして選択する。選択ハンドルが表示される。
+#. マウスポインタを選択した要素の上に移動し、ポインタの形が変わったら、クリックしてドラッグして要素を移動する。
+#. 要素が希望の位置にきたらマウスボタンを離す。
+
+.. note::
+
+   チャートが3Dの場合、丸い選択ハンドルが表示される。丸い選択ハンドルが表示されている間は、チャートのサイズ変更や位置変更はできない。Shift+クリックすると、四角いリサイズ・ハンドルに戻る。これで3Dチャートのサイズ変更と位置変更ができる。
 
 Changing chart area background
 ----------------------------------------------------------------------
 
-The chart area is the area surrounding the chart graphic and includes the (optional) main title and key.
-    1) Double-click the chart so that it is in edit mode.
-    2) Go to Format > Chart Area on the Menu bar, or right-click in the chart area and select Format Chart Area in the context menu, or double-click in the chart area to open the Chart Area dialog.
-    3) Click the Area tab and select the button corresponding to the type of background fill to use. The available options will change depending on the type of fill selected.
-    4) Make your selections and click OK to close the dialog and save the changes.
+チャート・エリアはチャート・画像を囲むエリアで、（オプションの）メイン・表題とキーが含まれる。
+
+#. 図表をダブルクリックして編集モードにする。
+#. メニューの「書式」→「チャート領域」を選択するか、チャート領域で右クリックし、コンテキストメニューから「チャート領域の書式設定」を選択するか、チャート領域でダブルクリックして「チャート領域」ダイアログボックスを開く。
+#. Area タブをクリックし、使用する背景塗りつぶしの種類に対応するボタンを選択する。選択した塗りつぶしの種類によって、使用できるオプションが変わる。
+#. 選択を行い、OKをクリックしてダイアログボックスを閉じ、変更を保存する。
 
 Changing chart wall background
 ----------------------------------------------------------------------
 
-The chart wall is the area that contains the chart graphic. Keep in mind that some chart types do not use a wall, like the pie chart for example.
-    1) Double-click the chart so that it is in edit mode.
-    2) Select the chart wall and go to Format > Format Selection on the Menu bar, or right-click in the chart wall and select Format Wall in the context menu, or double-click in the chart wall to open the Chart Wall dialog.
-    3) Click the Area tab and proceed as above.
-    4) Click OK to close the dialog and save the changes.
+チャート・ウォールとは、チャート・画像を含む領域のことである。例えば円グラフのように、ウォールを使用しないチャート・タイプもあることに留意しろ。
+
+#. チャートをダブルクリックして、編集モードにする。
+#. チャートウォールを選択し、メニューの「書式」→「選択範囲の書式設定」を選択するか、チャートウォール内で右クリックし、コンテキストメニューから「チャートウォールの書式設定」を選択するか、チャートウォール内でダブルクリックし、チャートウォールダイアログボックスを開く。
+#. Area タブをクリックし、上記のように操作する。
+#. OK をクリックしてダイアログボックスを閉じ、変更を保存する。
 
 Audio and video
 ======================================================================
 
-Although linked audio and video files are irrelevant when a Writer document is printed, if the document is opened on a computer or exported to PDF or HTML, you can play the files by clicking on the links.
+リンクされたオーディオファイルやビデオファイルは、Writer文書を印刷する際には関係ないが、文書をコンピュータで開いたり、PDFやHTMLにエクスポートしたりする場合は、リンクをクリックしてファイルを再生することができる。
 
 Using media files
 ----------------------------------------------------------------------
 
-To insert a media file into a document:
-    1) Choose Insert > Media > Audio or Video on the Menu bar to open the Insert Audio or Video dialog.
-    2) Select the media file to insert and click Open to place the object in the document.
-    • Tip
-To see a list of audio and video file types supported by Writer, open the drop-down list of file types. This list defaults to All audio and video files, so you can also choose unsupported files such as .mov.
-Writer only links media files and does not embed a media file into a document. Therefore if a document is moved to a different computer, any links will be broken and the media files will not play. To prevent this from happening:
-    1) Place any media files that are included in a document in the same folder where the document is stored.
-    2) Insert the media file in the document.
-    3) Send both the document and any media files to the computer which is to be used for the document and place both files in the same folder on that computer.
+文書にメディアファイルを挿入するには
+
+#. メニューの［挿入］＞［メディア］＞［オーディオまたはビデオ］を選択し、［オーディオまたはビデオの挿入］ダイアログボックスを開く。
+#. 挿入するメディアファイルを選択し、[開く] をクリックしてオブジェクトを文書に配置する。
+
+.. tip::
+
+   Writerでサポートされているオーディオおよびビデオファイルの種類の一覧を表示するには、ファイルタイプのドロップダウン一覧を開く。この一覧の既定は「すべてのオーディオおよびビデオファイル」なので、.movのようなサポートされていないファイルを選択することもできる。
+
+Writerはメディアファイルをリンクするだけで、文書にメディアファイルを埋め込みません。そのため、文書を別のコンピュータに移動すると、リンクはすべて解除され、メディアファイルは再生されない。これを防ぐには
+
+#. 文書に含まれるメディアファイルは、文書が保存されているフォルダと同じフォルダに置く。
+#. 文書にメディアファイルを挿入する。
+#. 文書とメディアファイルの両方を、文書に使用するコンピュータに送信し、そのコンピュータの同じフォルダに両方のファイルを置きます。
 
 Using the Gallery
 ----------------------------------------------------------------------
 
-To insert media clips directly from the Gallery:
-    1) Go to the Gallery deck on the Sidebar.
-    2) Browse to a theme containing media files (for example, Sounds).
-    3) Click the movie or sound to be inserted and drag it into the document area.
+ギャラリーから直接メディアクリップを挿入するには
+
+#. Sidebarのギャラリー甲板に行く。
+#. メディアファイルを含むテーマ(例えば、サウンド)をブラウズする。
+#. 挿入するムービーまたはサウンドをクリックし、文書エリアにドラッグする。
 
 Media playback
 ----------------------------------------------------------------------
 
-The Media Playback toolbar is automatically opened when a media file is selected. The default position of the toolbar is at the bottom of the workspace, just above the Drawing toolbar. However, this toolbar can be undocked and placed anywhere. If the toolbar does not open, go to View > Toolbars > Media Playback on the Menu bar.
-The Media Playback toolbar contains the following tools:
-    • Insert Audio or Video – opens the Insert Audio or Video dialog.
-    • Play, Pause, Stop – controls media playback.
-    • Repeat – if selected, media will continuously repeat playing until this tool is deselected.
-    • Position (Playback slider) – selects the position to start playing from within the media file.
-    • Timer – displays current position of the media clip and length of media file.
-    • Mute – when selected, the sound will be suppressed.
-    • Volume – adjusts the volume of the media file.
-    • Media path – the location of the file on the computer.
-    • View (Scaling drop-down menu) – only available for movies; allows scaling of the clip.
+メディアファイルを選択すると、メディア再生ツールバーが自動的に開く。ツールバーの既定の位置は、ワークスペースの一番下、描画ツールバーのすぐ上だ。ただし、このツールバーはドッキングを解除してどこにでも配置できる。ツールバーが開かない場合は、メニューの［表示］＞［ツールバー］＞［メディア再生］を選択する。
+
+メディア・プレイバック・ツールバーには以下のツールがある：
+
+
+* オーディオまたはビデオの挿入 - オーディオまたはビデオの挿入ダイアログボックスを開く。
+* 再生、一時停止、停止 - メディアの再生をコントロールする。
+* リピート-選択すると、このツールの選択が解除されるまで、メディアは再生を繰り返する。
+* 位置 (再生スライダー) - メディアファイル内で再生を開始する位置を選択する。
+* タイマー - メディアクリップの現在位置とメディアファイルの長さを表示する。
+* ミュート：選択すると、サウンドが抑制される。
+* ボリューム - メディアファイルの音量を調整する。
+* メディアパス - コンピュータ上のファイルの場所だ。
+* View (Scaling drop-down menu) - ムービーのみ使用可能で、クリップのスケーリングが可能だ。
 
 Formulas (equations)
 ======================================================================
 
-For detailed information on how to create formulas, see the Math Guide or the Getting Started Guide.
-To create a formula (equation) in Writer, go to Insert > OLE Object > Formula Object on the Menu bar. See page 5 for more information.
-To easily add numbered formulas in Writer, you can use the AutoText entry fn (for “formula numbered”):
-    1) Start a new line in the document.
-    2) Type fn and then press the F3 key. A two-column table with no borders is inserted into the document. The left column contains a sample formula and the right column contains a reference number, as shown below.
+数式の作成方法の詳細については、『数学ガイド』または『入門ガイド』を参照しろ。
 
-(1)
-    3) Delete the sample formula and insert your formula as an object in the left column.
-    4) Alternatively, first insert the formula into the document, then carry out Steps 1 and 2 above replacing the sample formula with your formula.
-When creating or editing a formula, the Math menu becomes available.
-When creating formulas, take care about the font sizes to make sure they are similar in size to fonts used in the document. To change font attributes of a Math object, double-click in the formula to enter edit mode and go to Format > Font Size on the Menu bar. To change font type, use Format > Fonts.
+Writer で数式（等式）を作成するには、メニューの [Insert] > [OLE Object] > [Formula Object] を選択する。詳細については、5 ページを参照しろ。
+
+Writer で簡単に番号付きの数式を追加するには、オートテキスト入力 fn (「数式番号付き」の意味) を使用する：
+
+#. 文書で改行する。
+#. fnと入力し、F3キーを押す。境界線のない2列の表が文書に挿入される。下図のように、左の列にはサンプル数式が、右の列には参照番号が表示される。
+#. サンプル数式を削除し、左の列に数式をオブジェクトとして挿入する。
+#. または、まず数式を文書に挿入してから、上記のステップ 1 と 2 を実行し、サンプルの数式をあなたの数式に置き換えます。
+
+数式を作成または編集すると、[数式] メニューが使用可能になる。
+
+数式を作成するときは、フォント・サイズが文書で使用されているフォントと同じサイズになるように注意しろ。数式オブジェクトのフォント属性を変更するには、数式内をダブルクリックして編集モードに入り、メニューの「書式」>「フォントサイズ」を選択する。フォントの種類を変更するには、[書式] > [フォント] を使用する。
 
 Barcodes and QR codes
 ======================================================================
 
-Writer, Calc, Impress, and Draw can generate barcodes and QR codes. Barcodes are used for many purposes. A QR code (short for Quick Response code) is a type of barcode. QR codes often contain data that points to a website or application.
-    1) Choose Insert > OLE Object > QR and Barcode on the Menu bar to open the QR and Barcode dialog (Figure 7).
-    2) Fill in the URL/Text field, select an error correction factor (the complexity of the graphic generated), the width of the margin around it, and the type of code, then click OK.
-Figure 7 shows an example of a QR code. Figure 8 shows an example of an ISBN barcode.
-After the QR code or barcode has been generated, you can edit it by right-clicking in the code and selecting Edit Barcode.
-To format other aspects of the code, including position and size, borders (line), background (area), anchor, wrap, and more, right-click on it and choose from the context menu. See Chapter 11, Images and Graphics, for more information.
+Writer、Calc、Impress、DrawはバーコードやQRコードを生成できる。バーコードは様々な用途に使われる。QRコード（Quick Response codeの略）はバーコードの一種だ。QR コードには、Web サイトやアプリケーションを示すデータが含まれていることがよくある。
+
+#. メニューの「挿入」→「OLE オブジェクト」→「QR とバーコード」を選択し、「QR とバーコード」ダイアログボックスを開く（図 7）。
+#. URL/Text フィールドに入力し、エラー補正係数（生成される画像の複雑さ）、 周囲の余白の幅、コードの種類を選択し、OK をクリックする。
+
+図7はQRコードの例。図8はISBNバーコードの例だ。
+
+QRコードまたはバーコードが生成されたら、コード内で右クリックし、Edit Barcodeを選択して編集することができる。
+
+位置やサイズ、境界線（ライン）、背景（エリア）、アンカー、ラップなど、コードの他の側面をフォーマットするには、コード上で右クリックし、コンテキストメニューから選択する。詳細については、第 11 章「画像と画像」を参照しろ。
 
 Formatting OLE objects
 ======================================================================
 
-Use the OLE Object dialog (Figure 9) to format spreadsheets and other OLE objects in similar ways to formatting frames and images: position and size, borders, area (background), transparency, and more. Right-click on the object and choose Properties from the context meny to open the dialog.
+OLE オブジェクト・ダイアログボックス（図 9）を使用して、スプレッドシートやその他の OLE オブジェクトを、枠や画像の書式設定と同様の方法で書式設定する（位置やサイズ、境界線、領域（背景）、透明度など）。オブジェクトを右クリックし、コンテキストメニューから [プロパティ] を選択してダイアログボックスを開く。
