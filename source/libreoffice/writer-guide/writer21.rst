@@ -11,45 +11,51 @@ Writer Guide Chapter 21, User Interface Variants ノート
 Introduction
 ======================================================================
 
-By default, LibreOffice Writer’s commands are grouped in cascading menus and in toolbars filled with icons—the standard user interface described in Chapter 1. These menus and toolbars are described in the chapters that discuss the related tasks and functions.
-In addition, Writer provides other user interface variants, displaying contextual groups of commands and contents. This chapter describes these user interface variants and provides a quick reference to the location of the tools and functions when using each of the variants.
+既定では、LibreOffice Writer のコマンドは、カスケードメニューと図像でいっぱいのツールバーにまとめられている。これらのメニューとツールバーについては、関連するタスクと機能について説明する各章で説明する。
+
+さらに、Writer は、コマンドや中身のコンテキストグループを表示する、その他の使用者インターフェイスのバリエーションを提供する。この章では、これらの使用者インターフェースのバリエーションについて説明し、各バリアントを使用する際のツールや機能の場所についてのクイックリファレンスを提供する。
 
 Selecting the user interface
 ======================================================================
 
-When you set up Writer, you can choose one of these user interfaces, and you can switch between them and the standard interface at any time.
-    1) Choose View > User Interface on the Menu bar.
-    2) On the Select Your Preferred User Interface dialog (Figure 1), choose one of the variants on the left. An example of the variant is shown in the Preview box on the right, along with a short description.
-    3) Choose the relevant button to apply your selection to all components of LibreOffice, or only to Writer. The Writer window changes to match your selection.
-    4) Click Close to close the dialog.
+Writerのセットアップ時に、これらの使用者インターフェースのいずれかを選択し、いつでも標準インターフェースと切り替えることができる。
 
-If you have activated experimental features (Tools > Options > Advanced), more choices may appear on the left-hand side. These choices are not described here.
+#. メニューで表示 > 使用者インターフェイスを選択する。
+#. Select Your Preferred User Interface ダイアログボックス (図 1) で、左のバリアントから一つを選びます。バリアントの例は右側のプレビューボックスに短い説明とともに表示される。
+#. LibreOffice のすべてのコンポーネント、または Writer にのみ選択を適用するには、関連するボタンを選択する。Writer ウィンドウは、選択内容に合わせて変更される。
+#. [閉じる] をクリックしてダイアログボックスを閉じる。
+
+実験的な機能（ツール > オプション > 詳細設定）を有効にしている場合、左側にさらに選択肢が表示されることがある。これらの選択肢については、ここでは説明しない。
 
 Standard interfaces
 ======================================================================
 
-Three of the user interface choices in Figure 1 are described in Chapter 1, Introducing Writer.
+図1の使用者・インターフェースの選択肢のうち三つについては、第1章「Writerの紹介」で説明している。
+
 Standard Toolbar
-Classic mode with two visible toolbars: standard and formatting. The sidebar shows only its tabs.
+   標準と書式の二つのツールバーが表示されるクラシックモード。Sidebarにはタブのみが表示される。
 Single Toolbar
-Only one toolbar with frequently used features. The sidebar shows only its Hide button.
+   よく使う機能を備えたツールバーは一つだけ。Sidebarには非表示ボタンだけが表示される。
 Sidebar
-The sidebar is fully opened and only one toolbar (Formatting) is showing.
-The elements on each of the standard user interfaces can be modified using the View menu on the Menu bar.
+   Sidebarが完全に開き、ツールバー（書式設定）が一つだけ表示されている。
+
+各標準使用者インターフェースの要素は、メニューの「表示」メニューを使用して変更できる。
 
 Tabbed interface
 ======================================================================
 
-The Tabbed interface (Figure 2) provides a familiar interface for users coming from proprietary office suites such as Microsoft Office. It includes a Menu bar, an Icon bar, a Tab bar, icons for the active tab, one or more tab-specific menus, and a Quick Menu. On Windows and Linux, the Menu bar can be hidden or displayed by clicking on the Menu Bar icon in the Icon bar (Figure 4).
+タブインターフェース（図2）は、Microsoft Officeのようなプロプライエタリなオフィススイートから来た使用者に馴染みのあるインターフェースを提供する。これには、メニュー、図像バー、タブバー、アクティブなタブの図像、一つまたは複数のタブ固有のメニュー、クイックメニューが含まれる。WindowsとLinuxでは、図像バーのメニュー図像をクリックすることで、メニューを非表示にしたり、表示したりすることができる（図4）。
 
-In Writer, this user interface variant includes nine fixed tabs and five additional tabs. Each tab displays a set of icons grouped by context. The context can change depending on the location of the cursor or the item selected. Each tab also includes one or more tab-specific drop-down menus at the right-hand end. The Quick Menu is the same for all tabs.
-The Tabbed interface can be customized using the Notebookbar tab of the Customize dialog to show and hide the individual icons on the various tabs. See Chapter 20, Customizing Writer, for more information.
-If the icons on a tab do not fit into the width of the Writer window, >> appears at the end of the row. Click it to display the other commands (Figure 3).
+Writerでは、9つの固定タブと五つの追加タブがある。各タブには、コンテキストごとにグループ化された図像のセットが表示される。コンテキストは、キャレットの位置や選択した項目によって変化する。また、各タブの右端には一つ以上のタブ固有のドロップダウンメニューがある。クイックメニューはすべてのタブで共通だ。
+
+タブインターフェイスは、カスタマイズダイアログボックスのノートブックバータブを使ってカスタマイズすることができる。詳しくは第20章Writerのカスタマイズを参照しろ。
+
+タブの図像が Writer ウィンドウの幅に収まらない場合は、行の最後に >> が表示される。これをクリックすると、他のコマンドが表示される（図3）。
 
 Icon bar
 ----------------------------------------------------------------------
 
-The icon bar (Figure 4) is located at the top left of the tabs.
+図像バー（図4）はタブの左上にある。
 
 1  Menu bar – Show / Hide the menu bar.
 2  Open (Ctrl+O) – Open a file browser, where you can select the file to be opened.
@@ -61,127 +67,127 @@ The icon bar (Figure 4) is located at the top left of the tabs.
 Quick menu
 ----------------------------------------------------------------------
 
-At the right-hand end of the tab bar is a Quick menu (Figure 5) containing some commonly used commands and links. Some of the Quick menu items have submenus, indicated by arrows on the right.
+タブバーの右端にはクイックメニュー（図5）があり、よく使われるコマンドやリンクが含まれている。クイックメニューのいくつかの項目にはサブメニューがあり、右側の矢印で示されている。
 
 Fixed tabs
 ----------------------------------------------------------------------
 
-The fixed tabs in Writer are File, Home, Insert, Layout, References, Review, View, Extension, and Tools. The tabs are described on the following pages. The illustrations show the left and right ends of the tabs separately so they are large enough to more easily see the commands.
+Writerの固定タブは、File、Home、Insert、Layout、References、Review、View、Extension、Toolsだ。各タブについては次のページで説明する。図では、タブの左端と右端を別々に示しているので、コマンドをより簡単に見ることができる。
 
 File tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The File tab (Figure 6) includes commands to create new documents; open, save, print, and close documents; manage templates; export to PDF and EPUB; display document properties; add a digital signature; and sign an existing PDF.
+ファイル」タブ（図6）には、新規文書の作成、文書のオープン・保存・印刷・クローズ、雛形の管理、PDFやEPUBへの書き出し、文書プロパティの表示、電子署名の追加、既存のPDFへの署名などのコマンドがある。
 
-The File tab has two menus (Figure 7): File and Help. The File menu contains the same commands as the icons on the tab. The Help menu provides links to a variety of resources.
+Fileタブには二つのメニューがある（図7）：ファイル」と「ヘルプ」だ。ファイル」メニューには、タブ上の図像と同じコマンドが含まれている。ヘルプ」メニューには、さまざまなリソースへのリンクが用意されている。
 
 Home tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Home tab (Figure 8) includes commands to cut, copy, paste, and format text; insert common items (image, table, special characters, and page break); apply, update, and edit styles; and others.
+ホーム」タブ（図8）には、テキストのカット、コピー、ペースト、書式設定、一般的なアイテムの挿入（画像、表、特殊文字、改ページ）、スタイルの適用、更新、編集などのコマンドがある。
 
-The Home menu (Figure 9) provides additional commands that are not on the tab.
+ホームメニュー（図9）には、タブにはない追加コマンドがある。
 
 Insert tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Insert tab (Figure 10) includes commands to insert many commonly used items.
+挿入」タブ（図10）には、よく使われる多くの項目を挿入するためのコマンドが含まれている。
 
-The Insert menu (Figure 11) provides some of the same commands.
+挿入]メニュー（図11）にも同じコマンドがいくつかある。
 
 Layout tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Layout tab (Figure 12) provides commands for working on page layout.
+レイアウトタブ（図12）は、ページレイアウトに関するコマンドを提供する。
 
-The Layout menu (Figure 13) provides commands for a few of the same items.
+レイアウトメニュー (図13) には、同じ項目のいくつかのコマンドがある。
 
 References tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The References tab (Figure 14) provides commands for working with tables of contents, indexes, footnotes and endnotes, cross-references, bibliographies, and fields.
+参考文献タブ（図14）には、目次、索引、脚注・巻末注、相互参照、書誌、フィールドを操作するためのコマンドが用意されている。
 
-The References menu (Figure 15) provides many of the same commands.
+参考文献メニュー（図15）にも同じコマンドが多数用意されている。
 
 Review tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Review tab (Figure 16) assists in editing. It provides quick access to recording, showing,  hiding, and managing changes.
+レビュー」タブ（図16）は編集を支援する。記録、表示、非表示、変更点の管理に素早くアクセスできる。
 
-The Review menu (Figure 17) provides many of the same commands.
+Reviewメニュー(図17)は同じコマンドの多くを提供する。
 
 View tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The View tab (Figure 18) provides commands related to the display of a document on screen.
+表示] タブ (図 18) は、文書の画面表示に関するコマンドを提供する。
 
-The View menu (Figure 19) provides many of the same commands.
+表示] メニュー (図 19) にも同じコマンドが多数用意されている。
 
 Extension tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Extension tab (Figure 20) contains only the menu for accessing the Extensions dialog.
+拡張機能タブ（図20）には、拡張機能ダイアログボックスにアクセスするためのメニューだけがある。
 
 Tools tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Tools tab (Figure 21) provides several tools for macros, mail merge, and form creation.
+ツール]タブ（図21）には、マクロ、メールマージ、フォーム作成のためのいくつかのツールが用意されている。
 
-The Tools menu (Figure 22) provides some of the same commands.
+ツール]メニュー(図22)にも同じコマンドがいくつかある。
 
 Additional tabs
 ----------------------------------------------------------------------
 
-Additional tabs appear when an item is selected; they are displayed between the View and Extension tabs. The additional tabs in Writer are Draw, Image, Media, Object, and Table.
+追加タブは、アイテムが選択されると表示され、「表示」タブと「拡張」タブの間に表示される。Writerの追加タブは、Draw、Image、Media、Object、Tableだ。
 
 Draw tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Draw tab (Figure 23) is displayed when a drawing object is selected. It provides commands for captioning and modifying the drawing object and for inserting and modifying Fontwork objects.
+描画タブ（図 23）は、描画オブジェクトが選択されているときに表示される。このタブには、図面オブジェクトにキャプションを付けたり修正したりするためのコマンドや、フォントワークオブジェクトを挿入したり修正したりするためのコマンドが用意されている。
 
-The Draw menu (Figure 24) provides a subset of commands, which vary depending on the drawing object.
+描画メニュー (図 24) は、描画オブジェクトによって異なるコマンドの部分集合を提供する。
 
 Image tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Image tab (Figure 25) provides commands for working with images, including captions, cropping, borders and area styles and colors, anchors, wrapping, positioning, and filtering.
+画像タブ (図25) には、キャプション、トリミング、境界線と領域のスタイルと色、アンカー、折り返し、位置決め、フィルタリングなど、画像を扱うためのコマンドが用意されている。
 
-The Image menu (Figure 26) provides links to dialogs for working with images.
+画像メニュー (図26) には、画像を扱うためのダイアログボックスへのリンクがある。
 
 Media tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Media tab (Figure 27) provides commands for positioning and running an audio or video file.
+メディアタブ（図27）には、オーディオまたはビデオファイルを配置し、実行するためのコマンドがある。
 
-The Media menu (Figure 28) provides some of the same commands
+メディア］メニュー（図28）にも同じコマンドがある。
 
 Object tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Object tab (Figure 29) provides commands to position, resize, link, choose colors and borders for the selected object. The illustration shows the tab when a frame is selected.
+Objectタブ（図29）には、選択したオブジェクトの位置、サイズ変更、リンク、色、境界線の選択などのコマンドがある。図は枠が選択されているときのタブだ。
 
-The Object menu (Figure 30) provides a few of the same commands. The illustration shows the menu when a frame is selected.
+Objectメニュー（図30）にも同じコマンドがいくつかある。図は枠が選択されているときのメニューだ。
 
 Table tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Table tab (Figure 31) is opened when the cursor is in a table.
+テーブル・タブ（図31）は、キャレットがテーブル内にあるときに開かれる。
 
-The Table menu (Figure 32) includes some commands not shown on the tab.
+Tableメニュー（図32）には、タブに表示されていないコマンドもある。
 
 Tabbed Compact interface
 ======================================================================
 
-The Tabbed Compact interface has the same tabs as the Tabbed interface, but the commands on each tab are arranged in a single row of icons, many with drop-down menus of choices.
+タブ付きコンパクト・インターフェースには、タブ付きインターフェースと同じタブがあるが、各タブのコマンドは図像の一列に並べられ、その多くはドロップダウンメニューで選択できるようになっている。
 
 Groupedbar Compact interface
 ======================================================================
 
-The Groupedbar Compact interface (Figure 34) is divided into groups that contain commands organized as sets of icons and menus.
+Groupedbarコンパクト・インターフェース（図34）は、図像とメニューのセットとして編成されたコマンドを含むグループに分割されている。
 
-The Groupedbar menu (Figure 35) provides a subset of commands, including a convenient way to change the user interface.
+Groupedbarメニュー（図35）は、使用者インターフェイスを変更する便利な方法を含む、コマンドの部分集合を提供する。
 
 Contextual Single interface
 ======================================================================
 
-The Contextual Single interface displays a standard Menu bar and a single toolbar with context-dependent content.
+コンテクスチュアル・シングルインターフェイスは、標準的なメニューと、コンテクスチュアルに依存した中身を持つ単一のツールバーを表示する。
