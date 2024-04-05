@@ -11,426 +11,654 @@ Writer Guide Chapter 18, Forms ノート
 Introduction
 ======================================================================
 
-この章では、Writer文書内での対話型フォームの使用について説明する。フォームには、編集されないセクションと、読者が変更できるように設計されたセクションがある。たとえば、アンケートには導入部と質問 (変更はできない) があり、読者が回答を入力したり、与えられた選択肢から選択したりするためのスペースがある。
+Writer 文書内での対話型フォームの使用について説明する。フォームには編集されない
+部分と、読者が変更できるように設計された部分がある。たとえば、アンケートには導入
+部と質問（変更はできない）があり、読者が回答を入力したり、与えられた選択肢から選
+択したりするための場所がある。
 
-Writer には、チェックボックス、オプションボタン、テキストボックス、プルダウン一覧など、フォームに情報を入力するためのいくつかの方法が用意されている。
+.. admonition:: 読者ノート
 
-LibreOffice のフォームには多くの機能がある。この章では、そのすべてを説明するわけではない。特筆すべきは、HTML 文書でのフォームの使用と、フォームコントロールにリンクするマクロの記述だ。
+   英語の a form を何と和訳するのが適切だろうか。書式が近いとは思う。
 
-LibreOffice Calc、Impress、および Draw も、Writer とほぼ同様にフォームをサポートしている。
+Writer にはチェックボックス、オプションボタン、テキストボックス、プルダウンリス
+トなど、フォームに情報を入力するための方法が用意されている。
+
+LibreOffice のフォームには多くの機能がある。特筆すべきは |HTML| 文書でのフォーム
+の使用と、フォームコントロールにリンクするマクロの記述だ。
+
+LibreOffice Calc, Impress, Draw も Writer とほぼ同様にフォームを支援している。
 
 When to use forms
 ======================================================================
 
-フォームには三つの使い方がある：
+フォームには使い方が三つある：
 
-* 受信者が記入するための簡単な文書を作成する。例えば、アンケートを記入して返送するグループに送信する。
-* データベースやデータソースにリンクし、使用者が情報を入力できるようにする。営業部門の誰かが、購入者の情報をフォームを使ってデータベースに入力する。
-* データベースやデータソースにある情報を見ること。図書館員が本に関する情報を呼び出す。
+* 受信者が記入するための簡単な文書を作成する。例えば、アンケートを記入して返送す
+  る団体に送信する。
+* データベースやデータ給源にリンクし、使用者が情報を入力できるようにする。営業部
+  門の誰かが、購入者の情報をフォームを使ってデータベースに入力する。
+* データベースやデータ給源にある情報を見る。図書館員が本に関する情報を呼び出す。
 
-データベースにアクセスするためにフォームを使用すると、複雑なグラフィカルフロントエンドを迅速かつ簡単に構築することができる。フォームには、データソースにリンクするフィールドだけでなく、テキスト、画像、テーブル、図面、その他の要素を含めることができる。
+データベースにアクセスするためにフォームを使用すると、複雑な GUI を迅速かつ簡単
+に構築することができる。フォームには、データ給源にリンクするフィールドだけでな
+く、テキスト、画像、表組、図面、その他の要素を含めることができる。
 
-シンプルなフォームの典型的な使い方は以下の通りです：
+単純なフォームの典型的な使い方：
 
-#. フォームをデザインし、保存する。
-#. そのフォームを他の人に送る（例えばEメールで）。
-#. 他の人がフォームに記入し、保存してあなたに送り返す。
-#. あなたがフォームを開き、その回答を見る。
+#. 己がフォームを設計し保存する。
+#. そのフォームを人に送る。
+#. 人がフォームに記入し、己に送り返す。
+#. 己がその回答を見る。
 
 .. tip::
 
-   データソースを使ったり、ウェブ上で更新するフォームを設定したりすることで、データを自動的に収集することができる。しかし、これらの方法はより複雑なので、この章では扱いない。
+   データ給源を使ったり、ウェブ上で更新するフォームを設定したりすることでデータ
+   を自動的に収集することができる。しかし、これらの方法はより複雑なので、この章
+   では扱わない。
 
 Alternatives to using forms in Writer
 ----------------------------------------------------------------------
 
-LibreOffice Base は、データソースにアクセスする別の方法を提供する。Base と Writer のフォームには多くの共通点があるが、特定のタスクにはどちらを使用したほうがよい場合もある。Base は、フォームがデータソースにアクセスする場合にのみ適している。
+LibreOffice Base はデータ給源にアクセスする別の方法を提供する。Base と Writerの
+フォームには多くの共通点があるが、特定の仕事にはどちらかを使用したほうがよい場合
+もある。Base はフォームがデータ給源にアクセスする場合に限り適している。
 
 Creating a simple form
 ======================================================================
 
-このトピックでは、データソースやデータベースへのリンクを持たず、高度なカスタマイズも行わないシンプルなフォームの作成方法を説明する。
+データ給源やデータベースとは連動せず、高度なカスタマイズも行わない単純なフォーム
+の作成方法。
 
 Create a document
 ----------------------------------------------------------------------
 
-フォームとして使用する文書を作成する際に特別なことをする必要はないが、コントロールを正確に配置できるようにグリッドを有効にするとよいだろう。メニューの「表示」＞「グリッドとヘルプライン」と進み、「グリッドを表示」を選択する。また、「グリッドにスナップ」を選択することもできる。
+フォームとして使用する文書を作成する際に特別なことをする必要はないが、コントロー
+ルを正確に配置できるように格子を有効にするとよかろう。|MenuBar| で
+:menuselection:`&View-->Gr&id and Helplines-->` と進み、
 
-Create a new Writer document with File > New > Text document.
+* :menuselection:`&Display Grid` をオンにする。
+* :menuselection:`&Snap to Grid` をオンにするといい場合がある。
+
+:menuselection:`&File-->&New-->&Text document` で Writer 文書を新規作成しろ。
 
 Open the form toolbars
 ----------------------------------------------------------------------
 
-つのツールバーがフォームの作成をコントロールする：フォームコントロール（図2）とフォームデザイン（図3）だ。メニューの「表示」→「ツールバー」→「フォームコントロール」と「表示」→「ツールバー」→「フォームデザイン」を選択すると、両方が表示される。また、フォームコントロールツールバー上でフォームデザインツールバーを開くこともできる。
+.. |FormControlsToolbar| replace:: :guilabel:`Form Controls` ツールバー
+.. |FormDesignToolbar| replace:: :guilabel:`Form Design` ツールバー
 
-フォームコントロールツールバーには、よく使われるコントロールの種類ごとに図像がある。これらのコントロールのいくつかはフォームメニューにもある (図 1)。
+二つのツールバーがフォームの作成を操作する：
 
-これらのツールバーは、Writerウィンドウのさまざまな場所にドッキングすることも、フローティングのままにすることもできる。フローティングの場合、ツールバーを垂直から水平に変更したり、1列に並ぶツールの数を変更したりすることもできる。これらの変更を行うには、ツールバーの角をドラッグする。
+* |FormControlsToolbar|
+* |FormDesignToolbar|
 
-これらのツールバーのツールの説明については、6 ページの「フォームコントロールのリファレンス」を参照しろ。
+メニューの :menuselection:`&View-->&Toolbars-->` に各ツールバーの表示切り替え項
+目がある。また、|FormControlsToolbar| 上で |FormDesignToolbar| を開くことも可能。
+
+|FormControlsToolbar| にはよく使われるコントロールの種類ごとに図像がある。これら
+のコントロールのいくつかは :menuselection:`Fo&rm` メニューにもある。
+
+これらのツールバーは Writer ウィンドウのさまざまな場所に入渠することも、浮動のま
+まにすることもできる。浮動の場合、ツールバーを垂直から水平に変更したり、一列に並
+ぶツールの数を変更したりすることもできる。これらの変更を行うには、ツールバーの角
+をドラッグする。
+
+これらのツールバーのツールの説明は :ref:`writer18-anchor-reference` にある。
 
 Activate design mode
 ----------------------------------------------------------------------
 
-デザインモードをオンにするには、フォームコントロールツールバーのデザインモード図像をクリックする。(もう一度クリックするとオフになる。) これにより、フォーム・コントロールを挿入するための図像がアクティブになったり、非アクティブになったりし、編集用のコントロールが選択される。
+.. |DesignModeIcon| replace:: :guilabel:`Design Mode` 図像
 
-デザインモードがオフの場合、フォームはエンド使用者と同じように動作する。ボタンを押したり、チェックボックスを選択したり、一覧項目を選択したりすることができる。
+設計モードをオンにするには、|FormControlsToolbar| の |DesignModeIcon| を使う。こ
+れにより、フォームコントロールをはめ込むための図像が活動を開始したり停止したりし
+て、編集用のコントロールが選択される。
+
+設計モードがオフの場合、フォームは末端使用者と同じように動作する。ボタンを押した
+り、チェックボックスを切り替えたり、一覧項目を選択したりすることは可能だ。
 
 Insert form controls
 ----------------------------------------------------------------------
 
-#. フォームコントロールを文書に挿入するには、コントロールの図像をクリックして選択する。マウスポインタの形が変わる。
-#. コントロールを表示したい文書内の場所をクリックする。(後で移動できる）。
-#. マウスの左ボタンを押したまま、コントロールをドラッグしてサイズを調整する。コントロールによっては、固定サイズのシンボルの後にコントロール名（チェックボックスやオプションボタンなど）が付いているものもある。
-#. コントロールの図像はアクティブのままなので、ツールバーに戻ることなく、同じタイプのコントロールを複数挿入することができる。
-#. 他のツールに変更するには、ツールバーの図像をクリックする。
-#. コントロールの挿入を止めるには、フォームコントロールツールバーの選択図像 をクリックするか、挿入したコントロールのどれかをクリックする。マウスポインタは通常の表示に戻る。
+#. フォームコントロールを文書にはめ込むには、コントロールの図像をクリックして選
+   択する。マウスポインターの形が変わる。
+#. コントロールを表示したい文書内の場所をクリックする（後で移動可能）。
+#. マウスボタンを押したまま、コントロールをドラッグして寸法を調整する。コント
+   ロールによっては、固定寸法の記号の後にコントロール名が付いているものもある。
+#. コントロール図像は活動中のままなので、ツールバーに戻ることなく、同じ型のコン
+   トロールを複数はめ込むことができる。
+#. 他のツールに変更するにはツールバーの図像をクリックする。
+#. コントロールのはめ込みを止めるには |FormControlsToolbar| の選択図像をクリック
+   するか、はめ込んだコントロールのどれかをクリックする。マウスポインターは通常
+   表示に戻る。
 
 .. tip::
 
-   フォームコントロールを正方形にするには、Shiftキーを押しながら作成する。既存のコントロールの比率を同じにするには、Shiftキーを押しながらサイズを変更する。
+   フォームコントロールを正方形にしたり、均整を維持するには、:kbd:`Shift` を押し
+   ながら作成したり寸法を変更したりする。
 
 Configure controls
 ----------------------------------------------------------------------
 
-コントロールを挿入した後は、コントロールの外観や動作を設定する必要がある。文書内でフォームコントロールを右クリックし、コンテキストメニューからコントロールを選択するか、フォームコントロールをダブルクリックすると、選択したコントロールのプロパティダイアログボックスが開く。
+コントロールをはめ込んだ後はその見栄えや動作を設定する必要がある。文書内でフォー
+ムコントロールを右クリックし、コンテキストメニューからコントロールを選択するか、
+フォームコントロールをダブルクリックすると、選択したコントロールの
+|PropertiesDlg| が開く。
 
-プロパティダイアログボックスには三つのタブがある：一般」、「データ」、「イベント」だ。単純なフォームでは、「全般」タブだけが必要だ。詳細については、11 ページの「フォーム・コントロールの設定」、21 ページの「フォーム・コントロールの書式設定オプション」、およびヘルプの説明を参照しろ。データベースで使用するための設定については、17 ページの「データ入力用のフォームを作成する」で説明する。
+|PropertiesDlg| にはタブが三つある：
 
-このダイアログボックスのフィールドはコントロールのタイプによって異なる。追加フィールドを見るには、スクロールバーを使うか、ダイアログボックスを縦に拡大する。
+* |GeneralTab|
+* |DataTab|
+* |EventsTab|
+
+単純なフォームでは |GeneralTab| しか必要ない。詳細については次の説明を読め：
+
+* :ref:`writer18-anchor-configure`
+* :ref:`writer18-anchor-formatting`
+* |Help|
+
+データベースで使用するための設定については :ref:`writer18-anchor-data` を当たれ。
+
+このダイアログボックスのフィールドはコントロールの型によって異なる。追加フィール
+ドを見るには、スクロールバーを使うか、ダイアログボックスを縦に拡大する。
 
 Use the form
 ----------------------------------------------------------------------
 
-フォームを使用するには、デザインモード図像をクリックしてデザインモードを解除する。フォーム文書を保存する。
+フォームを使用するには、|DesignModeIcon| をクリックして設計モードを解除する。
+フォーム文書を保存する。
+
+.. _writer18-anchor-reference:
 
 Form controls reference
 ======================================================================
 
-.. rubric:: Form menu on Menu bar
+Writer で表示される図像は、本書に表示されているものと異なる場合や、ツールバーの
+順序が異なる場合がある。
 
-.. rubric:: Form Controls toolbar
+.. list-table:: Tools on Form Controls toolbar
+   :align: left
+   :header-rows: 0
+   :stub-columns: 1
+   :widths: auto
 
-Writerで表示される図像は、ここに表示されているものと異なる場合や、ツールバーの順序が異なる場合がある。
+   * - 1
+     - Select
+     - フォームコントロールを選択して、それに対して何らかの動作を実行する。
+   * - 2
+     - Design Mode
+     - フォームを編集するモードと使用するモードを切り替える。オンで前者。
+   * - 3
+     - Toggle Form Control Wizards
+     - リストボックスとコンボボックスではウィザードが使える。これらのコントロー
+       ルの作成時にウィザードを起動させたくない場合はオフにしろ。
+   * - 4
+     - Form Design
+     - |FormDesignToolbar| を進水させる。
+   * - 5
+     - Label
+     - テキストラベル。コントロールとして、ラベルフィールドをマクロに連動させる
+       ことができる点がただページに入力するのとは異なる。
+   * - 6
+     - Text Box
+     - フォーム使用者が任意のテキストを入力する欄を作成するコントロール。
+   * - 7
+     - Check Box
+     - フォーム上でオンオフできる箱。ラベルを付けることが可能。
+   * - 8
+     - Option Button
+     - オプションボタン（ラジオボタン）を作成する。複数のボタンがグループ化され
+       ている場合、一度に選択できるのは一つだけだ。グループ化する方法は本文に記
+       述がある。
+   * - 9
+     - List Box
+     - 使用者が選択できるプルダウンメニューとして選択肢の一覧を作成する。フォー
+       ムがデータ給源にリンクされていてウィザードがオンの場合、リストボックスを
+       作成するとリストボックスウィザードが起動する。
 
-Table 1: Tools on Form Controls toolbar
-Form Controls toolbar
+       リンクされていない場合は、ウィザードをオフにして空のリストボックスを作成
+       しろ。それから |GeneralTab| の :guilabel:`Li&st entries` 欄に、一覧に表示
+       する選択肢を入力しろ。
+   * - 10
+     - Combo Box
+     - リストボックスと同様に、選択肢の一覧を設定する。さらに、上部にある盤には
+       選択された内容が表示されるか、フォーム使用者が別の内容を入力することがで
+       きる。これはリストボックスと同じ働きをする。
+   * - 11
+     - Push Button
+     - マクロにリンクできるボタンを作成する。ラベルはボタンに表示される。
+   * - 12
+     - Image Button
+     - プッシュボタンと全く同じ動作をするが、絵として表示される。
+       :guilabel:`Control Properties` ダイアログボックス |GeneralTab|
+       :guilabel:`Graphics` オプションで画像を選択する。
+   * - 13
+     - Formatted Field
+     - 数値の書式オプションを設定できるコントロール。例えば、入力する数値の最大
+       値や最小値、数値の種類（小数点以下、科学的、通貨）を設定することが可能。
+   * - 14
+     - Date Field
+     - 日付を格納する。フィールドが受け付ける最も古い日付と最も新しい日付、既定
+       の日付、日付書式を設定する必要がある。スピナーを追加できる。
+   * - 15
+     - Numerical Field
+     - 数値を表示する。書式、最大値、最小値、既定値を指定する必要がある。スピ
+       ナーを追加できる。
+   * - 16
+     - Group Box
+     - グループボックスには使い方が二つある。ウィザードがオンの場合、グループ
+       ボックスを作成すると、:guilabel:`Group Element Wizard` が起動する。これは
+       オプションボタンのグループを作成する。たいていの場合、グループボックスを
+       使うのが、オプションボタン群を作成する最善の方法だ。
 
-1
-Select
-Selects a form control to perform some other action on it.
-2
-Design Mode
-Toggles between design mode on (to edit forms) and design mode off (to use forms).
-3
-Toggle Form Control Wizards
-Some form controls (List Box and Combo Box) have optional wizards. If you do not want the wizard to launch when you create one of these controls, use the Wizards On/Off icon to switch wizards off.
-4
-Form Design
-Launches the Form Design toolbar, which can also be opened with View > Toolbars > Form Design.
-5
-Label
-A text label. The difference between this and just typing on the page is that, as a control, you can link a label field to macros so, for example, something happens when the mouse passes over it or clicks on it.
-6
-Text Box
-A control to create a box into which the form’s user can type any text.
-7
-Check Box
-A box that can be selected or deselected on the form. You can label the box.
-8
-Option Button
-Creates an option button (also known as a radio button). When multiple buttons are grouped together, only one can be selected at a time. The easiest way to group multiple buttons is to use the Group Box icon on the More Controls toolbar, with wizards enabled.
-9
-List Box
-Creates a list of options as a pull-down menu that the user can choose from. If the form is linked to a data source and wizards are on, creating a list box launches the List Box Wizard.
-If the form is not linked to a data source, turn wizards off and create an empty list box. Then in the List Entries field on the General tab, enter the options you want to appear on the list.
-10
-Combo Box
-As with a List Box, you set up a list of choices. In addition, a panel at the top either displays the choice made or allows the form user to type in something else. This works the same as the List Box.
-11
-Push Button
-Creates a button that can be linked to a macro. The label is the name that appears on the button.
-12
-Image Button
-Behaves exactly like a push button, but displays as an image. Choose the image in the Graphics option on the General tab in the Control Properties dialog.
-13
-Formatted Field
-A control allowing numeric formatting options. For example, you can set maximum and minimum values for the number entered, or the number type (decimal places, scientific, currency).
-14
-Date Field
-Stores a date. You need to configure the earliest and latest dates the field will accept, the default date, and the date format. You can add a spinner.
-15
-Numerical Field
-Displays a number. You need to specify formatting, maximum, minimum and default values. You can add a spinner.
-16
-Group Box
-Group boxes have two uses. If wizards are on, creating a group box launches the Group Element wizard. This creates a group of options buttons (in which only one may be selected at a time). In most cases, using a group box is the best way to create a set of option buttons.
-If wizards are off, a group box is simply a visual box to group together different controls. It has no effect on the way the controls operate.
-17
-Time Field
-Works like a date field but specifies a time.
-18
-Currency Field
-Works like a numeric field; additionally you can add a currency symbol.
-19
-Pattern Field
-Useful when the form links into a data source. Specify an Edit Mask to restrict what a user can enter into the field. Specify a Literal Mask to restrict which data is displayed from the data source.
-20
-Table Control
-Table controls are only useful with a data source. If no data source is specified, you will be prompted to choose one in the Table Element Wizard. You then pick the fields to display and, when design mode is off, the data appears in the table. The table also includes controls to step through the records.
-Records can be added, deleted, and modified in the table.
-21
-Navigation Bar
-A navigation bar is the same as the Form Navigation toolbar (View > Toolbars > Form Navigation), but can be placed anywhere in the document and be resized.
-22
-Image Control
-Only useful when the form is connected to a data source and a field in the data source exists that can hold images. You can add new images to the database or retrieve and display images from it.
-23
-File Selection
-Allows a user to select a file, either by typing the path and name directly or by clicking on a Browse button and choosing the file from a dialog.
-24
-Spin Button
-Allows form users to choose a number by cycling through the list of numbers. You can specify maximum, minimum, default, and the step between numbers.
-This control is not commonly used in Writer.
-25
-Scrollbar
-Creates a scrollbar, with a number of options to define the exact appearance. This control is not commonly used in Writer.
-Form Design toolbar
+       ウィザードがオフの場合、グループボックスは単に異なるコントロールをグルー
+       プ化するための視覚的効果を得るためのものだ。コントロールの動作には何の影
+       響も及ぼさない。
+   * - 17
+     - Time Field
+     - 日付フィールドの時刻版。
+   * - 18
+     - Currency Field
+     - 数値フィールドと同様に機能し、さらに通貨記号を追加できる。
+   * - 19
+     - Pattern Field
+     - フォームがデータ給源に連動している場合に便利。編集マスクを指定して、使用
+       者がフィールドに入力できる内容を制限する。リテラルマスクを指定して、デー
+       タ給源から表示されるデータを制限する。
+   * - 20
+     - Table Control
+     - 表組コントロールはデータ給源がある場合に限り有効だ。データ給源が指定され
+       ていない場合は :guilabel:`Table Element Wizard` でデータ給源を選択するプ
+       ロンプトが表示される。その後、表示するフィールドを選択し、設計モードがオ
+       フの場合、データが表組に表示される。表組にはレコードをステップ実行するた
+       めのコントロールも含まれている。
 
-Table 2: Tools on Form Design toolbar
-Form Design toolbar
+       レコードの追加、削除、変更が可能。
+   * - 21
+     - Navigation Bar
+     - |FormNavigationToolbar| と同じだが、文書のどこにでも配置でき、寸法も変更
+       できる。
+   * - 22
+     - Image Control
+     - フォームがデータ給源に接続されていて、データ給源に画像を保持できるフィー
+       ルドが存在する場合に限り有効だ。データベースに新しい画像を追加したり、
+       データベースから画像を取得して表示したりすることができる。
+   * - 23
+     - File Selection
+     - パスと名前を直接入力するか、|Browse| を押してダイアログボックスからファイ
+       ルを選択する。
+   * - 24
+     - Spin Button
+     - フォーム使用者が数値の一覧を循環して数値を選択できるようにする。最大値、
+       最小値、既定値、数値間の段階を指定できる。
 
-1
-Select anchor for object
-Any form control can be anchored to page, paragraph, or character and also anchored as a character.
-2
-Align Objects
-Disabled unless the control is anchored as a character. You can align a control in different ways, for example so the top or bottom of the control lines up with the top or bottom of the text.
-3
-Bring to Front
-Places the control on top of any other controls or text.
-4
-Forward One
-Brings the control one level up in the stack.
-5
-Back One
-Sends the control one level down in the object stack.
-6
-Send to Back
-Sends the control to the bottom of the stack.
-7
-To Foreground
-Moves the object in front of the text.
-8
-To Background
-Moves the object behind the text.
-9
-Select
-Selects a form control to perform some other action on it.
- 10
-Design Mode
-Toggles between design mode on (to edit forms) and design mode off (to use forms).
- 11
-Control Properties
-Launches form control properties dialog. This dialog can be kept open whiles different controls are selected.
- 12
-Form Properties
-Launches form properties dialog, which controls properties for the form as a whole, such as which data source it connects to.
- 13
-Form Navigator
-Displays all the forms and controls in the current document and allows you to edit and delete them easily.
-If you use the Form Navigator, give your controls names (in the properties dialog) so you can tell which is which in the navigator.
- 14
-Add Field
-Useful only if you have specified a data source for the form. Otherwise, an empty box opens.
-If you have specified a data source, Add Field opens a list of all the fields in the specified table, which you can then drag and drop onto the page. The fields are placed on the page with the name of the field before them.
- 15
-Activation Order
-Allows you to specify the order in which focus shifts between controls. You can test the order by leaving design mode and using Tab to switch between the controls.
- 16
-Open in Design Mode
-Opens the current form in design mode (to edit the form rather than entering data into it).
- 17
-Automatic Control Focus
-If activated, focus is set to the first form control.
- 18
-Position and Size
-Opens the Position and Size dialog, where you can type precise values, rather than dragging the control. You can also lock the size or position so they do not get changed accidentally. For some controls, you can rotate and set the slant and corner radius.
- 19
-Display Grid
-Displays a grid of dots on the page, to help you line up controls.
- 20
-Snap to Grid
-When a control is brought close to a grid point or line, it will snap to the grid. This makes it is easier to line up controls.
- 21
-Helplines While Moving
-When a control is being moved, lines extend from the control horizontally and vertically to help you position it accurately.
+       このコントロールは Writer ではあまり使われない。
+   * - 25
+     - Scrollbar
+     - スクロールバーを作成し、多くのオプションで正確な見てくれを定義する。この
+       コントロールは Writer ではあまり使われない。
+
+.. list-table:: Tools on Form Design toolbar
+   :align: left
+   :header-rows: 0
+   :stub-columns: 1
+   :widths: auto
+
+   * - 1
+     - Select anchor for object
+     - どのフォームコントロールも、ページ、段落、文字に繋留することができ、また
+       文字として繋留することもできる。
+   * - 2
+     - Align Objects
+     - コントロールが文字として固定されていない限り無効。コントロールの上端や下
+       端をテキストの上端や下端に合わせるなど、さまざまな方法でコントロールを整
+       列させる。
+   * - 3
+     - Bring to Front
+     - コントロールを他のものより手前に配置する。
+   * - 4
+     - Forward One
+     - コントロールをスタックの一段上に移す。
+   * - 5
+     - Back One
+     - コントロールをスタックの一段下に移す。
+   * - 6
+     - Send to Back
+     - コントロールをスタックの最下段に移す。
+   * - 7
+     - To Foreground
+     - オブジェクトをテキストの前に移動する。
+   * - 8
+     - To Background
+     - オブジェクトをテキストの後ろに移動する。
+   * - 9
+     - Select
+     - 先述のものと同じ。
+   * - 10
+     - Design Mode
+     - 先述のものと同じ。
+   * - 11
+     - Control Properties
+     - フォームコントロールの |PropertiesDlg| を開く。異なるコントロールが選択さ
+       れている間開いておくことが可能。
+   * - 12
+     - Form Properties
+     - どのデータ給源に接続するかなど、フォーム全体の性質を制御する
+       |FormPropertiesDlg| を開く。
+   * - 13
+     - Form Navigator
+     - 現在の文書内のフォームとコントロールをすべて表示し、編集や削除が簡単にで
+       きる。
+
+       Form Navigator を使用する場合はコントロールに名前を付けておくと見分けがつ
+       くようになる。
+   * - 14
+     - Add Field
+     - フォームにデータ給源を指定した場合にしか役立たない。そうでない場合は空の
+       箱が開く。
+
+       データ給源を指定した場合、フィールドの追加で指定した表組のすべてのフィー
+       ルドの一覧が表示される。フィールドは、その前にフィールド名を付けてページ
+       に配置される。
+   * - 15
+     - Activation Order
+     - コントロール間でフォーカスが移動する順序を指定できる。設計モードを終了
+       し、:kbd:`Tab` を使ってコントロールを切り替えることで、その順序を試すこと
+       ができる。
+   * - 16
+     - Open in Design Mode
+     - 現在のフォームを設計モードで開く。フォームにデータを入力するのではなく、
+       フォームを編集する。
+   * - 17
+     - Automatic Control Focus
+     - 活動中になると、最初のフォームコントロールにフォーカスが設定される。
+   * - 18
+     - Position and Size
+     - |Position&SizeDlg| を開き、コントロールをドラッグする代わりに正確な値を入
+       力することができる。誤って変更されないように、寸法や位置をロックすること
+       もできる。コントロールによっては、回転させたり、傾きや角の半径を設定する
+       こともできる。
+   * - 19
+     - Display Grid
+     - ページ上に点の格子を表示。コントロールを並べるのに役立つ。
+   * - 20
+     - Snap to Grid
+     - コントロールが格子点や線に近づくと、そこへ吸着する。これにより、コント
+       ロールを配置するのが簡単になる。
+   * - 21
+     - Helplines While Moving
+     - コントロールが移動しているとき、それから水平方向と垂直方向に線が伸び、正
+       確な位置決めができる。
 
 Example: a simple form
 ======================================================================
 
-この例では、図4のようなフォームを作成する。指定されたステップに従えば、このようなフォームになる。
+.. admonition:: 読者ノート
+
+   この節は好きな形調査なるアンケートのフォームを構築するチュートリアルだ。次の
+   コントロールから構成される：
+
+   * 回答者の名前（テキストボックス）
+   * 回答者の性別（ラジオボタン）
+   * 好きな形（リストボックス）
+   * 好きな形すべてを選ぶ（チェックボックス四個）
 
 Create the document
 ----------------------------------------------------------------------
 
-新規文書を開き（ファイル＞新規＞テキスト・文書）、含めるテキストを入力する（例は図5参照）。後で簡単に変更できるが、フォームをデザインするときのガイドとして、最終的な結果をスケッチしておくとよいだろう。
+新規文書を開き、含めるテキストを入力する。後で変更することは容易だが、フォームを
+設計するときの指南として、最終的な結果を素描しておくとよい。
+
+.. admonition:: 読者ノート
+
+   最終フォームからコントロール類全部を除去した内容を文書上に打ち込めばいいよう
+   だ。
 
 Add form controls
 ----------------------------------------------------------------------
 
-次のステップは、文書にフォーム・コントロールを追加することだ。つのコントロールを用意する：
+次の段階は文書にフォームコントロールを追加することだ。次のコントロールを用意す
+る：
 
-* 名前はテキストボックスだ。
-* 性別は、男性、女性、その他の三つのオプションボタンだ。
-* 好きな形は、選択肢の一覧だ。
-* あなたが好きなすべての形は、一連のチェックボックスだ。
+* `Name` はテキストボックスだ。
+* `Gender` は male, female, other のオプションボタンだ。
+* `Favorite shape` は選択肢の一覧だ。
+* `All shapes you like` は一連のチェックボックスだ。いくつでも選択可能。
 
 これらのコントロールを追加するには
 
-#. [ 表示 ] > [ ツールバー ] > [ フォームコントロール ] を選択して、 フォームコントロールツールバーを開く。
-#. ツールがアクティブでない場合は、デザインモード図像をクリックしてアクティブにする。
-#. [テキストボックス] 図像をクリックし、文書内をクリックして、[名前] テキストボックスの形をドラッグして希望のサイズに合わせます。Name: ラベルと一直線になるようにドラッグする。
-#. Toggle Form Control Wizards がオフになっていることを確認する。オプションボタンの図像をクリックする。クリックしてドラッグし、文書のGender: ラベルの近くに三つのオプションボタンを作成する。これらは次のセクションで設定する。
-#. 一覧ボックスの図像をクリックし、文書内のFavourite shape:のそばに一覧ボックスを描きます。これは今のところ単なる空のペインになる。
-#. チェックボックスの図像をクリックし、「好きな図形すべて」によるチェックボックスを、ページをまたいで四つ並べて作成する。
+#. |FormControlsToolbar| を開く。
+#. ツールが活動停止している場合は |DesignModeIcon| をクリックして活動開始する。
+#. :guilabel:`Text Box` 図像をクリック。文書内をクリックして、`Name` テキスト
+   ボックスの形をドラッグして希望の寸法に合わせる。`Name:` ラベルと一直線になる
+   ようにドラッグする。
+#. :guilabel:`Toggle Form Control Wizards` がオフになっていることを確認する。
+   :guilabel:`Option Button` 図像をクリックする。クリックしてドラッグし、文書の
+   `Gender:` ラベルの近くにオプションボタンを三つ作成する。これらは次の節で設定
+   する。
+#. :guilabel:`List Box` 図像をクリックし、文書内の `Favourite shape:` のそばにそ
+   れを描く。これは今のところ単なる空の窓だ。
+#. :guilabel:`Check Box` 図像をクリックし、`All shapes you like` によるチェック
+   ボックスを、ページの端から端まで四つ並べて作成する。
 
-これであなたの文書は図6のようになるはずだ。コントロールがうまく並んでいなくても心配するな。
+コントロールが不格好に並んでいても心配するな。この後修正する。
+
+.. admonition:: 読者ノート
+
+   コントロール各種の錨が適切でない初期値であることが整列が難しい原因だと考えら
+   れる。
+
+.. _writer18-anchor-configure:
 
 Configure form controls
 ----------------------------------------------------------------------
 
+.. |Step1| replace:: :guilabel:`Design Mode` がオンで、:guilabel:`Wizards` がオフであることを確認する。
+
 Text box
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Nameフィールドにはこれ以上の設定は必要ないが、フィールドの高さや幅、背景色、その他の書式を変更したいかもしれない。その場合は
+Nameフィールドにはこれ以上の設定は必要ないが、フィールドの高さや幅、背景色、その
+他の書式を変更したいかもしれない。その場合は
 
-#. デザインモードがオンで、ウィザードがオフであることを確認する。
-#. Name フィールドをダブルクリックして、Properties：テキストボックス］ダイアログボックスを開く（図7）。
-#. [全般]タブで下にスクロールし（または下端を下にドラッグしてダイアログボックスを展開し）、[幅]と[高さ]のプロパティを見つけます。必要に応じてこれらを変更する。
+#. |Step1|
+#. `Name` フィールドをダブルクリックして |PropertiesDlg| を開く。
+#. |GeneralTab| で下にスクロールし、:guilabel:`Width` と :guilabel:`Height` の性
+   質を見つける。必要に応じてこれらを変更する。
 #. ダイアログボックスを閉じるか、開いたままにして他のコントロールを設定する。
 
 Option buttons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Gender オプションボタンは、三つのうち一つだけを選択できるように設定する必要がある。これには、ここで説明するような個別のオプションボタンを使用する方法と、Group Box（14ページ参照）を使用する方法がある。
+`Gender` オプションボタンは、三つのうち一つだけを選択できるように設定する必要が
+ある。これには、ここで説明するような個別のオプションボタンを使用する方法と、
+Group Box を使用する方法がある。
 
-#. Design Mode がオンで、Wizards がオフであることを確認する。
-#. Properties ダイアログボックスが開いている場合は、最初のオプションボタンを 1 回クリックして、ダイアログボックスを Properties に変更する：オプションボタンに変更する。ダイアログボックスが開いていない場合は、最初のオプションボタンをダブルクリックする。プロパティ」ダイアログボックス（図8）の「全般」タブで、「ラベル」フィールドに「男性」、「グループ名」フィールドに「性別」と入力する。
-#. 他の二つのオプションも同様に、ラベルに「Female」、グループ名に「Gender」を使用する。(グループ化により、一度に選択できるオプションは一つだけです)。
+#. |Step1|
+#. |PropertiesDlg| が開いている場合は、最初のオプションボタンを一度クリックし
+   て、ダイアログボックスをオプションボタン用に変更する。ダイアログボックスが開
+   いていない場合は、最初のオプションボタンをダブルクリックする。
+#. |GeneralTab| で :guilabel:`&Label` 欄に `Male` と入力し、:guilabel:`&Group
+   name` 欄に `Gender` と入力する。
+#. 他の二つのオプション `Female` と `Other` も同様にする。グループ化により、一度
+   に選択できるオプションは一つだけだ。
 
-オプションボタンが離れすぎている場合は、それぞれを順番にクリックし、左右にドラッグする。
+オプションボタンが離れ過ぎている場合は、それぞれを順番にクリックし、左右にドラッ
+グする。
 
 オプションボタンがきれいに並んでいない場合は、このようにしろ：
 
-#. フォームコントロールツールバーの［選択］ボタンをクリックし、マウスで三つのオプシ ョンボタンコントロールの周囲にボックスを描いて、すべてを選択する（図9）。
-#. 右クリックして、コンテキスト・メニューから「整列 > 上部」を選択する。図10にその結果を示す。
+#. |FormControlsToolbar| の :guilabel:`Select` ボタンを押し。マウスで三つのオプ
+   ションボタンコントロールの周囲に箱を描いてすべてを選択する。
+#. 右メニューから :menuselection:`Alig&n Objects-->&Top` を選択する。
 
 List box
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-一覧ボックスに選択肢の一覧を追加するには、次のようにする：
+リストボックスに選択肢の一覧を追加するには、次のようにする：
 
-#. デザインモードがオンで、ウィザードがオフであることを確認する。一覧ボックスコントロールをダブルクリックして、コントロールのプロパティダイアログボックスを開く（図11）。Generalタブを選択する。
-#. スクロールダウンして List Entries テキスト入力ボックスを見つける。図形の名前（円、三角形、四角形、五角形）を一つずつ入力する。それぞれの後に、図11に示すように、Shift+Enterを押す。
+#. |Step1|
+#. リストボックスコントロールをダブルクリックして |PropertiesDlg| を開く。
+   |GeneralTab| を選択する。
+#. スクロールダウンして :guilabel:`Li&st entries` 欄を見つける。右の▼を押して図
+   形の名前を一つずつ入力する。
 
-   ダイアログボックスのList entriesボックスから離れてクリックすると、"Circle"; "Triangle"; "Square"; "Pentagon "という行が表示されるはずである（図12）。
+.. admonition:: 読者ノート
+
+   最後の項目入力方法が本書と現況とで異なるので、修正しておく。
 
 Check boxes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 チェックボックスに名前を付けるには
 
-#. デザインモードがオンで、ウィザードがオフであることを確認する。最初のチェックボックスコントロールをダブルクリックする。
-#. プロパティダイアログボックスでProperties: Check Box ダイアログボックス（図 13）で、Label フィールドのテキストを Circle に変更し、Enter を押す。キャレットが次の行に移動し、文書のチェックボックスのラベルが直ちに変更される。
-#. 他の三つのチェックボックスを順番にクリックする。プロパティダイアログボックスのラベルテキスト入力ボックスのテキストを、三角形、四角形、五角形に順番に変更する。
-#. プロパティダイアログボックスを閉じる。
-#. デザインモードをオフにする。
-
-これで、10ページの図4のようなフォームが完成した。
+#. |Step1|
+#. 最初のチェックボックスコントロールをダブルクリックする。
+#. |PropertiesDlg| ダイアログボックスで、:guilabel:`Label` フィールドのテキスト
+   を `Circle` に変更し、:kbd:`Enter` を押す。キャレットが次の行に移動し、文書の
+   チェックボックスのラベルが直ちに変更される。
+#. 他の三つのチェックボックスを順番にクリックする。|PropertiesDlg| のラベルテキ
+   スト入力ボックスのテキストを、三角形、四角形、五角形に順番に変更する。
+#. ダイアログボックスを閉じる。
+#. :guilabel:`Design Mode` をオフにする。
 
 Group box
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Gender 用に個別のオプションボタンを作成するのではなく（12 ページで解説）、Group Box を使ってオプションボタンのグループを挿入することもできる。グループボックスは、（16 ページの図 17 に示すように）選択項目を 1 つずつ積み重ねますが、個々のボタンは好きな配置に移動させることができる（12 ページでは水平に配置した）。
+`Gender` 用に個別のオプションボタンを作成するのではなく、Group Box を使ってオプ
+ションボタンのグループをはめ込むこともできる。グループボックスは選択項目を一つず
+つ積み重ねるが、個々のボタンは好きな配置に移動させることができる。
 
-個々のオプション・ボタンの代わりにグループ・ボックスを使うには：
+個々のオプションボタンの代わりにグループボックスを使うには：
 
-#. デザインモードとウィザードの両方がオンになっていることを確認する。Group Box 図像をクリックし、Gender: ラベルの横にボックスを描きます。グループ要素ウィザード（図14）が自動的に開く。
-#. 左のボックスに「Male」と入力する。ボタンをクリックして、右側の Option fields ボックスに移動する。
-#. FemaleとOtherも同様に入力する。ウィザードは図15のようになる。Next > をクリックする。
-#. ウィザードの次のページ（図16）で、「No, one particular field is not going to be selected as default」を選択する。Next＞をクリックする。
-#. 次のページでは、何も変更しない。次へ」をクリックする。
-#. 次のページで、キャプション領域から「Group Box」の文字を削除する。フォームに「Gender:」ラベルがすでにない場合は、キャプションに「Gender」と入力するとよいだろう。
-#. 完了をクリックする。アンケートフォームは図 17 のようになる。
+#. :guilabel:`Design Mode` がオンで、:guilabel:`Wizards` がオンであることを確認
+   する（ここだけオン）。
+#. :guilabel:`Group Box` 図像をクリックし、`Gender:` ラベルの横にボックスを描く。
+   :guilabel:`Group Element Wizard` が自動的に開く。
+#. 左の入力欄に `Male` と入力する。:guilabel:`&>>` ボタンを押して右側の
+   :guilabel:`Option fields` 箱に移動する。
+#. `Female` と `Other` も同様に入力する。|Next| をクリックする。
+#. 次のページで、:guilabel:`No, one particular field is not going to be selected
+   as default.` を選択する。|Next| を押すクリックする。
+#. 次のページでは何も変更しない。|Next| をクリックする。
+#. 次のページでは説明領域から `Group Box` の文字を削除する。フォームに `Gender:`
+   ラベルがすでにない場合は、説明に `Gender` と入力するとよいだろう。
+#. |Finish| を押す。
 
 Finishing touches
 ----------------------------------------------------------------------
 
-フォームは完成しているが、文書にさらに変更を加えたいと思うかもしれない。これを他の人に送信して記入してもらうつもりなら、おそらく文書を読み取り専用にして、使用者がフォームに記入することはできても、文書に他の変更を加えることができないようにしたいだろう。
+フォームは完成しているが、文書にさらに変更を加えたいと思うかもしれない。これを他
+の人に送信して記入してもらうつもりなら、おそらく文書を読み取り専用にして、使用者
+がフォームに記入することはできても、文書に他の変更を加えることができないようにし
+たいだろう。
 
-文書を読み取り専用にするには、[ファイル] > [プロパティ] を選択し、[セキュリティー] タブを選択して [ファイルを読み取り専用で開く] を有効にする。
+文書を読み取り専用にするには |File-->Properties| を選択し、|SecurityTab| タブを
+選択して :guilabel:`&Open file read-only` をオンにする。
 
 .. note::
 
-   文書が読み取り専用の場合、フォームに記入する人は、「ファイル」＞「名前を付けて保存」で文書を保存する必要がある。
+   文書が読み取り専用の場合、フォーム記入者は :menuselection:`&File-->Save
+   &As...` で文書を保存する必要がある。
 
 Accessing data sources
 ======================================================================
 
-フォームの最も一般的な用途は、データベースに情報を入力することだ。例えば、他の人が連絡先データベースに情報を入力するためのフォームをデザインすることができる。フォームはWriter文書の一部なので、画像、書式、表、その他の要素を含めることができ、思い通りの外観にすることができる。フォームの変更は、文書の編集と同じくらい簡単だ。
+フォームの最も一般的な用途は、データベースに情報を入力することだ。例えば、他の人
+が連絡先データベースに情報を入力するためのフォームを設計することができる。フォー
+ムは文書の一部なので、画像、書式、表組、その他の要素を含めることができ、思い通り
+の体裁にすることができる。フォームの変更は文書の編集と同じくらい簡単だ。
 
-LibreOffice は多数のデータソースにアクセスできる。ODBC、MySQL、Oracle JDBC、スプレッドシート、テキストファイルなどだ。原則として、データベースは読み書きのためにアクセスできるが、その他のデータソース (スプレッドシートなど) は読み取り専用だ。
+LibreOffice は多数のデータ給源にアクセスできる。ODBC, MySQL, Oracle JDBC, スプ
+レッドシート、テキストファイルなどだ。原則として、データベースは読み書きのために
+アクセスできるが、その他のデータ給源（スプレッドシートなど）は読み取り専用だ。
 
 .. tip::
 
-   ご使用のOSでサポートされているデータ・ソース・タイプの一覧を表示するには、[ファイル] > [新規作成] > [データベース]を選択する。データベース・ウィザードの最初のページで、「既存のデータベースに接続する」を選択し、ドロップダウン一覧を開く。
+   使用中の OS が支援するデータ給源型の一覧を表示するには、
+   :menuselection:`&File-->&New-->Data&base...` を選択する。:guilabel:`Database
+   Wizard` の最初のページで :guilabel:`Connect to an e&xisting database` を選択
+   し、ドロップダウン一覧を開く。
 
-この章では、データベースまたはその他のデータソースを作成し、Writer で使用するために登録したものとする。第14章メールマージでは、データベースの作成と登録方法について説明する。
+データベースまたはその他のデータ給源を作成し、Writer で使用するために登録した済
+みであるものとする。|Chapter14| にデータベースの作成と登録方法について説明がある。
+
+.. _writer18-anchor-data:
 
 Creating a form for data entry
 ----------------------------------------------------------------------
 
-データベースが LibreOffice に登録されたら、次の手順に従ってフォームをデータソースにリンクする：
+データベースが LibreOffice に登録されたら、次の手順に従ってフォームをデータ給源
+にリンクする：
 
-#. Writer で新規文書を作成する (ファイル > 新規 > テキスト文書)。
-#. 実際のフィールドを入れずにフォームをデザインする (後でいつでも変更できる)。
-#. フォームコントロールとフォームデザインツールバーを表示する。
-#. デザインモード図像をクリックして、文書をデザインモードにする。
-#. テキストボックスの図像をクリックする。文書内をクリックしてドラッグし、最初のフォームフィールド用のテキストボックスを作成する。
-#. 任意のタイプのフィールドを、同じ方法（クリックしてドラッグ）で追加できる。
+#. Writer で新規文書を作成する。
+#. 実際のフィールドを入れずにフォームを設計する（後でいつでも変更可能）。
+#. |FormControlsToolbar| と |FormDesignToolbar| を表示する。
+#. |DesignModeIcon| をクリックして文書を設計モードにする。
+#. :guilabel:`Text Box` 図像をクリックする。文書内をクリックしてドラッグし、最初
+   のフォームフィールド用のテキストボックスを作成する。
+#. 任意の型のフィールドを同じ方法（クリックしてドラッグ）で追加できる。
 
-ここまでは、最初のフォームを作成したときと同じ手順を踏んでいる。登録したデータソースとフォームをリンクするには、次のようにする：
+ここまでは最初のフォームを作成したときと同じ手順をたどっている。登録済みデータ給
+源とフォームを連動させるには、次のようにする：
 
-#. フォームデザインツールバーの［フォームプロパティ］図像をクリックするか、 挿入したフィールドのいずれかを右クリックして［フォームプロパティ］を選択 し、［フォームプロパティ］ダイアログボックスを開く (図 18)。
-#. ［フォーム・プロパティ］ダイアログボックスで、［データ］タブを選択する。
+.. |ControlPropertiesItem| replace:: :menuselection:`Con&trol Properties...`
+.. |FormPropertiesDlg| replace:: :guilabel:`Form Properties` ダイアログボックス
 
-   * データ・ソースを登録したデータ・ソースに設定する。
-   * 中身・タイプをテーブルに設定する。
-   * アクセスしたいテーブル名を中身に設定する。
-   * ダイアログボックスを閉じる。
-#. 各フォームコントロールを順番にクリックして選択し（周囲に小さな緑色のボックスが表示される）、プロパティダイアログボックスを起動する：右クリックしてコントロールプロパティを選択するか、フォームコントロールツールバーのコントロールプロパティ図像をクリックする。
-#. プロパティダイアログボックスで、データタブをクリックする（図 19）。フォームを正しくセットアップしていれば、データ・フィールド・オプションにデータ・ソース の異なるフィールド（例えば、名前、住所、電話番号）の一覧が表示される。必要なフィールドを選択する。
-#. フィールドに割り当てるべきコントロールがすべて割り当てられるまで、各コントロールを 順番に繰り返する。
+#. |FormDesignToolbar| の :guilabel:`Form Properties` 図像をクリックするか、はめ
+   込んだフィールドのいずれかを右クリックして |FormProperiesItem| を選択し、
+   |FormPropertiesDlg| を開く。
+#. |FormPropertiesDlg| で |DataTab| を選択する。
+
+   * :guilabel:`&Data Source` を登録したデータ給源に設定する。
+   * :guilabel:`&Content type` を `Table` に設定する。
+   * :guilabel:`Cont&ent` をアクセスしたい表組名に設定する。
+
+   ダイアログボックスを閉じる。
+#. 各フォームコントロールを順番にクリックして選択し、|PropertiesDlg| を起動す
+   る。右クリックして |ControlPropertiesItem| を選択するか、|FormDesignToolbar|
+   の :guilabel:`Control Properties` 図像をクリックする。
+#. |PropertiesDlg| で |DataTab| をクリックする。フォームを正しく構成していれば、
+   :guilabel:`&Data field` オプションにデータ給源の異なるフィールド（例えば、名
+   前、住所、電話番号）の一覧が表示される。必要なフィールドを選択する。
+#. フィールドに割り当てるべきコントロールがすべて割り当てられるまで、各コント
+   ロールを順番に繰り返す。
 
 .. caution::
 
-   LibreOffice Base でデータベースを作成し、主キーフィールドの AutoValue を Yes に設定した場合、そのフィールドはフォームの一部である必要はない。AutoValue が No に設定されている場合、そのフィールドを含める必要があり、使用者は新規入力のたびにそのフィールドに一意の値を入力する必要がある。
+   LibreOffice Base でデータベースを作成し、主キーフィールドの AutoValue を
+   `Yes` に設定した場合、そのフィールドはフォームの一部である必要はない。
+   AutoValue が `No` に設定されている場合、そのフィールドを含める必要があり、使
+   用者は新規入力のたびにそのフィールドに一意の値を入力する必要がある。
 
 Entering data into a form
 ----------------------------------------------------------------------
 
-フォームを作成し、データベースと結びつけたら、そのフォームを使ってデータベースにデータを入力したり、すでにあるデータを修正したりする：
+フォームを作成し、データベースと結びつけたら、そのフォームを使ってデータベースに
+データを入力したり、すでにあるデータを修正したりする：
 
-#. フォームがデザインモードでないことを確認する。(フォームコントロールツールバーのデザインモード図像をクリックする。デザインモードがオフの場合、ツールバーのほとんどのボタンは灰色で表示される)。
-#. フォームナビゲーションツールバーがオンになっていることを確認する (表示 > ツールバー > フォームナビゲーション)。このツールバーは通常、ワークスペースの一番下に表示される。
-#. データソースに既存のデータがある場合は、フォームナビゲーションツールバー のコントロールボタンを使用して、さまざまなレコードを参照する。レコードのデータを修正するには、フォームの値を編集する。変更を送信するには、最後のフィールドにキャレットがある状態で Enter キーを押する。レコードが保存され、次のレコードが表示される。
-#. フォームにデータがない場合は、フォームのフィールドに入力して情報を入力する。新しいレコードを送信するには、最後のフィールドにキャレットがある状態で Enter キーを押す。
-#. フォームナビゲーションツールバーから、レコードの削除や新規レコードの追加など、その他の機能を実行できる。
+.. |FormNavigationToolbar| replace:: :guilabel:`Form Navigation` ツールバー
+
+#. フォームが設計モードでないことを確認する。
+#. |FormNavigationToolbar| がオンになっていることを確認する。このツールバーは通
+   常、作業場所の床下に表示される。
+#. データ給源に既存のデータがある場合は |FormNavigationToolbar| のコントロールボ
+   タンを使用して、さまざまなレコードを参照する。レコードのデータを修正するに
+   は、フォームの値を編集する。変更を送信するには、最後のフィールドにキャレット
+   がある状態で :kbd:`Enter` を押す。レコードが保存され、次のレコードが表示され
+   る。
+#. フォームにデータがない場合は、フォームのフィールドに入力して情報を入力する。
+   新しいレコードを送信するには、最後のフィールドにキャレットがある状態で
+   :kbd:`Enter` を押す。
+#. |FormNavigationToolbar| からレコードの削除や新規レコードの追加など、その他の
+   機能を実行できる。
 
 .. note::
 
-   ユーザがフォームに入力しようとして、"Attempt to insert null into a non-nullable column" というエラーが表示された場合、フォーム設計者はデータベースに戻り、主キー・フィールドに Auto Value が Yes に設定されていることを確認する必要がある。このエラーにより、フォーム・ユーザはレコードを保存できなくなる。
+   ユーザがフォームに入力しようとして `Attempt to insert null into a
+   non-nullable column` というエラーが表示された場合、フォーム設計者はデータベー
+   スに戻り、主キーフィールドに AutoValue が `Yes` に設定されていることを確認す
+   る必要がある。このエラーによりレコード保存不能になる。
 
 Advanced form customization
 ======================================================================
@@ -438,66 +666,126 @@ Advanced form customization
 Linking a macro to a form control
 ----------------------------------------------------------------------
 
-任意のフォーム・コントロール（例えば、テキスト・ボックスやボタン）に、何らかのイベントがトリガーされたときにアクションを実行するように設定することができる。
+任意のフォームコントロールに、何らかのイベントがトリガーされたときにアクションを
+実行するように設定することができる。
 
-マクロをイベントに割り当てるには
+マクロをイベントに割り当てる手順：
 
-#. マクロを作成する。入門ガイド』の第 13 章「マクロを始める」を参照しろ。
-#. フォームがデザインモードであることを確認する。フォームコントロールを右クリックし、コンテキストメニューから「コントロールプロパティ」 を選択し、「イベント」タブをクリックする（図 21）。
-#. イベントの横のブラウズ図像をクリックして、アクションの割り当て ダイアログボックスを開く（図 22）。
-#. マクロボタンをクリックし、マクロ選択ダイアログボックス（図示せず）の一覧からマクロ を選択する。Assign action ダイアログボックスに戻る。必要に応じてこれを繰り返し、OK をクリックしてダイアログボックスを閉じる。
+.. |AssignActionDlg| replace:: :guilabel:`Assign Action` ダイアログボックス
 
-マクロは、フォーム全体に関するイベントに割り当てることもできる。これを行うには、文書内のフォームコントロールを右クリックし、「フォームのプロパティ」を選択し、「イベント」タブをクリックする。
+#. マクロを作成する。|Guide| の Chapter 13 を参照しろ。
+#. フォームが設計モードであることを確認する。フォームコントロールを右クリック
+   し、コンテキストメニューから :menuselection:`Con&trol Properties...` を選択
+   し、|EventsTab| をクリックする。
+#. イベントの横の |Browse| を押して |AssignActionDlg| を開く。
+#. :guilabel:`Macro` ボタンを押し、:guilabel:`Macro Selector` ダイアログボックス
+   の一覧からマクロを選択する。|AssignActionDlg| に戻る。必要に応じてこれを繰り
+   返し、|OK| を押してダイアログボックスを閉じる。
+
+マクロをフォーム全体に関するイベントに割り当てることもできる。これを行うには、文
+書内のフォームコントロールを右クリックし、|FormProperiesItem| を選択し、
+|EventsTab| をクリックする。
 
 Fine-tuning database access permissions
 ----------------------------------------------------------------------
 
-既定では、フォームからデータベースにアクセスすると、レコードの追加、削除、修正など、あらゆる変更が可能になる。レコードの追加、削除、修正が可能だ。例えば、使用者は新しいレコードを追加することしかできないようにしたり、既存のレコードを削除することを禁止したりすることができる。
+.. |FormProperiesItem| replace:: :menuselection:`For&m Properties...`
 
-デザイン・モードでフォーム・コントロールを右クリックし、コンテキスト・メニューから Form Properties を選択する。フォーム・プロパティ・ダイアログボックス（図23）のデータ・タブで、以下の各オプションを「はい」または「いいえ」に設定し、使用者のデータ・ソースへのアクセスを制御する：追加を許可する」、「削除を許可する」、「変更を許可する」、「データの追加のみ許可する」。
+既定では、フォームからデータベースにアクセスすると、レコードの追加、削除、修正な
+ど、あらゆる変更が可能になる。この挙動が望ましくない場合がある。例えば、使用者は
+新しいレコードを追加することしかできないようにしたり、既存のレコードを削除するこ
+とを禁止したいことがある。
 
-個々のフィールドを保護することもできる。これは、品目の説明が固定で数量が変更可能な在庫一覧のように、使用者がレコードの一部を変更でき、他の部分のみを表示できるようにしたい場合に便利だ。
+設計モードでフォームコントロールを右クリックし、コンテキストメニューから
+|FormProperiesItem| を選択する。|FormPropertiesDlg| の |DataTab| で、以下の各オ
+プション :guilabel:`Yes` または :guilabel:`No` に設定し、使用者のデータ給源への
+アクセスを制御する：
 
-個々のフィールドを読み取り専用にするには、デザインモードで、文書内のフォームコントロールを右クリックし、コンテキストメニューからコントロールを選択する。Generalタブを選択し、Read-onlyをYesに設定する。
+* :guilabel:`Allo&w additions`
+* :guilabel:`Allow delet&ions`
+* :guilabel:`Allow &modifications`
+* :guilabel:`Add data &only`
+
+個々のフィールドを保護することもできる。これは、品目の説明が固定で数量が変更可能
+な在庫一覧のように、使用者がレコードの一部を変更でき、他の部分のみを表示できるよ
+うにしたい場合に便利だ。
+
+個々のフィールドを読み取り専用にするには、設計モードで文書内のフォームコントロー
+ルを右クリックし、コンテキストメニューから |FormProperiesItem| を選択する。
+|GeneralTab| を選択し、:guilabel:`&Read-only` を :guilabel:`Yes` に設定する。
+
+.. _writer18-anchor-formatting:
 
 Form control formatting options
 ----------------------------------------------------------------------
 
-フォーム・コントロールの外観や動作は、さまざまな方法でカスタマイズできる。これらはすべてデザイン・モードで行いる。フォームコントロールを右クリックし、コンテキストメニューからコントロールのプロパティを選択し、プロパティダイアログボックスの全般タブを選択する。
+フォームコントロールの見てくれや動作はさまざまな方法でカスタマイズできる。これら
+はすべて設計モードで行う。フォームコントロールを右クリックし、コンテキストメ
+ニューから |ControlPropertiesItem| を選択し、|PropertiesDlg| |GeneralTab| を選択
+する。
 
-* ラベル・ボックス（ラベル・フィールドと呼ばれるボックスと混同しないように）にコントロールのラベルを設定する。プッシュ・ボタンやオプション・ボタンなどのいくつかのフォーム・コントロールには、設定可能な可視ラベルがある。また、テキストボックスのように、ラベルを設定できないものもある。
-* 印刷オプションで文書を印刷する場合、フォームコントロールが印刷されるかどうかを設定する。
-* Font設定を使用して、フィールドのラベルまたはフィールドに入力されたテキストのフォント、書体、サイズを設定する。この設定は、チェック・ボックスやオプション・ボタンのサイズには影響しない。
-* テキスト・ボックスでは、テキストの最大長を設定できる。これは、データベースにレコードを追加するときに非常に便利だ。すべてのデータベースのテキストフィールドには最大長が設定されており、入力されたデータが長すぎる場合、LibreOffice はエラーメッセージを表示する。フォームコントロールの最大テキスト長をデータベースフィールドの最大テキスト長と同じに設定することで、このエラーを回避できる。
-* フォーム・コントロールの既定・オプションを設定することができる。既定では、コントロールは空白、またはすべてのオプションが選択されていない状態だ。特定のオプションや一覧項目が選択された状態でコントロールを開始するように設定することができる。
-* パスワードが入力されるコントロールの場合、パスワード文字（たとえば*）を設定すると、その文字だけが表示され、使用者が実際に入力した内容は保存される。
-
-  * フォームコントロールに追加情報やヘルプテキストを追加することができる。
-  * コントロールの表示方法をさらに定義するために、背景色、立体的な外観、テキストフォーマット、スクロールバー、境界線などの他のフォーマットコントロールを使用することができる。
+* :guilabel:`&Label` 欄にコントロールのラベルを設定する。プッシュボタンやオプ
+  ションボタンなどのいくつかのフォームコントロールには設定可能な可視ラベルがあ
+  る。また、テキストボックスのように、ラベルを設定できないものもある。
+* :guilabel:`&Printable` 選択肢で文書を印刷する場合、フォームコントロールが印刷
+  されるかどうかを設定する。
+* :guilabel:`Font` 設定を使用して、フィールドのラベルまたはフィールドに入力され
+  たテキストのフォント、書体、寸法を設定する。この設定はチェックボックスやオプ
+  ションボタンの寸法には影響しない。
+* テキストボックスに対してはテキストの最大長を設定できる。データベースにレコード
+  を追加するときに便利だ。データベースのテキストフィールドすべてには最大長が設定
+  されており、入力されたデータが長すぎる場合、LibreOffice はエラーメッセージを表
+  示する。フォームコントロールの最大テキスト長をデータベースフィールドの最大テキ
+  スト長と同じに設定することでこのエラーを回避できる。
+* フォームコントロールの既定オプションを設定することができる。既定では、コント
+  ロールは空白、またはすべてのオプションがオフである状態だ。特定のオプションや一
+  覧項目が選択された状態でコントロールを開始するように設定することができる。
+* パスワードが入力されるコントロールの場合、パスワード文字（たとえば米印）を設定
+  すると、その文字だけが表示され、使用者が実際に入力した内容は保存される。
+* フォームコントロールに追加情報やヘルプテキストを追加することができる。
+* コントロールの表示方法をさらに定義するために、背景色、立体的な容姿、テキスト書
+  式、スクロールバー、境界などの他のフォーマットコントロールを使用することができ
+  る。
 
 Using content controls
 ======================================================================
 
-中身・コントロールはプレースホルダーだ。雛形、フォーム、文書で使用するために、中身・コントロールを追加したりカスタマイズしたりすることができる。中身・コントロールには、その使用方法を示すことができる。この章で前述したコントロールと似ているものもあるが、作業や書式設定がより簡単になる。ただし、いくつかのフィールドとは異なり、中身・コントロールはデータベース内のデータには接続しない。
+中身コントロールはプレースホルダーだ。雛形、フォーム、文書で使用するために、中身
+コントロールを追加したりカスタマイズしたりすることができる。中身コントロールには
+その使用方法を示すことができる。この章で前述したコントロールと似ているものもある
+が、作業や書式設定がより簡単になる。ただし、いくつかのフィールドとは異なり、中身
+コントロールはデータベース内のデータには接続しない。
 
 Rich Text
-   カスタムフォーマットされたテキストや、表、画像、その他の中身コントロールなどのアイテムが含まれる。
+   カスタムフォーマットされたテキストや、表組、画像、その他の中身コントロールな
+   どのアイテムが含まれる。
 Plain Text
-   単一または複数の段落のプレーンテキストに限られる。リッチテキストとは異なり、表、画像、その他の中身コントロールなどの他のアイテムを含めることはできない。
+   単一または複数の段落のプレーンテキストに限られる。リッチテキストとは異なり、
+   表組、画像、その他の中身コントロールなどの他のアイテムを含めることはできな
+   い。
 Picture
-   文字として固定された画像を一つ含む。中身・コントロールをクリックするとファイルを開くダイアログボックスが開き、プレースホルダーを置き換える画像を選択できる。
+   文字として固定された画像を一つ含む。中身コントロールをクリックすると
+   |OpenFileDlg| が開き、プレースホルダーを置き換える画像を選択できる。
 Check Box
-   対話するためのチェックボックス文字が一つ含まれている。中身コントロールをクリックすると、チェックボックスのチェック状態が切り替わります。
+   対話するためのチェックボックス文字が一つ含まれている。中身コントロールをク
+   リックすると、チェックボックスのチェック状態が切り替わる。
 Combo Box
-   選択可能な一覧項目のドロップダウン選択と、直接編集可能なテキストボックスを含む。
+   選択可能な一覧項目のドロップダウンリストと、直接編集可能なテキストボックスか
+   らなる。
 Drop-down List
-   表示テキストと値のペアの一覧を持つドロップダウンボタンコントロールが含まれている。コンボボックスとは異なり、ドロップダウン一覧は、使用者がカスタム入力を入力することはできない。
+   表示テキストと値のペアの一覧を持つドロップダウンボタンコントロールが含まれて
+   いる。コンボボックスとは異なり、ドロップダウンリストは使用者がカスタム入力を
+   入力することはできない。
 Date
-   カレンダーコントロールを含む。テキストを1段落に制限する。
+   カレンダーコントロールを含む。テキストを一段落に制限する。
 
-文書、雛形、またはフォームに中身コントロールを挿入するには
+文書、雛形、またはフォームに中身コントロールをはめ込む手順：
 
 #. コントロールを表示したい場所にキャレットを置く。
-#. メニューの［フォーム］→［中身コントロール］→［必須コントロール］の順に選択する。
-#. メニューの [ フォーム ] > [ 中身コントロール ] > [ 中身コントロールのプロパティ ] を選択する。これはピクチャコントロールでは使用できない。
-#. 「中身コントロールのプロパティ」ダイアログボックス（図 24）で、オプションで 「中身はプレースホルダテキスト」を選択し、表題とタグを入力する。プロパティはコントロールごとに異なる。詳細はヘルプを参照しろ。
+#. |MenuBar| で :menuselection:`Fo&rm-->Content Controls-->` から欲しいコントロー
+   ルを選択する。
+#. |MenuBar| で :menuselection:`For&m-->Content Controls-->Propertie&s...` を選
+   択する。ピクチャコントロールでは使用不可。
+#. :guilabel:`Content Control Properties` ダイアログボックスで、オプションで
+   :guilabel:`Content is placeholder text` を選択し、表題とタグを打ち込む。性質
+   はコントロールによって異なる。詳細は |Help| を見ろ。
