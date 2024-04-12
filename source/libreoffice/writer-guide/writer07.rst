@@ -5,7 +5,6 @@ Writer Guide Chapter 7, Printing and Publishing ノート
 .. include:: ./abbrev.txt
 .. |DPI| replace:: :abbr:`DPI (dots per inch)`
 .. |EPS| replace:: :abbr:`EPS (Encapsulated PostScript)`
-.. |ISO| replace:: :abbr:`International Organization for Standardization`
 .. |PIN| replace:: :abbr:`PIN (Personal Identification Number)`
 
 .. contents:: 本章見出し
@@ -663,17 +662,16 @@ Controlling export to EPUB
    リー内の現在の文書ディレクトリーからカスタムメディアとメタデータを探す。
 :guilabel:`&Metadata` 区画
    検索に役立つタグを用意しておくファイルの基本情報。これらのフィールドは Writer
-   の :menuselection:`&File --> Prpert&ies...` から既定で取得されるメタデータを
-   編集するもう一つの機会を与える。
+   の |PropertiesM| から既定で取得されるメタデータを編集するもう一つの機会を与え
+   る。
 
 Exporting to other formats
 ======================================================================
 
 LibreOffice では、ファイル形式の変更を伴うファイル操作の一部に export という術語
-を使用している。:menuselection:`&File --> Save As...` で必要なものが見つからない
-場合は :menuselection:`&File --> Expor&t...` も参照しろ。Writer はファイルを
-:abbr:`XHTML (eXtensible HyperText Markup Language)`, |EPUB|, およびその他の形式
-にエクスポートできる。
+を使用している。|SaveAsM| で必要なものが見つからない場合は :menuselection:`&File
+--> Expor&t...` も参照しろ。Writer はファイルを :abbr:`XHTML (eXtensible
+HyperText Markup Language)`, |EPUB|, およびその他の形式にエクスポートできる。
 
 :menuselection:`&File --> Expor&t...` を選択する。:guilabel:`Export` ダイアログ
 ボックスで :guilabel:`ファイル名 (&N)` と :guilabel:`ファイルの種類 (&T)` を選択

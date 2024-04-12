@@ -995,9 +995,8 @@ Protecting cells in a table
 .. tip::
 
    保護された升目にキャレットを置くことができない場合は、キャレットを有効にする
-   必要がある。|OptionsDlg| :menuselection:`LibreOffice Writer-->Formatting
-   Aids` ページ :guilabel:`Protected Area` で :guilabel:`Enable cursor` をオンに
-   する。
+   必要がある。|OptionsDlg| |FormattingAidsPage| :guilabel:`Protected Area` で
+   :guilabel:`Enable cursor` をオンにする。
 
 Adding a caption
 ----------------------------------------------------------------------

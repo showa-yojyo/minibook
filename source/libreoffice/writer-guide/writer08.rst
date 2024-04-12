@@ -833,8 +833,6 @@ Choosing paragraph styles for heading levels
 Assigning outline levels to other styles
 ----------------------------------------------------------------------
 
-.. |HeadingNumberingDlg| replace:: :guilabel:`Heading Numbering` ダイアログボックス
-
 Writer では、任意の段落スタイルにアウトラインレベルを割り当てることができる。こ
 の機能により、|HeadingNumberingDlg| に一覧されているスタイルを使用して、それらの
 見出しを含む目次を作成することができる。たとえば、付録には別のスタイルの順序を使

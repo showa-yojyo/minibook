@@ -54,8 +54,6 @@ Writer の目次機能を使えば、文書内の見出しから目次を自動�
    除、変更を行った場合は、目次を更新する必要がある。これを行うには目次のどこか
    を右クリックし、コンテキストメニューから |UpdateIndexItem| を選択する。
 
-   .. |FormattingAidsPage| replace:: :menuselection:`LibreOffice Writer-->Formatting Aids` ページ
-
    目次内にキャレットを配置できない場合は、|OptionsDlg| |FormattingAidsPage|
    :guilabel:`Protected Areas` 区画で :guilabel:`Enable cursor` をオンにしろ。
 
@@ -228,11 +226,11 @@ Entries tab
 
 .. note::
 
-   :guilabel:`Heading Numbering` ダイアログボックス (see |Chapter08|) で、任意の
-   レベルの :guilabel:`Separator` 区画の :guilabel:`&Before` 欄または
-   :guilabel:`&After` 欄にテキストが含まれている場合、そのテキストはそのレベルの
-   :guilabel:`N#` フィールドの一部になる。構造行を作成する際は、目次の見てくれに
-   不要な効果を与えないように注意しろ。
+   |HeadingNumberingDlg| (see |Chapter08|) で、任意のレベルの
+   :guilabel:`Separator` 区画の :guilabel:`&Before` 欄または :guilabel:`&After`
+   欄にテキストが含まれている場合、そのテキストはそのレベルの :guilabel:`N#`
+   フィールドの一部になる。構造行を作成する際は、目次の見てくれに不要な効果を与
+   えないように注意しろ。
 
 Adding elements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

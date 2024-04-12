@@ -79,9 +79,8 @@ Writer は :menuselection:`LibreOffice-->User Data` ページに保存されて�
    :guilabel:`Apply user data` をオンにする。これらの設定が両方とも選択されてい
    ない限り、文書は最初のページが開かれる。
 
-   または、:menuselection:`Load/Save-->General` ページで :guilabel:`Load view
-   position with the document even if it was saved by a different user` をオンに
-   する。
+   または、|LoadSaveGeneralPage| で :guilabel:`Load view position with the
+   document even if it was saved by a different user` をオンにする。
 
 :guilabel:`Cryptography` 区画では、OpenPGP 暗号化と電子署名に優先する公開鍵を設
 定できる。これらの優先鍵は、文書に署名したり暗号化したりするときに、鍵選択ダイア
@@ -115,8 +114,8 @@ Print options
 Paths options
 ----------------------------------------------------------------------
 
-:menuselection:`LibreOffice-->Paths` ページでは、LibreOffice に関連する、または
-LibreOffice で使用するファイルの場所を必要に応じて変更できる。
+|PathsPage| では、LibreOffice に関連する、または LibreOffice で使用するファイル
+の場所を必要に応じて変更できる。
 
 .. admonition:: 読者ノート
 
@@ -149,9 +148,8 @@ Fonts options
 Security options
 ----------------------------------------------------------------------
 
-:menuselection:`LibreOffice-->Security` ページでは、文書の保存やマクロを含む文書
-を開く際の保障オプションを選択できる。ここに記載されていないオプションについて
-は |Help| または |Guide| を見ろ。
+|SecurityPage| では、文書の保存やマクロを含む文書を開く際の保障オプションを選択
+できる。ここに記載されていないオプションについては |Help| または |Guide| を見ろ。
 
 :guilabel:`Security Options and Warnings`
    変更を記録したり、複数のバージョンを保存したり、文書に隠し情報やメモを含めた
@@ -203,8 +201,8 @@ Choosing options for loading and saving documents
 General
 ----------------------------------------------------------------------
 
-:menuselection:`Load/Save-->General` ページの選択肢のほとんどは、他の事務用ソフ
-トウェア使用者にはおなじみのものだ。いくつかの項目を次に示す：
+|LoadSaveGeneralPage| の選択肢のほとんどは、他の事務用ソフトウェア使用者にはおな
+じみのものだ。いくつかの項目を次に示す：
 
 :guilabel:`Load user-specific settings with the document`
    LibreOffice 文書が保存されると、その使用者のシステムの特定の設定も一緒に保存
@@ -376,8 +374,7 @@ View options
 Formatting Aids options
 ----------------------------------------------------------------------
 
-:menuselection:`LibreOffice Writer-->Formatting Aids` ページで必要なオプションを
-選択しろ。
+|FormattingAidsPage| で必要なオプションを選択しろ。
 
 :guilabel:`Layout Assistance`
    :guilabel:`Math baseline alignment`
@@ -625,8 +622,7 @@ interface` は |EnglishUSA| にし、数値、通貨、単位などの設定に�
 Choose spelling and grammar options
 ----------------------------------------------------------------------
 
-綴字検査と文法検査のオプションを変更するには、:menuselection:`Language
-Settings-->Writing Aids` ページを使用する。
+綴字検査と文法検査のオプションを変更するには |WritingAidsPage| を使用する。
 
 いくつか考慮すべきことがある：
 

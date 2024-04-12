@@ -65,8 +65,8 @@ LibreOffice の新規インストールには雛形があまり含まれてい�
    :menuselection:`&Open` を選択する。選択した雛形に基づく新しい文書が Writer で
    開く。その後、新しい文書を編集して保存できる。
 
-文書の基となる雛形は :menuselection:`&File-->Propert&ies...` で開くダイアログ
-ボックスの :guilabel:`General` ページに記載されている。
+文書の基となる雛形は |PropertiesM| で開くダイアログボックスの |GeneralTab| に記
+載されている。
 
 .. tip::
 
@@ -201,8 +201,8 @@ Installing templates
 
    新しい雛形を雛形フォルダーに手動でコピーすることができる。場所は OS によって
    異なる。雛形フォルダーが計算機のどこに保存されているかについては、
-   |OptionsDlg| :menuselection:`LibreOffice-->Paths` ページを当たれ。他の場所
-   に新しい雛形フォルダーを追加することも可能。詳細については |Guide| を読め。
+   |OptionsDlg| |PathsPage| |LoadSaveGeneralPage| を当たれ。他の場所に新しい雛形
+   フォルダーを追加することも可能。詳細については |Guide| を読め。
 
 Editing a template
 ======================================================================
@@ -461,13 +461,11 @@ Creating a template from a document
 
 文書から雛形を作成するには、
 
-#. :menuselection:`&File-->Save &As...` を選択
-#. :guilabel:`ファイルの種類 (&T)` として :guilabel:`ODF Text Document (.odt)`
-   を選択
+#. |SaveAsM| を選択
+#. |FileTypeList| として :guilabel:`ODF Text Document (.odt)` を選択
 
-作成された雛形はインポートするか |OptionsDlg| :menuselection:`LibreOffice-->
-Paths` ページで雛形用に表示されている場所にプロジェクトフォルダーを追加しない限
-り |TemplatesDlg| には表示されない。
+作成された雛形はインポートするか |OptionsDlg| |PathsPage| で雛形用に表示されてい
+る場所にプロジェクトフォルダーを追加しない限り |TemplatesDlg| には表示されない。
 
 ----
 

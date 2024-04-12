@@ -341,8 +341,7 @@ Anchoring images
 
 .. tip::
 
-   画像に対する既定繋留は |OptionsDlg| の :menuselection:`LibreOffice Writer-->
-   Formatting Aids` ページで設定可能。
+   画像に対する既定繋留は |OptionsDlg| |FormattingAidsPage| で設定可能。
 
 Aligning images
 ----------------------------------------------------------------------
@@ -1185,10 +1184,10 @@ Gallery に表示される画像およびその他の物は、計算機の記憶
 
 にアクセスすることができる。
 
-使用者 Gallery の場所は |OptionsDlg| :menuselection:`LibreOffice-->Paths` で指定
-する。この場所は変更可能であり、Gallery のファイル (SDV) を他の計算機にコピーす
-ることが可能だ。LibreOffice が用意している Gallery の中身は別の場所に格納され、
-変更することは不可能だ。
+使用者 Gallery の場所は |OptionsDlg| |PathsPage| で指定する。この場所は
+変更可能であり、Gallery のファイル (SDV) を他の計算機にコピーすることが可能
+だ。LibreOffice が用意している Gallery の中身は別の場所に格納され、変更すること
+は不可能だ。
 
 .. note::
 

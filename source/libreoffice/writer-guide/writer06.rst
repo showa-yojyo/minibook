@@ -32,7 +32,7 @@ Introduction
      * :guilabel:`Object boundaries`
      * :guilabel:`Table boundaries`
      * :guilabel:`Section boundaries`
-   * :menuselection:`LibreOffice Writer --> Formatting Aids` ページ内
+   * |FormattingAidsPage| 内
 
      * :guilabel:`Pa&ragraph end`
      * :guilabel:`Tabs`

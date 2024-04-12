@@ -185,7 +185,6 @@ Using AutoText to insert often-used fields
 同じフィールドを頻繁に使用する場合は、AutoText を使用するとすばやく簡単にフィー
 ルドをはめ込める。
 
-.. |AutoTextDlg| replace:: :guilabel:`AutoText` ダイアログボックス
 .. |NameBox| replace:: :guilabel:`Na&me`
 
 フィールドに AutoText 項目を定義するには：
