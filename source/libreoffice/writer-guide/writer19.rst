@@ -157,7 +157,7 @@ Writer にスプレッドシートを埋め込むと Calc スプレッドシー�
 
 複雑な表組を作成したり、表形式でデータを表示したりするために、Writer でスプレッ
 ドシートを使用する人もいる。しかし、データの複雑さによっては、Writer の表組機能
-の方がより適切で、より速く使えることがよくある。|Chapter13| を見ろ。
+の方がより適切で、より速く使えることがよくある。|Writer13| を見ろ。
 
 スプレッドシートを Writer 文書に埋め込むには :ref:`writer19-anchor-inserting` の
 手順をとれ。
@@ -374,7 +374,7 @@ Using formatting styles
 埋め込みスプレッドシートが編集モードの場合、Writer は Sidebar の |StylesDeck| に
 スプレッドシートで使用可能なスタイルを表示する。
 
-必要なスタイルがない場合は、作成することができる (|Chapter08|)。埋め込みスプレッ
+必要なスタイルがない場合は、作成することができる (|Writer08|)。埋め込みスプレッ
 ドシートで使用するスタイルは Writer で使用する段落スタイルに似ている。
 
 埋め込みスプレッドシートでスタイルを使用するには、Sidebar の |StylesDeck| を開
@@ -584,7 +584,7 @@ Position and Size dialog
    * |MenuBar| の :menuselection:`F&ormat-->Position and Si&ze...` を選択
    * 図表右クリックメニューから :menuselection:`Position and Si&ze...` を選択
 
-|Position&SizeDlg| の使い方については |Chapter11| を見ろ。
+|Position&SizeDlg| の使い方については |Writer11| を見ろ。
 
 編集モード以外では、|PropertiesDlg| の |Pos&SizeTab| で、図表の位置と寸法を変更
 することができる。図表右クリックメニューから :menuselection:`&Properties...` を
@@ -767,7 +767,7 @@ Writer, Calc, Impress, Draw はバーコードや |QR| コードを生成でき�
 :menuselection:`&Edit Barcode...` を選択して編集することができる。
 
 位置や寸法、境界線、背景、錨、折り返しなど、符号の他の側面を整形するには、符号上
-で右クリックメニューから選択する。詳細については |Chapter11| を参照しろ。
+で右クリックメニューから選択する。詳細については |Writer11| を参照しろ。
 
 .. _writer19-anchor-formatting:
 

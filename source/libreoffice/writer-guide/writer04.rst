@@ -17,11 +17,11 @@ Introduction
 * 自動書式適用の使用
 * 順序なし、順序付き、アウトラインリストの作成
 
-この章の読者が |Chapter02| と |Chapter03| に馴染んでいることを仮定される。
+この章の読者が |Writer02| と |Writer03| に馴染んでいることを仮定される。
 
-|Chapter20| にある提案設定に従うことを推奨されている。
+|Writer20| にある提案設定に従うことを推奨されている。
 
-ページの書式設定については |Chapter05| と |Chapter06| で説明する。
+ページの書式設定については |Writer05| と |Writer06| で説明する。
 
 Formatting: direct (manual) or styles
 ----------------------------------------------------------------------
@@ -48,7 +48,7 @@ Using styles is recommended
 LibreOffice では他の多くの処理にもスタイルが使用されている。たとえば、Writer が
 目次を作成するときは見出しスタイル（または他の選択したスタイル）を使用する。
 
-スタイルとその使用方法については |Chapter08| と |Chapter09| を読め。
+スタイルとその使用方法については |Writer08| と |Writer09| を読め。
 
 スタイルの適用は |Sidebar| の |StylesDeck| を使用してすばやく簡単に行う。
 
@@ -70,7 +70,7 @@ Removing manual formatting
 Formatting paragraphs using styles
 ======================================================================
 
-スタイルを段落に適用する方法については |Chapter08| を読め。
+スタイルを段落に適用する方法については |Writer08| を読め。
 
 * |FormattingToolbar| および :guilabel:`Formatting (Styles)` ツール
   バーの左端にある :guilabel:`Set Paragraph Style` ドロップダウンリスト
@@ -109,7 +109,7 @@ Formatting toolbar
 * :guilabel:`Set Line Spacing` は間隔を選んだり数値で指定したりする
 
 標準インストールではすべてのツールバー図像が表示されるわけではない。ツールバーを
-カスタマイズすることでいつも使うものを追加する。|Chapter01| を見ろ。
+カスタマイズすることでいつも使うものを追加する。|Writer01| を見ろ。
 
 Sidebar Properties deck
 ----------------------------------------------------------------------
@@ -120,7 +120,7 @@ Sidebar Properties deck
 |StylePanel|
    :guilabel:`Set Paragraph Style` ドロップダウンリストと、:guilabel:`Clone
    Formatting`, :guilabel:`Update Selected Style`, :guilabel:`New Style from
-   Selection` の図像が載っている。この辺は |Chapter08| でやる。
+   Selection` の図像が載っている。この辺は |Writer08| でやる。
 |CharacterPanel|
    後述。
 |ParagraphPanel|
@@ -230,7 +230,7 @@ Color` ダイアログボックスを開き、パレットに追加する新し�
 
    段落が右または左余白から字下げされている場合、背景色は字下げの領域には適用さ
    れない。余白まで色を広げるには、枠、図表、またはその他の方法を使用する。
-   |Chapter06| 参照。
+   |Writer06| 参照。
 
 Settings on the Paragraph dialog
 ----------------------------------------------------------------------
@@ -247,7 +247,7 @@ Settings on the Paragraph dialog
 * |TextFlowTab|
 * |Outline&ListTab|
 
-詳しくは |Chapter08| と |Chapter09| を参照しろ。
+詳しくは |Writer08| と |Writer09| を参照しろ。
 
 Borders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -274,7 +274,7 @@ Drop caps
    chapter or section.
 
 一貫性を高めるため、関連する段落に適用する段落スタイルで設定するのが最適だ。詳細
-は |Chapter09| を見ろ。
+は |Writer09| を見ろ。
 
 Area
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -288,21 +288,21 @@ Area
 * ハッチング
 
 塗りつぶしの種類を選択するとその種類で使用できる選択肢が表示される。これらの選択
-肢については |Chapter05| で見る。独自の塗りつぶしを作成することもできる。
+肢については |Writer05| で見る。独自の塗りつぶしを作成することもできる。
 
 Transparency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |TransparencyTab| は段落の背景に影響する。透かしを作成したり、色や画像を淡く（テ
-キストとの明暗の調子対比を強く）するのに便利だ。これも |Chapter05| で詳しくやる。
+キストとの明暗の調子対比を強く）するのに便利だ。これも |Writer05| で詳しくやる。
 
 Text Flow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |TextFlowTab| には区画がある。
 
-* :guilabel:`Hyphenation` については |Chapter02| を見ろ。
-* :guilabel:`Breaks` については |Chapter05| を見ろ。
+* :guilabel:`Hyphenation` については |Writer02| を見ろ。
+* :guilabel:`Breaks` については |Writer05| を見ろ。
 
 :guilabel:`Options` 区画ではページ下部の段落の扱い方を指定する。
 
@@ -331,8 +331,8 @@ Outline & List
 このタブは |HeadingNumberingDlg| と同じ機能をカバーしていないが、ここで選択され
 たアウトラインレベルはそこで定義されたアウトラインに関連している。
 
-* これらの機能の詳細は |Chapter08| と |Chapter09| を参照しろ。
-* 行番号については |Chapter03| を見ろ。
+* これらの機能の詳細は |Writer08| と |Writer09| を参照しろ。
+* 行番号については |Writer03| を見ろ。
 
 Setting tab stops and indents
 ----------------------------------------------------------------------
@@ -361,7 +361,7 @@ Setting tab stops and indents
 
 あるいは、水平定規をダブルクリックして、|ParagraphDlg| |Indents&SpacingTab| を開
 く。よりよい方法は、その段落スタイルにタブを定義することだ。段落スタイルについて
-は |Chapter08| と |Chapter09| を読め。
+は |Writer08| と |Writer09| を読め。
 
 .. tip::
 
@@ -397,7 +397,7 @@ Formatting characters using styles
 * 右クリックメニュー（機能に制限あり）
 * |FormattingStylesToolbar|
 
-文字スタイルの詳細については |Chapter08| と |Chapter09| を読め。
+文字スタイルの詳細については |Writer08| と |Writer09| を読め。
 
 Formatting characters directly
 ======================================================================
@@ -419,8 +419,8 @@ Formatting characters directly
 * :guilabel:`Character Highlighting Color`
 
 段落全体の（フォント名、サイズ、色などの）特性を変更したり、その他多くの目的に
-は、手動で文字を書式設定するのではなく、スタイルの詳細については |Chapter08| と
-|Chapter09| を読め。スタイルの適用は |Sidebar| |StylesDeck| を使用して素早く簡単
+は、手動で文字を書式設定するのではなく、スタイルの詳細については |Writer08| と
+|Writer09| を読め。スタイルの適用は |Sidebar| |StylesDeck| を使用して素早く簡単
 に行う。
 
 :guilabel:`More Options` ボタンをクリックすると、|CharacterDlg| が開き、簡易設定
@@ -463,7 +463,7 @@ Settings on the Character dialog
 ----------------------------------------------------------------------
 
 |CharacterDlg| にはこの節で述べられるタブ六つがある。これらのタブのほとんどは
-|CharacterStyleDlg| のものと同じだ。|Chapter09| を参照しろ。
+|CharacterStyleDlg| のものと同じだ。|Writer09| を参照しろ。
 
 Font and Font Effects
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -540,7 +540,7 @@ Formatting lists using styles
 項目を一階層下げるには、キャレットを行頭（箇条書きまたは数字の後）に置き、
 :kbd:`Tab` を押す。上げるには :kbd:`Shift` + :kbd:`Tab` を押す。
 
-スタイルを使った目録の作成については |Chapter08| と |Chapter09| でわかる。
+スタイルを使った目録の作成については |Writer08| と |Writer09| でわかる。
 
 Formatting lists directly
 ======================================================================
@@ -603,7 +603,7 @@ Using the Bullets and Numbering toolbar
    :guilabel:`Toggle Unordered List` と :guilabel:`Toggle Ordered List` 図像の下
    にあるドロップダウンパレットの選択肢から一つを選択
 
-もっと良い方法が |Chapter12| で述べられる。
+もっと良い方法が |Writer12| で述べられる。
 
 Using the Bullets and Numbering palettes on the Sidebar
 ----------------------------------------------------------------------
@@ -635,7 +635,7 @@ Using the Bullets and Numbering dialog
 * :guilabel:`Position`
 * :guilabel:`Customize`
 
-これらは |Chapter12| で述べられる目録スタイル用のタブと同じだ。
+これらは |Writer12| で述べられる目録スタイル用のタブと同じだ。
 
 Autoformatting
 ======================================================================
@@ -671,5 +671,5 @@ Autoformatting
 .. tip::
 
    たいていの人はスマート引用符を AutoCorrect 設定にしておき、必要なときに
-   :guilabel:`Special Character` ダイアログボックス (|Chapter02|) を使って真っ直
+   :guilabel:`Special Character` ダイアログボックス (|Writer02|) を使って真っ直
    ぐな引用符を挿入する。

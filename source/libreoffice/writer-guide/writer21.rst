@@ -39,7 +39,7 @@ Writer の構成時にこれらの |UI| のいずれかを選択し、いつで�
 Standard interfaces
 ======================================================================
 
-|PreferredUIDlg| の選択肢のうち三つについては |Chapter01| で説明済みだ：
+|PreferredUIDlg| の選択肢のうち三つについては |Writer01| で説明済みだ：
 
 Standard Toolbar
    |StandardToolbar| と |FormattingToolbar| の二つのツールバーが表示される基本
@@ -77,7 +77,7 @@ Writer ではこの |UI| には常に表示される九つの固定タブと、�
 
 |CustomizeDlg| のタブ :guilabel:`Notebookbar` を用いて Tabbed インターフェイスを
 カスタマイズし、さまざまなタブの図像それぞれの表示有無を切り替えることが可能
-だ。|Chapter20| を参照しろ。
+だ。|Writer20| を参照しろ。
 
 タブの図像が Writer ウィンドウの幅に収まらない場合は、行の右端に :guilabel:`»`
 が表示される。これを押せば現在表示されていない追加オプションが現れる。

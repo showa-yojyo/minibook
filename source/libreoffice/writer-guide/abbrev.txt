@@ -1,23 +1,23 @@
-.. |Chapter01| replace:: :doc:`Chapter 1, Introducing Writer <writer01>`
-.. |Chapter02| replace:: :doc:`Chapter 2, Working with Text: Basics <writer02>`
-.. |Chapter03| replace:: :doc:`Chapter 3, Working with Text: Advanced <writer03>`
-.. |Chapter04| replace:: :doc:`Chapter 4, Formatting Text <writer04>`
-.. |Chapter05| replace:: :doc:`Chapter 5, Formatting Pages: Basics <writer05>`
-.. |Chapter06| replace:: :doc:`Chapter 6, Formatting Pages: Advanced <writer06>`
-.. |Chapter07| replace:: :doc:`Chapter 7, Printing and Publishing <writer07>`
-.. |Chapter08| replace:: :doc:`Chapter 8, Introduction to Styles <writer08>`
-.. |Chapter09| replace:: :doc:`Chapter 9, Working with Styles <writer09>`
-.. |Chapter10| replace:: :doc:`Chapter 10, Working with Templates <writer10>`
-.. |Chapter11| replace:: :doc:`Chapter 11, Image and Graphics <writer11>`
-.. |Chapter12| replace:: :doc:`Chapter 12, Lists <writer12>`
-.. |Chapter13| replace:: :doc:`Chapter 13, Tables <writer13>`
-.. |Chapter14| replace:: :doc:`Chapter 14, Mail Merge <writer14>`
-.. |Chapter15| replace:: :doc:`Chapter 15, Tables of Contents, Indexes, Bibliographies <writer15>`
-.. |Chapter16| replace:: :doc:`Chapter 16, Master Documents <writer16>`
-.. |Chapter17| replace:: :doc:`Chapter 17, Fields <writer17>`
-.. |Chapter19| replace:: :doc:`Chapter 19, Spreadsheets, Charts, other Objects <writer19>`
-.. |Chapter20| replace:: :doc:`Chapter 20, Customizing Writer <writer20>`
-.. |Chapter21| replace:: :doc:`Chapter 21, User Interface Variants<writer21>`
+.. |Writer01| replace:: :doc:`Chapter 1, Introducing Writer <writer01>`
+.. |Writer02| replace:: :doc:`Chapter 2, Working with Text: Basics <writer02>`
+.. |Writer03| replace:: :doc:`Chapter 3, Working with Text: Advanced <writer03>`
+.. |Writer04| replace:: :doc:`Chapter 4, Formatting Text <writer04>`
+.. |Writer05| replace:: :doc:`Chapter 5, Formatting Pages: Basics <writer05>`
+.. |Writer06| replace:: :doc:`Chapter 6, Formatting Pages: Advanced <writer06>`
+.. |Writer07| replace:: :doc:`Chapter 7, Printing and Publishing <writer07>`
+.. |Writer08| replace:: :doc:`Chapter 8, Introduction to Styles <writer08>`
+.. |Writer09| replace:: :doc:`Chapter 9, Working with Styles <writer09>`
+.. |Writer10| replace:: :doc:`Chapter 10, Working with Templates <writer10>`
+.. |Writer11| replace:: :doc:`Chapter 11, Image and Graphics <writer11>`
+.. |Writer12| replace:: :doc:`Chapter 12, Lists <writer12>`
+.. |Writer13| replace:: :doc:`Chapter 13, Tables <writer13>`
+.. |Writer14| replace:: :doc:`Chapter 14, Mail Merge <writer14>`
+.. |Writer15| replace:: :doc:`Chapter 15, Tables of Contents, Indexes, Bibliographies <writer15>`
+.. |Writer16| replace:: :doc:`Chapter 16, Master Documents <writer16>`
+.. |Writer17| replace:: :doc:`Chapter 17, Fields <writer17>`
+.. |Writer19| replace:: :doc:`Chapter 19, Spreadsheets, Charts, other Objects <writer19>`
+.. |Writer20| replace:: :doc:`Chapter 20, Customizing Writer <writer20>`
+.. |Writer21| replace:: :doc:`Chapter 21, User Interface Variants<writer21>`
 
 .. |Ctrl+A| replace:: :kbd:`Ctrl` + :kbd:`A`
 .. |Ctrl+C| replace:: :kbd:`Ctrl` + :kbd:`C`
@@ -56,11 +56,16 @@
 .. |CharacterStyleDlg| replace:: :guilabel:`Character Style` ダイアログボックス
 .. |CustomizeDlg| replace:: :guilabel:`Customize` ダイアログボックス
 .. |DocPropsDlg| replace:: :guilabel:`Document Properties` ダイアログボックス
+.. |EditLinksDlg| replace:: :guilabel:`Edit Links` ダイアログボックス
+.. |EditSectionsDlg| replace:: :guilabel:`Edit Sections` ダイアログボックス
+.. |EnvelopeDlg| replace:: :guilabel:`Envelope` ダイアログボックス
 .. |ExtensionsDlg| replace:: :guilabel:`Extensions` ダイアログボックス
 .. |FieldsDlg| replace:: :guilabel:`Fields` ダイアログボックス
 .. |Find&ReplaceDlg| replace:: :guilabel:`Find and Replace` ダイアログボックス
+.. |FrameDlg| replace:: :guilabel:`Frame` ダイアログボックス
 .. |ImageDlg| replace:: :guilabel:`Image` ダイアログボックス
 .. |InsertSectionDlg| replace:: :guilabel:`Insert Section` ダイアログボックス
+.. |InsertTableDlg| replace:: :guilabel:`Insert Table` ダイアログボックス
 .. |ListStyleDlg| replace:: :guilabel:`List Style` ダイアログボックス
 .. |NameDlg| replace:: :guilabel:`Name` ダイアログボックス
 .. |OpenFileDlg| replace:: :guilabel:`開く` ダイアログボックス
@@ -73,17 +78,16 @@
 .. |PropertiesDlg| replace:: :guilabel:`Properties` ダイアログボックス
 .. |SaveAsDlg| replace:: :guilabel:`名前を付けて保存` ダイアログボックス
 .. |StyleDlg| replace:: :guilabel:`Style` ダイアログボックス
+.. |TablePropertiesDlg| replace:: :guilabel:`Table Properties` ダイアログボックス
 .. |TemplateDlg| replace:: :guilabel:`Template` ダイアログボックス
+.. |ThemeDlg| replace:: :guilabel:`Theme` ダイアログボックス
 .. |TOCDlg| replace:: :guilabel:`Table of Contents, Index or Bibliography` ダイアログボックス
 .. |Zoom&ViewLayoutDlg| replace:: :guilabel:`Zoom & View Layout` ダイアログボックス
 
 .. Menus
 .. |File-->| replace:: :menuselection:`&File-->` メニュー
-.. |File-->Print| replace:: :menuselection:`&File-->&Print...`
-.. |File-->Properties| replace:: :menuselection:`&File-->Propert&ies...`
 .. |View-->| replace:: :menuselection:`&View-->` メニュー
 .. |Insert-->| replace:: :menuselection:`&Insert-->` メニュー
-.. |InsertTOCItem| replace:: :menuselection:`&Insert-->Table of Contents and Inde&x-->Table of Contents, &Index or Bibliography...`
 .. |Tools-->| replace:: :menuselection:`&Tools-->` メニュー
 .. |Help-->| replace:: :menuselection:`&Help-->` メニュー
 
@@ -92,6 +96,7 @@
 .. |DrawingToolbar| replace:: :guilabel:`Drawing` ツールバー
 .. |FormattingToolbar| replace:: :guilabel:`Formatting` ツールバー
 .. |FormattingStylesToolbar| replace:: :guilabel:`Formatting (Styles)` ツールバー
+.. |FrameToolbar| replace:: :guilabel:`Frame` ツールバー
 .. |ImageToolbar| replace:: :guilabel:`Image` ツールバー
 .. |StandardToolbar| replace:: :guilabel:`Standard` ツールバー
 .. |TableToolbar| replace:: :guilabel:`Table` ツールバー
@@ -128,10 +133,12 @@
 .. |DocInformationTab| replace:: :guilabel:`DocInformation` タブ
 .. |DocumentTab| replace:: :guilabel:`Document` タブ
 .. |EntriesTab| replace:: :guilabel:`Entries` タブ
+.. |EnvelopeTab| replace:: :guilabel:`Envelope` タブ
 .. |EventsTab| replace:: :guilabel:`Events` タブ
 .. |FontTab| replace:: :guilabel:`Font` タブ
 .. |FontEffectsTab| replace:: :guilabel:`Font Effects` タブ
 .. |FooterTab| replace:: :guilabel:`Footer` タブ
+.. |FormatTab| replace:: :guilabel:`Format` タブ
 .. |FrameStylesTab| replace:: :guilabel:`Frame Styles` タブ
 .. |GeneralTab| replace:: :guilabel:`General` タブ
 .. |HeaderTab| replace:: :guilabel:`Header` タブ
@@ -147,6 +154,7 @@
 .. |ParagraphStylesTab| replace:: :guilabel:`Paragraph Styles` タブ
 .. |PositionTab| replace:: :guilabel:`Position` タブ
 .. |Pos&SizeTab| replace:: :guilabel:`Position and Size` タブ
+.. |PrinterTab| replace:: :guilabel:`Printer` タブ
 .. |SecurityTab| replace:: :guilabel:`Security` タブ
 .. |StatsTab| replace:: :guilabel:`Statistics` タブ
 .. |StylesTab| replace:: :guilabel:`Styles` タブ
@@ -161,6 +169,7 @@
 ..   LibreOffice-->
 .. |ApplicationColors| replace:: :menuselection:`LibreOffice-->Application Colors` ページ
 .. |UserDataPage| replace:: :menuselection:`LibreOffice-->User Data` ページ
+.. |LibreOfficePrintPage| replace:: :menuselection:`LibreOffice-->Print` ページ
 .. |PathsPage| replace:: :menuselection:`LibreOffice-->Paths` ページ
 .. |SecurityPage| replace:: :menuselection:`LibreOffice-->Security` ページ
 ..   Load/Save -->
@@ -172,12 +181,16 @@
 .. |WriterGeneralPage| replace:: :menuselection:`LibreOffice Writer-->General` ページ
 .. |WriterViewPage| replace:: :menuselection:`LibreOffice Writer-->View` ページ
 .. |FormattingAidsPage| replace:: :menuselection:`LibreOffice Writer-->Formatting Aids` ページ
+.. |WriterPrintPage| replace:: :menuselection:`LibreOffice Writer-->Print` ページ
 
 .. Menu commands
+.. |File-->Print| replace:: :menuselection:`&File-->&Print...`
+.. |File-->Properties| replace:: :menuselection:`&File-->Propert&ies...`
 .. |SaveAsM| replace:: :menuselection:`&File-->Save &As...`
 .. |PropertiesM| replace:: :menuselection:`&File-->Propert&ies...`
 .. |EditC| replace:: :menuselection:`&Edit...`
 .. |View-->FieldShadings| replace:: :menuselection:`&View-->Fie&ld Shadings...`
+.. |InsertTOCItem| replace:: :menuselection:`&Insert-->Table of Contents and Inde&x-->Table of Contents, &Index or Bibliography...`
 .. |UpdateLinksM| replace:: :menuselection:`&Tools-->&Update-->&Links`
 .. |UpdateLinksC| replace:: :menuselection:`&Update-->&Links`
 

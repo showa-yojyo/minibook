@@ -27,7 +27,7 @@ LibreOffice の文書はすべて雛形に基づいている。雛形はいく�
 いるテキスト文書用の組み込みの空白雛形を使用する。:ref:`writer10-anchorA` を見ろ。
 
 Writer は通常の文書だけでなく、マスター文書の雛形もサポートしている。マスター
-文書については |Chapter16| を見ろ。
+文書については |Writer16| を見ろ。
 
 この章では LibreOffice の雛形管理機能について説明する。雛形は他の方法でも管理お
 よび使用できるが、その効果は少し異なる。詳しくは :ref:`writer10-anchorB` を見ろ。
@@ -96,7 +96,7 @@ Creating a template from a document
 
 書式設定だけでなく、文書に追加したり変更したりできるあらゆる設定を雛形内に保存で
 きる。例えば、印刷機の設定、パスや色など |OptionsDlg| から設定する一般的な動作、
-|Chapter20| で説明するメニューやツールバーのカスタマイズなどだ。
+|Writer20| で説明するメニューやツールバーのカスタマイズなどだ。
 
 雛形にはテキストを含めることもできるので、文書を新規作成するたびにテキストを入力
 する手間が省ける。例えば、手紙の雛形には、著者の名前、住所、挨拶を入れることがで
@@ -150,7 +150,7 @@ LibreOffice 公式雛形保管庫を開くには、
 
 * Web ブラウザーで <https://extensions.libreoffice.org/> にアクセスする
 * |ExtensionsDlg| の :guilabel:`Get more extensions online...` リンクをクリック
-  する。|Chapter20| 参照。
+  する。|Writer20| 参照。
 
 Extensions Web ページ 左側の列の :guilabel:`Add tag filters` で
 :guilabel:`Templates` と :guilabel:`Writer` を選択する。Web ページが更新される。
@@ -195,7 +195,7 @@ Installing templates
 #. パッケージのインストールが完了したら LibreOffice を再起動する。雛形は
    |TemplatesDlg| から使用でき、拡張機能は |ExtensionsDlg| に表示される。
 
-|ExtensionsDlg| の情報は |Chapter20| を見ろ。
+|ExtensionsDlg| の情報は |Writer20| を見ろ。
 
 .. tip::
 
@@ -269,7 +269,7 @@ Manually changing the template
 
 最良の結果を得るためには、スタイルの名前は既存ｑ文書と新しい雛形で同じであるべき
 だ。そうでない場合は、古いスタイルを新しいものに置き換える必要があるかもしれな
-い。スタイルの置き換えについては |Chapter02| を見ろ。
+い。スタイルの置き換えについては |Writer02| を見ろ。
 
 文書を別の雛形に手動で関連付けるには：
 

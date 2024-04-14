@@ -33,7 +33,7 @@ Writer にある画像は次の基本的な型のものだ：
 
 この章では画像、図式、芸術作品について説明する。
 
-* 図表の作成方法については |Chapter19| で説明している。
+* 図表の作成方法については |Writer19| で説明している。
 * 図面ツールの詳細については |Draw| を参照。
 * 図式については |Calc| を参照。
 
@@ -187,8 +187,8 @@ Embedding linked images
 
 #. Writer で文書を開く。
 #. メニューから :menuselection:`&Edit-->E&xternal Links...` を選択する。
-#. :guilabel:`Edit Link` ダイアログボックスには、リンクされたファイルすべてが一
-   覧表示される。:guilabel:`Source file` 一覧から対象ファイルを選択する。
+#. |EditLinksDlg| にはリンクされたファイルすべてが一覧表示される。
+   :guilabel:`Source file` 一覧から対象ファイルを選択する。
 #. :guilabel:`&Break Link` ボタンを押す。
 #. |Yes| を押す。
 
@@ -795,11 +795,11 @@ Image dialog options
    ンにする。
 |BordersTab|
    画像の周囲に境界線を作成する。:guilabel:`Borders` ダイアログボックスは表組や
-   段落の境界線を定義するときに使うものと同じだ。|Chapter04| 参照。画像に影を足
+   段落の境界線を定義するときに使うものと同じだ。|Writer04| 参照。画像に影を足
    すこともできる。
 |AreaTab|
    画像の背景色を変更する。この設定は透明度のある画像にしか望ましい結果をもたら
-   さない。|Chapter04| 参照。
+   さない。|Writer04| 参照。
 :guilabel:`Hyperlink` タブ
    画像にハイパーリンクを関連付けるか、:ref:`画像マップ<writer11-anchor-map>` を
    作成する。

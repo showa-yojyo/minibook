@@ -33,7 +33,7 @@ Introduction
 .. note::
 
    メニューとツールバーのカスタマイズは雛形に保存することができる。これを行うに
-   は、まずそれらを文書に保存し、|Chapter10| にあるように、文書を雛形として保存
+   は、まずそれらを文書に保存し、|Writer10| にあるように、文書を雛形として保存
    する。複数のプロジェクトで作業する場合、こういうものが便利になる。
 
 Choosing options for all of LibreOffice
@@ -84,7 +84,7 @@ Writer は :menuselection:`LibreOffice-->User Data` ページに保存されて�
 
 :guilabel:`Cryptography` 区画では、OpenPGP 暗号化と電子署名に優先する公開鍵を設
 定できる。これらの優先鍵は、文書に署名したり暗号化したりするときに、鍵選択ダイア
-ログボックスであらかじめ選択される。|Chapter07| を見ろ。
+ログボックスであらかじめ選択される。|Writer07| を見ろ。
 
 View options
 ----------------------------------------------------------------------
@@ -96,10 +96,8 @@ View options
 Print options
 ----------------------------------------------------------------------
 
-.. |LibreOffice-->Print| replace:: :menuselection:`LibreOffice-->Print`
-
-|LibreOffice-->Print| ページでは既定の印刷機と最も一般的な印刷方法に合わせて印刷
-オプションを設定する。
+|LibreOfficePrintPage| では既定の印刷機と最も一般的な印刷方法に合わせて印刷オプ
+ションを設定する。
 
 ページの右側にある :guilabel:`Warnings` 区画では、文書で指定された用紙判型または
 向きが、使用している印刷機で使用可能なそれと合致しない場合に警告を表示するかどう
@@ -316,7 +314,7 @@ General options
       .. tip::
 
          不要な変更を避けるには、既定のタブ設定に頼らないことだ。むしろ、段落ス
-         タイルまたは個々の段落でタブを定義しろ。|Chapter04| を読め。
+         タイルまたは個々の段落でタブを定義しろ。|Writer04| を読め。
 
 :guilabel:`Word Count`
    :guilabel:`&Additional separators`
@@ -403,7 +401,7 @@ Formatting Aids options
 
 :guilabel:`Image`
    :guilabel:`&Anchor`
-      新しく追加した画像の既定錨を選択する。|Chapter11| を見ろ。
+      新しく追加した画像の既定錨を選択する。|Writer11| を見ろ。
 
 Grid options
 ----------------------------------------------------------------------
@@ -435,9 +433,9 @@ Basic Fonts options
 Print options
 ----------------------------------------------------------------------
 
-:menuselection:`LibreOffice Writer-->Print` ページでは Writer 文書と一緒に印刷す
-る項目を既定で選択できる。これらのオプションは |LibreOffice-->Print| ページにあ
-る、すべての LibreOffice プログラムの一般的なオプションに追加される。
+|WriterPrintPage| では Writer 文書と一緒に印刷する項目を既定で選択できる。これら
+のオプションは |LibreOfficePrintPage| にある、すべての LibreOffice プログラムの
+一般的なオプションに追加される。
 
 いくつか考慮すべきことがある：
 
@@ -446,7 +444,7 @@ Print options
 * :guilabel:`Print text in blac&k` は色テキスト（画像は含まない）を色印刷機で黒
   として印刷します。白黒印刷機では、このオプションは色テキストを灰色の濃淡ではな
   く黒ベタで印刷する。
-* これに比べて、|LibreOffice-->Print| ページの :guilabel:`Con&vert colors to
+* これに比べて、|LibreOfficePrintPage| の :guilabel:`Con&vert colors to
   grayscale` オプションは、色印刷機ではすべてのテキストと画像を灰色度として印刷
   する。[#writer20-footnote-print]_
 * 両面印刷でない印刷機で両面印刷する場合、左右のページだけを印刷し、他のページを
@@ -461,7 +459,7 @@ Table options
 ----------------------------------------------------------------------
 
 :menuselection:`LibreOffice Writer-->Table` ページでは、表組の既定の動作を指定で
-きる。詳細については |Help| または |Chapter13| を見ろ。
+きる。詳細については |Help| または |Writer13| を見ろ。
 
 いくつか考慮すべきことがある：
 
@@ -483,7 +481,7 @@ Table options
 Changes options
 ----------------------------------------------------------------------
 
-Writer の変更履歴機能 (|Chapter03|) を使用する場合は、LibreOffice Writer-->変更
+Writer の変更履歴機能 (|Writer03|) を使用する場合は、LibreOffice Writer-->変更
 ページ (図 12) を使用して、テキストと書式に対する変更のマーク方法を選択する。変
 更バーは、テキストの行に変更が加えられた箇所を示すことができ、「変更された行」の
 下に表示される。
@@ -492,7 +490,7 @@ Comparison options
 ----------------------------------------------------------------------
 
 :menuselection:`LibreOffice Writer-->Comparison` ページのオプションは、
-|Chapter03| で説明する文書比較機能 :menuselection:`&Edit-->Track
+|Writer03| で説明する文書比較機能 :menuselection:`&Edit-->Track
 Chan&ges-->Co&mpare Document...` で使用する詳細度を決定する。
 
 単語単位で比較するか、文字単位で比較するか、または既定の :guilabel:`A&uto` によ
@@ -559,7 +557,7 @@ Mail Merge Email options
 
 住所録などのデータ給源を使用して個人情報、住所、その他の情報を定型書簡にはめ込む
 ことができる。これらの文書は、郵送用に印刷することも、Writer を通じて電子メール
-で送信することもできる。詳細については |Chapter14| で述べられている。
+で送信することもできる。詳細については |Writer14| で述べられている。
 
 :menuselection:`LibreOffice Writer-->Mail Merge Email` ページを使用して、定型書
 簡を電子メールで送信するための使用者情報と :abbr:`SMTP (Simple Mail Transfer
@@ -649,7 +647,7 @@ Choose spelling and grammar options
 
    綴字検査の際、:guilabel:`Add to Dictionary` とマークされた単語は、既定で標準
    辞書に追加される。:guilabel:`Ignore All` とマークされた単語は、無視単語一覧辞
-   書に追加される。|Chapter02| を読め。
+   書に追加される。|Writer02| を読め。
 
 Defining and using custom dictionaries
 ----------------------------------------------------------------------
@@ -670,7 +668,7 @@ LibreOffice では、多くの言語で文を検査できる。これらの検�
 :menuselection:`Language Settings-->English Sentence Checking` ページで、検査す
 る項目、報告する項目、自動変換する項目を選択できる。このメニューは、LibreOffice
 に既定でインストールされている英語辞書拡張にもある。
-[#writer20-footnote-sentence]_ 検査したいオプション機能を選択する。|Chapter02|
+[#writer20-footnote-sentence]_ 検査したいオプション機能を選択する。|Writer02|
 を見ろ。
 
 追加の文法検査を選択した後、有効にするには LibreOffice を再起動するか、文書を再
@@ -819,7 +817,7 @@ Customizing the user interface
 
 .. admonition:: 読者ノート
 
-   |Chapter21| の冒頭を読め。
+   |Writer21| の冒頭を読め。
 
 Assigning shortcut keys
 ======================================================================
@@ -988,15 +986,13 @@ Setting up document themes
 LibreOffice にはテーマ色の集合がいくつか用意されている。独自の集合を定義するに
 は：
 
-#. Menu バーの :menuselection:`F&ormat-->The&me...` を選択する。
-   :guilabel:`Theme` ダイアログボックスで、開始点として使用するテーマを選択し、
-   :guilabel:`&Add` ボタンを押す。
+#. |MenuBar| の :menuselection:`F&ormat-->The&me...` を選択する。|ThemeDlg| で開
+   始点として使用するテーマを選択し、:guilabel:`&Add` ボタンを押す。
 #. :guilabel:`Theme Color Edit` ダイアログボックスで新しいテーマに名前を付け、利
    用可能なパレットから色を選択する。
-#. |OK| を押して新しいテーマを保存し、:guilabel:`Theme` ダイアログボックスに表示
-   する。
+#. |OK| を押して新しいテーマを保存し、|ThemeDlg| に表示する。
 
-文書テーマの使い方については |Chapter06| を参照しろ。
+文書テーマの使い方については |Writer06| を参照しろ。
 
 .. note::
 

@@ -305,16 +305,11 @@ Editing a saved file of mailing labels
 Printing envelopes
 ======================================================================
 
-.. |EnvelopeDlg| replace:: :guilabel:`Envelope` ダイアログボックス
-.. |EnvelopeTab| replace:: :guilabel:`Envelope` タブ
-.. |FormatTab| replace:: :guilabel:`Format` タブ
-.. |PrinterTab| replace:: :guilabel:`Printer` タブ
-
 宛名札を印刷する代わりに、封筒に直接印刷することもある。
 
 封筒の作成には構成と印刷という二つの段階がある。|EnvelopeDlg| の |FormatTab| と
 |PrinterTab| ページを使って封筒を印刷するための一般的な設定方法については
-|Chapter07| を見ろ。
+|Writer07| を見ろ。
 
 封筒を一通作成するには、宛先欄に名前と住所を入力または貼り付けるか、この節で説明
 するように住所データ給源から情報を取得する。

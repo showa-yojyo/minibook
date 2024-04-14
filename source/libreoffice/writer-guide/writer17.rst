@@ -487,7 +487,7 @@ Using fields in headers and footers
    で `Chapter number without separator` を選択する。|Insert| を押す。
 #. このフィールドを挿入したヘッダーまたはフッターに移動し、章番号とページ番号の
    間に表示したい文字を入力する。
-#. 目次はこれらの章番号を自動的に拾い出さないので、|Chapter15| で説明するように
+#. 目次はこれらの章番号を自動的に拾い出さないので、|Writer15| で説明するように
    |TOCDlg| |EntriesTab| で変更する必要がある。
 
 .. _writer17-anchor-bookmarks:
@@ -543,7 +543,7 @@ Notice という件名かもしれないが、三度目には Final Notice と�
 .. tip::
 
    場合によっては、段落や文字のスタイルを隠すことで同じ効果を得ることができる。
-   |Chapter09| を見ろ。
+   |Writer09| を見ろ。
 
 Choose the types of conditional content to use
 ----------------------------------------------------------------------
@@ -755,10 +755,9 @@ Hidden sections
 隠し区画を見せて編集できるようにするには
 
 .. |EditSectionsM| replace:: :menuselection:`F&ormat-->&Sections...`
-.. |EditSectionDlg| replace:: :guilabel:`Edit Sections` ダイアログボックス
 
 #. |MenuBar| から |EditSectionsM| を選択する。
-#. |EditSectionDlg| で一覧から区画を選択する。
+#. |EditSectionsDlg| で一覧から区画を選択する。
 #. |HideOpt| をオフにし、|OK| を押す。これで区画内容を編集できるようになる。その
    後、|EditSectionsM| を選択し、|HideOpt| をオンにすると、区画を再び隠すことが
    できる。
@@ -767,7 +766,7 @@ Hidden sections
 い）手順：
 
 #. 上記のようにして隠し区画を見せる。
-#. |EditSectionDlg| で一覧から区画を選択する。
+#. |EditSectionsDlg| で一覧から区画を選択する。
 #. |RemoveButton| を押す。区画内容は文書の通常の部分となる。
 
 Change the value of the variable
@@ -814,12 +813,12 @@ Using placeholder fields
 アログボックスが開き、画像を選択するよう促される。画像を選択して |Open| を押す
 と、その画像が文書内のフィールドに置き換わる。
 
-同様に、`Table` プレースホルダ・フィールドをクリックすると :guilabel:`Insert
-Table`ダイアログボックスが開き、`Frame` プレースホルダ・フィールドをクリックする
-と :guilabel:`Frame` ダイアログボックスが開き、`Object` プレースホルダ・フィール
-ドをクリックすると :guilabel:`Insert OLE Object` ダイアログボックスが開く。
-`Text` プレースホルダ・フィールドは、単にそれをクリックし、|PlaceholderBox| にテ
-キストを入力するだけで、フィールドが置き換わる。
+同様に、`Table` プレースホルダフィールドをクリックすると :guilabel:`Insert
+Table` ダイアログボックスが開き、`Frame` プレースホルダフィールドをクリックする
+と |FrameDlg| が開き、`Object` プレースホルダフィールドをクリックすると
+:guilabel:`Insert OLE Object` ダイアログボックスが開く。`Text` プレースホルダ
+フィールドは、単にそれをクリックし、|PlaceholderBox| にテキストを入力するだけ
+で、フィールドが置き換わる。
 
 Using other fields
 ======================================================================
