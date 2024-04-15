@@ -288,7 +288,7 @@ Preparing a document for review
 
 .. tip::
 
-   上記の手順 2 と 3 の代わりに、|PropertiesM| から |SecurityTab| を選択し、
+   上記の手順 2 と 3 の代わりに、|FilePropertiesM| から |SecurityTab| を選択し、
    :guilabel:`Record &changes` をオンにしてから :guilabel:`&Protect...` を押して
    パスワードを入力する方法もある。
 
@@ -554,8 +554,8 @@ Inserting footnotes and endnotes
 
 #. 脚注または巻末注印を表示したい位置にキャレットを置く。
 #. |MenuBar| で :menuselection:`&Insert-->Footnote and Endno&te-->` から関連項目
-   を選択するか、:guilabel:`Standard` ツールバーの :guilabel:`Insert Footnote`ま
-   たは :guilabel:`Insert Endnote` 図像をクリックする。
+   を選択するか、|StandardToolbar| の :guilabel:`Insert Footnote` または
+   :guilabel:`Insert Endnote` 図像をクリックする。
 #. 脚注または巻末注マーカーがテキストに挿入され、選択に応じて、キャレットがペー
    ジ床板の脚注領域または文書末尾の巻末注領域に移動する。この領域に脚注または巻
    末注の内容を入力する。
@@ -669,7 +669,7 @@ Editing hyperlinks
 #. 以下のいずれかを行い |HyperlinkDlg| を開く：
 
    * コンテキストメニューから :menuselection:`Edit Hyperlink...` を選択
-   * :guilabel:`Standard` ツールバーの :guilabel:`Hyperlink` 図像をクリック
+   * |StandardToolbar| の :guilabel:`Hyperlink` 図像をクリック
    * メニューから :menuselection:`&Edit-->&Hyperlink` を選択
 #. 変更を加え |ApplyButton| を押す
 

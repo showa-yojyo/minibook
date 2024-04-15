@@ -43,12 +43,12 @@ Standard interfaces
 
 Standard Toolbar
    |StandardToolbar| と |FormattingToolbar| の二つのツールバーが表示される基本
-   モード。Sidebar にはタブしか表示されない。
+   モード。|Sidebar| にはタブしか表示されない。
 Single Toolbar
-   よく使う機能を備えたツールバー一つしかない。Sidebar には :guilabel:`Hide` ボ
-   タンしか表示されない。
-Sidebar
-   Sidebar が完全に開き、ツールバーは |FormattingToolbar| 一つしか表示されない。
+   よく使う機能を備えたツールバー一つしかない。|Sidebar| には :guilabel:`Hide`
+   ボタンしか表示されない。
+|Sidebar|
+   |Sidebar| が完全に開き、ツールバーは |FormattingToolbar| 一つしか表示されない。
 
 各標準 |UI| の要素は、メニューの :menuselection:`&View-->` から変更できる。
 
@@ -87,14 +87,14 @@ Icon bar
 
 図像バーはタブの左に位置する。見ればわかるが図像集合の編成は左から：
 
-.. list-table:: title
+.. list-table::
    :align: left
    :header-rows: 0
    :stub-columns: 0
    :widths: auto
 
    * - Menu bar
-     - メニューバー表示有無切り替え
+     - |MenuBar| 表示有無切り替え
    * - :guilabel:`Open (Ctrl+O)`
      - |OpenFileDlg| を開き、ファイルを選択する。
    * - :guilabel:`Save (Ctrl+S)`

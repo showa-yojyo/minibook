@@ -19,6 +19,14 @@
 .. |Writer20| replace:: :doc:`Chapter 20, Customizing Writer <writer20>`
 .. |Writer21| replace:: :doc:`Chapter 21, User Interface Variants<writer21>`
 
+.. |Ctrl| replace:: :kbd:`Ctrl`
+.. |Shift| replace:: :kbd:`Shift`
+.. |Alt| replace:: :kbd:`Alt`
+.. |Ctrl+Shift| replace:: :kbd:`Ctrl` + :kbd:`Shift`
+.. |Ctrl+Alt| replace:: :kbd:`Ctrl` + :kbd:`Alt`
+.. |Shift+Alt| replace:: :kbd:`Shift` + :kbd:`Alt`
+.. |Ctrl+Shift+Alt| replace:: :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`Alt`
+
 .. |Ctrl+A| replace:: :kbd:`Ctrl` + :kbd:`A`
 .. |Ctrl+C| replace:: :kbd:`Ctrl` + :kbd:`C`
 .. |Ctrl+V| replace:: :kbd:`Ctrl` + :kbd:`V`
@@ -63,7 +71,11 @@
 .. |FieldsDlg| replace:: :guilabel:`Fields` ダイアログボックス
 .. |Find&ReplaceDlg| replace:: :guilabel:`Find and Replace` ダイアログボックス
 .. |FrameDlg| replace:: :guilabel:`Frame` ダイアログボックス
+.. |HeadingNumberingDlg| replace:: :guilabel:`Heading Numbering` ダイアログボックス
 .. |ImageDlg| replace:: :guilabel:`Image` ダイアログボックス
+.. |InsertBreakDlg| replace:: :guilabel:`Insert Break` ダイアログボックス
+.. |InsertCaptionDlg| replace:: :guilabel:`Insert Caption` ダイアログボックス
+.. |InsertImageDlg| replace:: :guilabel:`Insert Image` ダイアログボックス
 .. |InsertSectionDlg| replace:: :guilabel:`Insert Section` ダイアログボックス
 .. |InsertTableDlg| replace:: :guilabel:`Insert Table` ダイアログボックス
 .. |ListStyleDlg| replace:: :guilabel:`List Style` ダイアログボックス
@@ -77,12 +89,15 @@
 .. |PrintDlg| replace:: :guilabel:`Print` ダイアログボックス
 .. |PropertiesDlg| replace:: :guilabel:`Properties` ダイアログボックス
 .. |SaveAsDlg| replace:: :guilabel:`名前を付けて保存` ダイアログボックス
+.. |SpecialCharDlg| replace:: :guilabel:`Special Characters` ダイアログボックス
 .. |StyleDlg| replace:: :guilabel:`Style` ダイアログボックス
 .. |TablePropertiesDlg| replace:: :guilabel:`Table Properties` ダイアログボックス
-.. |TemplateDlg| replace:: :guilabel:`Template` ダイアログボックス
+.. |TemplatesDlg| replace:: :guilabel:`Templates` ダイアログボックス
 .. |ThemeDlg| replace:: :guilabel:`Theme` ダイアログボックス
 .. |TOCDlg| replace:: :guilabel:`Table of Contents, Index or Bibliography` ダイアログボックス
 .. |Zoom&ViewLayoutDlg| replace:: :guilabel:`Zoom & View Layout` ダイアログボックス
+
+.. |MMWizard| replace:: :guilabel:`Mail Merge Wizard`
 
 .. Menus
 .. |File-->| replace:: :menuselection:`&File-->` メニュー
@@ -108,7 +123,7 @@
 .. Decks
 .. |GalleryDeck| replace:: :guilabel:`Gallery` 甲板
 .. |NavigatorDeck| replace:: :guilabel:`Navigator` 甲板
-.. |PageDeck| replace:: :guilabel:`Page` 盤
+.. |PageDeck| replace:: :guilabel:`Page` 甲板
 .. |PropertiesDeck| replace:: :guilabel:`Properties` 甲板
 .. |StylesDeck| replace:: :guilabel:`Styles` 甲板
 
@@ -142,7 +157,6 @@
 .. |FrameStylesTab| replace:: :guilabel:`Frame Styles` タブ
 .. |GeneralTab| replace:: :guilabel:`General` タブ
 .. |HeaderTab| replace:: :guilabel:`Header` タブ
-.. |HeadingNumberingDlg| replace:: :guilabel:`Heading Numbering` ダイアログボックス
 .. |ImageTab| replace:: :guilabel:`Image` タブ
 .. |Indents&SpacingTab| replace:: :guilabel:`Indents & Spacing` タブ
 .. |ListStylesTab| replace:: :guilabel:`List Styles` タブ
@@ -160,9 +174,11 @@
 .. |StylesTab| replace:: :guilabel:`Styles` タブ
 .. |TableStylesTab| replace:: :guilabel:`Table Styles` タブ
 .. |TableTab| replace:: :guilabel:`Table` タブ
+.. |TabsTab| replace:: :guilabel:`Tabs` タブ
 .. |TextFlowTab| replace:: :guilabel:`Text Flow` タブ
 .. |TransparencyTab| replace:: :guilabel:`Transparency` タブ
 .. |TypeTab| replace:: :guilabel:`Type` タブ
+.. |VariablesTab| replace:: :guilabel:`Variables` タブ
 .. |WrapTab| replace:: :guilabel:`Wrap` タブ
 
 .. Settings
@@ -182,23 +198,38 @@
 .. |WriterViewPage| replace:: :menuselection:`LibreOffice Writer-->View` ページ
 .. |FormattingAidsPage| replace:: :menuselection:`LibreOffice Writer-->Formatting Aids` ページ
 .. |WriterPrintPage| replace:: :menuselection:`LibreOffice Writer-->Print` ページ
+.. |WriterTablePage| replace:: :menuselection:`LibreOffice Writer-->Table` ページ
+.. |WriterCompatPage| replace:: :menuselection:`LibreOffice Writer-->Comparison` ページ
 
 .. Menu commands
-.. |File-->Print| replace:: :menuselection:`&File-->&Print...`
-.. |File-->Properties| replace:: :menuselection:`&File-->Propert&ies...`
-.. |SaveAsM| replace:: :menuselection:`&File-->Save &As...`
-.. |PropertiesM| replace:: :menuselection:`&File-->Propert&ies...`
 .. |EditC| replace:: :menuselection:`&Edit...`
-.. |View-->FieldShadings| replace:: :menuselection:`&View-->Fie&ld Shadings...`
-.. |InsertTOCItem| replace:: :menuselection:`&Insert-->Table of Contents and Inde&x-->Table of Contents, &Index or Bibliography...`
+.. |EditStyleC| replace:: :menuselection:`&Edit Style...`
+.. |ExtensionsM| replace:: :menuselection:`&Tools-->&Extensions...`
+.. |FileExportM| replace:: :menuselection:`&File-->Expor&t...`
+.. |FilePropertiesM| replace:: :menuselection:`&File-->Propert&ies...`
+.. |HeadingNumberingM| replace:: :menuselection:`&Tools-->Heading &Numbering...`
+.. |InsertCaptionM| replace:: :menuselection:`&Insert-->Caption...`
+.. |InsertPageNumberM| replace:: :menuselection:`&Insert-->&Page Number...`
+.. |InsertTOCM| replace:: :menuselection:`&Insert-->Table of Contents and Inde&x-->Table of Contents, &Index or Bibliography...`
+.. |NewC| replace:: :menuselection:`&New...`
+.. |PrintM| replace:: :menuselection:`&File-->&Print...`
+.. |PropertiesC| replace:: :menuselection:`&Properties...`
+.. |SaveAsM| replace:: :menuselection:`&File-->Save &As...`
 .. |UpdateLinksM| replace:: :menuselection:`&Tools-->&Update-->&Links`
 .. |UpdateLinksC| replace:: :menuselection:`&Update-->&Links`
+.. |ViewFieldShadingsM| replace:: :menuselection:`&View-->Fie&ld Shadings...`
 
+.. |CSV| replace:: :abbr:`CSV (comma-separated values)`
 .. |CTL| replace:: :abbr:`CTL (Complex Text Layout)`
+.. |DDE| replace:: :abbr:`|DDE| (Dynamic Data Exchange)`
 .. |ePub| replace:: :abbr:`ePub (Electronic PUBlication)`
+.. |GIF| replace:: :abbr:`GIF (Graphics Interchange Format)`
 .. |HTML| replace:: :abbr:`HTML (HyperText Markup Language)`
 .. |ISO| replace:: :abbr:`International Organization for Standardization`
+.. |JPG| replace:: :abbr:`JPEG (Joint Photographic Experts Group)`
 .. |ODF| replace:: :abbr:`ODF (OpenDocument Format)`
 .. |OLE| replace:: :abbr:`OLE (Object Linking and Embedding)`
 .. |PDF| replace:: :abbr:`PDF (Portable Document Format)`
+.. |PNG| replace:: :abbr:`PNG (Portable Network Graphics)`
+.. |QR| replace:: :abbr:`QR (Quick Response)`
 .. |UI| replace:: UI

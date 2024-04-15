@@ -237,8 +237,6 @@ Settings on the Paragraph dialog
 
 |ParagraphDlg| にはさらにいくつかのタブがある。
 
-.. |TabsTab| replace:: :guilabel:`Tabs` タブ
-
 * |TabsTab|
 * |BordersTab|
 * :guilabel:`Drop Caps` タブ
@@ -671,5 +669,4 @@ Autoformatting
 .. tip::
 
    たいていの人はスマート引用符を AutoCorrect 設定にしておき、必要なときに
-   :guilabel:`Special Character` ダイアログボックス (|Writer02|) を使って真っ直
-   ぐな引用符を挿入する。
+   |SpecialCharDlg| (|Writer02|) を使って真っ直ぐな引用符を挿入する。

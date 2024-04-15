@@ -96,7 +96,7 @@ Open the form toolbars
 目がある。また、|FormControlsToolbar| 上で |FormDesignToolbar| を開くことも可能。
 
 |FormControlsToolbar| にはよく使われるコントロールの種類ごとに図像がある。これら
-のコントロールのいくつかは :menuselection:`Fo&rm` メニューにもある。
+のコントロールのいくつかは :menuselection:`Fo&rm-->` メニューにもある。
 
 これらのツールバーは Writer ウィンドウのさまざまな場所に入渠することも、浮動のま
 まにすることもできる。浮動の場合、ツールバーを垂直から水平に変更したり、一列に並
@@ -553,8 +553,8 @@ Finishing touches
 がフォームに記入することはできても、文書に他の変更を加えることができないようにし
 たいだろう。
 
-文書を読み取り専用にするには |File-->Properties| を選択し、|SecurityTab| タブを
-選択して :guilabel:`&Open file read-only` をオンにする。
+文書を読み取り専用にするには |FilePropertiesM| を選択し、|SecurityTab| タブを選
+択して :guilabel:`&Open file read-only` をオンにする。
 
 .. note::
 

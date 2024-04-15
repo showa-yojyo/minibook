@@ -20,9 +20,9 @@ Introduction
 * これまでの章
 
 この章では、新しいメニューやツールバーの追加、イベントへのマクロの割り当てなど、
-メニュー、ツールバー、キーバインドの一般的なカスタマイズについても簡
-単に説明する。その他のカスタマイズは拡張によって行う。また、いくつかの実験的
-な機能を有効にして使用することもできる。:ref:`writer20-anchor-themes` を見ろ。
+|MenuBar|、ツールバー、キーバインドの一般的なカスタマイズについても簡単に説明す
+る。その他のカスタマイズは拡張によって行う。また、いくつかの実験的な機能を有効に
+して使用することもできる。:ref:`writer20-anchor-themes` を見ろ。
 
 .. tip::
 
@@ -32,7 +32,7 @@ Introduction
 
 .. note::
 
-   メニューとツールバーのカスタマイズは雛形に保存することができる。これを行うに
+   |MenuBar| とツールバーのカスタマイズは雛形に保存することができる。これを行うに
    は、まずそれらを文書に保存し、|Writer10| にあるように、文書を雛形として保存
    する。複数のプロジェクトで作業する場合、こういうものが便利になる。
 
@@ -64,9 +64,9 @@ Draw, Math, Base) に適用される設定のうち、Writer を使用する際�
 User data
 ----------------------------------------------------------------------
 
-Writer は :menuselection:`LibreOffice-->User Data` ページに保存されている名前や
-イニシャルを、文書の性質（著者や最終編集者の情報）、コメントや変更の作成者の名
-前、メーリングリストの送信者アドレスなど、さまざまなことに使用できる。
+Writer は |UserDataPage| に保存されている名前や頭文字を、文書の性質（著者や最終
+編集者の情報）、コメントや変更の作成者の名前、メーリングリストの送信者アドレスな
+ど、さまざまなことに使用できる。
 
 フォームに入力するか、既存の情報を修正または削除しろ。使用者データを文書の性質の
 一部にしたくない場合は、:guilabel:`&Use data for document properties` をオフにし
@@ -75,9 +75,9 @@ Writer は :menuselection:`LibreOffice-->User Data` ページに保存されて�
 .. tip::
 
    文書を保存時にキャレットがあったページで開くようにするには、このオプションを
-   オンにし、各文書の |File-->Properties| と進み、|GeneralTab| タブで
-   :guilabel:`Apply user data` をオンにする。これらの設定が両方とも選択されてい
-   ない限り、文書は最初のページが開かれる。
+   オンにし、各文書の |FilePropertiesM| と進み、|GeneralTab| で :guilabel:`Apply
+   user data` をオンにする。これらの設定が両方とも選択されていない限り、文書は最
+   初のページが開かれる。
 
    または、|LoadSaveGeneralPage| で :guilabel:`Load view position with the
    document even if it was saved by a different user` をオンにする。
@@ -130,7 +130,7 @@ Fonts options
 
 文書にシステム上にないフォントが含まれている場合、LibreOffice は見つからないフォ
 ントを置換する。プログラムが選択するフォントとは異なるフォントを指定するには、
-:menuselection:`LibreOffice-->` ページで代替フォントを指定する。
+:menuselection:`LibreOffice-->Fonts` ページで代替フォントを指定する。
 
 .. tip::
 
@@ -164,8 +164,8 @@ Security options
    削除される。文書と一緒に個人情報を保存し、特定の文書からのみ手動で個人情報を
    削除できるようにするには、これをオフにしろ。
 :guilabel:`Ctrl-click required &to open hyperlinks`
-   LibreOffice の既定動作では、ハイパーリンクを :kbd:`Ctrl` を押しながらクリック
-   することで対象文書が開く。
+   LibreOffice の既定動作では、ハイパーリンクを |Ctrl| を押しながらクリックする
+   ことで対象文書が開く。
 
 Application colors
 ----------------------------------------------------------------------
@@ -184,10 +184,12 @@ LibreOffice の既定とは異なる色を使いたい場合もあるだろう�
 * 色の変更を配色として保存するには、:guilabel:`&Save` を押し、名前を入力し、|OK|
   を押す。
 
+.. |WriterChangesPage| replace:: :menuselection:`LibreOffice Writer-->Changes` ページ
+
 .. note::
 
    変更履歴モードで使用する色の設定を変更するには、|OptionsDlg|
-   :menuselection:`LibreOffice Writer-->Changes` ページだ。
+   |WriterChangesPage| だ。
 
 Choosing options for loading and saving documents
 ======================================================================
@@ -210,7 +212,7 @@ General
 
    このオプションがオフである場合でも、一部は文書と常に一緒に読み込まれる：
 
-   * |File-->Print| 設定
+   * |PrintM| 設定
    * テキスト表組の前の段落の間隔設定
    * リンク、フィールド機能、チャートの自動更新に関する情報
    * アジアの文字形式に関する情報
@@ -291,8 +293,8 @@ Writer文書の体裁や動作が決まる。
 General options
 ----------------------------------------------------------------------
 
-:menuselection:`LibreOffice Writer-->General` の選択肢は、リンクやフィールドの更
-新、定規やその他の測定に使用する単位、既定のタブストップ位置に作用する。
+|WriterGeneralPage| の選択肢は、リンクやフィールドの更新、定規やその他の測定に使
+用する単位、既定のタブストップ位置に作用する。
 
 :guilabel:`Automatically Update Fields`
    作業中にフィールドやチャートが自動的に更新されるのは性能が低下するので避けた
@@ -344,7 +346,7 @@ View options
    条件付きテキストまたは隠しテキストフィールドによって隠されたテキストを表示す
    る。
 :guilabel:`Hidden p&aragraphs`
-   非表示段落フィールドを含む段落を表示する。メニュー
+   非表示段落フィールドを含む段落を表示する。|MenuBar|
    :menuselection:`&View-->Field &Hidden Paragraphs` と同等。
 
 .. rubric:: Display tracked changes
@@ -380,7 +382,7 @@ Formatting Aids options
       これをオンにする。物の垂直方向の配置を変更できるようにするにはオフにする。
       詳細は |Math| を参照。
 :guilabel:`Display Formatting`
-   メニュー :menuselection:`&View-->For&matting Marks` または |StandardToolbar|
+   |MenuBar| :menuselection:`&View-->For&matting Marks` または |StandardToolbar|
    :guilabel:`Formatting Marks` 図像を選択したときに表示される記号はここにあるオ
    プション群によって決まる。段落末尾やタブなどの記号は、文章作成、編集、ページ
    レイアウトに役立つ。たとえば、空白の段落がある場合や、表や図形の幅が広すぎて
@@ -453,7 +455,7 @@ Print options
 .. tip::
 
    特定の文書を印刷する際に、これらの既定のいずれかを上書きすることができる。
-   |File-->Print| を選択し、|PrintDlg| のさまざまなページにあるオプションを使え。
+   |PrintM| を選択し、|PrintDlg| のさまざまなページにあるオプションを使え。
 
 Table options
 ----------------------------------------------------------------------
@@ -481,10 +483,10 @@ Table options
 Changes options
 ----------------------------------------------------------------------
 
-Writer の変更履歴機能 (|Writer03|) を使用する場合は、LibreOffice Writer-->変更
-ページ (図 12) を使用して、テキストと書式に対する変更のマーク方法を選択する。変
-更バーは、テキストの行に変更が加えられた箇所を示すことができ、「変更された行」の
-下に表示される。
+Writer の変更履歴機能 (|Writer03|) を使用する場合は、|WriterChangesPage| を使用
+して、テキストと書式に対する変更のマーク方法を選択する。変更棒はテキストの行に変
+更が加えられた箇所を示すことができ、:guilabel:`Lines Changed` の下で書式指定がな
+される。
 
 Comparison options
 ----------------------------------------------------------------------
@@ -501,11 +503,10 @@ Chan&ges-->Co&mpare Document...` で使用する詳細度を決定する。
 Compatibility options
 ----------------------------------------------------------------------
 
-:menuselection:`LibreOffice Writer-->Compatibility` ページの設定は、Microsoft
-Word から文書をインポートするときに主に使用される。これらの設定の効果がよくわか
-らない場合は、既定設定のままにしておけ。以下に説明されていない設定については
-|Help| を見ろ。:guilabel:`Use as &Default` ボタンを選択しない限り、選択したすべ
-ての設定は現在の文書にしか適用されない。
+|WriterCompatPage| の設定は |MSWord| から文書をインポートするときに主に使用され
+る。これらの設定の効果がよくわからない場合は、既定設定のままにしておけ。以下に説
+明されていない設定については |Help| を見ろ。:guilabel:`Use as &Default` ボタンを
+選択しない限り、選択したすべての設定は現在の文書にしか適用されない。
 
 :guilabel:`Add spacing between paragraphs and tables`
    LibreOffice Writer では段落間隔の扱いが |MSWord| とは異なる。LibreOffice で段
@@ -547,7 +548,7 @@ Writer 文書の表組、画像、枠、|OLE| 物に説明を自動的にはめ�
 
    例えば、データ表組だけでなくレイアウトにも表組を使用する場合など、すべての表
    組に説明が必要とは限らない。個々の表組、画像、その他にはいつでも右クリックメ
-   ニュー :menuselection:`Insert Caption...` で説明を追加できる。
+   ニュー |InsertCaptionM| で説明を追加できる。
 
 章ごとの説明番号の付け方、文字スタイル、枠スタイル、:guilabel:`AutoCaption` ペー
 ジのその他の項目については、本書の他の章に記載されている。
@@ -583,7 +584,7 @@ Install the required dictionaries
 他の辞書を追加するには、
 
 #. インターネットに接続されていることを確認
-#. メニューから :menuselection:`&Tools-->Lan&guages-->&More Dictionaries
+#. |MenuBar| から :menuselection:`&Tools-->Lan&guages-->&More Dictionaries
    Online...` を選択
 #. Web ブラウザーが開き、インストール可能な追加辞書へのリンクを含むページが表示
    される。
@@ -626,7 +627,7 @@ Choose spelling and grammar options
 
 .. |CheckSpelling| replace:: :guilabel:`Check spelling as you type`
 
-* メニュー :menuselection:`&Tools-->&Automatic Spell Checking` または
+* |MenuBar| :menuselection:`&Tools-->&Automatic Spell Checking` または
   |StandardToolbar| :guilabel:`Toggle Automatic Spell Checking` 図像を使用して、
   文書内の |CheckSpelling| 設定を上書きできる。
 * 入力時に文法検査を行うには |CheckSpelling| も有効にしろ。
@@ -662,8 +663,8 @@ Defining and using custom dictionaries
 Sentence checking
 ----------------------------------------------------------------------
 
-LibreOffice では、多くの言語で文を検査できる。これらの検査マンはその言語が計算機
-の既定言語である場合に既定で有効になる。文検査マンの規則集は言語によって異なる。
+LibreOffice では、多くの言語で文を検査できる。これらの検査器はその言語が計算機の
+既定言語である場合に既定で有効になる。文検査器の規則集は言語によって異なる。
 
 :menuselection:`Language Settings-->English Sentence Checking` ページで、検査す
 る項目、報告する項目、自動変換する項目を選択できる。このメニューは、LibreOffice
@@ -691,15 +692,15 @@ Settings-->LanguageTool Server Settings` で :guilabel:`Enable LanguageTool` を
 Customizing menus
 ======================================================================
 
-.. |Tools-->Customize| replace:: :menuselection:`&Tools-->Customize...`
+.. |CustomizeM| replace:: :menuselection:`&Tools-->&Customize...`
 .. |MenusTab| replace:: :guilabel:`Menus` タブ
 .. |ContextMenusTab| replace:: :guilabel:`Context Menus` タブ
 
-Manu バー上のメニューを追加や並べ替えしたり、コマンドを追加したり、その他の変更
+|MenuBar| 上のメニューを追加、並べ替えしたり、コマンドを追加したり、その他の変更
 を行うことができる。右クリックメニューも同様に変更できる。
 
-メニューをカスタマイズするには、|Tools-->Customize| を選択する。|CustomizeDlg|
-で |MenusTab| または |ContextMenusTab| を開く。
+|MenuBar| をカスタマイズするには、|CustomizeM| を選択する。|CustomizeDlg| で
+|MenusTab| または |ContextMenusTab| を開く。
 
 Modifying an existing menu
 ----------------------------------------------------------------------
@@ -742,7 +743,7 @@ Creating a new menu
 #. |OK| を押して保存し、|CustomizeDlg| に戻る。
 
 新しいメニューは |CustomizeDlg| のメニュー一覧に表示される。カスタマイズを保存し
-た後、Menu バーに表示される。
+た後、|MenuBar| に表示される。
 
 新しいメニューを作成したら、上で説明したメニューの変更と同様に、いくつかのコマン
 ドを追加する必要がある。
@@ -761,7 +762,7 @@ Modifying existing toolbars
 
 ツールバーの作成と修正の手順は、メニューの場合と似ている。
 
-#. Menu バーから |Tools-->Customize| を選択する。
+#. |MenuBar| から |CustomizeM| を選択する。
 #. |CustomizeDlg| |ToolbarsTab| で、右上の |ScopeList| で、この変更したツール
    バーを Writer 用に保存するか、選択した文書用に保存するかを選択する。
 #. |TargetList| でカスタマイズするツールバーを選択する。現在のツールバーの内容は
@@ -788,7 +789,7 @@ Creating a new toolbar
 
 新しいツールバーを作成するには：
 
-#. Menu バー |Tools-->Customize| を選択する。
+#. |MenuBar|  |CustomizeM| を選択する。
 #. |CustomizeDlg| |ToolbarsTab| で、|TargetList| の横にあるハンバーガー記号を押
    し、:menuselection:`&Add...` を選択して |NameDlg| を開く。
 #. |NameDlg| で、新しいツールバーの名前を入力し、:guilabel:`&Save in` ドロップダ
@@ -854,9 +855,9 @@ Saving changes to a file
 
 #. キーバインドの割り当てを行った後、|CustomizeDlg| の右側にある
    :guilabel:`&Save...` ボタンを押す。
-#. :guilabel:`Save Keyboard Configuration` ダイアログボックスで :guilabel:`ファ
-   イル名 (&N)` にキーバインド設定ファイルの名前を入力するか、一覧から既存のファ
-   イルを選択する。ファイルを保存する場所を参照する。[#writer20-footnote-cfg]_
+#. :guilabel:`Save Keyboard Configuration` ダイアログボックスで |FileNameBox| に
+   キーバインド設定ファイルの名前を入力するか、一覧から既存のファイルを選択す
+   る。ファイルを保存する場所を参照する。[#writer20-footnote-cfg]_
 #. |Save| を押す。既存のファイルを上書きしようとしている場合は確認ダイアログボッ
    クスが表示されるが、そうでない場合は何も表示されず、ファイルが保存される。
 
@@ -908,7 +909,7 @@ Installing extensions
 
 リポジトリーに一覧されている拡張をインストールする手順：
 
-#. Menu バーから :menuselection:`&Tools-->&Extensions...` を選択する。
+#. |MenuBar| から |ExtensionsM| を選択する。
 #. |ExtensionsDlg| で :guilabel:`Get more extensions online...` をクリックする。
 #. インターネットブラウザーが開く。インストールしたい拡張を見つけて選択し、計算
    機にダウンロードする。
@@ -966,7 +967,7 @@ Adding custom colors
 #. 正方形などの図面物を文書に挿入する。
 #. 物を右クリックし、コンテキストメニューから :menuselection:`A&rea...` を選択す
    る。
-#. :guilabel:`ColorTab` を開く。:guilabel:`Pa&lette` で新しい色を追加したいパ
+#. :guilabel:`Color` ボタンを押す。:guilabel:`Pa&lette` で新しい色を追加したいパ
    レットを選択する。:guilabel:`New` の下で新しい色を定義するか、
    :guilabel:`Pick` ボタンを押して :guilabel:`Pick a Color` ダイアログボックスで
    色を選択する。

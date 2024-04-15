@@ -245,8 +245,8 @@ Moving, resizing, and changing frame attributes
 これらのリサイズ操作は比率を歪める。:kbd:`Shift` を押しながらハンドルをドラッグ
 すると枠は同じ比率を保つ。
 
-|FrameDlg| を開くには、枠を選択して右クリックメニューから
-:menuselection:`&Properties...` を選択する。
+|FrameDlg| を開くには、枠を選択して右クリックメニューから |PropertiesC| を選択す
+る。
 
 枠の境界を追加または削除するには、次のいずれかを行う：
 
@@ -688,8 +688,8 @@ Defining borders and backgrounds
 Adding a border
 ----------------------------------------------------------------------
 
-枠を選択して右クリックし、コンテキストメニューから
-:menuselection:`&Properties...` を選択する。|BordersTab| を選択する。
+枠を選択して右クリックし、コンテキストメニューから |PropertiesC| を選択す
+る。|BordersTab| を選択する。
 
 境界には成分が三つある：
 
@@ -720,9 +720,9 @@ Adding a border
 Adding a color to the background area
 ----------------------------------------------------------------------
 
-まず、枠を選択して右クリックメニューから :menuselection:`&Properties...` を選択
-する。|FrameDlg| で |AreaTab| を選択し :guilabel:`Color` を選択する。パレットか
-ら選択するか、新しい色を作成し、|OK| を押して背景に適用する。
+まず、枠を選択して右クリックメニューから |PropertiesC| を選択する。|FrameDlg| で
+|AreaTab| を選択し :guilabel:`Color` を選択する。パレットから選択するか、新しい
+色を作成し、|OK| を押して背景に適用する。
 
 .. tip::
 
@@ -838,8 +838,8 @@ To enable a page style for page line-spacing
 To enable paragraph styles for page line-spacing
 ----------------------------------------------------------------------
 
-#. |Sidebar| の |StylesDeck| で有効にする段落スタイルを右クリックし
-   :menuselection:`&Edit Style...` を選択
+#. |Sidebar| の |StylesDeck| で有効にする段落スタイルを右クリックし |EditStyleC|
+   を選択
 #. |ParagraphStyleDlg| で |Indents&SpacingTab| を開く
 #. :guilabel:`Activate page li&ne-spacing` をオンにして段落スタイルでページ行間
    を有効にする。オフにすると段落スタイルでページ行間が無効になる。ページスタイ

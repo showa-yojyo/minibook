@@ -162,8 +162,6 @@ Inserting a page break and changing to a new page style
 
 .. rubric:: 方法一
 
-.. |InsertBreakDlg| replace:: :guilabel:`Insert Break` ダイアログボックス
-
 #. 次のページを始めたい位置にキャレットを置く
 #. :menuselection:`&Insert-->More &Breaks-->Manual &Break...` を選択
 #. |InsertBreakDlg| の :guilabel:`Type` 区画で :guilabel:`&Page break` があらか
@@ -263,8 +261,8 @@ Numbering pages
 
 .. tip::
 
-   灰色の背景を消すには |View-->FieldShadings| を選ぶか :kbd:`Ctrl` + :kbd:`F8`
-   を押す。数字の代わりに :guilabel:`Page number` という文字が表示されたら
+   灰色の背景を消すには |ViewFieldShadingsM| を選ぶか :kbd:`Ctrl` + :kbd:`F8` を
+   押す。数字の代わりに :guilabel:`Page number` という文字が表示されたら
    :kbd:`Ctrl` + :kbd:`F9` を押す。これにより、Writer はフィールドに対する名前と
    中身の表示を切り替える。
 
@@ -285,7 +283,7 @@ Simple page numbering
 最も単純な場合、ページ番号を各ページの天井か床下に表示し、それ以外には何も表示し
 ない。これを行うには、
 
-* :menuselection:`&Insert-->&Page Number...` を選択するか、
+* |InsertPageNumberM| を選択するか、
 * ヘッダーまたはフッターにキャレットを置き、
   :menuselection:`&Insert-->Fiel&d-->&Page Number` を選択するa。
 
@@ -295,8 +293,8 @@ Simple page numbering
 Page number wizard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-メニューから :menuselection:`&Insert-->&Page Number...` を選択すると
-:guilabel:`Page Number Wizard` が開き、
+|MenuBar| から |InsertPageNumberM| を選択すると :guilabel:`Page Number Wizard`
+が開き、
 
 * 位置（ヘッダーまたはフッター）、
 * 配置（右、中央、左）、
@@ -427,9 +425,8 @@ Numbering pages by chapter
 
 #. 章の表題はすべて同じ段落スタイル、例えば `Heading 1` スタイルで識別されるよう
    にしろ。
-#. :menuselection:`&Tools-->Heading &Numbering` を使って :guilabel:`&Level` 1 に
-   使用する段落スタイルを Writer に伝え、:guilabel:`&Number` 欄で `1, 2, 3, ...`
-   を指定する。
+#. |HeadingNumberingM| を使って :guilabel:`&Level` 1 に使用する段落スタイルを
+   Writer に伝え、:guilabel:`&Number` 欄で `1, 2, 3, ...` を指定する。
 #. 文書に章番号を挿入する：
 
    #. 先に挿入したページ番号の直前のヘッダーまたはフッターにキャレットを置き、メ
@@ -459,7 +456,7 @@ Including other information in headers and footers
 フィールドについては |Writer17| で扱う。ここではある例が役に立つ。文書の表題を
 `Default Page Style` のヘッダーに挿入するには：
 
-#. |MenuBar| |PropertiesM| を選択
+#. |MenuBar| |FilePropertiesM| を選択
 #. |DescritionTab|
 #. :guilabel:`&Title` 欄に文書の表題を入力
 #. |OK| を押して |PropertiesDlg| を閉じる
@@ -631,8 +628,7 @@ Setting up a landscape page style
 #. 余白を他のページと同じにするには、現在のページスタイル [#writer05-footnote]_
    の余白設定に注意しろ。
 #. |Sidebar| |StylesDeck| で :guilabel:`Page Styles` 一覧から
-   :guilabel:`Landscape` を右クリックし、:menuselection:`&Edit Style...` を選択
-   する。
+   :guilabel:`Landscape` を右クリックし、|EditStyleC| を選択する。
 #. |PageStyleDlg| |OrganizerTab| で :guilabel:`Ne&xt style` が
    :guilabel:`Landscape` に設定されていることを確認。
 #. |PageStyleDlg| |PageTab| で :guilabel:`&Orientation` が

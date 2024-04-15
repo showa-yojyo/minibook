@@ -38,9 +38,9 @@ Why use a master document?
   合。|Writer| の各章はこの使い方の一例だ。
 * 従属文書が複数の最終文書で使用される場合。
 
-宗主文書の作成にはいくつかの方法がある。どの方法にも長所と短所がある。どの方法を選
-ぶかは何を達成しようとしているかによる。この章では各方法を採用する基準を提案する
-とともに説明する。
+宗主文書の作成にはいくつかの方法がある。どの方法にも長所と短所がある。どの方法を
+選ぶかは何を達成しようとしているかによる。この章では各方法を採用する基準を提案す
+るとともに説明する。
 
 .. _writer16-anchor-navigator:
 
@@ -246,24 +246,23 @@ Step 3. Create the master document
 
 宗主文書を次の手順で作成しろ：
 
-.. |TemplatesItem| replace:: :menuselection:`&File-->&New-->Te&mplates...`
-.. |CreateMasterDocItem| replace:: :menuselection:`&File-->Sen&d-->Create Master &Document`
+.. |NewTemplatesM| replace:: :menuselection:`&File-->&New-->Te&mplates...`
+.. |CreateMasterDocM| replace:: :menuselection:`&File-->Sen&d-->Create Master &Document`
 
-#. 作成した雛形から新しい文書を開く。|TemplatesItem| を選択し、作成した雛形を選
+#. 作成した雛形から新しい文書を開く。|NewTemplatesM| を選択し、作成した雛形を選
    択して雛形を作成する。この新しい文書の最初のページが、最終文書の最初のページ
    に設定したいページスタイルに設定されていることを確認する。この例では、最初の
    ページのスタイルは表題ページだ。
 #. テキストや改頁が雛形からこの文書に来た場合には、そのテキストを削除する。目次、
    索引、ヘッダーとフッターのフィールドは残せる。
-#. |CreateMasterDocItem| を選択する。宗主文書をプロジェクトフォルダーに保存す
-   る。この宗主文書については後ほど述べる。今のところ、開いたままでも閉じてもよ
-   い。
+#. |CreateMasterDocM| を選択する。宗主文書をプロジェクトフォルダーに保存する。こ
+   の宗主文書については後ほど述べる。今のところ、開いたままでも閉じてもよい。
 
 .. note::
 
    :menuselection:`&File-->&New-->M&aster Document` を使用すると、既定の雛形に関
-   連付けられた宗主文書ファイル (.odm) が作成される。文書が自作雛形に基づく場合、
-   またはそうなる場合は、上記の方法を使用しろ。
+   連付けられた宗主文書ファイル (.odm) が作成される。文書が自作雛形に基づく場
+   合、またはそうなる場合は、上記の方法を使用しろ。
 
 Step 4. Create subdocuments
 ----------------------------------------------------------------------
@@ -275,7 +274,7 @@ Step 4. Create subdocuments
 
 通常の文書を作成するのと同じ方法で従属文書を作成する：
 
-#. |TemplatesItem| を選択し、必要な雛形を選択して、プロジェクト雛形（重要）に基
+#. |NewTemplatesM| を選択し、必要な雛形を選択して、プロジェクト雛形（重要）に基
    づいた白紙の文書を開く。
 #. 雛形から持ってきた不要なテキストやその他の素材を削除し、最初のページを章の最
    初のページに指定したページスタイルに設定する。
@@ -292,7 +291,7 @@ Step 5. Add some pages to the master document
 
 作業の便宜を図るべく、次のようにする：
 
-* 段落マークが表示されていることを確認する。:kbd:`Ctrl` + :kbd:`F10` を押す。
+* 段落マークが表示されていることを確認する。|Ctrl| + :kbd:`F10` を押す。
 * テキストの境界、表組の境界、区画の境界を表示する。|OptionsDlg|
   |ApplicationColors| で各種選択肢をオンにする。
 
@@ -302,7 +301,7 @@ Step 5. Add some pages to the master document
 
 #. 作成した宗主文書 (.odm) を開き、表題頁の内容を入力する。ページの最後の空白段
    落に挿入点を置き、:menuselection:`Insert-->More Breaks-->Manual Break` を実行
-   する。:guilabel:`Insert Break` ダイアログボックスで、
+   する。|InsertBreakDlg| で、
 
    * :guilabel:`Page Break` と
    * 二ページ目のページスタイル `Copyright Page`
@@ -327,7 +326,7 @@ Step 6. Insert the subdocuments into the master document
 
 これで従属文書を追加する準備ができた。
 
-.. |InsertFile| replace:: :menuselection:`&Insert-->&File`
+.. |InsertFileC| replace:: :menuselection:`&Insert-->&File`
 .. |MoveUpIcon| replace:: :guilabel:`Move Up` 図像
 .. |MoveDownIcon| replace:: :guilabel:`Move Down` 図像
 
@@ -343,11 +342,11 @@ Step 6. Insert the subdocuments into the master document
    ビューと宗主ビューを切り替える。
 #. Navigator 上で `Text` を選択し、Navigator ツールバーの
    :menuselection:`Insert-->&File` をクリックするか、右クリックメニューの
-   |InsertFile| を選択する。
+   |InsertFileC| を選択する。
 
-   標準ファイルダイアログボックスが開く。Step 4 で作成した必要なファイルを選択
-   し、|InsertFile| を選択。本書の例では章を七つ使用するのだが、上の提案に従って
-   第七章を最初に読み込む。
+   標準ファイルダイアログボックスが開く。Step 4 で作成した必要なファイルを選択し、
+   |InsertFileC| を選択。本書の例では章を七つ使用するのだが、上の提案に従って第
+   七章を最初に読み込む。
 
    指定したファイルは Navigator で `Text` 項目の前にはめ込まれる。
 #. `Text` には表題頁やその他の資料が含まれているので、それを強調表示してお
@@ -371,7 +370,7 @@ Step 7. Add table of contents, bibliography, index
 を参照しろ。
 
 Step 5 で目次を挿入しなかった場合は、目次を挿入する最初のテキスト区画のページに
-キャレットを置き、|InsertTOCItem| を選択して目次を作成する。
+キャレットを置き、|InsertTOCM| を選択して目次を作成する。
 
 宗主文書の最後にテキスト区画がない場合は、最後の従属文書の前にテキスト区画をはめ
 込み、最後の従属文書の後になるように下に移動する。これで、従属文書に書誌項目が含
@@ -411,7 +410,7 @@ Combining several documents into a master document
    は、一時的に低レベルの見出しに変更し、それがどれであるかを記録しておく（例え
    ば、各見出しの末尾に米印を付け、後でレベル 1 の見出しに戻す必要があることを忘
    れないようにする）。
-#. |CreateMasterDocItem| を選択し、この宗主文書に:ref:`名前を付けて保存
+#. |CreateMasterDocM| を選択し、この宗主文書に:ref:`名前を付けて保存
    <how-to-do-it>` する。
 
    以下の手順では原文書に対して次を仮定する：
@@ -431,7 +430,7 @@ Combining several documents into a master document
    * :ref:`writer16-anchor-navigator`
    * :ref:`writer16-anchor-step6`
 
-#. |InsertFile| を選択。
+#. |InsertFileC| を選択。
 #. ファイル選択ダイアログボックスで検査結果ファイル (:file:`Results1.odt`,
    :file:`Results2.odt`, etc.) の場所に移動する。最初のファイル
    :file:`Results1.odt` を選択し、|Open| を押す。ファイルが既存の項目の上に挿入
@@ -466,7 +465,7 @@ Splitting a document into master and subdocuments
 
 分割方法：
 
-#. 現文書を開いて |CreateMasterDocItem| を選択する。
+#. 現文書を開いて |CreateMasterDocM| を選択する。
 #. :guilabel:`Name and Path of Master Document` ダイアログボックスで：
 
    #. 宗主文書とその従属文書を保存するフォルダーに移動する。
@@ -503,23 +502,21 @@ Restarting page numbering
 いページから始まる `Heading 1` 段落で始めることができる。:guilabel:`Page
 &number` チェックボックスはオフであるので、番号は前のページの番号から続く。
 
-.. |HeadingNumberItem| replace:: :menuselection:`&Tools-->Heading &Numbering...`
-
 このダイアログボックスの |Outline&ListTab| を見て、`Heading 1` がどのアウトライ
 ンレベルに割り当てられているかを確認する。通常は `Level 1` だ。このレベルは
-|HeadingNumberItem| で設定されているので、ここで変更することはできない。
+|HeadingNumberingM| で設定されているので、ここで変更することはできない。
 
-|HeadingNumberItem| で :guilabel:`Outline Level 1` に割り当てられる段落スタイル
+|HeadingNumberingM| で :guilabel:`Outline Level 1` に割り当てられる段落スタイル
 は一つしかない。しかし、|ParagraphStyleDlg| |Outline&ListTab| を使えばどのアウト
 ラインレベルにも段落スタイルをさらに割り当てることができる。
 
 したがって、`Heading 1` と体裁は同じだが、本質的な違いが一つある `Heading 1
 Chapter 1` というスタイルを定義したい：
 
-#. Sidebar |StylesDeck| |ParagraphStylesTab| で `Heading 1` を右クリックし、
-   :menuselection:`&New...` を選択する。|ParagraphStyleDlg| |OrganizerTab|
-   で新しいスタイルに名前を付け、:guilabel:`Ne&xt style` を選択し、
-   :guilabel:`&Inherit from` が `Heading 1` を示していることを確認する。
+#. |Sidebar| |StylesDeck| |ParagraphStylesTab| で `Heading 1` を右クリックし、
+   |NewC| を選択する。|ParagraphStyleDlg| |OrganizerTab| で新しいスタイルに名前
+   を付け、:guilabel:`Ne&xt style` を選択し、:guilabel:`&Inherit from` が
+   `Heading 1` を示していることを確認する。
 #. |TextFlowTab| :guilabel:`Breaks` 区画で :guilabel:`&Insert` をオンにし、次を
    指定する：
 
@@ -603,7 +600,7 @@ Creating a master document template
 
 宗主文書の雛形は |Writer10| で説明する他の雛形とほぼ同じ方法で作成する：
 
-#. この章の前の節で説明したように、|CreateMasterDocItem| を使って宗主文書を作成
+#. この章の前の節で説明したように、|CreateMasterDocM| を使って宗主文書を作成
    する。
 #. |SaveAsTemplate| を使って雛形 (.otm) を作成し、他の雛形と一緒に
    :guilabel:`Templates` ダイアログボックスに表示される。
@@ -624,7 +621,7 @@ Creating one file from a master document and its subdocuments
 宗主文書を .odt ファイルにエクスポートする方法：
 
 #. 宗主文書を開き、すべてのリンクを更新。
-#. メニューの :menuselection:`&File-->Expor&t...` を選択。
+#. |MenuBar| の |FileExportM| を選択。
 #. ファイルダイアログボックスで、書き出す .odt ファイルの名前を入力し、
    |FileTypeList| で `ODF Text Document (*.odt)` を選択する。
 #. |Save| を押す。各従属文書が個別の書き込み禁止区画にある .odt ファイルが作成
@@ -632,7 +629,7 @@ Creating one file from a master document and its subdocuments
 #. 宗主文書を閉じ、新しい .odt ファイルを開き、すべてのリンクを更新する。
 #. リンクを解除し、書き込み保護を解除するには、
    :menuselection:`F&ormat-->&Sections...` と進み、区画一覧の最初の項目を選択
-   し、一覧の最後の項目を :kbd:`Shift` 押しクリックしてすべての項目を選択する。
+   し、一覧の最後の項目を |Shift| 押しクリックしてすべての項目を選択する。
    :guilabel:`Link` 区画 :guilabel:`&Link` と :guilabel:`Write Protection` 区画
    :guilabel:`&Protect` の両方をオフにする。
 #. |OK| を押す。
@@ -657,8 +654,7 @@ Anchoring images
 
 画像を特定のページに正確に配置するには、次のように画像を固定する：
 
-#. 画像を右クリックし、コンテキストメニューから :menuselection:`&Properties...`
-   を選択。
+#. 画像を右クリックし、コンテキストメニューから |PropertiesC| を選択。
 #. |ImageDlg| |Pos&SizeTab| で :guilabel:`Anchor` を非推奨項目以外のいずれかに設
    定。
 #. :guilabel:`Position` 区画でページに対する適切な水平方向と垂直方向の参照を選択
@@ -671,4 +667,4 @@ Anchoring images
 
 .. [#writer16-footnote1] 表題ページのスタイルは頁番号を表示しないように定義でき
    るが、それでも一ページ目として勘定される。
-.. [#writer16-footnote2] |InsertTOCItem|
+.. [#writer16-footnote2] |InsertTOCM|

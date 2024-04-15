@@ -43,15 +43,15 @@ Style dialog
 Sidebar |StylesDeck| を開く。上部にある適切な図像をクリックして、作成したいスタ
 イルの品目を選択する。
 
-ウィンドウ内で右クリックし、コンテキストメニューから :menuselection:`&New...` を
-選択する。表示されるダイアログボックスは選択したスタイルの種類によって異なる。
+ウィンドウ内で右クリックし、コンテキストメニューから |NewC| を選択する。表示され
+るダイアログボックスは選択したスタイルの種類によって異なる。
 
 .. tip::
 
    スタイルの新規作成と既存スタイルの変更に使用されるダイアログボックスはほとん
-   ど同じだが、例外がある。:ref:`writer09-anchorA` を参照しろ。
+   ど同じだが、例外がある。:ref:`writer09-anchor-conditional` を参照しろ。
 
-.. _writer09-anchorD:
+.. _writer09-anchor-organizer:
 
 Organizer tab
 ----------------------------------------------------------------------
@@ -122,8 +122,8 @@ Example: Changing a property of a parent style
 
 #. |StylesDeck| を開く
 #. |ParagraphStylesTab| をクリック
-#. :guilabel:`Heading` を右クリック
-#. :menuselection:`&Edit Style...` を選択
+#. `Heading` を右クリック
+#. |EditStyleC| を選択
 #. |FontTab| を選択
 #. フォントを選択
 #. |OK| を押す
@@ -169,9 +169,9 @@ Indents & Spacing tab
 
 .. note::
 
-   |OptionsDlg| :menuselection:`LibreOffice Writer-->Compatibility` のオプション
-   は上の隙間と下の隙間を一緒にするか（既定）、大きい方の隙間だけを適用するかを
-   制御する。詳細は |Writer20| を見ろ。
+   |OptionsDlg| |WriterCompatPage| のオプションは上の隙間と下の隙間を一緒にする
+   か（既定）、大きい方の隙間だけを適用するかを制御する。詳細は |Writer20| を見
+   ろ。
 
 段落間の間隔は段落内の行間には影響しない。行間は :guilabel:`Line Spacing` 区画で
 制御する。
@@ -280,8 +280,8 @@ Breaks options
 新しいページを常に特定のスタイルで開始するには、次の設定を選択する：
 
 * :guilabel:`Breaks` 区画で :guilabel:`&Insert` をオン
-* :guilabel:`&Type` が :guilabel:`Page` に、:guilabel:`&Position` が
-  :guilabel:`Before` に設定されていることを確認
+* :guilabel:`&Type` が `Page` に、:guilabel:`&Position` が `Before` に設定されて
+  いることを確認
 * :guilabel:`With page st&yle` をオンにし、ドロップダウンリストからページスタイ
   ルを選択
 * 前の章からページ番号を続けるには :guilabel:`Page &number` を選択しない。各章の
@@ -325,9 +325,9 @@ Font options for the paragraph style
 * |FontEffectsTab|
 * |PositionTab|
 
-最初の二つのタブは簡単で、選択肢の多くは :ref:`writer09-anchorC` で述べられる文
-字スタイルの作成時に使用するものと同じだ。段落スタイルを作成するときに使用できる
-選択肢についてここで説明する。
+最初の二つのタブは簡単で、選択肢の多くは :ref:`writer09-anchor-char` で述べられ
+る文字スタイルの作成時に使用するものと同じだ。段落スタイルを作成するときに使用で
+きる選択肢についてここで説明する。
 
 .. tip::
 
@@ -362,7 +362,7 @@ Specifying a relative font size
 Selecting a language for a paragraph style
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-文書に選択されている言語 [#writer09footnoteA]_ によって、綴字、類語、分綴、小数
+文書に選択されている言語 [#writer09-footnote1]_ によって、綴字、類語、分綴、小数
 点および千単位区切り記号、既定の通貨形式に使用される辞書が定まる。辞書がインス
 トールされている言語しか使用できない。
 
@@ -378,7 +378,7 @@ Selecting a language for a paragraph style
 くつかを変更したい場合、親スタイルを変更することだけすればよい。
 
 たまに異なる言語の単語を挿入して綴字検査で間違って拾われるのを避けるために、文字
-スタイルを使用する方が便利だ。:ref:`writer09-anchorC` で議論する。
+スタイルを使用する方が便利だ。:ref:`writer09-anchor-char` で議論する。
 
 .. tip::
 
@@ -425,7 +425,7 @@ Example: Rotating the text in a paragraph style
    ることができる。これを行うには次のいずれかを行う：
 
    * |TableToolbar| :guilabel:`Align Bottom` 図像をクリック
-   * メニューの :menuselection:`F&ormat-->Align Tex&t-->&Bottom` を選択
+   * |MenuBar| の :menuselection:`F&ormat-->Align Tex&t-->&Bottom` を選択
 
 .. admonition:: 読者ノート
 
@@ -461,8 +461,8 @@ Controlling tab stops
    異なる場合、受信者の機械では段落の体裁が大きく異なる可能性がある。段落または
    段落スタイルでタブストップを明確に定義しろ。
 
-段落スタイルでタブストップを定義するには :guilabel:`Tabs` ページを使用する。ここ
-では、タブのタイプを選択できる：
+段落スタイルでタブストップを定義するには |TabsTab| を使用する。ここでは、タブの
+タイプを選択できる：
 
 * :guilabel:`&Left`
 * :guilabel:`Righ&t`
@@ -489,9 +489,9 @@ Outline & List tab
 ----------------------------------------------------------------------
 
 |Writer08| で説明したように、|Outline&ListTab| を使用して任意の段落スタイルにア
-ウトラインレベルを割り当てろ。この機能により、 :menuselection:`&Tools-->Heading
-&Numbering...` に一覧されているスタイルを使用して、見出しとともにそれらの段落を
-含む目次を作成することが可能だ。
+ウトラインレベルを割り当てろ。この機能により、|HeadingNumberingM| に一覧されてい
+るスタイルを使用して、見出しとともにそれらの段落を含む目次を作成することが可能
+だ。
 
 このタブを使用すると段落スタイルを一覧スタイルに関連付けることもできる。詳細と例
 については |Writer12| を見ろ。
@@ -499,7 +499,7 @@ Outline & List tab
 Setting up a drop cap
 ----------------------------------------------------------------------
 
-Drop caps [#writer09footnoteB]_ は一般に最初の段落スタイルにしか適していない。
+Drop caps [#writer09-footnote2]_ は一般に最初の段落スタイルにしか適していない。
 |ParagraphStyleDlg| の :guilabel:`Drop Caps` タブで性質を定義しておくことが可能
 だ。
 
@@ -547,7 +547,7 @@ Borders
 
 |BordersTab| については |Writer04| も見ろ。
 
-.. _writer09-anchorA:
+.. _writer09-anchor-conditional:
 
 Using conditional paragraph styles
 ----------------------------------------------------------------------
@@ -620,7 +620,7 @@ Working with character styles
 の単語）を綴字誤りとして検出させたくない場合、文字スタイルの性質で適用する言語を
 定義することが（その言語があれば）可能だ。
 
-.. _writer09-anchorC:
+.. _writer09-anchor-char:
 
 Creating a new character style
 ----------------------------------------------------------------------
@@ -683,7 +683,7 @@ How frame styles work
    タイルによって部分的にしか定義できない。錨や保護要素など、枠の要素によっては
    個々の枠に対して手動で定義する必要がある。
 
-   枠を手動で整形するには、メニューの :menuselection:`&Insert-->&Frame-->` を選
+   枠を手動で整形するには、|MenuBar| の :menuselection:`&Insert-->&Frame-->` を選
    択する。開いたダイアログボックスには、枠スタイルが設定されたときに利用できる
    すべての設定と、枠が挿入されたときにのみ利用できる設定が含まれている。詳しく
    は |Writer06| を見ろ。
@@ -701,11 +701,10 @@ Planning the styles
 Creating or modifying frame styles
 ----------------------------------------------------------------------
 
-枠スタイルの設定にアクセスするには |StylesDeck| の枠スタイルを右クリッ
-クし、コンテキストメニューから :menuselection:`&New...` または
-:menuselection:`&Edit Style...` を選択する。
+枠スタイルの設定にアクセスするには |StylesDeck| の枠スタイルを右クリックし、コン
+テキストメニューから |NewC| または |EditStyleC| を選択する。
 
-:guilabel:`Type` タブ
+|TypeTab|
    枠の寸法と位置を設定する。ここで最も便利なオプションの一つは
    :guilabel:`A&utoSize` で、枠を含む物に自動的に合わせる。枠スタイルが自動的に
    使用される場合は、これをオンにする必要がある。
@@ -730,8 +729,7 @@ Creating or modifying frame styles
    |Writer06| で説明するページスタイルの設定に使用するものと同じ。
 :guilabel:`Macro` タブ
    使用者が枠を操作したときに動作を引き起こすために、枠で使用するマクロを設定す
-   る。これらのオプションはオンラインライターや :abbr:`HTML (HyperText Markup
-   Language)` 文書に便利だ。
+   る。これらのオプションはオンラインライターや |HTML| 文書に便利だ。
 
 Working with page styles
 ======================================================================
@@ -749,12 +747,12 @@ Creating a new page style
 
 #. |StylesDeck| を開き
 #. |PageStylesTab| をクリック
-#. ウィンドウの任意の場所を右クリックし、:menuselection:`&New...` を選択
+#. ウィンドウの任意の場所を右クリックし、|NewC| を選択
 
 Organizer tab
 ----------------------------------------------------------------------
 
-|OrganizerTab| については :ref:`writer09-anchorD` に記述がある。
+|OrganizerTab| については :ref:`writer09-anchor-organizer` に記述がある。
 
 General settings for the page style
 ----------------------------------------------------------------------
@@ -763,10 +761,10 @@ General settings for the page style
 には三つの区画とプレビュー領域がある。
 
 :menuselection:`Paper Format` 区画では用紙判を指定できる。定義済み書式の中から選
-択するか、:guilabel:`User` を選択して :guilabel:`&Width` 欄と:guilabel:`&Height`
-欄を使用して独自の用紙判を定義する。:guilabel:`&Portrait` または
-:guilabel:`L&andscape` から用紙の向きを選択する。印刷機に盆が複数ある場合は、新
-しいページスタイルでページを印刷する盆を指定できる。
+択するか、:guilabel:`User` を選択して :guilabel:`&Width` 欄と
+:guilabel:`&Height` 欄を使用して独自の用紙判を定義する。:guilabel:`&Portrait` ま
+たは :guilabel:`L&andscape` から用紙の向きを選択する。印刷機に盆が複数ある場合
+は、新しいページスタイルでページを印刷する盆を指定できる。
 
 :guilabel:`Margins` 区画で余白の大きさを単位で指定する。:guilabel:`Layout
 Settings` 区画で :guilabel:`&Page layout` に :guilabel:`Mirrored` を選択した場
@@ -835,11 +833,11 @@ Header and Footer tabs
 ページに使用される同じページスタイルに、異なるヘッダーやフッターを持たせることも
 できる。
 
-|PageTab| で :guilabel:`Mirrored` または :guilabel:`Right and Left`
-ページレイアウトを選択した場合、一つのスタイルを左右両方のページに使用しても、左
-右のページで異なるヘッダーを指定できる。このオプションは、定義済みの
-:guilabel:`Left Page` と :guilabel:`Right Page` のページスタイルや、左ページまた
-は右ページのみに定義されたその他のページスタイルでは使用できない。
+|PageTab| で :guilabel:`Mirrored` または :guilabel:`Right and Left` ページレイア
+ウトを選択した場合、一つのスタイルを左右両方のページに使用しても、左右のページで
+異なるヘッダーを指定できる。このオプションは、定義済みの :guilabel:`Left Page`
+と :guilabel:`Right Page` のページスタイルや、左ページまたは右ページのみに定義さ
+れたその他のページスタイルでは使用できない。
 
 |HeaderTab| と |FooterTab| については |Writer05| で詳しく説明している。
 
@@ -873,8 +871,8 @@ Working with list styles
 他のスタイルと同様、一覧スタイルを使用する主な理由は整合性と作業の高速化だ。
 |FormattingToolbar| :guilabel:`Toggle Ordered List` または :guilabel:`Toggle
 Unordered List` 図像をクリックすると、単純な一覧をすばやく作成でき、
-:guilabel:`Bullets and Numbering` ツールバーの図像を使用すると、非常に複雑な入れ
-子一覧を作成できるが、作成された一覧の体裁は望むものではないかもしれない。
+|B&NToolbar| の図像を使用すると、非常に複雑な入れ子一覧を作成できるが、作成され
+た一覧の体裁は望むものではないかもしれない。
 
 :menuselection:`F&ormat-->` メニューの :guilabel:`Bullets and Numbering` を使え
 ば、一覧の一部または全部を手作業で整形できるが、後で体裁を変更する必要がある場合
@@ -885,8 +883,8 @@ Unordered List` 図像をクリックすると、単純な一覧をすばやく�
 Creating a new list style
 ----------------------------------------------------------------------
 
-新しい一覧スタイルを作成するダイアログボックスには、:ref:`先述<writer09-anchorD>`
-した通常の |OrganizerTab| に加え、六つのタブがある。
+新しい一覧スタイルを作成するダイアログボックスには、:ref:`先述
+<writer09-anchor-organizer>` した通常の |OrganizerTab| に加え、六つのタブがある。
 
 Unordered, Ordered, and Image tabs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -965,8 +963,7 @@ Customize tab
    :guilabel:`&After`
       番号の後に表示される任意のテキスト (e.g. ``.``)
 :guilabel:`C&haracter` ボタン
-   :guilabel:`Special Character` ダイアログボックスから一覧項目マーカーの文字を
-   選択する
+   |SpecialCharDlg| から一覧項目マーカーの文字を選択する
 :guilabel:`&Graphics` ドロップダウンメニュー
    利用可能な画像の一覧を開くか、一覧マーカーとして使用するファイルを選択
 :guilabel:`Wi&dth` と :guilabel:`He&ight`
@@ -1032,7 +1029,7 @@ Style Inspector のいくつかの機能は、主に上級者にとって興味�
   に、注釈付きテキスト範囲またはメタデータ欄に設定できる。これらの欄陰影を無効ま
   たは有効にするには、次のいずれかを行う：
 
-  * メニューから |View-->FieldShadings| をオンオフ
+  * |MenuBar| から |ViewFieldShadingsM| をオンオフ
   * キーバインド :kbd:`Ctrl` + :kbd:`F8`
 
 詳しくは：
@@ -1049,7 +1046,7 @@ Styles Spotlight は文書に存在するスタイルと手動書式を視覚的
 
 Spotlight を活動開始するには：
 
-#. Sidebar |StylesDeck| に移動
+#. |Sidebar| |StylesDeck| に移動
 #. |ParagraphStylesTab| または |CharacterStylesTab| 下部にある
    :guilabel:`Spotlight` をオンにする
 
@@ -1065,5 +1062,5 @@ Paragraph Direct Formatting` の文字が表示される。
 
 .. rubric:: 章末注
 
-.. [#writer09footnoteA] |OptionsDlg| |LanguagesPage|
-.. [#writer09footnoteB] 段落の先頭に一つ以上の文字を大きめのフォントで描くこと
+.. [#writer09-footnote1] |OptionsDlg| |LanguagesPage|
+.. [#writer09-footnote2] 段落の先頭に一つ以上の文字を大きめのフォントで書くこと

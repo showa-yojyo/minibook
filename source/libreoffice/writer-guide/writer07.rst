@@ -49,7 +49,7 @@ Controlling printing using the Print dialog
 
 印刷をより詳細に制御するには |PrintDlg| を用いる。開き方は：
 
-* |MenuBar| |File-->Print| を選択
+* |MenuBar| |PrintM| を選択
 * キーバインド :kbd:`Ctrl` + :kbd:`P`
 * |StandardToolbar| の :guilabel:`Print` 図像クリック
 
@@ -283,7 +283,7 @@ Printing envelopes
 
 封筒を印刷するには：
 
-#. |MenuBar| から |File-->Print| を選択
+#. |MenuBar| から |PrintM| を選択
 #. |PrintDlg| の :guilabel:`Range and Copies` で :guilabel:`Pa&ges` をオンにし、
    入力欄に 1 を入力する
 #. 必要な印刷機（通常の印刷機とは異なる場合がある）を選択
@@ -347,11 +347,10 @@ Controlling PDF content and quality
 
 .. note::
 
-   :menuselection:`&File-->Expor&t...` でも |PDF| にエクスポート可能だ。
-   :guilabel:`Export` ダイアログボックスで |PDF| 形式、ファイル名、保存場所を選
-   択し、|Save| を押す。その後、|PDFOptionsDlg| が開く。適切な設定を選択し
-   :guilabel:`E&xport` をクリックする。二つのエクスポート方法の唯一の違いは、手
-   順を実行する順序だ。
+   |FileExportM| でも |PDF| にエクスポート可能だ。:guilabel:`Export` ダイアログ
+   ボックスで |PDF| 形式、ファイル名、保存場所を選択し、|Save| を押す。その
+   後、|PDFOptionsDlg| が開く。適切な設定を選択し:guilabel:`E&xport` をクリック
+   する。二つのエクスポート方法の唯一の違いは、手順を実行する順序だ。
 
 General tab of PDF Options dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -661,20 +660,19 @@ Controlling export to EPUB
    リー内の現在の文書ディレクトリーからカスタムメディアとメタデータを探す。
 :guilabel:`&Metadata` 区画
    検索に役立つタグを用意しておくファイルの基本情報。これらのフィールドは Writer
-   の |PropertiesM| から既定で取得されるメタデータを編集するもう一つの機会を与え
-   る。
+   の |FilePropertiesM| から既定で取得されるメタデータを編集するもう一つの機会を
+   与える。
 
 Exporting to other formats
 ======================================================================
 
 LibreOffice では、ファイル形式の変更を伴うファイル操作の一部に export という術語
-を使用している。|SaveAsM| で必要なものが見つからない場合は :menuselection:`&File
--->Expor&t...` も参照しろ。Writer はファイルを :abbr:`XHTML (eXtensible
-HyperText Markup Language)`, |EPUB|, およびその他の形式にエクスポートできる。
+を使用している。|SaveAsM| で必要なものが見つからない場合は |FileExportM| も参照
+しろ。Writer はファイルを :abbr:`XHTML (eXtensible HyperText Markup Language)`,
+|EPUB|, およびその他の形式にエクスポートできる。
 
-:menuselection:`&File-->Expor&t...` を選択する。:guilabel:`Export` ダイアログ
-ボックスで |FileNameBox| と |FileTypeList| で選択して :guilabel:`Export` を押
-す。
+|FileExportM| を選択する。:guilabel:`Export` ダイアログボックスで |FileNameBox|
+と |FileTypeList| で選択して :guilabel:`Export` を押す。
 
 Emailing Writer documents
 ======================================================================
@@ -707,7 +705,7 @@ Writer のメールマージ機能を使ってアドレス帳からメールア�
 
 Writer のメールマージを使ってメールを送信するには二つの方法がある：
 
-* :guilabel:`Mail Merge` ウィザードを使用して文書を作成し、送信する。
+* |MMWizard| を使用して文書を作成し、送信する。
 * ウィザードを使用せずに Writer で文書を作成し、それからウィザードを使用して文書
   を送信する。
 
@@ -791,7 +789,7 @@ Removing personal data
 
 ファイルから個人データなどを削除するには、
 
-#. |PropertiesM|
+#. |FilePropertiesM|
 #. |GeneralTab| で :guilabel:`&Apply user data` をオフ
 #. :guilabel:`&Reset Properties` を押す
 
