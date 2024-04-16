@@ -2,7 +2,7 @@
 Writer Guide Chapter 15, Tables of Contents, Indexes, Bibliographies ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 
 .. contents:: 章見出し
    :depth: 3
@@ -263,10 +263,9 @@ Applying changes to all levels
 Deleting elements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|StructureLine| から要素を削除するには、その要素を表すボタンを押し、
-:kbd:`Delete` を押す。例えば、既定のハイパーリンク設定を削除するには、
-:guilabel:`LS` をクリックし、:kbd:`Delete` を押す。これを :guilabel:`LE` につい
-ても繰り返す。
+|StructureLine| から要素を削除するには、その要素を表すボタンを押し、|Del| を押
+す。例えば、既定のハイパーリンク設定を削除するには、 :guilabel:`LS` をクリック
+し、|Del| を押す。これを :guilabel:`LE` についても繰り返す。
 
 .. _writer15-anchor-applying:
 
@@ -781,7 +780,7 @@ Other types of index
 他の索引を作成する手順：
 
 #. 索引を作成したい場所にキャレットを置く。
-#. メニューで |InsertTOCM| を選択。
+#. |MenuBar| で |InsertTOCM| を選択。
 #. |TOCDlg| |TypeList| で索引を選択する。
 #. 前の節で説明したものと同様のさまざまなタブで調整する。
 #. すべて設定したら |OK| を押す。
@@ -897,7 +896,7 @@ Changing the data source
 
 使用中のデータ給源を変更するには、
 
-* メニューで :menuselection:`&Data-->&Choose Data Source...` を選択するか、
+* |MenuBar| で :menuselection:`&Data-->&Choose Data Source...` を選択するか、
 * |BiblioDatabase| の上部付近にあるツールバーの :guilabel:`Data Source` ボタンを
   押す。
 
@@ -929,7 +928,7 @@ Adding entries to the database
 書誌データベースの |DataSourceView| を使用して登録項目を追加するには：
 
 #. メイン |MenuBar| の :menuselection:`&View-->&Data Sources...` を選択するか、
-   キーバインド |Ctrl+Shift| + :kbd:`F4` によりウィンドウを開く。
+   キーバインド |Ctrl+Shift| + |F4| によりウィンドウを開く。
 #. Bibliography データベースで正しいデータ表が選択されていることを確認する。必要
    ならば、正しいデータ表を選択するために木を展開する。
 #. 一覧の一番下までスクロールし、空行内の関連フィールドを入力する。左上の
@@ -1195,4 +1194,4 @@ Writer の書誌機能が制限されすぎていると感じる場合は、macO
 .. [#writer15-footnote-hyperlink] :menuselection:`&Insert-->&Hyperlink...` で加
    えたものなど。
 .. [#writer15-footnote-shading1] |OptionsDlg| |ApplicationColors| ページを確認
-.. [#writer15-footnote-shading2] |ViewFieldShadingsM| または |Ctrl| + :kbd:`F8`
+.. [#writer15-footnote-shading2] |ViewFieldShadingsM| または |Ctrl| + |F8|

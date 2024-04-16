@@ -2,7 +2,7 @@
 Writer Guide Chapter 21, User Interface Variants ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 
 .. contents:: 章見出し
    :depth: 3

@@ -2,7 +2,7 @@
 Writer Guide Chapter 13, Tables ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 
 .. contents:: 章見出し
    :depth: 3
@@ -424,7 +424,7 @@ Resizing rows and columns
 キーボードを使って表組の寸法を変更することもできる：
 
 #. 変更したい升目にキャレットを置く。
-#. :kbd:`Alt` を押しながら矢印キーを使う。
+#. |Alt| を押しながら矢印キーを使う。
 
    * 左と右の矢印キーは、升目の右端の境界を動かして列幅を調整する。
    * 上下の矢印キーは、升目の下端の境界を動かすことで、行の高さを調整する（可能
@@ -838,23 +838,22 @@ Data entry and manipulation in tables
 Moving between cells
 ----------------------------------------------------------------------
 
-表内の升目間を移動するには、マウス、矢印キー、または :kbd:`Tab` を使用する。
+表内の升目間を移動するには、マウス、矢印キー、または |Tab| を使用する。
 
 矢印キーはキャレットを左右に一文字ずつ移動させる。升目が空の場合、矢印キーを押す
 と隣の升目にキャレットが移動する。
 
-:kbd:`Tab` は次の升目に直接移動し、キャレットが表組の最後の升目にある場合は新し
-い行を作成する。|Shift| + :kbd:`Tab` を押すと、キャレットが一升戻る。
+|Tab| は次の升目に直接移動し、キャレットが表組の最後の升目にある場合は新しい行を
+作成する。|Shift| + |Tab| を押すと、キャレットが一升戻る。
 
 .. tip::
 
-   升目のテキストの一部として Tab 文字を入力するには、|Ctrl| + :kbd:`Tab`
-   とする。
+   升目のテキストの一部として Tab 文字を入力するには、|Ctrl| + |Tab| とする。
 
 表組の最初や最後に移動するには、それぞれキーバインド
 
-* |Ctrl| + :kbd:`Home`
-* |Ctrl| + :kbd:`End`
+* |Ctrl| + |Home|
+* |Ctrl| + |End|
 
 を使う。キャレットがある升目が空の場合、表組の最初や最後に移動する。升目に内容が
 ある場合、押すとまず升目の先頭や末尾に移動し、次に押すと表組の最初や最後に移動す
@@ -914,7 +913,7 @@ Using spreadsheet functions in a table
 
    * :kbd:`=` を押す
    * |MenuBar| の :menuselection:`T&able-->Edit &Formula` を選択
-   * :kbd:`F2` を押す
+   * |F2| を押す
    * |TableToolbar| の :guilabel:`Sum` 図像または |Formula| 図像をクリック
    * Sidebar |PropertiesDeck| |TablePanel| にある |Formula| 図像をクリック
 
@@ -925,8 +924,8 @@ Using spreadsheet functions in a table
 #. :kbd:`+` キーを押す
 #. 升目 <C2> をクリックする。最終的な数式 ``=<B1>+<C2>`` が選択した升目と
    Formula バー入力欄の両方に表示される。
-#. :kbd:`Enter` を押すか、|FormulaBar| |Apply| をクリックすると升目内の数式が計
-   算結果に置き換わる。
+#. |Enter| を押すか、|FormulaBar| |Apply| をクリックすると升目内の数式が計算結果
+   に置き換わる。
 
 .. tip::
 
@@ -941,7 +940,7 @@ Using spreadsheet functions in a table
 #. 空の升目に等号 ``=`` を入力する。
 #. 足し合わせる升目、この場合は A2 から A5 までの升目を選択する。数式は
    ``=<A2:A5>`` のようにする。
-#. :kbd:`Enter` を押すか、|FormulaBar| |Apply| をクリックする。
+#. |Enter| を押すか、|FormulaBar| |Apply| をクリックする。
 
 関数を使うときは、升目参照を手入力するか、選択する。したがって、上で追加した四つ
 の数字 (A2, A3, A4, A5) を合計するには次のようにする：
@@ -950,7 +949,7 @@ Using spreadsheet functions in a table
 #. ``sum`` と入力するか、:guilabel:`Functions` 一覧から :menuselection:`&Sum` を
    選択する。
 #. 連続した升目を選択する。数式は ``=sum<A2:A5>`` のようにする。
-#. :kbd:`Enter` を押すか、|FormulaBar| |Apply| をクリックする。
+#. |Enter| を押すか、|FormulaBar| |Apply| をクリックする。
 
 .. caution::
 
@@ -1044,8 +1043,8 @@ Merging tables
 
 二つの表組を合体する手順：
 
-#. 表組と表組の間の空白の段落を削除する。これを行うには、:kbd:`Backspace` ではな
-   く :kbd:`Delete` を使用する必要がある。
+#. 表組と表組の間の空白の段落を削除する。これを行うには、|Back| ではなく |Del|
+   を使用する必要がある。
 #. 表組のいずれかの升目を選択する。
 #. |MenuBar| から :menuselection:`T&able-->Mer&ge Table` を選択する。
 
@@ -1054,7 +1053,7 @@ Merging tables
    段落の位置を明白にし、簡単に削除するには、
 
    * :menuselection:`&View-->For&matting Marks` を選択
-   * キーバインド |Ctrl| + :guilabel:`F10`
+   * キーバインド |Ctrl| + |F10|
    * |StandardToolbar| :guilabel:`¶` 図像をクリック
 
 Deleting a table
@@ -1065,8 +1064,8 @@ Deleting a table
 * 表組の任意の場所を右クリックし、:menuselection:`&Delete-->&Table` を選択
 * 表組の任意の場所をクリックし、|MenuBar| から
   :menuselection:`T&able-->&Delete-->&Table` を選択
-* 表組の前の段落の終わりから、表組の後の段落の始まりまでを選択し、
-  :kbd:`Delete` または :kbd:`Backspace` を押す
+* 表組の前の段落の終わりから、表組の後の段落の始まりまでを選択し、|Del| または
+  |Back| を押す
 
 .. note::
 
@@ -1100,12 +1099,12 @@ Inserting a paragraph before or after a table
 表組の前に段落を挿入する手順：
 
 #. 最初の（左上の）升目のテキストやその他の内容の前にキャレットを置く
-#. |Alt| + :kbd:`Enter`
+#. |Alt| + |Enter|
 
 表組の後に段落を挿入する手順：
 
 #. 最後の（右下の）升目のテキストの後にキャレットを置く
-#. |Alt| + :kbd:`Enter`
+#. |Alt| + |Enter|
 
 Using tables as a page layout tool
 ======================================================================

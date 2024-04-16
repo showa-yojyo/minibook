@@ -1,3 +1,8 @@
+.. include:: /_include/abbr.txt
+.. include:: /_include/kbd.txt
+.. include:: ../libreoffice.txt
+
+.. Chapters
 .. |Writer01| replace:: :doc:`Chapter 1, Introducing Writer <writer01>`
 .. |Writer02| replace:: :doc:`Chapter 2, Working with Text: Basics <writer02>`
 .. |Writer03| replace:: :doc:`Chapter 3, Working with Text: Advanced <writer03>`
@@ -18,43 +23,6 @@
 .. |Writer19| replace:: :doc:`Chapter 19, Spreadsheets, Charts, other Objects <writer19>`
 .. |Writer20| replace:: :doc:`Chapter 20, Customizing Writer <writer20>`
 .. |Writer21| replace:: :doc:`Chapter 21, User Interface Variants<writer21>`
-
-.. |Ctrl| replace:: :kbd:`Ctrl`
-.. |Shift| replace:: :kbd:`Shift`
-.. |Alt| replace:: :kbd:`Alt`
-.. |Ctrl+Shift| replace:: :kbd:`Ctrl` + :kbd:`Shift`
-.. |Ctrl+Alt| replace:: :kbd:`Ctrl` + :kbd:`Alt`
-.. |Shift+Alt| replace:: :kbd:`Shift` + :kbd:`Alt`
-.. |Ctrl+Shift+Alt| replace:: :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`Alt`
-
-.. |Ctrl+A| replace:: :kbd:`Ctrl` + :kbd:`A`
-.. |Ctrl+C| replace:: :kbd:`Ctrl` + :kbd:`C`
-.. |Ctrl+V| replace:: :kbd:`Ctrl` + :kbd:`V`
-.. |Ctrl+X| replace:: :kbd:`Ctrl` + :kbd:`X`
-
-.. |Calc| replace:: *Calc Guide*
-.. |Draw| replace:: *Draw Guide*
-.. |Guide| replace:: *Getting Started Guide*
-.. |Help| replace:: Help
-.. |Math| replace:: *Math Guide*
-.. |Writer| replace:: *Writer Guide*
-
-.. |ApplyButton| replace:: :guilabel:`&Apply` ボタン
-.. |Browse| replace:: :guilabel:`&Browse...` ボタン
-.. |Close| replace:: :guilabel:`&Close` ボタン
-.. |EditButton| replace:: :guilabel:`&Edit...` ボタン
-.. |Finish| replace:: :guilabel:`&Finish` ボタン
-.. |Insert| replace:: :guilabel:`&Insert` ボタン
-.. |Next| replace:: :guilabel:`&Next >` ボタン
-.. |No| replace:: :guilabel:`&No` ボタン
-.. |OK| replace:: :guilabel:`&OK` ボタン
-.. |Open| replace:: :guilabel:`開く (&O)` ボタン
-.. |RemoveButton| replace:: :guilabel:`&Remove` ボタン
-.. |ResetButton| replace:: :guilabel:`&Reset` ボタン
-.. |Save| replace:: :guilabel:`保存 (&S)` ボタン
-.. |Yes| replace:: :guilabel:`&Yes` ボタン
-.. |FileNameBox| replace:: :guilabel:`ファイル名 (&N)`
-.. |FileTypeList| replace:: :guilabel:`ファイルの種類 (&T)`
 
 .. Dialog boxes
 .. |AutoCorrectDlg| replace:: :guilabel:`Auto Correct` ダイアログボックス
@@ -99,13 +67,6 @@
 
 .. |MMWizard| replace:: :guilabel:`Mail Merge Wizard`
 
-.. Menus
-.. |File-->| replace:: :menuselection:`&File-->` メニュー
-.. |View-->| replace:: :menuselection:`&View-->` メニュー
-.. |Insert-->| replace:: :menuselection:`&Insert-->` メニュー
-.. |Tools-->| replace:: :menuselection:`&Tools-->` メニュー
-.. |Help-->| replace:: :menuselection:`&Help-->` メニュー
-
 .. Toolbars
 .. |B&NToolbar| replace:: :guilabel:`Bullets and Numbering` ツールバー
 .. |DrawingToolbar| replace:: :guilabel:`Drawing` ツールバー
@@ -115,10 +76,6 @@
 .. |ImageToolbar| replace:: :guilabel:`Image` ツールバー
 .. |StandardToolbar| replace:: :guilabel:`Standard` ツールバー
 .. |TableToolbar| replace:: :guilabel:`Table` ツールバー
-
-.. |MenuBar| replace:: Menu バー
-.. |Sidebar| replace:: Sidebar
-.. |StatusBar| replace:: Status バー
 
 .. Decks
 .. |GalleryDeck| replace:: :guilabel:`Gallery` 甲板
@@ -182,12 +139,6 @@
 .. |WrapTab| replace:: :guilabel:`Wrap` タブ
 
 .. Settings
-..   LibreOffice-->
-.. |ApplicationColors| replace:: :menuselection:`LibreOffice-->Application Colors` ページ
-.. |UserDataPage| replace:: :menuselection:`LibreOffice-->User Data` ページ
-.. |LibreOfficePrintPage| replace:: :menuselection:`LibreOffice-->Print` ページ
-.. |PathsPage| replace:: :menuselection:`LibreOffice-->Paths` ページ
-.. |SecurityPage| replace:: :menuselection:`LibreOffice-->Security` ページ
 ..   Load/Save -->
 .. |LoadSaveGeneralPage| replace:: :menuselection:`Load/Save-->General` ページ
 ..   Language Settings-->
@@ -218,18 +169,3 @@
 .. |UpdateLinksM| replace:: :menuselection:`&Tools-->&Update-->&Links`
 .. |UpdateLinksC| replace:: :menuselection:`&Update-->&Links`
 .. |ViewFieldShadingsM| replace:: :menuselection:`&View-->Fie&ld Shadings...`
-
-.. |CSV| replace:: :abbr:`CSV (comma-separated values)`
-.. |CTL| replace:: :abbr:`CTL (Complex Text Layout)`
-.. |DDE| replace:: :abbr:`|DDE| (Dynamic Data Exchange)`
-.. |ePub| replace:: :abbr:`ePub (Electronic PUBlication)`
-.. |GIF| replace:: :abbr:`GIF (Graphics Interchange Format)`
-.. |HTML| replace:: :abbr:`HTML (HyperText Markup Language)`
-.. |ISO| replace:: :abbr:`International Organization for Standardization`
-.. |JPG| replace:: :abbr:`JPEG (Joint Photographic Experts Group)`
-.. |ODF| replace:: :abbr:`ODF (OpenDocument Format)`
-.. |OLE| replace:: :abbr:`OLE (Object Linking and Embedding)`
-.. |PDF| replace:: :abbr:`PDF (Portable Document Format)`
-.. |PNG| replace:: :abbr:`PNG (Portable Network Graphics)`
-.. |QR| replace:: :abbr:`QR (Quick Response)`
-.. |UI| replace:: UI

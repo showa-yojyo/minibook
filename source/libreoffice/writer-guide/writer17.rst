@@ -2,7 +2,7 @@
 Writer Guide Chapter 17, Fields ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 
 .. contents:: 章見出し
    :depth: 3
@@ -44,19 +44,19 @@ Keyboard shortcuts for fields
 
    * - キーバインド
      - 動作
-   * - |Ctrl| + :kbd:`F2`
-     - :guilabel:`Fields` ダイアログボックスを開く
-   * - |Ctrl| + :kbd:`F8`
+   * - |Ctrl| + |F2|
+     - |FieldsDlg| を開く
+   * - |Ctrl| + |F8|
      - フィールド陰影表示を切り替える
-   * - |Ctrl| + :kbd:`F9`
+   * - |Ctrl| + |F9|
      - フィールド名表示を切り替える
-   * - :kbd:`F9`
+   * - |F9|
      - フィールドを更新する
 
 .. admonition:: 読者ノート
 
-   |Ctrl| + :kbd:`F9` は日常的に使う DeepL の「読みながら翻訳」コマンドの
-   キーバインドと衝突しているので要注意。
+   |Ctrl| + |F9| は日常的に使う DeepL の「読みながら翻訳」コマンドのキーバインド
+   と衝突しているので要注意。
 
 Quick and easy field entry
 ======================================================================
@@ -155,7 +155,7 @@ Writer にはフィールドが参照する情報を格納できる場所がい�
 次のいずれかで届く：
 
 * |MenuBar| |MoreFieldsM|
-* キーバインド |Ctrl| + :kbd:`F2`
+* キーバインド |Ctrl| + |F2|
 
 .. |TypeList| replace:: :guilabel:`&Type` 一覧
 
@@ -191,7 +191,7 @@ Using AutoText to insert often-used fields
 
 #. フィールドを文書に普通に入れる。
 #. 入れたフィールドを選択し、:menuselection:`&Tools-->AutoText` を選択する
-   か、キーバインド |Ctrl| + :kbd:`F3` を使う。
+   か、キーバインド |Ctrl| + |F3| を使う。
 #. |AutoTextDlg| でこの新しい項目を登録するグループ (e.g. `My AutoText`) を選択
    し、|NameBox| に登録項目の名前を打ち込み、必要に応じて :guilabel:`&Shortcut`
    を変更する。
@@ -200,8 +200,8 @@ Using AutoText to insert often-used fields
    は選択するな。
 #. |Close| を押して |AutoTextDlg| を閉じる。
 
-このフィールドをキャレット位置に入れるには、ショートカットを入力し、:kbd:`F3` を
-押す。
+このフィールドをキャレット位置に入れるには、ショートカットを入力し、|F3| を押
+す。
 
 .. admonition:: 読者ノート
 
@@ -223,8 +223,7 @@ Defining your own numbering sequences
 .. |FormatList| replace:: :guilabel:`&Format` 一覧
 
 #. キャレットを文書内の空白の段落に置く。
-#. |MoreFieldsM| を選択するか、|Ctrl| + :kbd:`F2` を押して |VariablesTab| を
-   選択する。
+#. |MoreFieldsM| を選択するか、|Ctrl| + |F2| を押して |VariablesTab| を選択する。
 #. |TypeList| で `Number range` を選択する。|FormatList| で `Arabic (1 2 3)` を
    選択する。|NameBox| に `Step` などの名前を入力する。
 #. |Insert| を押す。変数名 `Step` が |SelectList| に表示され、数値フィールドが文
@@ -289,7 +288,7 @@ Inserting cross-references
 
 #. キャレットを文書内の相互参照を表示したい場所に置く。
 #. |FieldsDlg| が開いていない場合は |InsertCrossRefM| を選択するか、|Ctrl| +
-   :kbd:`F2` を押す。|CrossRefTab| の |TypeList| で参照する項目の型 (e.g.
+   |F2| を押す。|CrossRefTab| の |TypeList| で参照する項目の型 (e.g.
    `Headings`, `Figures`) をクリックする。
 #. |SelectList| で必要な項目をクリックする。この一覧には、自動的に作成された項目
    と使用者定義の参照の両方が表示される。

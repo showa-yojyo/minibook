@@ -2,7 +2,7 @@
 Writer Guide Chapter 20, Customizing Writer ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 .. |MSWord| replace:: Microsoft Word
 
 .. contents:: 章見出し
@@ -309,9 +309,9 @@ General options
       文書設計者はフォントサイズと字下げやタブなどを簡単に関連付けることができる
       ため、既定の測定値として :guilabel:`Point` を使用することを推奨している。
    :guilabel:`&Tab stops`
-      :kbd:`Tab` を押すたびにキャレットが移動する距離。この設定が
-      |FormattingToolbar| の関連コマンドボタンで適用される字下げ距離にも使用さ
-      れ、段落全体の字下げに影響する。
+      |Tab| を押すたびにキャレットが移動する距離。この設定が |FormattingToolbar|
+      の関連コマンドボタンで適用される字下げ距離にも使用され、段落全体の字下げに
+      影響する。
 
       .. tip::
 
@@ -843,8 +843,8 @@ Assigning shortcut keys
 
 .. note::
 
-   :kbd:`F1` や :kbd:`F10` など、|CustomizeDlg| の一覧で灰色表示されているキーバ
-   インドは再割り当てできない。
+   |F1| や |F10| など、|CustomizeDlg| の一覧で灰色表示されているキーバインドは再
+   割り当てできない。
 
 Saving changes to a file
 ----------------------------------------------------------------------

@@ -2,7 +2,7 @@
 Writer Guide Chapter 2, Working with Text: Basics ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 
 .. contents:: 本章見出し
    :depth: 3
@@ -40,21 +40,21 @@ Writer におけるテキスト選択は他のアプリケーションにおけ�
   * 文（三重クリック）
   * 段落（四重クリック）
 
-テキストをクリックし、:kbd:`F8` を押して拡張選択モードに入り、矢印キーを使って連
+テキストをクリックし、|F8| を押して拡張選択モードに入り、矢印キーを使って連
 続したテキストブロックを選択することも可能だ。テキストブロックを選択し終わったら
-もう一度 :kbd:`F8` を押す。
+もう一度 |F8| を押す。
 
 .. admonition:: 読者ノート
 
-   :kbd:`F8` キーがマウスクリック一発分に相当すると考えられる。
+   |F8| キーがマウスクリック一発分に相当すると考えられる。
 
 選択モードを変更するには |StatusBar| の図像を使う方法がある。|Writer01| で述べた
 欄を右クリックするとコンテキストメニューに選択肢が表示される：
 
 * :menuselection:`&Standard selection`
-* :menuselection:`&Extending selection` (:kbd:`F8`)
-* :menuselection:`&Adding selection` (|Shift| + :kbd:`F8`)
-* :menuselection:`&Block selection` (|Ctrl+Shift| + :kbd:`F8`)
+* :menuselection:`&Extending selection` (|F8|)
+* :menuselection:`&Adding selection` (|Shift| + |F8|)
+* :menuselection:`&Block selection` (|Ctrl+Shift| + |F8|)
 
 項目を選択するとそのモードが有効になる。
 
@@ -70,7 +70,7 @@ Selecting items that are not consecutive
 追加選択モードで、キーボードを使って連続しない項目を選択する手順：
 
 #. 最初のテキストを選択
-#. |Shift| + :kbd:`F8` を押すか、|StatusBar| の :guilabel:`Selection mode`
+#. |Shift| + |F8| を押すか、|StatusBar| の :guilabel:`Selection mode`
    図像をクリックし、一覧から :menuselection:`&Adding selection` を選択する
 #. |Shift| を押しながら次のテキストを選択
 #. 必要なだけ繰り返す
@@ -80,7 +80,7 @@ Selecting items that are not consecutive
    この |Shift| 押しを忘れやすい。
 
 これにより選択テキストをコピー、削除、スタイル変更などをすることが可能だ。選択し
-たテキストでの作業が終了したら :kbd:`Esc` を押して追加選択モードを終了する。
+たテキストでの作業が終了したら |Esc| を押して追加選択モードを終了する。
 
 Selecting a vertical block of text
 ----------------------------------------------------------------------
@@ -88,7 +88,7 @@ Selecting a vertical block of text
 複数行にまたがる縦長のテキストブロックを選択するにはブロック選択モードを使う。
 
 * |MenuBar| から :menuselection:`&Edit-->Selection &Mode-->&Block Area` を選択
-* キーバインド |Shift+Alt| + :kbd:`F8`
+* キーバインド |Shift+Alt| + |F8|
 * |StatusBar| 選択モード欄クリックから :menuselection:`&Block selection` を選択
 
 これでマウスまたはキーボードを使って選択範囲を強調できる。
@@ -148,7 +148,7 @@ LibreOffice 初期設定では |FindToolbar| はメインウィンドウの下�
 
 * |MenuBar| から :menuselection:`&View-->&Toolbars-->&Find` を選択
 * |MenuBar| から :menuselection:`&Edit-->&Find...` を選択
-* キーバインド |Ctrl| + :kbd:`F`
+* キーバインド |Ctrl+F|
 
 |FindToolbar| の使い方は左半分は見ればわかる。
 
@@ -156,14 +156,14 @@ LibreOffice 初期設定では |FindToolbar| はメインウィンドウの下�
 る。
 
 |FindToolbar| を閉じるには、左側のバツ印をクリックするか、検索欄にフォーカスがあ
-るときに :kbd:`Esc` を押す。
+るときに |Esc| を押す。
 
 Using the Find and Replace dialog
 ----------------------------------------------------------------------
 
 |Find&ReplaceDlg| を開く方法：
 
-* キーバインド |Ctrl| + :kbd:`H`
+* キーバインド |Ctrl+H|
 * |MenuBar| :menuselection:`&Edit-->Find and Rep&lace...` を選択
 * |FindToolbar| の :guilabel:`Find and Replace` 図像をクリック
 
@@ -236,7 +236,7 @@ Soft Hyphen
    ンは表示されない。キーバインド |Ctrl| + :kbd:`-` でこれを挿入する。
 Narrow No-break Space
    通常の空白ほど広くない非改行空白を入力するには、|Shift+Alt| を押しながら
-   :kbd:`Space` を押す。
+   |Space| を押す。
 No-width Optional Break
    |Ctrl| + :kbd:`/` を使用すると、単語内に不可視の空白を挿入することがで
    き、その空白が行の最後の文字である場合に改行となる。|CTL| が有効である場合に
@@ -314,7 +314,7 @@ Spelling and grammar
 
 * :menuselection:`&Tools-->&Spelling...` を選択
 * |StandardToolbar| の :guilabel:`Check Spelling` 図像をクリック
-* :kbd:`F7` を押す
+* |F7| を押す
 
 この機能を使用するには、適切な辞書がインストールされている必要がある。
 
@@ -491,7 +491,7 @@ Automatic hyphenation
 
 単語の自動分綴オンオフを切り替える手順：
 
-#. Siedbar の |StylesDeck| を開く
+#. |Sidebar| の |StylesDeck| を開く
 #. :guilabel:`&Edit Styles...` 図像をクリック
 #. 木から :guilabel:`Default Paragraph Style` を右クリック
 #. :menuselection:`Modify` を選択
@@ -590,8 +590,7 @@ Using Word Completion
 ======================================================================
 
 Word Completion が有効になっている場合、Writer は著者が入力しようとしている単語
-を推測し、単語を補完しようとする。著者が :kbd:`Enter` を押せばこの提案を受け入れ
-る。
+を推測し、単語を補完しようとする。著者が |Enter| を押せばこの提案を受け入れる。
 
 Word Completion をオフにするには：
 
@@ -622,8 +621,8 @@ Using AutoText
 
 AutoText を使用すると、テキスト、図表、フィールド、画像、その他の項目を再利用で
 きるように保存し、キーバインドを定義して簡単に呼び出すことが可能になる。例え
-ば、"Senior Management "と毎回入力するのではなく、"sm" と入力し、:kbd:`F3` を押
-すと、その単語が挿入されるように AutoText を設定することが可能だ。
+ば、"Senior Management "と毎回入力するのではなく、"sm" と入力し、|F3| を押すと、
+その単語が挿入されるように AutoText を設定することが可能だ。
 
 AutoText はフィールドに割り当てると特に強力だ。|Writer17| を読め。
 
@@ -635,7 +634,7 @@ Creating AutoText
 #. テキストを文書に入力
 #. それを選択
 #. |MenuBar| から :menuselection:`Tools-->AutoTe&xt...` を選択するかキーバインド
-   |Ctrl| + :kbd:`F3`
+   |Ctrl| + |F3|
 #. |AutoTextDlg| が開く
 #. :guilabel:`Na&me` 欄に AutoText の名前を入力する
 #. AutoText の品目（例えば :guilabel:`My AutoText` など）を選択
@@ -655,7 +654,7 @@ Creating AutoText
 
 #. 図表を作成し、必要な書式を設定する。
 #. 図表を選択し、|MenuBar| から :menuselection:`Tools-->AutoTe&xt...` を選択する
-   かキーバインド |Ctrl| + :kbd:`F3`
+   かキーバインド |Ctrl| + |F3|
 #. AutoText の名前を入力する。または推奨されるショートカットを修正し、AutoText
    項目の品目を選択する。
 #. :menuselection:`AutoText-->New` を選択（図表の書式を保持したい）。
@@ -664,7 +663,7 @@ Creating AutoText
 Inserting AutoText
 ----------------------------------------------------------------------
 
-AutoText を挿入するには、登録されているショートカットを入力して :kbd:`F3` を押
+AutoText を挿入するには、登録されているショートカットを入力して |F3| を押
 せ。
 
 Printing a list of AutoText entries

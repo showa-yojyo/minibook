@@ -2,7 +2,7 @@
 Writer Guide Chapter 8, Introduction to Styles ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 
 .. contents:: 章見出し
    :depth: 3
@@ -58,7 +58,7 @@ Writer にはスタイル区分が六つある：
 
    * |MenuBar| から :menuselection:`&Format-->Clear &Direct Formatting` を選択
    * 右クリックメニューから :menuselection:`Clear &Direct Formatting` を選択
-   * キーバインド :kbd:`Ctrl` + :kbd:`M`
+   * キーバインド |Ctrl+M|
 
 The Styles deck in the Sidebar
 ======================================================================
@@ -70,7 +70,7 @@ The Styles deck in the Sidebar
 
 * |Sidebar| の :guilabel:`Styles` 図像をクリック
 * |MenuBar| から :menuselection:`St&yles-->Manage St&yles` を選択
-* キーバインド :kbd:`F11`
+* キーバインド |F11|
 
 |StylesDeck| 上部にある最初の六つの図像はスタイルの品目を選択する。これらの図像
 のいずれかをクリックすると、段落スタイルや文字スタイルなど、その品目のスタイル目
@@ -89,7 +89,7 @@ Filtering the visible styles
 執筆初期段階では :guilabel:`All Styles` で使用可能なすべてのスタイルにアクセスで
 きるようにしておき、そのうちのいくつかを隠すようにするといい：
 
-#. 除外する各スタイルを :kbd:`Ctrl` を押しながらクリックで選択
+#. 除外する各スタイルを |Ctrl| を押しながらクリックで選択
 #. これらの項目いずれかを右クリック
 #. :menuselection:`&Hide` を選択
 
@@ -129,8 +129,8 @@ Applying paragraph styles
 * |Sidebar| |PropertiesDeck| 上部にある |SetParagraphStyle|
 * |FormattingStylesToolbar| （普通のスタイル限定）
 * |Sidebar| |StylesDeck| :guilabel:`Fill Format Mode` 図像
-* キーバインド :kbd:`Ctrl` + :kbd:`1` から :kbd:`Ctrl` + :kbd:`5` (`Heading 1`,
-  ..., `Heading 5`)
+* キーバインド |Ctrl| + :kbd:`1` から |Ctrl| + :kbd:`5` (`Heading 1`, ...,
+  `Heading 5`)
 
 Using the Styles deck on the Sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -201,16 +201,16 @@ Fill Format Mode を使用すると、|StylesDeck| に戻って毎回ダブル�
    * 文字スタイルを適用するにはマウスボタンを押したまま文字を選択する。
    * 単語をクリックするとその単語に文字スタイルが適用される。
 #. そのスタイルのすべての変更を行うまで、手順 3 を繰り返す。
-#. モードを終了するには、図像をもう一度クリックするか :kbd:`Esc` を押す
+#. モードを終了するには、図像をもう一度クリックするか |Esc| を押す
 
 Using keyboard shortcuts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 スタイルを適用するためのキーバインドがいくつか定義済みだ。たとえば、
 
-* :kbd:`Ctrl` + :kbd:`0` は `Body Text`
-* :kbd:`Ctrl` + :kbd:`1` は `Heading 1`
-* :kbd:`Ctrl` + :kbd:`2` は `Heading 2`
+* |Ctrl| + :kbd:`0` は `Body Text`
+* |Ctrl| + :kbd:`1` は `Heading 1`
+* |Ctrl| + :kbd:`2` は `Heading 2`
 
 をそれぞれ適用する。
 
@@ -687,7 +687,7 @@ LibreOffice の定義済みスタイルは使用していない場合でさえ�
 
 #. 削除するスタイルをそれぞれ選択
 
-   * :kbd:`Ctrl` を押しながらマウスクリックで複数スタイルを選択可
+   * |Ctrl| を押しながらマウスクリックで複数スタイルを選択可
 #. 右メニューから :menuselection:`&Delete...` を選択
 
    * スタイルが使用中の場合は、警告メッセージが表示され、本当にそのスタイルを削
@@ -715,13 +715,13 @@ Example: creating and modifying paragraph styles
 * `Poem Heading`: 中央揃え、太字、フォントサイズ 12 pt
 
 さらに、`Poem Heading` スタイルの後には `Poem` スタイルが続く。つまり、`Poem
-Heading` 段落スタイルの段落の最後で :kbd:`Enter` を押すと、次の段落の段落スタイ
-ルが `Poem Heading` に変わる。
+Heading` 段落スタイルの段落の最後で |Enter| を押すと、次の段落の段落スタイルが
+`Poem Heading` に変わる。
 
 .. note::
 
-   `Heading` 段落スタイルを使って見出しを入力し :kbd:`Enter` を押すと、次のスタ
-   イルが `Text body` に切り替わるという挙動に注意する。
+   `Heading` 段落スタイルを使って見出しを入力し |Enter| を押すと、次のスタイルが
+   `Text body` に切り替わるという挙動に注意する。
 
 Creating the Poem paragraph style
 ----------------------------------------------------------------------
@@ -739,7 +739,7 @@ Creating the Poem paragraph style
    スタイル名なので ``Poem`` を入力。
 :guilabel:`Ne&xt Style`
    `Poem` スタイルに後続する段落のスタイル。`Poem` スタイルであるテキストを入力
-   している途中に :kbd:`Enter` を押すと、これが新段落に自動適用される。したがっ
+   している途中に |Enter| を押すと、これが新段落に自動適用される。したがっ
    て :guilabel:`Poem` を指定。
 :guilabel:`&Inherit from`
    今回は :guilabel:`- None -` を指定。
@@ -760,7 +760,7 @@ Creating the Poem Heading style
 
 :guilabel:`Ne&xt Style`
    :guilabel:`Poem` を選択。`Poem Heading` スタイルのテキストを入力中に
-   :kbd:`Enter` を押すと、`Poem Heading` スタイルが新しい段落に自動適用される。
+   |Enter| を押すと、`Poem Heading` スタイルが新しい段落に自動適用される。
 :guilabel:`&Inherit from`
    :guilabel:`Heading` とする。
 

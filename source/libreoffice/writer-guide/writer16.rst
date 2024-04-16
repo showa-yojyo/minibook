@@ -2,7 +2,7 @@
 Writer Guide Chapter 16, Master Documents ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 
 .. contents:: 章見出し
    :depth: 3
@@ -291,7 +291,7 @@ Step 5. Add some pages to the master document
 
 作業の便宜を図るべく、次のようにする：
 
-* 段落マークが表示されていることを確認する。|Ctrl| + :kbd:`F10` を押す。
+* 段落マークが表示されていることを確認する。|Ctrl| + |F10| を押す。
 * テキストの境界、表組の境界、区画の境界を表示する。|OptionsDlg|
   |ApplicationColors| で各種選択肢をオンにする。
 

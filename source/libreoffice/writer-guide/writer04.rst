@@ -2,9 +2,9 @@
 Writer Guide Chapter 4, Formatting Text ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 
-.. contents::
+.. contents:: 本章見出し
    :depth: 3
    :local:
 
@@ -65,7 +65,7 @@ Removing manual formatting
 * |MenuBar| で :menuselection:`F&ormat-->Clear &Direct Formatting` を選択
 * 右クリックメニューで :menuselection:`Clear &Direct Formatting` を選択
 * |FormattingToolbar| :guilabel:`Clear Direct Formatting` 図像をクリック
-* :kbd:`Ctrl` + :kbd:`M` を押す
+* |Ctrl+M| を押す
 
 Formatting paragraphs using styles
 ======================================================================
@@ -78,7 +78,7 @@ Formatting paragraphs using styles
   プダウンリスト
 * |Sidebar| |StylesDeck| |ParagraphStylesTab|
 * |MenuBar| :menuselection:`St&yles` メニュー
-* キーバインド :kbd:`Ctrl` + :kbd:`1` から :kbd:`Ctrl` + :kbd:`5`
+* キーバインド |Ctrl| + :kbd:`1` から |Ctrl| + :kbd:`5`
 
 Formatting paragraphs directly
 ======================================================================
@@ -337,11 +337,11 @@ Setting tab stops and indents
 
 水平定規にはタブストップが表示される。定義したタブストップは、既定のタブストップ
 を上書きする。タブの設定は段落全体の字下げだけでなく、段落の一部の字下げ（キー
-ボードの :kbd:`Tab` を押す）にも影響する。
+ボードの |Tab| を押す）にも影響する。
 
 .. tip::
 
-   段落の先頭など、多くの字下げは段落スタイルで設定できるので、:kbd:`Tab` でする
+   段落の先頭など、多くの字下げは段落スタイルで設定できるので、|Tab| でする
    必要はない。
 
 既定のタブ間隔を使用すると他の人と文書を共有する場合に書式の問題が発生することが
@@ -536,7 +536,7 @@ Formatting lists using styles
 定したら、項目の階層を簡単に変更することができる。
 
 項目を一階層下げるには、キャレットを行頭（箇条書きまたは数字の後）に置き、
-:kbd:`Tab` を押す。上げるには :kbd:`Shift` + :kbd:`Tab` を押す。
+|Tab| を押す。上げるには |Shift| + |Tab| を押す。
 
 スタイルを使った目録の作成については |Writer08| と |Writer09| でわかる。
 
@@ -584,13 +584,13 @@ Using the Bullets and Numbering toolbar
    キーバインドを使って、段落をアウトライン階層の上下に移動することができる。
    キャレットを段落番号の先頭に置き、次のキーを押す：
 
-   * :kbd:`Tab` で位を下げる
-   * :kbd:`Shift` + :kbd:`Tab` で位を上げる
+   * |Tab| で位を下げる
+   * |Shift| + |Tab| で位を上げる
 
 .. tip::
 
    番号の付いた段落の先頭（つまり、番号の後でテキストの前）にタブストップを挿入
-   するには :kbd:`Ctrl` + :kbd:`Tab` を押す。
+   するには |Ctrl| + |Tab| を押す。
 
 |B&NToolbar| の図像を使用して入れ子目録を作成すると、目録のすべての階層に対して
 最初は同じ番号（または箇条書き）書式が適用される。入れ子目録を作成するときに、番

@@ -2,10 +2,7 @@
 Writer Guide Chapter 7, Printing and Publishing ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
-.. |DPI| replace:: :abbr:`DPI (dots per inch)`
-.. |EPS| replace:: :abbr:`EPS (Encapsulated PostScript)`
-.. |PIN| replace:: :abbr:`PIN (Personal Identification Number)`
+.. include:: ./writer-inc.txt
 
 .. contents:: 本章見出し
    :depth: 3
@@ -50,7 +47,7 @@ Controlling printing using the Print dialog
 印刷をより詳細に制御するには |PrintDlg| を用いる。開き方は：
 
 * |MenuBar| |PrintM| を選択
-* キーバインド :kbd:`Ctrl` + :kbd:`P`
+* キーバインド |Ctrl+P|
 * |StandardToolbar| の :guilabel:`Print` 図像クリック
 
 Print dialog on Windows and Linux
@@ -222,7 +219,7 @@ Writer の通常ページビューでは、各ページが印刷されるとき�
 * |MenuBar| の :menuselection:`&File-->Print Pr&eview...` を選択
 * |StandardToolbar| の :guilabel:`Toggle Print Preview (Ctrl+Shift+O)` 図像をク
   リック
-* キーバインド :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`
+* キーバインド |Ctrl+Shift| + :kbd:`O`
 
 これで |FormattingToolbar| の代わりに :guilabel:`Print Preview` ツールバーが表示
 する。
@@ -832,7 +829,7 @@ Auto-redaction
 ----------------------------------------------------------------------
 
 黒塗りプロセスを部分的に自動化するには、特定の単語（名前など）が文書内のどこに
-あっても黒塗りするように定義する。これを行うには、メニューで
+あっても黒塗りするように定義する。これを行うには、|MenuBar| で
 :menuselection:`&Tools-->Auto-Redact` を選択し、:guilabel:`Automatic Redaction`
 ダイアログボックスを開く。ここでは、用語（対象）の一覧の読み込み、対象の追加、対
 象の削除、対象の編集、対象の一覧の保存ができる。
@@ -844,9 +841,9 @@ LibreOffice には画面読み上げを含む外部機器やアプリケーシ�
 かの accessibility 機能が含まれている。
 
 文書を公開する前に、Writerの :guilabel:`&Accessibility Tool` を使用して、一般的
-な問題を確認できる。手動で検査を実行するには、メニューの :menuselection:`&Tools
--->&Accessibility Check...` を選択する。|PDF| にエクスポートする場
-合、:guilabel:`PDF Export` ダイアログボックスの |GeneralTab| で
+な問題を確認できる。手動で検査を実行するには、|MenuBar| の
+:menuselection:`&Tools -->&Accessibility Check...` を選択する。|PDF| にエクス
+ポートする場合、:guilabel:`PDF Export` ダイアログボックスの |GeneralTab| で
 :guilabel:`Universal Accessibilit&y (PDF/UA)` をオンにし、:guilabel:`E&xport` を
 押すと、警告ダイアログボックスがポップアップ表示される。
 

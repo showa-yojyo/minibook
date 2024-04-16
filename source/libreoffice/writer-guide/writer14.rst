@@ -2,7 +2,7 @@
 Writer Guide Chapter 14, Mail Merge ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 .. |MailMergeDlg| replace:: :guilabel:`Mail Merge` ダイアログボックス
 
 .. contents:: 章見出し
@@ -100,8 +100,8 @@ Creating a form letter
 #. Writer 文書を新規作成するか、既存の定型書簡を開く。
 #. 登録されているデータ給源を表示する
 
-   * メニュー :menuselection:`&View-->Data Sources`
-   * キーバインド |Ctrl+Shift| + :kbd:`F4`
+   * |MenuBar| :menuselection:`&View-->Data Sources`
+   * キーバインド |Ctrl+Shift| + |F4|
 #. 定型書簡に使用するデータ給源、この場合は `Addresses` を見つける。このノードと
    `Tables` ノードを展開し、`Sheet1` を選択する。住所データファイルが表示され
    る。
@@ -110,7 +110,7 @@ Creating a form letter
 
    差し込み印刷フィールドを必要な箇所（名前や住所など）に追加するには、フィール
    ドの見出しをクリックし、書簡内の適切な箇所にドラッグする。必要に応じて、空白
-   やその他の句読点を追加しろ。宛先ブロックの各行の末尾で :kbd:`Enter` を押す。
+   やその他の句読点を追加しろ。宛先ブロックの各行の末尾で |Enter| を押す。
 #. この例のデータベースには、二番目の住所行 AD2 のフィールドがあり、一部の住所で
    空白になっている。書簡が印刷されるときに住所ブロックに表示される可能性のある
    空白行を削除したい場合は次節で説明する手順を使用できる。そうでない場合は、次
@@ -253,8 +253,8 @@ Preparing for printing
 #. この文書では、次を使用すると段落末尾が表示される：
 
    * ツールバー :guilabel:`Toggle Formatting Marks` ボタン
-   * メニュー :menuselection:`&View-->For&matting Marks`
-   * キーバインド |Ctrl| + :kbd:`F10`
+   * |MenuBar| :menuselection:`&View-->For&matting Marks`
+   * キーバインド |Ctrl| + |F10|
 #. 通常は画面の左上隅に |SyncLabelButton| を含む小さなウィンドウが表示されるはず
    だ。
 #. 段落末尾やその他の句読点が欠けている場合、またはすべての紙札の一つまたは複数
@@ -314,7 +314,7 @@ Printing envelopes
 Setting up envelopes for printing
 ----------------------------------------------------------------------
 
-#. メニューの :menuselection:`&Insert-->En&velope...` を選択する。
+#. |MenuBar| の :menuselection:`&Insert-->En&velope...` を選択する。
 #. |EnvelopeDlg| |EnvelopeTab| で封筒に差出人情報を追加するかどうかを選択する。
    追加する場合は、差出人欄に情報を入力する。あらかじめ差出人情報が印刷された封
    筒を使用する場合は、この記入欄を空にするか、:guilabel:`&Sender` チェックボッ
@@ -527,7 +527,7 @@ Step 5: Adjust layout
 できる。ボタンを使用して要素を移動する。
 
 これで手紙の内容を入力できる Writer 文書が整った。フィールドを差し込んで書簡を印
-刷するには、メニューの |PrintM| を選択する。定型書簡を印刷するかどうかを尋ねる
+刷するには、|MenuBar| |PrintM| を選択する。定型書簡を印刷するかどうかを尋ねる
 メッセージがポップアップ表示される。|Yes| を押す。
 
 |MailMergeDlg| が開き、オプションで記録行を加除選択し、:guilabel:`Output` 区画

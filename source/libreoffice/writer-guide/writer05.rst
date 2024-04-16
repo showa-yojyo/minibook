@@ -2,7 +2,7 @@
 Writer Guide Chapter 5, Formatting Pages: Basics ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 
 .. contents:: 章見出し
    :depth: 3
@@ -209,14 +209,14 @@ Writer ではヘッダーとフッターはページスタイルで指定する�
 
 * テキストエリアの上部をクリックする。:guilabel:`Header` マーカーが表示された
   らプラス記号をクリックする。
-* メニューから :menuselection:`&Insert-->He&ader and Footer-->He&ader -->`
+* |MenuBar| から :menuselection:`&Insert-->He&ader and Footer-->He&ader -->`
   からページスタイルを選択
 
   サブメニューには文書で使用されているページスタイルと、文書のすべてのページスタ
   イルでヘッダーを有効にする :menuselection:`&All` という項目が表示される。
-* ページ上の任意の場所で右クリックし、メニューから `Page Style` を選択する。
-  |PageStyleDlg| の |HeaderTab| で :guilabel:`Hea&der on` をオンにする。この方法
-  はある一つのページスタイルにしか影響しない。
+* ページ上の任意の場所で右クリックし、:menuselection:`&Page Style...` を選択す
+  る。|PageStyleDlg| の |HeaderTab| で :guilabel:`Hea&der on` をオンにする。この
+  方法はある一つのページスタイルにしか影響しない。
 
 Formatting headers and footers
 ----------------------------------------------------------------------
@@ -239,7 +239,7 @@ Writer ではヘッダーとフッターは段落だ。したがって、文書�
 
 #. |PageStyleDlg| を開く。以下のいずれかの方法による：
 
-   * ページ上のどこでもいいからクリックし、メニューから
+   * ページ上のどこでもいいからクリックし、|MenuBar| から
      :menuselection:`F&ormat-->&Page Style...` を選択
    * ページ上の右クリックメニューから :menuselection:`&Page Style...` を選択
    * ページにヘッダーがある場合はヘッダー領域をクリックする。:guilabel:`Header`
@@ -261,10 +261,9 @@ Numbering pages
 
 .. tip::
 
-   灰色の背景を消すには |ViewFieldShadingsM| を選ぶか :kbd:`Ctrl` + :kbd:`F8` を
-   押す。数字の代わりに :guilabel:`Page number` という文字が表示されたら
-   :kbd:`Ctrl` + :kbd:`F9` を押す。これにより、Writer はフィールドに対する名前と
-   中身の表示を切り替える。
+   灰色の背景を消すには |ViewFieldShadingsM| を選ぶか |Ctrl| + |F8| を押す。数字
+   の代わりに :guilabel:`Page number` という文字が表示されたら |Ctrl| + |F9| を
+   押す。これにより、Writer はフィールドに対する名前と中身の表示を切り替える。
 
 このトピックでは文書のヘッダーやフッターに次のような関連情報を挿入する技法につい
 て述べている：
@@ -372,7 +371,7 @@ Restarting page numbering and changing numbering format
 
 #. `Default Page Style` にするページの最初の段落にキャレットを置く（見出しは段落
    の一種だ）。
-#. メニューの :menuselection:`F&ormat-->P&aragraph...` を選択するか、右クリッ
+#. |MenuBar| の :menuselection:`F&ormat-->P&aragraph...` を選択するか、右クリッ
    クして :menuselection:`P&aragraph-->P&aragraph...` を選択し、
    |ParagraphDlg| を表示
 #. |TextFlowTab| の :guilabel:`Breaks` で、
@@ -462,7 +461,7 @@ Including other information in headers and footers
 #. |OK| を押して |PropertiesDlg| を閉じる
 #. 上述のようにしてヘッダーを追加
 #. ページのヘッダー部分にキャレットを置く
-#. メニューから :menuselection:`&Insert-->Fiel&d-->T&itle` を選択
+#. |MenuBar| から :menuselection:`&Insert-->Fiel&d-->T&itle` を選択
 
 文書の表題を変更するには手順の前半を再現する。
 
@@ -531,7 +530,7 @@ Adding title pages
 
 .. |TitlePageDlg| replace:: :guilabel:`Title Page` ダイアログボックス
 
-メニューで :menuselection:`F&ormat-->Title Page...` を選択し、|TitlePageDlg| を
+|MenuBar| で :menuselection:`F&ormat-->Title Page...` を選択し、|TitlePageDlg| を
 開く。
 
 |TitlePageDlg| では次の選択ができる：
@@ -606,7 +605,7 @@ Line breaks
 * 左側がブロックされていない次の行に続く
 * 右側がブロックされていない次の行に続く
 
-既定の改行を挿入するには :kbd:`Shift` + :kbd:`Enter` を押す。
+既定の改行を挿入するには |Shift| + |Enter| を押す。
 
 その他の改行を挿入するには：
 

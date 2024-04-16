@@ -2,7 +2,7 @@
 Writer Guide Chapter 11, Images and Graphics ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 .. |GIMP| replace:: GIMP_
 
 .. contents:: 章見出し
@@ -307,8 +307,8 @@ Arranging images
 
 .. tip::
 
-   他の物に覆われている物を選択するには、:kbd:`Tab` を押して目的の物に到達するま
-   で物の間を移動しろ。
+   他の物に覆われている物を選択するには、|Tab| を押して目的の物に到達するまで物
+   の間を移動しろ。
 
 Anchoring images
 ----------------------------------------------------------------------
@@ -546,11 +546,11 @@ Place the image and its caption in separate paragraphs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 画像をはめ込み、文字として段落に繋留しろ。説明用の新しい段落を作成するために
-:kbd:`Enter` を押せ。
+|Enter| を押せ。
 
 #. 説明段落に、例えば ``Figure`` と入力し、空白を入れる。
 #. 図版番号を自動的にはめ込むには :menuselection:`&Insert-->Fiel&d-->&More
-   Fields...` (:kbd:`Ctrl` + :kbd:`F2`) を選択し、|VariablesTab| を選択する。
+   Fields...` (|Ctrl| + |F2|) を選択し、|VariablesTab| を選択する。
 #. :guilabel:`&Type` 一覧で :guilabel:`Number range` を選択
 #. :guilabel:`&Select` 一覧で :guilabel:`Figure` を選択
 #. :guilabel:`&Format` 一覧で (例) :guilabel:`Arabic (1 2 3)` を選択
@@ -809,8 +809,7 @@ Image dialog options
 Deleting an image
 ----------------------------------------------------------------------
 
-画像を削除するには、画像をクリックして寸法変更ハンドルを表示させ、:kbd:`Delete`
-を押す。
+画像を削除するには、画像をクリックして寸法変更ハンドルを表示させ、|Del| を押す。
 
 .. _writer11-anchor-export:
 
@@ -898,7 +897,7 @@ Creating drawing objects
    画可能だ。
 #. 選択した描画機能を中止するには、
 
-   * :kbd:`Esc` を押すか、
+   * |Esc| を押すか、
    * |DrawingToolbar| の :guilabel:`Select` 図像（矢印）をクリックする。
 
 これで、図面物の性質（塗りつぶしの色、線の種類と太さ、錨など）を、
@@ -1213,7 +1212,7 @@ Creating a Fontwork object
    ニューから |Pos&SizeC| を選択すると、より正確な寸法指定が可能。
 #. Fontwork テキストを編集するには、物をダブルクリックする。物の上に表示される黒
    いテキストの代わりに、独自のテキストを入力。
-#. 空いている場所のどこかをクリックするか :kbd:`Esc` を押して変更を適用。
+#. 空いている場所のどこかをクリックするか |Esc| を押して変更を適用。
 
 Editing a Fontwork object
 ----------------------------------------------------------------------

@@ -2,7 +2,7 @@
 Writer Guide Chapter 6, Formatting Pages: Advanced ノート
 ======================================================================
 
-.. include:: ./abbrev.txt
+.. include:: ./writer-inc.txt
 
 .. contents:: 章見出し
    :depth: 3
@@ -155,7 +155,7 @@ Using frames for page layout
 スト、表組、複数段、画像、その他のオブジェクトを含められる。枠には次のような用途
 がある：
 
-* ロゴやページの片隅にある「報道速報」のニュースボックスなど。
+* ロゴやページの片隅にある「速報」のニュースボックスなど。
 * ある枠の内容を別の枠にリンクすることで、あるページのテキストを次のページよりも
   離れた別のページで継続できるようにする。
 * 写真などのオブジェクトにテキストを回り込ませる。
@@ -242,8 +242,8 @@ Moving, resizing, and changing frame attributes
 ドラッグすると、テキスト枠が一次元だけ拡大または縮小され、角のハンドルをドラッグ
 すると、両方の次元で拡大縮小される。
 
-これらのリサイズ操作は比率を歪める。:kbd:`Shift` を押しながらハンドルをドラッグ
-すると枠は同じ比率を保つ。
+これらのリサイズ操作は比率を歪める。|Shift| を押しながらハンドルをドラッグすると
+枠は同じ比率を保つ。
 
 |FrameDlg| を開くには、枠を選択して右クリックメニューから |PropertiesC| を選択す
 る。
@@ -366,8 +366,7 @@ Example
 側見出しで用いる表組を作成する：
 
 #. 表組を表示したい場所にキャレットを置く
-#. :menuselection:`T&able-->Insert &Table...` を選択 (or :kbd:`Ctrl` +
-   :kbd:`F12`)
+#. :menuselection:`T&able-->Insert &Table...` を選択 (or |Ctrl| + |F12|)
 #. |InsertTableDlg| で見出しのない二列一行の表組を定義する。:guilabel:`Style` で
    `None` を選択し、表組の境界線をなくす。
 #. 表組右クリックメニューから :menuselection:`&Table Properties...` を選択
