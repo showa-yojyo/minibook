@@ -2,7 +2,9 @@
 Calc Guide Chapter 15 Setting up and Customizing ノート
 ======================================================================
 
-.. contents::
+.. include:: ./calc-inc.txt
+
+.. contents:: 章見出し
    :depth: 3
    :local:
 
