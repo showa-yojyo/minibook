@@ -1,5 +1,5 @@
 ======================================================================
-Calc Guide Chapter 8 Using Formulas and Functions ノート
+Calc Guide Chapter 8, Using Formulas and Functions ノート
 ======================================================================
 
 .. include:: ./calc-inc.txt

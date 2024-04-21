@@ -9,12 +9,16 @@
 .. Dialog boxes
 .. |CustomizeDlg| replace:: :guilabel:`Customize` ダイアログボックス
 .. |ExtensionsDlg| replace:: :guilabel:`Extensions` ダイアログボックス
+.. |OpenFileDlg| replace:: :guilabel:`開く` ダイアログボックス
 .. |OptionsDlg| replace:: :guilabel:`Options` ダイアログボックス
 .. |Position&SizeDlg| replace:: :guilabel:`Position and Size` ダイアログボックス
+.. |PageStyleDlg| replace:: :guilabel:`Page Style` ダイアログボックス
 .. |PrintDlg| replace:: :guilabel:`Print` ダイアログボックス
+.. |PropertiesDlg| replace:: :guilabel:`Properties` ダイアログボックス
 .. |SaveAsDlg| replace:: :guilabel:`名前を付けて保存` ダイアログボックス
 .. |TemplatesDlg| replace:: :guilabel:`Templates` ダイアログボックス
 .. |ThemeDlg| replace:: :guilabel:`Theme` ダイアログボックス
+.. |Zoom&ViewLayoutDlg| replace:: :guilabel:`Zoom & View Layout` ダイアログボックス
 
 .. Decks
 .. |GalleryDeck| replace:: :guilabel:`Gallery` 甲板
@@ -67,11 +71,12 @@
 
 .. Settings
 ..   LibreOffice-->
-.. |ApplicationColors| replace:: :menuselection:`LibreOffice-->Application Colors` ページ
 .. |UserDataPage| replace:: :menuselection:`LibreOffice-->User Data` ページ
+.. |LibreOfficeGeneralPage| replace:: :menuselection:`LibreOffice-->General` ページ
 .. |LibreOfficePrintPage| replace:: :menuselection:`LibreOffice-->Print` ページ
 .. |PathsPage| replace:: :menuselection:`LibreOffice-->Paths` ページ
 .. |SecurityPage| replace:: :menuselection:`LibreOffice-->Security` ページ
+.. |ApplicationColors| replace:: :menuselection:`LibreOffice-->Application Colors` ページ
 ..   Load/Save -->
 .. |LoadSaveGeneralPage| replace:: :menuselection:`Load/Save-->General` ページ
 ..   Language Settings-->
@@ -81,6 +86,8 @@
 .. Menu commands
 .. |EditCutM| replace:: :menuselection:`&Edit-->&Cut`
 .. |EditPasteM| replace:: :menuselection:`&Edit-->&Paste`
+.. |EditSelectAllM| replace:: :menuselection:`&Edit-->Select &All`
 .. |ExtensionsM| replace:: :menuselection:`&Tools-->&Extensions...`
 .. |FilePropertiesM| replace:: :menuselection:`&File-->Propert&ies...`
 .. |PropertiesC| replace:: :menuselection:`&Properties...`
+.. |SaveAsM| replace:: :menuselection:`&File-->Save &As...`

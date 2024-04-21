@@ -12,6 +12,7 @@
 .. |Calc07| replace:: :doc:`Chapter 7, Printing, Exporting, Emailing, and Signing<calc07>`
 .. |Calc08| replace:: :doc:`Chapter 8, Using Formulas and Functions<calc08>`
 .. |Calc09| replace:: :doc:`Chapter 9, Using Pivot Tables<calc09>`
+.. |Calc10| replace:: :doc:`Chapter 10, Data Analysis<calc10>`
 .. |Calc11| replace:: :doc:`Chapter 11, Linking Data<calc11>`
 .. |Calc13| replace:: :doc:`Chapter 13, Macros<calc13>`
 .. |Calc14| replace:: :doc:`Chapter 14, Calc as a Database<calc14>`
@@ -28,13 +29,19 @@
 .. |DataFieldOptionsDlg| replace:: :guilabel:`Data Dield Options` ダイアログボックス
 .. |DataLabelsDlg| replace:: :guilabel:`Data Labels` ダイアログボックス
 .. |DataSeriesDlg| replace:: :guilabel:`Data Series` ダイアログボックス
+.. |DeleteCellsDlg| replace:: :guilabel:`Delete Cells` ダイアログボックス
 .. |FilterDlg| replace:: :guilabel:`Filter` ダイアログボックス
+.. |FunctionWizard| replace:: :guilabel:`Function Wizard`
+.. |MoveCopySheetDlg| replace:: :guilabel:`Move/Copy Sheet` ダイアログボックス
 .. |PickColorDlg| replace:: :guilabel:`Pick a Color` ダイアログボックス
 .. |PivotTableLayoutDlg| replace:: :guilabel:`Pivot Table Layout` ダイアログボックス
 .. |SelectSourceDlg| replace:: :guilabel:`Select Source` ダイアログボックス
 .. |StandardFilterDlg| replace:: :guilabel:`Standard Filter` ダイアログボックス
 .. |SparklinePropDlg| replace:: :guilabel:`Sparkline Properties` ダイアログボックス
 .. |TrendLineDlg| replace:: :guilabel:`Trend Line` ダイアログボックス
+
+.. Decks
+.. |FunctionsDeck| replace:: :guilabel:`Functions` 甲板
 
 .. Tabs
 .. |DataSeriesTab| replace:: :guilabel:`Data Series` タブ
@@ -43,7 +50,10 @@
 .. |PositioningTab| replace:: :guilabel:`Positioning` タブ
 .. |ScaleTab| replace:: :guilabel:`Scale` タブ
 
+.. |FormulaBar| replace:: Formula バー
+
 .. Settings
+.. |CalcGeneralPage| replace:: :menuselection:`LibreOffice Calc-->General` ページ
 .. |CalculatePage| replace:: :menuselection:`LibreOffice Calc-->Calculate` ページ
 .. |FormulaPage| replace:: :menuselection:`LibreOffice Calc-->Formula` ページ
 .. |SortListsPage| replace:: :menuselection:`LibreOffice Calc-->Sort Lists` ページ
@@ -59,10 +69,13 @@
 .. |InsertLegendM| replace:: :menuselection:`&Insert-->&Legend...`
 .. |InsertMeanM| replace:: :menuselection:`&Insert-->Mean &Value Lines`
 .. |InsertTitlesM| replace:: :menuselection:`&Insert-->&Titles...`
+.. |InsertSheetC| replace:: :menuselection:`Insert &Sheet...`
 .. |InsertSparklineM| replace:: :menuselection:`&Insert-->Spark&line...`
 .. |InsertXErrorsM| replace:: :menuselection:`&Insert-->X Error &Bars...`
 .. |InsertYErrorsM| replace:: :menuselection:`&Insert-->Y Error &Bars...`
 
+.. |SplitWindowC| replace:: :menuselection:`&Split Window`
+.. |ViewSplitWindowM| replace:: :menuselection:`&View-->&Split Window`
 
 .. |Filters| replace:: :guilabel:`&Filters`
 .. |ColumnFields| replace:: :guilabel:`Col&umn Fields`

@@ -15,3 +15,4 @@
 .. |PNG| replace:: :abbr:`PNG (Portable Network Graphics)`
 .. |QR| replace:: :abbr:`QR (Quick Response)`
 .. |UI| replace:: UI
+.. |XHTML| replace:: :abbr:`XHTML (eXtensible HyperText Markup Language)`

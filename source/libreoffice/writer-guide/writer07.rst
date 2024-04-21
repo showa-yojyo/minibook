@@ -665,8 +665,8 @@ Exporting to other formats
 
 LibreOffice では、ファイル形式の変更を伴うファイル操作の一部に export という術語
 を使用している。|SaveAsM| で必要なものが見つからない場合は |FileExportM| も参照
-しろ。Writer はファイルを :abbr:`XHTML (eXtensible HyperText Markup Language)`,
-|EPUB|, およびその他の形式にエクスポートできる。
+しろ。Writer はファイルを |XHTML|, |EPUB|, およびその他の形式にエクスポートでき
+る。
 
 |FileExportM| を選択する。:guilabel:`Export` ダイアログボックスで |FileNameBox|
 と |FileTypeList| で選択して :guilabel:`Export` を押す。

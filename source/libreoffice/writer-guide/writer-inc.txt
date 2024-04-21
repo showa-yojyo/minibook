@@ -46,16 +46,12 @@
 .. |InsertTableDlg| replace:: :guilabel:`Insert Table` ダイアログボックス
 .. |ListStyleDlg| replace:: :guilabel:`List Style` ダイアログボックス
 .. |NameDlg| replace:: :guilabel:`Name` ダイアログボックス
-.. |OpenFileDlg| replace:: :guilabel:`開く` ダイアログボックス
-.. |PageStyleDlg| replace:: :guilabel:`Page Style` ダイアログボックス
 .. |ParagraphDlg| replace:: :guilabel:`Paragraph` ダイアログボックス
 .. |ParagraphStyleDlg| replace:: :guilabel:`Paragraph Style` ダイアログボックス
-.. |PropertiesDlg| replace:: :guilabel:`Properties` ダイアログボックス
 .. |SpecialCharDlg| replace:: :guilabel:`Special Characters` ダイアログボックス
 .. |StyleDlg| replace:: :guilabel:`Style` ダイアログボックス
 .. |TablePropertiesDlg| replace:: :guilabel:`Table Properties` ダイアログボックス
 .. |TOCDlg| replace:: :guilabel:`Table of Contents, Index or Bibliography` ダイアログボックス
-.. |Zoom&ViewLayoutDlg| replace:: :guilabel:`Zoom & View Layout` ダイアログボックス
 
 .. |MMWizard| replace:: :guilabel:`Mail Merge Wizard`
 
@@ -133,7 +129,6 @@
 .. |InsertTOCM| replace:: :menuselection:`&Insert-->Table of Contents and Inde&x-->Table of Contents, &Index or Bibliography...`
 .. |NewC| replace:: :menuselection:`&New...`
 .. |PrintM| replace:: :menuselection:`&File-->&Print...`
-.. |SaveAsM| replace:: :menuselection:`&File-->Save &As...`
 .. |UpdateLinksM| replace:: :menuselection:`&Tools-->&Update-->&Links`
 .. |UpdateLinksC| replace:: :menuselection:`&Update-->&Links`
 .. |ViewFieldShadingsM| replace:: :menuselection:`&View-->Fie&ld Shadings...`
