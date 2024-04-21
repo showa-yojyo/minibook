@@ -1,5 +1,5 @@
 ======================================================================
-Calc Guide Chapter 9 Using Pivot Tables ノート
+Calc Guide Chapter 9, Using Pivot Tables ノート
 ======================================================================
 
 .. include:: ./calc-inc.txt
@@ -28,10 +28,10 @@ Database preconditions
 かを知る必要がある。リストはシート内のどの位置にあってもかまわない。スプレッド
 シートには関連性のないリストを複数含めることができる。
 
-Calc はリストを自動的に認識する。次のロジックを使用します：選択した升目を起点
-に、周囲のセル上下左右すべてを調べる。空の行または列を検出した場合、またはスプ
-レッドシートの左または上の境界に当たった場合、リスト境界を認識する。つまり、リス
-トに空の行や列がない場合にのみ、説明した関数が正しく動作する。
+Calc はリストを自動的に認識する。次のロジックを使用する：選択した升目を起点に、
+周囲のセル上下左右すべてを調べる。空の行または列を検出した場合、またはスプレッド
+シートの左または上の境界に当たった場合、リスト境界を認識する。つまり、リストに空
+の行や列がない場合にのみ、説明した関数が正しく動作する。
 
 .. tip::
 
@@ -320,53 +320,7 @@ Options for data fields
 :guilabel:`&Type` の設定によっては :guilabel:`&Base field` と :guilabel:`Ba&se
 item` の定義を選択する必要がある。
 
-.. Table 1 lists the possible types of displayed value and associated base field and base item, together with notes on usage.
-
-.. Table 1: Description of Displayed value options on the Data Field dialog
-.. Type
-.. Base field
-.. Base item
-.. Analysis
-.. Normal
-.. —
-.. —
-.. Simple use of the chosen aggregate function (for example, Sum).
-.. Difference from
-.. Selection of a field from the data source of the pivot table (for example, Employee).
-.. Selection of an element from the selected base field (for example, Brigitte)
-.. The result is the difference between the result of the base field and the base item (for example, sales volume of the other employees against the sales volume of Brigitte; see Figure 10).
-.. If previous item or next item is specified as the Base item, the reference value is the result for the next visible member of the base field, in the base field’s sort order.
-.. % of
-.. Selection of a field from the data source of the pivot table (for example, Employee)
-.. Selection of an element from the selected base field (for example, Brigitte)
-.. The result is a percentage ratio of the value of the base field to the base item (for example, sales result of the other employees relative to the sales result of Brigitte; see Figure 11).
-.. If previous item or next item is specified as the Base item, the reference value is the result for the next visible member of the base field, in the base field’s sort order.
-.. % difference from
-.. Selection of a field from the data source of the pivot table (for example, Employee)
-.. Selection of an element from the selected base field (for example, Brigitte)
-.. From each result, its reference value is subtracted, and the difference is divided by the reference value (for example, sales of the other employees as a relative difference from the sales of Brigitte; see Figure 12).
-.. If previous item or next item is specified as the Base item, the reference value is the result for the next visible member of the base field, in the base field’s sort order.
-.. Running total in
-.. Selection of a field from the data source of the pivot table (for example, Date)
-.. —
-.. Each result is added to the sum of the results for preceding items in the base field, in the base field’s sort order, and the total sum is shown.
-.. Results are always summed, even if a different summary function was used to get each result.
-.. % of row
-.. —
-.. —
-.. The result is a percentage of the value of the whole row (for example, the row sum).
-.. % of column
-.. —
-.. —
-.. The result is a percentage of the total column value (for example, the column sum).
-.. % of total
-.. —
-.. —
-.. The result is a percentage of the overall result (for example, the total sum).
-.. Index
-.. —
-.. —
-.. (Default result x total result) / (row total x column total)
+.. todo:: 余裕があれば Table 1 をまとめろ。
 
 Options for row and column fields
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -697,11 +651,15 @@ Filtering
 に示されることにある。絞り込みフィールドボタンの右側にある▼をクリックすると、関
 連する絞り込みダイアログにアクセスできる。
 
+.. _calc09-anchor-filtering-status:
+
 絞り込みフィールドボタンに隣接するテキストは、絞り込み状態を示す：
 
 * 何も絞られていない場合は `- all -`
 * 全てではないが複数の項目が絞られる場合は `- multiple -`
 * その値だけが絞られる場合はその値
+
+.. _calc09-anchor-refresh:
 
 Updating (refreshing) changed values
 ----------------------------------------------------------------------
@@ -721,9 +679,10 @@ Updating (refreshing) changed values
 Cell formatting
 ----------------------------------------------------------------------
 
-ピボットテーブルの結果領域の升目書式は自動的に整形される。この書式設定は、Calcに
-あるすべてのツールを用いて変更可能だ。ただし、直接書式設定を使用してピボットテー
-ブルの設計に変更を加えると、次に表を更新するときに自動適用される書式設定に戻る。
+ピボットテーブルの結果領域の升目書式は自動的に整形される。この書式設定は、Calc
+にあるすべてのツールを用いて変更可能だ。ただし、直接書式設定を使用してピボット
+テーブルの設計に変更を加えると、次に表を更新するときに自動適用される書式設定に戻
+る。
 
 ピボットテーブルの作成時に、標準升目スタイルがまだ含まれていない場合は文書中のス
 タイル一覧に追加される。これらのスタイルそれぞれがピボットテーブルの部分に適用さ
@@ -849,7 +808,7 @@ Second syntax variation
 
 引数 `Pivot Table` は最初の構文変種と同じ方法で指定する。
 
-引数 `Constraints` にはピボット・テーブルから取得する値を指定するリストを空白で
+引数 `Constraints` にはピボットテーブルから取得する値を指定するリストを空白で
 区切って入力する。データフィールドが複数ある場合は、このリストにデータフィールド
 名を含める必要がある。特定の部分結果を選択するには、:samp:`{Field
 name}[{Element}]` の形式で登録項目を追加する。
@@ -867,15 +826,23 @@ Using pivot charts
 Introduction
 ----------------------------------------------------------------------
 
-ピボットチャートはピボットテーブルの視覚的表現物だ。ピボットテーブルの出力からピ
-ボットチャートを作成でき、ピボットテーブルが変更された場合はピボットチャートも変
-更される。
+ピボットテーブルはデータを再編成、操作、要約するための強力なツールであり、ピボッ
+トチャートはピボットテーブルの情報を視覚的表現を設ける。ピボットテーブルの出力か
+らピボットチャートを作成でき、ピボットテーブルが変更された場合はピボットチャート
+も変更される。
 
-ピボットチャートは汎用チャートの特化版だ。次のような特徴がある：
+ピボットチャートは |Calc03| で説明した、より一般的な統計図表の特殊な実例だ。ピ
+ボットチャートと Calc の他の図表の主な違いは次のとおりだ：
 
-* テーブルの変化を追跡し、それに応じてチャートのデータ系列とデータ範囲を自動的に
-  調整する。
-* チャートにはチャートボタンが備わっている。
+* ピボットチャートはピボットテーブルから発行されたデータの変化を追跡し、それに応
+  じて自身のデータ系列とデータ範囲を自動調整する。
+* ピボットチャートボタンがピボットチャートに備わっている。これらのボタンはピボッ
+  トチャート独自のもので、通常の図表にはない。ボタンの重要な目的は、基礎となるピ
+  ボットテーブルの間取りを表すことで、ピボットテーブルのフィールドが表示される。
+  絞り込みフィールドを表すボタンはピボットテーブルの上部にある。行フィールドを表
+  すボタンは、ピボットチャートの下部に表示される。列フィールドを表すボタンはピ
+  ボットチャートの右側の凡例に重ねて表示される。ピボットチャートのボタンを使用し
+  て、ピボットチャートに表示されるデータを絞り込むことも可能だ。
 
 Creating a pivot chart
 ----------------------------------------------------------------------
@@ -885,27 +852,67 @@ Creating a pivot chart
 * メインメニュー :menuselection:`&Insert-->&Chart...`
 * |StandardToolbar| の :guilabel:`Insert Chart` を押す
 
-:guilabel:`Chart Wizard` ダイアログボックスが開く。適宜設定。
+Calc がピボットテーブルを検出し、|ChartWizard| が開く。|ChartWizard| を使用し
+て、ピボットチャートの図表型と図表要素を選択可能だ。このウィザードは通常のグラフ
+に対応するそれと似ているが、ピボットチャートの場合、データ範囲とデータ系列を定義
+する手順が無効になっている。
+
+ウィザードの最初の手順段階では、図表型を選択し、通常の図表と同じオプションが利用
+できる。
+
+第二段階は図表要素を選択することであり、これらは通常の図表と同様だ。
+
+|Finish| を押してウィザードを閉じ、ピボットチャートを作成する。
 
 Editing a pivot chart
 ----------------------------------------------------------------------
 
-After you have created a pivot chart, you may find that you would like to move it, change its size or improve its appearance. Calc provides tools for changing the chart type, chart elements, fonts, colors, and many other options. The facilities provided for pivot charts are the same as those available for normal charts; see Chapter 3, Creating Charts and Graphs.
+ピボットチャートを作成した後、それを移動したり、寸法を変更したり、見てくれを改善
+したいことがある。Calc にはグラフの種類、グラフ要素、フォント、色、その他多くの
+オプションを変更するためのツールが搭載されている。ピボットチャートで使用できる機
+能は、通常のチャートで使用できる機能と同じなので、|Calc03| を見ろ。
 
 Updating a pivot chart
 ----------------------------------------------------------------------
 
-If the source data of the pivot table changes, refresh the pivot table and the pivot chart is also updated accordingly. To refresh the pivot table (and thus the pivot chart), click in any cell within the pivot table and select Data > Pivot Table > Refresh on the Menu bar or select Refresh in the context menu.
+ピボットテーブルの原データが変更された場合は、ピボットテーブルを更新すると、ピ
+ボットチャートもそれに応じて更新される。ピボットテーブル（すなわちピボットチャー
+ト）を更新する方法は :ref:`calc09-anchor-refresh` を見ろ。
 
 Filtering a pivot chart
 ----------------------------------------------------------------------
 
-チャートボタン（下三角が示されているもの）でフィールド項目を絞り込む。
+ピボットチャートから不要なデータを削除するには絞り込みを使え。
 
-* 元ピボットテーブルと連動している？
-* 絞り込み機能はチャートのほうがむしろ有用かもしれない。
+ピボットテーブルに適用される絞り込みはすべて、連動しているピボットチャートにも等
+しく影響する。ピボットテーブルの多様な絞り込みの仕組みについては
+:ref:`calc09-anchor-filtering` を見ろ。
+
+ピボットチャートのボタンには関連するポップアップ操作があることを示す▼がある。絞
+り込みが適用されている場合、この▼は黒から青に変わる。ピボットチャートボタンは
+チャートをダブルクリックすると操作可能になり、チャートの周囲に灰色の枠が表示され
+る。この操作によりピボットチャートは編集モードになる。
+
+ピボットチャートの上部にある絞り込みフィールドボタンをクリックすると簡素なダイア
+ログが表示される。これを使ってピボットテーブル・チャートに適用される絞り込みを変
+更する。ボタンの凡例の右側の部分には :ref:`絞り込み状態
+<calc09-anchor-filtering-status>` が示される。
+
+ピボットチャートの下部と右側にある、▼を含むボタンをクリックすると、並べ替えと絞
+り込みのダイアログにアクセスできる。これを使用して、ピボットテーブル・チャートに
+適用される並べ替えおよび絞り込みを変更する。
 
 Deleting a pivot chart
 ----------------------------------------------------------------------
 
-ピボットチャートを削除するには、チャートを選択状態にして :kbd:`Del` を押せ。
+ピボットチャートを削除するには、チャートを選択状態にして |Del| を押せ。
+
+.. note::
+
+   ピボットチャートを削除しても関連するピボットテーブルに影響はない。
+
+.. caution::
+
+   関連付けられたピボットチャートがあるピボットテーブルを削除すると、ピボット
+   チャートも削除される。このとき、ピボットテーブルの削除を確認するダイアログ
+   ボックスが表示される。

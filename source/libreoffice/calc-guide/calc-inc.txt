@@ -5,6 +5,7 @@
 .. Chapters
 .. |Calc01| replace:: :doc:`Chapter 1, Introduction<calc01>`
 .. |Calc02| replace:: :doc:`Chapter 2, Entering and Editing Data<calc02>`
+.. |Calc03| replace:: :doc:`Chapter 3, Creating Charts and Graphs<calc03>`
 .. |Calc04| replace:: :doc:`Chapter 4, Formatting Data<calc04>`
 .. |Calc05| replace:: :doc:`Chapter 5, Using Styles and Templates<calc05>`
 .. |Calc06| replace:: :doc:`Chapter 6, Using Images and Graphics<calc06>`
