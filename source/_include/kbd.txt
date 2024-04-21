@@ -1,4 +1,5 @@
 .. |Back| replace:: :kbd:`Backspace`
+.. |BackSpace| replace:: :kbd:`Backspace`
 .. |Tab| replace:: :kbd:`Tab`
 .. |Enter| replace:: :kbd:`Enter`
 .. |Shift| replace:: :kbd:`Shift`

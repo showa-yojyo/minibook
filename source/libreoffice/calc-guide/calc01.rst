@@ -584,8 +584,7 @@ All sheets
 
 * シートタブを右クリックし、|MenuBar| から :menuselection:`Select &All Sheets`
 * |MenuBar| :menuselection:`&Edit-->Select &All Sheets`
-* |MenuBar| :menuselection:`&Edit-->Selec&t-->&Select Sheets...` から
-  :guilabel:`Select Sheets` ダイアログボックスを使ってシートを選択する
+* |MenuBar| |SelectSheetsM| から |SelectSheetsDlg| を使ってシートを選択する
 
 Working with columns and rows
 ======================================================================

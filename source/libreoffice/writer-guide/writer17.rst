@@ -79,7 +79,7 @@ Using document properties to hold metadata and information that changes
 |OptionsDlg| |UserDataPage| から取得される。|FontTab| と |SecurityTab| の選択肢
 については本書の他の箇所に説明がある。
 
-|DescritionTab| と |CustomPropertiesTab| は次の目的のために使う：
+|DescriptionTab| と |CustomPropertiesTab| は次の目的のために使う：
 
 * 文書の分類、並べ替え、保存、検索を支援するメタデータ。このメタデータの一部は
   |HTML| や |PDF| で最も近い等価物にエクスポートされる。一部のフィールドには同等
@@ -97,8 +97,8 @@ Using document properties to hold metadata and information that changes
 
 このダイアログボックスに戻り、入力した情報を変更することがいつでもできる。そうす
 ると、その情報への参照すべてが文書内のどこに表示されていても変更される。例えば、
-|DescritionTab| で :guilabel:`&Title` 欄の内容を草稿表題から製品表題に変更する必
-要が出るかもしれない。
+|DescriptionTab| で :guilabel:`&Title` 欄の内容を草稿表題から製品表題に変更する
+必要が出るかもしれない。
 
 |CustomPropertiesTab| は、このダイアログボックスの他のタブが設けるフィールドに収
 まらない情報を保存するために使用する。

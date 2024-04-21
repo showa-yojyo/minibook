@@ -9,6 +9,7 @@
 .. Dialog boxes
 .. |CustomizeDlg| replace:: :guilabel:`Customize` ダイアログボックス
 .. |ExtensionsDlg| replace:: :guilabel:`Extensions` ダイアログボックス
+.. |Find&ReplaceDlg| replace:: :guilabel:`Find and Replace` ダイアログボックス
 .. |OpenFileDlg| replace:: :guilabel:`開く` ダイアログボックス
 .. |OptionsDlg| replace:: :guilabel:`Options` ダイアログボックス
 .. |Position&SizeDlg| replace:: :guilabel:`Position and Size` ダイアログボックス
@@ -52,6 +53,7 @@
 .. Tabs
 .. |AreaTab| replace:: :guilabel:`Area` タブ
 .. |BordersTab| replace:: :guilabel:`Borders` タブ
+.. |DescriptionTab| replace:: :guilabel:`Description` タブ
 .. |EventsTab| replace:: :guilabel:`Events` タブ
 .. |GeneralTab| replace:: :guilabel:`General` タブ
 .. |OptionsTab| replace:: :guilabel:`Options` タブ
@@ -84,6 +86,7 @@
 .. |WritingAidsPage| replace:: :menuselection:`Language Settings-->Writing Aids` ページ
 
 .. Menu commands
+.. |EditCopyM| replace:: :menuselection:`&Edit-->Cop&y`
 .. |EditCutM| replace:: :menuselection:`&Edit-->&Cut`
 .. |EditPasteM| replace:: :menuselection:`&Edit-->&Paste`
 .. |EditSelectAllM| replace:: :menuselection:`&Edit-->Select &All`

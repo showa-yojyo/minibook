@@ -35,7 +35,6 @@
 .. |EditSectionsDlg| replace:: :guilabel:`Edit Sections` ダイアログボックス
 .. |EnvelopeDlg| replace:: :guilabel:`Envelope` ダイアログボックス
 .. |FieldsDlg| replace:: :guilabel:`Fields` ダイアログボックス
-.. |Find&ReplaceDlg| replace:: :guilabel:`Find and Replace` ダイアログボックス
 .. |FrameDlg| replace:: :guilabel:`Frame` ダイアログボックス
 .. |HeadingNumberingDlg| replace:: :guilabel:`Heading Numbering` ダイアログボックス
 .. |ImageDlg| replace:: :guilabel:`Image` ダイアログボックス
@@ -78,7 +77,6 @@
 .. |CustomizeTab| replace:: :guilabel:`Customize` タブ
 .. |CustomPropertiesTab| replace:: :guilabel:`Custom Properties` タブ
 .. |DataTab| replace:: :guilabel:`Data` タブ
-.. |DescritionTab| replace:: :guilabel:`Description` タブ
 .. |DocInformationTab| replace:: :guilabel:`DocInformation` タブ
 .. |DocumentTab| replace:: :guilabel:`Document` タブ
 .. |EntriesTab| replace:: :guilabel:`Entries` タブ

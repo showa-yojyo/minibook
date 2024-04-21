@@ -30,11 +30,15 @@
 .. |DataLabelsDlg| replace:: :guilabel:`Data Labels` ダイアログボックス
 .. |DataSeriesDlg| replace:: :guilabel:`Data Series` ダイアログボックス
 .. |DeleteCellsDlg| replace:: :guilabel:`Delete Cells` ダイアログボックス
+.. |DeleteContentsDlg| replace:: :guilabel:`Delete Contents` ダイアログボックス
 .. |FilterDlg| replace:: :guilabel:`Filter` ダイアログボックス
+.. |FormatCellsDlg| replace:: :guilabel:`Format Cells` ダイアログボックス
 .. |FunctionWizard| replace:: :guilabel:`Function Wizard`
 .. |MoveCopySheetDlg| replace:: :guilabel:`Move/Copy Sheet` ダイアログボックス
 .. |PickColorDlg| replace:: :guilabel:`Pick a Color` ダイアログボックス
 .. |PivotTableLayoutDlg| replace:: :guilabel:`Pivot Table Layout` ダイアログボックス
+.. |SearchResultsDlg| replace:: :guilabel:`Search Results` ダイアログボックス
+.. |SelectSheetsDlg| replace:: :guilabel:`Select Sheets` ダイアログボックス
 .. |SelectSourceDlg| replace:: :guilabel:`Select Source` ダイアログボックス
 .. |StandardFilterDlg| replace:: :guilabel:`Standard Filter` ダイアログボックス
 .. |SparklinePropDlg| replace:: :guilabel:`Sparkline Properties` ダイアログボックス
@@ -46,6 +50,7 @@
 .. Tabs
 .. |DataSeriesTab| replace:: :guilabel:`Data Series` タブ
 .. |LineTab| replace:: :guilabel:`Line` タブ
+.. |NumbersTab| replace:: :guilabel:`Numbers` タブ
 .. |PerspectiveTab| replace:: :guilabel:`Perspective` タブ
 .. |PositioningTab| replace:: :guilabel:`Positioning` タブ
 .. |ScaleTab| replace:: :guilabel:`Scale` タブ
@@ -54,6 +59,7 @@
 
 .. Settings
 .. |CalcGeneralPage| replace:: :menuselection:`LibreOffice Calc-->General` ページ
+.. |CalcViewPage| replace:: :menuselection:`LibreOffice Calc-->View` ページ
 .. |CalculatePage| replace:: :menuselection:`LibreOffice Calc-->Calculate` ページ
 .. |FormulaPage| replace:: :menuselection:`LibreOffice Calc-->Formula` ページ
 .. |SortListsPage| replace:: :menuselection:`LibreOffice Calc-->Sort Lists` ページ
@@ -73,6 +79,8 @@
 .. |InsertSparklineM| replace:: :menuselection:`&Insert-->Spark&line...`
 .. |InsertXErrorsM| replace:: :menuselection:`&Insert-->X Error &Bars...`
 .. |InsertYErrorsM| replace:: :menuselection:`&Insert-->Y Error &Bars...`
+
+.. |SelectSheetsM| replace:: :menuselection:`&Edit-->Selec&t-->&Select Sheets...`
 
 .. |SplitWindowC| replace:: :menuselection:`&Split Window`
 .. |ViewSplitWindowM| replace:: :menuselection:`&View-->&Split Window`
