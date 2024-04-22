@@ -51,10 +51,14 @@
 .. |FileTypeList| replace:: :guilabel:`ファイルの種類 (&T)`
 
 .. Tabs
+.. |AlignmentTab| replace:: :guilabel:`Alignment` タブ
 .. |AreaTab| replace:: :guilabel:`Area` タブ
+.. |BackgroundTab| replace:: :guilabel:`Background` タブ
 .. |BordersTab| replace:: :guilabel:`Borders` タブ
 .. |DescriptionTab| replace:: :guilabel:`Description` タブ
 .. |EventsTab| replace:: :guilabel:`Events` タブ
+.. |FontTab| replace:: :guilabel:`Font` タブ
+.. |FontEffectsTab| replace:: :guilabel:`Font Effects` タブ
 .. |GeneralTab| replace:: :guilabel:`General` タブ
 .. |OptionsTab| replace:: :guilabel:`Options` タブ
 .. |TransparencyTab| replace:: :guilabel:`Transparency` タブ

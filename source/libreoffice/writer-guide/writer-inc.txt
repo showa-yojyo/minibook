@@ -69,8 +69,6 @@
 .. |TablePanel| replace:: :guilabel:`Table` 盤
 
 .. Tabs
-.. |AlignmentTab| replace:: :guilabel:`Alignment` タブ
-.. |BackgroundTab| replace:: :guilabel:`Background` タブ
 .. |CharacterStylesTab| replace:: :guilabel:`Character Styles` タブ
 .. |ColumnsTab| replace:: :guilabel:`Columns` タブ
 .. |ConditionTab| replace:: :guilabel:`Condition` タブ
@@ -81,8 +79,6 @@
 .. |DocumentTab| replace:: :guilabel:`Document` タブ
 .. |EntriesTab| replace:: :guilabel:`Entries` タブ
 .. |EnvelopeTab| replace:: :guilabel:`Envelope` タブ
-.. |FontTab| replace:: :guilabel:`Font` タブ
-.. |FontEffectsTab| replace:: :guilabel:`Font Effects` タブ
 .. |FooterTab| replace:: :guilabel:`Footer` タブ
 .. |FormatTab| replace:: :guilabel:`Format` タブ
 .. |FrameStylesTab| replace:: :guilabel:`Frame Styles` タブ

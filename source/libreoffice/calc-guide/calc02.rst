@@ -484,7 +484,7 @@ Paste Special dialog
    * 右クリックメニュー :menuselection:`Cop&y`
    * キーバインド |Ctrl| + :kbd:`C`
 #. 対象セル一個またはセル範囲を選択
-#. 次のいずれかで :guilabel:`Paste Special` ダイアログボックスを開く
+#. 次のいずれかで |PasteSpecialDlg| を開く
 
    * :menuselection:`&Edit-->Paste &Special-->Paste &Special...`
    * 右クリックメニュー :menuselection:`Paste &Special-->Paste &Special...`
