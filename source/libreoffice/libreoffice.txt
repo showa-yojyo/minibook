@@ -61,6 +61,8 @@
 .. |FontEffectsTab| replace:: :guilabel:`Font Effects` タブ
 .. |GeneralTab| replace:: :guilabel:`General` タブ
 .. |OptionsTab| replace:: :guilabel:`Options` タブ
+.. |OrganizerTab| replace:: :guilabel:`Organizer` タブ
+.. |PageStylesTab| replace:: :guilabel:`Page Styles` タブ
 .. |TransparencyTab| replace:: :guilabel:`Transparency` タブ
 .. |TypeTab| replace:: :guilabel:`Type` タブ
 
@@ -96,5 +98,8 @@
 .. |EditSelectAllM| replace:: :menuselection:`&Edit-->Select &All`
 .. |ExtensionsM| replace:: :menuselection:`&Tools-->&Extensions...`
 .. |FilePropertiesM| replace:: :menuselection:`&File-->Propert&ies...`
+.. |ManageTemplatesM| replace:: :menuselection:`&File-->Te&mplates-->&Manage Templates...`
+.. |NewC| replace:: :menuselection:`&New...`
 .. |PropertiesC| replace:: :menuselection:`&Properties...`
 .. |SaveAsM| replace:: :menuselection:`&File-->Save &As...`
+.. |SaveAsTemplateM| replace:: :menuselection:`&File-->Te&mplates-->&Save As Template...`

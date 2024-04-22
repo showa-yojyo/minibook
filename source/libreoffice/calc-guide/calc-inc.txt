@@ -23,6 +23,7 @@
 .. Dialog boxes
 .. |3DViewDlg| replace:: :guilabel:`3D View` ダイアログボックス
 .. |AxesDlg| replace:: :guilabel:`Axes` ダイアログボックス
+.. |CellStyleDlg| replace:: :guilabel:`Cell Style` ダイアログボックス
 .. |ChartTypeDlg| replace:: :guilabel:`Chart Type` ダイアログボックス
 .. |ChartWizard| replace:: :guilabel:`Chart Wizard`
 .. |ConditionalFormattingDlg| replace:: :guilabel:`Conditional Formatting` ダイアログボックス
@@ -52,7 +53,9 @@
 
 .. Tabs
 .. |CellProtectionTab| replace:: :guilabel:`Cell Protection` タブ
+.. |CellStylesTab| replace:: :guilabel:`Cell Styles` タブ
 .. |DataSeriesTab| replace:: :guilabel:`Data Series` タブ
+.. |DrawingStylesTab| replace:: :guilabel:`Drawing Styles` タブ
 .. |LineTab| replace:: :guilabel:`Line` タブ
 .. |NumbersTab| replace:: :guilabel:`Numbers` タブ
 .. |PerspectiveTab| replace:: :guilabel:`Perspective` タブ

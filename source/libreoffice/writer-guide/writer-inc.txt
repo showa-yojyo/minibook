@@ -86,10 +86,8 @@
 .. |ImageTab| replace:: :guilabel:`Image` タブ
 .. |Indents&SpacingTab| replace:: :guilabel:`Indents & Spacing` タブ
 .. |ListStylesTab| replace:: :guilabel:`List Styles` タブ
-.. |OrganizerTab| replace:: :guilabel:`Organizer` タブ
 .. |Outline&ListTab| replace:: :guilabel:`Outline & List` タブ
 .. |PageTab| replace:: :guilabel:`Page` タブ
-.. |PageStylesTab| replace:: :guilabel:`Page Styles` タブ
 .. |ParagraphStylesTab| replace:: :guilabel:`Paragraph Styles` タブ
 .. |PositionTab| replace:: :guilabel:`Position` タブ
 .. |Pos&SizeTab| replace:: :guilabel:`Position and Size` タブ
@@ -121,7 +119,6 @@
 .. |InsertCaptionM| replace:: :menuselection:`&Insert-->Caption...`
 .. |InsertPageNumberM| replace:: :menuselection:`&Insert-->&Page Number...`
 .. |InsertTOCM| replace:: :menuselection:`&Insert-->Table of Contents and Inde&x-->Table of Contents, &Index or Bibliography...`
-.. |NewC| replace:: :menuselection:`&New...`
 .. |PrintM| replace:: :menuselection:`&File-->&Print...`
 .. |UpdateLinksM| replace:: :menuselection:`&Tools-->&Update-->&Links`
 .. |UpdateLinksC| replace:: :menuselection:`&Update-->&Links`
