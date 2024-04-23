@@ -10,6 +10,8 @@
 .. |CustomizeDlg| replace:: :guilabel:`Customize` ダイアログボックス
 .. |ExtensionsDlg| replace:: :guilabel:`Extensions` ダイアログボックス
 .. |Find&ReplaceDlg| replace:: :guilabel:`Find and Replace` ダイアログボックス
+.. |HyperlinkDlg| replace:: :guilabel:`Hyperlink` ダイアログボックス
+.. |InsertImageDlg| replace:: :guilabel:`Insert Image` ダイアログボックス
 .. |OpenFileDlg| replace:: :guilabel:`開く` ダイアログボックス
 .. |OptionsDlg| replace:: :guilabel:`Options` ダイアログボックス
 .. |Position&SizeDlg| replace:: :guilabel:`Position and Size` ダイアログボックス
@@ -29,8 +31,10 @@
 .. |StylesDeck| replace:: :guilabel:`Styles` 甲板
 
 .. Toolbars
+.. |DrawingObjPropToolbar| replace:: :guilabel:`Drawing Object Properties` ツールバー
 .. |DrawingToolbar| replace:: :guilabel:`Drawing` ツールバー
 .. |FormattingToolbar| replace:: :guilabel:`Formatting` ツールバー
+.. |ImageToolbar| replace:: :guilabel:`Image` ツールバー
 .. |StandardToolbar| replace:: :guilabel:`Standard` ツールバー
 
 .. |ApplyButton| replace:: :guilabel:`&Apply` ボタン
@@ -63,6 +67,7 @@
 .. |OptionsTab| replace:: :guilabel:`Options` タブ
 .. |OrganizerTab| replace:: :guilabel:`Organizer` タブ
 .. |PageStylesTab| replace:: :guilabel:`Page Styles` タブ
+.. |Pos&SizeTab| replace:: :guilabel:`Position and Size` タブ
 .. |TransparencyTab| replace:: :guilabel:`Transparency` タブ
 .. |TypeTab| replace:: :guilabel:`Type` タブ
 

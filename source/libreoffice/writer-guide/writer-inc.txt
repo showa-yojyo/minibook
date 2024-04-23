@@ -40,7 +40,6 @@
 .. |ImageDlg| replace:: :guilabel:`Image` ダイアログボックス
 .. |InsertBreakDlg| replace:: :guilabel:`Insert Break` ダイアログボックス
 .. |InsertCaptionDlg| replace:: :guilabel:`Insert Caption` ダイアログボックス
-.. |InsertImageDlg| replace:: :guilabel:`Insert Image` ダイアログボックス
 .. |InsertSectionDlg| replace:: :guilabel:`Insert Section` ダイアログボックス
 .. |InsertTableDlg| replace:: :guilabel:`Insert Table` ダイアログボックス
 .. |ListStyleDlg| replace:: :guilabel:`List Style` ダイアログボックス
@@ -59,7 +58,6 @@
 
 .. |FormattingStylesToolbar| replace:: :guilabel:`Formatting (Styles)` ツールバー
 .. |FrameToolbar| replace:: :guilabel:`Frame` ツールバー
-.. |ImageToolbar| replace:: :guilabel:`Image` ツールバー
 .. |TableToolbar| replace:: :guilabel:`Table` ツールバー
 
 .. Panels in Properties deck
@@ -90,7 +88,6 @@
 .. |PageTab| replace:: :guilabel:`Page` タブ
 .. |ParagraphStylesTab| replace:: :guilabel:`Paragraph Styles` タブ
 .. |PositionTab| replace:: :guilabel:`Position` タブ
-.. |Pos&SizeTab| replace:: :guilabel:`Position and Size` タブ
 .. |PrinterTab| replace:: :guilabel:`Printer` タブ
 .. |SecurityTab| replace:: :guilabel:`Security` タブ
 .. |StatsTab| replace:: :guilabel:`Statistics` タブ
