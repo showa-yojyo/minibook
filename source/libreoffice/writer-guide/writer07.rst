@@ -216,13 +216,11 @@ Writer の通常ページビューでは、各ページが印刷されるとき�
 
 :guilabel:`Print Pr&eview` 実行手順は次のいずれか：
 
-* |MenuBar| の :menuselection:`&File-->Print Pr&eview...` を選択
-* |StandardToolbar| の :guilabel:`Toggle Print Preview (Ctrl+Shift+O)` 図像をク
-  リック
+* |MenuBar| の |FilePrintPreviewM| を選択
+* |StandardToolbar| の |TogglePrintPreviewI| をクリック
 * キーバインド |Ctrl+Shift| + :kbd:`O`
 
-これで |FormattingToolbar| の代わりに :guilabel:`Print Preview` ツールバーが表示
-する。
+これで |FormattingToolbar| の代わりに |PrintPreviewToolbar| が表示する。
 
 #. 必要なプレビュー図像をクリック
 
@@ -317,8 +315,6 @@ Quick export to PDF
 
 * |StandardToolbar| の :guilabel:`Export &Directly as PDF` 図像
 * :menuselection:`&File-->&Export As-->Export &Directly as PDF` を選択
-
-.. |PDFOptionsDlg| replace:: :guilabel:`PDF Options` ダイアログボックス
 
 |PDFOptionsDlg| で直近に選択した |PDF| 設定を使用して文書全体が書き出される。
 ファイル名と保存場所を入力するよう求められるが、ページ範囲や画像圧縮、その他のオ
@@ -503,8 +499,8 @@ User Interface tab of PDF Options dialog
 :guilabel:`Transitions`
    Writer では使用不能。
 :guilabel:`Collapse Outlines`
-   |GeneralTab| で :guilabel:`Export outl&ines` がオンになっている場
-   合、アウトラインに表示される見出しレベルの数を指定する。
+   |GeneralTab| で :guilabel:`Export outl&ines` がオンになっている場合、アウトラ
+   インに表示される見出しレベルの数を指定する。
 
 Links tab of PDF Options dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

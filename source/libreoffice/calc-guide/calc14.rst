@@ -1,5 +1,5 @@
 ======================================================================
-Chapter 14 Calc as a Database ノート
+Chapter 14, Calc as a Database ノート
 ======================================================================
 
 .. include:: ./calc-inc.txt
@@ -96,9 +96,9 @@ Named ranges
 
 * メニュー :menuselection:`&Sheet --> &Named Ranges and Expressions -->
   &Define...` 実行
-* :guilabel:`Manage Names` ダイアログボックスで :guilabel:`&Add...` を押す
+* |ManageNamesDlg| で :guilabel:`&Add...` を押す
 
-:guilabel:`Manage Names` ダイアログボックスの開き方は：
+|ManageNamesDlg| の開き方は：
 
 * :kbd:`Ctrl` + :kbd:`F3` を押す
 * 数式バーの左にある :guilabel:`Name Box` ドロップダウンリストで
@@ -331,11 +331,11 @@ Advanced filters
 #. ダイアログボックス操作
 #. :guilabel:`&OK`
 
-個々の名前付き範囲に対して、:guilabel:`Define Name` と :guilabel:`Manage Names`
-ダイアログボックスで :guilabel:`&Filter` にチェックを入れることができる。この方
-法で絞り込みのためにマークされた名前付き範囲しか :guilabel:`Advanced Filter` ダ
-イアログボックスの :guilabel:`Read Filter Criteria From` 欄のドロップダウンボッ
-クスで選択できない。データベースの範囲はドロップダウンボックスで選択できない。
+個々の名前付き範囲に対して、:guilabel:`Define Name` と |ManageNamesDlg| で
+:guilabel:`&Filter` にチェックを入れることができる。この方法で絞り込みのために
+マークされた名前付き範囲しか :guilabel:`Advanced Filter` ダイアログボックスの
+:guilabel:`Read Filter Criteria From` 欄のドロップダウンボックスで選択できない。
+データベースの範囲はドロップダウンボックスで選択できない。
 
 .. admonition:: 利用者ノート
 

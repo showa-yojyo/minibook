@@ -33,9 +33,14 @@
 .. |DataSeriesDlg| replace:: :guilabel:`Data Series` ダイアログボックス
 .. |DeleteCellsDlg| replace:: :guilabel:`Delete Cells` ダイアログボックス
 .. |DeleteContentsDlg| replace:: :guilabel:`Delete Contents` ダイアログボックス
+.. |DefineNameDlg| replace:: :guilabel:`Define Name` ダイアログボックス
 .. |FilterDlg| replace:: :guilabel:`Filter` ダイアログボックス
+.. |EditPrintRangesDlg| replace:: :guilabel:`Edit Print Ranges` ダイアログボックス
+.. |FooterDlg| replace:: :guilabel:`Footer` ダイアログボックス
 .. |FormatCellsDlg| replace:: :guilabel:`Format Cells` ダイアログボックス
 .. |FunctionWizard| replace:: :guilabel:`Function Wizard`
+.. |HeaderDlg| replace:: :guilabel:`Header` ダイアログボックス
+.. |ManageNamesDlg| replace:: :guilabel:`Manage Names` ダイアログボックス
 .. |MoveCopySheetDlg| replace:: :guilabel:`Move/Copy Sheet` ダイアログボックス
 .. |PasteSpecialDlg| replace:: :guilabel:`Paste Special` ダイアログボックス
 .. |PickColorDlg| replace:: :guilabel:`Pick a Color` ダイアログボックス
@@ -70,12 +75,14 @@
 .. |CalculatePage| replace:: :menuselection:`LibreOffice Calc-->Calculate` ページ
 .. |FormulaPage| replace:: :menuselection:`LibreOffice Calc-->Formula` ページ
 .. |SortListsPage| replace:: :menuselection:`LibreOffice Calc-->Sort Lists` ページ
+.. |CalcPrintPage| replace:: :menuselection:`LibreOffice Calc-->Print` ページ
 
 .. Menu/Context menu commands:
 .. |DataGroupM| replace:: :menuselection:`&Data-->&Group and Outline-->&Group...`
 
 .. |FormatChartTypeM| replace:: :menuselection:`F&ormat-->Chart T&ype...`
 .. |FormatSelectionM| replace:: :menuselection:`F&ormat-->Format &Selection...`
+.. |FormatPrintRangesEditM| replace:: :menuselection:`F&ormat-->Prin&t Ranges-->&Edit...`
 
 .. |InsertChartM| replace:: :menuselection:`&Insert-->&Chart...`
 .. |InsertDataLabelsM| replace:: :menuselection:`&Insert-->&Data Labels...`

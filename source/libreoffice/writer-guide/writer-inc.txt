@@ -77,17 +77,14 @@
 .. |DocumentTab| replace:: :guilabel:`Document` タブ
 .. |EntriesTab| replace:: :guilabel:`Entries` タブ
 .. |EnvelopeTab| replace:: :guilabel:`Envelope` タブ
-.. |FooterTab| replace:: :guilabel:`Footer` タブ
 .. |FormatTab| replace:: :guilabel:`Format` タブ
 .. |FrameStylesTab| replace:: :guilabel:`Frame Styles` タブ
-.. |HeaderTab| replace:: :guilabel:`Header` タブ
 .. |ImageTab| replace:: :guilabel:`Image` タブ
 .. |Indents&SpacingTab| replace:: :guilabel:`Indents & Spacing` タブ
 .. |ListStylesTab| replace:: :guilabel:`List Styles` タブ
 .. |Outline&ListTab| replace:: :guilabel:`Outline & List` タブ
 .. |PageTab| replace:: :guilabel:`Page` タブ
 .. |ParagraphStylesTab| replace:: :guilabel:`Paragraph Styles` タブ
-.. |PositionTab| replace:: :guilabel:`Position` タブ
 .. |PrinterTab| replace:: :guilabel:`Printer` タブ
 .. |SecurityTab| replace:: :guilabel:`Security` タブ
 .. |StatsTab| replace:: :guilabel:`Statistics` タブ
@@ -111,7 +108,6 @@
 .. Menu commands
 .. |EditC| replace:: :menuselection:`&Edit...`
 .. |EditStyleC| replace:: :menuselection:`&Edit Style...`
-.. |FileExportM| replace:: :menuselection:`&File-->Expor&t...`
 .. |HeadingNumberingM| replace:: :menuselection:`&Tools-->Heading &Numbering...`
 .. |InsertCaptionM| replace:: :menuselection:`&Insert-->Caption...`
 .. |InsertPageNumberM| replace:: :menuselection:`&Insert-->&Page Number...`

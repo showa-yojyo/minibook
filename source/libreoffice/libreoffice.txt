@@ -16,6 +16,7 @@
 .. |OptionsDlg| replace:: :guilabel:`Options` ダイアログボックス
 .. |Position&SizeDlg| replace:: :guilabel:`Position and Size` ダイアログボックス
 .. |PageStyleDlg| replace:: :guilabel:`Page Style` ダイアログボックス
+.. |PDFOptionsDlg| replace:: :guilabel:`PDF Options` ダイアログボックス
 .. |PrintDlg| replace:: :guilabel:`Print` ダイアログボックス
 .. |PropertiesDlg| replace:: :guilabel:`Properties` ダイアログボックス
 .. |SaveAsDlg| replace:: :guilabel:`名前を付けて保存` ダイアログボックス
@@ -35,7 +36,11 @@
 .. |DrawingToolbar| replace:: :guilabel:`Drawing` ツールバー
 .. |FormattingToolbar| replace:: :guilabel:`Formatting` ツールバー
 .. |ImageToolbar| replace:: :guilabel:`Image` ツールバー
+.. |PrintPreviewToolbar| replace:: :guilabel:`Print Preview` ツールバー
 .. |StandardToolbar| replace:: :guilabel:`Standard` ツールバー
+
+.. Toolbar icons
+.. |TogglePrintPreviewI| replace:: :guilabel:`Toggle Print Preview (Ctrl+Shift+O)` 図像
 
 .. |ApplyButton| replace:: :guilabel:`&Apply` ボタン
 .. |Browse| replace:: :guilabel:`&Browse...` ボタン
@@ -63,11 +68,14 @@
 .. |EventsTab| replace:: :guilabel:`Events` タブ
 .. |FontTab| replace:: :guilabel:`Font` タブ
 .. |FontEffectsTab| replace:: :guilabel:`Font Effects` タブ
+.. |FooterTab| replace:: :guilabel:`Footer` タブ
+.. |HeaderTab| replace:: :guilabel:`Header` タブ
 .. |GeneralTab| replace:: :guilabel:`General` タブ
 .. |OptionsTab| replace:: :guilabel:`Options` タブ
 .. |OrganizerTab| replace:: :guilabel:`Organizer` タブ
 .. |PageStylesTab| replace:: :guilabel:`Page Styles` タブ
 .. |Pos&SizeTab| replace:: :guilabel:`Position and Size` タブ
+.. |PositionTab| replace:: :guilabel:`Position` タブ
 .. |TransparencyTab| replace:: :guilabel:`Transparency` タブ
 .. |TypeTab| replace:: :guilabel:`Type` タブ
 
@@ -102,6 +110,9 @@
 .. |EditPasteM| replace:: :menuselection:`&Edit-->&Paste`
 .. |EditSelectAllM| replace:: :menuselection:`&Edit-->Select &All`
 .. |ExtensionsM| replace:: :menuselection:`&Tools-->&Extensions...`
+.. |FileExportM| replace:: :menuselection:`&File-->Expor&t...`
+.. |FilePrintM| replace:: :menuselection:`&File-->&Print...`
+.. |FilePrintPreviewM| replace:: :menuselection:`&File-->Print Pr&eview...`
 .. |FilePropertiesM| replace:: :menuselection:`&File-->Propert&ies...`
 .. |ManageTemplatesM| replace:: :menuselection:`&File-->Te&mplates-->&Manage Templates...`
 .. |NewC| replace:: :menuselection:`&New...`

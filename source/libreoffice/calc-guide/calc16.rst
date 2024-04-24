@@ -1,5 +1,5 @@
 ======================================================================
-Calc Guide Chapter 16 User Interface Variants ノート
+Calc Guide Chapter 16, User Interface Variants ノート
 ======================================================================
 
 .. include:: ./calc-inc.txt

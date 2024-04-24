@@ -1,5 +1,5 @@
 ======================================================================
-Calc Guide Chapter 12 Sharing and Reviewing Spreadsheets ノート
+Calc Guide Chapter 12, Sharing and Reviewing Spreadsheets ノート
 ======================================================================
 
 .. include:: ./calc-inc.txt

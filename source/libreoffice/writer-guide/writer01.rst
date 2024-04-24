@@ -403,9 +403,9 @@ Web ビュー
 
 .. tip::
 
-   |MenuBar| から :menuselection:`&Files-->Print Pr&eview...` を使うか、キーバイ
-   ンド |Ctrl+Shift| + :kbd:`O` で文書を表示することもできるが、こ
-   のビューで編集はできない。|Writer07| を参照しろ。
+   |MenuBar| から |FilePrintPreviewM| を選択するか、キーバインド |Ctrl+Shift| +
+   :kbd:`O` で文書を表示することもできるが、このビューで編集はできない。
+   |Writer07| を参照しろ。
 
 Starting a new document
 ======================================================================
