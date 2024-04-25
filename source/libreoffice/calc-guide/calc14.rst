@@ -331,7 +331,7 @@ Advanced filters
 #. ダイアログボックス操作
 #. :guilabel:`&OK`
 
-個々の名前付き範囲に対して、:guilabel:`Define Name` と |ManageNamesDlg| で
+個々の名前付き範囲に対して、|DefineNameDlg| と |ManageNamesDlg| で
 :guilabel:`&Filter` にチェックを入れることができる。この方法で絞り込みのために
 マークされた名前付き範囲しか :guilabel:`Advanced Filter` ダイアログボックスの
 :guilabel:`Read Filter Criteria From` 欄のドロップダウンボックスで選択できない。
