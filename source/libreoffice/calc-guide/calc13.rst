@@ -43,8 +43,8 @@ Using the macro recorder
 
    *Getting Started Guide* を先に読んでおいたほうがいいかもしれない。
 
-まず、オプション設定から :menuselection:`LibreOffice --> Advanced` ページでオプ
-ション :guilabel:`Enable macro recording (may be limited)` をオンにしておけ。
+まず、|OptionsDlg| |LibreOfficeAdvancedPage| でオプション :guilabel:`Enable
+macro recording (may be limited)` をオンにしておけ。
 
 本書手順では、スプレッドシートのセル範囲に対して、乗算を伴う特殊な貼り付けを
 実行するマクロを作成する。要点を記すと：

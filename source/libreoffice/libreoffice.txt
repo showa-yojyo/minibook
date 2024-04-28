@@ -98,6 +98,7 @@
 .. |PathsPage| replace:: :menuselection:`LibreOffice-->Paths` ページ
 .. |SecurityPage| replace:: :menuselection:`LibreOffice-->Security` ページ
 .. |ApplicationColors| replace:: :menuselection:`LibreOffice-->Application Colors` ページ
+.. |LibreOfficeAdvancedPage| replace:: :menuselection:`LibreOffice-->Advanced` ページ
 ..   Load/Save -->
 .. |LoadSaveGeneralPage| replace:: :menuselection:`Load/Save-->General` ページ
 ..   Language Settings-->

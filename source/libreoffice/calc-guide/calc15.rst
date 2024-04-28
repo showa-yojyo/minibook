@@ -142,7 +142,7 @@ Application colors
 Advanced options
 ----------------------------------------------------------------------
 
-:menuselection:`LibreOffice-->Advanced` ページで注目したい選択肢は次のものだ：
+|LibreOfficeAdvancedPage| で注目したい選択肢は次のものだ：
 
 :guilabel:`Enable experimental features (may be unstable)` をオンにすると、未完
 成機能や既知バグを含む機能が利用可能になる。そのような機能の集合はバージョンによ
