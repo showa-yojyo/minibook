@@ -430,13 +430,12 @@ Calculations linking sheets
 岐シートを設定し、データを入力し、升目を書式設定し、行と列のさまざまな合計の数式
 を準備することだ。その後、最初のシートから次のようにコピーを作成する：
 
-#. シートタブで右クリックし、:menuselection:`Rename S&heet...` を選択。`Branch1`
-   と入力する。再度タブを右クリックし、:menuselection:`&Move or Copy Sheet...`
-   を選択。
-#. :guilabel:`Move/Copy Sheet` ダイアログで :guilabel:`Copy` を選択し
-   :guilabel:`&Insert before` 領域で `-move to end position-` を選択。
-   :guilabel:`New &name` の項目を `Branch2` に変更する。:guilabel:`C&opy` をク
-   リック。これを繰り返して、`Branch3` と `Combined` シートを作成。
+#. シートタブで右クリックし、|RenameSheetC| を選択。`Branch1` と入力する。再度タ
+   ブを右クリックし、|MoveCopySheetC| を選択。
+#. |MoveCopySheetDlg| で :guilabel:`Copy` を選択し :guilabel:`&Insert before` 領
+   域で `-move to end position-` を選択。 :guilabel:`New &name` の項目を
+   `Branch2` に変更する。:guilabel:`C&opy` をクリック。これを繰り返し
+   て、`Branch3` と `Combined` シートを作成。
 #. `Branch2` と `Branch3` のデータをそれぞれのシートに入力する。それぞれのシート
    は独立し、個々の支店の業績を報告する。
 #. `Combined` シートでセル K7 をクリックする。`Branch1` のタブをクリックし、
@@ -659,9 +658,9 @@ Using the Function Wizard
 素を視覚化し、中間結果が正しいかどうかを、間違いが見つかるまで検査することができ
 る。
 
-関数は :guilabel:`Input` 行に入力することができる。:guilabel:`Input` 行に関数を
-入力した後、|Enter| を押すか、|FormulaBar| の :guilabel`Accept` ボタンを押すと升
-目に関数が追加され、その結果が表示される。
+関数は |InputLine| に入力することができる。|InputLine| に関数を入力した後
+|Enter| を押すか、|FormulaBar| の |FormulaAccept| を押すと升目に関数が追加され、
+その結果が表示される。
 
 値ではなく数式がセルに表示される場合は |OptionsDlg| |CalcViewPage| の
 :guilabel:`&Formulas` がオンになっていやしないかを確認しろ。

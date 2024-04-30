@@ -811,9 +811,8 @@ Using placeholder fields
 
 同様に、`Table` 仮入力欄をクリックすると |InsertTableDlg| が開き、`Frame` 仮入力
 欄をクリックすると |FrameDlg| が開き、`Object`仮入力欄をクリックすると
-:guilabel:`Insert OLE Object` ダイアログボックスが開く。`Text` 仮入力欄は、単に
-それをクリックし、|PlaceholderBox| にテキストを入力するだけで、フィールドが置き
-換わる。
+|InsertOLEDlg| が開く。`Text` 仮入力欄は、単にそれをクリックし、|PlaceholderBox|
+にテキストを入力するだけで、フィールドが置き換わる。
 
 Using other fields
 ======================================================================

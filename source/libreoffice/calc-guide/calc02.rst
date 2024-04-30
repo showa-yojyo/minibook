@@ -486,9 +486,9 @@ Paste Special dialog
 #. 対象セル一個またはセル範囲を選択
 #. 次のいずれかで |PasteSpecialDlg| を開く
 
-   * :menuselection:`&Edit-->Paste &Special-->Paste &Special...`
-   * 右クリックメニュー :menuselection:`Paste &Special-->Paste &Special...`
-   * キーバインド |Ctrl| + |Shift| + :kbd:`V`
+   * |PasteSpecialM|
+   * 右クリックメニュー |PasteSpecialC|
+   * キーバインド |Ctrl+Shift| + :kbd:`V`
 #. オプションを適宜指定
 #. |OK|
 

@@ -776,9 +776,9 @@ Removing personal data
 |PDF| を作成する前に、ファイルから削除されていることを保証したい場合がある。
 
 |OptionsDlg| |SecurityPage| で :guilabel:`O&ptions...` ボタンを押すと
-:guilabel:`Security Options and Warnings` ダイアログボックスが表示され、ファイル
-に特定の情報が含まれている場合に警告を表示したり、保存時に個人情報を自動的に削除
-したりするように LibreOffice を設定することが可能だ。
+|SecurityOptions&WarningsDlg| が表示され、ファイルに特定の情報が含まれている場合
+に警告を表示したり、保存時に個人情報を自動的に削除したりするように LibreOffice
+を設定することが可能だ。
 
 ファイルから個人データなどを削除するには、
 

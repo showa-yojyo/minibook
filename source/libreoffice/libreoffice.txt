@@ -1,3 +1,4 @@
+.. |Base| replace:: *Base Guide*
 .. |Calc| replace:: *Calc Guide*
 .. |Draw| replace:: *Draw Guide*
 .. |Guide| replace:: *Getting Started Guide*
@@ -12,14 +13,20 @@
 .. |Find&ReplaceDlg| replace:: :guilabel:`Find and Replace` ダイアログボックス
 .. |HyperlinkDlg| replace:: :guilabel:`Hyperlink` ダイアログボックス
 .. |InsertImageDlg| replace:: :guilabel:`Insert Image` ダイアログボックス
+.. |InsertOLEDlg| replace:: :guilabel:`Insert OLE Object` ダイアログボックス
+.. |InsertSheetDlg| replace:: :guilabel:`Insert Sheet` ダイアログボックス
+.. |MoveCopySheetDlg| replace:: :guilabel:`Move/Copy Sheet` ダイアログボックス
 .. |OpenFileDlg| replace:: :guilabel:`開く` ダイアログボックス
 .. |OptionsDlg| replace:: :guilabel:`Options` ダイアログボックス
 .. |Position&SizeDlg| replace:: :guilabel:`Position and Size` ダイアログボックス
 .. |PageStyleDlg| replace:: :guilabel:`Page Style` ダイアログボックス
+.. |PasteSpecialDlg| replace:: :guilabel:`Paste Special` ダイアログボックス
 .. |PDFOptionsDlg| replace:: :guilabel:`PDF Options` ダイアログボックス
 .. |PrintDlg| replace:: :guilabel:`Print` ダイアログボックス
 .. |PropertiesDlg| replace:: :guilabel:`Properties` ダイアログボックス
+.. |RenameSheetDlg| replace:: :guilabel:`Rename Sheet` ダイアログボックス
 .. |SaveAsDlg| replace:: :guilabel:`名前を付けて保存` ダイアログボックス
+.. |SecurityOptions&WarningsDlg| replace:: :guilabel:`Security Options and Warnings` ダイアログボックス
 .. |TemplatesDlg| replace:: :guilabel:`Templates` ダイアログボックス
 .. |ThemeDlg| replace:: :guilabel:`Theme` ダイアログボックス
 .. |Zoom&ViewLayoutDlg| replace:: :guilabel:`Zoom & View Layout` ダイアログボックス
@@ -35,6 +42,9 @@
 .. |DrawingObjPropToolbar| replace:: :guilabel:`Drawing Object Properties` ツールバー
 .. |DrawingToolbar| replace:: :guilabel:`Drawing` ツールバー
 .. |FormattingToolbar| replace:: :guilabel:`Formatting` ツールバー
+.. |FormControlsToolbar| replace:: :guilabel:`Form Controls` ツールバー
+.. |FormDesignToolbar| replace:: :guilabel:`Form Design` ツールバー
+.. |FormNavigationToolbar| replace:: :guilabel:`Form Navigation` ツールバー
 .. |ImageToolbar| replace:: :guilabel:`Image` ツールバー
 .. |PrintPreviewToolbar| replace:: :guilabel:`Print Preview` ツールバー
 .. |StandardToolbar| replace:: :guilabel:`Standard` ツールバー
@@ -106,8 +116,14 @@
 .. |WritingAidsPage| replace:: :menuselection:`Language Settings-->Writing Aids` ページ
 
 .. Menu commands
+.. |ControlPropertiesC| replace:: :menuselection:`Con&trol Properties...`
+.. |DeleteSheetC| replace:: :menuselection:`&Delete Sheet`
+.. |DeleteSheetM| replace:: :menuselection:`&Sheet-->&Delete Sheet...`
 .. |EditCopyM| replace:: :menuselection:`&Edit-->Cop&y`
 .. |EditCutM| replace:: :menuselection:`&Edit-->&Cut`
+.. |EditDatabaseFileC| replace:: :menuselection:`Edit &Database File...`
+.. |EditHyperLinkC| replace:: :menuselection:`E&dit Hyperlink...`
+.. |EditHyperLinkM| replace:: :menuselection:`&Edit-->&Hyperlink...`
 .. |EditPasteM| replace:: :menuselection:`&Edit-->&Paste`
 .. |EditSelectAllM| replace:: :menuselection:`&Edit-->Select &All`
 .. |ExtensionsM| replace:: :menuselection:`&Tools-->&Extensions...`
@@ -115,8 +131,19 @@
 .. |FilePrintM| replace:: :menuselection:`&File-->&Print...`
 .. |FilePrintPreviewM| replace:: :menuselection:`&File-->Print Pr&eview...`
 .. |FilePropertiesM| replace:: :menuselection:`&File-->Propert&ies...`
+.. |InsertHyperlinkC| replace:: :menuselection:`&Insert &Hyperlink...`
+.. |InsertHyperlinkM| replace:: :menuselection:`&Insert-->&Hyperlink...`
+.. |InsertOLEM| replace:: :menuselection:`&Insert-->&OLE Object-->&OLE Object...`
+.. |InsertSheetC| replace:: :menuselection:`Insert &Sheet...`
+.. |InsertSheetM| replace:: :menuselection:`&Sheet-->Insert &Sheet...`
 .. |ManageTemplatesM| replace:: :menuselection:`&File-->Te&mplates-->&Manage Templates...`
+.. |MoveCopySheetC| replace:: :menuselection:`&Move or Copy Sheet...`
+.. |MoveCopySheetM| replace:: :menuselection:`&Sheet-->&Move or Copy Sheet...`
 .. |NewC| replace:: :menuselection:`&New...`
+.. |PasteSpecialC| replace:: :menuselection:`Paste &Special-->Paste &Special...`
+.. |PasteSpecialM| replace:: :menuselection:`&Edit-->Paste &Special-->Paste &Special...`
 .. |PropertiesC| replace:: :menuselection:`&Properties...`
+.. |RemoveHyperlinkC| replace:: :menuselection:`&Remove Hyperlink`
+.. |RenameSheetC| replace:: :menuselection:`Rename S&heet...`
 .. |SaveAsM| replace:: :menuselection:`&File-->Save &As...`
 .. |SaveAsTemplateM| replace:: :menuselection:`&File-->Te&mplates-->&Save As Template...`

@@ -156,8 +156,8 @@ Security options
    れない限り、その情報の多くは |PDF| を含む他の形式で保存された場合でも保持され
    る。
 
-:guilabel:`O&ptions...` ボタンを押すと次のオプションがある別のダイアログボックス
-が開く：
+:guilabel:`O&ptions...` ボタンを押すと次のオプションがある
+|SecurityOptions&WarningsDlg| が開く：
 
 :guilabel:`&Remove personal information on saving`
    これをオンにすると、ファイルを保存する際、ファイル特性から使用者データが常に

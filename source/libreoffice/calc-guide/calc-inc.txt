@@ -35,14 +35,13 @@
 .. |DeleteContentsDlg| replace:: :guilabel:`Delete Contents` ダイアログボックス
 .. |DefineNameDlg| replace:: :guilabel:`Define Name` ダイアログボックス
 .. |FilterDlg| replace:: :guilabel:`Filter` ダイアログボックス
+.. |EditLinksDlg| replace:: :guilabel:`Edit Links` ダイアログボックス
 .. |EditPrintRangesDlg| replace:: :guilabel:`Edit Print Ranges` ダイアログボックス
 .. |FooterDlg| replace:: :guilabel:`Footer` ダイアログボックス
 .. |FormatCellsDlg| replace:: :guilabel:`Format Cells` ダイアログボックス
 .. |FunctionWizard| replace:: :guilabel:`Function Wizard`
 .. |HeaderDlg| replace:: :guilabel:`Header` ダイアログボックス
 .. |ManageNamesDlg| replace:: :guilabel:`Manage Names` ダイアログボックス
-.. |MoveCopySheetDlg| replace:: :guilabel:`Move/Copy Sheet` ダイアログボックス
-.. |PasteSpecialDlg| replace:: :guilabel:`Paste Special` ダイアログボックス
 .. |PickColorDlg| replace:: :guilabel:`Pick a Color` ダイアログボックス
 .. |PivotTableLayoutDlg| replace:: :guilabel:`Pivot Table Layout` ダイアログボックス
 .. |ProtectSheetDlg| replace:: :guilabel:`Protect Sheet` ダイアログボックス
@@ -68,9 +67,12 @@
 .. |ScaleTab| replace:: :guilabel:`Scale` タブ
 
 .. |FormulaBar| replace:: Formula バー
+.. |InputLine| replace:: :guilabel:`Input` 行
+.. |FormulaAccept| replace:: :guilabel:`✓`
 
 .. Settings
 .. |CalcGeneralPage| replace:: :menuselection:`LibreOffice Calc-->General` ページ
+.. |CalcDefaultsPage| replace:: :menuselection:`LibreOffice Calc-->Defaults` ページ
 .. |CalcViewPage| replace:: :menuselection:`LibreOffice Calc-->View` ページ
 .. |CalculatePage| replace:: :menuselection:`LibreOffice Calc-->Calculate` ページ
 .. |FormulaPage| replace:: :menuselection:`LibreOffice Calc-->Formula` ページ
@@ -79,6 +81,8 @@
 
 .. Menu/Context menu commands:
 .. |DataGroupM| replace:: :menuselection:`&Data-->&Group and Outline-->&Group...`
+
+.. |EditLinksM| replace:: :menuselection:`&Edit-->Lin&ks to External Files...`
 
 .. |FormatChartTypeM| replace:: :menuselection:`F&ormat-->Chart T&ype...`
 .. |FormatSelectionM| replace:: :menuselection:`F&ormat-->Format &Selection...`
@@ -89,7 +93,6 @@
 .. |InsertLegendM| replace:: :menuselection:`&Insert-->&Legend...`
 .. |InsertMeanM| replace:: :menuselection:`&Insert-->Mean &Value Lines`
 .. |InsertTitlesM| replace:: :menuselection:`&Insert-->&Titles...`
-.. |InsertSheetC| replace:: :menuselection:`Insert &Sheet...`
 .. |InsertSparklineM| replace:: :menuselection:`&Insert-->Spark&line...`
 .. |InsertXErrorsM| replace:: :menuselection:`&Insert-->X Error &Bars...`
 .. |InsertYErrorsM| replace:: :menuselection:`&Insert-->Y Error &Bars...`

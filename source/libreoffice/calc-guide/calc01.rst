@@ -259,8 +259,7 @@ Sheet tabs
 
 シート名を変更するには：
 
-#. シートタブ右クリックメニュー :menuselection:`Rename S&heet...` でダイアログ
-   ボックスを開く。
+#. シートタブ右クリックメニュー |RenameSheetC| でダイアログボックスを開く。
 #. :guilabel:`&Name` 欄にシート名を入力
 #. |OK| を押す
 
@@ -698,14 +697,13 @@ Working with sheets
 Inserting new sheets
 ----------------------------------------------------------------------
 
-シートタブの横にある :guilabel:`+` をクリックすると、:guilabel:`Insert Sheet` ダ
-イアログボックスを開かずに、最後のシートの後に新規シートを挿入する。
+シートタブの横にある :guilabel:`+` をクリックすると、|InsertSheetDlg| を開かずに、
+最後のシートの後に新規シートを挿入する。
 
 以下の方法では、ダイアログボックスを開き、位置、複数作成、名前、既存ファイル内
 シートの選択を行うことが可能だ：
 
-* 挿入したい位置のシートを選択し、|MenuBar| :menuselection:`&Sheet-->Insert
-  &Sheet...` を実行
+* 挿入したい位置のシートを選択し、|MenuBar| |InsertSheetM| を実行
 * 挿入したい位置のシートタブを右クリックして |InsertSheetC| を実行
 * シートタブの末尾の空白部分を右クリックして |InsertSheetC| を実行
 
@@ -735,8 +733,8 @@ Using Move/Copy Sheet dialog
 
 #. 移動またはコピーしたいシートで、次のいずれかを実行：
 
-   * シートタブを右クリック :menuselection:`&Move or Copy Sheet...`
-   * |MenuBar| から :menuselection:`&Sheet-->&Move or Copy Sheet...`
+   * シートタブを右クリック |MoveCopySheetC|
+   * |MenuBar| から |MoveCopySheetM|
 #. ダイアログボックスが開く
 #. :guilabel:`&Move` や :guilabel:`&Copy` を選択するとシートが移動したりコピーさ
    れたりする。
@@ -753,8 +751,8 @@ Deleting sheets
 
 単一シートを削除する方法は次のいずれか：
 
-* シートタブの右クリックメニューから :menuselection:`&Delete Sheet...` を実行
-* |MenuBar| :menuselection:`&Sheet-->&Delete Sheet...` を実行
+* シートタブの右クリックメニューから |DeleteSheetC| を実行
+* |MenuBar| |DeleteSheetM| を実行
 
 シートが空でない場合、確認ダイアログボックスが開く。
 
@@ -787,12 +785,11 @@ Renaming sheets
 いいが、枚数が多くなると識別するのが困難になる。次のいずれかの方法で、シート名を
 変更する：
 
-* シートタブ右クリックメニュー :menuselection:`Rename &Sheet...` を実行
+* シートタブ右クリックメニュー |RenameSheetC| を実行
 * |MenuBar| :menuselection:`&Sheet-->Rename &Sheet...` を実行
 * シートタブダブルクリック
 
-:guilabel:`Rename Sheet` ダイアログボックスが開くので、名前を入力して |OK| を押
-せ。
+|RenameSheetDlg| が開くので、名前を入力して |OK| を押せ。
 
 Viewing a spreadsheet
 ======================================================================

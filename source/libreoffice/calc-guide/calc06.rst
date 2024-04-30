@@ -95,8 +95,7 @@ Embedding linked images
 
 リンクはいつでも埋め込みに変えることが可能。手順：
 
-#. |MenuBar| から :menuselection:`&Edit-->Links to External Files...` を実行して
-   :guilabel:`Edit Links` ダイアログボックスを開く
+#. |MenuBar| から |EditLinksM| を実行して |EditLinksDlg| を開く
 #. 目的の画像項目を一覧から選択
 #. :guilabel:`&Break Link` ボタンを押す
 
@@ -469,11 +468,10 @@ Additional tools
 :menuselection:`A&ssign Macro...`
    画像にプログラム可能な機能を追加できるように :guilabel:`Assign Macro` ダイア
    ログを開く。詳しくは |Calc13| を見ろ。
-:menuselection:`E&dit Hyperlink...`
+|EditHyperlinkC|
    画像からスプレッドシート内の別の場所、別の文書、Web ページへのハイパーリンク
-   を定義する。|HyperlinkDlg| を開くには、コンテキストメニューの
-   :menuselection:`Edit Hyperlink...` を選択する。ハイパーリンクの詳細については
-   |Calc11| を見ろ。
+   を定義する。|HyperlinkDlg| を開くには、コンテキストメニュー |EditHyperlinkC|
+   を選択する。ハイパーリンクの詳細については |Calc11| を見ろ。
 :menuselection:`Co&mpress...`
    画像を圧縮してスプレッドシートのファイルサイズを小さくできる。コンテキストメ
    ニューの :menuselection:`Compress...` を選択すると :guilabel:`Compress Image`
@@ -486,8 +484,8 @@ Additional tools
 .. admonition:: 読者ノート
 
    * :menuselection:`Alt &Text...` 項目は本書と名称が異なるので現況に合わせた。
-   * :menuselection:`E&dit Hyperlink...` は対象がハイパーリンクを有する場合にの
-     みコンテキストメニューに現れる項目のようだ。
+   * |EditHyperlinkC| は対象がハイパーリンクを有する場合にのみコンテキストメ
+     ニューに現れる項目のようだ。
 
 Using Fontwork
 ======================================================================

@@ -638,8 +638,8 @@ Web サイトのアドレスや URL など、ハイパーリンクとして使�
 :guilabel:`URL Recognition` をオンにする。
 
 LibreOffice で特定の URL をハイパーリンクに変換したくない場合は、書式設定が適用
-された直後にハイパーリンクにキャレットを置いて右クリックし、
-:menuselection:`&Remove Hyperlink` を選択する。
+された直後にハイパーリンクにキャレットを置いて右クリックし、|RemoveHyperlinkC|
+を選択する。
 
 また、Navigator や |HyperlinkDlg| を使って、
 
@@ -654,8 +654,7 @@ LibreOffice 内でハイパーリンクを活性にする標準の動作は |Ctr
 
 #. |OptionsDlg| を開く
 #. |SecurityPage| を開く
-#. :guilabel:`Security Options and Warnings` 横にある :guilabel:`O&ptions...` ボ
-   タンを押す
+#. :guilabel:`O&ptions...` ボタンを押して |SecurityOptions&WarningsDlg| を開く。
 #. :guilabel:`Ctrl-click required &to open hyperlinks` をオフにする
 
 Editing hyperlinks
@@ -666,9 +665,9 @@ Editing hyperlinks
 #. リンクテキスト内の任意の場所をクリック
 #. 以下のいずれかを行い |HyperlinkDlg| を開く：
 
-   * コンテキストメニューから :menuselection:`Edit Hyperlink...` を選択
+   * コンテキストメニューから |EditHyperlinkC| を選択
    * |StandardToolbar| の :guilabel:`Hyperlink` 図像をクリック
-   * |MenuBar| から :menuselection:`&Edit-->&Hyperlink` を選択
+   * |MenuBar| から |EditHyperlinkM| を選択
 #. 変更を加え |ApplyButton| を押す
 
 複数のハイパーリンクを編集する必要がある場合は、すべてのハイパーリンクを編集する
