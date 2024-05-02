@@ -86,7 +86,6 @@
 .. |PageTab| replace:: :guilabel:`Page` タブ
 .. |ParagraphStylesTab| replace:: :guilabel:`Paragraph Styles` タブ
 .. |PrinterTab| replace:: :guilabel:`Printer` タブ
-.. |SecurityTab| replace:: :guilabel:`Security` タブ
 .. |StatsTab| replace:: :guilabel:`Statistics` タブ
 .. |StylesTab| replace:: :guilabel:`Styles` タブ
 .. |TableStylesTab| replace:: :guilabel:`Table Styles` タブ

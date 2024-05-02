@@ -15,6 +15,7 @@
 .. |InsertImageDlg| replace:: :guilabel:`Insert Image` ダイアログボックス
 .. |InsertOLEDlg| replace:: :guilabel:`Insert OLE Object` ダイアログボックス
 .. |InsertSheetDlg| replace:: :guilabel:`Insert Sheet` ダイアログボックス
+.. |ManageChangesDlg| replace:: :guilabel:`Manage Changes` ダイアログボックス
 .. |MoveCopySheetDlg| replace:: :guilabel:`Move/Copy Sheet` ダイアログボックス
 .. |OpenFileDlg| replace:: :guilabel:`開く` ダイアログボックス
 .. |OptionsDlg| replace:: :guilabel:`Options` ダイアログボックス
@@ -86,6 +87,7 @@
 .. |PageStylesTab| replace:: :guilabel:`Page Styles` タブ
 .. |Pos&SizeTab| replace:: :guilabel:`Position and Size` タブ
 .. |PositionTab| replace:: :guilabel:`Position` タブ
+.. |SecurityTab| replace:: :guilabel:`Security` タブ
 .. |TransparencyTab| replace:: :guilabel:`Transparency` タブ
 .. |TypeTab| replace:: :guilabel:`Type` タブ
 
@@ -126,11 +128,18 @@
 .. |EditHyperLinkM| replace:: :menuselection:`&Edit-->&Hyperlink...`
 .. |EditPasteM| replace:: :menuselection:`&Edit-->&Paste`
 .. |EditSelectAllM| replace:: :menuselection:`&Edit-->Select &All`
+.. |EditTrackCommentM| replace:: :menuselection:`&Edit-->Track Chan&ges-->&Comment...`
+.. |EditTrackCompareM| replace:: :menuselection:`&Edit-->Track Chan&ges-->Co&mpare Documet...`
+.. |EditTrackMergeM| replace:: :menuselection:`&Edit-->Track Chan&ges-->Merge Documen&t...`
+.. |EditTrackRecordM| replace:: :menuselection:`&Edit-->Track Chan&ges-->&Record`
+.. |EditTrackShowM| replace:: :menuselection:`&Edit-->Track Chan&ges-->&Show`
 .. |ExtensionsM| replace:: :menuselection:`&Tools-->&Extensions...`
 .. |FileExportM| replace:: :menuselection:`&File-->Expor&t...`
 .. |FilePrintM| replace:: :menuselection:`&File-->&Print...`
 .. |FilePrintPreviewM| replace:: :menuselection:`&File-->Print Pr&eview...`
 .. |FilePropertiesM| replace:: :menuselection:`&File-->Propert&ies...`
+.. |InsertCommentC| replace:: :menuselection:`Insert C&omment`
+.. |InsertCommentM| replace:: :menuselection:`&Insert-->C&omment`
 .. |InsertHyperlinkC| replace:: :menuselection:`&Insert &Hyperlink...`
 .. |InsertHyperlinkM| replace:: :menuselection:`&Insert-->&Hyperlink...`
 .. |InsertOLEM| replace:: :menuselection:`&Insert-->&OLE Object-->&OLE Object...`

@@ -492,8 +492,8 @@ Comparison options
 ----------------------------------------------------------------------
 
 :menuselection:`LibreOffice Writer-->Comparison` ページのオプションは、
-|Writer03| で説明する文書比較機能 :menuselection:`&Edit-->Track
-Chan&ges-->Co&mpare Document...` で使用する詳細度を決定する。
+|Writer03| で説明する文書比較機能 |EditTrackCompareM| で使用する詳細度を決定す
+る。
 
 単語単位で比較するか、文字単位で比較するか、または既定の :guilabel:`A&uto` によ
 るアルゴリズムを使用して比較するかを選択する。:guilabel:`By w&ord` または

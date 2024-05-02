@@ -306,7 +306,7 @@ Accessibility 検査状態
 
    * 上書きモードでは、キャレット位置以降のテキストが入力したテキストに置き換え
      られる。
-   * :menuselection:`&Edit-->Track Chan&ges-->&Record` が活動中では使えない。
+   * |EditTrackRecordM| が活動中では使えない。
 選択モード
    クリックすると選択モード一覧
 

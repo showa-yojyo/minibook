@@ -997,7 +997,7 @@ Security
 る。記録状態をパスワードで保護するには、:guilabel:`&Protect...` からパスワードを
 入力する。
 
-* |MenuBar| :menuselection:`&Edit-->Track Chan&ges-->&Record` と同様だ。
+* |MenuBar| |EditTrackRecordM| と同様だ。
 * この文書の他の利用者は変更を適用可能だが、パスワードを知らない限り、変更の記録
   を無効にすることは不可能だ。
 
