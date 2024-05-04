@@ -42,6 +42,7 @@
 .. |FunctionWizard| replace:: :guilabel:`Function Wizard`
 .. |HeaderDlg| replace:: :guilabel:`Header` ダイアログボックス
 .. |ManageNamesDlg| replace:: :guilabel:`Manage Names` ダイアログボックス
+.. |MacroSecurityDlg| replace:: :guilabel:`Macro Security` ダイアログボックス
 .. |PickColorDlg| replace:: :guilabel:`Pick a Color` ダイアログボックス
 .. |PivotTableLayoutDlg| replace:: :guilabel:`Pivot Table Layout` ダイアログボックス
 .. |ProtectSheetDlg| replace:: :guilabel:`Protect Sheet` ダイアログボックス

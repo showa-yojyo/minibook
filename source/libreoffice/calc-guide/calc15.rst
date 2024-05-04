@@ -83,9 +83,8 @@ Security
    存する。マスターパスワードを入力した後、一覧からパスワードを取り出すことがで
    きます。
 :guilabel:`Macro Security`
-   :guilabel:`Macro Securit&y...` ボタンを押すと :guilabel:`Macro Security` ダイ
-   アログボックスが開き、マクロ実行の機密保全度を調整したり、信頼できる給源を指
-   定したりする。
+   :guilabel:`Macro Securit&y...` ボタンを押すと |MacroSecurityDlg| が開き、マク
+   ロ実行の機密保全度を調整したり、信頼できる給源を指定したりする。
 :guilabel:`Certificate Path`
    LibreOffice を使って文書に電子署名をすることができます。電子署名には個人署名
    証明書が必要だ。OS のほとんどが自己署名証明書を生成可能だ。ただし、（個人の身
