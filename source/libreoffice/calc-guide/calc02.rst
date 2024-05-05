@@ -738,10 +738,10 @@ Sort dialog
 #. 並べ替えるセル、行、列を選択する。
 #. 次のいずれかを実行：
 
-   * |MenuBar| から :menuselection:`&Data-->&Sort...` を実行
+   * |MenuBar| から |SortM| を実行
    * |StandardToolbar| :guilabel:`Sort` 図像をクリック
 #. |OptionsTab| で行と列のどちらを並び替えるかなどの選択肢を決める。
-#. :guilabel:`Sort Criteria` タブでドロップダウンリストから基準を選択する。
+#. |SortCriteriaTab| でドロップダウンリストから基準を選択する。
 #. :guilabel:`&Ascending` か :guilabel:`&Descending` を選択
 #. その他
 #. |OK| を押す

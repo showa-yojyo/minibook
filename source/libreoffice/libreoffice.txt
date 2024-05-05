@@ -28,6 +28,7 @@
 .. |RenameSheetDlg| replace:: :guilabel:`Rename Sheet` ダイアログボックス
 .. |SaveAsDlg| replace:: :guilabel:`名前を付けて保存` ダイアログボックス
 .. |SecurityOptions&WarningsDlg| replace:: :guilabel:`Security Options and Warnings` ダイアログボックス
+.. |SortDlg| replace:: :guilabel:`Sort` ダイアログボックス
 .. |TemplatesDlg| replace:: :guilabel:`Templates` ダイアログボックス
 .. |ThemeDlg| replace:: :guilabel:`Theme` ダイアログボックス
 .. |Zoom&ViewLayoutDlg| replace:: :guilabel:`Zoom & View Layout` ダイアログボックス

@@ -259,8 +259,8 @@ Subtotals tool options
 小計データの並び替え方法を定義する。Pre-sort がオフ場合、この区画が無効になる。
 
 :guilabel:`&Ascending` または :guilabel:`D&escending`
-   それぞれ、昇順、降順並び替え。これらの並び替え規則は |MenuBar| の
-   :menuselection:`&Data-->&Sort...` で変更できる。|Calc02| を見ろ。
+   それぞれ、昇順、降順並び替え。これらの並び替え規則は |MenuBar| の |SortM| で
+   変更できる。|Calc02| を見ろ。
 :guilabel:`I&nclude formats`
    通貨形式などの書式設定をデータから対応する小計に引き継ぐ。
 :guilabel:`C&ustom sort order`

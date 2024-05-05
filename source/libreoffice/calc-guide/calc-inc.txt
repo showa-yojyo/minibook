@@ -66,6 +66,7 @@
 .. |PerspectiveTab| replace:: :guilabel:`Perspective` タブ
 .. |PositioningTab| replace:: :guilabel:`Positioning` タブ
 .. |ScaleTab| replace:: :guilabel:`Scale` タブ
+.. |SortCriteriaTab| replace:: :guilabel:`Sort Criteria` タブ
 
 .. |FormulaBar| replace:: Formula バー
 .. |InputLine| replace:: :guilabel:`Input` 行
@@ -100,6 +101,8 @@
 .. |InsertYErrorsM| replace:: :menuselection:`&Insert-->Y Error &Bars...`
 
 .. |SelectSheetsM| replace:: :menuselection:`&Edit-->Selec&t-->&Select Sheets...`
+
+.. |SortM| replace:: :menuselection:`&Data-->&Sort...`
 
 .. |SplitWindowC| replace:: :menuselection:`&Split Window`
 .. |ViewSplitWindowM| replace:: :menuselection:`&View-->&Split Window`
