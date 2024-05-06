@@ -43,7 +43,6 @@
 .. |InsertSectionDlg| replace:: :guilabel:`Insert Section` ダイアログボックス
 .. |InsertTableDlg| replace:: :guilabel:`Insert Table` ダイアログボックス
 .. |ListStyleDlg| replace:: :guilabel:`List Style` ダイアログボックス
-.. |NameDlg| replace:: :guilabel:`Name` ダイアログボックス
 .. |ParagraphDlg| replace:: :guilabel:`Paragraph` ダイアログボックス
 .. |ParagraphStyleDlg| replace:: :guilabel:`Paragraph Style` ダイアログボックス
 .. |SpecialCharDlg| replace:: :guilabel:`Special Characters` ダイアログボックス

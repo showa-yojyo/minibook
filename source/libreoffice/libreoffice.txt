@@ -17,6 +17,7 @@
 .. |InsertSheetDlg| replace:: :guilabel:`Insert Sheet` ダイアログボックス
 .. |ManageChangesDlg| replace:: :guilabel:`Manage Changes` ダイアログボックス
 .. |MoveCopySheetDlg| replace:: :guilabel:`Move/Copy Sheet` ダイアログボックス
+.. |NameDlg| replace:: :guilabel:`Name` ダイアログボックス
 .. |OpenFileDlg| replace:: :guilabel:`開く` ダイアログボックス
 .. |OptionsDlg| replace:: :guilabel:`Options` ダイアログボックス
 .. |Position&SizeDlg| replace:: :guilabel:`Position and Size` ダイアログボックス
@@ -31,6 +32,7 @@
 .. |SortDlg| replace:: :guilabel:`Sort` ダイアログボックス
 .. |TemplatesDlg| replace:: :guilabel:`Templates` ダイアログボックス
 .. |ThemeDlg| replace:: :guilabel:`Theme` ダイアログボックス
+.. |ThemeColorEditDlg| replace:: :guilabel:`Theme Color Edit` ダイアログボックス
 .. |Zoom&ViewLayoutDlg| replace:: :guilabel:`Zoom & View Layout` ダイアログボックス
 
 .. Decks
@@ -76,6 +78,7 @@
 .. |AreaTab| replace:: :guilabel:`Area` タブ
 .. |BackgroundTab| replace:: :guilabel:`Background` タブ
 .. |BordersTab| replace:: :guilabel:`Borders` タブ
+.. |ContextMenusTab| replace:: :guilabel:`Context Menus` タブ
 .. |DescriptionTab| replace:: :guilabel:`Description` タブ
 .. |EventsTab| replace:: :guilabel:`Events` タブ
 .. |FontTab| replace:: :guilabel:`Font` タブ
@@ -83,6 +86,7 @@
 .. |FooterTab| replace:: :guilabel:`Footer` タブ
 .. |HeaderTab| replace:: :guilabel:`Header` タブ
 .. |GeneralTab| replace:: :guilabel:`General` タブ
+.. |MenusTab| replace:: :guilabel:`Menus` タブ
 .. |OptionsTab| replace:: :guilabel:`Options` タブ
 .. |OrganizerTab| replace:: :guilabel:`Organizer` タブ
 .. |PageStylesTab| replace:: :guilabel:`Page Styles` タブ
@@ -107,6 +111,7 @@
 ..   LibreOffice-->
 .. |UserDataPage| replace:: :menuselection:`LibreOffice-->User Data` ページ
 .. |LibreOfficeGeneralPage| replace:: :menuselection:`LibreOffice-->General` ページ
+.. |LibreOfficeViewPage| replace:: :menuselection:`LibreOffice-->View` ページ
 .. |LibreOfficePrintPage| replace:: :menuselection:`LibreOffice-->Print` ページ
 .. |PathsPage| replace:: :menuselection:`LibreOffice-->Paths` ページ
 .. |SecurityPage| replace:: :menuselection:`LibreOffice-->Security` ページ
@@ -120,6 +125,7 @@
 
 .. Menu commands
 .. |ControlPropertiesC| replace:: :menuselection:`Con&trol Properties...`
+.. |CustomizeM| replace:: :menuselection:`&Tools-->&Customize...`
 .. |DeleteSheetC| replace:: :menuselection:`&Delete Sheet`
 .. |DeleteSheetM| replace:: :menuselection:`&Sheet-->&Delete Sheet...`
 .. |EditCopyM| replace:: :menuselection:`&Edit-->Cop&y`
