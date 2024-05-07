@@ -1,5 +1,59 @@
 {% extends "alabaster/layout.html" %}
 
+{#
+  See:
+
+  * /site-packages/alabaster/layout.html
+  * /site-packages/sphinx/themes/basic/layout.html
+  * <https://www.sphinx-doc.org/en/master/development/templating.html>
+#}
+
+{%- macro markup_rellinks_with_parent() %}
+  <nav id="rellinks">
+    <ul>
+      {%- if prev %}
+        <li>
+          &larr;
+          <a href="{{ prev.link | e }}" title="Previous">{{ prev.title }}</a>
+        </li>
+      {%- endif %}
+      {# XXX #}
+      {%- for parent in parents %}
+        {%- if prev != parent %}
+        <li>
+          &uarr;
+          <a href="{{ parent.link | e }}" title="Parent">{{ parent.title }}</a>
+        </li>
+        {%- endif %}
+      {%- endfor %}
+      {%- if next %}
+        <li>
+          <a href="{{ next.link | e }}" title="Next">{{ next.title }}</a>
+          &rarr;
+        </li>
+      {%- endif %}
+    </ul>
+  </nav>
+{%- endmacro %}
+
+{%- block relbar_top %}
+  {%- if theme_show_relbar_top | tobool %}
+    <div class="related top">
+      &nbsp;
+      {{- markup_rellinks_with_parent() }}
+    </div>
+  {%- endif %}
+{% endblock %}
+
+{%- block relbar_bottom %}
+  {%- if theme_show_relbar_bottom | tobool %}
+    <div class="related bottom">
+      &nbsp;
+      {{- markup_rellinks_with_parent() }}
+    </div>
+  {%- endif %}
+{% endblock %}
+
 {%- block footer %}
 <div class="footer">
   <ul>
