@@ -1,4 +1,4 @@
-.. figure:: /_static/logo.svg
+.. figure:: /_images/logo.svg
    :align: center
    :alt: 読書ノート
    :figwidth: image
@@ -6,8 +6,6 @@
    :width: 100%
 
 最小環境バージョン。
-
-Contents:
 
 .. toctree::
    :caption: 草稿
