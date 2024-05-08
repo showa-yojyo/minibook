@@ -1,3 +1,5 @@
+.. title:: 読書ノート
+
 .. figure:: /_images/logo.svg
    :align: center
    :alt: 読書ノート
