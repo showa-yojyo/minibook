@@ -78,8 +78,8 @@ Docker の世界における Hello world は次のコマンドを実行するこ
 Docker Hub のアカウントを開設する
 ----------------------------------------------------------------------
 
-すぐ後に述べる :ref:`Guides / Getting started<anchor-docker-started>` で初めて必
-要になるのが普通だと考えられる。GitHub と同様に、
+すぐ後に述べる :ref:`anchor-docker-started` で初めて必要になるのが普通だと考えら
+れる。GitHub と同様に、
 
 * 無料アカウントを作成する
 * 二因子認証を構成する
@@ -101,83 +101,160 @@ Dockerを使い始め、開発工程を最適化する方法を学ぶのに有�
 する。力がついたら Docker 社会主導の資料を見つけて、その発展に貢献する方法を習得
 する。
 
+.. contents::
+   :depth: 1
+   :local:
+
 .. _anchor-docker-started:
 
-* Getting started
+Getting started
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  * Get Docker Desktop - ``docker run -d -p 8080:80 docker/welcome-to-docker``
-  * Develop with containers - ``docker compose watch``
-  * Build and push your first image - Docker Hub アカウントを作成 / ``docker
-    push`` まで実施
-  * What's Next - ここで行先を保留
-* Docker concepts
+* Docker overview: ``docker run -i -t ubuntu /bin/bash`` を実行する。
+* Get Docker Desktop: Docker Desktop はインストールしていないが、エンジンはした
+  ので ``docker run -d -p 8080:80 docker/welcome-to-docker`` を実行する。
+* Develop with containers: ``docker compose watch`` を中心にこの手のシステム開発
+  の工程を察する。
+* Build and push your first image: Docker Hub へのログインは端末ウィンドウからコ
+  マンド ``docker login`` を実行することで代用。コマンド ``docker build``,
+  ``docker image ls``, ``docker push`` などを実行する。
 
-  * The basics
+Docker concepts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    * What is a container? - ``docker ps``, ``docker stop``
-    * What is an image? - ``docker search``, ``docker pull``, ``docker image``
-    * What is a registry? - ``docker build``, ``docker tag``, ``docker push``
-    * What is Docker Compose? - :file:`compose.yml`, ``docker compose``
-  * Building images
+Docker の基本的原理について理解を深める。
 
-    * Understanding the image layers - ``docker container commit``, ``docker rm``
-    * Writing a Dockerfile - |Dockerfile|
-    * Build, tag, and publish an image - ``docker build``, ``docker image``,
-      ``docker push``
-    * Using the build cache - |Dockerfile| 最適化 / :file:`.dockerignore`
-    * Multi-stage builds - ``docker images``
-  * Running containers
+The basics
+   Docker Docs の著者は Docker の基本をコンテナー、イメージ、レジストリー、
+   Docker Compose だとみなしている。
 
-    * Publishing and exposing ports - オプション ``-p HOST_PORT:CONTAINER_PORT``,
-      :file:`compose.yml` ``ports`` リスト
-    * Overriding container defaults - オプション ``-e VAR=VALUE``, ``docker
-      network``
-    * Persisting container data - ``docker volume``, ``docker exec``
-    * Sharing local files with containers - オプション ``--mount``, ``-v``
-    * Multi-container applications - ``docker compose``
-* Language-specific guides - どれか一つを選んで演習すればいい。ここで Minikube_
-  が要る。
-* Use-case guides
+   * What is a container?: ``docker/welcome-to-docker`` を開始してコマンド
+     ``docker ps``, ``docker stop`` などを実行する。
+   * What is an image?: コマンド ``docker search``, ``docker pull``, ``docker
+     image ls``, ``docker image history`` などを実行する。
+   * What is a registry?: Docker Hub にリポジトリーを作成し、コマンド ``docker
+     build``, ``docker tag``, ``docker push`` 等を実行して成果物を登録する。
+   * What is Docker Compose?: :file:`compose.yml`, ``docker compose up``,
+     ``docker compose down``
+Building images
+   |Dockerfile|, ビルドキャッシュ、多段階構築により、最適化コンテナーイメージを
+   作成する。
 
-  * Overview
-  * Machine learning & AI - TODO
-  * Data science with JupyterLab - 未実施
-  * Suppress image vulnerabilities with VEX - 実験的らしいので急ぎなら飛ばす。
-  * Use containerized databases - MySQL
-* Build with Docker - これを第一チュートリアルとしてもよい。
+   * Understanding the image layers: ``docker container commit``, ``docker rm``
+     等を実行。
+   * Writing a Dockerfile: |Dockerfile| を作成する。
+   * Build, tag, and publish an image: ``docker build``, ``docker image tag``,
+     ``docker push`` 等を実行する。
+   * Using the build cache: |Dockerfile| 最適化。ファイル :file:`.dockerignore`
+     を作成。
+   * Multi-stage builds: このチュートリアルを実施した記憶がない。
+Running containers
+   ポート公開、既定上書き、データ永続化、ファイル共有、複数コンテナーアプリケー
+   ション管理など、必要不可欠な技法を習得する。
 
-  * Introduction - ``docker build``, ``docker run``, ``docker exec``, ``docker
-    stop``
-  * Layers - |Dockerfile| は記述順が重要
-  * Multi-stage - ``FROM``
-  * Mounts - ``--mount``
-  * Build arguments - ``ARG``
-  * Export binaries - ``--output``
-  * Test - ``--target``
-  * Multi-platform - ``--platform``
-* Deployment and orchestration
+   * Publishing and exposing ports: オプション ``-p HOST_PORT:CONTAINER_PORT``,
+     ``-P``, ファイル :file:`compose.yml` における ``ports`` リスト等。
+   * Overriding container defaults: オプション ``-e VAR=VALUE``, 資源制限オプ
+     ション ``--memory``, ``--cpus``, コマンド ``docker network create``,
+     ``docker network ls`` 等。
+   * Persisting container data: コマンド ``docker volume create``, オプション
+     ``-v``, コマンド ``docker exec``, ``docker stop``, ``docker rm``, ``docker
+     volume rm``, ``docker volume prune`` 等。
+   * Sharing local files with containers: オプション ``--mount``, ファイル権限指
+     示方法、等。
+   * Multi-container applications: コマンド ``docker network create``, オプショ
+     ン ``--network``, ``--network-alias`` 等。
 
-  * Overview - Docker Desktop を使わない縛りを入れたので、Kubernetes を有効にす
-    る方法については Minikube_ の文書に従うことにする。
-  * Deploy to Kubernetes - 同上。
-  * Deploy to Swarm - ``docker stack``, ``docker service``
-* Docker workshop - これを第一チュートリアルとしてもよい。
+Language-specific guides
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  * Part 2: Containerize an application - |Dockerfile| を書いて ``docker build``
-    や ``docker run`` を実行する。
-  * Part 3: Update the application - ``docker stop``, ``docker rm``
-  * Part 4: Share the application - Docker Hub, ``docker push``, ``docker tag``
-  * Part 5: Persist the DB - ``docker volume``
-  * Part 6: Use bind mounts - ``--mount type=bind``, ``docker logs``
-  * Part 7: Multi-container apps - ``docker network``
-  * Part 8: Use Docker Compose - :file:`compose.yaml`, ``docker compose``
-  * Part 9: Image-building best practices - ``docker image``
-* Educational resources
+どれか一つ、多くても二つを選んで演習すればいい。いずれのコースでも Minikube_ が
+要る。
 
-  * `Live Debugging Node.js with Docker
-    <https://training.play-with-docker.com/nodejs-live-debugging/>`__ は完走可能。
-  * `Docker CLI cheat sheet
-    <https://docs.docker.com/get-started/docker_cheatsheet.pdf>`__ はペラ一枚。
+Use-case guides
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Docker がプロジェクトや開発工程をどのように効率化できるかを確かめられる用例手引
+集。
+
+Machine learning & AI
+   メニューが豊富。
+
+   * PDF analysis and chat
+
+     * Containerize your app: TODO
+     * Develop your app: TODO
+   * Video transcription and chat: TODO
+   * Face detection with TensorFlow.js: TODO
+   * Natural language processing
+
+     * Language translation: TODO
+     * Named entity recognition: TODO
+     * Sentiment analysis: TODO
+     * Text classification: TODO
+     * Text summarization: TODO
+Data science with JupyterLab
+   TODO
+Suppress image vulnerabilities with VEX
+   実験的らしいので急ぎなら飛ばす。
+Use containerized databases
+   MySQL コンテナーをビルドして実行するチュートリアル。
+
+Build with Docker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+この手引は Docker でソフトウェアをビルドするための入門書であると述べているので、
+これを第一チュートリアルとしてもよい。
+
+* Introduction: |Dockerfile|, コマンド ``docker build``, ``docker run``,
+  ``docker exec``, ``docker stop`` を扱う。
+* Layers: |Dockerfile| は記述順が重要ということを強調して述べている。
+* Multi-stage: ``FROM`` を見たら多段構築と思え。
+* Mounts: ``--mount``
+* Build arguments: ``ARG`` と ``--build-arg``
+* Export binaries: ``AS`` と ``--output``
+* Test: ``AS`` と ``--target``
+* Multi-platform: ``--platform`` ここはまだ。
+
+Deployment and orchestration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+コンテナ化されたアプリケーションを管理、拡張、維持するためのツールをオーケスト
+レーターと呼ぶ。最も人気のあるオーケストレーションツールは Kubernetes と Docker
+Swarm の二つだ。Docker Desktop を使わない縛りを入れたので、本ノートでは
+Kubernetes を有効にする方法に関しては Minikube_ の文書に従うことにする。
+
+* Deploy to Kubernetes: TODO
+* Deploy to Swarm: コマンド ``docker stack``, ``docker service`` 等。
+
+Docker workshop
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+この体験型講義では Docker の始め方を一手ずつ順番に説明するとある。これを第一
+チュートリアルとしてもよい。
+
+* Part 2: Containerize an application: |Dockerfile| を書いてコマンド ``docker
+  build``, ``docker run``, ``docker ps`` 等を実行する。
+* Part 3: Update the application: さらにコマンド ``docker stop``, ``docker rm``
+  等を習う。
+* Part 4: Share the application: Docker Hub アカウント開設後、コマンド ``docker
+  login``, ``docker tag``, ``docker push`` 等を実行する。
+* Part 5: Persist the DB: ``docker volume create``, ``--mount type=volume``,
+  ``docker volume inspect`` 等。
+* Part 6: Use bind mounts: ``--mount type=bind``, ``docker logs`` 等。
+* Part 7: Multi-container apps: ``docker network create`` と MySQL とその他。
+* Part 8: Use Docker Compose: :file:`compose.yaml` を作成してコマンド ``docker
+  compose up`` を実行。コマンド ``docker compose down`` で破壊。
+
+Educational resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Docker と Kubernetes の理解を深めるための資料集とある。
+
+* `Live Debugging Node.js with Docker
+  <https://training.play-with-docker.com/nodejs-live-debugging/>`__ は完走可能。
+* `Docker CLI cheat sheet
+  <https://docs.docker.com/get-started/docker_cheatsheet.pdf>`__ はペラ一枚。
 
 Manuals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,99 +262,156 @@ Manuals
 説明書ではあるのだが、読者の理解を助けるためなのか、How to と Quickstart が挿ま
 ることがあるのでそれらを取り組む。また、重要な記述を気づきしだい拾っていく。
 
-* Get Docker - 生の Docker Engine を使いたいのでここは捨て置く。
-* Docker Desktop - この章もほとんど飛ばすことになる。
+.. contents::
+   :depth: 1
+   :local:
 
-  * WSL - ただ、この節は読んでおいたほうがいい。
-* Docker Scout
+Get Docker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  * Quickstart - 実践的なチュートリアル。やるべきだ。
-  * Install - XDG Base Directory に従いたいので、スクリプト実行後にバイナリーを
-    :command:`mv` する。スクリプトを修正してから実行するとなぜか上手くいかない。
-* Docker Engine
+Docker Desktop を入手する方法が紹介されているが、生の Docker Engine を使いたいの
+でページ下の方の囲み記事のリンク先なら確認する。
 
-  * Install
+Docker Desktop
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    * Install Docker Engine on Ubuntu - 前述のとおり、これをいの一番に実施する。
-  * Networking
+この章はほとんど飛ばすことになるが、
 
-    * Networking tutorials
+WSL
+   この節は読んでおいたほうがいい。
 
-      * Bridge network tutorial - ``docker network inspect``, ``docker container
-        attach``, |Ctrl+P|, |Ctrl+Q|, ``docker network create``, ``docker
-        network ls``, ``docker network connect``, ``docker network rm``
-      * Host networking tutorial - ``--network host``, ``netstat -tulpn``
-      * Overlay networking tutorial - 互いに通信可能な物理または仮想 Docker ホス
-        トが三機必要。これらのホストがファイアウォールを介さずに同一ネットワーク
-        上で動作していることを想定している。TODO: 後述の方法で演習する。
-      * Macvlan network tutorial - 基本的なネットワーク知識がないと演習不能。具
-        体的には ``--subnet``, ``--gateway`` の適切な引数を示せないようではダメ
-        だ。
-  * CLI
+Docker Extensions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    * Use the Docker CLI - 重要な設定項目があるのでチェックする。
-    * Completion - これは信じ難い。Bash の補完機能が :file:`~/.local/share` 以下
-      を確認するというのか？
-    * Filter commans - ``--filter KEY=VALUE`` を受け入れるコマンドを知るといい。
-    * Format command and log output - これを読んで思った。Go 言語を学習するのが
-      いい。
-  * Manage resources
+Docker Extensions を使えば Docker Desktop 内でサードパーティーのツールを使って機
+能を拡張することができるというものだ。したがってこの章も飛ばす。
 
-    * Prune unused objects - チュートリアルではないが掃除コマンドが一覧になって
-      いて重要だ。
-  * Daemon
+Docker Scout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    * Start the daemon - WSL の設定が甘いと ``sudo systemctl start docker`` が失
-      敗するはずだ。
-    * Configure the daemon - 構成ファイルパスとコマンドライン例
-    * Configure with systemd - TODO
-    * Engine plugins
+Docker Scout はソフトウェア供給鎖の安全保障を強化する解法だ。イメージを分析する
+ことで :abbr:`SBOM (Software Bill of Materials)` としても知られる部品の目録を作
+成する。SBOM は継続的に更新される脆弱性データベースと照合され、保障上の弱点を突
+き止める。
 
-      * Managed plugin system - ``docker plugin install``, ``docker plugin ls``
-  * Logs and metrics
+Quickstart
+   実践的なチュートリアル。やるべきだ。
+Install
+   XDG Base Directory に従いたいので、スクリプト実行後にバイナリーを
+   :command:`mv` する。スクリプトを修正してから実行するとなぜか上手くいかない。
 
-    * Container logs
+Docker Engine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-      * Configure logging drivers - :file:`daemon.json` でログ出力を制御する。
-      * Logging drivers
+Install
+   TBW
 
-        * Local file logging driver - ``--log-driver local``
-        * JSON File logging driver - ``--log-driver json-file``
-    * Daemon logs - ``journalctl -xu docker.service``
-    * Runtime metrics - ``docker stats``
-    * Collect metrics with Prometheus - 例アリ
-  * Security - TODO
-  * Swarm mode - たぶんやれない
+   * Install Docker Engine on Ubuntu: 前述のとおり、これをいの一番に実施する。
+Networking
+   TBW
 
-    * Get started with swarm mode - チュートリアル
-* Docker Build
+   * Networking tutorials
 
-  * Building images
+     * Bridge network tutorial: ``docker network inspect``, ``docker container
+       attach``, |Ctrl+P|, |Ctrl+Q|, ``docker network create``, ``docker network
+       ls``, ``docker network connect``, ``docker network rm``
+     * Host networking tutorial: ``--network host``, ``netstat -tulpn``
+     * Overlay networking tutorial: 互いに通信可能な物理または仮想 Docker ホスト
+       が三機必要。これらのホストがファイアウォールを介さずに同一ネットワーク上
+       で動作していることを想定している。TODO: 後述の方法で演習する。
+     * Macvlan network tutorial: 基本的なネットワーク知識がないと演習不能。具体
+       的には ``--subnet``, ``--gateway`` の適切な引数を示せないようではダメだ。
+CLI
+   TBW
 
-    * Multi-platform images - ``docker buildx ls``, ``docker buildx create``
-  * Drivers
+   * Use the Docker CLI: 重要な設定項目があるのでチェックする。
+   * Completion: これは信じ難い。Bash の補完機能が :file:`~/.local/share` 以下を
+     確認するというのか？
+   * Filter commans: ``--filter KEY=VALUE`` を受け入れるコマンドを知るといい。
+   * Format command and log output: これを読んで思った。Go 言語を学習するのがい
+     い。
+Manage resources
+   TBW
 
-    * Kubernetes driver - 例アリ。Minikube_ を導入してから実施する。
-    * Remote driver - 例アリ
-  * Continuous integration
+   * Prune unused objects: チュートリアルではないが掃除コマンドが一覧になってい
+     て重要だ。
+Daemon
+   TBW
 
-    * GitHub Actions
+   * Start the daemon: WSL の設定が甘いと ``sudo systemctl start docker`` が失敗
+     するはずだ。
+   * Configure the daemon: 構成ファイルパスとコマンドライン例
+   * Configure with systemd: TODO
+   * Engine plugins
 
-      * Introduction - Docker GitHub Actions を設定して Docker イメージをビルド
-        し、Docker Hub にプッシュするチュートリアルを含む。
-* Docker Compose
+     * Managed plugin system: ``docker plugin install``, ``docker plugin ls``
+Logs and metrics
+   TBW
 
-  * Install - 記憶がない
-  * Quickstart - TODO
-  * Sample apps with Compose - 外部リンク先にチュートリアルか？
-  * Compose FAQs - チラ見でいい
-* Docker Hub
+   * Container logs
 
-  * Create an account - Docker をインストールしたらすぐに実行可能。
-  * Quickstart - アカウントを開設したらすぐに実行可能。
+     * Configure logging drivers: :file:`daemon.json` でログ出力を制御する。
+     * Logging drivers
 
-* Administration - TODO
-* 以下 TODO
+       * Local file logging driver: ``--log-driver local``
+       * JSON File logging driver: ``--log-driver json-file``
+   * Daemon logs: ``journalctl -xu docker.service``
+   * Runtime metrics: ``docker stats``
+   * Collect metrics with Prometheus: 例アリ
+
+Security
+   TBW
+Swarm mode
+   たぶんやれない
+
+   * Get started with swarm mode: チュートリアル
+
+Docker build
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Building images
+   TBD
+
+   * Multi-platform images: ``docker buildx ls``, ``docker buildx create``
+Drivers
+   TBD
+
+   * Kubernetes driver: 例アリ。Minikube_ を導入してから実施する。
+   * Remote driver: 例アリ
+Continuous integration
+   TBW
+
+   * GitHub Actions
+
+     * Introduction: Docker GitHub Actions を設定して Docker イメージをビルドし、
+       Docker Hub にプッシュするチュートリアルを含む。
+
+Docker Compose
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Install
+   記憶がない
+Quickstart
+   |Dockerfile|, :file:`compose.yaml`, ``docker compose up``, ``docker compose
+   down``, ``docker compose watch``, ``docker compose ps``, ``docker compose
+   stop``
+Sample apps with Compose
+   外部リンク先にチュートリアルか？
+Compose FAQs
+   チラ見でいい
+
+Docker Hub
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Create an account
+   Docker をインストールしたらすぐに実行可能。
+Quickstart
+   アカウントを開設したらすぐに実行可能。
+
+Administration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
 
 Reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -387,6 +521,9 @@ TBD
 ======================================================================
 
 TBD
+
+用語と術語と隠語
+----------------------------------------------------------------------
 
 資料
 ======================================================================
