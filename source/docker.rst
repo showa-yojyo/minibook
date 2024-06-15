@@ -178,25 +178,16 @@ Docker がプロジェクトや開発工程をどのように効率化できる�
 集。
 
 Machine learning & AI
-   メニューが豊富。
-
-   * PDF analysis and chat
-
-     * Containerize your app: TODO
-     * Develop your app: TODO
-   * Video transcription and chat: TODO
-   * Face detection with TensorFlow.js: TODO
-   * Natural language processing
-
-     * Language translation: TODO
-     * Named entity recognition: TODO
-     * Sentiment analysis: TODO
-     * Text classification: TODO
-     * Text summarization: TODO
+   チュートリアルが豊富にあるものの、Docker 以外のところで環境が整わずに断念。
 Data science with JupyterLab
-   TODO
+   Docker と JupyterLab はデータ科学の作業工程を強化する強力なツールだという。こ
+   れらを併用して、再現可能なデータ科学環境を作成および実行する。
+
+   カスタマイズイメージを Docker Hub にプッシュしてそれを ``docker run`` するの
+   が上手くいかない。
 Suppress image vulnerabilities with VEX
-   実験的らしいので急ぎなら飛ばす。
+   実験的らしいので急ぎなら飛ばす。途中で必要になる実行形式ファイルは
+   :file:`vexctl-linux-amd64` だ。
 Use containerized databases
    MySQL コンテナーをビルドして実行するチュートリアル。
 
@@ -219,13 +210,25 @@ Build with Docker
 Deployment and orchestration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-コンテナ化されたアプリケーションを管理、拡張、維持するためのツールをオーケスト
-レーターと呼ぶ。最も人気のあるオーケストレーションツールは Kubernetes と Docker
+コンテナ化されたアプリケーションを管理、拡張、保守するためのツールをオーケストレ
+イターと呼ぶ。最も人気のあるオーケストレイションツールは Kubernetes と Docker
 Swarm の二つだ。Docker Desktop を使わない縛りを入れたので、本ノートでは
 Kubernetes を有効にする方法に関しては Minikube_ の文書に従うことにする。
 
-* Deploy to Kubernetes: TODO
-* Deploy to Swarm: コマンド ``docker stack``, ``docker service`` 等。
+:command:`minikube` のインストールと構成の確認も行う。メモ：
+
+.. sourcecode:: console
+   :caption: 本書の手順前に :command:`minikube` で実行しておくべきコマンド
+
+   $ minikube config set driver docker
+   $ minikube start --driver=docker
+   $ alias kubectl='minikube kubectl --`
+
+* Deploy to Kubernetes: 次節のチュートリアル Part 2 まで終わったら実施可能。ただ
+  し localhost:30001 でページが開かない。ポートが異なるから 404 エラーになるのは
+  当然だと考えられるが違うのか？
+* Deploy to Swarm: コマンド ``docker stack``, ``docker service`` 等。こちらも
+  localhost:8000 でページが開かない（応答がない）。
 
 Docker workshop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
