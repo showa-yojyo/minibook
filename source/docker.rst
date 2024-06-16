@@ -168,8 +168,8 @@ Running containers
 Language-specific guides
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-どれか一つ、多くても二つを選んで演習すればいい。いずれのコースでも Minikube_ が
-要る。
+どれか一つ、多くても二つを選んで演習すればいい。いずれのコースでも最後に
+Minikube_ の出番がある。
 
 Use-case guides
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -222,7 +222,7 @@ Kubernetes を有効にする方法に関しては Minikube_ の文書に従う�
 
    $ minikube config set driver docker
    $ minikube start --driver=docker
-   $ alias kubectl='minikube kubectl --`
+   $ alias kubectl='minikube kubectl --'
 
 * Deploy to Kubernetes: 次節のチュートリアル Part 2 まで終わったら実施可能。ただ
   し localhost:30001 でページが開かない。ポートが異なるから 404 エラーになるのは
@@ -307,11 +307,15 @@ Docker Engine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Install
-   TBW
+   Docker Engine を Linux にインストールする。Ubuntu の箇所を読む。
 
    * Install Docker Engine on Ubuntu: 前述のとおり、これをいの一番に実施する。
+   * Linux post-installation steps for Docker Engine: :command:`sudo` を使わなく
+     ても :command:`docker` を呼び出せるようにする支度等。
+   * Troubleshoot Docker Engine installation: デーモン起動コマンドを確認する。
 Networking
-   TBW
+   コンテナーにおけるネットワークとは、コンテナー同士が互い接続して通信する機能
+   等を指す。
 
    * Networking tutorials
 
@@ -325,7 +329,7 @@ Networking
      * Macvlan network tutorial: 基本的なネットワーク知識がないと演習不能。具体
        的には ``--subnet``, ``--gateway`` の適切な引数を示せないようではダメだ。
 CLI
-   TBW
+   コマンド :command:`docker` についての手引集だ。
 
    * Use the Docker CLI: 重要な設定項目があるのでチェックする。
    * Completion: これは信じ難い。Bash の補完機能が :file:`~/.local/share` 以下を
@@ -334,12 +338,12 @@ CLI
    * Format command and log output: これを読んで思った。Go 言語を学習するのがい
      い。
 Manage resources
-   TBW
+   今のところ削除コマンドが最重要項目であるので、それしか読んでいない。
 
    * Prune unused objects: チュートリアルではないが掃除コマンドが一覧になってい
      て重要だ。
 Daemon
-   TBW
+   手動でもシステム起動時にも起動できるようになる。
 
    * Start the daemon: WSL の設定が甘いと ``sudo systemctl start docker`` が失敗
      するはずだ。
@@ -349,7 +353,7 @@ Daemon
 
      * Managed plugin system: ``docker plugin install``, ``docker plugin ls``
 Logs and metrics
-   TBW
+   ログと何？
 
    * Container logs
 
@@ -361,11 +365,15 @@ Logs and metrics
    * Daemon logs: ``journalctl -xu docker.service``
    * Runtime metrics: ``docker stats``
    * Collect metrics with Prometheus: 例アリ
-
 Security
-   TBW
+   AppArmor, SELinux, GRSEC 等の適切な堅牢化システムを有効にすることで、Docker
+   コンテナーの安全性を既定よりもさらに高めることができる。
 Swarm mode
-   たぶんやれない
+   Docker には swarm と呼ばれる Docker Engine の群れを管理する Swarm モードがあ
+   る。Docker CLI を使用して swarm を作成し、アプリケーションサービスを swarm に
+   配備し、swarm の動作を管理する。
+
+   たぶん満足に学習できない。
 
    * Get started with swarm mode: チュートリアル
 
