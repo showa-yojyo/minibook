@@ -380,18 +380,38 @@ Swarm mode
 Docker build
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Building images
-   TBD
+Docker Build は Docker Engine で最も使われている機能だ。Docker Build はイメージ
+をビルドするためのコマンドであり、一般的な作業工程問題だけでなく、より複雑かつ高
+度な筋道を支援する道具や機能の全体を指すようだ。
 
+Building images
+   * Packaging your software: チュートリアルとは言っていないが、この記事を基にイ
+     メージをビルドするといい。|Dockerfile| はおそらく修正することになる。Flask
+     をインストールする命令にオプション ``--break-system-packages`` を付ける。
+   * Multi-stage builds: ``FROM`` 命令に :samp:`AS {name}` を追加することで舞台
+     に名前を与えることが可能だ。
+   * Variables: ``ARG`` 命令には変数有効域の概念がある。
+   * Building best practices: ``apt update`` を単独で ``RUN`` 命令中で実行すると
+     ミスキャッシュと後続の ``apt install`` の失敗を生じる。
    * Multi-platform images: ``docker buildx ls``, ``docker buildx create``
+   * Build secrets: :samp:`docker build --secret {XXXXXXX}`
+   * Create a base image: コンテナー構築の出発点として ``scratch`` を使用するこ
+     とが可能。次の |Dockerfile| コマンドがイメージの最初の階層になる。
 Drivers
-   TBD
+   BuildKit バックエンドをどこでどのように実行するかの設定がドライバーだ。この設
+   定はカスタマイズ可能で、ビルダーをきめ細かく制御できる。
 
    * Kubernetes driver: 例アリ。Minikube_ を導入してから実施する。
    * Remote driver: 例アリ
+Exporters
+   ビルド結果を指定の出力タイプに保存する機能。:samp:`--output type={type}` 形式
+   で指定。
 Continuous integration
-   TBW
+   開発過程の一部であって、コードの変更をプロジェクトの主要ブランチに併合するこ
+   とを言う。テストとビルドを実行し、コードの変更が悪さを引き起こさないことを確
+   認する意味がある。
 
+   * CI with Docker
    * GitHub Actions
 
      * Introduction: Docker GitHub Actions を設定して Docker イメージをビルドし、
@@ -422,7 +442,8 @@ Quickstart
 Administration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+管理者は Docker Hub または Docker Admin Console を使って会社や組織をなんとかする
+ことができる。
 
 Reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -523,11 +544,6 @@ logging drivers
 
    $ dockerd --validate
 
-基本コマンド
-======================================================================
-
-TBD
-
 名言集
 ======================================================================
 
@@ -551,11 +567,21 @@ Minikube_
    プログラム :program:`kubectl` を導入するためのパッケージ。導入は容易い。今の
    ところは Kubernetes に関係するチュートリアルを消化するために必要だから導入し
    たに過ぎない。
+`Overview | Kubernetes <https://kubernetes.io/docs/concepts/overview/>`__
+   この解説の前半、コンテナーに関する記述は Kubernetes 無関係に読め、よくまと
+   まっている。
 
 整理中
 ======================================================================
 
 * Minikube_
+
+
+結論
+======================================================================
+
+
+* Minikube_ というより Kubernetes を個別に学習する。
 
 .. _`Docker Docs`: https://docs.docker.com/
 .. _Minikube: https://minikube.sigs.k8s.io/docs/
