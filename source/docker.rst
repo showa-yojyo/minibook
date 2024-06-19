@@ -4,6 +4,8 @@ Docker 利用ノート
 
 .. include:: /_include/kbd.txt
 .. |Dockerfile| replace:: :file:`Dockerfile`
+.. |DockerDocs| replace:: `Docker Docs`_
+.. |DockerHub| replace:: `Docker Hub`_
 
 遅ればせながら Docker を習う。
 
@@ -16,7 +18,8 @@ Docker 利用ノート
 
 WSL2 Ubuntu 22.04.4 LTS に Docker Engine をインストールして学習を進める。Docker
 Desktop は当面の間導入しないでおく。今のところ、その選択による不都合は ``docker
-init`` が使えないくらいしかない。
+init`` が使えないことと、Kubernetes との連携が実現できなくなることくらいしかな
+い。
 
 .. contents::
    :depth: 1
@@ -89,7 +92,7 @@ Docker Hub のアカウントを開設する
 チュートリアル実施を中心に Docker Docs を読む
 ----------------------------------------------------------------------
 
-`Docker Docs`_ は Guides, Manuals, Reference の三本柱で成り立っている。Guides の
+|DockerDocs| は Guides, Manuals, Reference の三本柱で成り立っている。Guides の
 所々にチュートリアル記事が用意されている。これを重点的に実施する。その間に
 Manuals と Reference の関連箇所を必要に応じて閲覧する。
 
@@ -115,8 +118,8 @@ Getting started
   ので ``docker run -d -p 8080:80 docker/welcome-to-docker`` を実行する。
 * Develop with containers: ``docker compose watch`` を中心にこの手のシステム開発
   の工程を察する。
-* Build and push your first image: Docker Hub へのログインは端末ウィンドウからコ
-  マンド ``docker login`` を実行することで代用。コマンド ``docker build``,
+* Build and push your first image: |DockerHub| へのログインは端末ウィンドウから
+  コマンド ``docker login`` を実行することで代用。コマンド ``docker build``,
   ``docker image ls``, ``docker push`` などを実行する。
 
 Docker concepts
@@ -125,14 +128,14 @@ Docker concepts
 Docker の基本的原理について理解を深める。
 
 The basics
-   Docker Docs の著者は Docker の基本をコンテナー、イメージ、レジストリー、
+   |DockerDocs| の著者は Docker の基本をコンテナー、イメージ、レジストリー、
    Docker Compose だとみなしている。
 
    * What is a container?: ``docker/welcome-to-docker`` を開始してコマンド
      ``docker ps``, ``docker stop`` などを実行する。
    * What is an image?: コマンド ``docker search``, ``docker pull``, ``docker
      image ls``, ``docker image history`` などを実行する。
-   * What is a registry?: Docker Hub にリポジトリーを作成し、コマンド ``docker
+   * What is a registry?: |DockerHub| にリポジトリーを作成し、コマンド ``docker
      build``, ``docker tag``, ``docker push`` 等を実行して成果物を登録する。
    * What is Docker Compose?: :file:`compose.yml`, ``docker compose up``,
      ``docker compose down``
@@ -183,7 +186,7 @@ Data science with JupyterLab
    Docker と JupyterLab はデータ科学の作業工程を強化する強力なツールだという。こ
    れらを併用して、再現可能なデータ科学環境を作成および実行する。
 
-   カスタマイズイメージを Docker Hub にプッシュしてそれを ``docker run`` するの
+   カスタマイズイメージを |DockerHub| にプッシュしてそれを ``docker run`` するの
    が上手くいかない。
 Suppress image vulnerabilities with VEX
    実験的らしいので急ぎなら飛ばす。途中で必要になる実行形式ファイルは
@@ -240,7 +243,7 @@ Docker workshop
   build``, ``docker run``, ``docker ps`` 等を実行する。
 * Part 3: Update the application: さらにコマンド ``docker stop``, ``docker rm``
   等を習う。
-* Part 4: Share the application: Docker Hub アカウント開設後、コマンド ``docker
+* Part 4: Share the application: |DockerHub| アカウント開設後、コマンド ``docker
   login``, ``docker tag``, ``docker push`` 等を実行する。
 * Part 5: Persist the DB: ``docker volume create``, ``--mount type=volume``,
   ``docker volume inspect`` 等。
@@ -415,7 +418,7 @@ Continuous integration
    * GitHub Actions
 
      * Introduction: Docker GitHub Actions を設定して Docker イメージをビルドし、
-       Docker Hub にプッシュするチュートリアルを含む。
+       |DockerHub| にプッシュするチュートリアルを含む。
 
 Docker Compose
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -442,7 +445,7 @@ Quickstart
 Administration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-管理者は Docker Hub または Docker Admin Console を使って会社や組織をなんとかする
+管理者は |DockerHub| または Docker Admin Console を使って会社や組織をなんとかする
 ことができる。
 
 Reference
@@ -451,6 +454,59 @@ Reference
 チュートリアルを全部こなしてから確かめることになる文書群。|Dockerfile| などの書
 式仕様と CLI の説明書を確かめることが多い。後者に関して注目したいのは、文書が
 :program:`docker` と ``docker compose`` とで別枠になっていることだ。
+
+Glossary
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+抜粋したり、自分なりに大雑把に解釈したことを以下に記す。
+
+Docker
+   #. 開発者とシステム管理者がアプリケーションを開発、出荷、実行するための土台。
+   #. イメージとコンテナーを管理するホスト上で動作する :command:`dockerd`.
+|DockerHub|
+   次の機能などを有する Web サービスという解釈でいい：
+
+   * Docker イメージをホストするレジストリー
+   * 使用者認証
+   * イメージの自動ビルド、ビルドトリガーや Web フックなどの作業工程ツール
+   * GitHub や Bitbucket との統合
+   * 安全保障脆弱性検査
+Docker ID
+   |DockerHub| のアカウント ID という認識。これを取得していれば、そのリポジト
+   リーにアクセス可能になる。
+|Dockerfile|
+   Docker イメージを構築するために通常手動で実行するコマンドすべてを含むテキスト
+   ファイル。Docker はこのファイルから指示を読み取り、イメージを構築する。
+イメージ
+   階層化されたファイルシステム同士を積み重ねたものと考えられる。イメージからコ
+   ンテナーが生まれる。イメージは immutable であると、どこかに記してあった。
+基底イメージ
+   |Dockerfile| にその親イメージが指定されていないイメージ。``FROM scratch`` 司
+   令を持つ |Dockerfile| から作成される。
+
+   一般的に、イメージには派生関係があり、その根に相当するイメージが基底イメージ
+   だ。
+親イメージ
+   あるイメージの |Dockerfile| の ``FROM`` 司令で指定されたイメージ。
+コンテナー
+   イメージの実行時インスタンス。オブジェクト指向言語の類比で言うとクラスに対す
+   るオブジェクトに相当する。
+リポジトリー
+   イメージの集合。リポジトリーはレジストリサーバーに push することで共有可能。
+レジストリー
+   イメージのリポジトリーを含むサービス。
+タグ
+   リポジトリ内ーのイメージに適用されるラベルがタグだ。リポジトリー内のさまざま
+   なイメージを区別する方法だ。
+仮想機械
+   計算機を模倣するプログラム。物理的なハードウェア資源は他の使用者と共有しなが
+   ら、OS は分離される。最終使用者は仮想機械上で専用ハードウェアと同じ体験をする
+   ことになる。
+ボリューム
+   一つまたは複数のコンテナー内の特別なディレクトリーだ。ボリュームはコンテナー
+   の寿命とは無関係にデータを永続化するように設計されている。Docker はコンテナー
+   を削除する際にボリュームを自動的に削除することはなく、コンテナーから参照され
+   なくなったボリュームをゴミ回収することもない。
 
 さらに修行する
 ----------------------------------------------------------------------
@@ -547,20 +603,27 @@ logging drivers
 名言集
 ======================================================================
 
-TBD
+VM はハードウェアを抽象化したもので、ホストから物理的な CPU と RAM を受け取り、
+それを複数の小さな仮想マシンに分割して共有する。
 
-用語と術語と隠語
-----------------------------------------------------------------------
+コンテナーはアプリケーションの抽象化であり、OS とアプリケーションに焦点が当てら
+れており、ハードウェアの抽象化はそれほど重要ではない。
+
+``docker run`` を使いこなすには、ある程度の時間をかけることが必要だ。
+
+各 ``docker container run`` コマンドが同じイメージを使用していたとしても、各実行
+は分離された個別のコンテナーだ。コンテナーのそれぞれが別々のファイルシステムを持
+ち、別々の名前空間で実行される。
 
 資料
 ======================================================================
 
-`Docker Docs`_
+|DockerDocs|
    一級資料。この文書群を丹念に読んで分析すれば入門者には十分だ。
-`Docker Hub <https://hub.docker.com/>`__
+|DockerHub|
    Docker イメージの物置サービス。GitHub と意味が似ている。
 `Play with Docker Classroom <https://training.play-with-docker.com/>`__
-   Docker Docs の補助教材として利用する。説明が詳細でありながら明瞭で気に入って
+   |DockerDocs| の補助教材として利用する。説明が詳細でありながら明瞭で気に入って
    いる。Hands On ページの右側コンソールを使わぬと試せない機能 (Swarm, etc.) が
    あり、押さえておくがよかろう。
 Minikube_
@@ -577,11 +640,28 @@ Minikube_
 * Minikube_
 
 
-結論
+あとがき
 ======================================================================
 
+* 最初の話題はインストールを差し置いてのアンインストールだが、言われてみると理に
+  適っている。これは次回からパッケージ等利用ノート構成の標準にしたい。
+* Docker Engine 単品をインストールして学習してきたが、素直に Docker Desktop を採
+  用すれば次の事項が学習できた：
+
+  * コマンド ``docker init``
+  * Kubernetes 関係
+
+* 学習時間の大半をダウンロード待ちに費やした印象がある。
+* SSD に換装してから Docker 学習を始めた判断は正解だったようだ。ストレージをとに
+  かく食う。
+
+* コマンド編
+
+  * ``docker run``, ``docker start``, ``docker exec`` の区別をまずつけられるよう
+    にする。
 
 * Minikube_ というより Kubernetes を個別に学習する。
 
 .. _`Docker Docs`: https://docs.docker.com/
+.. _`Docker Hub`: https://hub.docker.com/
 .. _Minikube: https://minikube.sigs.k8s.io/docs/
