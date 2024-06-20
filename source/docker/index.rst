@@ -10,6 +10,9 @@ Docker 利用ノート
 
    ./first
    ./docs
+   ./commands
    ./config
    ./reference
    ./tmp
+
+`docker_cheatsheet.pdf <https://docs.docker.com/get-started/docker_cheatsheet.pdf>`__
