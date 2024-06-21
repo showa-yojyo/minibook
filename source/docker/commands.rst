@@ -55,9 +55,10 @@
 
 .. csv-table:: Docker CLI Common Commands
    :delim: @
-   :header: Command @ Description
+   :header-rows: 1
    :widths: auto
 
+   Command @ Description
    ``run``     @ Create and run a new container from an image
    ``exec``    @ Alias for ``container exec``
    ``ps``      @ Alias for ``container ls``
@@ -425,9 +426,10 @@ Swarm コマンド
 
 .. csv-table:: Docker CLI Commands
    :delim: @
-   :header: Command @ Description
+   :header-rows: 1
    :widths: auto
 
+   Command @ Description
    ``attach``  @ Alias for ``container attach``
    ``commit``  @ Alias for ``container commit``
    ``cp``      @ Alias for ``container cp``
