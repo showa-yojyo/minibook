@@ -81,7 +81,12 @@
 #. そのコンテナー内部で指定コマンドを実行する。
 #. その指定コマンドが終了するとコンテナーは終了する。
 
-よく用いるオプションをまとめて記しておく。
+.. rubric:: 頻出オプション
+
+.. option:: -name <container_name>, --name <container_name>
+
+   コンテナー識別名を指定する。他のコマンド中にハッシュ値ではなくこの名前で参照
+   することが可能になるという利点がある。
 
 .. option:: -d, --detach
 
@@ -111,11 +116,6 @@
 
    コンテナー終了時にそのファイルシステムを削除させる。短期間のフォアグランドプ
    ロセス実行時に指定しがちなオプションだ。
-
-.. option:: -name <container_name>, --name <container_name>
-
-   コンテナー識別名を指定する。他のコマンド中にハッシュ値ではなくこの名前で参照
-   することが可能になるという利点がある。
 
 .. option:: -w <directory>, --workdir <directory>
 
@@ -150,6 +150,10 @@
 
    本文で言われているように、``--volume`` よりも ``--mount`` を優先して使え。
 
+   .. admonition:: 読者ノート
+
+      マウント書式の仕様がはっきりしないが、カンマ区切り key-value 列挙で良い？
+
 .. option:: --network <network_name>
 
    コンテナーをネットワークに接続する。ネットワークは後述する関連コマンドでなん
@@ -165,99 +169,73 @@
    環境変数をファイルからロードする。ファイルの書式は変数名と値の代入文が並ぶと
    いうものだ。
 
-----
-
-ここから呪文例。
-
-:samp:`docker run --name {<container_name>} {<image_name>}`
-   イメージからコンテナーを生成、稼働する。コンテナーに独自の名前を与える。
-:samp:`docker run -p {<host_port>}:{<container_port>} {<image_name>}`
-   実行元マシンに公開するポートを指定してコンテナーを稼働する。
-:samp:`docker run -d {<image_name>}`
-   コンテナーをバックグランドで稼働する。
+.. rubric:: 呪文例
 
 ``docker run alpine ls -l``
    コマンド ``ls -l`` を指定したので、Docker はディレクトリー一覧出力をコンテ
    ナー内で実行する。出力が終了するとコンテナーはシャットダウンする。
 
-.. ``docker run -it alpine /bin/sh``
-.. ``docker run -it alpine /bin/ash``
-.. ``docker run -ti ubuntu bash``
-.. ``docker run hello:v0.1``
-.. ``docker run -dt ubuntu sleep infinity``
-..    This command will create a new container based on the ubuntu:latest image and
-..    will run the sleep command to keep the container running in the background.
-..
-.. ``docker run --name web1 -d -p 8080:80 nginx``
-..
-.. ``docker container run --interactive --tty --rm ubuntu bash``
-..
-.. ``docker container run \
-.. --detach \
-.. --name mydb \
-.. -e MYSQL_ROOT_PASSWORD=my-secret-pw \
-.. mysql:latest``
+:samp:`docker run --name {<container_name>} {<image_name>}`
+   イメージからコンテナーを生成、稼働する。コンテナーに独自の名前を与える。
 
-.. ``docker container run \
-.. --detach \
-.. --publish 80:80 \
-.. --name linux_tweet_app \
-.. $DOCKERID/linux_tweet_app:1.0``
-..
-.. ``docker container run \
-.. --detach \
-.. --publish 80:80 \
-.. --name linux_tweet_app \
-.. --mount type=bind,source="$(pwd)",target=/usr/share/nginx/html \
-.. $DOCKERID/linux_tweet_app:1.0``
-..
-.. ``docker container run \
-.. --detach \
-.. --publish 8080:80 \
-.. --name old_linux_tweet_app \
-.. $DOCKERID/linux_tweet_app:1.0``
-.. docker container run -it --rm linkextractor:step1 http://example.com/
-..
-.. docker container run -it --rm linkextractor:step1 https://training.play-with-docker.com/
-.. docker run -d -p 8080:8080 spring-helloworld
-.. docker run -d -p 8080:80 nginx
-.. docker run -p 80 nginx
-.. docker run -d -p HOST_PORT:CONTAINER_PORT postgres
+:samp:`docker run -d {<image_name>}`
+   コンテナーをバックグランドで稼働する。
+``docker run -it --rm ubuntu bash``
+   コンテナー ``ubuntu`` を端末ウィンドウから入出力を行えるように稼働して、終了
+   時にそのファイルシステムを削除する。
+``docker run -dt ubuntu sleep infinity``
+   イメージ ``ubuntu`` に基づいて新しいコンテナーを作成し、バックグラウンドで実
+   行し続けるために :command:`sleep` を実行する。
+
+:samp:`docker run -p {<host_port>}:{<container_port>} {<image_name>}`
+   実行元マシンに公開するポートを指定してコンテナーを稼働する。
+
+``docker run -v $PWD:/test -w /test golangci/golangci-lint golangci-lint run``
+   コマンドはコンテナー内の :file:`/test` ディレクトリーで実行するものとする。
 
 ``docker run -d -e POSTGRES_PASSWORD=secret -p 5434:5432 --network mynetwork postgres``
    Postgres コンテナーがバックグラウンドで起動し、ホストポート 5434 に写され、
    ネットワーク ``mynetwork`` に接続する。
 
+``docker run -d -p 8080:80 nginx``
+   ホストポート 8080 からコンテナーポート 80 へ写す。この状態でホスト端末から
+   localhost:8080 へアクセスすると、コンテナーの 80 にアクセスしたことになる。
+``docker run -p 80 nginx``
+   ホストのいずれかのポートからコンテナーのポート 80 へ写す。
 ``docker run -P nginx``
    イメージによって設定されたすべてのポートを公開する。
-``docker run -e foo=bar postgres env``
-   オプション ``-e`` はコンテナー内側での環境変数を指定する。
-``docker run --env-file .env postgres env``
-   環境変数の集合をファイル :file:`.env` で指定する。
-``docker run --memory="512m" --cpus="0.5" postgres``
-   コンテナーのメモリー使用量と CPU 枠を制限する。
+
+``docker run --name=db -e POSTGRES_PASSWORD=secret -d -v postgres_data:/var/lib/postgresql/data postgres``
+   ホスト側ディレクトリー ``postgres_data`` とコンテナー側ディレクトリー
+   :file:`/var/lib/postgresql/data` にマウントして :command:`postgres` をバック
+   グランウンドで稼働する。
+
 ``docker run -d -p 80:80 -v log-data:/logs docker/welcome-to-docker``
    コンテナが実行されると、:file:`/logs` ディレクトリーに書き込まれるすべての
    ファイルが、コンテナー外のこのボリューム ``log-data`` に保存される。コンテ
    ナーを削除し、同じボリュームを使用して新しいコンテナーを稼働してもファイルは
    そのまま残る。
 
-``docker run --name=db -e POSTGRES_PASSWORD=secret -d -v postgres_data:/var/lib/postgresql/data postgres``
-   TODO: ボリューム用
+``docker run --detach --publish 80:80 --name linux_tweet_app --mount type=bind,source="$(pwd)",target=/usr/share/nginx/html $DOCKERID/linux_tweet_app:1.0``
+   マウント指定の例。TODO: 解説
 ``docker run --mount type=bind,source=/HOST/PATH,target=/CONTAINER/PATH,readonly nginx``
-   TODO: マウント用
-``docker run -v HOST-DIRECTORY:/CONTAINER-DIRECTORY:rw nginx``
-   TODO: 権限用
+   マウント指定の例。TODO: 解説
 
 ``docker run -d --name redis --network sample-app --network-alias redis redis``
    Redis コンテナーを起動し、先に作成したネットワーク ``sample-app`` に取り付け
    てネットワーク別名を作成する。DNS lookup に便利だ。
-``docker run -v $PWD:/test -w /test golangci/golangci-lint golangci-lint run``
-   TODO: ``-w``
-``docker build --target=server --platform=linux/arm/v7 .``
-   TODO: ``--platform``
 
-.. docker run -it --mount type=bind,src="$(pwd)",target=/src ubuntu bash
+``docker run -e foo=bar postgres env``
+   コンテナー内側での環境変数 ``foo`` を指定する。値は文字列 ``bar`` とする。
+``docker run --env-file .env postgres env``
+   環境変数の集合をファイル :file:`.env` で指定する。
+
+.. rubric:: 少し高度なオプション例
+
+``docker run --memory="512m" --cpus="0.5" postgres``
+   コンテナーのメモリー使用量と CPU 枠を制限する。
+:samp:`docker run -v {HOST-DIRECTORY}:{CONTAINER-DIRECTORY}:rw nginx`
+   TODO: おそらく read-write モードの例
 
 呪文表 ``exec``
 ----------------------------------------------------------------------
@@ -304,6 +282,11 @@
 ``docker build --output=. --target=server .``
    対象 ``server`` のファイルをホストファイルシステム上の現在の作業ディレクト
    リーにエクスポートする。
+
+----
+
+``docker build --target=server --platform=linux/arm/v7 .``
+   TODO: ``--platform``
 
 呪文表 ``pull``
 ----------------------------------------------------------------------
