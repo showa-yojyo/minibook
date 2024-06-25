@@ -72,6 +72,8 @@
    ``version`` @ Show the Docker version information
    ``info``    @ Alias for ``system info``
 
+.. _docker-run:
+
 呪文表 ``run``
 ----------------------------------------------------------------------
 
@@ -250,20 +252,114 @@
 呪文表 ``build``
 ----------------------------------------------------------------------
 
+| :samp:`docker image build {[OPTIONS]} {PATH}`
+
+|Dockerfile| と context からイメージをビルドするコマンドが ``docker build`` だ。
+ビルドの context とは指定されたパスや URL にあるファイルの集合だ。ビルド過程はコ
+context 内のどのファイルでも参照可能だ。例えば ``COPY`` 指令を使って参照する。
+
+既定では ``docker build`` は context ルートにある |Dockerfile| を探す。
+
+ほとんどの場合、|Dockerfile| を空ディレクトリーに置くのが最善だ。そのディレクト
+リーにはビルドに必要なファイルしか追加しない。ビルドの性能を上げるには、そのディ
+レクトリーに :file:`.dockerignore` を追加して、ファイルやディレクトリーを除外す
+ることも可能だ。
+
+.. rubric:: 頻出オプション
+
+.. option:: -t <name>, --tag <name>
+
+   ビルドするイメージに対して名前とオプションでタグを指定する。両者はコロンで区
+   切る。このコマンドラインオプションを複数することも可能。
+
+.. option:: -f <path>, --file <path>
+
+   |Dockerfile| を指定する。レファレンスを見るとビルドターゲットに応じて
+   |Dockerfile| を分けて用意する場合に有用であるようだ。
+
+.. option:: --build-arg [<varname>=<value>]
+
+   ビルド実行時変数を設定する。イメージをビルドするホストにより、変数を分けて定
+   義したい。|Dockerfile| 内の ``ARG`` 指令にある変数に対して、このオプションを
+   使ってビルド実行時に値を設定可能だ。
+
+   ビルド引数それぞれに対して ``--build-arg`` を指定する必要がある。
+
+   値を指定せずに使用する場合、デーモンはローカル環境からビルド中の Docker コン
+   テナーに値を渡す。
+
+.. option:: --target <stage>
+
+   ビルドする対象ステージを指定する。
+
+   複数のビルドステージを持つ |Dockerfile| でビルドする場合、このオプションを使
+   用して、結果イメージの最終ステージとして中間ビルドステージを名前で指定可能
+   だ。デーモンは対象ステージ以降のコマンドを実行しない。
+
+   例えば |Dockerfile| に :samp:`FROM {base_image} AS {stage}` 指令がある場合、
+   コマンド :samp:`docker build --target {stage} ...` が考えられる。
+
+.. option:: -o <target>, --output <target>
+
+   通常、ビルド結果からローカルコンテナーイメージを生成するのだが、このオプショ
+   ンを指定すると、この動作を上書きしてカスタムエクスポーターを指定可能だ。カス
+   これにより、ビルド結果を Docker イメージではなく、ローカルファイルシステム上
+   のファイルとしてエクスポート可能だ。
+
+   このオプションの引数の書式は CSV だ。
+
+   このオプションは対象ステージからファイルすべてをエクスポートする。
+
+.. option:: --platform <value[,value]>
+
+   ビルドの対象プラットフォームを設定する。|Dockerfile| の中で ``--platform`` フ
+   ラグを持たない ``FROM`` 指令はすべてこのプラットフォーム用のベースイメージを
+   引いてくる。
+
+   既定値はビルドを実行する BuildKit デーモンのプラットフォームだ。
+
+.. option:: --progress <auto|plain|tty|rawjson>
+
+   進捗出力の型を設定する。コンテナー出力を表示するには ``plain`` を指定する。
+
+.. rubric:: 呪文例
+
 ``docker build .``
-   イメージを構築する。Docker にファイル |Dockerfile| を :file:`.` から参照させ
-   る。
+   イメージを構築する。Docker に |Dockerfile| を :file:`.` から参照させる。
 :samp:`docker build -t {<image_name>}`
    |Dockerfile| からイメージを構築する。イメージ名は例えば ``hello:v0.1`` のよう
    な文字列で指定可。
-:samp:`docker build -t {<image_name>} . -no-cache`
+:samp:`docker build -t {<image_name>} . --no-cache`
    キャッシュなしで |Dockerfile| からイメージを構築する。
-``docker build -t spring-helloworld .``
-   TBW
-``docker build -t linkextractor:step1 .``
-   TBW
-``docker build --tag $DOCKERID/linux_tweet_app:1.0 .``
-   TBW
+
+``docker build --build-arg="GO_VERSION=1.19" .``
+   |Dockerfile| に ``ARG`` 指令で宣言されている変数 ``GO_VERSION`` の値を
+   ``1.19`` に定義してビルドする。
+:samp:`docker build --build-arg HTTP_PROXY={url} .`
+   ``HTTP_PROXY`` など、|Dockerfile| に記されずともあらかじめ存在するビルド変数
+   がある。
+
+``docker build --tag=buildme-client --target=client .``
+   タグ ``buildme-client`` を付与してイメージ ``client`` をビルドする。
+``docker build --target=client --progress=plain . 2> log1.txt``
+   進捗をログファイル :file:`log1.txt` に出力する。
+``docker build --output=. --target=server .``
+   対象 ``server`` のファイルをホストファイルシステム上の現在の作業ディレクト
+   リーにエクスポートする。
+
+``docker build --target=server --platform=linux/arm/v7 .``
+   Linux/ARM/v7 プラットフォーム用の ``server`` イメージを構築する。
+
+``docker build -o out .``
+   ビルドコンテキストを現在のディレクトリーとしてイメージをビルドする。そしてサ
+   ブディレクトリー :file:`out` に成果物をエクスポートする。このサブディレクト
+   リーは必要に応じて自動的に作成される。型オプションを省略した構文を ``-o`` オ
+   プションで使用しているため、既定のエクスポーター local が用いられる。
+``docker build --output type=local,dest=out .``
+   上のコマンドと等価。
+``docker build --output type=tar,dest=out.tar .``
+   上のコマンドと同じ対象をビルドし、成果物ファイルを ``.tar`` アーカイブとして
+   エクスポートする。
 
 ``docker build -t node-docker-image-test --progress=plain --no-cache --target test .``
    ``test`` ステージを対象として新しいイメージをビルドし、テスト結果を表示する。
@@ -272,21 +368,11 @@
    * テストがつねに実行されるのは ``--no-cache`` による。
    * ``test`` ステージが対象であるのは ``--target test`` による。
 ``docker build --provenance=true --sbom=true --tag ORG/scout-demo-service:v1 --push .``
-   TODO: scout 用
-``docker build --tag=buildme-client --target=client .``
-   TBW
-``docker build --target=client --progress=plain . 2> log1.txt``
-   ``--progress=plain`` フラグを付け、出力をログファイルにリダイレクトする。
-``docker build --build-arg="GO_VERSION=1.19" .``
-   TBW
-``docker build --output=. --target=server .``
-   対象 ``server`` のファイルをホストファイルシステム上の現在の作業ディレクト
-   リーにエクスポートする。
+   認証オプション各種盛りの例。
 
-----
-
-``docker build --target=server --platform=linux/arm/v7 .``
-   TODO: ``--platform``
+   * ``--provenance=true`` で来歴証をすべて有効にする。
+   * ``--sbom=true`` で ソフトウェア部品証をすべて有効にする。
+   * ``--push`` でビルド結果を自動的にレジストリーに押す。
 
 呪文表 ``pull``
 ----------------------------------------------------------------------
@@ -392,7 +478,8 @@
 ``docker compose up -d``
    サービスをバックグラウンドで実行したい場合はオプション ``-d`` を加える。
 ``docker compose up -d --build``
-   TBW
+   コンテナーを開始する前にイメージをビルドし、バックグラウンドでコンテナープロ
+   セスを稼働する。
 ``docker compose watch``, ``docker compose up --watch``
    アプリケーションをビルドして稼働し、ファイル監視モードを開始する。
 ``docker compose ps``
@@ -401,8 +488,9 @@
    停止サービスコンテナーを削除する。
 ``docker compose run server npm run test``
    コンテナー内のファイル :file:`package.json` からテストスクリプトを実行する。
-
-.. docker-compose exec redis redis-cli monitor
+``docker compose exec redis redis-cli monitor``
+   サービス ``redis`` 内でコマンド ``redis-cli monitor`` を実行する。コマンドは
+   既定で端末を割り当てるので、対話型のプロンプトが表示される。
 
 呪文表 ``container``
 ----------------------------------------------------------------------
@@ -441,54 +529,69 @@
 呪文表 ``container commit``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| :samp:`docker container commit [{OPTIONS}] {<CONTAINER>} [{REPOSITORY}[:{TAG}]]`
+
+コンテナーの変化からイメージを新規作成するコマンド。コンテナーのファイル変更や設
+定を新しいイメージにコミットすると便利で、対話型シェルを実行してコンテナーをデ
+バッグしたり、作業中のデータセットを別のサーバーにエクスポートしたりと、いろいろ
+なことが可能になる。
+
 別名 ``commit`` を使用可。
 
 :samp:`docker commit {CONTAINER_ID}`
-   差分をコミットする
+   差分をコミットする。
 ``docker commit -m "Add node" base-container node-base``
-   TBW
+   コミットメッセージ "Add node" を与える。
 ``docker commit -c "CMD node app.js" -m "Add app" app-container sample-app``
-   このコマンドは ``sample-app`` という新しいイメージを作成するだけでなく、コン
-   テナー起動時の既定コマンドを ``node app.js`` に設定する。
-
-呪文表 ``container create``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-別名 ``create`` を使用可。
-
-TBW
+   このコマンドは ``sample-app`` という新しいイメージを作成するだけでなく、
+   |Dockerfile| に記述を追加することでコンテナー起動時の既定コマンドを ``node
+   app.js`` に（追加的に？）設定する。
 
 呪文表 ``container diff``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+コンテナのファイルシステム上のファイルやディレクトリーの変更を検査する。
+
 別名 ``diff`` を使用可。
 
 :samp:`docker diff {<container ID>}`
-   docker run -it からのファイルすべて
+   これは説明を読むよりも実際に実行して出力を見るほうが理解が早い。適当なコンテ
+   ナーを与えて試せ。稼働中である必要はない。
 
 .. _docker-container-exec:
 
 呪文表 ``container exec``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+| :samp:`docker container exec [{OPTIONS}] <{CONTAINER}> <{COMMAND}> [{ARG...}]`
+
+稼働中のコンテナーの中でコマンドを実行する。オプションは ``run`` と共通するもの
+もある。
+
 別名 ``exec`` を使用可。
 
 :samp:`docker exec -it {<container_name>} {command}`
-   稼働中のコンテナーの内側でコマンドを実行する。
+   稼働中のコンテナー `container_name` の内側で対話的に :command:`command` を実
+   行する。
 :samp:`docker exec {<container_id>} ls`
-   TBD
+   稼働中のコンテナー `container_name` の内側で :command:`ls` を実行する。
 ``docker exec -it mydb sh``
    MySQL コンテナーである ``mydb`` 内に対話型シェル :program:`sh` が表示される。
 ``docker exec -it mydb mysql --user=root --password=$MYSQL_ROOT_PASSWORD --version``
-   TBW
+   より実践的なコマンド。
 ``docker exec my-mysql mysql -u root -pmy-secret-pw -e "SELECT * FROM mydb.myothertable;"``
-   TBW
+   実践的なコマンドその二。
 
 呪文表 ``container kill``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``docker kill yourcontainerid1 yourcontainerid2``
-   TBW
+稼働中のコンテナーにシグナルを送る。複数指定可。
+
+:samp:`docker kill {container1} {container2}`
+   コンテナー `container1`, `container2` を殺す。
+:samp:`docker kill --signal=SIGHUP {container}`
+   既定値は SIGKILL だが、シグナルをオプション ``--signal`` で指定することも可
+   能。値によってはコンテナーが終了しないことに注意。
 
 呪文表 ``container logs``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -497,10 +600,10 @@ TBW
 
 :samp:`docker logs -f {<container_name>}`
    コンテナーのログを取得、追跡する。
-``docker logs mydb``
-   TBW
-``docker logs linkextractor``
-   TBW
+``docker logs -f --until=2s test``
+   コンテナー ``test`` のログを二秒まで取得、追跡する。
+
+   この例では時刻を相対的に指示している。絶対時刻指定も可能。
 
 .. _docker-container-ls:
 
@@ -513,6 +616,12 @@ TBW
    現在稼働中のコンテナーすべてを一覧する。稼働でないコンテナーは返されない。
 ``docker ps --all``
    稼働中でも停止中でも、コンテナーすべてを一覧する。
+``docker ps --size``
+   コンテナーそれぞれに対して、実消費量と仮想消費量の二つの容量を示す。仮想とあ
+   るのは、コンテナーで使用される読み取り専用のイメージデータと、書き込み可能な
+   レイヤーに使用されるディスク容量の和を表す。
+
+.. todo:: まだまだある
 
 呪文表 ``container rm``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -529,7 +638,7 @@ TBW
 呪文表 ``container run``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-コマンド ``run`` の別名。
+コマンド ``run`` の別名。:ref:`docker-run` を参照しろ。
 
 呪文表 ``container start``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
