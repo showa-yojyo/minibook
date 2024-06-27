@@ -809,50 +809,71 @@ context 内のどのファイルでも参照可能だ。例えば ``COPY`` 指�
    $ docker images --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
    $ docker images --format json
 
-呪文表 ``image network``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-``docker network create mynetwork``
-   カスタムネットワークを新規作成する。
-``docker network inspect``
-   コンテナーがネットワークに接続されているかどうかを確認できる。
-``docker network ls``
-   ネットワークすべてを一覧する。
-
 呪文表 ``image prune``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``docker image prune``
-   未使用イメージすべてを削除する。
+   タグを持たず、子を持たないイメージすべてを削除する。
+``docker image prune -a``
+   さらに未参照イメージすべても削除する。
+``docker image prune -a --force --filter "until=2017-01-04T00:00:00"``
+   2017-01-04T00:00:00 以前に作成されたイメージを削除する。
+``docker image prune -a --force --filter "until=240h"``
+   十日以上前に作成されたイメージを削除する。
 
 .. _docker-image-pull:
 
 呪文表 ``image pull``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:samp:`docker image pull {image_name}`
-   |DockerHub| から指定イメージを取得し、システムに保存する。
+別名 ``pull`` を利用可。
+
+端末ウィンドウで実行中に |Ctrl+C| を押すなどして ``docker pull`` 操作を取り消せ
+る。
+
+:samp:`docker pull {image_name}`
+   |DockerHub| から指定イメージを取得し、システムに保存する。イメージにタグが指
+   定されていない場合、``latest`` タグを既定とする。
 
 .. _docker-image-push:
 
 呪文表 ``image push``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+別名 ``push`` を利用可。
+
+これもコマンド実行中に |Ctrl+C| を押すと操作が取り消される。
+
 :samp:`docker push {<username>}/{<image_name>}`
-   イメージを |DockerHub| に押し付ける。
-``docker push my-username/my-image``
-   TBW
+   イメージを |DockerHub| に押す。
+``docker image push --all-tags registry-host:5000/myname/myimage``
+   オプション ``--all-tags`` を付けて押すと、イメージ
+   ``registry-host:5000/myname/myimage`` のタグすべてが押される。
 
 呪文表 ``image rm``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ホストノードからイメージを削除したりタグを取ったりする。イメージにタグが複数ある
+場合、タグを引数にしてこのコマンドを実行することでタグだけを削除する。タグが一つ
+の場合はイメージとタグのどちらも削除することになる。
+
+画像を参照しているタグが一つ以上ある場合は、イメージを削除する前にタグをすべて削
+除する必要がある。
 
 別名 ``rmi`` が打鍵量が最も少ない。
 
 :samp:`docker rmi {<image_name>}`
    イメージを削除する。
+:samp:`docker rmi -f {<image_id>}`
+   指定された ID に一致するイメージのタグをすべて解除し、削除する。
 
 呪文表 ``image tag``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| :samp:`docker image tag {SOURCE_IMAGE}[:{TAG}] {TARGET_IMAGE}[:{TAG}]`
+
+|DockerHub| などにイメージを押すために、名前とタグを用いてイメージをグループ化す
+るためのコマンドだ。タグを指定しないと既定名 ``latest`` が採用される。
 
 別名 ``tag`` を使用可。
 
@@ -860,14 +881,69 @@ context 内のどのファイルでも参照可能だ。例えば ``COPY`` 指�
    イメージにラベルを付けてバージョン管理することができる。
 ``docker tag my-username/my-image another-username/another-image:v1``
    イメージに別のタグを追加できる。
+``docker tag 0e5574283393 fedora/httpd:version1.0``
+   ローカルイメージ 0e5574283393 に ``fedora/httpd`` としてタグ ``version1.0``
+   を付ける。
+``docker tag httpd fedora/httpd:version1.0``
+   ローカルイメージ ``httpd`` にタグ ``version1.0`` 付き名前 ``fedora/httpd`` を
+   付ける。
+``docker tag httpd:test fedora/httpd:version1.0.test``
+   ローカルイメージ ``httpd:test`` に以下同文。上のコマンドの対象イメージは実際
+   には ``httpd:latest`` であることに注意しろ。
+``docker tag 0e5574283393 myregistryhost:5000/fedora/httpd:version1.0``
+   公衆レジストリーではなく、私設レジストリーにイメージを押すには、レジストリー
+   のホスト名と、必要ならばポートをも指定する。
 
 呪文表 ``network``
 ----------------------------------------------------------------------
 
-``docker network ls``
-   現在の Docker ホスト上の既存のコンテナーネットワークを表示する。
+.. csv-table:: Subcommands of ``docker network``
+   :delim: @
+   :header-rows: 1
+   :widths: auto
+
+   Command @ Description
+   ``connect``    @ Connect a container to a network
+   ``create``     @ Create a network
+   ``disconnect`` @ Disconnect a container from a network
+   ``inspect``    @ Display detailed information on one or more networks
+   ``ls``         @ List networks
+   ``prune``      @ Remove all unused networks
+   ``rm``         @ Remove one or more networks
+
+呪文表 ``network create``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``docker network create mynetwork``
+   カスタムネットワークを新規作成する。
+
+呪文表 ``network inspect``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``docker network inspect``
+   コンテナーがネットワークに接続されているかどうかを確認できる。
 ``docker network inspect bridge``
    ``bridge`` と呼ばれるネットワークの詳細を表示する。
+
+呪文表 ``network ls``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``docker network ls``
+   現在の Docker ホスト上の既存のコンテナーネットワークを表示する。既存というの
+   は、デーモンが知っているネットワークすべてということだ。クラスター内のホスト
+   複数にまたがるネットワークも含む。
+
+呪文表 ``network rm``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ネットワークを削除するコマンドだが、ネットワークを削除するには、まずそのネット
+ワークに接続しているコンテナーをすべて切断する必要がある。
+
+:samp:`docker network rm {<network>}`
+   ネットワークを削除する。
+``docker network rm 3695c422697f my-network``
+   一度の実行で複数削除する。どれか削除に失敗しても残りのネットワークの削除を試
+   みる。
 
 呪文表 ``scout``
 ----------------------------------------------------------------------
