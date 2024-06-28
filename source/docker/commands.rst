@@ -12,8 +12,11 @@
    :depth: 2
    :local:
 
-共通オプション
+オプション
 ======================================================================
+
+共通オプション
+----------------------------------------------------------------------
 
 ここでいう共通オプションとは、次のコマンド呼び出しの形式における
 ``[common-options]`` の部分に来るコマンドラインオプションのこととする。
@@ -45,6 +48,52 @@
 .. option:: -l, --log-level="debug|info|warn|error|fatal"
 
    ログ水準を指定する。既定値は ``info`` だ。
+
+出力コマンドにおける頻出オプション
+----------------------------------------------------------------------
+
+コマンド :samp:`docker {command} ls` や :samp:`docker {command} inspect` などに
+備わっているオプションをまとめておく。
+
+.. option:: -a, --all
+
+   「すべて」を意味する（コマンドによって集合が異なる）。
+
+.. option:: --digests
+
+   イメージにはダイジェストと呼ばれる content addressable な識別子がある。この値
+   を出力するオプションだ。
+
+.. option:: -f, --filter=<key>[=<value>]
+
+   条件に基づいて指定を絞り込む。キー単体、またはキーと値の対で指定する。コマン
+   ド一つでこのオプションを複数指定することが可能で、その場合にはすべての条件が
+   真である対象が採用される。
+
+   よく出てくる絞り込み名：
+
+   * ``id``
+   * ``label``
+   * ``name``
+
+   このオプションを使いこなせると手練れに見える。
+
+.. option:: --format=<template>
+
+   カスタムテンプレートを使って出力をフォーマットする。
+
+   * ``table``: 列ヘッダー付きの表形式で出力する。
+   * ``json``: JSON 形式で出力する。
+   * ``TEMPLATE``: 指定された Go テンプレートを使って出力する。
+
+.. option:: --no-trunc
+
+   ID などの長い文字列を出力するときに切り捨てない。
+
+.. option:: -q, --quiet
+
+   ID しか出力しない。これを使ったコマンド出力を :samp:`docker {command} rm` の
+   入力にする用途がある。
 
 常用コマンド
 ======================================================================
@@ -432,7 +481,7 @@ context 内のどのファイルでも参照可能だ。例えば ``COPY`` 指�
 
 ``docker version``
    Docker バージョン情報を出力する。
-``docker version --format '\{\{.Server.Version\}\}'``
+``docker version --format '{{.Server.Version}}'``
    サーバーバージョンを出力する。
 
 呪文表 ``info``
@@ -448,6 +497,7 @@ context 内のどのファイルでも参照可能だ。例えば ``COPY`` 指�
 
    builder     Manage builds
    buildx*     Docker Buildx
+   checkpoint  Manage checkpoints
    compose*    Docker Compose
    container   Manage containers
    context     Manage contexts
@@ -625,9 +675,6 @@ context 内のどのファイルでも参照可能だ。例えば ``COPY`` 指�
    るのは、コンテナーで使用される読み取り専用のイメージデータと、書き込み可能な
    レイヤーに使用されるディスク容量の和を表す。
 
-どのコマンドでもそうだが、オプション ``--filter`` を使いこなせると手練れに見え
-る。
-
 ``docker ps --filter "label=color=blue"``
    ラベル ``color`` が付いていて、かつその値が ``blue`` であるコンテナー一覧を出
    力する。値を問わない場合には ``=blue`` を指定しない。
@@ -703,8 +750,6 @@ context 内のどのファイルでも参照可能だ。例えば ``COPY`` 指�
 ``docker stats --all --format "table {{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" container``
    稼働中でも停止中でも、コンテナーすべてのそれぞれに対して、カスタマイズされた
    フォーマットで統計を表形式で出力する。
-
-このコマンドもオプション ``--format`` は Go テンプレートを用いた出力を指示する。
 
 呪文表 ``container stop``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -942,29 +987,24 @@ context 内のどのファイルでも参照可能だ。例えば ``COPY`` 指�
    は、デーモンが知っているネットワークすべてということだ。クラスター内のホスト
    複数にまたがるネットワークも含む。
 ``docker network ls --no-trunc``
-   TODO: ``--no-trunc`` は一気に解説しよう。
-
-リスト系コマンドはオプション ``--filter`` があることが多い。一気に解説するか。
+   ID を切り捨てずに出力する。
 
 ``docker network ls --filter driver=bridge``
    ネットワークドライバーが ``bridge`` と合致するものを一覧する。
 ``docker network ls --filter id=95e74588f40d``
    ID を指定して一覧する。存在さえすれば、ID の部分だけを指定して通じる。
-
 ``docker network ls -f "label=usage"``
    ラベルフィルターはラベルと値の存在に基づいてネットワークを一覧する。ラベル
    ``usage`` を持つネットワークを一覧する。その値は何でもかまわない。
 ``docker network ls -f "label=usage=prod"``
    これは値の合致まで求める。
-
 ``docker network ls --filter name=foo``
    名前に ``foo`` を含むネットワークを一覧する。
-
 ``docker network ls --filter type=custom -q``
    使用者定義のネットワークすべての ID を出力する。これを ``docker network rm``
    の入力としてネットワークを一掃する場合がある。
 
-リスト系コマンドはオプション ``--format`` があることが多い。一気に解説するか。
+オプション ``--format`` がある。
 
 .. sourcecode:: console
    :caption: Examples of ``docker network ls --format``
@@ -1116,7 +1156,8 @@ Swarm コマンド
 ======================================================================
 
 ほとんどは別のコマンドの別名であり、おそらく打鍵効率の便宜上設けられているものと
-考えられる。
+考えられる。実際、環境変数 :envvar:`DOCKER_HIDE_LEGACY_COMMANDS` を設定しておく
+とコマンド ``docker --help`` などの出力から下記の一覧出力が省かれる。
 
 .. csv-table:: Docker CLI Commands
    :delim: @
@@ -1166,8 +1207,8 @@ Docker オブジェクトの低水準情報を出力するコマンド。通常�
 ``docker inspect --size mycontainer``
    コンテナー専用オプション。
 
-このコマンドはオプション ``--format`` が備わっている。ほとんどの場合、かなり簡単
-な方法で任意のフィールドを JSON から引き出すことができる。
+このコマンドはオプション ``--format`` が備わっている。かなり簡単な方法で任意の
+フィールドを JSON から引き出すことができる。
 
 :samp:`docker inspect --format='\\{\\{range .NetworkSettings.Networks\\}\\}\\{\\{.IPAddress\\}\\}\\{\\{end\\}\\}' {<INSTANCE>}`
    IP アドレスを出力する。

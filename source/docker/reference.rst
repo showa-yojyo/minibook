@@ -19,3 +19,5 @@ Minikube_
 `Overview | Kubernetes <https://kubernetes.io/docs/concepts/overview/>`__
    この解説の前半、コンテナーに関する記述は Kubernetes 無関係に読め、よくまと
    まっている。
+`docker_cheatsheet.pdf <https://docs.docker.com/get-started/docker_cheatsheet.pdf>`__
+   公式？超精選呪文表。
