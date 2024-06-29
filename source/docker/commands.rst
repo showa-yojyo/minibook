@@ -192,18 +192,41 @@
    バインドマウントされたボリュームのホストディレクトリーが存在しない場合、
    Docker が実行者に代わって ``<dir1>`` をホスト上に作成する。
 
+   引数はコロンで区切られたフィールド三つで構成される。フィールドは正しい順序で
+   並んでいなければならない。
+
+   * 名前付きボリュームの場合、最初のフィールドはボリュームの名前で、指定された
+     ホストマシン上で唯一無二だ。匿名ボリュームの場合、最初のフィールドは省略さ
+     れる。
+   * 二番目のフィールドは、ファイルまたはディレクトリーがコンテナにマウントされ
+     るパスだ。
+   * 三番目のフィールドは省略可能で、``ro`` などのオプションからなる CSV だ。
+
 .. option:: --mount <mount>
 
-   ボリュームやホストディレクトリーをコンテナー内にマウントする。
+   ボリュームやホストディレクトリーをコンテナー内にマウントする。「マウントす
+   る」の意味はファイルシステム解説書を当たれ。
 
    このオプションは ``--volume`` が対応しているオプションのほとんどを対応するも
    のの、構文は異なる。
 
    本文で言われているように、``--volume`` よりも ``--mount`` を優先して使え。
 
-   .. admonition:: 読者ノート
+   引数はカンマ区切りの :samp:`{key}={value}` で構成する。それらの順序は任意。有
+   効なキーのうち重要なものを記すと：
 
-      マウント書式の仕様がはっきりしないが、カンマ区切り key-value 列挙で良い？
+   * ``type`` でマウントの型を指定する。このオプションでは ``bind`` 一択。
+   * ``source`` でマウント元を指定する。バインドマウントの場合、Docker デーモン
+     ホスト上のパスだ。
+   * ``destination`` はコンテナー内でファイルやディレクトリーがマウントされてい
+     るパスを指定する。
+   * ``readonly`` オプションを指定すると、バインドマウントは読み取り専用としてコ
+     ンテナーにマウントされる。これは値を書かずに済む。このオプションが使用可能
+     である場合は指定するのが望ましい。
+
+   .. admonition:: 利用者ノート
+
+      UNIX の :program:`mount` のヘルプを読んでおくといいかもしれない。
 
 .. option:: --network <network_name>
 
@@ -268,9 +291,16 @@
    そのまま残る。
 
 ``docker run --detach --publish 80:80 --name linux_tweet_app --mount type=bind,source="$(pwd)",target=/usr/share/nginx/html $DOCKERID/linux_tweet_app:1.0``
-   マウント指定の例。TODO: 解説
-``docker run --mount type=bind,source=/HOST/PATH,target=/CONTAINER/PATH,readonly nginx``
-   マウント指定の例。TODO: 解説
+   マウント指定の例。
+
+   * ``type=bind``: バインドマウントを適用し、
+   * ``source="$(pwd)"``: ホスト側のコマンド実行時のディレクトリーから、
+   * ``target=/usr/share/nginx/html``: コンテナー側の
+     :file:`/usr/share/nginx/html` を利用可能にする。
+:samp:`docker run --mount type=bind,source={HOST_PATH},target={CONTAINER_PATH},readonly nginx``
+   マウント指定の例をもう一つ。バインドマウントを適用し、ホスト側の `HOST_PATH`
+   からコンテナー側の :file:`/usr/share/nginx/html` を利用可能にする。かつ、パス
+   にあるファイルを読み取りと専用する。
 
 ``docker run -d --name redis --network sample-app --network-alias redis redis``
    Redis コンテナーを起動し、先に作成したネットワーク ``sample-app`` に取り付け
