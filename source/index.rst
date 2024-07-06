@@ -14,6 +14,8 @@ Sphinx でのビルドを確認するために収録原稿を極限まで押さ�
    :caption: 草稿
    :maxdepth: 1
 
+   bash
+
 ..
 
 .. toctree::
