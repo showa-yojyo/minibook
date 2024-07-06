@@ -30,8 +30,8 @@ Windows Terminal をインストールには複数の方法が用意されてい
 * Microsoft Store 経由でインストール
 * Windows 標準のコマンドライン上などから :program:`winget` でインストール
 
-新マシンでのインストール手段は、旧マシンで :program:`winget export` したプログラ
-ムリストを :program:`winget import` してインストールすることを想定している。
+新マシンでのインストール手段は、旧マシンで :command:`winget export` したプログラ
+ムリストを :command:`winget import` してインストールすることを想定している。
 
 アップグレードする
 ======================================================================
@@ -40,7 +40,7 @@ Windows Terminal は自動更新機能を実装していないようなので、
 手段に対応したアップグレード手段を採る。
 
 * Microsoft Store の更新ボタンを押す
-* コマンド :program:`winget upgrade` を実行する
+* コマンド :command:`winget upgrade` を実行する
 
 設定をバックアップする
 ======================================================================
@@ -82,13 +82,13 @@ Windows Terminal の設定は上述の JSON ファイルを直接的に編集す
 
 以下、要となるオプションのみを記す。
 
-Startup
+:guilabel:`Startup`
     Windows Terminal 起動時に影響するオプションを決定する。
 
-    * :guilabel:`Default profile`: :guilabel:`Bash (WSL2)`
+    * :guilabel:`Default profile`: :guilabel:`Bash (WSL 2)`
     * :guilabel:`When Terminal starts`: :guilabel:`Open a tab with the default profile`
     * :guilabel:`Launch size` で列数（横）と行数を適宜指定する。
-Interaction
+:guilabel:`Interaction`
     Windows Terminal と私との間に起こる動作に影響するオプションを選択する。
 
     * :guilabel:`Automatically copy selection to clipboard`: OFF
@@ -98,7 +98,7 @@ Interaction
     * :guilabel:`Snap window resizing to character grid`: ON
     * :guilabel:`Automatically focus pane on mouse hover`: OFF
     * :guilabel:`Automatically detect URLs and make them clickable`: ON
-Appearance
+:guilabel:`Appearance`
     Windows Terminal の見てくれを調整するオプション画面だ。
 
     どのソフトウェアを使うときにも言えることだが、
@@ -111,16 +111,16 @@ Appearance
     * :guilabel:`Always on top`: OFF
     * :guilabel:`Tab width mode` を好みの値に設定。
     * :guilabel:`Pane animations`: OFF
-Color schemes
+:guilabel:`Color schemes`
     Windows Terminal の配色を調整する、あるいは配色全体を定義するための画面だ。
     したがって、ここに手を出す必要はない。
-Rendering
+:guilabel:`Rendering`
     Windows Terminal の描画効率最適化を図る項目からなる画面だが、素人お断りとい
     う空気だ。全部既定値のままでよかろう。
-Actions
-    Windows Terminal で定義されているショートカットキーの集合だ。
-    常用するシェルのキーバインドと衝突するものがないかどうかを確認しておくべきだ。
-    反対に、ここにあるコマンドで有用なものは是非習得するべきだ。それは後述する。
+:guilabel:`Actions`
+    Windows Terminal で定義されているショートカットキーの集合だ。常用するシェル
+    のキーバインドと衝突するものがないかどうかを確認しておくべきだ。反対に、ここ
+    にあるコマンドで有用なものは是非習得するべきだ。それは後述する。
 
 Profiles
 ----------------------------------------------------------------------
@@ -129,37 +129,38 @@ Profiles
 前者でコンソールすべてに共通する設定をし、後者でシェルごとの設定項目を上書きする
 と考えればいい。
 
-Defaults
+:guilabel:`Defaults`
     コンソールすべてに共通する設定をする。
 
     :guilabel:`Run this profile as Administrator`: OFF
 
-    Appearance
+    :guilabel:`Appearance`
         コンソール画面すべてに共通する設定項目の集合。
 
         * :guilabel:`Font face`: こだわりのフォントがあるならば設定してもよい。
         * :guilabel:`Font size`: 上記に合わせて指定する。
         * :guilabel:`Cursor shape`: キャレットの形状を指定する。
         * :guilabel:`Scrollbar visibility`: :guilabel:`Visible`
-    Advanced
+    :guilabel:`Advanced`
         どの範疇にも該当しないような設定項目の居場所となる画面だ。
 
         * :guilabel:`History size`: 大きい数字にしておく。
         * :guilabel:`Profile termination behavior`: 場合によっては無条件に閉じる
           でいいかもしれない。
 プロファイル個別画面
-    私の現在の環境では Bash (WSL2), Windows Powershell, cmd, etc. と並んでいる。
+    私の現在の環境では Bash (WSL 2), Windows Powershell, cmd, etc. と並んでいる。
     どの設定画面も項目の構造に差異はないので、まとめて説明する。
 
-    * :guilabel:`Command Line` は念入りに確認しておく。WSL2 の場合には
+    * :guilabel:`Command Line` は念入りに確認しておく。WSL 2 の場合には
       :code:`wsl.exe ~ -d Ubuntu` のように指定しておく。
     * :guilabel:`Icon` は適宜指定しておく。見てくれに関する項目ではあるが、他人
       に画面を見せるときにわかりやすさが圧倒的に良くなるので、明示的にファイルパ
       スを与える。
 
-    Appearance, Advanced 各サブ画面については先述のとおり。ただし
-    :guilabel:`Run this profile as Administrator` については ON に上書きするプロ
-    ファイルが考えられる。管理者権限で起動したい :program:`cmd` などがあり得る。
+    :guilabel:`Appearance`, :guilabel:`Advanced` 各サブ画面については先述のとお
+    り。ただし :guilabel:`Run this profile as Administrator` については ON に上
+    書きするプロファイルが考えられる。管理者権限で起動したい :program:`cmd` など
+    があり得る。
 
 覚えておきたい Windows Terminal 内コマンド
 ======================================================================
@@ -169,8 +170,10 @@ Defaults
 
 .. csv-table::
    :delim: @
-   :header: コマンド,ショートカットキー
+   :header-rows: 1
+   :widths: auto
 
+   コマンド @ ショートカットキー
    テキスト全選択 @ :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`A`
    検索 @ :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`F`
    少量だけ上へスクロール @ :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`↑`
@@ -189,8 +192,8 @@ Defaults
 Windows Terminal 自身へのコマンドライン引数
 ======================================================================
 
-インストール形態にもよるが、Windows Terminal をコマンドラインから起動する場合には、
-次のようなコマンドライン引数およびオプションを与えることもできる：
+インストール形態にもよるが、Windows Terminal をコマンドラインから起動する場合に
+は、次のようなコマンドライン引数およびオプションを与えることもできる：
 
 .. code:: text
 

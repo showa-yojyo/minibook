@@ -7,7 +7,8 @@
    :scale: 100%
    :width: 100%
 
-最小環境バージョン。
+Sphinx でのビルドを確認するために収録原稿を極限まで押さえた版。原本は
+<https://showa-yojyo.github.io/notebook/> のリポジトリーに収録。
 
 .. toctree::
    :caption: 草稿

@@ -2,9 +2,5 @@
 Sphinx >= 7.0
 ipython >= 8.0
 
-# Docutils 0.21 breaks many csv-table directives
-docutils < 0.21
-
 sphinxcontrib-mermaid
-
 sphinxcontrib-trimblank

@@ -287,8 +287,10 @@ Classes used
 
 .. csv-table::
    :delim: @
-   :header: Class,Description
+   :header-rows: 1
+   :widths: auto
 
+   Class @ Description
    grid.tick @ Styling for the Grid Lines
    grid.path @ Styling for the Grid's borders
    .taskText @ Task Text Styling
