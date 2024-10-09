@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+sphinx = ">=7.0"
+ipython = ">=8.0"
+sphinxcontrib-mermaid = "*"
+sphinxcontrib-trimblank = "*"
+pickleshare = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
