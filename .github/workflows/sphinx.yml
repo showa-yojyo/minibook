@@ -15,8 +15,6 @@ jobs:
       uses: ammaraskar/sphinx-action@8.0.2
       with:
         docs-folder: "./"
-        pre-build-command: "pip install pipenv --user && pipenv sync"
-        build-command: "pipenv run make html"
 
     - name: Deploy HTML
       uses: peaceiris/actions-gh-pages@v3
