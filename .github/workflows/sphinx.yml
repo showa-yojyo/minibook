@@ -16,11 +16,11 @@ jobs:
       with:
         python-version: '3.12'
 
-    - name: Upgrade pip, install package, install requirements, build docs
+    - name: Install Pipenv and requirements, and build docs
       run: |
-        pip install --upgrade pip
-        pip install -r requirements.txt
-        make html
+        pip install --user pipenv
+        pipenv install
+        pipenv run make html
 
     - name: Deploy HTML
       uses: peaceiris/actions-gh-pages@v3
