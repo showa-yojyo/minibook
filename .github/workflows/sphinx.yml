@@ -19,7 +19,7 @@ jobs:
     - name: Install Pipenv and requirements, and build docs
       run: |
         pip install --user pipenv
-        pipenv install
+        pipenv sync
         pipenv run make html
 
     - name: Deploy HTML
