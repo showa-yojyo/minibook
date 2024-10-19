@@ -34,6 +34,8 @@ release = '1.5dev'
 
 # -- General configuration -----------------------------------------------------
 
+language = 'ja'
+
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
@@ -47,14 +49,6 @@ extensions = [
     'sphinxcontrib.mermaid',
     'sphinxcontrib.trimblank',
     ]
-
-# The suffix(es) of source filenames.
-# You can specify multiple suffix as a list of string:
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
-
-# The master toctree document.
-root_doc = 'index'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -97,6 +91,9 @@ html_theme_options = {
     'sidebar_link_underscore': 'deeppink',
     'sidebar_text': 'initial',
 }
+
+html_title = f'{project} {release}'
+html_short_title = f'{project}'
 
 # A list of JavaScript filename.
 html_js_files = [
@@ -145,15 +142,6 @@ html_show_search_summary = False
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 html_show_sphinx = False
-
-# If true, an OpenSearch description file will be output, and all pages will
-# contain a <link> tag referring to it.  The value of this option must be the
-# base URL from which the finished HTML is served.
-#html_use_opensearch = ''
-
-# The name of a javascript file (relative to the configuration directory) that
-# implements a search results scorer. If empty, the default will be used.
-#html_search_scorer = 'scorer.js'
 
 # -- Options for MathJax -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/extensions/math.html
