@@ -21,6 +21,7 @@ Sphinx でのビルドを確認するために収録原稿を極限まで押さ�
    :maxdepth: 1
 
    alexandrescu01/index
+   The Art of Unix Programming 読書ノート <https://showa-yojyo.github.io/taoup/>
    tsuboi05/index
 
 .. toctree::
