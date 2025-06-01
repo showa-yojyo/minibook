@@ -10,10 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
-    permissions:
-      contents: write
-
+  build:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
@@ -40,6 +37,10 @@ jobs:
       run: |
         pipenv run make html
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
     - name: Deploy files
       uses: peaceiris/actions-gh-pages@v4
       with:
