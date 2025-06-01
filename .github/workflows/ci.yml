@@ -1,6 +1,7 @@
 name: CI
 
 env:
+  artifact_name: "my-artifact"
   publish_dir: "build/html"
 
 on:
@@ -43,7 +44,7 @@ jobs:
     - name: Upload documentation
       uses: actions/upload-artifact@v4
       with:
-        name: my-artifact
+        name: ${{ env.artifact_name }}
         path: ${{ env.publish_dir }}
 
   deploy:
@@ -53,7 +54,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v4
       with:
-        name: my-artifact
+        name: ${{ env.artifact_name }}
         path: ${{ env.publish_dir }}
 
     - name: Deploy files
