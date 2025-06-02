@@ -33,6 +33,7 @@ GitHub に置いてある次のページが当リポジトリーを含むプロ�
 .
 ├── .git
 ├── .github
+│   ├── ISSUE_TEMPLATE
 │   └── workflows
 ├── .vscode
 ├── build
@@ -59,7 +60,10 @@ GitHub に置いてある次のページが当リポジトリーを含むプロ�
 
 ルート直下には `Makefile` を含むプロジェクト管理に関係するファイルを置く。
 
-ディレクトリー `.github/workflows` には GitHub Actions ワークフロー定義ファイルを置く。
+ディレクトリー `.github` には GitHub 固有の管理ファイルを置く。
+
+* `.github/ISSUE_TEMPLATE` には Issues 画面で課題を報告するときの文面の雛形を与える
+* `.github/workflows` には GitHub Actions ワークフロー定義ファイルを置く。
 
 ディレクトリー `build` 以下は `.gitignore` によりバージョン管理外だが、
 `build/html` 以下は成果物であり重要だ。
