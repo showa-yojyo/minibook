@@ -1,7 +1,6 @@
 name: CI
 
 env:
-  artifact_name: "my-artifact"
   publish_dir: "build/html"
 
 on:
@@ -11,6 +10,12 @@ on:
       - "test/ci"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -40,29 +45,26 @@ jobs:
       run: |
         pipenv run make html
 
-    - name: Upload documentation
-      if: github.event_name != 'pull_request'
-      uses: actions/upload-artifact@v4
+    #- name: Upload documentation
+    #  if: github.event_name != 'pull_request'
+    #  uses: actions/upload-artifact@v4
+    #  with:
+    #    name: ${{ env.artifact_name }}
+    #    path: ${{ env.publish_dir }}
+    - name: Upload artifact
+      id: deployment
+      uses: actions/upload-pages-artifact@v3
       with:
-        name: ${{ env.artifact_name }}
         path: ${{ env.publish_dir }}
 
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v5
-      with:
-        name: ${{ env.artifact_name }}
-        path: ${{ env.publish_dir }}
-
-    - name: Deploy files
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        force_orphan: true
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ${{ env.publish_dir }}
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        user_name: 'github-actions[bot]'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
