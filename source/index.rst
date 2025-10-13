@@ -10,6 +10,10 @@
 Sphinx でのビルドを確認するために収録原稿を極限まで押さえた版。原本は
 <https://showa-yojyo.github.io/notebook/> のリポジトリーに収録。
 
+.. warning::
+
+   2025-10-13 ワークフロー動作検証中
+
 .. toctree::
    :caption: 草稿
    :maxdepth: 1
