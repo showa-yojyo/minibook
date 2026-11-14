@@ -1,0 +1,21 @@
+[project]
+name = "minibook"
+version = "1.5"
+description = "A demonstration repository"
+readme = "README.md"
+authors = [
+    { name = "showa_yojyo", email = "2386769+showa-yojyo@users.noreply.github.com" }
+]
+requires-python = ">=3.15"
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "ipython~=9.9",
+    "sphinx~=8.2",
+    "sphinxcontrib-mermaid~=0.9",
+    "sphinxcontrib-trimblank",
+    "pickleshare",
+]
